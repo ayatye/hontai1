@@ -1,0 +1,758 @@
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* ヘッダー */
+header {
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  position: relative; /* 相対位置指定 */
+  justify-content: space-between;
+  z-index: 100; /* z-indexを設定 */
+}
+
+.c-header {
+  background-color: #333;
+  box-sizing: border-box;
+  display: flex;
+  color: #fff;
+}
+
+.c-header__list {
+  display: flex;
+  margin-left: auto; /* リストを右側に寄せる */
+  padding: 0;
+}
+
+.c-header__list-item {
+  list-style: none;
+}
+
+.c-header__list-link {
+  color: #fff;
+  margin-right: 20px;
+  text-decoration: none;
+  padding: 10px 0px;
+}
+
+.c-header__list-link:hover {
+  filter: opacity(0.6);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 5px;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 250px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-photo {
+  width: 40px; /* 写真のサイズ調整 */
+  height: 40px;
+  margin-right: 10px; /* ロゴとの間にスペースを追加 */
+}
+
+/* ハンバーガーメニュー */
+.c-hamburger-menu {
+  position: relative;
+}
+
+/* ハンバーガーメニューのボタンスタイル */
+.c-hamburger-menu__input {
+  display: none;
+}
+
+.c-hamburger-menu__bg {
+  background-color: #000;
+  cursor: pointer;
+  display: none;
+  left: 0;
+  opacity: 0.4;
+  top: 0;
+  width: 0;
+  z-index: -1;
+}
+
+.c-hamburger-menu__button {
+  display: none;
+}
+
+/* バナー */
+.banner {
+  background-color: #ff5733;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  width: 100%;
+  position: relative; /* 相対位置指定 */
+  z-index: 1; /* バナーは最前面に来ないように設定 */
+}
+
+/* メインコンテンツラッパー */
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-left: 4cm;
+}
+
+.content-wrapper {
+  flex: 1; /* コンテンツ部分がサイドバーの隣に表示されるようにする */
+  margin-right: 20px; /* サイドバーとの余白 */
+}
+
+.latest-update {
+  padding: 10px;
+  max-width: 1000px;
+}
+
+.latest-update h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.latest-update p {
+  font-size: 1.2em;
+}
+
+/* 四角い箱のスタイル */
+.update-box {
+  display: flex;
+  align-items: center; /* アイテムを縦方向で中央揃え */
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* 四角い箱全体をクリック可能にする */
+  max-width: 1000px;
+}
+
+/* 左側の写真 */
+.update-photo img {
+  width: 100px; /* 写真の幅 */
+  height: 100px; /* 写真の高さ */
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+/* 右側の説明 */
+.update-info {
+  flex: 1; /* 説明部分が残りのスペースを占める */
+}
+
+.update-info p {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+/* リンク部分のスタイル */
+.update-link a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8em; /* リンクマークのサイズ */
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.update-link a:hover {
+  text-decoration: underline;
+}
+
+/* 四角い箱全体をクリック可能にする */
+.update-box a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* メインコンテンツ */
+main {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.content-section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #333;
+}
+
+#recommended-explanation {
+  margin: 0 auto;
+  padding: 1rem;
+  flex-grow: 1; /* フレックスボックスでの成長を設定 */
+}
+
+/* 基本デザイン（おすすめトピックとイベント情報で共通） */
+.info-block {
+  width: 20cm;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  position: relative;
+  transform: perspective(1000px) rotateX(5deg);
+  animation: pop-in 0.5s ease-in-out;
+}
+
+/* おすすめトピック用の背景 */
+#recommended-topics {
+  background: linear-gradient(
+    135deg,
+    #ffeb3b,
+    #ff5722
+  ); /* 黄色からオレンジのグラデーション */
+}
+
+/* 初心者必見用の背景 */
+#events {
+  background: linear-gradient(
+    135deg,
+    #a6d5a7,
+    #82c930
+  ); /* 緑系のグラデーション */
+}
+
+/* 豆知識用の背景 */
+#tisikis {
+  background: linear-gradient(
+    135deg,
+    #758bd4,
+    #0d29a8
+  ); /* 緑系のグラデーション */
+}
+
+#masters {
+  background: linear-gradient(
+    135deg,
+    #d98181,
+    #ce4517
+  ); /* 赤系のグラデーション */
+}
+
+.separator-line {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 20px auto;
+  width: 90%;
+  position: relative;
+}
+
+/* トピックやイベントのアイテムデザイン */
+.special-item {
+  background-size: cover;
+  background-position: center;
+  color: transparent; /* 文字を透明にして画像が見えるようにする */
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  height: 100px; /* 高さを調整 */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.special-item a {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.special-item a:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8) rotateX(10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotateX(5deg);
+    opacity: 1;
+  }
+}
+
+.info-block h2 {
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.info-block ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-block li {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.info-block li:hover {
+  transform: translateY(-5px);
+  background-color: #ffe0b2;
+}
+
+/* サイドバーの位置調整 */
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-left: 1px solid #ccc;
+  width: 400px; /* サイドバーの幅 */
+  position: static; /* またはこの行を削除 */
+  overflow-y: auto;
+  margin-left: 20px; /* コメントセクションとの余白を追加 */
+  max-height: 3650px; /* サイドバーの最大高さ */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+li .arrow {
+  font-size: 1.5em;
+  color: #007bff;
+  margin-left: auto; /* 矢印を右に配置 */
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.custom-line {
+  display: none;
+}
+
+/* コメントセクションの全体スタイル */
+#comment-section {
+  width: 90%;
+  max-width: 800px;
+  background-color: #f7f9fc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 40px auto; /* 上下のマージンを指定し、左右をautoで中央寄せ */
+}
+
+#comment-section h2 {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* ユーザーネームとコメントの入力フォーム */
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#username-input {
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#comment-input {
+  padding: 12px;
+  font-size: 16px;
+  height: 150px; /* コメント入力欄の高さを大きく */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  resize: vertical; /* 縦方向にのみリサイズ可能 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#comment-form button {
+  align-self: flex-end;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* コメントが表示されるエリア */
+#comments-container {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px; /* 上部の余白を追加 */
+}
+.comment {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.comment .content {
+  flex-grow: 1;
+}
+
+.comment .username {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.comment .timestamp {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.comment .message {
+  font-size: 14px;
+  color: #555;
+}
+
+/* スクロールバーのカスタマイズ */
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 3px;
+}
+
+/* 横棒のスタイル */
+#scroll-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  display: none; /* 初期は非表示 */
+  z-index: 1000;
+}
+
+#scroll-bar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+#scroll-bar a:hover {
+  text-decoration: underline;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0; /* 背景を小さく */
+  margin-top: 40px;
+  font-size: 12px;
+  position: relative; /* 相対位置指定 */
+  bottom: 0;
+  width: 100%;
+  min-height: 100px; /* フッターの最小高さを指定して黒背景を小さく */
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto 5px; /* 下部の余白を縮める */
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  flex: 1; /* 各リンクに均等なスペースを割り当て */
+  padding: 0 5px; /* 必要に応じて余白をさらに縮小 */
+}
+
+.footer-links a:nth-child(2) {
+  text-align: center; /* お問い合わせフォームを中央に配置 */
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* フォーム中央揃え */
+.center-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* お問い合わせフォームを中央に固定 */
+}
+
+/* フッター内のパラグラフのマージンをリセット */
+footer p {
+  margin: 0;
+  padding: 0;
+  position: absolute; /* 絶対配置にして、フッターの下部に固定 */
+  bottom: 5px; /* リンクと「© 2024...」の間を縮める */
+  left: 50%;
+  transform: translateX(-50%); /* 中央寄せ */
+}
+
+@media (max-width: 1210px) {
+  .wrapper {
+    flex-direction: column; /* レイアウトを縦方向に */
+    padding-right: 3cm;
+    padding-left: 2cm;
+  }
+
+  .sidebar {
+    max-height: 800px;
+  }
+
+  .content-wrapper {
+    margin-right: 0px; /* サイドバーとの余白 */
+    margin: 7px;
+  }
+  .custom-line {
+    display: block;
+    border: none;
+    height: 3px;
+    width: 80%;
+    margin: 20px auto;
+    background-image: linear-gradient(
+      to right,
+      #333,
+      #333 33%,
+      transparent 33%,
+      transparent 66%,
+      #333 66%,
+      #333
+    );
+    background-size: 8px 3px;
+  }
+  .sidebar {
+    width: 100%;
+    border-left: none;
+    float: none; /* 浮かせない */
+    margin: 0;
+  }
+  .content-wrapper {
+    margin-right: 0;
+  }
+  .info-block {
+    width: 100%; /* スマホ画面で幅を100%にする */
+    padding: 10px; /* 内側の余白を小さくする */
+    margin: 10px 0; /* 上下に少し余白を追加 */
+  }
+}
+
+@media (max-width: 768px) {
+  /* ヘッダー */
+  .c-header__list {
+    display: none;
+  }
+  .wrapper {
+    padding-left: 1.5cm;
+  }
+  #comment-section {
+    width: 80%;
+  }
+  .logo {
+    padding-right: 0;
+  }
+  .c-header__list-link {
+    margin-right: 0px;
+  }
+  .c-hamburger-menu__button {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 32px;
+    cursor: pointer;
+    z-index: 101; /* メニューの上に表示 */
+  }
+
+  .c-hamburger-menu__button-mark {
+    background-color: #fff;
+    height: 2px;
+    width: 20px;
+    transition: 0.3s;
+  }
+
+  .c-hamburger-menu__bg {
+    display: none;
+  }
+
+  /* チェックボックスがONのときのスタイル */
+  /* ハンバーガーメニューのオーバーレイ */
+  #hamburger:checked ~ .c-hamburger-menu__bg {
+    display: block; /* オーバーレイを表示 */
+    position: fixed; /* 固定位置に配置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒い背景 */
+    z-index: 99; /* メニューより上に表示 */
+    transition: background-color 0.3s ease; /* オーバーレイのスムーズな表示 */
+  }
+
+  /* バーガーメニューが表示されたときのメニューリスト */
+  .c-hamburger-menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-40%);
+    background-color: #333;
+    padding: 20px 0;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+  }
+  /* メニューが開いたときの表示 */
+  #hamburger:checked ~ .c-hamburger-menu__list {
+    opacity: 1;
+  }
+
+  /* 個々のメニュー項目のスタイル */
+  .c-hamburger-menu__list-item {
+    width: 80%; /* それぞれのボックスの幅を調整 */
+    margin: 20px 0; /* 各ボックスの間隔 */
+    padding: 12px;
+    text-align: center; /* テキストの中央揃え */
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #444;
+    border: 2px solid #007bff; /* 四角で囲むためのボーダー */
+    border-radius: 6px; /* 角を少し丸くする */
+    transition: background-color 0.3s ease;
+    padding-left: 20px;
+  }
+
+  /* ホバーしたときの効果 */
+  .c-hamburger-menu__list-item:hover {
+    background-color: #007bff;
+  }
+
+  .footer-links {
+    flex-direction: column; /* フッターのリンクを縦に並べる */
+    align-items: center;
+  }
+  footer {
+    padding: 15px;
+    width: 100%; /* フッターがビューポートの幅を占める */
+  }
+  #scroll-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .wrapper {
+    padding: 0;
+    margin: 1cm;
+    margin-left: 0.5cm;
+  }
+  main {
+    padding-left: 0.2cm;
+    margin: 15px;
+  }
+}

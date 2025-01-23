@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* サバイバーとハンターのタイトルサイズを調整 */
+#survivor-title, #hunter-title {
+    font-size: 1.5em; /* 必要に応じて調整 */
+}
+
+.character-grid {
+    display: flex;
+    flex-wrap: wrap; /* 複数行にする */
+    justify-content: flex-start; /* カードの間隔を左に寄せる */
+    padding: 0 250px; /* 両端に40pxのパディングを追加 */
+}
+
+.character-card {
+    flex: 0 0 calc(25% - 10px); /* デフォルトは25%で4つ表示 */
+    margin: 5px; /* 各カードの周りのマージン */
+    box-sizing: border-box; /* パディングやマージンを含めたサイズ計算 */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.character-card h2 {
+    font-size: 1em; /* 元のサイズから調整 */
+}
+
+.character-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto; /* アスペクト比を維持 */
+}
+
+.character-card a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 大きな画面用 */
+@media (min-width: 1200px) {
+    .character-grid {
+        padding: 0 250px; /* 大きな画面のパディング */
+    }
+}
+
+/* 中くらいの画面用 */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .character-grid {
+        padding: 0 80px; /* 中くらいの画面のパディング */
+    }
+}
+
+/* 小さな画面用のスタイル調整 */
+@media (max-width: 768px) {
+    .character-card {
+        flex: 0 0 calc(33.33% - 10px); /* 幅を33.33%に設定し、3つ表示 */
+    }
+    .character-grid {
+        padding: 0 20px; /* 両端のパディングを20pxに減少 */
+    }
+}
+
+@media (max-width: 600px) {
+    .character-card {
+        flex: 0 0 100%; /* 幅を100%に設定し、1つ表示 */
+    }
+}
+
+@media (max-width: 480px) {
+    .character-card {
+        flex: 0 0 calc(50% - 10px); /* 幅を50%に設定し、2つ表示 */
+    }
+    .character-grid {
+        padding: 0 10px; /* 両端のパディングを10pxに減少 */
+    }
+}

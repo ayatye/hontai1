@@ -1,0 +1,51 @@
+/* メインコンテンツ */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+main h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+.latest-updates p {
+  text-align: center;
+  color: #555;
+}
+.update-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+.update-item:last-child {
+  border-bottom: none;
+}
+.update-item h3 {
+  color: #007bff;
+}
+.update-item p {
+  color: #555;
+}
+.hidden {
+  display: none; /* 初期状態で非表示 */
+}
+
+/* もっと見るボタン */
+#load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#load-more-btn:hover {
+  background-color: #0056b3;
+}

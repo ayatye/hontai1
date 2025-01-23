@@ -1,0 +1,123 @@
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+.content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ヘッダー */
+header {
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-size: 1.5rem; /* ロゴサイズ調整 */
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* バナー */
+.banner {
+  background-color: #ff5733;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.banner h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.banner p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* プライバシーポリシーのコンテンツ */
+.content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+}
+
+.content ul li a {
+  color: #ff5733;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content ul li a:hover {
+  text-decoration: underline;
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* フッター */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+}

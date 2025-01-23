@@ -1,0 +1,157 @@
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+.content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ヘッダー */
+header {
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-size: 1.5rem; /* ロゴサイズ調整 */
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* バナー */
+.banner {
+  background-color: #ff5733;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.banner h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.banner p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* 運営者情報のコンテンツ */
+.content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.info-section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.info-section h2 {
+  font-size: 1.8rem;
+  color: #ff5733;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.info-section p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* フッター */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0; /* 背景を小さく */
+  margin-top: 40px;
+  font-size: 12px;
+  position: relative; /* 相対位置指定 */
+  bottom: 0;
+  width: 100%;
+  min-height: 100px; /* フッターの最小高さを指定して黒背景を小さく */
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto 5px; /* 下部の余白を縮める */
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  flex: 1; /* 各リンクに均等なスペースを割り当て */
+  padding: 0 5px; /* 必要に応じて余白をさらに縮小 */
+}
+
+.footer-links a:nth-child(2) {
+  text-align: center; /* お問い合わせフォームを中央に配置 */
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* フォーム中央揃え */
+.center-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* お問い合わせフォームを中央に固定 */
+}
+
+/* フッター内のパラグラフのマージンをリセット */
+footer p {
+  margin: 0;
+  padding: 0;
+  position: absolute; /* 絶対配置にして、フッターの下部に固定 */
+  bottom: 5px; /* リンクと「© 2024...」の間を縮める */
+  left: 50%;
+  transform: translateX(-50%); /* 中央寄せ */
+}

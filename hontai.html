@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>おすすめトピックとゲーム攻略サイト</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="本体2/images/サイコロicon.jpeg" class="logo-photo" />
+          <h1>第五録</h1>
+        </div>
+        <header class="c-header c-hamburger-menu">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="c-hamburger-menu__input"
+          />
+          <label for="hamburger" class="c-hamburger-menu__bg"></label>
+          <ul class="c-header__list c-hamburger-menu__list">
+            <li class="c-header__list-item">
+              <a href="" class="c-header__list-link">ホーム</a>
+            </li>
+            <li class="c-header__list-item">
+              <a href="最新情報/最新情報.html" class="c-header__list-link"
+                >最新情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="情報/情報.html" class="c-header__list-link"
+                >キャラ情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="お問い合わせ/お問合せフォーム.html"
+                class="c-header__list-link"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+          <div id="overlay"></div>
+          <nav id="burger-menu">
+            <input type="checkbox" id="hamburger" style="display: none" />
+            <label for="hamburger" class="c-hamburger-menu__button">
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+            </label>
+          </nav>
+        </header>
+      </nav>
+    </header>
+
+    <section class="banner">
+      <h2>第五人格最新攻略情報</h2>
+      <p>第五人格の様々の情報が盛りだくさん！！</p>
+    </section>
+
+    <div class="wrapper">
+      <div class="content-wrapper">
+        <div id="recommended-explanation">
+          <div class="tv-header">
+            <h2>第五録</h2>
+            <p>
+              誰もが必要である情報をお届けします！！<br />
+              初心者でも上級者でも必ず役に立つ記事が見つかる！
+            </p>
+          </div>
+        </div>
+        <!-- 最新アップデート情報セクションの追加 -->
+        <div class="latest-update">
+          <h3>最新アップデート情報</h3>
+
+          <!-- 四角い箱 -->
+          <div class="update-box">
+            <!-- 左側に写真 -->
+            <div class="update-photo">
+              <img src="your-image.jpg" alt="アップデート画像" />
+            </div>
+            <!-- 右側に説明とリンク -->
+            <div class="update-info">
+              <p>
+                アップデート情報の詳細がここに入ります。新しい機能や改善点について簡単に説明。
+              </p>
+            </div>
+            <!-- リンクのマーク -->
+            <div class="update-link">
+              <a href="#" title="詳しくはこちら">
+                <span>＞</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="kontentu">
+          <div id="recommended-topics" class="info-block">
+            <h2>おすすめトピック</h2>
+            <ul id="topics"></ul>
+          </div>
+          <div id="events" class="info-block">
+            <h2>初心者必見</h2>
+            <ul id="events-list"></ul>
+          </div>
+          <div id="tisikis" class="info-block">
+            <h2>上級者は知ってる豆知識</h2>
+            <ul id="tisiki-list"></ul>
+          </div>
+          <div id="masters" class="info-block">
+            <h2>中級者〜上級者必見</h2>
+            <ul id="master-list"></ul>
+          </div>
+        </div>
+        <hr class="separator-line" />
+        <main>
+          <h2>イベント情報</h2>
+
+          <!-- 四角い箱 -->
+          <div class="update-box">
+            <!-- 左側に写真 -->
+            <div class="update-photo">
+              <img src="your-image.jpg" alt="イベント画像" />
+            </div>
+            <!-- 右側に説明とリンク -->
+            <div class="update-info">
+              <p>
+                イベントの詳細がここに入ります。特別なキャンペーンや新しいイベントの情報。
+              </p>
+            </div>
+            <!-- リンクのマーク -->
+            <div class="update-link">
+              <a href="#" title="詳しくはこちら">
+                <span>＞</span>
+              </a>
+            </div>
+          </div>
+          <!-- コラボ情報セクション -->
+          <div class="collaboration-info">
+            <h2>コラボ情報</h2>
+
+            <!-- 四角い箱 -->
+            <div class="update-box">
+              <!-- 左側に写真 -->
+              <div class="update-photo">
+                <img src="collab-image.jpg" alt="コラボ情報画像" />
+              </div>
+              <!-- 右側に説明とリンク -->
+              <div class="update-info">
+                <p>
+                  新しいコラボイベントの詳細がここに入ります。コラボ内容や特典について簡単に説明。
+                </p>
+              </div>
+              <!-- リンクのマーク -->
+              <div class="update-link">
+                <a href="#" title="詳しくはこちら">
+                  <span>＞</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mode-strategy">
+            <h3>モード別攻略</h3>
+
+            <!-- モードごとの攻略ボックス -->
+            <div class="update-box">
+              <!-- 左側に写真 -->
+              <div class="update-photo">
+                <img src="mode-image.jpg" alt="モード攻略画像" />
+              </div>
+              <!-- 右側に説明とリンク -->
+              <div class="update-info">
+                <p>このモードの攻略ポイントや重要な戦術についての説明。</p>
+              </div>
+              <!-- リンクのマーク -->
+              <div class="update-link">
+                <a href="#" title="詳しくはこちら">
+                  <span>＞</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- 他のモードの攻略ボックスを必要に応じて追加 -->
+            <div class="update-box">
+              <div class="update-photo">
+                <img src="mode-image2.jpg" alt="別モードの攻略画像" />
+              </div>
+              <div class="update-info">
+                <p>別のモードの攻略ポイントや戦術を簡単に説明。</p>
+              </div>
+              <div class="update-link">
+                <a href="#" title="詳しくはこちら">
+                  <span>＞</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+    </div>
+    <hr class="custom-line" />
+    <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+    </div>
+    <!-- スクロール時に表示される横棒 -->
+    <div id="scroll-bar">
+      <a href="最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="情報/情報.html">キャラ情報</a>
+      <a href="お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2024 第五録 IdentityV 第五人格攻略サイト</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
