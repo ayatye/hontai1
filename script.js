@@ -155,7 +155,7 @@ const topics = [
   {
     name: "激アツサバイバー",
     link: "#hot-survivor",
-    img: "images/kyara.jpeg",
+    img: "本体2/images/kyara.jpeg",
   },
   {
     name: "激アツハンター",
@@ -166,7 +166,7 @@ const topics = [
   {
     name: "キャラクター別プロが使う人格",
     link: "#character-persona",
-    img: "images/zinnkaku.jpeg",
+    img: "本体2/images/zinnkaku.jpeg",
   },
 ];
 
@@ -216,12 +216,12 @@ const masters = [
   {
     name: "キャラの個性について",
     link: "#master1",
-    img: "images/master1.jpg",
+    img: "本体2/images/kosei.jpeg",
   },
   {
     name: "キャラ別プロが使っている人格",
     link: "#master2",
-    img: "images/master2.jpg",
+    img: "本体2/images/zinnkaku.jpeg",
   },
   {
     name: "サバイバーキャラ別コンボ",
@@ -268,6 +268,12 @@ const icons = [
   "本体2/images/randomicon/骨董商.jpeg",
   "本体2/images/randomicon/祭司.jpeg",
   "本体2/images/randomicon/傭兵.jpeg",
+  "本体2/images/randomicon/応援団.jpeg",
+  "本体2/images/randomicon/少女.jpeg",
+  "本体2/images/randomicon/機械技師.jpeg",
+  "本体2/images/randomicon/空軍.jpeg",
+  "本体2/images/randomicon/調香師.jpeg",
+  "本体2/images/randomicon/記者.jpeg",
 ];
 
 // ページ読み込み時にコメントをレンダリング
@@ -294,7 +300,7 @@ document
       // ランダムなアイコンを選択
       const randomIcon = icons[Math.floor(Math.random() * icons.length)];
 
-      // コメントデータをオブジェクトとして配列に追加
+      // コメントデータをオブジェクトとして作成
       const commentData = {
         username,
         commentText,
@@ -302,80 +308,63 @@ document
         icon: randomIcon,
       };
 
-      // コメント履歴に追加
-      commentHistory.push(commentData);
-      localStorage.setItem(historyKey, JSON.stringify(commentHistory));
-
-      // コメントが上限を超える場合、古いコメントを削除
-      if (comments.length >= MAX_COMMENTS) {
-        // 古いコメントを履歴に追加し、表示用コメントから削除
-        commentHistory.push(comments.shift());
-        localStorage.setItem(historyKey, JSON.stringify(commentHistory));
-      }
-
-      // 新しいコメントを表示用配列に追加
-      comments.push(commentData);
+      // **新しいコメントを表示用配列の先頭に追加**
+      comments.unshift(commentData);
       localStorage.setItem("comments", JSON.stringify(comments));
 
       // 入力欄をクリア
       usernameInput.value = "";
       commentInput.value = "";
 
-      // コメントリストを再描画
-      renderComments();
+      // **新しいコメントを即座に表示**
+      addCommentToDOM(commentData);
     }
   });
 
-// コメントをレンダリングする関数
-function renderComments() {
+// コメントを直接DOMに追加する関数
+function addCommentToDOM(commentData) {
   const commentsContainer = document.getElementById("comments");
 
-  // コメントをクリア
   if (commentsContainer) {
-    commentsContainer.innerHTML = "";
+    // コメント要素を作成
+    const comment = document.createElement("div");
+    comment.classList.add("comment");
 
-    // コメントを描画する
-    comments.forEach((commentData) => {
-      // コメント要素を作成
-      const comment = document.createElement("div");
-      comment.classList.add("comment");
+    // アイコン要素を作成
+    const icon = document.createElement("img");
+    icon.src = commentData.icon;
+    icon.alt = "User Icon";
 
-      // アイコン要素を作成
-      const icon = document.createElement("img");
-      icon.src = commentData.icon;
-      icon.alt = "User Icon";
+    // コンテンツ要素を作成
+    const content = document.createElement("div");
+    content.classList.add("content");
 
-      // コンテンツ要素を作成
-      const content = document.createElement("div");
-      content.classList.add("content");
+    // ユーザーネーム要素
+    const username = document.createElement("div");
+    username.classList.add("username");
+    username.textContent = commentData.username;
 
-      // ユーザーネーム要素
-      const username = document.createElement("div");
-      username.classList.add("username");
-      username.textContent = commentData.username;
+    // 日時要素
+    const timestamp = document.createElement("div");
+    timestamp.classList.add("timestamp");
+    timestamp.textContent = commentData.timestamp;
 
-      // 日時要素
-      const timestamp = document.createElement("div");
-      timestamp.classList.add("timestamp");
-      timestamp.textContent = commentData.timestamp;
+    // メッセージ要素
+    const message = document.createElement("div");
+    message.classList.add("message");
+    message.textContent = commentData.commentText;
 
-      // メッセージ要素
-      const message = document.createElement("div");
-      message.classList.add("message");
-      message.textContent = commentData.commentText;
+    // コンテンツに要素を追加
+    content.appendChild(username);
+    content.appendChild(timestamp);
+    content.appendChild(message);
 
-      // コンテンツに要素を追加
-      content.appendChild(username);
-      content.appendChild(timestamp);
-      content.appendChild(message);
+    // コメントにアイコンとコンテンツを追加
+    comment.appendChild(icon);
+    comment.appendChild(content);
 
-      // コメントにアイコンとコンテンツを追加
-      comment.appendChild(icon);
-      comment.appendChild(content);
-
-      // コメントをコンテナに追加
-      commentsContainer.appendChild(comment);
-    });
+    // **最新のコメントを上に追加**
+    commentsContainer.prepend(comment);
   }
 }
 
