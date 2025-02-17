@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質と特徴</a></li>
+            <li><a href="#strategy">基本的立ち回り方</a></li>
+            <li><a href="#advanced">記者の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="character_image.jpg" alt="キャラの写真" class="character-image">
+            <h2>記者の評価</h2>
+            <p>幻影でハンターを惑わす！
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質と特徴</h2>
+    
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:独占スクープ</h3>
+・カメラを使うと記者の前に幻影を生成する。長押しすると指定に幻影を生成する。<br>
+<br>
+・カメラで出す幻影は2種類ある。<br>
+<br>
+<span class="bold-text">牽制視点</span><br>
+牽制視点で生成された幻影（所持数3つ）は自動的に落とされていない木の板の片側へ移動する。<br>
+ハンターが板に当たる位置まで移動すると、幻影は自動的に板を倒す。幻影が倒した板が命中した時のハンターの気絶回復速度は30%上昇する。<br>
+幻影が倒した板に対するハンターの板破壊速度は20%低下する。<br>
+幻影と仲間の距離が12メートル以内の場合、持続時間消費速度が50%（最低10.5秒に）上昇する。<br>
+幻影が存在する時にカメラをタップすると自分から幻影を消すことができる。<br>
+他のサバイバーが、幻影が使用しようとしていた木の板を先に落とすと幻影は消える。<br>
+<br>
+<span class="bold-text">救援視点</span><br>
+救援視点で生成された幻影（所持数1つ）はサバイバーが拘束されたチェアと記者の距離が25メートル以内の場合、救援視点が生成可能になる。幻影は自動的に最も近くにあるロケットチェアに移動し、仲間を救援する。<br>
+他のサバイバーの救援が先に成功すると幻影は消える。
+この視点において幻影とハンターの距離が20メートル以内の場合、ハンターに輪郭が強調表示される。<br>
+ロケットチェア付近8m以内に幻影を生成することはできない。<br>
+救援支店のみが残っている場合、牽制視点に切り替えることができる。<br>
+</div>
+            <div class="trait-item"><h3>特質2:観測視点</h3>
+・幻影は存在感を与えず、幻影は通常攻撃1回分のダメージまで受けることが可能で、ハンターが幻影を倒した時の攻撃硬直の回復時間が30％上昇する。
+
+
+・幻影が倒されると通常より1秒長い被ダメ加速を記者が獲得する。記者が被ダメしても幻影は加速を獲得する。
+
+・危機一髪を作用している場合幻影にもその効果が発動される。
+
+・記者と幻影の距離８ｍ以内にいるとき記者の移動速度10％上昇、幻影の移動速度が7%上昇する。
+</div>
+            <div class="trait-item"><h3>特質3:ディープリポート</h3>
+・解読速度10％低下。幻影が倒されるたびにさらに3％低下最大12％
+</div>
+            <div class="trait-item"><h3>特質4:勇敢</h3>
+・ロケットチェア発射までの速度が10%低下する
+</div>
+
+ </div>
+
+    
+    <!-- 特徴の説明 -->
+    <div class="features-box">
+        <h3>特徴</h3>
+    <span class="bold-text">幻影</span>を使い方は色々ある。<br>
+<span class="blue-text">救助</span>、<span class="blue-text">身代わり</span>、<span class="blue-text">板倒し</span>、どの分野もなかなかの練度が必要<br>
+幻影の<span class="red-text">当たり判定</span>の理解が必要<br>
+    </div>
+</section>
+
+	<!-- 基本的立ち回り方セクション -->
+        <section id="strategy">
+        <h2>基本的な立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 追われた時</h3>
+            <p><span class="bold-text">幻影</span>は<span class="highlight-text">最大4つ</span>あるので、惜しみなく使う。<br>
+<span class="bold-text">幻影</span>を出すときは、板まで<span class="bold-text">幻影</span>を出し自分より後ろにする。（<span class="highlight-text">10％</span>の加速があるため）<br>
+また、板を通り過ぎてから、通り過ぎた板に<span class="bold-text">幻影</span>を出すことで、<span class="red-text">不意の板当て</span>ができる。出さなくても<span class="red-text">警戒</span>してくれるので強い。<br>
+間に合わない時でも、板までの<span class="bold-text">幻影</span>を出し、幻影が近くにいることで、<span class="underline-text">幻影にダメージを吸わせる</span>ことが可能になる。<span class="bold-text">ルート</span>と<span class="red-text">幻影当たり判定</span>を理解して<span class="blue-text">チェイス</span>をしよう。
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>2. 追われない時</h3>
+            <p>解読をする！<br>
+救助に行く際は、<span class="bold-text">救助の幻影</span>をだしてどちらかが救助</span>にいくようにしよう！<br>
+幻影救助、幻影殴られ救助で<span class="red-text">無傷救助</span>ができる可能性も<br>
+また、味方が攻撃をもらう際に幻影を出し<span class="blue-text">身代わり</span>したり、<span class="blue-text">不意の板当て</span>を狙ったり、解読が回っている時は狙ってもいいかも！
+</p>
+        </div>
+    </section>
+        </section>
+　　<section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>記者の応用スキル</h2>
+
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>忍者風船救助</h3>
+        <p>板間で風船状態の時に幻影で板を当てることで風船から降ろすことができる</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+</div>
+</section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="https://example.com" class="article-link">
+            <div class="article-img">
+                <img src="character.jpg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Your custom footer goes here -->
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

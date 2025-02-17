@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質と特徴</a></li>
+            <li><a href="#strategy">基本的立ち回り方</a></li>
+            <li><a href="#advanced">納棺師の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="character_image.jpg" alt="キャラの写真" class="character-image">
+            <h2>納棺師の評価</h2>
+            <p>救助なんて無視してやる
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質と特徴</h2>
+    
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:納棺</h3>
+・納棺師は化粧箱を１つ持っており、納棺師が救助されると追加で１つ獲得できる。<br>
+<br>
+・化粧箱に書かれたサバイバーがロケットチェアに拘束された時かダウンしたとき、３秒間の間に死者蘇生をするか選択することができる。即時蘇生が選択されてからの8秒間、ハンターに棺桶の位置が強調表示される。<br>
+<br>
+・死者蘇生が行われた場合化粧箱の位置に蘇生し、７秒間攻撃を食らわない無敵状態となり、１５秒間ダウンしない危機一髪状態になる。ゲートが通電すると無敵・危機一髪効果は発動しなくなる。<br>
+<br>
+・マップ上に化粧箱は１つしか存在できない。<br>
+<br>
+・納棺師は化粧箱の位置を移動させることができる。
+</div>
+            <div class="trait-item"><h3>特質2:化粧術</h3>
+・25ｍ以内で姿を見たほかのサバイバーを5秒間かけて化粧箱に書くことができ、書かれたサバイバーが死者蘇生効果を獲得し、納棺師は自身の死者蘇生効果を失う。
+</div>
+            <div class="trait-item"><h3>特質3:生死超越</h3>
+・ロケットチェアの耐久時間が10％増加、次にロケットチェアに拘束されると飛んでしまうサバイバーを納棺することはできない。
+</div>
+            <div class="trait-item"><h3>特質4:社交恐怖</h3>
+・ゲーム開始時15秒間他のサバイバーの位置が表示される。他のサバイバーと一緒に解読するとき解読速度15％低下。
+</div>
+ </div>
+
+    
+    <!-- 特徴の説明 -->
+    <div class="features-box">
+        <h3>特徴</h3>
+        <span class="underline-text">圧倒的引き分け率が担保されるサバイバー</span><br>
+<span class="bold-text">納棺</span>により救助シーンを<span class="blue-text">一回</span>減らすことができる。<br>
+納棺後も<span class="underline-text"><span class="highlight-text">7秒間</span>の無敵</span>と<span class="red-text">危機一髪状態</span>になるので納棺後も時間が稼げる。
+    </div>
+</section>
+
+	<!-- 基本的立ち回り方セクション -->
+        <section id="strategy">
+        <h2>基本的な立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 追われた時</h3>
+            <p><span class="underline-text">試合開始時とすぐにその場に<span class="bold-text">納棺</span>しよう。</span><br>
+そして、必ず、<span class="bold-text">納棺</span>から離れる<span class="blue-text">チェイス</span></span>心掛ける。<br>
+ロケットチェアに吊られた場合、<span class="bold-text">死者蘇生判断</span>が求められる。<br>
+<br>
+<span class="bold-text">判断材料</span><br>
+死者蘇生あり<br>
+・救助すると思われるサバイバーから遠い場合<br>
+・見捨て判断を味方がとりそうな場合<br>
+・2吊り目の場合（必ず納棺）<br>
+・救助狩りが強いハンターの場合（ボンボン、足萎など）<br>
+<br>
+死者蘇生なし<br>
+・吊られているロケットチェアと納棺の位置が近い場合<br>
+・救助すると思われるサバイバーが近い場合<br>
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>2. 追われない時</h3>
+            <p>試合開始時とすぐにその場に<span class="bold-text">納棺</span>しよう！<br>
+そして、解読に専念しよう！<br>
+また、追われているサバイバーを視認できそうなら、見に行くことも大事。<br>
+無理してまで見に行くことはありません。<br>
+通電が確定した場合、通電後のために<span class="blue-text">ゲート</span>や<span class="blue-text">ハッチ近く</span>に<span class="bold-text">納棺</span>
+を置いておくのも強力
+</p>
+        </div>
+    </section>
+        </section>
+　　<section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>納棺師の応用スキル</h2>
+
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>納棺確定救助</h3>
+        <p>死者蘇生の無効時間を使って確定で救助を行う。</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+</div>
+</section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="https://example.com" class="article-link">
+            <div class="article-img">
+                <img src="character.jpg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Your custom footer goes here -->
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

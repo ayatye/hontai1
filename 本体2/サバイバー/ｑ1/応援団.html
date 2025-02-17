@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質と特徴</a></li>
+            <li><a href="#strategy">基本的立ち回り方</a></li>
+            <li><a href="#advanced">応援団の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="character_image.jpg" alt="キャラの写真" class="character-image">
+            <h2>応援団の評価</h2>
+            <p>応援でセルフ中治り！？
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質と特徴</h2>
+    
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:鼓舞</h3>
+・鼓舞を使用すると4秒間移動速度70％上昇、その後4秒間移動速度40％低下する。また、鼓舞による減速効果は奮起後再度鼓舞を使用し上書きすることができる。
+</div>
+            <div class="trait-item"><h3>特質2:奮起</h3>
+・指定したサバイバーを10秒間奮起状態にする。自身を含めて各サバイバーに対して2回まで奮起を使用することができる。<br>
+<br>
+・奮起状態に指定したサバイバーの持ち物、能力にクールタイムが発生すると即座にクールタイムを20秒減少させる。応援団自身に対して使用した場合、クールタイム減少量が30秒に増加する。
+</div>
+            <div class="trait-item"><h3>特質3:激励</h3>
+・視界20m以内のサバイバーを選択して激励する。激励中は選択したサバイバーと応援団の移動速度5％上昇する。<br>
+<br>
+・激励中はリズムに合わせてボタンをタップすることで選択した仲間は激励スタックを獲得していく。1回の成功で1スタック。激励が始まったと同時に5スタック獲得する。保持できるスタックは最大45スタックまで。<br>
+<br>
+・激励中応援団と選択したサバイバーの距離が20ｍ以上離れた場合と高低差が5m以上できた場合激励は中断されるが、10秒間スタックは保持される。ほかの応援団に激励はできない。<br>
+<br>
+・選択されたサバイバーは激励スタック数を消費することで、小躍り、熱血を使用できる。<br>
+<br>
+<span class="bold-text">小躍り</span><br>
+激励スタックを5消費して1.5秒間移動速度50％上昇、その後0.75秒間移動速度50％低下。<br>
+<br>
+<span class="bold-text">熱血</span><br>
+・サバイバーがダウンしたとき、3秒以内に激励スタックを28消費して１秒間移動速度50％上昇し、１ダメージ分回復することができる。<br>
+<br>
+・熱血使用後、所持している激励スタックはすべて消失する。同じキャラが熱血を発動するときに必要なスタックは2/3回目で38/43と増加する。
+</div>
+            <div class="trait-item"><h3>特質3:機械音痴</h3>
+・解読速度10％低下
+</div>
+
+ </div>
+
+    
+    <!-- 特徴の説明 -->
+    <div class="features-box">
+        <h3>特徴</h3>
+    <span class="bold-text">応援</span>で味方を補助近くの補助、遠方からの補助の両方できる<br>
+<span class="bold-text">奮起</span>により<span class="underline-text">味方のクールタイムがなくせる</span>唯一のサバイバー<br>
+鼓舞は<span class="blue-text">無限アイテム</span>のため乱用できる。<br>
+<span class="bold-text">激励</span>での補佐が特に強力
+    </div>
+</section>
+
+	<!-- 基本的立ち回り方セクション -->
+        <section id="strategy">
+        <h2>基本的な立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 追われた時</h3>
+            <p>ハンターから攻撃をもらう前に<span class="bold-text">鼓舞</span>を使い、<span class="bold-text">鼓舞</span>の減速時には板間、窓まで行って減速の時間を有効活用しよう！<br>
+距離詰めハンターでない場合は、<span class="bold-text">奮起</span>を使い<span class="bold-text">鼓舞</span>を<span class="highlight-text">2回連続</span>つかって距離をとるのも強い
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>2. 追われない時</h3>
+            <p>解読に専念しよう！<br>
+新規暗号機までの道は<span class="bold-text">鼓舞</span>を使って移動しよう。<br>
+解読に担保がある場合や、上振れを狙いにいく場面など状況を見て<span class="bold-text">激励</span>で補佐を入れよう。<br>
+また<span class="blue-text">危機一髪採用</span>の時は、救助後の<span class="bold-text">劇励</span>して補佐を入れよう！
+</p>
+        </div>
+    </section>
+        </section>
+　　<section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>記者の応用スキル</h2>
+
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>忍者風船救助</h3>
+        <p>板間で風船状態の時に幻影で板を当てることで風船から降ろすことができる</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+</div>
+</section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="https://example.com" class="article-link">
+            <div class="article-img">
+                <img src="character.jpg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Your custom footer goes here -->
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

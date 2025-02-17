@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質と特徴</a></li>
+            <li><a href="#strategy">基本的立ち回り方</a></li>
+            <li><a href="#advanced">騎士の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="character_image.jpg" alt="キャラの写真" class="character-image">
+            <h2>騎士の評価</h2>
+            <p>ハンターの行動をすべてを制御
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質と特徴</h2>
+    
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:人物同化</h3>
+・「騎士」は違う人物を演じることに夢中だ。演繹中は本物の騎士と同化作用が起こり、ヘルメットを被っている間騎士専用の特質を得る。
+</div>
+
+            <div class="trait-item"><h3>特質2:戦術予見</h3>
+・「騎士」は13メートル以内で最も近くにいるハンターがその後8秒以内に行う2回の行動を予測することができる。予測に正解するとハンターに戦術制約を与え、自身を奮起させて2秒間持続する40%の移動速度上昇効果を獲得する。<br>
+<br>
+・ハンターに他の追撃対象がいる時、そのハンターに対する「騎士」の戦術予見時間が8秒から5秒に減少し、攻撃とスキルに対する制約効果が弱まる。
+</div>
+            <div class="trait-item"><h3>特質3:戦術制約</h3>
+攻撃：<br>
+ハンターの意図的な通常攻撃または溜め攻撃が予測された場合、今回の攻撃は阻止され、ハンターは自身の武器を見直し始める。<br>
+<br>
+スキル：<br>
+ハンターの意図的なスキル使用が予測された場合、今回のスキル発動は阻止され、その後6秒間スキルが使用できなくなる。<br>
+<br>
+現状維持：<br>
+ハンターが2段階目の戦術予見期間中に攻撃またはスキルを使用しなかった場合、それを予測した「騎士」は意志を固め、その後4秒以内に受ける次のダメージが通常攻撃の半分まで減少する。<br>
+<br>
+・「騎士」が仲間を救援する際、発動済みの戦術予見が無効になる。
+</div>
+            <div class="trait-item"><h3>特質4:栄誉共鳴</h3>
+・「騎士」は8メートル以内でロケットチェアに拘束されたサバイバーと栄誉共鳴を行うことができる。<br>
+<br>
+・「騎士」とロケットチェアの間にオブジェクトがある場合、オブジェクトは貫通できない。<br>
+<br>
+・ロケットチェアに拘束されたサバイバーが共鳴を受けると、ロケットチェアから脱出することができる。<br>
+<br>
+・栄誉共鳴での救助モーション中に通常攻撃及び通常攻撃扱いされる攻撃を食らうと恐怖の一撃となる。栄誉共鳴での救助に回数制限はない。<br>
+<br>
+・初めて栄誉共鳴が完了すると、双方がその後8秒以内に受ける次のダメージがハンターの通常攻撃の半分まで減少するを獲得する。
+</div>
+            <div class="trait-item"><h3>特質5:機械音痴</h3>
+・暗号機解読速度が15%低下する。
+</div>
+
+ </div>
+
+    
+    <!-- 特徴の説明 -->
+    <div class="features-box">
+        <h3>特徴</h3>
+   ハンターの行動を予測して攻撃、スキルを<span class="red-text">封鎖</span>できる。<br>
+救助の際双方が<span class="underline-text">通常攻撃の半分に抑えられる</span>のは最もの強み<br>
+<span class="blue-text">危機一髪</span>採用なしでも良いところが強い
+    </div>
+</section>
+
+	<!-- 基本的立ち回り方セクション -->
+        <section id="strategy">
+        <h2>基本的な立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 追われた時</h3>
+            <p><span class="bold-text">ヘルメット</span>を使って延ばそう！<br>
+攻撃とスキルの読みあいが発生するので、ハンターが今の状況で使いたい方を選択しよう！<br>
+上手いハンターの場合スキルを<span class="red-text">空打ち</span>してくるので気を付けよう！
+
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>2. 追われない時</h3>
+            <p>解読をする。<br>
+救助に行く場面では、距離詰めのアイテムではないので、<span class="underline-text">早めに救助</span>に行こう！<br>
+また、中間で見つかった場合<span class="bold-text">ヘルメット</span>を使って近づこう！<br>
+<span class="red-text">救助恐怖</span>だけ気を付けておこう！<br>
+また<span class="blue-text">ダブルチェイス</span>の時は、<span class="bold-text">ヘルメット</span>使って補佐してあげよう。
+</p>
+        </div>
+    </section>
+        </section>
+　　<section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>騎士の応用スキル</h2>
+
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>偽救助モーション</h3>
+        <p>しゃがみを使うことによって、救助したように思わせる</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+</div>
+</section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="https://example.com" class="article-link">
+            <div class="article-img">
+                <img src="character.jpg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Your custom footer goes here -->
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

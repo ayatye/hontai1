@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質と特徴</a></li>
+            <li><a href="#strategy">基本的立ち回り方</a></li>
+            <li><a href="#advanced">ポストマンの応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="character_image.jpg" alt="キャラの写真" class="character-image">
+            <h2>ポストマンの評価</h2>
+            <p>手紙で全サバイバーを補佐
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質と特徴</h2>
+    
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:メール</h3>
+・ポストマンはメールを自分で見るかほかのサバイバーに送ることができる。
+送信できる手紙は6種類からランダムで3種類選出され、送信する度に次に送信できる手紙の種類が一定のルールに準じてリセットされる。手紙による効果が継続している状態で新たな手紙を受け取ると効果は上書きされる。<br>
+<br>
+・メールの種類によってさまざまなバフを獲得できる。クールタイムは60秒<br>
+<br>
+・切迫の手紙　15秒移動速度10％アップ<br>
+・決別の手紙　90秒内に板窓を乗り越えると1度だけ3秒間移動速度40％アップ
+  (『膝蓋腱反射』を習得していた場合、膝蓋腱反射が優先して発動する。)<br>
+・冷静の手紙　30秒間解読速度10％アップ<br>
+・勇敢の手紙　180秒間救助速度30％アップ。椅子付近の移動速度10％アップ<br>
+・激励の手紙　別の手紙を受け取るまで永続的に板窓操作10％<br>
+・希望の手紙　120秒間ゲート開門速度15％上昇。ハッチの場所がわかる<br>
+<br>
+行動不能状態であると送信は失敗する。
+</div>
+            <div class="trait-item"><h3>特質2:配達犬</h3>
+・配達犬はハンターにとびかかることができ、成功するとハンターを1秒間足止めし、その後2.5秒間移動速度35%低下させる。失敗しても障害物に当たるか20mまで行くと、ポストマンのもとに戻ってきその間にハンターがいてもとびかかることができる。成功で45秒、失敗で16秒のクールタイム
+</div>
+            <div class="trait-item"><h3>特質3:共感</h3>
+・メールを受け取ったサバイバーと同じ効果を得る
+</div>
+            <div class="trait-item"><h3>特質4:期待</h3>
+・ポストマンは自分に手紙を送ることで即座に手紙の効果を得ることができる。
+</div>
+ </div>
+
+    
+    <!-- 特徴の説明 -->
+    <div class="features-box">
+        <h3>特徴</h3>
+       中国本土でよく見られるサバイバー<br>
+とにかく能力は強い！<br>
+しかしチェイスするとなると、<span class="bold-text">犬</span>と<span class="bold-text">手紙</span>だけなので、チェイス材料には少し不足<br>
+練度が上達したポストマンは止めようがない。
+    </div>
+</section>
+
+	<!-- 基本的立ち回り方セクション -->
+        <section id="strategy">
+        <h2>基本的な立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 追われた時</h3>
+            <p>追われるとわかった時、すぐに手紙を渡そう！<br>
+<span class="bold-text">切迫</span>と<span class="bold-text">決別</span>と<span class="bold-text">激励</span>のどれかを送ろう！<br>
+また、<span class="bold-text">配達犬</span>をかませることで<span class="blue-text">スタン</span>、<span class="blue-text">減速効果</span>があるので、狙っていこう！
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>2. 追われない時</h3>
+            <p>解読に専念しよう！<br>
+試合開始時、<span class="blue-text">救助職</span>に<span class="bold-text">冷静の手紙</span>を渡そう！<br>
+<span class="bold-text">冷静の手紙</span>がない場合は、<span class="blue-text">救助職</span>にあらかじめ<span class="bold-text">勇敢の手紙</span>を送るか、ファーストチェイス引いてるサバイバーに<span class="bold-text">切迫</span>、<span class="bold-text">決別</span>、<span class="bold-text">激励の手紙</span>を送ろう！
+</p>
+        </div>
+    </section>
+        </section>
+　　<section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>ポストマンの応用スキル</h2>
+
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>風船救助</h3>
+        <p>風船時に犬をかませて救助</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+</div>
+</section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="https://example.com" class="article-link">
+            <div class="article-img">
+                <img src="character.jpg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Your custom footer goes here -->
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

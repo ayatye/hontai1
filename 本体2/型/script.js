@@ -1,6 +1,10 @@
 // サバイバーとハンターのリスト
 const survivors = [
-  { name: "幸運児", url: "../images/kyaragazou/sabaibagazou/幸運児.jpeg" },
+  {
+    name: "幸運児",
+    url: "../images/kyaragazou/sabaibagazou/幸運児.jpeg",
+    link: "幸運児.html",
+  },
   { name: "医師", url: "../images/kyaragazou/sabaibagazou/医師.jpeg" },
   { name: "弁護士", url: "../images/kyaragazou/sabaibagazou/弁護士.jpeg" },
   { name: "空軍", url: "../images/kyaragazou/sabaibagazou/空軍.jpeg" },
