@@ -5,102 +5,313 @@ const survivors = [
     url: "本体2/images/kyaragazou/sabaibagazou/幸運児.jpeg",
     link: "本体2/サバイバー/幸運児/幸運児.html",
   },
-  { name: "医師", url: "本体2/images/kyaragazou/sabaibagazou/医師.jpeg" },
-  { name: "弁護士", url: "本体2/images/kyaragazou/sabaibagazou/弁護士.jpeg" },
-  { name: "空軍", url: "本体2/images/kyaragazou/sabaibagazou/空軍.jpeg" },
-  { name: "庭師", url: "本体2/images/kyaragazou/sabaibagazou/庭師.jpeg" },
-  { name: "泥棒", url: "本体2/images/kyaragazou/sabaibagazou/泥棒.jpeg" },
-  { name: "傭兵", url: "本体2/images/kyaragazou/sabaibagazou/傭兵.jpeg" },
-  { name: "調香師", url: "images/kyaragazou/sabaibagazou/調香師.jpeg" },
-  { name: "占い師", url: "images/kyaragazou/sabaibagazou/占い師.jpeg" },
-  { name: "マジシャン", url: "images/kyaragazou/sabaibagazou/マジシャン.jpeg" },
-  { name: "カウボーイ", url: "images/kyaragazou/sabaibagazou/カウボーイ.jpeg" },
-  { name: "冒険家", url: "images/kyaragazou/sabaibagazou/冒険家.jpeg" },
-  { name: "祭司", url: "images/kyaragazou/sabaibagazou/祭司.jpeg" },
-  { name: "機械技師", url: "images/kyaragazou/sabaibagazou/機械技師.jpeg" },
-  { name: "オフェンス", url: "images/kyaragazou/sabaibagazou/オフェンス.jpeg" },
-  { name: "心眼", url: "images/kyaragazou/sabaibagazou/心眼.jpeg" },
-  { name: "踊り子", url: "images/kyaragazou/sabaibagazou/踊り子.jpeg" },
-  { name: "納棺師", url: "images/kyaragazou/sabaibagazou/納棺師.jpeg" },
-  { name: "探鉱者", url: "images/kyaragazou/sabaibagazou/探鉱者.jpeg" },
-  { name: "呪術師", url: "images/kyaragazou/sabaibagazou/呪術師.jpeg" },
-  { name: "野人", url: "images/kyaragazou/sabaibagazou/野人.jpeg" },
-  { name: "曲芸師", url: "images/kyaragazou/sabaibagazou/曲芸師.jpeg" },
-  { name: "一等航海士", url: "images/kyaragazou/sabaibagazou/一等航海士.jpeg" },
+  {
+    name: "医師",
+    url: "本体2/images/kyaragazou/sabaibagazou/医師.jpeg",
+    link: "本体2/サバイバー/医師/医師.html",
+  },
+  {
+    name: "弁護士",
+    url: "本体2/images/kyaragazou/sabaibagazou/弁護士.jpeg",
+    link: "本体2/サバイバー/弁護士/弁護士.html",
+  },
+  {
+    name: "空軍",
+    url: "本体2/images/kyaragazou/sabaibagazou/空軍.jpeg",
+    link: "本体2/サバイバー/空軍/空軍.html",
+  },
+  {
+    name: "庭師",
+    url: "本体2/images/kyaragazou/sabaibagazou/庭師.jpeg",
+    link: "本体2/サバイバー/庭師/庭師.html",
+  },
+  {
+    name: "泥棒",
+    url: "本体2/images/kyaragazou/sabaibagazou/泥棒.jpeg",
+    link: "本体2/サバイバー/泥棒/泥棒.html",
+  },
+  {
+    name: "傭兵",
+    url: "本体2/images/kyaragazou/sabaibagazou/傭兵.jpeg",
+    link: "本体2/サバイバー/傭兵/傭兵.html",
+  },
+  {
+    name: "調香師",
+    url: "本体2/images/kyaragazou/sabaibagazou/調香師.jpeg",
+    link: "本体2/サバイバー/調香師/調香師.html",
+  },
+  {
+    name: "占い師",
+    url: "本体2/images/kyaragazou/sabaibagazou/占い師.jpeg",
+    link: "本体2/サバイバー/占い師/占い師.html",
+  },
+  {
+    name: "マジシャン",
+    url: "本体2/images/kyaragazou/sabaibagazou/マジシャン.jpeg",
+    link: "本体2/サバイバー/マジシャン/マジシャン.html",
+  },
+  {
+    name: "カウボーイ",
+    url: "本体2/images/kyaragazou/sabaibagazou/カウボーイ.jpeg",
+    link: "本体2/サバイバー/カウボーイ/カウボーイ.html",
+  },
+  {
+    name: "冒険家",
+    url: "本体2/images/kyaragazou/sabaibagazou/冒険家.jpeg",
+    link: "本体2/サバイバー/冒険家/冒険家.html",
+  },
+  {
+    name: "祭司",
+    url: "本体2/images/kyaragazou/sabaibagazou/祭司.jpeg",
+    link: "本体2/サバイバー/祭司/祭司.html",
+  },
+  {
+    name: "機械技師",
+    url: "本体2/images/kyaragazou/sabaibagazou/機械技師.jpeg",
+    link: "本体2/サバイバー/機械技師/機械技師.html",
+  },
+  {
+    name: "オフェンス",
+    url: "本体2/images/kyaragazou/sabaibagazou/オフェンス.jpeg",
+    link: "本体2/サバイバー/オフェンス/オフェンス.html",
+  },
+  {
+    name: "心眼",
+    url: "本体2/images/kyaragazou/sabaibagazou/心眼.jpeg",
+    link: "本体2/サバイバー/心眼/心眼.html",
+  },
+  {
+    name: "踊り子",
+    url: "本体2/images/kyaragazou/sabaibagazou/踊り子.jpeg",
+    link: "本体2/サバイバー/踊り子/踊り子.html",
+  },
+  {
+    name: "納棺師",
+    url: "本体2/images/kyaragazou/sabaibagazou/納棺師.jpeg",
+    link: "本体2/サバイバー/納棺師/納棺師.html",
+  },
+  {
+    name: "探鉱者",
+    url: "本体2/images/kyaragazou/sabaibagazou/探鉱者.jpeg",
+    link: "本体2/サバイバー/探鉱者/探鉱者.html",
+  },
+  {
+    name: "呪術師",
+    url: "本体2/images/kyaragazou/sabaibagazou/呪術師.jpeg",
+    link: "本体2/サバイバー/呪術師/呪術師.html",
+  },
+  {
+    name: "野人",
+    url: "本体2/images/kyaragazou/sabaibagazou/野人.jpeg",
+    link: "本体2/サバイバー/野人/野人.html",
+  },
+  {
+    name: "曲芸師",
+    url: "本体2/images/kyaragazou/sabaibagazou/曲芸師.jpeg",
+    link: "本体2/サバイバー/曲芸師/曲芸師.html",
+  },
+  {
+    name: "一等航海士",
+    url: "本体2/images/kyaragazou/sabaibagazou/一等航海士.jpeg",
+    link: "本体2/サバイバー/一等航海士/一等航海士.html",
+  },
   {
     name: "バーメイド",
-    url: "images/kyaragazou/sabaibagazou/バーメイド.jpeg",
+    url: "本体2/images/kyaragazou/sabaibagazou/バーメイド.jpeg",
+    link: "本体2/サバイバー/バーメイド/バーメイド.html",
   },
-  { name: "ポストマン", url: "images/kyaragazou/sabaibagazou/ポストマン.jpeg" },
-  { name: "墓守", url: "images/kyaragazou/sabaibagazou/墓守.jpeg" },
-  { name: "囚人", url: "images/kyaragazou/sabaibagazou/囚人.jpeg" },
-  { name: "昆虫学者", url: "images/kyaragazou/sabaibagazou/昆虫学者.jpeg" },
-  { name: "画家", url: "images/kyaragazou/sabaibagazou/画家.jpeg" },
-  { name: "バッツマン", url: "images/kyaragazou/sabaibagazou/バッツマン.jpeg" },
-  { name: "玩具職人", url: "images/kyaragazou/sabaibagazou/玩具職人.jpeg" },
-  { name: "患者", url: "images/kyaragazou/sabaibagazou/患者.jpeg" },
-  { name: "心理学者", url: "images/kyaragazou/sabaibagazou/心理学者.jpeg" },
-  { name: "小説家", url: "images/kyaragazou/sabaibagazou/小説家.jpeg" },
-  { name: "少女", url: "images/kyaragazou/sabaibagazou/少女.jpeg" },
-  { name: "泣きピエロ", url: "images/kyaragazou/sabaibagazou/泣きピエロ.jpeg" },
-  { name: "教授", url: "images/kyaragazou/sabaibagazou/教授.jpeg" },
-  { name: "骨董商", url: "images/kyaragazou/sabaibagazou/骨董商.jpeg" },
-  { name: "作曲家", url: "images/kyaragazou/sabaibagazou/作曲家.jpeg" },
-  { name: "記者", url: "images/kyaragazou/sabaibagazou/記者.jpeg" },
+  {
+    name: "ポストマン",
+    url: "本体2/images/kyaragazou/sabaibagazou/ポストマン.jpeg",
+    link: "本体2/サバイバー/ポストマン/ポストマン.html",
+  },
+  {
+    name: "墓守",
+    url: "本体2/images/kyaragazou/sabaibagazou/墓守.jpeg",
+    link: "本体2/サバイバー/墓守/墓守.html",
+  },
+  {
+    name: "囚人",
+    url: "本体2/images/kyaragazou/sabaibagazou/囚人.jpeg",
+    link: "本体2/サバイバー/囚人/囚人.html",
+  },
+  {
+    name: "昆虫学者",
+    url: "本体2/images/kyaragazou/sabaibagazou/昆虫学者.jpeg",
+    link: "本体2/サバイバー/昆虫学者/昆虫学者.html",
+  },
+  {
+    name: "画家",
+    url: "本体2/images/kyaragazou/sabaibagazou/画家.jpeg",
+    link: "本体2/サバイバー/画家/画家.html",
+  },
+  {
+    name: "バッツマン",
+    url: "本体2/images/kyaragazou/sabaibagazou/バッツマン.jpeg",
+    link: "本体2/サバイバー/バッツマン/バッツマン.html",
+  },
+  {
+    name: "玩具職人",
+    url: "本体2/images/kyaragazou/sabaibagazou/玩具職人.jpeg",
+    link: "本体2/サバイバー/玩具職人/玩具職人.html",
+  },
+  {
+    name: "患者",
+    url: "本体2/images/kyaragazou/sabaibagazou/患者.jpeg",
+    link: "本体2/サバイバー/患者/患者.html",
+  },
+  {
+    name: "心理学者",
+    url: "本体2/images/kyaragazou/sabaibagazou/心理学者.jpeg",
+    link: "本体2/サバイバー/心理学者/心理学者.html",
+  },
+  {
+    name: "小説家",
+    url: "本体2/images/kyaragazou/sabaibagazou/小説家.jpeg",
+    link: "本体2/サバイバー/小説家/小説家.html",
+  },
+  {
+    name: "少女",
+    url: "本体2/images/kyaragazou/sabaibagazou/少女.jpeg",
+    link: "本体2/サバイバー/少女/少女.html",
+  },
+  {
+    name: "泣きピエロ",
+    url: "本体2/images/kyaragazou/sabaibagazou/泣きピエロ.jpeg",
+    link: "本体2/サバイバー/泣きピエロ/泣きピエロ.html",
+  },
+  {
+    name: "教授",
+    url: "本体2/images/kyaragazou/sabaibagazou/教授.jpeg",
+    link: "本体2/サバイバー/教授/教授.html",
+  },
+  {
+    name: "骨董商",
+    url: "本体2/images/kyaragazou/sabaibagazou/骨董商.jpeg",
+    link: "本体2/サバイバー/骨董商/骨董商.html",
+  },
+  {
+    name: "作曲家",
+    url: "本体2/images/kyaragazou/sabaibagazou/作曲家.jpeg",
+    link: "本体2/サバイバー/作曲家/作曲家.html",
+  },
+  {
+    name: "記者",
+    url: "本体2/images/kyaragazou/sabaibagazou/記者.jpeg",
+    link: "本体2/サバイバー/記者/記者.html",
+  },
   {
     name: "航空エンジニア",
-    url: "images/kyaragazou/sabaibagazou/航空エンジニア.jpeg",
+    url: "本体2/images/kyaragazou/sabaibagazou/航空エンジニア.jpeg",
+    link: "本体2/サバイバー/航空エンジニア/航空エンジニア.html",
   },
-  { name: "応援団", url: "images/kyaragazou/sabaibagazou/応援団.jpeg" },
-  { name: "人形師", url: "images/kyaragazou/sabaibagazou/人形師.jpeg" },
-  { name: "火災調査員", url: "images/kyaragazou/sabaibagazou/火災調査員.jpeg" },
+  {
+    name: "応援団",
+    url: "本体2/images/kyaragazou/sabaibagazou/応援団.jpeg",
+    link: "本体2/サバイバー/応援団/応援団.html",
+  },
+  {
+    name: "人形師",
+    url: "本体2/images/kyaragazou/sabaibagazou/人形師.jpeg",
+    link: "本体2/サバイバー/人形師/人形師.html",
+  },
+  {
+    name: "火災調査員",
+    url: "本体2/images/kyaragazou/sabaibagazou/火災調査員.jpeg",
+    link: "本体2/サバイバー/火災調査員/火災調査員.html",
+  },
   {
     name: "レディファウロ",
-    url: "images/kyaragazou/sabaibagazou/レディファウロ.jpeg",
+    url: "本体2/images/kyaragazou/sabaibagazou/レディファウロ.jpeg",
+    link: "本体2/サバイバー/レディファウロ/レディファウロ.html",
   },
-  { name: "騎士", url: "images/kyaragazou/sabaibagazou/騎士.jpeg" },
+  {
+    name: "騎士",
+    url: "本体2/images/kyaragazou/sabaibagazou/騎士.jpeg",
+    link: "本体2/サバイバー/騎士/騎士.html",
+  },
 ];
 
 const hunters = [
-  { name: "復讐者", url: "images/kyaragazou/hanntagazou/復讐者.jpeg" },
-  { name: "道化師", url: "images/kyaragazou/hanntagazou/道化師.jpeg" },
-  { name: "断罪狩人", url: "images/kyaragazou/hanntagazou/断罪狩人.jpeg" },
-  { name: "リッパー", url: "images/kyaragazou/hanntagazou/リッパー.jpeg" },
-  { name: "結魂者", url: "images/kyaragazou/hanntagazou/結魂者.jpeg" },
-  { name: "芸者", url: "images/kyaragazou/hanntagazou/芸者.jpeg" },
-  { name: "白黒無常", url: "images/kyaragazou/hanntagazou/白黒無常.jpeg" },
-  { name: "写真家", url: "images/kyaragazou/hanntagazou/写真家.jpeg" },
-  { name: "狂眼", url: "images/kyaragazou/hanntagazou/狂眼.jpeg" },
-  { name: "黄衣の王", url: "images/kyaragazou/hanntagazou/黄衣の王.jpeg" },
-  { name: "夢の魔女", url: "images/kyaragazou/hanntagazou/夢の魔女.jpeg" },
-  { name: "泣き虫", url: "images/kyaragazou/hanntagazou/泣き虫.jpeg" },
-  { name: "魔トカゲ", url: "images/kyaragazou/hanntagazou/魔トカゲ.jpeg" },
-  { name: "血の女王", url: "images/kyaragazou/hanntagazou/マリィ.jpeg" },
+  {
+    name: "復讐者",
+    url: "本体2/images/kyaragazou/hanntagazou/復讐者.jpeg",
+    link: "本体2/サバイバー/バーメイド/バーメイド.html",
+  },
+  { name: "道化師", url: "本体2/images/kyaragazou/hanntagazou/道化師.jpeg" },
+  {
+    name: "断罪狩人",
+    url: "本体2/images/kyaragazou/hanntagazou/断罪狩人.jpeg",
+  },
+  {
+    name: "リッパー",
+    url: "本体2/images/kyaragazou/hanntagazou/リッパー.jpeg",
+  },
+  { name: "結魂者", url: "本体2/images/kyaragazou/hanntagazou/結魂者.jpeg" },
+  { name: "芸者", url: "本体2/images/kyaragazou/hanntagazou/芸者.jpeg" },
+  {
+    name: "白黒無常",
+    url: "本体2/images/kyaragazou/hanntagazou/白黒無常.jpeg",
+  },
+  { name: "写真家", url: "本体2/images/kyaragazou/hanntagazou/写真家.jpeg" },
+  { name: "狂眼", url: "本体2/images/kyaragazou/hanntagazou/狂眼.jpeg" },
+  {
+    name: "黄衣の王",
+    url: "本体2/images/kyaragazou/hanntagazou/黄衣の王.jpeg",
+  },
+  {
+    name: "夢の魔女",
+    url: "本体2/images/kyaragazou/hanntagazou/夢の魔女.jpeg",
+  },
+  { name: "泣き虫", url: "本体2/images/kyaragazou/hanntagazou/泣き虫.jpeg" },
+  {
+    name: "魔トカゲ",
+    url: "本体2/images/kyaragazou/hanntagazou/魔トカゲ.jpeg",
+  },
+  { name: "血の女王", url: "本体2/images/kyaragazou/hanntagazou/マリィ.jpeg" },
   {
     name: "ガードNo.26",
-    url: "images/kyaragazou/hanntagazou/ガードNO.26.jpeg",
+    url: "本体2/images/kyaragazou/hanntagazou/ガードNO.26.jpeg",
   },
-  { name: "使徒", url: "images/kyaragazou/hanntagazou/使徒.jpeg" },
+  { name: "使徒", url: "本体2/images/kyaragazou/hanntagazou/使徒.jpeg" },
   {
     name: "ヴァイオリニスト",
-    url: "images/kyaragazou/hanntagazou/ヴァイオリニスト.jpeg",
+    url: "本体2/images/kyaragazou/hanntagazou/ヴァイオリニスト.jpeg",
   },
-  { name: "彫刻家", url: "images/kyaragazou/hanntagazou/彫刻師.jpeg" },
-  { name: "アンデッド", url: "images/kyaragazou/hanntagazou/アンデット.jpeg" },
-  { name: "破輪", url: "images/kyaragazou/hanntagazou/破輪.jpeg" },
-  { name: "漁師", url: "images/kyaragazou/hanntagazou/漁師.jpeg" },
-  { name: "蝋人形師", url: "images/kyaragazou/hanntagazou/蝋人形師.jpeg" },
-  { name: "悪夢", url: "images/kyaragazou/hanntagazou/悪夢.jpeg" },
-  { name: "書記官", url: "images/kyaragazou/hanntagazou/書記官.jpeg" },
-  { name: "隠者", url: "images/kyaragazou/hanntagazou/隠者.jpeg" },
-  { name: "夜の番人", url: "images/kyaragazou/hanntagazou/夜の番人.jpeg" },
+  { name: "彫刻家", url: "本体2/images/kyaragazou/hanntagazou/彫刻師.jpeg" },
+  {
+    name: "アンデッド",
+    url: "本体2/images/kyaragazou/hanntagazou/アンデット.jpeg",
+  },
+  { name: "破輪", url: "本体2/images/kyaragazou/hanntagazou/破輪.jpeg" },
+  { name: "漁師", url: "本体2/images/kyaragazou/hanntagazou/漁師.jpeg" },
+  {
+    name: "蝋人形師",
+    url: "本体2/images/kyaragazou/hanntagazou/蝋人形師.jpeg",
+  },
+  { name: "悪夢", url: "本体2/images/kyaragazou/hanntagazou/悪夢.jpeg" },
+  { name: "書記官", url: "本体2/images/kyaragazou/hanntagazou/書記官.jpeg" },
+  { name: "隠者", url: "本体2/images/kyaragazou/hanntagazou/隠者.jpeg" },
+  {
+    name: "夜の番人",
+    url: "本体2/images/kyaragazou/hanntagazou/夜の番人.jpeg",
+  },
   {
     name: "フールズ・ゴールド",
-    url: "images/kyaragazou/hanntagazou/フールズゴールド.jpeg",
+    url: "本体2/images/kyaragazou/hanntagazou/フールズゴールド.jpeg",
   },
-  { name: "時空の影", url: "images/kyaragazou/hanntagazou/時空の影.jpeg" },
-  { name: "足苗の羊", url: "images/kyaragazou/hanntagazou/足萎えの羊.jpeg" },
-  { name: "フラバルー", url: "images/kyaragazou/hanntagazou/フラバルー.jpeg" },
+  {
+    name: "時空の影",
+    url: "本体2/images/kyaragazou/hanntagazou/時空の影.jpeg",
+  },
+  {
+    name: "足苗の羊",
+    url: "本体2/images/kyaragazou/hanntagazou/足萎えの羊.jpeg",
+  },
+  {
+    name: "フラバルー",
+    url: "本体2/images/kyaragazou/hanntagazou/フラバルー.jpeg",
+  },
 ];
 
 // 仮のアイコン画像URL
@@ -144,13 +355,17 @@ hunters.forEach((hunter) => {
   img.src = hunter.url;
 
   const a = document.createElement("a");
-  a.href = hunter.url;
-  a.textContent = hunter.name;
+  a.href = hunter.link;
 
   // 矢印を作成
   const arrow = document.createElement("span");
   arrow.classList.add("arrow");
   arrow.textContent = ">";
+
+  // 名前の部分もリンクでラップ
+  const name = document.createElement("span");
+  name.textContent = hunter.name;
+  a.appendChild(name);
 
   li.appendChild(img);
   li.appendChild(a);

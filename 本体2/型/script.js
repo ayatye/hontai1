@@ -3,7 +3,7 @@ const survivors = [
   {
     name: "幸運児",
     url: "../images/kyaragazou/sabaibagazou/幸運児.jpeg",
-    link: "幸運児.html",
+    link: "../サバイバー/幸運児/幸運児.html",
   },
   { name: "医師", url: "../images/kyaragazou/sabaibagazou/医師.jpeg" },
   { name: "弁護士", url: "../images/kyaragazou/sabaibagazou/弁護士.jpeg" },
@@ -147,13 +147,17 @@ survivors.forEach((survivor) => {
   img.src = survivor.url;
 
   const a = document.createElement("a");
-  a.href = survivor.url;
-  a.textContent = survivor.name;
+  a.href = survivor.link;
 
   // 矢印を作成
   const arrow = document.createElement("span");
   arrow.classList.add("arrow");
   arrow.textContent = ">";
+
+  // 名前の部分もリンクでラップ
+  const name = document.createElement("span");
+  name.textContent = survivor.name;
+  a.appendChild(name);
 
   li.appendChild(img);
   li.appendChild(a);
@@ -171,13 +175,17 @@ hunters.forEach((hunter) => {
   img.src = hunter.url;
 
   const a = document.createElement("a");
-  a.href = hunter.url;
-  a.textContent = hunter.name;
+  a.href = hunter.link;
 
   // 矢印を作成
   const arrow = document.createElement("span");
   arrow.classList.add("arrow");
   arrow.textContent = ">";
+
+  // 名前の部分もリンクでラップ
+  const name = document.createElement("span");
+  name.textContent = hunter.name;
+  a.appendChild(name);
 
   li.appendChild(img);
   li.appendChild(a);

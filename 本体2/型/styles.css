@@ -145,6 +145,24 @@ h2 {
   border-radius: 8px;
 }
 
+/* 各リストアイテム */
+#survivor-list li,
+#hunter-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#survivor-list li a,
+#hunter-list li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 100%; /* リストアイテム内にフル幅で広がる */
+}
+
 li:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
