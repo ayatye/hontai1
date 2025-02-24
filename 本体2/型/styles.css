@@ -393,6 +393,9 @@ footer p {
 }
 
 @media (max-width: 1210px) {
+  body {
+    line-height: 1.4;
+  }
   .wrapper {
     flex-direction: column; /* レイアウトを縦方向に */
     padding-right: 3cm;
@@ -401,6 +404,9 @@ footer p {
 
   .sidebar {
     max-height: 800px;
+    width: 100%;
+    border-left: none;
+    float: none; /* 浮かせない */
   }
 
   .custom-line {
@@ -419,12 +425,6 @@ footer p {
       #333
     );
     background-size: 8px 3px;
-  }
-  .sidebar {
-    width: 100%;
-    border-left: none;
-    float: none; /* 浮かせない */
-    margin: 0;
   }
 }
 
@@ -520,6 +520,12 @@ footer p {
   /* ホバーしたときの効果 */
   .c-hamburger-menu__list-item:hover {
     background-color: #007bff;
+  }
+
+  .sidebar {
+    margin-right: 1.5cm; /* コメントセクションとの余白を追加 */
+    margin-left: 0;
+    padding: 10px;
   }
 
   .footer-links {
