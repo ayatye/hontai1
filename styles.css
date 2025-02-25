@@ -60,14 +60,24 @@ nav {
   font-weight: bold;
   width: 250px;
   padding-right: 50px;
-  display: flex;
-  align-items: center;
 }
 
 .logo-photo {
   width: 40px; /* 写真のサイズ調整 */
   height: 40px;
   margin-right: 10px; /* ロゴとの間にスペースを追加 */
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo a:hover {
+  color: inherit; /* ホバー時も親要素の色を継承 */
 }
 
 /* ハンバーガーメニュー */
