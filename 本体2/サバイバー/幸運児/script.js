@@ -450,7 +450,7 @@ hunters.forEach((hunter) => {
 });
 
 const MAX_COMMENTS = 100; // 最大表示コメント数
-const historyKey = "commentHistory"; // コメント履歴のローカルストレージキー
+const historyKey = "commentHistory1"; // コメント履歴のローカルストレージキー
 
 // ローカルストレージからコメント履歴を取得
 let commentHistory = JSON.parse(localStorage.getItem(historyKey)) || [];
