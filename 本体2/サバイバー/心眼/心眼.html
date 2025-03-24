@@ -8,7 +8,64 @@
 </head>
 <body>
     <!-- Your custom header goes here -->
+    <header>
+        <nav-gert>
+          <div class="logo">
+            <a href="../../../index.html">
+              <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
+              <h1>第五録</h1>
+            </a>
+          </div>
+          <header class="c-header c-hamburger-menu">
+            <input
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+              class="c-hamburger-menu__input"
+            />
+            <label for="hamburger" class="c-hamburger-menu__bg"></label>
+            <ul class="c-header__list c-hamburger-menu__list">
+              <li class="c-header__list-item">
+                <a href="../../../index.html" class="c-header__list-link">ホーム</a>
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../最新情報/最新情報.html" class="c-header__list-link"
+                  >最新情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../情報/情報.html" class="c-header__list-link"
+                  >キャラ情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a
+                  href="../../お問い合わせ/お問合せフォーム.html"
+                  class="c-header__list-link"
+                  >お問い合わせ</a
+                >
+              </li>
+            </ul>
+            <div id="overlay"></div>
+            <nav-gert id="burger-menu">
+              <input type="checkbox" id="hamburger" style="display: none" />
+              <label for="hamburger" class="c-hamburger-menu__button">
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+              </label>
+            </nav-gert>
+          </header>
+        </nav-gert>
+      </header>
 
+      <section class="banner">
+        <h2>第五人格最新攻略情報</h2>
+        <p>第五人格の様々の情報が盛りだくさん！！</p>
+      </section>
+
+      <div class="wrapper">
+        <div class="konntent">
     <nav>
         <h2>目次</h2>
         <ul>
@@ -23,7 +80,7 @@
     <main>
 	<!-- キャラ評価セクション -->
         <section id="evaluation">
-	    <img src="character_image.jpg" alt="キャラの写真" class="character-image">
+	    <img src="../../images/kyaragazou/sabaibagazou/心眼.jpeg" alt="キャラの写真" class="character-image">
             <h2>心眼の評価</h2>
             <p>視界が白黒、解読職
 </p>
@@ -84,7 +141,7 @@
         </div>
     </section>
         </section>
-　　<section id="advanced">
+        <section id="advanced">
 	<div class="advanced-skills-section">
     <h2>オフェンスの応用スキル</h2>
 
@@ -114,9 +171,9 @@
         <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
     </div>
     <div class="article-box">
-        <a href="https://example.com" class="article-link">
+        <a href="../../プロ人格/プロ人格.html" class="article-link">
             <div class="article-img">
-                <img src="character.jpg" alt="Link Image">
+                <img src="../../images/zinnkakuu.jpeg" alt="Link Image">
             </div>
             <div class="article-text">
                 <h3>キャラ別プロが使う人格</h3>
@@ -126,8 +183,64 @@
 </section>
 
     </main>
+    </div>
 
     <!-- Your custom footer goes here -->
+    <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+      
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+      </div>
+      </div>
+      <hr class="custom-line" />
+      <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+      
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+      </div>
+      <!-- スクロール時に表示される横棒 -->
+      <div id="scroll-bar">
+      <a href="../../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../../情報/情報.html">キャラ情報</a>
+      <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+      </div>
+      
+      <footer>
+      <div class="footer-links">
+        <a href="../../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+      </footer>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

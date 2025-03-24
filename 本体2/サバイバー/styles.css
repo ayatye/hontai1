@@ -267,7 +267,7 @@ main p {
 /* キャラの写真 */
 .character-image {
   display: block;
-  max-width: 100%;
+  width: 180px;
   height: auto;
   margin: 20px auto;
   border-radius: 8px;

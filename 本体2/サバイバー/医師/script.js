@@ -235,6 +235,11 @@ const survivors = [
     url: "../../images/kyaragazou/sabaibagazou/気象学者.jpeg",
     link: "../../サバイバー/気象学者/気象学者.html",
   },
+  {
+    name: "弓使い",
+    url: "../../images/kyaragazou/sabaibagazou/弓使い.jpeg",
+    link: "../../サバイバー/弓使い/弓使い.html",
+  },
 ];
 
 const hunters = [
@@ -450,13 +455,15 @@ hunters.forEach((hunter) => {
 });
 
 const MAX_COMMENTS = 100; // 最大表示コメント数
-const historyKey = "commentHistory2"; // コメント履歴のローカルストレージキー
+const pageIdentifier = "isi"; // このページに特有の識別子
+const historyKey = `commentHistory_${pageIdentifier}`; // コメント履歴のローカルストレージキー
+const commentsKey = `comments_${pageIdentifier}`; // コメント表示用のローカルストレージキー
 
 // ローカルストレージからコメント履歴を取得
 let commentHistory = JSON.parse(localStorage.getItem(historyKey)) || [];
 
 // コメント表示用の配列（逆順で取得）
-let comments = JSON.parse(localStorage.getItem("comments")) || [];
+let comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
 comments.reverse(); // **ロード時に最新のコメントを上にする**
 
 const icons = [
@@ -501,7 +508,7 @@ document
 
       // **新しいコメントを配列の先頭に追加**
       comments.unshift(commentData);
-      localStorage.setItem("comments", JSON.stringify(comments));
+      localStorage.setItem(commentsKey, JSON.stringify(comments));
 
       // **コメント履歴にも追加**
       commentHistory.unshift(commentData);
@@ -510,7 +517,7 @@ document
       // **コメントが上限を超えた場合、古いコメントを削除**
       if (comments.length > MAX_COMMENTS) {
         comments.pop();
-        localStorage.setItem("comments", JSON.stringify(comments));
+        localStorage.setItem(commentsKey, JSON.stringify(comments));
       }
 
       // 入力欄をクリア
@@ -591,12 +598,6 @@ function generateRanking() {
 generateRanking();
 
 console.log("コメントリスト:", comments);
-document
-  .getElementById("comment-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log("コメントが送信されました");
-  });
 
 window.addEventListener("scroll", function () {
   const sidebar = document.querySelector(".sidebar");
