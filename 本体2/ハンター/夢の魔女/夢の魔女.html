@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+    <header>
+        <nav-gert>
+          <div class="logo">
+            <a href="../../../index.html">
+              <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
+              <h1>第五録</h1>
+            </a>
+          </div>
+          <header class="c-header c-hamburger-menu">
+            <input
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+              class="c-hamburger-menu__input"
+            />
+            <label for="hamburger" class="c-hamburger-menu__bg"></label>
+            <ul class="c-header__list c-hamburger-menu__list">
+              <li class="c-header__list-item">
+                <a href="../../../index.html" class="c-header__list-link">ホーム</a>
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../最新情報/最新情報.html" class="c-header__list-link"
+                  >最新情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../情報/情報.html" class="c-header__list-link"
+                  >キャラ情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a
+                  href="../../お問い合わせ/お問合せフォーム.html"
+                  class="c-header__list-link"
+                  >お問い合わせ</a
+                >
+              </li>
+            </ul>
+            <div id="overlay"></div>
+            <nav-gert id="burger-menu">
+              <input type="checkbox" id="hamburger" style="display: none" />
+              <label for="hamburger" class="c-hamburger-menu__button">
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+              </label>
+            </nav-gert>
+          </header>
+        </nav-gert>
+      </header>
+
+      <section class="banner">
+        <h2>第五人格最新攻略情報</h2>
+        <p>第五人格の様々の情報が盛りだくさん！！</p>
+      </section>
+
+      <div class="wrapper">
+        <div class="konntent">
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質とスキル</a></li>
+            <li><a href="#strategy">ハンター立ち回り方</a></li>
+            <li><a href="#advanced">夢の魔女（イドーラ）の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="../../images/kyaragazou/hanntagazou/夢の魔女.jpeg" alt="キャラの写真" class="character-image">
+            <h2>夢の魔女（イドーラ）の評価</h2>
+            <p>至る所にハンターが！？
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質とスキル</h2>
+    
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:夢隠れ</h3>
+・夢の魔女本体はサバイバーからは視認できない。また、移動速度がとても速く、窓乗り越えのみ操作がおこなえる。サバイバーの付近20ｍ以内に本体がいるときサバイバーに通知される。<br>
+<br>
+・夢の魔女はサバイバーから視認できる信徒（オリジナル信徒）を1名連れている。この信徒は解除できず、夢の魔女本体の一定範囲内から離れることはできない。一定範囲外に出た場合、夢の魔女本体へ自動で戻ってくる。
+</div>
+            <div class="trait-item"><h3>特質2:信者</h3>
+・夢の魔女はサバイバーを本体として寄生することで信徒（寄生信徒）を生み出せる。寄生を始めるにはサバイバーを一定の距離で視認する必要がある。<br>
+<br>
+・各サバイバー1体まで信者を生み出せる。<br>
+<br>
+・寄生信徒は本体としたサバイバーの一定範囲内でしかコントロールができず、一定範囲外に出ると本体としたサバイバーの元に自動で戻ってくる。<br>
+<br>
+・寄生信徒の攻撃が寄生されたサバイバーを攻撃すると消滅する。<br>
+<br>
+・信徒の特質は本体・各信徒でそれぞれクールタイムが異なる。特質を使った時、全信徒のクールタイムが20秒増加する。<br>
+<br>
+・信徒は操作してない時でも任意方向に移動でき、サバイバーは心音がなくなる。
+</div>
+            <div class="trait-item"><h3>特質3:魔女の記号</h3>
+・信徒を生成した場所に記号も生成される。サバイバーは記号に触れることで記号を回収でき、
+この記号を持っているサバイバーは自分を35秒、ほかのサバイバーの信徒を7秒で解除できる。<br>
+<br>
+・1/2/3/4人のサバイバーに寄生するたび自身の寄生解除に必要な時間が0/5/10/15秒減少する。脱落サバイバーの数が0/1/2/3の時自身の寄生解除に必要な時間が35/30/20/15秒になる
+</div>
+ </div>
+    <div class="features-box">
+        <div class="trait-item"><h3>存在感0：伝道、寄生</h3>
+・伝道<br>
+コントロールする信者を切り替えることができる。切り替えるのにはクールタイムがある。攻撃硬直中は切り替えることができない。<br>
+<br>
+・寄生<br>
+寄生されていないサバイバーを指定し、指定した位置に記号と信徒を配置する。オリジナル信徒やそのサバイバーの寄生信徒以外の信徒でサバイバーに攻撃すると寄生のクールタイムが40％減少する。
+</div>
+        <div class="trait-item"><h3>存在感1：同化</h3>
+・寄生のクールタイムが45秒減少する。
+</div>
+        <div class="trait-item"><h3>存在感2：殉道</h3>
+・信徒の移動可能範囲が拡大する。
+</div>
+</section>
+
+	<!-- ハンター性能 -->
+        <section id="strategy">
+        <h2>ハンターの立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 初動の立ち回り</h3>
+            <p>夢の魔女は信徒を操作して戦う特殊なハンター です。本体は攻撃できませんが、 信徒を巧みに使うことで広範囲に圧力をかけられます 。<br>
+<br>
+<span class="bold-text">・試合開始直後の行動:</span><br>
+✅ サバイバーに「寄生」して位置を把握する<br>
+✅ 寄生信徒を増やしながら暗号機を巡回し、プレッシャーをかける<br>
+✅ サバイバーを見つけたら、信徒を使って攻撃を狙う（オリジナル信徒）ならなお良い。<br>
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>2. 信徒の使い方</h3>
+            <p>夢の魔女の最大の強みは 「信徒を複数展開して戦場を支配すること」 です。<br>
+<br>
+<span class="bold-text">・信徒の基本操作: </span> <br>
+✅ 本体では攻撃できないため、必ず信徒を経由して攻撃する<br>
+✅ 信徒は1体のみ操作可能だが、複数の信徒を配置すれば同時に圧をかけられる<br>
+✅ 「寄生」したサバイバーの周囲に信徒を生やし、プレッシャーを与える<br>
+✅ 信徒を上手く切り替えてチェイスや妨害を行う<br>
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>3. チェイス中の立ち回り</h3>
+            <p>夢の魔女の チェイスは非常に独特 で、サバイバーを 囲い込むようにして攻撃を狙う のがポイントです。<br>
+<br>
+<span class="bold-text">・信徒を先回りさせ、サバイバーの進行方向に配置する: </span><br>
+逃げ道を塞ぐように配置するのが理想。<br>
+<br>
+<span class="bold-text">・複数の信徒を展開し、連携して攻撃する: </span><br>
+1体目で圧をかけ、2体目で確実に攻撃を当てる。<br>
+<br>
+<span class="bold-text">・オリジナル信徒で攻撃をあてよう: </span><br>
+寄生信徒で攻撃してしまうと消滅してしまうので、オリジナル信徒でなるべく攻撃を当てるのが理想
+</p>
+        </div>
+        <div class="strategy-item">
+            <h3>4. 救助狩りの立ち回り</h3>
+            <p>夢の魔女は 救助狩りが得意なハンター です。<br>
+<br>
+<span class="bold-text">・ロケットチェアの周囲に信徒を配置し、救助を妨害</span><br>
+寄生信徒で中間で攻撃を当て、椅子前のオリジナル信徒で救助がりを狙う。<br>
+<br>
+<span class="bold-text">・救助に来たサバイバーに「寄生」を付与し、位置を特定する: </span><br>
+中間の索敵を足の速い夢の魔女本体でするのも良い。<br>
+<br>
+<span class="bold-text">・信徒を複数配置することで、救助後の立て直しを阻止する: </span><br>
+救助者を寄生し、信徒を流しておくことで圧をかける
+</p>
+        <div class="strategy-item">
+            <h3>4. 注意点</h3>
+            <p>🔹 信徒の操作に慣れる → 使いこなせるようになると 試合全体を支配できる 。<br>
+🔹 寄生の使い方を意識する → 重要なポジションにいるサバイバーに寄生するのが鍵 。<br>
+🔹 信徒の切り替えをスムーズに行う → 無駄な時間を減らし、 素早く攻撃できるようにする 。
+</p>
+        </div>
+
+    </section>
+        </section>
+        <section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>夢の魔女（イドーラ）の応用スキル</h2>
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>窓乗り越え阻止攻撃</h3>
+        <p>夢の魔女本体で窓乗り越えを行うことで、サバイバー窓乗り越えを阻止される。</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    </section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="../../プロ人格/プロ人格.html" class="article-link">
+            <div class="article-img">
+                <img src="../../images/zinnkakuu.jpeg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+    </div>
+
+    <!-- Your custom footer goes here -->
+    <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+      
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+      </div>
+      </div>
+      <hr class="custom-line" />
+      <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+      
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+      </div>
+      <!-- スクロール時に表示される横棒 -->
+      <div id="scroll-bar">
+      <a href="../../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../../情報/情報.html">キャラ情報</a>
+      <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+      </div>
+      
+      <footer>
+      <div class="footer-links">
+        <a href="../../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+      </footer>
+      
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

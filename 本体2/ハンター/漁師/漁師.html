@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+    <header>
+        <nav-gert>
+          <div class="logo">
+            <a href="../../../index.html">
+              <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
+              <h1>第五録</h1>
+            </a>
+          </div>
+          <header class="c-header c-hamburger-menu">
+            <input
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+              class="c-hamburger-menu__input"
+            />
+            <label for="hamburger" class="c-hamburger-menu__bg"></label>
+            <ul class="c-header__list c-hamburger-menu__list">
+              <li class="c-header__list-item">
+                <a href="../../../index.html" class="c-header__list-link">ホーム</a>
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../最新情報/最新情報.html" class="c-header__list-link"
+                  >最新情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../情報/情報.html" class="c-header__list-link"
+                  >キャラ情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a
+                  href="../../お問い合わせ/お問合せフォーム.html"
+                  class="c-header__list-link"
+                  >お問い合わせ</a
+                >
+              </li>
+            </ul>
+            <div id="overlay"></div>
+            <nav-gert id="burger-menu">
+              <input type="checkbox" id="hamburger" style="display: none" />
+              <label for="hamburger" class="c-hamburger-menu__button">
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+              </label>
+            </nav-gert>
+          </header>
+        </nav-gert>
+      </header>
+
+      <section class="banner">
+        <h2>第五人格最新攻略情報</h2>
+        <p>第五人格の様々の情報が盛りだくさん！！</p>
+      </section>
+
+      <div class="wrapper">
+        <div class="konntent">
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質とスキル</a></li>
+            <li><a href="#strategy">ハンター立ち回り方</a></li>
+            <li><a href="#advanced">漁師（グレイス）の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="../../images/kyaragazou/hanntagazou/漁師.jpeg" alt="キャラの写真" class="character-image">
+            <h2>漁師（グレイス）</h2>
+            <p>湿気でポジションを強制退去
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質とスキル</h2>
+    
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:深淵の深み</h3>
+・グレイスが通った箇所には20秒間淵が生成される。淵を囲むように繋げると、瞬時にその囲い内部のサバイバーに30％の湿気を付与し、囲まれた淵のエリアは形成されてから20秒間持続する。<br>
+<br>
+・形成された淵のエリアを利用して別のエリアは形成することはできない。<br>
+<br>
+・投擲で回収された銛の箇所にも淵が生成される。<br>
+<br>
+<span class="bold-text">・淵:</span><br>
+淵の上にいるサバイバーは毎秒10％増加する。サバイバーが吊られている椅子付近では、湿気増加速度が毎秒6％に低下する。<br>
+<br>
+9秒間湿気進度が増加しないと毎秒5％湿気が減少していく。<br>
+<br>
+湿気が付与されているサバイバーは板窓操作速度10％低下、暗号機、ゲート開門速度20％低下する。<br>
+<br>
+湿気が100％になると1ダメージをうけ湿気がリセットされる。その後5秒間湿気進度が増加しない。
+</div>
+ </div>
+    <div class="features-box">
+        <div class="trait-item"><h3>存在感0：漁狩</h3>
+・その場に銛を突き立てる。もしくは、銛を投擲することができる。銛は長押しした時間に比例して距離が延びる。銛の通過点には湿気の淵が生成され、グレイスは回遊状態になる。<br>
+<br>
+<span class="bold-text">・回遊:</span><br>
+回遊状態では移動速度が30％上昇するが、ほとんどの操作と通常攻撃をすることができない。<br>
+<br>
+銛は自身で回収する、回遊時間の最大時間20秒に達する、モリとの距離が42mを超えたとき銛は自動的に回収される。回収した通過点にも湿気の淵を生成する。<br>
+<br>
+湿気範囲は、投擲した場所、投擲後の銛を設置した場所、銛を回収した場所の中にも淵を生成する。
+</div>
+        <div class="trait-item"><h3>存在感1：驚波</h3>
+・回遊状態の時だけ使用可能。カメラ方向に直線でダッシュする。サバイバーに命中すると30％の湿気を付与する。再度スキルボタンで中断することもできる。
+</div>
+        <div class="trait-item"><h3>存在感2：弄潮</h3>
+・驚波と淵が生成された時の湿気の付与が50％になる。
+</div>
+</div>
+</section>
+
+	<!-- ハンター性能 -->
+        <section id="strategy">
+        <h2>ハンターの立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 初動の立ち回り</h3>
+                <p>グレイスの初動は 回遊モード を活用して、いち早くサバイバーに接近し、通常攻撃でファーストダウンを狙うことが重要となる。
+<br><br>
+    <span class="bold-text">・回遊モードの活用:</span><br>
+    ✅ 開幕から回遊モードで移動し、サバイバーのスポーン位置を素早く把握する。強ポジにサバイバーが逃げ込む前に距離を詰め、通常攻撃を当てる。存在感が溜まるまでは湿気ダメージを与えるのが難しいため、通常攻撃をメインに立ち回る。<br>
+    <span class="bold-text">・銛の活用:</span><br>
+    ✅存在感が溜まるまでは銛の効果は低いが、強ポジ封じや圧力をかけるために使用する。逃げ道を制限する形で銛を投げることで、サバイバーを狙いやすくする。板や窓枠の近くに撃ち込むことで、移動経路を制限し、攻撃のチャンスを作る。<br>
+    <span class="bold-text">・タゲチェンの判断:</span><br>
+    ✅グレイスは初動の弱さが目立つため、 追いづらいサバイバー（傭兵・調香師など） に当たった場合は、素早くタゲチェンする。「湿気ゲージが溜まりづらい」「強ポジに籠もられる」など、ダウンまで時間がかかると判断したら、すぐに別のターゲットを探す。
+    </p>
+</div>
+<div class="strategy-item">
+    <h3>2. スキルの使い方</h3>
+    <p>グレイスの特性上、銛と回遊モード時の立ち回りで試合が決まる<br><br>
+    <span class="bold-text">・銛の使い方:</span><br>
+    ・逃走経路をふさぐように設置することで、強ポジへの移動を阻害。存在感MAXになると、銛を回収した際に形成される 湿気の淵で湿気ゲージを溜めやすくなる。銛を撃った後、サバイバーが淵を踏む位置に回遊モードで移動し、湿気ゲージを素早く溜める。<br>
+<br>
+    <span class="bold-text">・湿気ダメージの活用:</span><br>
+    ・湿気ゲージが 80～90% ほど溜まっているサバイバーには、銛を戻すことで湿気ダメージを狙う。回遊モードでサバイバーの周囲を囲むことで、湿気ゲージの蓄積を加速させる。驚波を当てることで湿気ゲージを上昇させ、最終的なダメージに繋げる。</p>
+</div>
+<div class="strategy-item">
+    <h3>3. チェイス中の立ち回り</h3>
+    <p>グレイスのチェイスでは驚波の使い道を理解することでチェイス時間が左右する。
+<br>
+<br>
+<span class="bold-text">・存在感0～1のチェイス:</span><br>
+通常攻撃をメインに、湿気ゲージの蓄積を補助として利用。強ポジを囲むように 水の淵 を形成し、サバイバーの移動を制限。可能な限り湿気ゲージを 90%以上 に蓄積させてからダメージを与える。<br>
+<br>
+<span class="bold-text">・存在感MAX後のチェイス:</span><br>
+驚波＋銛回収による 連続湿気ダメージ でダウンを狙う。「移動で形成された淵」と「銛回収で形成された淵」の湿気判定を活用。驚波を2回当てることで、1ダメージを確実に狙う。1撃目を加えた後は、回遊モードで強制的にサバイバーの周囲に湿気の淵を形成し、逃げ道を封じる。
+    </p>
+</div>
+<div class="strategy-item">
+    <h3>4. 救助狩りの立ち回り</h3>
+    <p>グレイスは救助狩りに強く、適切に立ち回ることで大きなアドバンテージを取れる。<br><br>
+<span class="bold-text">・暗号機への圧力:</span><br>
+存在感2になるまでは 救助狩りよりも暗号機圧を優先 する。湿気の淵を暗号機周辺に形成し、解読を妨害する。<br>
+<br>
+<span class="bold-text">・救助狩りの基本:</span><br>
+銛を椅子の周辺に撃ち込み、回遊モードで水の淵を形成 する。救助役が近づいたら、淵の形成を完成させて湿気ゲージを蓄積。存在感MAXなら、 銛回収と驚波の組み合わせ で1ダメージを与えやすい。<br>
+<br>
+<span class="bold-text">・地下吊り時のテクニック:</span><br>
+銛を地下の最奥に撃ち込む → 階段上まで移動して湿気の淵を寸止め形成。救助役が地下に降りた瞬間に淵を閉じて湿気ゲージを蓄積。存在感MAXなら、淵の形成×2回で1ダメージ確定。
+地下から脱出しようとするサバイバーを階段上で落下攻撃 で仕留める。
+</div>
+<div class="strategy-item">
+    <h3>5. 注意点</h3>
+    <p>グレイスを使う際には、以下の点に注意しましょう。<br><br>
+    🔹 湿気ダメージに頼りすぎない<br>
+    → 存在感が低いうちは湿気ダメージを与えにくいため、 通常攻撃を主体に立ち回る。<br>
+    🔹 サバイバーの強ポジ対策<br>
+    → 「工場」「病院」「月の河公園」などの 高低差があるマップでは淵を活かしにくい ため、銛の配置を意識する。板グルを避けるために 銛を板の間に撃ち込む ことで、グルチェ封じが可能。<br>
+    🔹 救助狩りのリスク管理<br>
+    → 存在感MAXでない場合、無理に救助狩りを狙わず 暗号機圧を優先 する。「湿気ダメージを狙いすぎると攻撃チャンスを逃す」ため、 通常攻撃の機会を逃さない。
+    </p>
+        </div>
+
+    </section>
+        </section>
+        <section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>漁師（グレイス）の応用スキル</h2>
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>タックル囲い速ワンダメ</h3>
+        <p>驚波を当て、即座に淵範囲内で銛を回収することでダメージ与える</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    <!-- 応用スキル2 -->
+    <div class="skill-item">
+        <h3>足元囲い</h3>
+        <p>サバイバーの周りをくるくる回ったり、淵を足元でふませることで湿気を増やす</p>
+        <!-- 動画2を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    </section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="../../プロ人格/プロ人格.html" class="article-link">
+            <div class="article-img">
+                <img src="../../images/zinnkakuu.jpeg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+    </div>
+
+    <!-- Your custom footer goes here -->
+    <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+      
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+      </div>
+      </div>
+      <hr class="custom-line" />
+      <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+      
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+      </div>
+      <!-- スクロール時に表示される横棒 -->
+      <div id="scroll-bar">
+      <a href="../../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../../情報/情報.html">キャラ情報</a>
+      <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+      </div>
+      
+      <footer>
+      <div class="footer-links">
+        <a href="../../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+      </footer>
+      
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

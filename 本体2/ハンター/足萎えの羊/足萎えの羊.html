@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+    <header>
+        <nav-gert>
+          <div class="logo">
+            <a href="../../../index.html">
+              <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
+              <h1>第五録</h1>
+            </a>
+          </div>
+          <header class="c-header c-hamburger-menu">
+            <input
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+              class="c-hamburger-menu__input"
+            />
+            <label for="hamburger" class="c-hamburger-menu__bg"></label>
+            <ul class="c-header__list c-hamburger-menu__list">
+              <li class="c-header__list-item">
+                <a href="../../../index.html" class="c-header__list-link">ホーム</a>
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../最新情報/最新情報.html" class="c-header__list-link"
+                  >最新情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../情報/情報.html" class="c-header__list-link"
+                  >キャラ情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a
+                  href="../../お問い合わせ/お問合せフォーム.html"
+                  class="c-header__list-link"
+                  >お問い合わせ</a
+                >
+              </li>
+            </ul>
+            <div id="overlay"></div>
+            <nav-gert id="burger-menu">
+              <input type="checkbox" id="hamburger" style="display: none" />
+              <label for="hamburger" class="c-hamburger-menu__button">
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+              </label>
+            </nav-gert>
+          </header>
+        </nav-gert>
+      </header>
+
+      <section class="banner">
+        <h2>第五人格最新攻略情報</h2>
+        <p>第五人格の様々の情報が盛りだくさん！！</p>
+      </section>
+
+      <div class="wrapper">
+        <div class="konntent">
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質とスキル</a></li>
+            <li><a href="#strategy">ハンター立ち回り方</a></li>
+            <li><a href="#advanced">足萎えの羊（ジェフリー）の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="../../images/kyaragazou/hanntagazou/足萎えの羊.jpeg" alt="キャラの写真" class="character-image">
+            <h2>足萎えの羊（ジェフリー）</h2>
+            <p>強制地下吊り！？
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質とスキル</h2>
+
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:戸惑いの檻</h3>
+・脱出困難な檻を生成できる。檻の端はどんなサバイバーでも直接檻を出入りできない。檻を発動するには怨みの力を35消費する。怨みの力は1秒につき約2ずつ回復する（上限は120）。サバイバーが檻の中にいる時、操作速度が10%低下する。
+<br>
+<br>
+<span class="bold-text">・拘束</span><br>
+・ハンター・サバイバー共に檻の中で端を超えると、檻の中心を軸として対称となる向かい側の位置に転送される。サバイバーが檻の転送の使用はクールタイムは約2秒、ハンターが檻の転送の使用は約1秒。吊られている椅子の付近はサバイバーが檻を解除する速度が速くなる。<br>
+<br>
+<span class="bold-text">・釈放</span><br>
+・ハンター・サバイバー共に檻の端で檻を破壊することができる。檻の中にサバイバーがいる時、他のサバイバーは外側から檻を破壊できない。
+<div class="trait-item"><h3>特質2:囚われの身</h3>
+・檻の中で攻撃を当てると1ダメージを与え、檻が解除される。檻の外（檻を設置せず）で攻撃を当てると0.5ダメージ与える。
+</section>
+    <div class="features-box">
+        <div class="trait-item"><h3>存在感0：領域調整、包囲</h3>
+<span class="bold-text">・領域調整:</span><br>
+・自由に檻の大きさを調整できる。<br>
+<br>
+<span class="bold-text">・包囲</span><br>
+・怨みの力を40消費することでマップ内に9秒間檻を生成する。発動後の3秒以内に再び檻を発動する場合、必要な怨みの力は19まで減少する。
+</div>
+        <div class="trait-item"><h3>存在感1：檻越え</h3>
+・素早く後ろへ7mバックステップする。その過程で檻の端を通ると、そのバックステップの持続時間がリセットされる。バックステップ状態では檻移動にクールタイムがなく、バックステップ中も檻を生成できる。
+</div>
+        <div class="trait-item"><h3>存在感2：戸惑いの檻-上級</h3>
+・怨みの力回復速度が毎秒2.3まで速まる。
+</div>
+</div>
+</section>
+
+	<!-- ハンター性能 -->
+        <section id="strategy">
+        <h2>ハンターの立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 初動の立ち回り</h3>
+                <p>檻を利用した移動とサバイバーの行動制限を駆使するハンター。遅延をかけつつチェイスを有利に進めるのが強み
+<br><br>
+    <span class="bold-text">・索敵:</span><br>
+    ✅ 檻の設置を意識しながらサバイバー発見を優先まずは素早くサバイバーを見つけ、檻を利用して効率よく距離を詰める準備をします。檻は暗号機のそばや強ポジの入り口に配置すると効果的。<br>
+<br>
+    <span class="bold-text">・チェイス開始:</span><br>
+    ✅サバイバーの動線を制限する可能なら一つの檻にサバイバーと自分を閉じ込めるのが理想。これにより強制的に狭い空間でチェイスができ、攻撃を当てやすくなります。
+<br>
+<br>
+    <span class="bold-text">・檻のミスをカバー:</span><br>
+    ✅檻のワープを活用して攻めるサバイバーが檻の中に閉じ込められた場合、自分が外にいてもワンタップで追加の檻を形成し、ワープで即座に攻めることが可能。2連檻形成で素早く追い詰めましょう。
+    </p>
+</div>
+<div class="strategy-item">
+    <h3>2. スキルの使い方</h3>
+    <p>ジェフリーのスキルは檻の理解度で試合がきまる<br><br>
+    <span class="bold-text">・檻:</span><br>
+    ・檻ワープを駆使した機動力の確保徒歩ハンターではあるものの、檻を活用すれば長距離移動も可能。特に暗号機妨害時や救助狩り時に活用。<br>
+<br>
+    <span class="bold-text">・檻越え:</span><br>
+    ・檻越え（バックステップ）による即ワープ檻を越えるモーション中にワープを決めると、サバイバーとの距離を一気に詰められる。ただし、檻の範囲を把握しておかないと失敗することもあるため、練習が必要。<br>
+<br>
+    <span class="bold-text">・高低差対策:</span><br>
+    ・高さの差を利用して追い詰める檻のワープ先が低い位置だと落下が発生し、サバイバーを強制的に強ポジから排除することができる。高低差のあるマップでは積極的に利用したい。
+</p>
+</div>
+<div class="strategy-item">
+    <h3>3. チェイス中の立ち回り</h3>
+    <p>ジェフリーは怨みの力の管理に気を付ける必要がある。
+<br>
+<br>
+<span class="bold-text">・チェイスルートを制限する:</span><br>
+檻ワープを活用しながら位置を調整逃げ道を限定し、檻のワープを駆使してサバイバーを狭い空間に追い込む。檻の出口が壁沿いの場合、ワープ不可になるため、意識して利用すると良い。<br>
+<br>
+<span class="bold-text">・檻移動の注意点:</span><br>
+檻の形成と解除を活かす長距離移動ができるが、移動後に檻を壊す際に誤って元の場所に戻らないよう注意が必要。<br>
+<br>
+<span class="bold-text">・強制地下吊り:</span><br>
+地下吊りを意識足萎えの羊は地下吊り性能が高いため、檻を利用して遠くからでも地下へ運ぶことを考える。
+</p>
+</div>
+<div class="strategy-item">
+    <h3>4. 救助狩りの立ち回り</h3>
+    <p>救助ルートを封鎖椅子周辺に檻を配置し、救助が困難な状況を作る。特にオフェンスやバッツマンの妨害を防ぐためにも有効。<br><br>
+<span class="bold-text">・救助狩りの前準備:</span><br>
+・吊ったサバイバーに憑依し、「侵蝕の破片」を設置。
+侵蝕度の上昇を利用し、救助を遅延させる。<br>
+<br>
+<span class="bold-text">・救助狩り:</span><br>
+・風船運搬時に檻を活用風船にする前に檻を設置しておくと、長距離ワープで地下に運びやすい。檻が解除されるタイミングを調整すると無駄なく運べる。
+</div>
+<div class="strategy-item">
+    <h3>5. 注意点</h3>
+    <p>ジェフリーを使う際には、以下の点に注意しましょう。<br><br>
+    🔹 檻ミス<br>
+    → 檻の設置ミスを避けるサバイバーを閉じ込めることを優先するが、誤った配置で自分が孤立しないように注意。
+<br>
+    🔹 暗号機圧<br>
+    → 暗号機圧を意識足萎えの羊は他の徒歩ハンターと比べて暗号機圧がかけやすい。解読中のサバイバーを檻で分断し、積極的に妨害していくことが重要。
+<br>
+    🔹 怨みの力の枯渇<br>
+    →  檻がなくなったジェフリーは最弱ハンターなので、怨みの力の管理が必要となる。
+    </p>
+        </div>
+
+    </section>
+        </section>
+        <section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>足萎えの羊（ジェフリー）の応用スキル</h2>
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>強制地下吊り</h3>
+        <p>檻を地下までつなげることで強制的に地下に連れていく</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    <!-- 応用スキル2 -->
+    <div class="skill-item">
+        <h3>強制乗り物おろし</h3>
+        <p>乗り物移動中に檻を生成することで、強制的に乗り物からおろすことができる</p>
+        <!-- 動画2を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    <!-- 応用スキル3 -->
+    <div class="skill-item">
+        <h3>救助阻止</h3>
+        <p>檻を使って、救助ができないように隔離する</p>
+        <!-- 動画3を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    <!-- 応用スキル4 -->
+    <div class="skill-item">
+        <h3>粘着潰し</h3>
+        <p>粘着に来たサバイバーに檻を生成することで、粘着を阻止する。</p>
+        <!-- 動画4を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    </section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="../../プロ人格/プロ人格.html" class="article-link">
+            <div class="article-img">
+                <img src="../../images/zinnkakuu.jpeg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+    </div>
+
+    <!-- Your custom footer goes here -->
+    <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+      
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+      </div>
+      </div>
+      <hr class="custom-line" />
+      <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+      
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+      </div>
+      <!-- スクロール時に表示される横棒 -->
+      <div id="scroll-bar">
+      <a href="../../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../../情報/情報.html">キャラ情報</a>
+      <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+      </div>
+      
+      <footer>
+      <div class="footer-links">
+        <a href="../../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+      </footer>
+      
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

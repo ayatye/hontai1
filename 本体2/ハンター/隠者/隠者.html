@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【第五人格】？？の性能紹介！衣装やおすすめ内在人格【IdentityV】</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+    <header>
+        <nav-gert>
+          <div class="logo">
+            <a href="../../../index.html">
+              <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
+              <h1>第五録</h1>
+            </a>
+          </div>
+          <header class="c-header c-hamburger-menu">
+            <input
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+              class="c-hamburger-menu__input"
+            />
+            <label for="hamburger" class="c-hamburger-menu__bg"></label>
+            <ul class="c-header__list c-hamburger-menu__list">
+              <li class="c-header__list-item">
+                <a href="../../../index.html" class="c-header__list-link">ホーム</a>
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../最新情報/最新情報.html" class="c-header__list-link"
+                  >最新情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../情報/情報.html" class="c-header__list-link"
+                  >キャラ情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a
+                  href="../../お問い合わせ/お問合せフォーム.html"
+                  class="c-header__list-link"
+                  >お問い合わせ</a
+                >
+              </li>
+            </ul>
+            <div id="overlay"></div>
+            <nav-gert id="burger-menu">
+              <input type="checkbox" id="hamburger" style="display: none" />
+              <label for="hamburger" class="c-hamburger-menu__button">
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+              </label>
+            </nav-gert>
+          </header>
+        </nav-gert>
+      </header>
+
+      <section class="banner">
+        <h2>第五人格最新攻略情報</h2>
+        <p>第五人格の様々の情報が盛りだくさん！！</p>
+      </section>
+
+      <div class="wrapper">
+        <div class="konntent">
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質とスキル</a></li>
+            <li><a href="#strategy">ハンター立ち回り方</a></li>
+            <li><a href="#advanced">隠者の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+	<!-- キャラ評価セクション -->
+        <section id="evaluation">
+	    <img src="../../images/kyaragazou/hanntagazou/隠者.jpeg" alt="キャラの写真" class="character-image">
+            <h2>隠者</h2>
+            <p>一回の攻撃でサバイバー2ダウン！？
+</p>
+	    <!-- 円グラフ -->
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+	<!-- 外在特質と特徴セクション -->	
+        <section id="traits">
+    	  <h2>外在特質とスキル</h2>
+
+    	  <!-- 外在特質の項目 -->
+    	  <div class="traits-box">
+            <div class="trait-item"><h3>特質1:恩典</h3>
+・隠者の通常攻撃のダメージは1.2になる。
+サバイバーは付与された電極とは違う電極を付与された場合2秒間スタンする。攻撃を受けると電極は消える。3.5秒以内の連続スタンは3回目以降0.5秒になる。
+サバイバーは暗号機やゲートで電極を100秒に1度切り替えることができる。ゲーム開始時は50秒後。また、接続された暗号機やゲートを触ると正の電荷が付与される。
+            <div class="trait-item"><h3>特質2:シェア</h3>
+・サバイバーが電極を付与された状態で攻撃を貰った時、ダメージが同じ電極をサバイバーに分配される。
+</div>
+ </div>
+</section>
+    <div class="features-box">
+        <div class="trait-item"><h3>存在感0：奇跡、極性切替、感知</h3>
+<span class="bold-text">・奇跡:</span><br>
+・カメラ方向に極性を付与できるエネルギーを発射し8秒間残る。<br>
+<br>
+<span class="bold-text">・極性切替:</span><br>
+・奇跡の極性を切り替えれる<br>
+<br>
+<span class="bold-text">・感知:</span><br>
+・マップの暗号機を最大5つまで選んで接続することができる。接続された暗号機は解読進捗の42％が他の暗号機に分配され、8％が消耗される。また、通電後に同様にゲートを接続し分配、消耗させることができる。
+</div>
+        <div class="trait-item"><h3>存在感1：寄託</h3>
+・4.5秒間空中に浮かびあがり奇跡を行うことができる。<br>
+<br>
+<span class="bold-text">・再臨:</span><br>
+寄託中カメラ方向にワープすることができる（最大27m）。着地後その場に電極を付与できるエリアを展開する。
+</div>
+        <div class="trait-item"><h3>存在感2：寄託-進化、再臨-進化</h3>
+<span class="bold-text">・寄託-進化:</span><br>
+寄託のチャージ数が1増える<br>
+<br>
+<span class="bold-text">・再臨-進化:</span><br>
+奇跡のチャージ数が1増える
+</div>
+</div>
+</section>
+
+	<!-- ハンター性能 -->
+        <section id="strategy">
+        <h2>ハンターの立ち回り方</h2>
+        
+        <div class="strategy-item">
+            <h3>1. 初動の立ち回り</h3>
+                <p>隠者は回路接続による全体負荷、ダメージ計算が必須となる
+<br><br>
+    <span class="bold-text">・初動の立ち回り:</span><br>
+    ✅ サバイバーは暗号機やゲートの操作中しか「変換」を行うことができず、変換のクールタイムも長いため、序盤から電荷を付与して立ち回ることが重要になる。開幕の感知を利用して、回路接続を行うことで解読圧をかけつつ索敵を行うのが基本。<br>
+<br>
+    <span class="bold-text">・接続によるシェア:</span><br>
+    ✅ファーストチェイスを取る際は、回路接続をした状態で、まだ電荷を持っていないサバイバーを狙うのが理想。回路接続時に反対の電荷をサバイバーに付与してしまうと、ダメージがシェアされてしまい、攻撃回数が増えてしまう可能性がある。<br>
+<br>
+    <span class="bold-text">・ファーストチェイスを早く終わらす方法:</span><br>
+    ✅回路接続をせず、見つけたサバイバーに直接電荷を付与して攻撃する。<br>
+→ただし、初動のチェイス能力は低く、攻撃までに時間がかかるため、解読が進みやすいデメリットがある。<br>
+    ✅開幕50秒直前で回路を切り、逆の電荷を付与して感電を狙う。<br>
+→これにより即座に追加ダメージを狙える。<br>
+    ✅特定のサバイバーを狙うため、狙うサバイバー周辺の暗号機だけ接続しない。<br>
+→エリア選択モードを活用し、狙いたいサバイバーがどこにいるのかを特定する。
+    </p>
+</div>
+<div class="strategy-item">
+    <h3>2. スキルの使い方</h3>
+    <p>隠者のスキルは、奇跡と再臨の練度で試合が決まる<br><br>
+    <span class="bold-text">・回路接続の活用:</span><br>
+    ・サバイバーが暗号機に触れたタイミングで電荷を付与できる。シェアダメージを防ぐため、攻撃前に回路を切るテクニックも重要。<br>
+<br>
+    <span class="bold-text">・奇跡の活用:</span><br>
+    ・照準が表示されないため、狙いを定めるのが難しい。杖の先端がサバイバーの体と重なるように撃つと当たりやすい。足元に撃つと外れる可能性が高いので、やや上を狙う。<br>
+<br>
+    <span class="bold-text">・再臨の活用:</span><br>
+    ・天井が低い場所では生成できないため、使えないエリアを把握しておく。2階建て建物があるマップでは奇襲に利用可能。
+
+</p>
+</div>
+<div class="strategy-item">
+    <h3>3. チェイス中の立ち回り</h3>
+    <p>開幕は徒歩ハンターのため、デススポーン地点へ向かうのが基本。隠者のチェイスは、電流磁場を当ててサバイバーをスタンさせることで優位に進めるスタイルになる。
+<br>
+<br>
+<span class="bold-text">・奇跡を確実に当てるコツ:</span><br>
+照準がないため、杖の先端をサバイバーに重ねるように狙う。足元ではなく、少し上を狙うと命中率が上がる。板・窓を利用した攻防時に、サバイバーの行動を予測して撃つ。<br>
+<br>
+<span class="bold-text">・板・窓周りの対応:</span><br>
+板破壊速度が遅いため、無理に壊さず「神出鬼没」や再臨を活用する。板を倒される前に再臨を作成し、即座に飛び越えることで距離を詰めることができる。再臨を設置する際は、次にサバイバーが移動する方向を予測して配置する。<br>
+<br>
+<span class="bold-text">・電荷を利用したダメージの最適化:</span><br>
+追っているサバイバーの電荷を確認し、攻撃時にシェアされないように注意。追いにくいサバイバーには電荷を付与し、別のサバイバーへの攻撃でダウンを狙う。
+</p>
+</div>
+<div class="strategy-item">
+    <h3>4. 救助狩りの立ち回り</h3>
+    <p>隠者は連続攻撃ができるハンターではないため、スタンを活用して救助狩りを行う。<br><br>
+<span class="bold-text">・再臨との併用:</span><br>
+・サバイバーに再臨を当てると、さらにスタンを与えられる。
+救助役が既に0.2ダメージ以上負っている場合、スタンと攻撃のコンボでDDを取りやすい。<br>
+<br>
+<span class="bold-text">・スタンでの妨害:</span><br>
+・サバイバーをスタンさせることで、5割超えや10割超えを狙う。タイミングよく当てることで恐怖の一撃を狙いやすくなる。<br>
+<br>
+<span class="bold-text">・回路切断の活用:</span><br>
+・救助後のシェアダメージを最大限に活かすため、救助される前に回路を切ることも有効。救助直後のサバイバーに攻撃し、ダメージを分散させることで再ダウンを狙いやすくなる。
+</div>
+<div class="strategy-item">
+    <h3>5. 注意点</h3>
+    <p>隠者を使う際には、以下の点に注意しましょう。<br><br>
+    🔹 通電前の立ち回り<br>
+    → 回路を接続したままだと、遠隔通電のリスクがあるため、状況に応じて回路を切る判断が必要。サバイバー側の電荷を確認し、通電前に回路接続を解除しておくことで、通電を妨害しやすくなる。
+<br>
+    🔹 通電後の対応<br>
+    → 「引き留める」の効果もシェアされてしまうため、攻撃対象の電荷を慎重に選ぶ。開門中のサバイバーに変換を行われると、ダメージシェアによりチェイス中のサバイバーを倒しきれなくなるため、ゲートの接続を切る選択肢も視野に入れる。
+
+    </p>
+        </div>
+
+    </section>
+        </section>
+        <section id="advanced">
+	<div class="advanced-skills-section">
+    <h2>隠者の応用スキル</h2>
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+        <h3>奇託＆奇跡</h3>
+        <p>奇託中に奇跡を打ち再臨でサバイバーに飛ぶことで即座にスタンさせる</p>
+        <!-- 動画1を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    <!-- 応用スキル2 -->
+    <div class="skill-item">
+        <h3>奇跡の打ち方</h3>
+        <p>奇跡を上のオブジェクトに打つことで、スタンを狙う</p>
+        <!-- 動画2を挿入 -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+    </div>
+    </section>
+	<!-- おすすめの内在人格セクション -->
+<section id="recommendation" class="recommendation-section">
+    <h2>おすすめの内在人格</h2>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality1_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="recommendation-item">
+        <h3>？？型人格</h3>
+        <p>この内在人格は、...</p>
+        <img src="personality2_image.jpg" alt="？？型人格の写真" class="personality-image">
+    </div>
+    <div class="article-box">
+        <a href="../../プロ人格/プロ人格.html" class="article-link">
+            <div class="article-img">
+                <img src="../../images/zinnkakuu.jpeg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+    </main>
+    </div>
+
+    <!-- Your custom footer goes here -->
+    <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+      
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+      </div>
+      </div>
+      <hr class="custom-line" />
+      <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+      
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+      </div>
+      <!-- スクロール時に表示される横棒 -->
+      <div id="scroll-bar">
+      <a href="../../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../../情報/情報.html">キャラ情報</a>
+      <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+      </div>
+      
+      <footer>
+      <div class="footer-links">
+        <a href="../../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+      </footer>
+      
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
