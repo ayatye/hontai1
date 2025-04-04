@@ -341,7 +341,7 @@ const hunters = [
   {
     name: "破輪",
     url: "../../images/kyaragazou/hanntagazou/破輪.jpeg",
-    link: ".././ハンター/破輪/破輪.html",
+    link: "../../ハンター/破輪/破輪.html",
   },
   {
     name: "漁師",

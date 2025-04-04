@@ -552,13 +552,16 @@ createSpecialItem(tisikis, document.getElementById("tisiki-list"));
 createSpecialItem(masters, document.getElementById("master-list"));
 
 const MAX_COMMENTS = 100; // 最大表示コメント数
-const historyKey = "commentHistory"; // コメント履歴のローカルストレージキー
+const pageIdentifier = "index"; // このページに特有の識別子
+const historyKey = `commentHistory_${pageIdentifier}`; // コメント履歴のローカルストレージキー
+const commentsKey = `comments_${pageIdentifier}`; // コメント表示用のローカルストレージキー
 
 // ローカルストレージからコメント履歴を取得
 let commentHistory = JSON.parse(localStorage.getItem(historyKey)) || [];
 
-// コメント表示用の配列
-let comments = JSON.parse(localStorage.getItem("comments")) || [];
+// コメント表示用の配列（逆順で取得）
+let comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
+comments.reverse(); // **ロード時に最新のコメントを上にする**
 
 // ランダムアイコンのURLリスト
 const icons = [

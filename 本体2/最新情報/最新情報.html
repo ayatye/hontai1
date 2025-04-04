@@ -9,75 +9,166 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav-gert>
         <div class="logo">
-          <h1>第五録</h1>
+          <a href="../../index.html">
+            <img src="../images/サイコロicon.jpeg" class="logo-photo" />
+            <h1>第五録</h1>
+          </a>
         </div>
-        <ul class="nav-links">
-          <li><a href="index.html">ホーム</a></li>
-          <li><a href="latest.html" class="active">最新アップデート情報</a></li>
-          <li><a href="guides.html">攻略ガイド</a></li>
-          <li><a href="community.html">コミュニティ</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-      </nav>
+        <header class="c-header c-hamburger-menu">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="c-hamburger-menu__input"
+          />
+          <label for="hamburger" class="c-hamburger-menu__bg"></label>
+          <ul class="c-header__list c-hamburger-menu__list">
+            <li class="c-header__list-item">
+              <a href="../../index.html" class="c-header__list-link">ホーム</a>
+            </li>
+            <li class="c-header__list-item">
+              <a href="../最新情報/最新情報.html" class="c-header__list-link"
+                >最新情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../情報/情報.html" class="c-header__list-link"
+                >キャラ情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="../お問い合わせ/お問合せフォーム.html"
+                class="c-header__list-link"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+          <div id="overlay"></div>
+          <nav-gert id="burger-menu">
+            <input type="checkbox" id="hamburger" style="display: none" />
+            <label for="hamburger" class="c-hamburger-menu__button">
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+            </label>
+          </nav-gert>
+        </header>
+      </nav-gert>
     </header>
 
-    <main>
-      <section class="latest-updates">
-        <h2>最新アップデート情報</h2>
-        <p>第五人格に関する最新のアップデート情報をお届けします。</p>
+    <section class="banner">
+      <h2>第五人格最新攻略情報</h2>
+      <p>第五人格の様々の情報が盛りだくさん！！</p>
+    </section>
 
-        <!-- アップデート記事リスト -->
-        <div id="updates-container">
-          <article class="update-item">
-            <h3>バージョン 3.1.2 リリース！</h3>
-            <p>
-              2024年11月2日に公開された最新バージョンでは、マップ「不気味な廃墟」のリニューアルと、新しいゲームモード「追跡者の挑戦」が追加されました。
-            </p>
-          </article>
+    <div class="wrapper">
+      <div class="konntent">
+        <main>
+          <section class="latest-updates">
+            <h2>最新アップデート情報</h2>
+            <p>第五人格に関する最新のアップデート情報をお届けします。</p>
 
-          <article class="update-item">
-            <h3>キャラクター強化：医師と空軍</h3>
-            <p>
-              医師と空軍の特殊スキルが強化され、戦略性がさらに向上しました。
-            </p>
-          </article>
+            <!-- アップデート記事リスト -->
+            <div id="updates-container">
+              <article class="update-item">
+                <h3>バージョン 3.1.2 リリース！</h3>
+                <p>
+                  2024年11月2日に公開された最新バージョンでは、マップ「不気味な廃墟」のリニューアルと、新しいゲームモード「追跡者の挑戦」が追加されました。
+                </p>
+              </article>
 
-          <article class="update-item">
-            <h3>スキンショップに新アイテム追加</h3>
-            <p>
-              スキンショップに期間限定アイテムが登場！新しい衣装やアクセサリーを見逃すな。
-            </p>
-          </article>
+              <article class="update-item">
+                <h3>キャラクター強化：医師と空軍</h3>
+                <p>
+                  医師と空軍の特殊スキルが強化され、戦略性がさらに向上しました。
+                </p>
+              </article>
 
-          <article class="update-item hidden">
-            <h3>バグ修正とパフォーマンス向上</h3>
-            <p>
-              多くのバグが修正され、ゲーム全体の動作がよりスムーズに改善されました。
-            </p>
-          </article>
+              <article class="update-item">
+                <h3>スキンショップに新アイテム追加</h3>
+                <p>
+                  スキンショップに期間限定アイテムが登場！新しい衣装やアクセサリーを見逃すな。
+                </p>
+              </article>
 
-          <article class="update-item hidden">
-            <h3>新マップ「夜の迷宮」が登場！</h3>
-            <p>
-              プレイヤー待望の新マップが登場。トリッキーな地形を駆使して勝利を目指しましょう。
-            </p>
-          </article>
+              <article class="update-item">
+                <h3>バグ修正とパフォーマンス向上</h3>
+                <p>
+                  多くのバグが修正され、ゲーム全体の動作がよりスムーズに改善されました。
+                </p>
+              </article>
+
+              <article class="update-item hidden">
+                <h3>新マップ「夜の迷宮」が登場！</h3>
+                <p>
+                  プレイヤー待望の新マップが登場。トリッキーな地形を駆使して勝利を目指しましょう。
+                </p>
+              </article>
+            </div>
+
+            <!-- もっと見るボタン -->
+            <button id="load-more-btn">もっと見る</button>
+          </section>
+        </main>
         </div>
+        <div class="sidebar">
+          <h2>サバイバー一覧</h2>
+          <ul id="survivor-list">
+            <!-- JavaScriptでサバイバーを追加 -->
+          </ul>
 
-        <!-- もっと見るボタン -->
-        <button id="load-more-btn">もっと見る</button>
-      </section>
-    </main>
+          <h2>ハンター一覧</h2>
+          <ul id="hunter-list">
+            <!-- JavaScriptでハンターを追加 -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="custom-line" />
+    <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+    </div>
+    <!-- スクロール時に表示される横棒 -->
+    <div id="scroll-bar">
+      <a href="../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../情報/情報.html">キャラ情報</a>
+      <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+    </div>
 
     <footer>
       <div class="footer-links">
-        <a href="privacy-policy.html">プライバシーポリシー</a>
-        <a href="contact.html">お問い合わせ</a>
-        <a href="about.html">運営情報</a>
+        <a href="../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
       </div>
-      <p>&copy; 2024 第五録</p>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
     <script src="script.js"></script>

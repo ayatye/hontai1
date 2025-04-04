@@ -460,7 +460,7 @@ hunters.forEach((hunter) => {
 });
 
 const MAX_COMMENTS = 100; // 最大表示コメント数
-const pageIdentifier = "saisinnzyouhou"; // このページに特有の識別子
+const pageIdentifier = "purozinnkaku"; // このページに特有の識別子
 const historyKey = `commentHistory_${pageIdentifier}`; // コメント履歴のローカルストレージキー
 const commentsKey = `comments_${pageIdentifier}`; // コメント表示用のローカルストレージキー
 
@@ -643,27 +643,4 @@ window.addEventListener("resize", handleScroll);
 
 document.querySelector(".logo").addEventListener("click", function () {
   window.location.href = "../../hontai.html"; // hontai.html に遷移
-});
-
-// JavaScriptによる「もっと見る」機能
-document.addEventListener("DOMContentLoaded", () => {
-  const loadMoreBtn = document.getElementById("load-more-btn");
-  const hiddenItems = document.querySelectorAll(".update-item.hidden");
-
-  let currentIndex = 0; // 現在表示している記事のインデックス
-  const itemsPerClick = 3; // 1回で表示する記事数
-
-  loadMoreBtn.addEventListener("click", () => {
-    for (let i = currentIndex; i < currentIndex + itemsPerClick; i++) {
-      if (hiddenItems[i]) {
-        hiddenItems[i].classList.remove("hidden");
-      }
-    }
-    currentIndex += itemsPerClick;
-
-    // すべて表示されたら「もっと見る」を非表示にする
-    if (currentIndex >= hiddenItems.length) {
-      loadMoreBtn.style.display = "none";
-    }
-  });
 });

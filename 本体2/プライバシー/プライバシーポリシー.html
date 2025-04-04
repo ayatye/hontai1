@@ -7,26 +7,63 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+  <header>
     <!-- ヘッダー部分 -->
-    <header>
-      <nav>
+      <nav-gert>
         <div class="logo">
-          <h1>第五録</h1>
+          <a href="../../index.html">
+            <img src="../images/サイコロicon.jpeg" class="logo-photo" />
+            <h1>第五録</h1>
+          </a>
         </div>
-        <ul class="nav-links">
-          <li><a href="#home">ホーム</a></li>
-          <li><a href="#news">ニュース</a></li>
-          <li><a href="#guides">攻略ガイド</a></li>
-          <li><a href="#community">コミュニティ</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
-        </ul>
-      </nav>
+        <header class="c-header c-hamburger-menu">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="c-hamburger-menu__input"
+          />
+          <label for="hamburger" class="c-hamburger-menu__bg"></label>
+          <ul class="c-header__list c-hamburger-menu__list">
+            <li class="c-header__list-item">
+              <a href="../../index.html" class="c-header__list-link"
+                >ホーム</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../最新情報/最新情報.html" class="c-header__list-link"
+                >最新情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../情報/情報.html" class="c-header__list-link"
+                >キャラ情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="../お問い合わせ/お問合せフォーム.html"
+                class="c-header__list-link"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+          <div id="overlay"></div>
+          <nav-gert id="burger-menu">
+            <input type="checkbox" id="hamburger" style="display: none" />
+            <label for="hamburger" class="c-hamburger-menu__button">
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+            </label>
+          </nav-gert>
+        </header>
+      </nav-gert>
     </header>
 
-    <!-- バナー部分 -->
     <section class="banner">
       <h2>第五人格最新攻略情報</h2>
-      <p>第五人格の様々な情報が盛りだくさん！！</p>
+      <p>第五人格の様々の情報が盛りだくさん！！</p>
     </section>
 
     <!-- プライバシーポリシーの目次と内容 -->
@@ -88,9 +125,25 @@
       </section>
     </div>
 
-    <!-- フッター部分 -->
+    <!-- スクロール時に表示される横棒 -->
+    <div id="scroll-bar">
+      <a href="../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../情報/情報.html">キャラ情報</a>
+      <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+    </div>
+
     <footer>
-      <p>&copy; 2024 ゲーム攻略サイト</p>
+      <div class="footer-links">
+        <a href="../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../お問い合わせ/お問合せフォーム.html"
+          >お問い合わせフォーム</a
+        >
+        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
     <script src="script.js"></script>
