@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第五人格 初心者から中級者への5ステップ</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+      <nav-gert>
+        <div class="logo">
+          <a href="../../index.html">
+            <img src="../images/サイコロicon.jpeg" class="logo-photo" />
+            <h1>第五録</h1>
+          </a>
+        </div>
+        <header class="c-header c-hamburger-menu">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="c-hamburger-menu__input"
+          />
+          <label for="hamburger" class="c-hamburger-menu__bg"></label>
+          <ul class="c-header__list c-hamburger-menu__list">
+            <li class="c-header__list-item">
+              <a href="../../index.html" class="c-header__list-link">ホーム</a>
+            </li>
+            <li class="c-header__list-item">
+              <a href="../最新情報/最新情報.html" class="c-header__list-link"
+                >最新情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../情報/情報.html" class="c-header__list-link"
+                >キャラ情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="../お問い合わせ/お問合せフォーム.html"
+                class="c-header__list-link"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+          <div id="overlay"></div>
+          <nav-gert id="burger-menu">
+            <input type="checkbox" id="hamburger" style="display: none" />
+            <label for="hamburger" class="c-hamburger-menu__button">
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+            </label>
+          </nav-gert>
+        </header>
+      </nav-gert>
+    </header>
+
+    <section class="banner">
+      <h2>第五人格最新攻略情報</h2>
+      <p>第五人格の様々の情報が盛りだくさん！！</p>
+    </section>
+
+      <div class="wrapper">
+      <div class="konntent">
+  <main>
+    <section class="intro">
+      <p>初心者から中級者になるための、確実なステップを5つ紹介していきます！</p>
+    </section>
+
+    <section class="collab">
+      <h2>1. 暗黙のルールを必ず覚える</h2>
+      <ul>
+        <li>暗号機の回し方</li>
+        <li>危機一髪中は回している暗号機に近づかないなど</li>
+      </ul>
+    </section>
+
+    <section class="collab">
+      <h2>2. 人格、特質内容を覚える</h2>
+      <p><strong>サバイバー人格：</strong>中治り、危機一髪、膝蓋腱反射、フライホイール</p>
+      <p><strong>ハンター人格：</strong>閉鎖空間、傲慢、裏向きカード、引き留める</p>
+      <p><strong>特質：</strong>神出鬼没、瞬間移動、移形、リッスン、異常、興奮、巡視者、監視者</p>
+    </section>
+
+    <section class="collab">
+      <h2>3. サバイバー、ハンターの情報を覚える</h2>
+      <ul>
+        <li>味方の能力を把握する</li>
+        <li>ハンターの能力も覚える</li>
+      </ul>
+    </section>
+
+    <section class="collab">
+      <h2>4. マップごとの強ポジ・弱ポジ、ポジション名を覚える</h2>
+      <ul>
+        <li>板や窓の位置</li>
+        <li>逃げるルート</li>
+        <li>自分の現在地</li>
+        <li>ハッチ・ゲートの位置</li>
+      </ul>
+    </section>
+
+    <section class="collab">
+      <h2>5. プロ試合・攻略動画を見る</h2>
+      <h3>◆ 試合の立ち回りを学べる</h3>
+      <p>暗号機の引継ぎ、粘着のタイミング、ルート選びなど。</p>
+
+      <h3>◆ キャラの最大限の動きを学べる</h3>
+      <p>板攻防・駆け引き・攻撃判定の読み合いなど応用力もアップ！</p>
+
+      <h3>◆ 環境キャラを知れる</h3>
+      <p>今強いキャラの立ち回りは必ず覚えておこう！</p>
+
+      <h3>◆ モチベーションアップ</h3>
+      <p>「このキャラ使いたい！」という気持ちが一番の上達に！</p>
+    </section>
+
+    <section class="collab">
+      <h2>終わりに</h2>
+      <p>この5ステップを達成したあなたは、もう立派な中級者かも！</p>
+      <p>そして気づけば、推しのプロチームができてるかも……？</p>
+      <p>私の推しチームは…………決められません！笑</p>
+      <p>さあ、みんなでプロを応援して、楽しくプレーしていきましょう！</p>
+    </section>
+  </main>
+</div>
+
+      <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+    </div>
+    <hr class="custom-line" />
+    <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+    </div>
+    <!-- スクロール時に表示される横棒 -->
+    <div id="scroll-bar">
+      <a href="../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../情報/情報.html">キャラ情報</a>
+      <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

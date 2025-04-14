@@ -1,11 +1,16 @@
-/* 全体のスタイル */
+/* style.css */
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #fff;
-  scroll-behavior: smooth;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 /* ヘッダー */
@@ -25,6 +30,7 @@ header {
   box-sizing: border-box;
   display: flex;
   color: #fff;
+  cursor: pointer;
 }
 
 .c-header__list {
@@ -48,7 +54,17 @@ header {
   filter: opacity(0.6);
 }
 
-nav {
+.c-header__list-item li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.c-header__list-item li a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+nav-gert {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,13 +87,14 @@ nav {
 .logo a {
   text-decoration: none;
   color: #fff;
-  font-weight: none;
+  font-weight: normal; /* 無効な "none" の代わりに normal を使用 */
   display: flex;
   align-items: center;
 }
 
 .logo a:hover {
-  color: inherit; /* ホバー時も親要素の色を継承 */
+  text-decoration: none; /* ホバー時の下線を消す */
+  color: inherit; /* 色の変更を防ぐ */
 }
 
 /* ハンバーガーメニュー */
@@ -115,156 +132,34 @@ nav {
   position: relative; /* 相対位置指定 */
   z-index: 1; /* バナーは最前面に来ないように設定 */
 }
-
 /* メインコンテンツラッパー */
 .wrapper {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding-left: 3cm;
+  padding-left: 2cm;
+  padding-right: 1cm;
 }
-
-.content-wrapper {
-  flex: 1; /* コンテンツ部分がサイドバーの隣に表示されるようにする */
-  margin-right: 20px; /* サイドバーとの余白 */
-}
-
-.latest-update {
-  padding: 10px;
-  max-width: 1000px;
-}
-
-.latest-update h3 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-}
-
-.latest-update p {
-  font-size: 1.2em;
-}
-
-/* 四角い箱のスタイル */
-.update-box {
-  display: flex;
-  align-items: center; /* アイテムを縦方向で中央揃え */
-  background-color: #f5f5f5;
-  border: 1px solid #e0e0e0;
-  padding: 15px;
-  margin-top: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer; /* 四角い箱全体をクリック可能にする */
-  max-width: 1000px;
-}
-
-/* 左側の写真 */
-.update-photo img {
-  width: 90px; /* 写真の幅 */
-  height: 90px; /* 写真の高さ */
-  object-fit: cover;
-  border-radius: 5px;
-  margin-right: 14px;
-  align-items: center; /* アイテムを縦方向で中央揃え */
-}
-
-/* 右側の説明 */
-.update-info {
-  flex: 1; /* 説明部分が残りのスペースを占める */
-  display: flex;
-  align-items: center; /* 縦方向の中央揃え */
-  justify-content: flex-start; /* 横方向の左揃え */
-  text-align: left; /* テキストを左揃え */
-}
-
-.update-info p {
-  font-size: 1em;
-  margin: 0;
-}
-
-/* リンク部分のスタイル */
-.update-link a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.8em; /* リンクマークのサイズ */
-  margin-left: 14px;
-  display: flex;
-  align-items: center;
-}
-
-/* 四角い箱全体をクリック可能にする */
-.update-box a {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
-}
-
-/* メインコンテンツ */
-main {
-  padding: 20px;
-  background-color: #fff;
-}
-
-.content-section {
-  margin-bottom: 40px;
+h1 {
+  font-size: 1.5em;
 }
 
 h2 {
-  color: #333;
+  color: #000;
 }
 
-#recommended-explanation {
-  margin: 0 auto;
-  padding: 1rem;
-  flex-grow: 1; /* フレックスボックスでの成長を設定 */
+a {
+  font-weight: bold;
+  color: #000;
 }
-
-/* 基本デザイン（おすすめトピックとイベント情報で共通） */
-.info-block {
-  width: 20cm;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.15);
-  display: inline-block;
-  position: relative;
-  transform: perspective(1000px) rotateX(5deg);
-  animation: pop-in 0.5s ease-in-out;
-}
-
-/* おすすめトピック用の背景 */
-#recommended-topics {
-  background: linear-gradient(
-    135deg,
-    #ffeb3b,
-    #ff5722
-  ); /* 黄色からオレンジのグラデーション */
-}
-
-/* 初心者必見用の背景 */
-#events {
-  background: linear-gradient(
-    135deg,
-    #a6d5a7,
-    #82c930
-  ); /* 緑系のグラデーション */
-}
-
-/* 豆知識用の背景 */
-#tisikis {
-  background: linear-gradient(
-    135deg,
-    #758bd4,
-    #0d29a8
-  ); /* 緑系のグラデーション */
-}
-
-#masters {
-  background: linear-gradient(
-    135deg,
-    #d98181,
-    #ce4517
-  ); /* 赤系のグラデーション */
+/* キャラの写真 */
+.character-image {
+  display: block;
+  width: 180px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .separator-line {
@@ -275,71 +170,41 @@ h2 {
   position: relative;
 }
 
-/* トピックやイベントのアイテムデザイン */
-.special-item {
-  background-size: cover;
-  background-position: center;
-  color: transparent; /* 文字を透明にして画像が見えるようにする */
-  text-align: center;
-  padding: 10px;
-  position: relative;
-  height: 100px; /* 高さを調整 */
+main {
+  max-width: 960px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 2em;
+  background-color: #fff;
+}
+
+.toggle-title {
+  background-color: #eee;
+  padding: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1em;
+  border: 1px solid #ccc;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.special-item a {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  border-radius: 5px;
+.arrow {
+  margin-left: 10px;
+  transition: transform 0.3s;
 }
 
-.special-item a:hover {
-  background: rgba(0, 0, 0, 0.8);
+.toggle-title.active .arrow {
+  transform: rotate(180deg); /* 開いたときに上向きに */
 }
 
-@keyframes pop-in {
-  0% {
-    transform: scale(0.8) rotateX(10deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) rotateX(5deg);
-    opacity: 1;
-  }
-}
-
-.info-block h2 {
-  margin-bottom: 15px;
-  color: #ffffff;
-  font-size: 1.5em;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.info-block ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.info-block li {
-  background-color: #ffffff;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s, background-color 0.2s;
-}
-
-.info-block li:hover {
-  transform: translateY(-5px);
-  background-color: #ffe0b2;
+.toggle-content {
+  display: none;
+  padding: 0.5em 1em;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-top: none;
 }
 
 /* サイドバーの位置調整 */
@@ -350,8 +215,7 @@ h2 {
   width: 400px; /* サイドバーの幅 */
   position: static; /* またはこの行を削除 */
   overflow-y: auto;
-  margin-left: 20px; /* コメントセクションとの余白を追加 */
-  max-height: 3650px; /* サイドバーの最大高さ */
+  max-height: 4450px; /* サイドバーの最大高さ */
 }
 
 .sidebar ul {
@@ -367,6 +231,10 @@ h2 {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
+}
+
+.sidebar li a:hover {
+  color: #007bff; /* リンクの色に変更（例: 青色） */
 }
 
 /* 各リストアイテム */
@@ -389,7 +257,6 @@ h2 {
 
 li:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
 }
 
 li img {
@@ -403,16 +270,6 @@ li .arrow {
   font-size: 1.5em;
   color: #007bff;
   margin-left: auto; /* 矢印を右に配置 */
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-a:hover {
-  color: #007bff;
 }
 
 .custom-line {
@@ -562,7 +419,6 @@ a:hover {
 #scroll-bar a:hover {
   text-decoration: underline;
 }
-
 footer {
   background-color: #333;
   color: #fff;
@@ -624,8 +480,8 @@ footer p {
 
   .wrapper {
     flex-direction: column; /* レイアウトを縦方向に */
-    padding-right: 3cm;
-    padding-left: 2cm;
+    padding-left: 1cm;
+    padding-right: 1cm;
   }
 
   .sidebar {
@@ -635,10 +491,6 @@ footer p {
     float: none; /* 浮かせない */
   }
 
-  .content-wrapper {
-    margin-right: 0px; /* サイドバーとの余白 */
-    margin: 7px;
-  }
   .custom-line {
     display: block;
     border: none;
@@ -656,33 +508,21 @@ footer p {
     );
     background-size: 8px 3px;
   }
-
-  .content-wrapper {
-    margin-right: 0;
-  }
-
-  .info-block {
-    width: 100%; /* スマホ画面で幅を100%にする */
-    padding: 10px; /* 内側の余白を小さくする */
-    margin: 10px 0; /* 上下に少し余白を追加 */
-  }
 }
 
+/* スマホ対応のレスポンシブデザイン */
 @media (max-width: 768px) {
   /* ヘッダー */
   .c-header__list {
     display: none;
   }
+
   .wrapper {
-    padding-left: 1.5cm;
-    margin-right: 0.5cm;
+    padding-left: 1cm;
+    padding-right: 1cm;
   }
-  .kontentu {
-    margin-right: 0.9cm;
-  }
+
   .sidebar {
-    margin-right: 1.5cm; /* コメントセクションとの余白を追加 */
-    margin-left: 0;
     padding: 10px;
   }
   #comment-section {
@@ -795,16 +635,44 @@ footer p {
   .update-link span {
     font-size: 15px;
   }
+
+  .article-box {
+    max-width: 95%; /* 最大幅も100%に設定 */
+    padding: 10px; /* パディングを調整 */
+  }
+  nav {
+    max-width: 80%; /* 目次を画面幅いっぱいに */
+    padding: 15px; /* 目次の内側の余白を調整 */
+  }
+
+  nav h2 {
+    font-size: 1.2rem; /* 見出しを少し小さく */
+  }
+
+  nav ul li a {
+    font-size: 1rem; /* リンク文字サイズを少し小さく */
+    padding: 6px 10px; /* リンクの内側余白も小さく */
+  }
+  .article-text h3 {
+    font-size: 18px; /* タイトルのフォントサイズを調整 */
+  }
+  .article-text {
+    padding-left: 20px; /* テキストの左パディング */
+  }
 }
 
-@media (max-width: 650px) {
-  .wrapper {
-    padding: 0;
-    margin-left: 0.5cm;
+/* さらに小さいデバイス（スマホ）向けの設定 */
+@media (max-width: 480px) {
+  nav h2 {
+    font-size: 1rem; /* 見出しをさらに小さく */
   }
-  main {
-    padding: 0;
-    margin: 0px;
-    margin-bottom: 20px;
+
+  nav ul li a {
+    font-size: 0.9rem; /* リンク文字サイズをさらに小さく */
+    padding: 5px 8px; /* リンクの内側余白も少し減らす */
+  }
+  .article-box {
+    max-width: 95%; /* 最大幅も100%に設定 */
+    padding: 10px; /* パディングを調整 */
   }
 }

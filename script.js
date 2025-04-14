@@ -453,18 +453,22 @@ hunters.forEach((hunter) => {
 const topics = [
   {
     name: "激アツサバイバー",
-    link: "#hot-survivor",
-    img: "本体2/images/kyara.jpeg",
+    link: "本体2/激アツサバイバー/激アツサバイバー.html",
+    img: "本体2/images/激アツ.jpeg",
   },
   {
     name: "激アツハンター",
     link: "#popular-articles",
-    img: "images/popular-articles.jpg",
+    img: "本体2/images/激アツ.jpeg",
   },
-  { name: "次回のコラボ予想", link: "#deals", img: "images/deals.jpg" },
+  {
+    name: "次回のコラボ予想",
+    link: "本体2/yosou/コラボ予想.html",
+    img: "images/deals.jpg",
+  },
   {
     name: "キャラクター別プロが使う人格",
-    link: "#character-persona",
+    link: "本体2/プロ人格/プロ人格.html",
     img: "本体2/images/zinnkaku.jpeg",
   },
 ];
@@ -477,13 +481,13 @@ const events = [
   },
   {
     name: "初心者が中級者になる確実なステップ",
-    link: "#event2",
+    link: "本体2/sigati/sigati.html",
     img: "images/event2.jpg",
   },
   { name: "戦闘マップの活用方法", link: "#event3", img: "images/event3.jpg" },
   {
     name: "第五人格知っておきたい用語集",
-    link: "#event4",
+    link: "本体2/yougo/yougo.html",
     img: "images/event4.jpg",
   },
 ];
@@ -519,7 +523,7 @@ const masters = [
   },
   {
     name: "キャラ別プロが使っている人格",
-    link: "#master2",
+    link: "本体2/プロ人格/プロ人格.html",
     img: "本体2/images/zinnkaku.jpeg",
   },
   {
@@ -529,20 +533,24 @@ const masters = [
   },
 ];
 
-// 関数のテンプレートリテラルの修正
 const createSpecialItem = (data, listElement) => {
   data.forEach((item) => {
     const listItem = document.createElement("li");
-    listItem.classList.add("special-item");
-    listItem.style.backgroundImage = `url('${item.img}')`;
 
     const link = document.createElement("a");
     link.href = item.link;
-    link.textContent = item.name;
+    link.classList.add("special-item"); // 背景スタイルはaタグに適用
+    link.style.backgroundImage = `url('${item.img}')`;
+    link.style.color = "white"; // テキストが見えるように
 
+    const text = document.createElement("span");
+    text.textContent = item.name;
+    text.style.backgroundColor = "rgba(0,0,0,0.5)";
+    text.style.padding = "10px";
+
+    link.appendChild(text);
     listItem.appendChild(link);
     listElement.appendChild(listItem);
-    listItem.style.width = "calc(100% - 20px)";
   });
 };
 
