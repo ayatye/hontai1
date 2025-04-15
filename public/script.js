@@ -2,8 +2,8 @@
 const survivors = [
   {
     name: "幸運児",
-    url: "本体2/images/kyaragazou/sabaibagazou/幸運児.jpeg",
-    link: "本体2/サバイバー/幸運児/幸運児.html",
+    url: "/本体2/images/kyaragazou/sabaibagazou/幸運児.jpeg",
+    link: "/本体2/サバイバー/幸運児/幸運児.html",
   },
   {
     name: "医師",
