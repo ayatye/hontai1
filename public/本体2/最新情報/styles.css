@@ -156,6 +156,40 @@ a {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.toggle-title {
+  background-color: #eee;
+  padding: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1em;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+.toggle-title.active .arrow {
+  transform: rotate(180deg); /* 開いたときに上向きに */
+}
+
+.toggle-content {
+  display: none;
+  padding: 0.5em 1em;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.toggle-content h2 {
+  text-align: left;
+  padding: 2px;
+  margin: 2px;
+}
 #strengthChart {
   display: block;
   margin: 0 auto;
