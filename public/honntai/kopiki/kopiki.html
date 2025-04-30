@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>コピーキャット攻略</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav-gert>
+        <div class="logo">
+          <a href="../../index.html">
+            <img src="../images/サイコロicon.jpeg" class="logo-photo" />
+            <h1>第五録</h1>
+          </a>
+        </div>
+        <header class="c-header c-hamburger-menu">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="c-hamburger-menu__input"
+          />
+          <label for="hamburger" class="c-hamburger-menu__bg"></label>
+          <ul class="c-header__list c-hamburger-menu__list">
+            <li class="c-header__list-item">
+              <a href="../../index.html" class="c-header__list-link">ホーム</a>
+            </li>
+            <li class="c-header__list-item">
+              <a href="../最新情報/最新情報.html" class="c-header__list-link"
+                >最新情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../情報/情報.html" class="c-header__list-link"
+                >キャラ情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="../お問い合わせ/お問合せフォーム.html"
+                class="c-header__list-link"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+          <div id="overlay"></div>
+          <nav-gert id="burger-menu">
+            <input type="checkbox" id="hamburger" style="display: none" />
+            <label for="hamburger" class="c-hamburger-menu__button">
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+            </label>
+          </nav-gert>
+        </header>
+      </nav-gert>
+    </header>
+
+    <section class="banner">
+      <h2>第五人格最新攻略情報</h2>
+      <p>第五人格の様々の情報が盛りだくさん！！</p>
+    </section>
+
+    <div class="wrapper">
+      <div class="konntent">
+        <main>
+          <section id="overview">
+            <h2>コピーキャットモード攻略</h2>
+            <p>
+              コピーキャットゲームは10人で対戦する特別モードです。人狼ゲームのような推理ゲームです。
+            </p>
+          </section>
+
+          <section id="saisinn" class="saisin">
+            <h2>2025.4.3に新しい身分を追加しました。</h2>
+            <ul>
+              <li>密偵、ブローカー、闇医者、顧問</li>
+            </ul>
+          </section>
+
+          <section id="rules">
+            <h2>プレイ時間と構成</h2>
+            <ul>
+              <li>
+                通常マッチ: 毎日9時～13時、15時～20時、21時～25時にプレイ可能。
+                探偵陣営6人、模倣者陣営2人、謎の来客陣営2人で構成されます。
+              </li>
+              <li>
+                カスタムマッチ:
+                いつでもプレイ可能（最低7人必要）。各陣営の人数は調整可能。
+              </li>
+            </ul>
+
+            <h2>勝利条件</h2>
+            <ul>
+              <li>
+                探偵陣営:
+                演繹要求を合計45個達成するか、模倣者を全員脱落させれば勝利
+              </li>
+              <li>模倣者陣営: 模倣者の数が探偵陣営の数以上になれば勝利</li>
+              <li>
+                謎の来客陣営:
+                各役職に設定された固有の勝利条件を達成すると、他の陣営よりも優先して勝利
+              </li>
+            </ul>
+
+            <h2>ゲームの流れ</h2>
+            <ol>
+              <li>探偵陣営はマップ上にある演繹要求を達成</li>
+              <li>模倣者陣営は探偵を襲撃</li>
+              <li>謎の来客陣営は自身の勝利条件達成を目指す</li>
+              <li>緊急会議では、投票で最多票のプレイヤーが脱落</li>
+            </ol>
+          </section>
+
+          <section id="roles">
+            <h2>コピーキャット役職一覧</h2>
+            <div class="toggle-title">
+              探偵陣営 <span class="arrow">▼</span>
+            </div>
+            <div class="toggle-content">
+              <ul>
+                <li><strong>探偵:</strong> 他プレイヤーの陣営を調査</li>
+                <li><strong>哨兵:</strong> 殺害されると犯人を強制通報</li>
+                <li>
+                  <strong>保安官:</strong>攻撃可。ただし探偵陣営を攻撃すると自滅
+                </li>
+                <li><strong>狩人:</strong> 一度だけ他プレイヤーを殺害可能</li>
+                <li><strong>香料師:</strong> プレイヤーを香りで追跡</li>
+                <li><strong>鍵職人:</strong> 隠し通路の使用・封鎖が可能</li>
+                <li><strong>バンカー:</strong> 投票時に票を2倍に</li>
+                <li><strong>修道士:</strong> 周囲のプレイヤーを強調表示</li>
+                <li><strong>議員:</strong> 殺害されると全員に通知</li>
+                <li><strong>ボクサー:</strong> 警戒状態中に攻撃をカウンター</li>
+                <li>
+                  <strong>密偵:</strong> 模倣者陣営を妨害し、重要な情報を獲得
+                </li>
+                <li>
+                  <strong>ブローカー:</strong>
+                  模倣者はあなたと2人きりになった時だけ、あなたを脱落させることが可能
+                </li>
+              </ul>
+            </div>
+
+            <div class="toggle-title">
+              模倣者陣営<span class="arrow">▼</span>
+            </div>
+            <div class="toggle-content">
+              <ul>
+                <li><strong>大泥棒:</strong> 一定時間透明化</li>
+                <li><strong>百面相:</strong> 他のプレイヤーに変身</li>
+                <li><strong>怪盗:</strong> 他プレイヤーと位置を入れ替え</li>
+                <li>
+                  <strong>策略家:</strong>
+                  会議中に他プレイヤーの役職を当てて殺害（失敗で自滅）
+                </li>
+                <li><strong>花火師:</strong> 他プレイヤーに花火を渡して爆破</li>
+                <li>
+                  <strong>闇医者:</strong>
+                  自分が残した脱落痕跡を揉み消すことが可能
+                </li>
+              </ul>
+            </div>
+
+            <div class="toggle-title">
+              謎の来客陣営<span class="arrow">▼</span>
+            </div>
+            <div class="toggle-content">
+              <ul>
+                <li>
+                  <strong>流浪者:</strong> 他プレイヤーを汚染し全員汚染で勝利
+                </li>
+                <li><strong>愚者:</strong> 投票で追放されると勝利</li>
+                <li>
+                  <strong>配達員:</strong> プレイヤーを箱詰めし全員監禁で勝利
+                </li>
+                <li>
+                  <strong>指し手:</strong> 役職を4回連続で正しく推理で勝利
+                </li>
+                <li>
+                  <strong>顧問:</strong>
+                  顧問は他のプレイヤーを1回脱落させることが可能
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="points">
+            <h2>ゲームの肝となる部分</h2>
+            <p>緊急会議での立ち振る舞いが勝敗を分けます。</p>
+            <ul>
+              <li>
+                <strong>探偵陣営:</strong>
+                模倣者を見つけて追放、謎の来客の勝利条件を妨害
+              </li>
+              <li>
+                <strong>模倣者陣営:</strong>
+                自分の正体を隠しつつ攪乱する心理戦がカギ
+              </li>
+              <li>
+                <strong>謎の来客陣営:</strong>
+                勝利条件に応じた柔軟かつ隠密な行動が必要
+              </li>
+            </ul>
+          </section>
+
+          <section id="summary">
+            <h2>最後に</h2>
+            <p>
+              探偵陣営には「模索力」、模倣者陣営には「攪乱と心理戦」、謎の来客陣営には「隠密行動」など、陣営ごとに求められるスキルが異なります。<br />
+              誰を信じるか、どこで疑うか、どんな演技をするか・・・<br />
+              駆け引きの連続で緊張感あふれるこの新モードを、ぜひプレイして騙し合いのスリルを味わってください！
+            </p>
+          </section>
+        </main>
+      </div>
+
+      <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+    </div>
+    <hr class="custom-line" />
+    <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+    </div>
+    <!-- スクロール時に表示される横棒 -->
+    <div id="scroll-bar">
+      <a href="../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../情報/情報.html">キャラ情報</a>
+      <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
