@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第五人格 初心者から中級者への5ステップ</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      getDocs,
+      query,
+      orderBy,
+      where,
+      serverTimestamp,
+      deleteDoc,
+      doc
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+      authDomain: "daigoroku-website.firebaseapp.com",
+      projectId: "daigoroku-website",
+      storageBucket: "daigoroku-website.appspot.com",
+      messagingSenderId: "405763623042",
+      appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const commentsRef = collection(db, "comments");
+    const pageId = "rokka"; 
+  
+    document.getElementById("comment-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username-input").value.trim();
+      const comment = document.getElementById("comment-input").value.trim();
+  
+      if (!username || !comment) return;
+  
+      await addDoc(commentsRef, {
+        username: username,
+        comment: comment,
+        timestamp: serverTimestamp(),
+        pageId: pageId,
+      });
+  
+      document.getElementById("username-input").value = "";
+      document.getElementById("comment-input").value = "";
+      loadComments();
+    });
+  
+    async function loadComments() {
+      const q = query(
+        commentsRef,
+        where("pageId", "==", pageId),
+        orderBy("timestamp", "desc")
+      );
+      const querySnapshot = await getDocs(q);
+  
+      const commentsContainer = document.getElementById("comments");
+      commentsContainer.innerHTML = "";
+  
+      let count = 0;
+      const docsToDelete = [];
+  
+      const icons = [
+        "../images/randomicon/ofensu.jpeg",
+        "../images/randomicon/posutomann.jpeg",
+        "../images/randomicon/kottousyou.jpeg",
+        "../images/randomicon/saisi.jpeg",
+        "../images/randomicon/youhei.jpeg",
+        "../images/randomicon/ouenndann.jpeg",
+        "../images/randomicon/syouzyo.jpeg",
+        "../images/randomicon/kikaigisi.jpeg",
+        "../images/randomicon/kuugunn.jpeg",
+        "../images/randomicon/tyoukousi.jpeg",
+        "../images/randomicon/kisya.jpeg"
+      ];
+  
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        if (data.username && data.comment && data.timestamp?.seconds) {
+          if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
+            return; // NGワードフィルター
+          }
+  
+          if (count < 50) {
+            const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            const commentDiv = document.createElement("div");
+            commentDiv.classList.add("comment");
+            commentDiv.innerHTML = `
+              <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
+              <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+              <div class="username"><strong>${data.username}</strong></div>
+              <div class="message">${data.comment}</div>
+            `;
+            commentsContainer.appendChild(commentDiv);
+          } else {
+            docsToDelete.push(doc(db, "comments", docSnap.id));
+          }
+          count++;
+        }
+      });
+  
+      for (const d of docsToDelete) {
+        await deleteDoc(d);
+      }
+    }
+    
+    loadComments();
+  </script>
+</head>
+<body>
+    <header>
+      <nav-gert>
+        <div class="logo">
+          <a href="../../index.html">
+            <img src="../images/サイコロicon.jpeg" class="logo-photo" />
+            <h1>第五録</h1>
+          </a>
+        </div>
+        <header class="c-header c-hamburger-menu">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="c-hamburger-menu__input"
+          />
+          <label for="hamburger" class="c-hamburger-menu__bg"></label>
+          <ul class="c-header__list c-hamburger-menu__list">
+            <li class="c-header__list-item">
+              <a href="../../index.html" class="c-header__list-link">ホーム</a>
+            </li>
+            <li class="c-header__list-item">
+              <a href="../最新情報/最新情報.html" class="c-header__list-link"
+                >最新情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../情報/情報.html" class="c-header__list-link"
+                >キャラ情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="../お問い合わせ/お問合せフォーム.html"
+                class="c-header__list-link"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+          <div id="overlay"></div>
+          <nav-gert id="burger-menu">
+            <input type="checkbox" id="hamburger" style="display: none" />
+            <label for="hamburger" class="c-hamburger-menu__button">
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+              <span class="c-hamburger-menu__button-mark"></span>
+            </label>
+          </nav-gert>
+        </header>
+      </nav-gert>
+    </header>
+    <section class="banner">
+      <h2>第五人格最新攻略情報</h2>
+      <p>第五人格の様々の情報が盛りだくさん！！</p>
+    </section>
+
+      <div class="wrapper">
+      <div class="konntent">
+<section id="locker-usage">
+  <h2>ロッカーの活用方法</h2>
+
+  <p>正直ロッカーってなんの意味があるのって思ってない？<br>
+  私も最初は思ってた。だから意味があるロッカーの使い方を紹介していくね。</p>
+
+  <h3>🔹サバイバー編</h3>
+  <ul>
+    <li><strong>探鉱者:</strong> ロッカーの一定範囲に入ると「磁力吸引」が発動し、移動速度が2秒間50%上昇。<em>→ 探鉱者使いにとって超重要！</em><br>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+<br>
+    <li><strong>傭兵:</strong> 「頑強」の効果でダメージが8秒遅れて反映。<br>
+    ロッカー出入りでさらに時間を稼げるテクニックあり。<br>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+  </ul>
+
+  <h3>🔹ハンター編</h3>
+  <ul>
+    <li><strong>時空の影（アイヴィ）:</strong> ロッカー内のサバイバーに憑依不可。</li>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+    <li><strong>漁師（グレイス）:</strong> ロッカーで湿気進度リセット可能。</li>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+    <li><strong>蝋人形師（フィリップ）:</strong> ロッカーで蝋進度リセット可能。</li>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+    <li><strong>隠者（アルヴァ）:</strong> ロッカーで極性を消せる。</li>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+    <li><strong>アンデッド（ペルシー）:</strong> ロッカーで風船持ち状態に持ち込める。</li>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+  </ul>
+
+  <h3>⚠️ロッカーに入る注意点</h3>
+  <ul>
+    <li><strong>チェイス中にロッカーはNG！</strong><br>ロッカーからの音で簡単に見つかってしまいます。</li>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+    <li><strong>ロッカー吊りは危険！</strong><br>恐怖の一撃扱いで、ハンターに多くの存在感を与えてしまいます。</li>
+    <span class="video-placeholder">🎥動画準備中</span></li>
+  </ul>
+
+  <p>「ロッカーなんて意味あんの？？」と思っていた方、<br>
+  ちょっとだけロッカーに希望が湧きましたでしょうか？<br>
+  いつかロッカーが活躍する日がくると信じて待つことにしよう！</p>
+</section>
+</div>
+
+      <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+    </div>
+    <hr class="custom-line" />
+    <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+    </div>
+    <!-- スクロール時に表示される横棒 -->
+    <div id="scroll-bar">
+      <a href="../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../情報/情報.html">キャラ情報</a>
+      <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="../プライバシー/プライバシーポリシー.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

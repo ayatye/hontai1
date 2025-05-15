@@ -2,401 +2,396 @@
 const survivors = [
   {
     name: "幸運児",
-    url: "../images/kyaragazou/sabaibagazou/幸運児.jpeg",
-    link: "../サバイバー/幸運児/幸運児.html",
+    url: "../images/kyaragazou/sabaibagazou/kouunzi.jpeg",
+    link: "../sabaiba/kouunzi/kouunzi.html",
   },
   {
     name: "医師",
-    url: "../images/kyaragazou/sabaibagazou/医師.jpeg",
-    link: "../サバイバー/医師/医師.html",
+    url: "../images/kyaragazou/sabaibagazou/isi.jpeg",
+    link: "../sabaiba/isi/isi.html",
   },
   {
     name: "弁護士",
-    url: "../images/kyaragazou/sabaibagazou/弁護士.jpeg",
-    link: "../サバイバー/弁護士/弁護士.html",
+    url: "../images/kyaragazou/sabaibagazou/benngosi.jpeg",
+    link: "../sabaiba/benngosi/benngosi.html",
   },
   {
     name: "空軍",
-    url: "../images/kyaragazou/sabaibagazou/空軍.jpeg",
-    link: "../サバイバー/空軍/空軍.html",
+    url: "../images/kyaragazou/sabaibagazou/kuugunn.jpeg",
+    link: "../sabaiba/kuugunn/kuugunn.html",
   },
   {
     name: "庭師",
-    url: "../images/kyaragazou/sabaibagazou/庭師.jpeg",
-    link: "../サバイバー/庭師/庭師.html",
+    url: "../images/kyaragazou/sabaibagazou/niwasi.jpeg",
+    link: "../sabaiba/niwasi/niwasi.html",
   },
   {
     name: "泥棒",
-    url: "../images/kyaragazou/sabaibagazou/泥棒.jpeg",
-    link: "../サバイバー/泥棒/泥棒.html",
+    url: "../images/kyaragazou/sabaibagazou/dorobou.jpeg",
+    link: "../sabaiba/dorobou/dorobou.html",
   },
   {
     name: "傭兵",
-    url: "../images/kyaragazou/sabaibagazou/傭兵.jpeg",
-    link: "../サバイバー/傭兵/傭兵.html",
+    url: "../images/kyaragazou/sabaibagazou/youhei.jpeg",
+    link: "../sabaiba/youhei/youhei.html",
   },
   {
     name: "調香師",
-    url: "../images/kyaragazou/sabaibagazou/調香師.jpeg",
-    link: "../サバイバー/調香師/調香師.html",
+    url: "../images/kyaragazou/sabaibagazou/tyoukousi.jpeg",
+    link: "../sabaiba/tyoukousi/tyoukousi.html",
   },
   {
     name: "占い師",
-    url: "../images/kyaragazou/sabaibagazou/占い師.jpeg",
-    link: "../サバイバー/占い師/占い師.html",
+    url: "../images/kyaragazou/sabaibagazou/uranaisi.jpeg",
+    link: "../sabaiba/uranaisi/uranaisi.html",
   },
   {
     name: "マジシャン",
-    url: "../images/kyaragazou/sabaibagazou/マジシャン.jpeg",
-    link: "../サバイバー/マジシャン/マジシャン.html",
+    url: "../images/kyaragazou/sabaibagazou/mazisyann.jpeg",
+    link: "../sabaiba/mazisyann/mazisyann.html",
   },
   {
     name: "カウボーイ",
-    url: "../images/kyaragazou/sabaibagazou/カウボーイ.jpeg",
-    link: "../サバイバー/カウボーイ/カウボーイ.html",
+    url: "../images/kyaragazou/sabaibagazou/kauboi.jpeg",
+    link: "../sabaiba/kauboi/kauboi.html",
   },
   {
     name: "冒険家",
-    url: "../images/kyaragazou/sabaibagazou/冒険家.jpeg",
-    link: "../サバイバー/冒険家/冒険家.html",
+    url: "../images/kyaragazou/sabaibagazou/boukennka.jpeg",
+    link: "../sabaiba/boukennka/boukennka.html",
   },
   {
     name: "祭司",
-    url: "../images/kyaragazou/sabaibagazou/祭司.jpeg",
-    link: "../サバイバー/祭司/祭司.html",
+    url: "../images/kyaragazou/sabaibagazou/saisi.jpeg",
+    link: "../sabaiba/saisi/saisi.html",
   },
   {
     name: "機械技師",
-    url: "../images/kyaragazou/sabaibagazou/機械技師.jpeg",
-    link: "../サバイバー/機械技師/機械技師.html",
+    url: "../images/kyaragazou/sabaibagazou/kikaigisi.jpeg",
+    link: "../sabaiba/kikaigisi/kikaigisi.html",
   },
   {
     name: "オフェンス",
-    url: "../images/kyaragazou/sabaibagazou/オフェンス.jpeg",
-    link: "../サバイバー/オフェンス/オフェンス.html",
+    url: "../images/kyaragazou/sabaibagazou/ofensu.jpeg",
+    link: "../sabaiba/ofensu/ofensu.html",
   },
   {
     name: "心眼",
-    url: "../images/kyaragazou/sabaibagazou/心眼.jpeg",
-    link: "../サバイバー/心眼/心眼.html",
+    url: "../images/kyaragazou/sabaibagazou/sinngann.jpeg",
+    link: "../sabaiba/sinngann/sinngann.html",
   },
   {
     name: "踊り子",
-    url: "../images/kyaragazou/sabaibagazou/踊り子.jpeg",
-    link: "../サバイバー/踊り子/踊り子.html",
+    url: "../images/kyaragazou/sabaibagazou/odoriko.jpeg",
+    link: "../sabaiba/odoriko/odoriko.html",
   },
   {
     name: "納棺師",
-    url: "../images/kyaragazou/sabaibagazou/納棺師.jpeg",
-    link: "../サバイバー/納棺師/納棺師.html",
+    url: "../images/kyaragazou/sabaibagazou/noukannsi.jpeg",
+    link: "../sabaiba/noukannsi/noukannsi.html",
   },
   {
     name: "探鉱者",
-    url: "../images/kyaragazou/sabaibagazou/探鉱者.jpeg",
-    link: "../サバイバー/探鉱者/探鉱者.html",
+    url: "../images/kyaragazou/sabaibagazou/tannkousya.jpeg",
+    link: "../sabaiba/tannkousya/tannkousya.html",
   },
   {
     name: "呪術師",
-    url: "../images/kyaragazou/sabaibagazou/呪術師.jpeg",
-    link: "../サバイバー/呪術師/呪術師.html",
+    url: "../images/kyaragazou/sabaibagazou/zyuzyutusi.jpeg",
+    link: "../sabaiba/zyuzyutusi/zyuzyutusi.html",
   },
   {
     name: "野人",
-    url: "../images/kyaragazou/sabaibagazou/野人.jpeg",
-    link: "../サバイバー/野人/野人.html",
+    url: "../images/kyaragazou/sabaibagazou/yazinn.jpeg",
+    link: "../sabaiba/yazinn/yazinn.html",
   },
   {
     name: "曲芸師",
-    url: "../images/kyaragazou/sabaibagazou/曲芸師.jpeg",
-    link: "../サバイバー/曲芸師/曲芸師.html",
+    url: "../images/kyaragazou/sabaibagazou/kyokugeisi.jpeg",
+    link: "../sabaiba/kyokugeisi/kyokugeisi.html",
   },
   {
     name: "一等航海士",
-    url: "../images/kyaragazou/sabaibagazou/一等航海士.jpeg",
-    link: "../サバイバー/一等航海士/一等航海士.html",
+    url: "../images/kyaragazou/sabaibagazou/ittoukoukaisi.jpeg",
+    link: "../sabaiba/ittoukoukaisi/ittoukoukaisi.html",
   },
   {
     name: "バーメイド",
-    url: "../images/kyaragazou/sabaibagazou/バーメイド.jpeg",
-    link: "../サバイバー/バーメイド/バーメイド.html",
+    url: "../images/kyaragazou/sabaibagazou/bameido.jpeg",
+    link: "../sabaiba/bameido/bameido.html",
   },
   {
     name: "ポストマン",
-    url: "../images/kyaragazou/sabaibagazou/ポストマン.jpeg",
-    link: "../サバイバー/ポストマン/ポストマン.html",
+    url: "../images/kyaragazou/sabaibagazou/posutomann.jpeg",
+    link: "../sabaiba/posutomann/posutomann.html",
   },
   {
     name: "墓守",
-    url: "../images/kyaragazou/sabaibagazou/墓守.jpeg",
-    link: "../サバイバー/墓守/墓守.html",
+    url: "../images/kyaragazou/sabaibagazou/hakamori.jpeg",
+    link: "../sabaiba/hakamori/hakamori.html",
   },
   {
     name: "囚人",
-    url: "../images/kyaragazou/sabaibagazou/囚人.jpeg",
-    link: "../サバイバー/囚人/囚人.html",
+    url: "../images/kyaragazou/sabaibagazou/syuuzinn.jpeg",
+    link: "../sabaiba/syuuzinn/syuuzinn.html",
   },
   {
     name: "昆虫学者",
-    url: "../images/kyaragazou/sabaibagazou/昆虫学者.jpeg",
-    link: "../サバイバー/昆虫学者/昆虫学者.html",
+    url: "../images/kyaragazou/sabaibagazou/konntyuugakusya.jpeg",
+    link: "../sabaiba/konntyuugakusya/konntyuugakusya.html",
   },
   {
     name: "画家",
-    url: "../images/kyaragazou/sabaibagazou/画家.jpeg",
-    link: "../サバイバー/画家/画家.html",
+    url: "../images/kyaragazou/sabaibagazou/gaka.jpeg",
+    link: "../sabaiba/gaka/gaka.html",
   },
   {
     name: "バッツマン",
-    url: "../images/kyaragazou/sabaibagazou/バッツマン.jpeg",
-    link: "../サバイバー/バッツマン/バッツマン.html",
+    url: "../images/kyaragazou/sabaibagazou/battumann.jpeg",
+    link: "../sabaiba/battumann/battumann.html",
   },
   {
     name: "玩具職人",
-    url: "../images/kyaragazou/sabaibagazou/玩具職人.jpeg",
-    link: "../サバイバー/玩具職人/玩具職人.html",
+    url: "../images/kyaragazou/sabaibagazou/ganngusyokuninn.jpeg",
+    link: "../sabaiba/ganngusyokuninn/ganngusyokuninn.html",
   },
   {
     name: "患者",
-    url: "../images/kyaragazou/sabaibagazou/患者.jpeg",
-    link: "../サバイバー/患者/患者.html",
+    url: "../images/kyaragazou/sabaibagazou/kannzya.jpeg",
+    link: "../sabaiba/kannzya/kannzya.html",
   },
   {
     name: "心理学者",
-    url: "../images/kyaragazou/sabaibagazou/心理学者.jpeg",
-    link: "../サバイバー/心理学者/心理学者.html",
+    url: "../images/kyaragazou/sabaibagazou/sinnrigakusya.jpeg",
+    link: "../sabaiba/sinnrigakusya/sinnrigakusya.html",
   },
   {
     name: "小説家",
-    url: "../images/kyaragazou/sabaibagazou/小説家.jpeg",
-    link: "../サバイバー/小説家/小説家.html",
+    url: "../images/kyaragazou/sabaibagazou/syousetuka.jpeg",
+    link: "../sabaiba/syousetuka/syousetuka.html",
   },
   {
     name: "少女",
-    url: "../images/kyaragazou/sabaibagazou/少女.jpeg",
-    link: "../サバイバー/少女/少女.html",
+    url: "../images/kyaragazou/sabaibagazou/syouzyo.jpeg",
+    link: "../sabaiba/syouzyo/syouzyo.html",
   },
   {
     name: "泣きピエロ",
-    url: "../images/kyaragazou/sabaibagazou/泣きピエロ.jpeg",
-    link: "../サバイバー/幸運児/幸運児.html",
+    url: "../images/kyaragazou/sabaibagazou/nakipiero.jpeg",
+    link: "../sabaiba/nakipiero/nakipiero.html",
   },
   {
     name: "教授",
-    url: "../images/kyaragazou/sabaibagazou/教授.jpeg",
-    link: "../サバイバー/教授/教授.html",
+    url: "../images/kyaragazou/sabaibagazou/kyouzyu.jpeg",
+    link: "../sabaiba/kyouzyu/kyouzyu.html",
   },
   {
     name: "骨董商",
-    url: "../images/kyaragazou/sabaibagazou/骨董商.jpeg",
-    link: "../サバイバー/骨董商/骨董商.html",
+    url: "../images/kyaragazou/sabaibagazou/kottousyou.jpeg",
+    link: "../sabaiba/kottousyou/kottousyou.html",
   },
   {
     name: "作曲家",
-    url: "../images/kyaragazou/sabaibagazou/作曲家.jpeg",
-    link: "../サバイバー/作曲家/作曲家.html",
+    url: "../images/kyaragazou/sabaibagazou/sakkyokuka.jpeg",
+    link: "../sabaiba/sakkyokuka/sakkyokuka.html",
   },
   {
     name: "記者",
-    url: "../images/kyaragazou/sabaibagazou/記者.jpeg",
-    link: "../サバイバー/記者/記者.html",
+    url: "../images/kyaragazou/sabaibagazou/kisya.jpeg",
+    link: "../sabaiba/kisya/kisya.html",
   },
   {
     name: "航空エンジニア",
-    url: "../images/kyaragazou/sabaibagazou/航空エンジニア.jpeg",
-    link: "../サバイバー/航空エンジニア/航空エンジニア.html",
+    url: "../images/kyaragazou/sabaibagazou/koukuuennzinia.jpeg",
+    link: "../sabaiba/koukuuennzinia/koukuuennzinia.html",
   },
   {
     name: "応援団",
-    url: "../images/kyaragazou/sabaibagazou/応援団.jpeg",
-    link: "../サバイバー/応援団/応援団.html",
+    url: "../images/kyaragazou/sabaibagazou/ouenndann.jpeg",
+    link: "../sabaiba/ouenndann/ouenndann.html",
   },
   {
     name: "人形師",
-    url: "../images/kyaragazou/sabaibagazou/人形師.jpeg",
-    link: "../サバイバー/人形師/人形師.html",
+    url: "../images/kyaragazou/sabaibagazou/ningyousi.jpeg",
+    link: "../sabaiba/ningyousi/ningyousi.html",
   },
   {
     name: "火災調査員",
-    url: "../images/kyaragazou/sabaibagazou/火災調査員.jpeg",
-    link: "../サバイバー/火災調査員/火災調査員.html",
+    url: "../images/kyaragazou/sabaibagazou/kasaityousainn.jpeg",
+    link: "../sabaiba/kasaityousainn/kasaityousainn.html",
   },
   {
     name: "レディファウロ",
-    url: "../images/kyaragazou/sabaibagazou/レディファウロ.jpeg",
-    link: "../サバイバー/レディファウロ/レディファウロ.html",
+    url: "../images/kyaragazou/sabaibagazou/redhifauro.jpeg",
+    link: "../sabaiba/redhifauro/redhifauro.html",
   },
   {
     name: "騎士",
-    url: "../images/kyaragazou/sabaibagazou/騎士.jpeg",
-    link: "../サバイバー/騎士/騎士.html",
+    url: "../images/kyaragazou/sabaibagazou/kisi.jpeg",
+    link: "../sabaiba/kisi/kisi.html",
   },
   {
     name: "気象学者",
-    url: "../images/kyaragazou/sabaibagazou/気象学者.jpeg",
-    link: "../サバイバー/気象学者/気象学者.html",
+    url: "../images/kyaragazou/sabaibagazou/kisyougakusya.jpeg",
+    link: "../sabaiba/kisyougakusya/kisyougakusya.html",
   },
   {
     name: "弓使い",
-    url: "../images/kyaragazou/sabaibagazou/弓使い.jpeg",
-    link: "../サバイバー/弓使い/弓使い.html",
+    url: "../images/kyaragazou/sabaibagazou/yumitukai.jpeg",
+    link: "../sabaiba/yumitukai/yumitukai.html",
   },
 ];
 
 const hunters = [
   {
     name: "復讐者",
-    url: "../images/kyaragazou/hanntagazou/復讐者.jpeg",
-    link: "../ハンター/復讐者/復讐者.html",
+    url: "../images/kyaragazou/hanntagazou/hukusyuusya.jpeg",
+    link: "../hukusyuusya/hukusyuusya.html",
   },
   {
     name: "道化師",
-    url: "../images/kyaragazou/hanntagazou/道化師.jpeg",
-    link: "../ハンター/道化師/道化師.html",
+    url: "../images/kyaragazou/hanntagazou/doukesi.jpeg",
+    link: "../doukesi/doukesi.html",
   },
   {
     name: "断罪狩人",
-    url: "../images/kyaragazou/hanntagazou/断罪狩人.jpeg",
-    link: "../ハンター/断罪狩人/断罪狩人.html",
+    url: "../images/kyaragazou/hanntagazou/dannzaikariudo.jpeg",
+    link: "../dannzaikariudo/dannzaikariudo.html",
   },
   {
     name: "リッパー",
-    url: "../images/kyaragazou/hanntagazou/リッパー.jpeg",
-    link: "../ハンター/リッパー/リッパー.html",
+    url: "../images/kyaragazou/hanntagazou/rippa.jpeg",
+    link: "../rippa/rippa.html",
   },
   {
     name: "結魂者",
-    url: "../images/kyaragazou/hanntagazou/結魂者.jpeg",
-    link: "../ハンター/結魂者/結魂者.html",
+    url: "../images/kyaragazou/hanntagazou/kekkonnsya.jpeg",
+    link: "../kekkonnsya/kekkonnsya.html",
   },
   {
     name: "芸者",
-    url: "../images/kyaragazou/hanntagazou/芸者.jpeg",
-    link: "../ハンター/芸者/芸者.html",
+    url: "../images/kyaragazou/hanntagazou/geisya.jpeg",
+    link: "../geisya/geisya.html",
   },
   {
     name: "白黒無常",
-    url: "../images/kyaragazou/hanntagazou/白黒無常.jpeg",
-    link: "../ハンター/白黒無常/白黒無常.html",
+    url: "../images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg",
+    link: "../sirokuromuzyou/sirokuromuzyou.html",
   },
   {
     name: "写真家",
-    url: "../images/kyaragazou/hanntagazou/写真家.jpeg",
-    link: "../ハンター/写真家/写真家.html",
+    url: "../images/kyaragazou/hanntagazou/syasinnka.jpeg",
+    link: "../syasinnka/syasinnka.html",
   },
   {
     name: "狂眼",
-    url: "../images/kyaragazou/hanntagazou/狂眼.jpeg",
-    link: "../ハンター/狂眼/狂眼.html",
+    url: "../images/kyaragazou/hanntagazou/kyougenn.jpeg",
+    link: "../kyougenn/kyougenn.html",
   },
   {
     name: "黄衣の王",
-    url: "../images/kyaragazou/hanntagazou/黄衣の王.jpeg",
-    link: "../ハンター/黄衣の王/黄衣の王.html",
+    url: "../images/kyaragazou/hanntagazou/ika.jpeg",
+    link: "../ika/ika.html",
   },
   {
     name: "夢の魔女",
-    url: "../images/kyaragazou/hanntagazou/夢の魔女.jpeg",
-    link: "../ハンター/夢の魔女/夢の魔女.html",
+    url: "../images/kyaragazou/hanntagazou/yumenomazyo.jpeg",
+    link: "../yumenomazyo/yumenomazyo.html",
   },
   {
     name: "泣き虫",
-    url: "../images/kyaragazou/hanntagazou/泣き虫.jpeg",
-    link: "../ハンター/泣き虫/泣き虫.html",
+    url: "../images/kyaragazou/hanntagazou/nakimusi.jpeg",
+    link: "../nakimusi/nakimusi.html",
   },
   {
     name: "魔トカゲ",
-    url: "../images/kyaragazou/hanntagazou/魔トカゲ.jpeg",
-    link: "../ハンター/魔トカゲ/魔トカゲ.html",
+    url: "../images/kyaragazou/hanntagazou/matokage.jpeg",
+    link: "../matokage/matokage.html",
   },
   {
     name: "血の女王",
-    url: "../images/kyaragazou/hanntagazou/マリィ.jpeg",
-    link: "../ハンター/マリィ/マリィ.html",
+    url: "../images/kyaragazou/hanntagazou/marhi.jpeg",
+    link: "../marhi/marhi.html",
   },
   {
     name: "ガードNo.26",
-    url: "../images/kyaragazou/hanntagazou/ガードNO.26.jpeg",
-    link: "../ハンター/ガードNO.26/ガードNO.26.html",
+    url: "../images/kyaragazou/hanntagazou/bonnbonn.jpeg",
+    link: "../bonnbonn/bonnbonn.html",
   },
   {
     name: "使徒",
-    url: "../images/kyaragazou/hanntagazou/使徒.jpeg",
-    link: "../ハンター/使徒/使徒.html",
+    url: "../images/kyaragazou/hanntagazou/sito.jpeg",
+    link: "../sito/sito.html",
   },
   {
     name: "ヴァイオリニスト",
-    url: "../images/kyaragazou/hanntagazou/ヴァイオリニスト.jpeg",
-    link: "../ハンター/ヴァイオリニスト/ヴァイオリニスト.html",
+    url: "../images/kyaragazou/hanntagazou/vaiorinisuto.jpeg",
+    link: "../vaiorinisuto/vaiorinisuto.html",
   },
   {
     name: "彫刻家",
-    url: "../images/kyaragazou/hanntagazou/彫刻師.jpeg",
-    link: "../ハンター/彫刻師/彫刻師.html",
+    url: "../images/kyaragazou/hanntagazou/tyoukokusi.jpeg",
+    link: "../tyoukokusi/tyoukokusi.html",
   },
   {
-    name: "アンデット",
-    url: "../images/kyaragazou/hanntagazou/アンデット.jpeg",
-    link: "../ハンター/アンデット/アンデット.html",
+    name: "アンデッド",
+    url: "../images/kyaragazou/hanntagazou/anndetto.jpeg",
+    link: "../anndetto/anndetto.html",
   },
   {
     name: "破輪",
-    url: "../images/kyaragazou/hanntagazou/破輪.jpeg",
-    link: "../ハンター/破輪/破輪.html",
+    url: "../images/kyaragazou/hanntagazou/harinn.jpeg",
+    link: "../harinn/harinn.html",
   },
   {
     name: "漁師",
-    url: "../images/kyaragazou/hanntagazou/漁師.jpeg",
-    link: "../ハンター/漁師/漁師.html",
+    url: "../images/kyaragazou/hanntagazou/ryousi.jpeg",
+    link: "../ryousi/ryousi.html",
   },
   {
     name: "蝋人形師",
-    url: "../images/kyaragazou/hanntagazou/蝋人形師.jpeg",
-    link: "../ハンター/蝋人形師/蝋人形師.html",
+    url: "../images/kyaragazou/hanntagazou/rouninngyousi.jpeg",
+    link: "../rouninngyousi/rouninngyousi.html",
   },
   {
     name: "悪夢",
-    url: "../images/kyaragazou/hanntagazou/悪夢.jpeg",
-    link: "../ハンター/悪夢/悪夢.html",
+    url: "../images/kyaragazou/hanntagazou/akumu.jpeg",
+    link: "../akumu/akumu.html",
   },
   {
     name: "書記官",
-    url: "../images/kyaragazou/hanntagazou/書記官.jpeg",
-    link: "../ハンター/書記官/書記官.html",
+    url: "../images/kyaragazou/hanntagazou/syokikann.jpeg",
+    link: "../syokikann/syokikann.html",
   },
   {
     name: "隠者",
-    url: "../images/kyaragazou/hanntagazou/隠者.jpeg",
-    link: "../ハンター/隠者/隠者.html",
+    url: "../images/kyaragazou/hanntagazou/innzya.jpeg",
+    link: "../innzya/innzya.html",
   },
   {
     name: "夜の番人",
-    url: "../images/kyaragazou/hanntagazou/夜の番人.jpeg",
-    link: "../ハンター/夜の番人/夜の番人.html",
+    url: "../images/kyaragazou/hanntagazou/yorunobannninn.jpeg",
+    link: "../yorunobannninn/yorunobannninn.html",
   },
   {
     name: "フールズ・ゴールド",
-    url: "../images/kyaragazou/hanntagazou/フールズゴールド.jpeg",
-    link: "../ハンター/フールズ・ゴールド/フールズ・ゴールド.html",
-  },
-  {
-    name: "オペラ歌手",
-    url: "../images/kyaragazou/hanntagazou/オペラ歌手.jpeg",
-    link: "../ハンター/オペラ歌手/オペラ歌手.html",
+    url: "../images/kyaragazou/hanntagazou/hurugo.jpeg",
+    link: "../hurugo/hurugo.html",
   },
   {
     name: "時空の影",
-    url: "../images/kyaragazou/hanntagazou/時空の影.jpeg",
-    link: "../ハンター/時空の影/時空の影.html",
+    url: "../images/kyaragazou/hanntagazou/zikuunokage.jpeg",
+    link: "../zikuunokage/zikuunokage.html",
   },
   {
-    name: "足苗の羊",
-    url: "../images/kyaragazou/hanntagazou/足萎えの羊.jpeg",
-    link: "../ハンター/足萎えの羊/足萎えの羊.html",
+    name: "足萎えの羊",
+    url: "../images/kyaragazou/hanntagazou/asinaenohituzi.jpeg",
+    link: "../asinaenohituzi/asinaenohituzi.html",
   },
   {
     name: "フラバルー",
-    url: "../images/kyaragazou/hanntagazou/フラバルー.jpeg",
-    link: "../ハンター/フラバルー/フラバルー.html",
+    url: "../images/kyaragazou/hanntagazou/hurabaru.jpeg",
+    link: "../hurabaru/hurabaru.html",
   },
 ];
 
@@ -438,151 +433,6 @@ window.onload = function () {
   createHunterCards();
 };
 
-const MAX_COMMENTS = 100; // 最大表示コメント数
-const pageIdentifier = "purozinnkaku"; // このページに特有の識別子
-const historyKey = `commentHistory_${pageIdentifier}`; // コメント履歴のローカルストレージキー
-const commentsKey = `comments_${pageIdentifier}`; // コメント表示用のローカルストレージキー
-
-// ローカルストレージからコメント履歴を取得
-let commentHistory = JSON.parse(localStorage.getItem(historyKey)) || [];
-
-// コメント表示用の配列（逆順で取得）
-let comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
-comments.reverse(); // **ロード時に最新のコメントを上にする**
-
-const icons = [
-  "../../images/randomicon/オフェンス.jpeg",
-  "../../images/randomicon/ポストマン.jpeg",
-  "../../images/randomicon/骨董商.jpeg",
-  "../../images/randomicon/祭司.jpeg",
-  "../../images/randomicon/傭兵.jpeg",
-  "../../images/randomicon/応援団.jpeg",
-  "../../images/randomicon/少女.jpeg",
-  "../../images/randomicon/機械技師.jpeg",
-  "../../images/randomicon/空軍.jpeg",
-  "../../images/randomicon/調香師.jpeg",
-  "../../images/randomicon/記者.jpeg",
-];
-
-// ページ読み込み時にコメントをレンダリング
-window.addEventListener("load", function () {
-  renderComments();
-});
-
-document
-  .getElementById("comment-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const usernameInput = document.getElementById("username-input");
-    const commentInput = document.getElementById("comment-input");
-    const username = usernameInput.value.trim();
-    const commentText = commentInput.value.trim();
-    const timestamp = new Date().toLocaleString();
-
-    if (username !== "" && commentText !== "") {
-      const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-
-      const commentData = {
-        username,
-        commentText,
-        timestamp,
-        icon: randomIcon,
-      };
-
-      // **新しいコメントを配列の先頭に追加**
-      comments.unshift(commentData);
-      localStorage.setItem(commentsKey, JSON.stringify(comments));
-
-      // **コメント履歴にも追加**
-      commentHistory.unshift(commentData);
-      localStorage.setItem(historyKey, JSON.stringify(commentHistory));
-
-      // **コメントが上限を超えた場合、古いコメントを削除**
-      if (comments.length > MAX_COMMENTS) {
-        comments.pop();
-        localStorage.setItem(commentsKey, JSON.stringify(comments));
-      }
-
-      // 入力欄をクリア
-      usernameInput.value = "";
-      commentInput.value = "";
-
-      // **最新のコメントを上に追加**
-      addCommentToDOM(commentData);
-    }
-  });
-
-// **コメントをDOMに追加する関数**
-function addCommentToDOM(commentData) {
-  const commentsContainer = document.getElementById("comments");
-
-  if (commentsContainer) {
-    const comment = document.createElement("div");
-    comment.classList.add("comment");
-
-    const icon = document.createElement("img");
-    icon.src = commentData.icon;
-    icon.alt = "User Icon";
-
-    const content = document.createElement("div");
-    content.classList.add("content");
-
-    const username = document.createElement("div");
-    username.classList.add("username");
-    username.textContent = commentData.username;
-
-    const timestamp = document.createElement("div");
-    timestamp.classList.add("timestamp");
-    timestamp.textContent = commentData.timestamp;
-
-    const message = document.createElement("div");
-    message.classList.add("message");
-    message.textContent = commentData.commentText;
-
-    content.appendChild(username);
-    content.appendChild(timestamp);
-    content.appendChild(message);
-    comment.appendChild(icon);
-    comment.appendChild(content);
-
-    // **最新のコメントを上に追加**
-    commentsContainer.prepend(comment);
-  }
-}
-
-// **コメントを全てレンダリングする関数**
-function renderComments() {
-  const commentsContainer = document.getElementById("comments");
-
-  if (commentsContainer) {
-    commentsContainer.innerHTML = ""; // 一度クリア
-
-    // **コメントを逆順にして表示**
-    comments.forEach((commentData) => {
-      addCommentToDOM(commentData);
-    });
-  }
-}
-
-// **ページ読み込み時にコメントを表示**
-renderComments();
-
-// コメント履歴から集計してランキングを表示する関数
-function generateRanking() {
-  const ranking = commentHistory.reduce((acc, comment) => {
-    acc[comment.username] = (acc[comment.username] || 0) + 1;
-    return acc;
-  }, {});
-
-  console.log("ランキング:", ranking);
-}
-
-// **ランキング生成（デモ用）**
-generateRanking();
-
-console.log("コメントリスト:", comments);
-
 window.addEventListener("scroll", function () {
   const sidebar = document.querySelector(".sidebar");
   const separator = document.querySelector(".separator-line");
@@ -623,3 +473,239 @@ window.addEventListener("resize", handleScroll);
 document.querySelector(".logo").addEventListener("click", function () {
   window.location.href = "../../hontai.html"; // hontai.html に遷移
 });
+
+// NGワードリスト
+const bannedWords = [
+  // 一般的な暴言・侮辱
+  "ばか",
+  "アホ",
+  "くそ",
+  "しね",
+  "死ね",
+  "うざい",
+  "キモい",
+  "キモ",
+  "ボケ",
+  "カス",
+  "消えろ",
+  "ブス",
+  "デブ",
+  "ガリ",
+  "まぬけ",
+  "能無し",
+  "低脳",
+  "ハゲ",
+  "クズ",
+  "ババア",
+  "ジジイ",
+  "ガキ",
+
+  // 性的な内容
+  "エロ",
+  "セックス",
+  "ちんこ",
+  "まんこ",
+  "やりたい",
+  "ハメ",
+  "レイプ",
+  "変態",
+  "ヌード",
+  "裸",
+  "自慰",
+  "フェラ",
+  "オナニー",
+  "勃起",
+  "射精",
+  "乳首",
+  "パイズリ",
+  "挿入",
+  "中出し",
+  "処女",
+
+  // 差別・ヘイト
+  "障害者",
+  "池沼",
+  "キチガイ",
+  "ホモ",
+  "レズ",
+  "チョン",
+  "在日",
+  "部落",
+  "黒人",
+  "差別",
+
+  // 英語の卑語
+  "fuck",
+  "shit",
+  "bitch",
+  "asshole",
+  "bastard",
+  "nigger",
+  "slut",
+  "whore",
+  "dick",
+  "pussy",
+  "faggot",
+  "cunt",
+  "rape",
+  "nude",
+  "kill",
+  "die",
+  "suck",
+  "stupid",
+  "retard",
+
+  // 荒らしによく使われる絵文字など
+  "💩",
+  "👎",
+  "🖕",
+
+  // 政治・宗教・国家関連（炎上防止）
+  "右翼",
+  "左翼",
+  "ネトウヨ",
+  "パヨク",
+  "保守",
+  "革新",
+  "政治",
+  "選挙",
+  "政党",
+  "自民",
+  "共産",
+  "民主",
+  "習近平",
+  "プーチン",
+  "ゼレンスキー",
+  "安倍",
+  "岸田",
+  "天皇",
+  "皇室",
+  "北朝鮮",
+  "中国",
+  "韓国",
+  "ロシア",
+  "戦争",
+  "大日本帝国",
+  "大東亜",
+  "植民地",
+  "核兵器",
+  "原爆",
+  "南京",
+  "慰安婦",
+  "竹島",
+  "尖閣",
+
+  // 英語ベースの政治・宗教・差別ワード
+  "allah",
+  "jihad",
+  "zion",
+  "jew",
+  "muslim",
+  "christian",
+  "satan",
+  "cult",
+  "bible",
+  "terrorist",
+  "communism",
+  "capitalism",
+  "leftist",
+  "rightist",
+  "democrat",
+  "republican",
+  "trump",
+  "biden",
+  "putin",
+  "xi jinping",
+  "war",
+  "nazi",
+  "hitler",
+  "holocaust",
+  "genocide",
+  "propaganda",
+];
+
+// NGワードを検出（伏せ字など対応）
+function containsBannedWord(text) {
+  const normalized = text.toLowerCase().replace(/\s|\*/g, ""); // 空白や「*」除去
+  return bannedWords.some((word) => normalized.includes(word));
+}
+
+// 投稿制限用の変数
+let lastPostTime = 0;
+let lastCommentContent = "";
+let postTimestamps = [];
+
+document
+  .getElementById("comment-form")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById("username-input").value.trim();
+    const comment = document.getElementById("comment-input").value.trim();
+    const now = Date.now();
+
+    // 入力チェック
+    if (!username || !comment) {
+      alert("ユーザーネームとコメントを入力してください。");
+      return;
+    }
+
+    // 空白のみチェック
+    if (comment.replace(/\s/g, "").length === 0) {
+      alert("空白のみのコメントは投稿できません。");
+      return;
+    }
+
+    // 改行制限
+    if (comment.split("\n").length > 10) {
+      alert("改行が多すぎます。10行以内で投稿してください。");
+      return;
+    }
+
+    // NGワード検出（ユーザーネームも含む）
+    if (containsBannedWord(comment) || containsBannedWord(username)) {
+      alert("不適切な内容が含まれています。修正してください。");
+      return;
+    }
+
+    // 文字数制限
+    if (comment.length > 300) {
+      alert("コメントは300文字以内で入力してください。");
+      return;
+    }
+
+    // 同一コメント防止
+    if (comment === lastCommentContent) {
+      alert("同じコメントを連続して投稿することはできません。");
+      return;
+    }
+
+    // 30秒以内の連投防止
+    if (now - lastPostTime < 30000) {
+      alert("連続投稿は30秒空けてください。");
+      return;
+    }
+
+    // 1分間に3件以上の投稿を制限
+    postTimestamps = postTimestamps.filter((ts) => now - ts < 60000);
+    if (postTimestamps.length >= 3) {
+      alert("短時間に投稿しすぎています。しばらく待ってください。");
+      return;
+    }
+
+    // 通過した場合の処理
+    lastPostTime = now;
+    lastCommentContent = comment;
+    postTimestamps.push(now);
+
+    await addDoc(commentsRef, {
+      username: username,
+      comment: comment,
+      timestamp: serverTimestamp(),
+    });
+
+    // 入力欄クリア＆再読み込み
+    document.getElementById("username-input").value = "";
+    document.getElementById("comment-input").value = "";
+    loadComments();
+  });

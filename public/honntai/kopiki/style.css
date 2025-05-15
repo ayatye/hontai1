@@ -367,7 +367,7 @@ li .arrow {
   margin-top: 20px; /* 上部の余白を追加 */
 }
 .comment {
-  display: flex;
+  display: block;
   align-items: flex-start;
   background-color: #f1f1f1;
   padding: 10px;
@@ -679,18 +679,190 @@ footer p {
   }
 }
 
-/* さらに小さいデバイス（スマホ）向けの設定 */
-@media (max-width: 480px) {
-  nav h2 {
-    font-size: 1rem; /* 見出しをさらに小さく */
+@media (max-width: 1210px) {
+  body {
+    line-height: 1.4;
   }
 
-  nav ul li a {
-    font-size: 0.9rem; /* リンク文字サイズをさらに小さく */
-    padding: 5px 8px; /* リンクの内側余白も少し減らす */
+  .wrapper {
+    flex-direction: column; /* レイアウトを縦方向に */
+    padding-left: 0cm;
+    padding-right: 0cm;
   }
+
+  .sidebar {
+    max-height: 800px;
+    width: 100%;
+    border-left: none;
+    float: none; /* 浮かせない */
+  }
+
+  .custom-line {
+    display: block;
+    border: none;
+    height: 3px;
+    width: 80%;
+    margin: 20px auto;
+    background-image: linear-gradient(
+      to right,
+      #333,
+      #333 33%,
+      transparent 33%,
+      transparent 66%,
+      #333 66%,
+      #333
+    );
+    background-size: 8px 3px;
+  }
+}
+
+/* スマホ対応のレスポンシブデザイン */
+@media (max-width: 768px) {
+  /* ヘッダー */
+  .c-header__list {
+    display: none;
+  }
+
+  .wrapper {
+    padding-left: 1cm;
+    padding-right: 1cm;
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+  #comment-section {
+    width: 80%;
+  }
+  .logo {
+    padding-right: 0;
+  }
+  .c-header__list-link {
+    margin-right: 0px;
+  }
+  .c-hamburger-menu__button {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 32px;
+    cursor: pointer;
+    z-index: 101; /* メニューの上に表示 */
+  }
+
+  .c-hamburger-menu__button-mark {
+    background-color: #fff;
+    height: 2px;
+    width: 20px;
+    transition: 0.3s;
+  }
+
+  .c-hamburger-menu__bg {
+    display: none;
+  }
+
+  /* チェックボックスがONのときのスタイル */
+  /* ハンバーガーメニューのオーバーレイ */
+  #hamburger:checked ~ .c-hamburger-menu__bg {
+    display: block; /* オーバーレイを表示 */
+    position: fixed; /* 固定位置に配置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒い背景 */
+    z-index: 99; /* メニューより上に表示 */
+    transition: background-color 0.3s ease; /* オーバーレイのスムーズな表示 */
+  }
+
+  /* バーガーメニューが表示されたときのメニューリスト */
+  .c-hamburger-menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-40%);
+    background-color: #333;
+    padding: 20px 0;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+  }
+  /* メニューが開いたときの表示 */
+  #hamburger:checked ~ .c-hamburger-menu__list {
+    opacity: 1;
+  }
+
+  /* 個々のメニュー項目のスタイル */
+  .c-hamburger-menu__list-item {
+    width: 80%; /* それぞれのボックスの幅を調整 */
+    margin: 20px 0; /* 各ボックスの間隔 */
+    padding: 12px;
+    text-align: center; /* テキストの中央揃え */
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #444;
+    border: 2px solid #007bff; /* 四角で囲むためのボーダー */
+    border-radius: 6px; /* 角を少し丸くする */
+    transition: background-color 0.3s ease;
+    padding-left: 20px;
+  }
+
+  /* ホバーしたときの効果 */
+  .c-hamburger-menu__list-item:hover {
+    background-color: #007bff;
+  }
+
+  .footer-links {
+    flex-direction: column; /* フッターのリンクを縦に並べる */
+    align-items: center;
+  }
+  footer {
+    padding: 15px;
+    width: 100%; /* フッターがビューポートの幅を占める */
+  }
+  #scroll-bar {
+    display: none;
+  }
+  /* 四角い箱のスタイル */
+  .update-box {
+    padding: 10px;
+  }
+  .update-info p {
+    font-size: 12px;
+  }
+  .update-link span {
+    font-size: 15px;
+  }
+
   .article-box {
     max-width: 95%; /* 最大幅も100%に設定 */
     padding: 10px; /* パディングを調整 */
+  }
+  nav {
+    max-width: 80%; /* 目次を画面幅いっぱいに */
+    padding: 15px; /* 目次の内側の余白を調整 */
+  }
+
+  nav h2 {
+    font-size: 1.2rem; /* 見出しを少し小さく */
+  }
+
+  nav ul li a {
+    font-size: 1rem; /* リンク文字サイズを少し小さく */
+    padding: 6px 10px; /* リンクの内側余白も小さく */
+  }
+  .article-text h3 {
+    font-size: 18px; /* タイトルのフォントサイズを調整 */
+  }
+  .article-text {
+    padding-left: 20px; /* テキストの左パディング */
   }
 }

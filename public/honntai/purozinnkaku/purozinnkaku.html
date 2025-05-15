@@ -5,6 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>おすすめキャラクター別プロが使う人格</title>
     <link rel="stylesheet" href="styles.css" />
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        serverTimestamp,
+        deleteDoc,
+        doc
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+        authDomain: "daigoroku-website.firebaseapp.com",
+        projectId: "daigoroku-website",
+        storageBucket: "daigoroku-website.appspot.com",
+        messagingSenderId: "405763623042",
+        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
+      };
+    
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const commentsRef = collection(db, "comments");
+      const pageId = "purozinnkaku"; 
+    
+      document.getElementById("comment-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = document.getElementById("username-input").value.trim();
+        const comment = document.getElementById("comment-input").value.trim();
+    
+        if (!username || !comment) return;
+    
+        await addDoc(commentsRef, {
+          username: username,
+          comment: comment,
+          timestamp: serverTimestamp(),
+          pageId: pageId,
+        });
+    
+        document.getElementById("username-input").value = "";
+        document.getElementById("comment-input").value = "";
+        loadComments();
+      });
+    
+      async function loadComments() {
+        const q = query(
+          commentsRef,
+          where("pageId", "==", pageId),
+          orderBy("timestamp", "desc")
+        );
+        const querySnapshot = await getDocs(q);
+    
+        const commentsContainer = document.getElementById("comments");
+        commentsContainer.innerHTML = "";
+    
+        let count = 0;
+        const docsToDelete = [];
+    
+        const icons = [
+          "../images/randomicon/ofensu.jpeg",
+          "../images/randomicon/posutomann.jpeg",
+          "../images/randomicon/kottousyou.jpeg",
+          "../images/randomicon/saisi.jpeg",
+          "../images/randomicon/youhei.jpeg",
+          "../images/randomicon/ouenndann.jpeg",
+          "../images/randomicon/syouzyo.jpeg",
+          "../images/randomicon/kikaigisi.jpeg",
+          "../images/randomicon/kuugunn.jpeg",
+          "../images/randomicon/tyoukousi.jpeg",
+          "../images/randomicon/kisya.jpeg"
+        ];
+    
+        querySnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.username && data.comment && data.timestamp?.seconds) {
+            if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
+              return; // NGワードフィルター
+            }
+    
+            if (count < 50) {
+              const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+              const commentDiv = document.createElement("div");
+              commentDiv.classList.add("comment");
+              commentDiv.innerHTML = `
+                <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
+                <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+                <div class="username"><strong>${data.username}</strong></div>
+                <div class="message">${data.comment}</div>
+              `;
+              commentsContainer.appendChild(commentDiv);
+            } else {
+              docsToDelete.push(doc(db, "comments", docSnap.id));
+            }
+            count++;
+          }
+        });
+    
+        for (const d of docsToDelete) {
+          await deleteDoc(d);
+        }
+      }
+      
+      loadComments();
+    </script>
   </head>
   <body>
     <header>
@@ -25,9 +133,7 @@
           <label for="hamburger" class="c-hamburger-menu__bg"></label>
           <ul class="c-header__list c-hamburger-menu__list">
             <li class="c-header__list-item">
-              <a href="../../index.html" class="c-header__list-link"
-                >ホーム</a
-              >
+              <a href="../../index.html" class="c-header__list-link">ホーム</a>
             </li>
             <li class="c-header__list-item">
               <a href="../最新情報/最新情報.html" class="c-header__list-link"
@@ -73,14 +179,18 @@
             <h3>キャラクター名:占い師</h3>
             <p>プロの名前: RC soba</p>
             <div class="character-content">
-              <div class="character-photo">写真</div>
+              <div class="character-photo">
+                <img src="../images/purozinnkaku/sobaura.jpeg" alt="占い師の内在人格" class="character-image" />
+              </div>
             </div>
             <div class="supplement">
               この写真はプロが使用する内在人格の配置例です。
             </div>
             <p>プロの名前: AWG Kaeru</p>
             <div class="character-content">
-              <div class="character-photo">写真</div>
+              <div class="character-photo">
+                <img src="../images/purozinnkaku/kaeruura.jpeg" alt="占い師の内在人格" class="character-image" />
+              </div>
             </div>
             <div class="supplement">
               この写真はプロが使用する内在人格の配置例です。
@@ -90,14 +200,9 @@
             <h3>キャラクター名:昆虫学者</h3>
             <p>プロの名前: FV Nerisu</p>
             <div class="character-content">
-              <div class="character-photo">写真</div>
-            </div>
-            <div class="supplement">
-              この写真はプロが使用する内在人格の配置例です。
-            </div>
-            <p>プロの名前: FV Nerisu</p>
-            <div class="character-content">
-              <div class="character-photo">写真</div>
+              <div class="character-photo">
+                <img src="../images/purozinnkaku/nerisukon.jpeg" alt="占い師の内在人格" class="character-image" />
+              </div>
             </div>
             <div class="supplement">
               この写真はプロが使用する内在人格の配置例です。
@@ -105,38 +210,104 @@
           </div>
           <div class="character-block">
             <h3>キャラクター名:骨董商</h3>
-            <p>プロの名前: ZETA Hametu</p>
+            <p>プロの名前: AWG Nameko</p>
             <div class="character-content">
-              <div class="character-photo">写真</div>
-            </div>
-            <div class="supplement">
-              この写真はプロが使用する内在人格の配置例です。
-            </div>
-            <p>プロの名前: FV Nerisu</p>
-            <div class="character-content">
-              <div class="character-photo">写真</div>
+              <div class="character-photo">
+                <img src="../images/purozinnkaku/namekoko.jpeg" alt="骨董商の内在人格" class="character-image" />
+              </div>
             </div>
             <div class="supplement">
               この写真はプロが使用する内在人格の配置例です。
             </div>
           </div>
-        </div>
+            <div class="character-block">
+              <h3>キャラクター名:探鉱者</h3>
+              <p>プロの名前: ZETA Hametu</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="../images/purozinnkaku/hametutan.jpeg" alt="探鉱者の内在人格" class="character-image" />
+                </div>
+              </div>
+              <p>プロの名前: RC soba</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="../images/purozinnkaku/sobatan.jpeg" alt="探鉱者の内在人格" class="character-image" />
+                </div>
+              </div>
+              <p>プロの名前: FAV Nerisu</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="../images/purozinnkaku/nerisutan.jpeg" alt="探鉱者の内在人格" class="character-image" />
+                </div>
+              </div>
+              <div class="supplement">
+                この写真はプロが使用する内在人格の配置例です。
+              </div>
+            </div>
+            <div class="character-block">
+              <h3>キャラクター名:オフェンス</h3>
+              <p>プロの名前: ZETA Dorisu</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="../images/purozinnkaku/dorisuofe.jpeg" alt="オフェンスの内在人格" class="character-image" />
+                </div>
+              </div>
+              <div class="supplement">
+                この写真はプロが使用する内在人格の配置例です。
+              </div>
+              <p>プロの名前: AWG Aez</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="../images/purozinnkaku/aezofe.jpeg" alt="オフェンスの内在人格" class="character-image" />
+                </div>
+              </div>
+              <div class="supplement">
+                この写真はプロが使用する内在人格の配置例です。
+              </div>
+            </div>
+            <div class="character-block">
+              <h3>キャラクター名:機械技師</h3>
+              <p>プロの名前: SCARZ Gengenki</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="../images/purozinnkaku/gengenkigisi.jpeg" alt="機械技師の内在人格" class="character-image" />
+                </div>
+              </div>
+              <div class="supplement">
+                この写真はプロが使用する内在人格の配置例です。
+              </div>
+            </div>
+            <div class="character-block">
+              <h3>キャラクター名:幸運児</h3>
+              <p>プロの名前: RC soba</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="../images/purozinnkaku/sobakou.jpeg" alt="幸運児の内在人格" class="character-image" />
+                </div>
+              </div>
+              <div class="supplement">
+                この写真はプロが使用する内在人格の配置例です。
+              </div>
+            </div>
+          </div>
 
-        <div class="section" id="hunter-section">
-          <h2>ハンター</h2>
-          <div class="character-block">
-            <h3>キャラクター名: リッパー</h3>
-            <p>プロの名前: プロB</p>
-            <div class="character-content">
-              <div class="character-photo">写真</div>
-            </div>
-            <div class="supplement">
-              この写真はプロが使用する内在人格の配置例です。
+          <div class="section" id="hunter-section">
+            <h2>ハンター</h2>
+            <div class="character-block">
+              <h3>キャラクター名: リッパー</h3>
+              <p>プロの名前: プロB</p>
+              <div class="character-content">
+                <div class="character-photo">
+                  <img src="sobaura.jpeg" alt="占い師の内在人格" />
+                </div>
+              </div>
+              <div class="supplement">
+                この写真はプロが使用する内在人格の配置例です。
+              </div>
             </div>
           </div>
         </div>
-        </div>
-        <div class="sidebar">
+      <div class="sidebar">
           <h2>サバイバー一覧</h2>
           <ul id="survivor-list">
             <!-- JavaScriptでサバイバーを追加 -->
@@ -186,9 +357,7 @@
         <a href="../プライバシー/プライバシーポリシー.html"
           >プライバシーポリシー</a
         >
-        <a href="../お問い合わせ/お問合せフォーム.html"
-          >お問い合わせフォーム</a
-        >
+        <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
         <a href="../運営者情報/運営者ブロック.html">運営情報</a>
       </div>
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>

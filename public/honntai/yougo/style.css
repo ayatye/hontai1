@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -175,9 +175,9 @@ main {
   background-color: #fff;
 }
 
-.container{
-  padding-top: 20px;      /* 上の余白 */
-  padding-bottom: 20px;   /* 下の余白 */
+.container {
+  padding-top: 20px; /* 上の余白 */
+  padding-bottom: 20px; /* 下の余白 */
 }
 
 .toggle-title {
@@ -197,11 +197,9 @@ main {
   transition: transform 0.3s;
 }
 
-
 .toggle-title.active .arrow {
   transform: rotate(180deg); /* 開いたときに上向きに */
 }
-
 
 .toggle-content {
   display: none;
@@ -212,8 +210,8 @@ main {
 }
 
 .term {
-  padding-top: 7px;      /* 上の余白 */
-  padding-bottom: 7px;   /* 下の余白 */
+  padding-top: 7px; /* 上の余白 */
+  padding-bottom: 7px; /* 下の余白 */
 }
 
 /* サイドバーの位置調整 */
@@ -358,7 +356,7 @@ li .arrow {
   margin-top: 20px; /* 上部の余白を追加 */
 }
 .comment {
-  display: flex;
+  display: block;
   align-items: flex-start;
   background-color: #f1f1f1;
   padding: 10px;
@@ -685,4 +683,3 @@ footer p {
     padding: 10px; /* パディングを調整 */
   }
 }
-

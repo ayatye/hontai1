@@ -6,6 +6,114 @@
     <title>最新アップデート情報</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- 外部CSSを読み込む -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        serverTimestamp,
+        deleteDoc,
+        doc
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+        authDomain: "daigoroku-website.firebaseapp.com",
+        projectId: "daigoroku-website",
+        storageBucket: "daigoroku-website.appspot.com",
+        messagingSenderId: "405763623042",
+        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
+      };
+    
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const commentsRef = collection(db, "comments");
+      const pageId = "saisinnzyouhou"; 
+    
+      document.getElementById("comment-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = document.getElementById("username-input").value.trim();
+        const comment = document.getElementById("comment-input").value.trim();
+    
+        if (!username || !comment) return;
+    
+        await addDoc(commentsRef, {
+          username: username,
+          comment: comment,
+          timestamp: serverTimestamp(),
+          pageId: pageId,
+        });
+    
+        document.getElementById("username-input").value = "";
+        document.getElementById("comment-input").value = "";
+        loadComments();
+      });
+    
+      async function loadComments() {
+        const q = query(
+          commentsRef,
+          where("pageId", "==", pageId),
+          orderBy("timestamp", "desc")
+        );
+        const querySnapshot = await getDocs(q);
+    
+        const commentsContainer = document.getElementById("comments");
+        commentsContainer.innerHTML = "";
+    
+        let count = 0;
+        const docsToDelete = [];
+    
+        const icons = [
+          "../images/randomicon/ofensu.jpeg",
+          "../images/randomicon/posutomann.jpeg",
+          "../images/randomicon/kottousyou.jpeg",
+          "../images/randomicon/saisi.jpeg",
+          "../images/randomicon/youhei.jpeg",
+          "../images/randomicon/ouenndann.jpeg",
+          "../images/randomicon/syouzyo.jpeg",
+          "../images/randomicon/kikaigisi.jpeg",
+          "../images/randomicon/kuugunn.jpeg",
+          "../images/randomicon/tyoukousi.jpeg",
+          "../images/randomicon/kisya.jpeg"
+        ];
+    
+        querySnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.username && data.comment && data.timestamp?.seconds) {
+            if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
+              return; // NGワードフィルター
+            }
+    
+            if (count < 50) {
+              const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+              const commentDiv = document.createElement("div");
+              commentDiv.classList.add("comment");
+              commentDiv.innerHTML = `
+                <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
+                <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+                <div class="username"><strong>${data.username}</strong></div>
+                <div class="message">${data.comment}</div>
+              `;
+              commentsContainer.appendChild(commentDiv);
+            } else {
+              docsToDelete.push(doc(db, "comments", docSnap.id));
+            }
+            count++;
+          }
+        });
+    
+        for (const d of docsToDelete) {
+          await deleteDoc(d);
+        }
+      }
+      
+      loadComments();
+    </script>
   </head>
   <body>
     <header>
@@ -73,6 +181,40 @@
 
             <!-- アップデート記事リスト -->
             <div id="updates-container">
+              <article class="update-item">
+                <h3>2025.5.8現在</h3>
+                <h2>雑貨商がランク戦に実装されました。</h2>
+<br>
+                <a href="../sabaiba/yumitukai/yumitukai.html">詳細はこちら</a>
+<br>
+<br>
+                <h2>Call of the Abyss Ⅷ優勝祭典イベントが開始されます。</h2>
+                <p>
+                優勝アイコン、戦隊衣装なども期間限定で販売されます。これはぜひとも獲得したいところ！！
+                </p>
+              </article>
+              
+              <article class="update-item">
+                <h3>2025.4.30現在</h3>
+                <h2>ハンター</h2>
+                <p>
+                リッパー、アンデットの調整が入りました。
+                </p>
+<br>
+                <div class="toggle-title">更新内容 <span class="arrow">▼</span></div>
+                <div class="toggle-content">
+                  <ul>
+                    <h2>リッパー</h2>
+                    <li>寒霧攻撃距離を1.8メートルから2.3メートルに、寒霧溜め攻撃距離を2.6メートルから3.0メートルにアップしました。</li>
+                    <li>「リッパー」寒霧攻撃が外れた際の回復アクション時間を0.7秒から0.8秒に、寒霧溜め攻撃が外れた際の回復アクション時間を0.9秒から1.0秒にアップしました。</li>
+                  </ul>
+                  <ul>
+                    <h2>アンデッド</h2>
+                    <li>エネルギー衝撃発動前のクション時間をやや延長しました。</li>
+                  </ul>
+                </div>
+              </article>
+
               <article class="update-item">
                 <h3>2025.4.24現在</h3>
                 <h2>新ハンター雑貨商が追加されました。</h2>
@@ -473,11 +615,11 @@
 
     <footer>
       <div class="footer-links">
-        <a href="../プライバシー/プライバシーポリシー.html"
+        <a href="../puraibasi/puraibasi.html"
           >プライバシーポリシー</a
         >
         <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
-        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+        <a href="../uneizyouhou/uneizyouhou.html">運営情報</a>
       </div>
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>

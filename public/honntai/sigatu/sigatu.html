@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>初心者に使ってほしいキャラ</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>初心者に使ってほしいキャラ</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        serverTimestamp,
+        deleteDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+        authDomain: "daigoroku-website.firebaseapp.com",
+        projectId: "daigoroku-website",
+        storageBucket: "daigoroku-website.appspot.com",
+        messagingSenderId: "405763623042",
+        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const commentsRef = collection(db, "comments");
+      const pageId = "sigatu";
+
+      document
+        .getElementById("comment-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const username = document
+            .getElementById("username-input")
+            .value.trim();
+          const comment = document.getElementById("comment-input").value.trim();
+
+          if (!username || !comment) return;
+
+          await addDoc(commentsRef, {
+            username: username,
+            comment: comment,
+            timestamp: serverTimestamp(),
+            pageId: pageId,
+          });
+
+          document.getElementById("username-input").value = "";
+          document.getElementById("comment-input").value = "";
+          loadComments();
+        });
+
+      async function loadComments() {
+        const q = query(
+          commentsRef,
+          where("pageId", "==", pageId),
+          orderBy("timestamp", "desc")
+        );
+        const querySnapshot = await getDocs(q);
+
+        const commentsContainer = document.getElementById("comments");
+        commentsContainer.innerHTML = "";
+
+        let count = 0;
+        const docsToDelete = [];
+
+        const icons = [
+          "../images/randomicon/ofensu.jpeg",
+          "../images/randomicon/posutomann.jpeg",
+          "../images/randomicon/kottousyou.jpeg",
+          "../images/randomicon/saisi.jpeg",
+          "../images/randomicon/youhei.jpeg",
+          "../images/randomicon/ouenndann.jpeg",
+          "../images/randomicon/syouzyo.jpeg",
+          "../images/randomicon/kikaigisi.jpeg",
+          "../images/randomicon/kuugunn.jpeg",
+          "../images/randomicon/tyoukousi.jpeg",
+          "../images/randomicon/kisya.jpeg",
+        ];
+
+        querySnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.username && data.comment && data.timestamp?.seconds) {
+            if (
+              containsBannedWord(data.username) ||
+              containsBannedWord(data.comment)
+            ) {
+              return; // NGワードフィルター
+            }
+
+            if (count < 50) {
+              const randomIcon =
+                icons[Math.floor(Math.random() * icons.length)];
+              const commentDiv = document.createElement("div");
+              commentDiv.classList.add("comment");
+              commentDiv.innerHTML = `
+                <div class="timestamp">${new Date(
+                  data.timestamp.seconds * 1000
+                ).toLocaleString()}</div>
+                <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+                <div class="username"><strong>${data.username}</strong></div>
+                <div class="message">${data.comment}</div>
+              `;
+              commentsContainer.appendChild(commentDiv);
+            } else {
+              docsToDelete.push(doc(db, "comments", docSnap.id));
+            }
+            count++;
+          }
+        });
+
+        for (const d of docsToDelete) {
+          await deleteDoc(d);
+        }
+      }
+
+      loadComments();
+    </script>
+  </head>
+  <body>
     <header>
       <nav-gert>
         <div class="logo">
@@ -62,90 +180,90 @@
       <p>第五人格の様々の情報が盛りだくさん！！</p>
     </section>
 
-      <div class="wrapper">
+    <div class="wrapper">
       <div class="konntent">
+        <h1>初心者に使ってほしいキャラ</h1>
 
-  <h1>初心者に使ってほしいキャラ</h1>
+        <p>
+          第五人格始めて何のサバイバー、ハンター使ったら良いのか分からない。という方<br />
+          ランキング形式で使ってほしいキャラを3位まで発表します！！<br />
+          （あくまで個人的なので、もっと良いキャラがいればコメントお願いします。異論求めます。）
+        </p>
 
-  <p>
-    第五人格始めて何のサバイバー、ハンター使ったら良いのか分からない。という方<br>
-    ランキング形式で使ってほしいキャラを3位まで発表します！！<br>
-    （あくまで個人的なので、もっと良いキャラがいればコメントお願いします。異論求めます。）
-  </p>
+        <h2>初心者に使ってほしいサバイバーランキング</h2>
 
-  <h2>初心者に使ってほしいサバイバーランキング</h2>
+        <div class="rank">
+          <img src="../images/kyaragazou/sabaibagazou/sinnrigakusya.jpeg" />
+          <h3>第1位 ・心理学者</h3>
+          <p class="highlight">圧倒的TOPで心理学者です。</p>
 
-  <div class="rank">
-    <h3>第1位 ・心理学者</h3>
-    <p class="highlight">圧倒的TOPで心理学者です。</p>
-    
-    <h4>チェイス面</h4>
-    <p>
-      心理学者は、ストレス値を使うことでハンターの攻撃を2回耐えることができます。<br>
-      他のサバイバーより一回多く耐えることができる。<br>
-      また、ストレス値を残したままダウンor恐怖の一撃でダウンした時でも、<br>
-      危機一髪なしor危機一髪が切れた場合はストレス値が発動し、ハンターの攻撃を耐えることができます。
-    </p>
+          <h4>チェイス面</h4>
+          <p>
+            心理学者は、ストレス値を使うことでハンターの攻撃を2回耐えることができます。<br />
+            他のサバイバーより一回多く耐えることができる。<br />
+            また、ストレス値を残したままダウンor恐怖の一撃でダウンした時でも、<br />
+            危機一髪なしor危機一髪が切れた場合はストレス値が発動し、ハンターの攻撃を耐えることができます。
+          </p>
 
-    <h4>アイテム面</h4>
-    <p>
-      アイテムも難しくなく、回復サバイバーで貴重な存在。<br>
-      回復が欲しいサバイバーは「手を貸して」やボイス定型文チャットで知らせてくれるため、<br>
-      タイミングも相手に任すことができる。
-    </p>
-  </div>
+          <h4>アイテム面</h4>
+          <p>
+            アイテムも難しくなく、回復サバイバーで貴重な存在。<br />
+            回復が欲しいサバイバーは「手を貸して」やボイス定型文チャットで知らせてくれるため、<br />
+            タイミングも相手に任すことができる。
+          </p>
+        </div>
 
-  <div class="rank">
-    <h3>第2位 ・人形師</h3>
-    <p class="highlight">ハンターの攻撃を3回耐えることが可能</p>
+        <div class="rank">
+          <img src="../images/kyaragazou/sabaibagazou/ningyousi.jpeg" />
+          <h3>第2位 ・人形師</h3>
+          <p class="highlight">ハンターの攻撃を3回耐えることが可能</p>
 
-    <h4>チェイス面</h4>
-    <p>
-      人形師は0.5ダメージを負傷するかわりに8秒間「ルイ」状態になれる。<br>
-      「ルイ」形態の時は累積1.5ダメージまで無効化できる。<br>
-      ダメージの規定値を超えると「ルイ」状態が解除されるので、実質1.5ダメージまで抑えることができれば、<br>
-      8秒×3回＝24秒の時間が担保される。
-    </p>
+          <h4>チェイス面</h4>
+          <p>
+            人形師は0.5ダメージを負傷するかわりに8秒間「ルイ」状態になれる。<br />
+            「ルイ」形態の時は累積1.5ダメージまで無効化できる。<br />
+            ダメージの規定値を超えると「ルイ」状態が解除されるので、実質1.5ダメージまで抑えることができれば、<br />
+            8秒×3回＝24秒の時間が担保される。
+          </p>
 
-    <h4>アイテム面</h4>
-    <p>
-      スキルボタンをタップすると、ルイになれるので使い方はとても簡単！
-    </p>
+          <h4>アイテム面</h4>
+          <p>
+            スキルボタンをタップすると、ルイになれるので使い方はとても簡単！
+          </p>
 
-    <h4>隠れざる強み</h4>
-    <p>
-      負傷同士で人形が治療することでお互いが0.5回復する。<br>
-      もし、ハンターが1ダメージハンターの場合、治療が一回ですむ。
-    </p>
-  </div>
+          <h4>隠れざる強み</h4>
+          <p>
+            負傷同士で人形が治療することでお互いが0.5回復する。<br />
+            もし、ハンターが1ダメージハンターの場合、治療が一回ですむ。
+          </p>
+        </div>
 
-  <div class="rank">
-    <h3>第3位 ・弁護士</h3>
-    <p class="highlight">ハンターの動きを見ながらチェイスができる。</p>
+        <div class="rank">
+          <img src="../images/kyaragazou/sabaibagazou/benngosi.jpeg" />
+          <h3>第3位 ・弁護士</h3>
+          <p class="highlight">ハンターの動きを見ながらチェイスができる。</p>
 
-    <h4>チェイス面</h4>
-    <p>
-      ハンターからのステイン隠しや先回りなどを地図を広げながら歩くことで無効化できる。<br>
-      また、どんどん身体能力が強化されていくので強くなる。<br>
-      初心者はやりがちな恐怖の一撃をうけないというのも魅力的。
-    </p>
+          <h4>チェイス面</h4>
+          <p>
+            ハンターからのステイン隠しや先回りなどを地図を広げながら歩くことで無効化できる。<br />
+            また、どんどん身体能力が強化されていくので強くなる。<br />
+            初心者はやりがちな恐怖の一撃をうけないというのも魅力的。
+          </p>
 
-    <h4>解読面</h4>
-    <p>
-      解読速度が解読をしていくだけで120％になるので簡単で強い。
-    </p>
+          <h4>解読面</h4>
+          <p>解読速度が解読をしていくだけで120％になるので簡単で強い。</p>
 
-    <h4>救助面</h4>
-    <p>
-      もし救助にいくとなった場合、恐怖の一撃の駆け引きをせずに救助できるため事故がなくなる。
-    </p>
-  </div>
+          <h4>救助面</h4>
+          <p>
+            もし救助にいくとなった場合、恐怖の一撃の駆け引きをせずに救助できるため事故がなくなる。
+          </p>
+        </div>
 
-  <p>
-    他にもたくさん強いサバイバーはたくさんいます。<br>
-    自分で研究して使いこなしてね！！
-  </p>
-</div>
+        <p>
+          他にもたくさん強いサバイバーはたくさんいます。<br />
+          自分で研究して使いこなしてね！！
+        </p>
+      </div>
       <div class="sidebar">
         <h2>サバイバー一覧</h2>
         <ul id="survivor-list">
@@ -201,7 +319,6 @@
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

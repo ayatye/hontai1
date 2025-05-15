@@ -5,6 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>激推しサバイバー</title>
     <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        serverTimestamp,
+        deleteDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+        authDomain: "daigoroku-website.firebaseapp.com",
+        projectId: "daigoroku-website",
+        storageBucket: "daigoroku-website.appspot.com",
+        messagingSenderId: "405763623042",
+        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const commentsRef = collection(db, "comments");
+      const pageId = "gekiatusaba";
+
+      document
+        .getElementById("comment-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const username = document
+            .getElementById("username-input")
+            .value.trim();
+          const comment = document.getElementById("comment-input").value.trim();
+
+          if (!username || !comment) return;
+
+          await addDoc(commentsRef, {
+            username: username,
+            comment: comment,
+            timestamp: serverTimestamp(),
+            pageId: pageId,
+          });
+
+          document.getElementById("username-input").value = "";
+          document.getElementById("comment-input").value = "";
+          loadComments();
+        });
+
+      async function loadComments() {
+        const q = query(
+          commentsRef,
+          where("pageId", "==", pageId),
+          orderBy("timestamp", "desc")
+        );
+        const querySnapshot = await getDocs(q);
+
+        const commentsContainer = document.getElementById("comments");
+        commentsContainer.innerHTML = "";
+
+        let count = 0;
+        const docsToDelete = [];
+
+        const icons = [
+          "../images/randomicon/ofensu.jpeg",
+          "../images/randomicon/posutomann.jpeg",
+          "../images/randomicon/kottousyou.jpeg",
+          "../images/randomicon/saisi.jpeg",
+          "../images/randomicon/youhei.jpeg",
+          "../images/randomicon/ouenndann.jpeg",
+          "../images/randomicon/syouzyo.jpeg",
+          "../images/randomicon/kikaigisi.jpeg",
+          "../images/randomicon/kuugunn.jpeg",
+          "../images/randomicon/tyoukousi.jpeg",
+          "../images/randomicon/kisya.jpeg",
+        ];
+
+        querySnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.username && data.comment && data.timestamp?.seconds) {
+            if (
+              containsBannedWord(data.username) ||
+              containsBannedWord(data.comment)
+            ) {
+              return; // NGワードフィルター
+            }
+
+            if (count < 50) {
+              const randomIcon =
+                icons[Math.floor(Math.random() * icons.length)];
+              const commentDiv = document.createElement("div");
+              commentDiv.classList.add("comment");
+              commentDiv.innerHTML = `
+                <div class="timestamp">${new Date(
+                  data.timestamp.seconds * 1000
+                ).toLocaleString()}</div>
+                <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+                <div class="username"><strong>${data.username}</strong></div>
+                <div class="message">${data.comment}</div>
+              `;
+              commentsContainer.appendChild(commentDiv);
+            } else {
+              docsToDelete.push(doc(db, "comments", docSnap.id));
+            }
+            count++;
+          }
+        });
+
+        for (const d of docsToDelete) {
+          await deleteDoc(d);
+        }
+      }
+
+      loadComments();
+    </script>
   </head>
   <body>
     <header>
@@ -66,7 +184,7 @@
     <div class="wrapper">
       <div class="konntent">
         <h1>今熱い激推しサバイバー！</h1>
-        <img src="../images/kyaragazou/sabaibagazou/弓使い.jpeg" />
+        <img src="../images/kyaragazou/sabaibagazou/yumitukai.jpeg" />
         <h2>2025年4月現在、激推しサバイバーは『弓使い』！！</h2>
 
         <div class="section">
@@ -87,7 +205,11 @@
 
         <div class="section">
           <h3>■ 弓使いの魅力</h3>
-          <p>弓使いは <strong>粘着＆チェイス＆補助</strong> のスペシャリストの割に解読デバフなし！</p>
+          <p>
+            弓使いは
+            <strong>粘着＆チェイス＆補助</strong>
+            のスペシャリストの割に解読デバフなし！
+          </p>
           <div class="highlight">
             最強なのにその代償を払わなくていい。アニメの最強キャラのよう！
           </div>
@@ -116,7 +238,9 @@
               <strong>3台分チェイスも余裕</strong>！
             </li>
             <li>
-              弓は後方にバックする弓と普通の弓の<strong>クールタイムが別 ！</strong>
+              弓は後方にバックする弓と普通の弓の<strong
+                >クールタイムが別 ！</strong
+              >
             </li>
           </ul>
 
@@ -132,7 +256,9 @@
           <h4>【バフ情報】</h4>
           <ul>
             <li>
-              重傷度が100に達すると、ハンターは<strong >2.5秒間気絶状態になる</strong>
+              重傷度が100に達すると、ハンターは<strong
+                >2.5秒間気絶状態になる</strong
+              >
             </li>
           </ul>
           <h4>【デバフ情報】</h4>
@@ -153,7 +279,9 @@
           <ul>
             <li>弓は <strong>惜しまず使う！</strong></li>
             <li>弓の早めにあてないと100たまらないので、早めに使用</li>
-            <li>100前に攻撃されつ場合後方バック（アームボウ）を使って100にしよう</li>
+            <li>
+              100前に攻撃されつ場合後方バック（アームボウ）を使って100にしよう
+            </li>
           </ul>
           <h4>＜追われていない時＞</h4>
           <ul>
@@ -164,11 +292,9 @@
         </div>
 
         <h2>ハンターの核心をつくにはエイム力が必要となる</h2>
-        <p>
-          弓使いはまさに今、熱い！万能な強キャラをあなたの手で使いこなせ！
-        </p>
-      <hr class="separator-line" />
-        <img src="../images/kyaragazou/sabaibagazou/泣きピエロ.jpeg" />
+        <p>弓使いはまさに今、熱い！万能な強キャラをあなたの手で使いこなせ！</p>
+        <hr class="separator-line" />
+        <img src="../images/kyaragazou/sabaibagazou/nakipiero.jpeg" />
         <h2>2024年8月現在、激推しサバイバーは『泣きピエロ』！！</h2>
 
         <div class="section">

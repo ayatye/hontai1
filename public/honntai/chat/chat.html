@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>第五人格 - 定型文チャット活用ガイド</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>第五人格 - 定型文チャット活用ガイド</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        serverTimestamp,
+        deleteDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+        authDomain: "daigoroku-website.firebaseapp.com",
+        projectId: "daigoroku-website",
+        storageBucket: "daigoroku-website.appspot.com",
+        messagingSenderId: "405763623042",
+        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const commentsRef = collection(db, "comments");
+      const pageId = "chat";
+
+      document
+        .getElementById("comment-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const username = document
+            .getElementById("username-input")
+            .value.trim();
+          const comment = document.getElementById("comment-input").value.trim();
+
+          if (!username || !comment) return;
+
+          await addDoc(commentsRef, {
+            username: username,
+            comment: comment,
+            timestamp: serverTimestamp(),
+            pageId: pageId,
+          });
+
+          document.getElementById("username-input").value = "";
+          document.getElementById("comment-input").value = "";
+          loadComments();
+        });
+
+      async function loadComments() {
+        const q = query(
+          commentsRef,
+          where("pageId", "==", pageId),
+          orderBy("timestamp", "desc")
+        );
+        const querySnapshot = await getDocs(q);
+
+        const commentsContainer = document.getElementById("comments");
+        commentsContainer.innerHTML = "";
+
+        let count = 0;
+        const docsToDelete = [];
+
+        const icons = [
+          "../images/randomicon/ofensu.jpeg",
+          "../images/randomicon/posutomann.jpeg",
+          "../images/randomicon/kottousyou.jpeg",
+          "../images/randomicon/saisi.jpeg",
+          "../images/randomicon/youhei.jpeg",
+          "../images/randomicon/ouenndann.jpeg",
+          "../images/randomicon/syouzyo.jpeg",
+          "../images/randomicon/kikaigisi.jpeg",
+          "../images/randomicon/kuugunn.jpeg",
+          "../images/randomicon/tyoukousi.jpeg",
+          "../images/randomicon/kisya.jpeg",
+        ];
+
+        querySnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.username && data.comment && data.timestamp?.seconds) {
+            if (
+              containsBannedWord(data.username) ||
+              containsBannedWord(data.comment)
+            ) {
+              return; // NGワードフィルター
+            }
+
+            if (count < 50) {
+              const randomIcon =
+                icons[Math.floor(Math.random() * icons.length)];
+              const commentDiv = document.createElement("div");
+              commentDiv.classList.add("comment");
+              commentDiv.innerHTML = `
+              <div class="timestamp">${new Date(
+                data.timestamp.seconds * 1000
+              ).toLocaleString()}</div>
+              <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+              <div class="username"><strong>${data.username}</strong></div>
+              <div class="message">${data.comment}</div>
+            `;
+              commentsContainer.appendChild(commentDiv);
+            } else {
+              docsToDelete.push(doc(db, "comments", docSnap.id));
+            }
+            count++;
+          }
+        });
+
+        for (const d of docsToDelete) {
+          await deleteDoc(d);
+        }
+      }
+
+      loadComments();
+    </script>
+  </head>
+  <body>
     <header>
       <nav-gert>
         <div class="logo">
@@ -62,51 +180,61 @@
       <p>第五人格の様々の情報が盛りだくさん！！</p>
     </section>
 
-      <div class="wrapper">
+    <div class="wrapper">
       <div class="konntent">
+        <h1>第五人格 - 定型文チャット活用ガイド</h1>
 
-<h1>第五人格 - 定型文チャット活用ガイド</h1>
+        <h2>定型文システムに関する調整</h2>
+        <p>
+          ランク戦マップにエリア名が追加されました。音声定型文機能が搭載され、設定画面でオン/オフが可能です。空所補充定型文も追加され、エリア、キャラ、組み合わせ、スキルカテゴリに分かれています。
+        </p>
+        <p>
+          これにより「ハンターが中央エリアにいる！」や「幸運児は救援に向かって！」など、より詳細な情報を音声とチャットで共有できるようになりました。
+        </p>
 
-<h2>定型文システムに関する調整</h2>
-<p>ランク戦マップにエリア名が追加されました。音声定型文機能が搭載され、設定画面でオン/オフが可能です。空所補充定型文も追加され、エリア、キャラ、組み合わせ、スキルカテゴリに分かれています。</p>
-<p>これにより「ハンターが中央エリアにいる！」や「幸運児は救援に向かって！」など、より詳細な情報を音声とチャットで共有できるようになりました。</p>
+        <h2>試合開始時の動き</h2>
+        <p>
+          スポーン位置をすぐに伝えましょう。同時に「解読に集中して！」の定型文を送り、味方に自分の位置を知らせます。
+        </p>
+        <p>
+          占い師や弁護士がいる場合は「ハンターのキャラ」「スポーン位置」「どこへ向かっているか」も合わせて報告します。ハンターの行動変化にも警戒しましょう。
+        </p>
 
-<h2>試合開始時の動き</h2>
-<p>スポーン位置をすぐに伝えましょう。同時に「解読に集中して！」の定型文を送り、味方に自分の位置を知らせます。</p>
-<p>占い師や弁護士がいる場合は「ハンターのキャラ」「スポーン位置」「どこへ向かっているか」も合わせて報告します。ハンターの行動変化にも警戒しましょう。</p>
+        <h2>解読中の連携</h2>
+        <ul>
+          <li>解読予定の暗号機の場所をチャットで共有。</li>
+          <li>解読中は定型文で進捗状況を送信。</li>
+          <li>解読中断時のために暗号機の場所と進捗を把握。</li>
+          <li>試合開始50秒以降、焼入れ効果に注意。</li>
+        </ul>
 
-<h2>解読中の連携</h2>
-<ul>
-  <li>解読予定の暗号機の場所をチャットで共有。</li>
-  <li>解読中は定型文で進捗状況を送信。</li>
-  <li>解読中断時のために暗号機の場所と進捗を把握。</li>
-  <li>試合開始50秒以降、焼入れ効果に注意。</li>
-</ul>
+        <h2>チェイス時のポイント</h2>
+        <p>
+          チェイス担当は、チェイス開始とハンターキャラを報告したら、チェイスに集中しましょう。
+        </p>
 
-<h2>チェイス時のポイント</h2>
-<p>チェイス担当は、チェイス開始とハンターキャラを報告したら、チェイスに集中しましょう。</p>
+        <h3>チェイス担当者の動き</h3>
+        <ul>
+          <li>味方の解読場所を聞く。</li>
+          <li>ハンターの補助特質（巡視者・監視者など）を報告。</li>
+          <li>フクロウやチェイス補助要請時はタイミングを指定。</li>
+          <li>ターゲットチェンジやダウン場所も迅速に伝達。</li>
+        </ul>
 
-<h3>チェイス担当者の動き</h3>
-<ul>
-  <li>味方の解読場所を聞く。</li>
-  <li>ハンターの補助特質（巡視者・監視者など）を報告。</li>
-  <li>フクロウやチェイス補助要請時はタイミングを指定。</li>
-  <li>ターゲットチェンジやダウン場所も迅速に伝達。</li>
-</ul>
+        <h3>チェイス担当以外の味方の動き</h3>
+        <ul>
+          <li>地下室の位置を定期的に報告。</li>
+          <li>解読位置をチャットで伝達。</li>
+          <li>ハンターの「神出鬼没」使用可能時に警告。</li>
+          <li>チェイス場所・ダウン位置に応じた解読計画を立案。</li>
+          <li>救助担当者を早めに決める。</li>
+        </ul>
 
-<h3>チェイス担当以外の味方の動き</h3>
-<ul>
-  <li>地下室の位置を定期的に報告。</li>
-  <li>解読位置をチャットで伝達。</li>
-  <li>ハンターの「神出鬼没」使用可能時に警告。</li>
-  <li>チェイス場所・ダウン位置に応じた解読計画を立案。</li>
-  <li>救助担当者を早めに決める。</li>
-</ul>
-
-<h2>まとめ</h2>
-<p>定型文チャットと音声機能を最大限に活用し、チームの連携を高めましょう！事前の共有、進捗報告、臨機応変な対応が勝利へのカギです。</p>
-
-</div>
+        <h2>まとめ</h2>
+        <p>
+          定型文チャットと音声機能を最大限に活用し、チームの連携を高めましょう！事前の共有、進捗報告、臨機応変な対応が勝利へのカギです。
+        </p>
+      </div>
 
       <div class="sidebar">
         <h2>サバイバー一覧</h2>
@@ -163,6 +291,6 @@
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

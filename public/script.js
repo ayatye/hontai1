@@ -464,17 +464,17 @@ const topics = [
   {
     name: "激アツサバイバー",
     link: "/honntai/gekisaba/gekisaba.html",
-    img: "/honntai/images/激アツ.jpeg",
+    img: "/honntai/images/gekiatusabaiba.jpeg",
   },
   {
     name: "激アツハンター",
     link: "/honntai/gekiatuhannta/gekiatuhannta.html",
-    img: "/honntai/images/激アツ.jpeg",
+    img: "/honntai/images/gekiatuhanta.jpeg",
   },
   {
     name: "次回のコラボ予想",
     link: "/honntai/yosou/koraboyosou.html",
-    img: "/images/deals.jpg",
+    img: "/honntai/images/zikainokorabo.jpeg",
   },
   {
     name: "キャラクター別プロが使う人格",
@@ -487,40 +487,44 @@ const events = [
   {
     name: "初心者に使ってほしいキャラ",
     link: "/honntai/sigatu/sigatu.html",
-    img: "images/event1.jpg",
+    img: "/honntai/images/syosinnsya.jpeg",
   },
   {
     name: "初心者が中級者になる確実なステップ",
     link: "/honntai/sigati/sigati.html",
-    img: "images/event2.jpg",
+    img: "/honntai/images/suteppu.jpeg",
   },
-  { name: "戦闘マップの活用方法", link: "#event3", img: "images/event3.jpg" },
+  {
+    name: "定型文チャットとは？？",
+    link: "/honntai/chat/chat.html",
+    img: "/honntai/images/suteppu.jpeg",
+  },
   {
     name: "第五人格知っておきたい用語集",
     link: "/honntai/yougo/yougo.html",
-    img: "images/event4.jpg",
+    img: "/honntai/images/yougo.jpeg",
   },
 ];
 
 const tisikis = [
   {
-    name: "危機一髪人格の注意点",
+    name: "サバイバーランキング",
     link: "#tisiki1",
     img: "images/tisiki1.jpg",
   },
   {
-    name: "ハッチ逃げ",
+    name: "ハンターランキング",
     link: "#tisiki2",
     img: "images/tisiki2.jpg",
   },
   {
     name: "マップ内のロッカーの活用方法",
-    link: "#tisiki3",
+    link: "/honntai/rokka/rokka.html",
     img: "images/tisiki3.jpg",
   },
   {
     name: "エモート利用",
-    link: "#tisiki4",
+    link: "/honntai/emoto/emoto.html",
     img: "images/tisiki4.jpg",
   },
 ];
@@ -569,149 +573,6 @@ createSpecialItem(events, document.getElementById("events-list"));
 createSpecialItem(tisikis, document.getElementById("tisiki-list"));
 createSpecialItem(masters, document.getElementById("master-list"));
 
-const MAX_COMMENTS = 100; // 最大表示コメント数
-const pageIdentifier = "index"; // このページに特有の識別子
-const historyKey = `commentHistory_${pageIdentifier}`; // コメント履歴のローカルストレージキー
-const commentsKey = `comments_${pageIdentifier}`; // コメント表示用のローカルストレージキー
-
-// ローカルストレージからコメント履歴を取得
-let commentHistory = JSON.parse(localStorage.getItem(historyKey)) || [];
-
-// コメント表示用の配列（逆順で取得）
-let comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
-comments.reverse(); // **ロード時に最新のコメントを上にする**
-
-// ランダムアイコンのURLリスト
-const icons = [
-  "本体2/images/randomicon/オフェンス.jpeg",
-  "本体2/images/randomicon/ポストマン.jpeg",
-  "本体2/images/randomicon/骨董商.jpeg",
-  "本体2/images/randomicon/祭司.jpeg",
-  "本体2/images/randomicon/傭兵.jpeg",
-  "本体2/images/randomicon/応援団.jpeg",
-  "本体2/images/randomicon/少女.jpeg",
-  "本体2/images/randomicon/機械技師.jpeg",
-  "本体2/images/randomicon/空軍.jpeg",
-  "本体2/images/randomicon/調香師.jpeg",
-  "本体2/images/randomicon/記者.jpeg",
-];
-
-// ページ読み込み時にコメントをレンダリング
-window.addEventListener("load", function () {
-  renderComments();
-});
-
-document
-  .getElementById("comment-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // ユーザーネームとコメント入力欄から値を取得
-    const usernameInput = document.getElementById("username-input");
-    const commentInput = document.getElementById("comment-input");
-    const username = usernameInput.value.trim();
-    const commentText = commentInput.value.trim();
-
-    // 現在の日時を取得
-    const timestamp = new Date().toLocaleString();
-
-    // ユーザーネームとコメントが空でない場合にのみ処理を実行
-    if (username !== "" && commentText !== "") {
-      // ランダムなアイコンを選択
-      const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-
-      // コメントデータをオブジェクトとして作成
-      const commentData = {
-        username,
-        commentText,
-        timestamp,
-        icon: randomIcon,
-      };
-
-      // **新しいコメントを表示用配列の先頭に追加**
-      comments.unshift(commentData);
-      localStorage.setItem("comments", JSON.stringify(comments));
-
-      // 入力欄をクリア
-      usernameInput.value = "";
-      commentInput.value = "";
-
-      // **新しいコメントを即座に表示**
-      addCommentToDOM(commentData);
-    }
-  });
-
-// コメントを直接DOMに追加する関数
-function addCommentToDOM(commentData) {
-  const commentsContainer = document.getElementById("comments");
-
-  if (commentsContainer) {
-    // コメント要素を作成
-    const comment = document.createElement("div");
-    comment.classList.add("comment");
-
-    // アイコン要素を作成
-    const icon = document.createElement("img");
-    icon.src = commentData.icon;
-    icon.alt = "User Icon";
-
-    // コンテンツ要素を作成
-    const content = document.createElement("div");
-    content.classList.add("content");
-
-    // ユーザーネーム要素
-    const username = document.createElement("div");
-    username.classList.add("username");
-    username.textContent = commentData.username;
-
-    // 日時要素
-    const timestamp = document.createElement("div");
-    timestamp.classList.add("timestamp");
-    timestamp.textContent = commentData.timestamp;
-
-    // メッセージ要素
-    const message = document.createElement("div");
-    message.classList.add("message");
-    message.textContent = commentData.commentText;
-
-    // コンテンツに要素を追加
-    content.appendChild(username);
-    content.appendChild(timestamp);
-    content.appendChild(message);
-
-    // コメントにアイコンとコンテンツを追加
-    comment.appendChild(icon);
-    comment.appendChild(content);
-
-    // **最新のコメントを上に追加**
-    commentsContainer.prepend(comment);
-  }
-}
-
-// コメント履歴から集計してランキングを表示する関数
-function generateRanking() {
-  // 例: コメント数をカウントしてランキングを作成
-  const ranking = commentHistory.reduce((acc, comment) => {
-    acc[comment.username] = (acc[comment.username] || 0) + 1;
-    return acc;
-  }, {});
-
-  // ランキングを表示（例: コンソールに表示）
-  console.log("ランキング:", ranking);
-}
-
-// ランキング生成（デモ用）
-generateRanking();
-
-console.log(survivorList); // リスト要素が取得できているか確認
-console.log(hunterList); // リスト要素が取得できているか確認
-document
-  .getElementById("comment-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log("コメントが送信されました"); // イベントが発生しているか確認 // ...
-  });
-
 window.addEventListener("scroll", function () {
   const sidebar = document.querySelector(".sidebar");
   const separator = document.querySelector(".separator-line");
@@ -748,3 +609,239 @@ window.addEventListener("scroll", handleScroll);
 
 // ウィンドウサイズが変更された時にも横棒を制御
 window.addEventListener("resize", handleScroll);
+
+// NGワードリスト
+const bannedWords = [
+  // 一般的な暴言・侮辱
+  "ばか",
+  "アホ",
+  "くそ",
+  "しね",
+  "死ね",
+  "うざい",
+  "キモい",
+  "キモ",
+  "ボケ",
+  "カス",
+  "消えろ",
+  "ブス",
+  "デブ",
+  "ガリ",
+  "まぬけ",
+  "能無し",
+  "低脳",
+  "ハゲ",
+  "クズ",
+  "ババア",
+  "ジジイ",
+  "ガキ",
+
+  // 性的な内容
+  "エロ",
+  "セックス",
+  "ちんこ",
+  "まんこ",
+  "やりたい",
+  "ハメ",
+  "レイプ",
+  "変態",
+  "ヌード",
+  "裸",
+  "自慰",
+  "フェラ",
+  "オナニー",
+  "勃起",
+  "射精",
+  "乳首",
+  "パイズリ",
+  "挿入",
+  "中出し",
+  "処女",
+
+  // 差別・ヘイト
+  "障害者",
+  "池沼",
+  "キチガイ",
+  "ホモ",
+  "レズ",
+  "チョン",
+  "在日",
+  "部落",
+  "黒人",
+  "差別",
+
+  // 英語の卑語
+  "fuck",
+  "shit",
+  "bitch",
+  "asshole",
+  "bastard",
+  "nigger",
+  "slut",
+  "whore",
+  "dick",
+  "pussy",
+  "faggot",
+  "cunt",
+  "rape",
+  "nude",
+  "kill",
+  "die",
+  "suck",
+  "stupid",
+  "retard",
+
+  // 荒らしによく使われる絵文字など
+  "💩",
+  "👎",
+  "🖕",
+
+  // 政治・宗教・国家関連（炎上防止）
+  "右翼",
+  "左翼",
+  "ネトウヨ",
+  "パヨク",
+  "保守",
+  "革新",
+  "政治",
+  "選挙",
+  "政党",
+  "自民",
+  "共産",
+  "民主",
+  "習近平",
+  "プーチン",
+  "ゼレンスキー",
+  "安倍",
+  "岸田",
+  "天皇",
+  "皇室",
+  "北朝鮮",
+  "中国",
+  "韓国",
+  "ロシア",
+  "戦争",
+  "大日本帝国",
+  "大東亜",
+  "植民地",
+  "核兵器",
+  "原爆",
+  "南京",
+  "慰安婦",
+  "竹島",
+  "尖閣",
+
+  // 英語ベースの政治・宗教・差別ワード
+  "allah",
+  "jihad",
+  "zion",
+  "jew",
+  "muslim",
+  "christian",
+  "satan",
+  "cult",
+  "bible",
+  "terrorist",
+  "communism",
+  "capitalism",
+  "leftist",
+  "rightist",
+  "democrat",
+  "republican",
+  "trump",
+  "biden",
+  "putin",
+  "xi jinping",
+  "war",
+  "nazi",
+  "hitler",
+  "holocaust",
+  "genocide",
+  "propaganda",
+];
+
+// NGワードを検出（伏せ字など対応）
+function containsBannedWord(text) {
+  const normalized = text.toLowerCase().replace(/\s|\*/g, ""); // 空白や「*」除去
+  return bannedWords.some((word) => normalized.includes(word));
+}
+
+// 投稿制限用の変数
+let lastPostTime = 0;
+let lastCommentContent = "";
+let postTimestamps = [];
+
+document
+  .getElementById("comment-form")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById("username-input").value.trim();
+    const comment = document.getElementById("comment-input").value.trim();
+    const now = Date.now();
+
+    // 入力チェック
+    if (!username || !comment) {
+      alert("ユーザーネームとコメントを入力してください。");
+      return;
+    }
+
+    // 空白のみチェック
+    if (comment.replace(/\s/g, "").length === 0) {
+      alert("空白のみのコメントは投稿できません。");
+      return;
+    }
+
+    // 改行制限
+    if (comment.split("\n").length > 10) {
+      alert("改行が多すぎます。10行以内で投稿してください。");
+      return;
+    }
+
+    // NGワード検出（ユーザーネームも含む）
+    if (containsBannedWord(comment) || containsBannedWord(username)) {
+      alert("不適切な内容が含まれています。修正してください。");
+      return;
+    }
+
+    // 文字数制限
+    if (comment.length > 300) {
+      alert("コメントは300文字以内で入力してください。");
+      return;
+    }
+
+    // 同一コメント防止
+    if (comment === lastCommentContent) {
+      alert("同じコメントを連続して投稿することはできません。");
+      return;
+    }
+
+    // 30秒以内の連投防止
+    if (now - lastPostTime < 30000) {
+      alert("連続投稿は30秒空けてください。");
+      return;
+    }
+
+    // 1分間に3件以上の投稿を制限
+    postTimestamps = postTimestamps.filter((ts) => now - ts < 60000);
+    if (postTimestamps.length >= 3) {
+      alert("短時間に投稿しすぎています。しばらく待ってください。");
+      return;
+    }
+
+    // 通過した場合の処理
+    lastPostTime = now;
+    lastCommentContent = comment;
+    postTimestamps.push(now);
+
+    await addDoc(commentsRef, {
+      username: username,
+      comment: comment,
+      timestamp: serverTimestamp(),
+    });
+
+    // 入力欄クリア＆再読み込み
+    document.getElementById("username-input").value = "";
+    document.getElementById("comment-input").value = "";
+    loadComments();
+  });

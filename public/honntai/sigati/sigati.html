@@ -1,13 +1,130 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第五人格 初心者から中級者への5ステップ</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第五人格 初心者から中級者への5ステップ</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        serverTimestamp,
+        deleteDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+        authDomain: "daigoroku-website.firebaseapp.com",
+        projectId: "daigoroku-website",
+        storageBucket: "daigoroku-website.appspot.com",
+        messagingSenderId: "405763623042",
+        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const commentsRef = collection(db, "comments");
+      const pageId = "sigati";
+
+      document
+        .getElementById("comment-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const username = document
+            .getElementById("username-input")
+            .value.trim();
+          const comment = document.getElementById("comment-input").value.trim();
+
+          if (!username || !comment) return;
+
+          await addDoc(commentsRef, {
+            username: username,
+            comment: comment,
+            timestamp: serverTimestamp(),
+            pageId: pageId,
+          });
+
+          document.getElementById("username-input").value = "";
+          document.getElementById("comment-input").value = "";
+          loadComments();
+        });
+
+      async function loadComments() {
+        const q = query(
+          commentsRef,
+          where("pageId", "==", pageId),
+          orderBy("timestamp", "desc")
+        );
+        const querySnapshot = await getDocs(q);
+
+        const commentsContainer = document.getElementById("comments");
+        commentsContainer.innerHTML = "";
+
+        let count = 0;
+        const docsToDelete = [];
+
+        const icons = [
+          "../images/randomicon/ofensu.jpeg",
+          "../images/randomicon/posutomann.jpeg",
+          "../images/randomicon/kottousyou.jpeg",
+          "../images/randomicon/saisi.jpeg",
+          "../images/randomicon/youhei.jpeg",
+          "../images/randomicon/ouenndann.jpeg",
+          "../images/randomicon/syouzyo.jpeg",
+          "../images/randomicon/kikaigisi.jpeg",
+          "../images/randomicon/kuugunn.jpeg",
+          "../images/randomicon/tyoukousi.jpeg",
+          "../images/randomicon/kisya.jpeg",
+        ];
+
+        querySnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.username && data.comment && data.timestamp?.seconds) {
+            if (
+              containsBannedWord(data.username) ||
+              containsBannedWord(data.comment)
+            ) {
+              return; // NGワードフィルター
+            }
+
+            if (count < 50) {
+              const randomIcon =
+                icons[Math.floor(Math.random() * icons.length)];
+              const commentDiv = document.createElement("div");
+              commentDiv.classList.add("comment");
+              commentDiv.innerHTML = `
+                <div class="timestamp">${new Date(
+                  data.timestamp.seconds * 1000
+                ).toLocaleString()}</div>
+                <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+                <div class="username"><strong>${data.username}</strong></div>
+                <div class="message">${data.comment}</div>
+              `;
+              commentsContainer.appendChild(commentDiv);
+            } else {
+              docsToDelete.push(doc(db, "comments", docSnap.id));
+            }
+            count++;
+          }
+        });
+
+        for (const d of docsToDelete) {
+          await deleteDoc(d);
+        }
+      }
+
+      loadComments();
+    </script>
+  </head>
+  <body>
     <header>
       <nav-gert>
         <div class="logo">
@@ -64,70 +181,84 @@
       <p>第五人格の様々の情報が盛りだくさん！！</p>
     </section>
 
-      <div class="wrapper">
+    <div class="wrapper">
       <div class="konntent">
-  <main>
-    <section class="intro">
-      <p>初心者から中級者になるための、確実なステップを5つ紹介していきます！</p>
-    </section>
+        <main>
+          <section class="intro">
+            <p>
+              初心者から中級者になるための、確実なステップを5つ紹介していきます！
+            </p>
+          </section>
 
-    <section class="collab">
-      <h2>1. 暗黙のルールを必ず覚える</h2>
-      <ul>
-        <li>暗号機の回し方</li>
-        <li>危機一髪中は回している暗号機に近づかないなど</li>
-      </ul>
-    </section>
+          <section class="collab">
+            <h2>1. 暗黙のルールを必ず覚える</h2>
+            <ul>
+              <li>暗号機の回し方</li>
+              <li>危機一髪中は回している暗号機に近づかないなど</li>
+            </ul>
+            <a href="https://daigoroku-website.web.app/honntai/yougo/yougo.html"
+              >第五人格用語集はこちら</a
+            >
+          </section>
 
-    <section class="collab">
-      <h2>2. 人格、特質内容を覚える</h2>
-      <p><strong>サバイバー人格：</strong>中治り、危機一髪、膝蓋腱反射、フライホイール</p>
-      <p><strong>ハンター人格：</strong>閉鎖空間、傲慢、裏向きカード、引き留める</p>
-      <p><strong>特質：</strong>神出鬼没、瞬間移動、移形、リッスン、異常、興奮、巡視者、監視者</p>
-    </section>
+          <section class="collab">
+            <h2>2. 人格、特質内容を覚える</h2>
+            <p>
+              <strong>サバイバー人格：</strong
+              >中治り、危機一髪、膝蓋腱反射、フライホイール
+            </p>
+            <p>
+              <strong>ハンター人格：</strong
+              >閉鎖空間、傲慢、裏向きカード、引き留める
+            </p>
+            <p>
+              <strong>特質：</strong
+              >神出鬼没、瞬間移動、移形、リッスン、異常、興奮、巡視者、監視者
+            </p>
+          </section>
 
-    <section class="collab">
-      <h2>3. サバイバー、ハンターの情報を覚える</h2>
-      <ul>
-        <li>味方の能力を把握する</li>
-        <li>ハンターの能力も覚える</li>
-      </ul>
-    </section>
+          <section class="collab">
+            <h2>3. サバイバー、ハンターの情報を覚える</h2>
+            <ul>
+              <li>味方の能力を把握する</li>
+              <li>ハンターの能力も覚える</li>
+            </ul>
+          </section>
 
-    <section class="collab">
-      <h2>4. マップごとの強ポジ・弱ポジ、ポジション名を覚える</h2>
-      <ul>
-        <li>板や窓の位置</li>
-        <li>逃げるルート</li>
-        <li>自分の現在地</li>
-        <li>ハッチ・ゲートの位置</li>
-      </ul>
-    </section>
+          <section class="collab">
+            <h2>4. マップごとの強ポジ・弱ポジ、ポジション名を覚える</h2>
+            <ul>
+              <li>板や窓の位置</li>
+              <li>逃げるルート</li>
+              <li>自分の現在地</li>
+              <li>ハッチ・ゲートの位置</li>
+            </ul>
+          </section>
 
-    <section class="collab">
-      <h2>5. プロ試合・攻略動画を見る</h2>
-      <h3>◆ 試合の立ち回りを学べる</h3>
-      <p>暗号機の引継ぎ、粘着のタイミング、ルート選びなど。</p>
+          <section class="collab">
+            <h2>5. プロ試合・攻略動画を見る</h2>
+            <h3>◆ 試合の立ち回りを学べる</h3>
+            <p>暗号機の引継ぎ、粘着のタイミング、ルート選びなど。</p>
 
-      <h3>◆ キャラの最大限の動きを学べる</h3>
-      <p>板攻防・駆け引き・攻撃判定の読み合いなど応用力もアップ！</p>
+            <h3>◆ キャラの最大限の動きを学べる</h3>
+            <p>板攻防・駆け引き・攻撃判定の読み合いなど応用力もアップ！</p>
 
-      <h3>◆ 環境キャラを知れる</h3>
-      <p>今強いキャラの立ち回りは必ず覚えておこう！</p>
+            <h3>◆ 環境キャラを知れる</h3>
+            <p>今強いキャラの立ち回りは必ず覚えておこう！</p>
 
-      <h3>◆ モチベーションアップ</h3>
-      <p>「このキャラ使いたい！」という気持ちが一番の上達に！</p>
-    </section>
+            <h3>◆ モチベーションアップ</h3>
+            <p>「このキャラ使いたい！」という気持ちが一番の上達に！</p>
+          </section>
 
-    <section class="collab">
-      <h2>終わりに</h2>
-      <p>この5ステップを達成したあなたは、もう立派な中級者かも！</p>
-      <p>そして気づけば、推しのプロチームができてるかも……？</p>
-      <p>私の推しチームは…………決められません！笑</p>
-      <p>さあ、みんなでプロを応援して、楽しくプレーしていきましょう！</p>
-    </section>
-  </main>
-</div>
+          <section class="collab">
+            <h2>終わりに</h2>
+            <p>この5ステップを達成したあなたは、もう立派な中級者かも！</p>
+            <p>そして気づけば、推しのプロチームができてるかも……？</p>
+            <p>私の推しチームは…………決められません！笑</p>
+            <p>さあ、みんなでプロを応援して、楽しくプレーしていきましょう！</p>
+          </section>
+        </main>
+      </div>
 
       <div class="sidebar">
         <h2>サバイバー一覧</h2>
@@ -184,6 +315,6 @@
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

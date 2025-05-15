@@ -388,7 +388,7 @@ li .arrow {
   margin-top: 20px; /* 上部の余白を追加 */
 }
 .comment {
-  display: flex;
+  display: block;
   align-items: flex-start;
   background-color: #f1f1f1;
   padding: 10px;

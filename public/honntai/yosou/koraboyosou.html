@@ -5,6 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>第五人格コラボ予想</title>
   <link rel="stylesheet" href="style.css">
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      getDocs,
+      query,
+      orderBy,
+      where,
+      serverTimestamp,
+      deleteDoc,
+      doc
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
+      authDomain: "daigoroku-website.firebaseapp.com",
+      projectId: "daigoroku-website",
+      storageBucket: "daigoroku-website.appspot.com",
+      messagingSenderId: "405763623042",
+      appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const commentsRef = collection(db, "comments");
+    const pageId = "koraboyosou"; 
+  
+    document.getElementById("comment-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username-input").value.trim();
+      const comment = document.getElementById("comment-input").value.trim();
+  
+      if (!username || !comment) return;
+  
+      await addDoc(commentsRef, {
+        username: username,
+        comment: comment,
+        timestamp: serverTimestamp(),
+        pageId: pageId,
+      });
+  
+      document.getElementById("username-input").value = "";
+      document.getElementById("comment-input").value = "";
+      loadComments();
+    });
+  
+    async function loadComments() {
+      const q = query(
+        commentsRef,
+        where("pageId", "==", pageId),
+        orderBy("timestamp", "desc")
+      );
+      const querySnapshot = await getDocs(q);
+  
+      const commentsContainer = document.getElementById("comments");
+      commentsContainer.innerHTML = "";
+  
+      let count = 0;
+      const docsToDelete = [];
+  
+      const icons = [
+        "../images/randomicon/ofensu.jpeg",
+        "../images/randomicon/posutomann.jpeg",
+        "../images/randomicon/kottousyou.jpeg",
+        "../images/randomicon/saisi.jpeg",
+        "../images/randomicon/youhei.jpeg",
+        "../images/randomicon/ouenndann.jpeg",
+        "../images/randomicon/syouzyo.jpeg",
+        "../images/randomicon/kikaigisi.jpeg",
+        "../images/randomicon/kuugunn.jpeg",
+        "../images/randomicon/tyoukousi.jpeg",
+        "../images/randomicon/kisya.jpeg"
+      ];
+  
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        if (data.username && data.comment && data.timestamp?.seconds) {
+          if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
+            return; // NGワードフィルター
+          }
+  
+          if (count < 50) {
+            const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            const commentDiv = document.createElement("div");
+            commentDiv.classList.add("comment");
+            commentDiv.innerHTML = `
+              <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
+              <img src="${randomIcon}" alt="User Icon" class="user-icon" />
+              <div class="username"><strong>${data.username}</strong></div>
+              <div class="message">${data.comment}</div>
+            `;
+            commentsContainer.appendChild(commentDiv);
+          } else {
+            docsToDelete.push(doc(db, "comments", docSnap.id));
+          }
+          count++;
+        }
+      });
+  
+      for (const d of docsToDelete) {
+        await deleteDoc(d);
+      }
+    }
+    
+    loadComments();
+  </script>
 </head>
 <body>
     <header>
@@ -71,33 +179,33 @@
       <h2>1. 魔法少女まどか☆マギカ</h2>
       <p>なんどかコラボあるのではないかと疑われていた。ファンアートなどが出回っておりコラボが期待されている。</p>
       <ul>
-        <li>鹿目まどか × 庭師 <img src="madoka_gardener.jpg" alt="鹿目まどか×庭師"></li>
+        <li>鹿目まどか × 庭師 <br><img src="../images/koraboyosou/madoka.jpeg" alt="鹿目まどか×庭師"></li>
 <br>
-        <li>暁美ほむら × 空軍 <img src="homura_soldier.jpg" alt="暁美ほむら×空軍"></li>
+        <li>暁美ほむら × 空軍 <br><img src="../images/koraboyosou/homura.jpeg" alt="暁美ほむら×空軍"></li>
 <br>
-        <li>佐倉杏子 × 骨董商 <img src="kyoko_antiquarian.jpg" alt="佐倉杏子×骨董商"></li>
+        <li>佐倉杏子 × 骨董商 <br><img src="../images/koraboyosou/anko.jpeg" alt="佐倉杏子×骨董商"></li>
 <br>
-        <li>巴マミ × 心眼 <img src="mami_seer.jpg" alt="巴マミ×心眼"></li>
+        <li>巴マミ × 心眼 <br><img src="../images/koraboyosou/mami.jpeg" alt="巴マミ×心眼"></li>
 <br>
-        <li>美樹さやか × 調香師 <img src="sayaka_perfumer.jpg" alt="美樹さやか×調香師"></li>
+        <li>美樹さやか × 調香師 <br><img src="../images/koraboyosou/sayaka.jpeg" alt="美樹さやか×調香師"></li>
       </ul>
 <br>
-      <p>きゅうべぇ × ペット <img src="kyubey_pet.jpg" alt="きゅうべぇ"></p>
+      <p>きゅうべぇ × ペット <br><img src="../images/koraboyosou/kyuubei.jpeg" alt="きゅうべぇ"></p>
     </section>
 
     <section class="collab">
       <h2>2. ストレンジャー・シングス</h2>
       <p>超能力を使う仲間と未知なる敵に立ち向かっていく今もずっと愛されているアニメ。</p>
       <ul>
-        <li>イレブン（エル） × 呪術師 <img src="el_judge.jpg" alt="イレブン×呪術師"></li>
+        <li>イレブン（エル） × 呪術師 <br><img src="../images/koraboyosou/.jpeg" alt="イレブン×呪術師"></li>
 <br>
-        <li>マイク × 泥棒 <img src="mike_thief.jpg" alt="マイク×泥棒"></li>
+        <li>マイク × 泥棒 <br><img src="../images/koraboyosou/madoka.jpeg" alt="マイク×泥棒"></li>
 <br>
-        <li>ダスティン＆デモドッグ × ポストマン <img src="dustin_dog_postman.jpg" alt="ダスティン×ポストマン"></li>
+        <li>ダスティン＆デモドッグ × ポストマン <br><img src="../images/koraboyosou/madoka.jpeg" alt="ダスティン×ポストマン"></li>
 <br>
-        <li>ルーカス × 弓使い <img src="lucas_archer.jpg" alt="ルーカス×弓使い"></li>
+        <li>ルーカス × 弓使い <br><img src="../images/koraboyosou/madoka.jpeg" alt="ルーカス×弓使い"></li>
 <br>
-        <li>デモゴルゴン × 悪夢 <img src="demogorgon_nightmare.jpg" alt="デモゴルゴン×悪夢"></li>
+        <li>デモゴルゴン × 悪夢 <br><img src="../images/koraboyosou/madoka.jpeg" alt="デモゴルゴン×悪夢"></li>
       </ul>
     </section>
 
@@ -105,29 +213,29 @@
       <h2>3. スパイファミリー</h2>
       <p>2025年10月からアニメの3期が始まるのでそれに合わせコラボが来るかも！！</p>
       <ul>
-        <li>ロイド・フォージャー × 弁護士 <img src="loidy_lawyer.jpg" alt="ロイド×弁護士"></li>
+        <li>ロイド・フォージャー × 弁護士 <br><img src="../images/koraboyosou/roido.jpeg" alt="ロイド×弁護士"></li>
 <br>
-        <li>ヨル・フォージャー × 骨董商 <img src="yor_antiquarian.jpg" alt="ヨル×骨董商"></li>
+        <li>ヨル・フォージャー × 骨董商 <br><img src="../images/koraboyosou/yoru.jpeg" alt="ヨル×骨董商"></li>
 <br>
-        <li>アーニャ・フォージャー × 少女 <img src="anya_girl.jpg" alt="アーニャ×少女"></li>
+        <li>アーニャ・フォージャー × 少女 <br><img src="../images/koraboyosou/anya.jpeg" alt="アーニャ×少女"></li>
       </ul>
 <br>
-      <p>キメラ × 携帯品 <img src="chimera_item.jpg" alt="キメラ"></p>
+      <p>キメラ × 携帯品 <br><img src="../images/koraboyosou/madoka.jpeg" alt="キメラ"></p>
     </section>
 
     <section class="collab">
       <h2>4. 鋼の錬金術師</h2>
       <p>大穴の予感、兄弟愛が光る鋼の錬金術師。</p>
       <ul>
-        <li>エドワード・エルリック × オフェンス <img src="edward_offense.jpg" alt="エド×オフェンス"></li>
+        <li>エドワード・エルリック × オフェンス <br><img src="../images/koraboyosou/erurikku.jpeg" alt="エド×オフェンス"></li>
 <br>
-        <li>アル × 教授 <img src="al_professor.jpg" alt="アル×教授"></li>
+        <li>アル × 教授 <br><img src="../images/koraboyosou/aru.jpeg" alt="アル×教授"></li>
 <br>
-        <li>ウィンリィー・ロックベル × 機械技師 <img src="winry_mechanic.jpg" alt="ウィンリィー×機械技師"></li>
+        <li>ウィンリィー・ロックベル × 機械技師 <br><img src="../images/koraboyosou/whinryi.jpeg" alt="ウィンリィー×機械技師"></li>
 <br>
-        <li>ロイ・マスタング × 傭兵 <img src="roy_mercenary.jpg" alt="ロイ×傭兵"></li>
+        <li>ロイ・マスタング × 傭兵 <br><img src="../images/koraboyosou/masutangu.jpeg" alt="ロイ×傭兵"></li>
 <br>
-        <li>リザ・ホークアイ × 空軍 <img src="riza_soldier.jpg" alt="リザ×空軍"></li>
+        <li>リザ・ホークアイ × 空軍 <br><img src="../images/koraboyosou/hokuai.jpeg" alt="リザ×空軍"></li>
       </ul>
     </section>
       <h3>どのコラボが来るかみんなもコメント予想してね！</h3>
