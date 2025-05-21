@@ -379,6 +379,11 @@ const hunters = [
     link: "/honntai/hanta/hurugo/hurugo.html",
   },
   {
+    name: "オペラ歌手",
+    url: "/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg",
+    link: "/honntai/hanta/operakasyu/operakasyu.html",
+  },
+  {
     name: "時空の影",
     url: "/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg",
     link: "/honntai/hanta/zikuunokage/zikuunokage.html",
@@ -497,7 +502,7 @@ const events = [
   {
     name: "定型文チャットとは？？",
     link: "/honntai/chat/chat.html",
-    img: "/honntai/images/suteppu.jpeg",
+    img: "/honntai/images/chat/icon.jpeg",
   },
   {
     name: "第五人格知っておきたい用語集",
@@ -509,41 +514,36 @@ const events = [
 const tisikis = [
   {
     name: "サバイバーランキング",
-    link: "#tisiki1",
-    img: "images/tisiki1.jpg",
+    link: "/honntai/sabaran/sabaran.html",
+    img: "/honntai/images/sabaran.jpeg",
   },
   {
     name: "ハンターランキング",
-    link: "#tisiki2",
-    img: "images/tisiki2.jpg",
+    link: "/honntai/hanran/hanran.html",
+    img: "/honntai/images/hanran.jpeg",
   },
   {
     name: "マップ内のロッカーの活用方法",
     link: "/honntai/rokka/rokka.html",
-    img: "images/tisiki3.jpg",
+    img: "/honntai/images/rokka.jpeg",
   },
   {
     name: "エモート利用",
     link: "/honntai/emoto/emoto.html",
-    img: "images/tisiki4.jpg",
+    img: "/honntai/images/emoto.jpeg",
   },
 ];
 
 const masters = [
   {
     name: "キャラの個性について",
-    link: "#master1",
+    link: "/honntai/kyarakosei/kyarakosei.html",
     img: "/honntai/images/kosei.jpeg",
   },
   {
     name: "キャラ別プロが使っている人格",
     link: "/honntai/purozinnkaku/purozinnkaku.html",
     img: "/honntai/images/zinnkaku.jpeg",
-  },
-  {
-    name: "サバイバーキャラ別コンボ",
-    link: "#master3",
-    img: "images/master3.jpg",
   },
 ];
 

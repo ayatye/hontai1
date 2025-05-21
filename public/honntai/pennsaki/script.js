@@ -456,6 +456,11 @@ const hunters = [
     link: "../hanta/hurugo/hurugo.html",
   },
   {
+    name: "オペラ歌手",
+    url: "../images/kyaragazou/hanntagazou/operakasyu.jpeg",
+    link: "../hanta/operakasyu/operakasyu.html",
+  },
+  {
     name: "時空の影",
     url: "../images/kyaragazou/hanntagazou/zikuunokage.jpeg",
     link: "../hanta/zikuunokage/zikuunokage.html",

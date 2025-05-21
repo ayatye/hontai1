@@ -401,19 +401,29 @@ const hunters = [
     link: "../hurugo/hurugo.html",
   },
   {
+    name: "オペラ歌手",
+    url: "../images/kyaragazou/hanntagazou/operakasyu.jpeg",
+    link: "../hanta/operakasyu/operakasyu.html",
+  },
+  {
     name: "時空の影",
     url: "../images/kyaragazou/hanntagazou/zikuunokage.jpeg",
-    link: "../zikuunokage/zikuunokage.html",
+    link: "../hanta/zikuunokage/zikuunokage.html",
   },
   {
     name: "足萎えの羊",
     url: "../images/kyaragazou/hanntagazou/asinaenohituzi.jpeg",
-    link: "../asinaenohituzi/asinaenohituzi.html",
+    link: "../hanta/asinaenohituzi/asinaenohituzi.html",
   },
   {
     name: "フラバルー",
     url: "../images/kyaragazou/hanntagazou/hurabaru.jpeg",
-    link: "../hurabaru/hurabaru.html",
+    link: "../hanta/hurabaru/hurabaru.html",
+  },
+  {
+    name: "雑貨商",
+    url: "../images/kyaragazou/hanntagazou/zakkasyou.jpeg",
+    link: "../hanta/zakkasyou/zakkasyou.html",
   },
 ];
 

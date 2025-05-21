@@ -154,6 +154,21 @@ a {
   font-weight: bold;
   color: #000;
 }
+
+.chat-image {
+  width: 50%;
+  padding: 10px;
+}
+
+.chatmin-image {
+  width: 30%;
+  padding: 10px;
+}
+
+.flex-taime {
+  display: flex;
+}
+
 /* キャラの写真 */
 .character-image {
   display: block;
@@ -202,12 +217,16 @@ a {
   margin: 5px 0;
 }
 
+.appudeto h2 {
+  color: #ff5733;
+}
+
 /* サイドバーの位置調整 */
 .sidebar {
   background-color: #f4f4f4;
   padding: 15px;
   border-left: 1px solid #ccc;
-  width: 400px; /* サイドバーの幅 */
+  width: 700px; /* サイドバーの幅 */
   position: static; /* またはこの行を削除 */
   overflow-y: auto;
   max-height: 4450px; /* サイドバーの最大高さ */

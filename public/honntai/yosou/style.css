@@ -184,7 +184,15 @@ main {
 }
 
 .collab img {
-  width: 30%;
+  width: 80%;
+}
+
+.collab p img {
+  width: 20%;
+}
+
+.collab p {
+  padding-left: 20px;
 }
 
 .collab h2 {
@@ -502,8 +510,7 @@ footer p {
   }
 
   .wrapper {
-    padding-left: 1cm;
-    padding-right: 1cm;
+    padding: 10px;
   }
 
   .sidebar {
