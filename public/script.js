@@ -240,6 +240,11 @@ const survivors = [
     url: "/honntai/images/kyaragazou/sabaibagazou/yumitukai.jpeg",
     link: "/honntai/sabaiba/yumitukai/yumitukai.html",
   },
+  {
+    name: "脱出マスター",
+    url: "/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg",
+    link: "/honntai/sabaiba/dassyutumasuta/dassyutumasuta.html",
+  },
 ];
 
 const hunters = [
