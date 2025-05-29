@@ -458,151 +458,6 @@ hunters.forEach((hunter) => {
   hunterList.appendChild(li);
 });
 
-const MAX_COMMENTS = 100; // 最大表示コメント数
-const pageIdentifier = "kannzya"; // このページに特有の識別子
-const historyKey = `commentHistory_${pageIdentifier}`; // コメント履歴のローカルストレージキー
-const commentsKey = `comments_${pageIdentifier}`; // コメント表示用のローカルストレージキー
-
-// ローカルストレージからコメント履歴を取得
-let commentHistory = JSON.parse(localStorage.getItem(historyKey)) || [];
-
-// コメント表示用の配列（逆順で取得）
-let comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
-comments.reverse(); // **ロード時に最新のコメントを上にする**
-
-const icons = [
-  "../../images/randomicon/オフェンス.jpeg",
-  "../../images/randomicon/ポストマン.jpeg",
-  "../../images/randomicon/骨董商.jpeg",
-  "../../images/randomicon/祭司.jpeg",
-  "../../images/randomicon/傭兵.jpeg",
-  "../../images/randomicon/応援団.jpeg",
-  "../../images/randomicon/少女.jpeg",
-  "../../images/randomicon/機械技師.jpeg",
-  "../../images/randomicon/空軍.jpeg",
-  "../../images/randomicon/調香師.jpeg",
-  "../../images/randomicon/記者.jpeg",
-];
-
-// ページ読み込み時にコメントをレンダリング
-window.addEventListener("load", function () {
-  renderComments();
-});
-
-document
-  .getElementById("comment-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const usernameInput = document.getElementById("username-input");
-    const commentInput = document.getElementById("comment-input");
-    const username = usernameInput.value.trim();
-    const commentText = commentInput.value.trim();
-    const timestamp = new Date().toLocaleString();
-
-    if (username !== "" && commentText !== "") {
-      const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-
-      const commentData = {
-        username,
-        commentText,
-        timestamp,
-        icon: randomIcon,
-      };
-
-      // **新しいコメントを配列の先頭に追加**
-      comments.unshift(commentData);
-      localStorage.setItem(commentsKey, JSON.stringify(comments));
-
-      // **コメント履歴にも追加**
-      commentHistory.unshift(commentData);
-      localStorage.setItem(historyKey, JSON.stringify(commentHistory));
-
-      // **コメントが上限を超えた場合、古いコメントを削除**
-      if (comments.length > MAX_COMMENTS) {
-        comments.pop();
-        localStorage.setItem(commentsKey, JSON.stringify(comments));
-      }
-
-      // 入力欄をクリア
-      usernameInput.value = "";
-      commentInput.value = "";
-
-      // **最新のコメントを上に追加**
-      addCommentToDOM(commentData);
-    }
-  });
-
-// **コメントをDOMに追加する関数**
-function addCommentToDOM(commentData) {
-  const commentsContainer = document.getElementById("comments");
-
-  if (commentsContainer) {
-    const comment = document.createElement("div");
-    comment.classList.add("comment");
-
-    const icon = document.createElement("img");
-    icon.src = commentData.icon;
-    icon.alt = "User Icon";
-
-    const content = document.createElement("div");
-    content.classList.add("content");
-
-    const username = document.createElement("div");
-    username.classList.add("username");
-    username.textContent = commentData.username;
-
-    const timestamp = document.createElement("div");
-    timestamp.classList.add("timestamp");
-    timestamp.textContent = commentData.timestamp;
-
-    const message = document.createElement("div");
-    message.classList.add("message");
-    message.textContent = commentData.commentText;
-
-    content.appendChild(username);
-    content.appendChild(timestamp);
-    content.appendChild(message);
-    comment.appendChild(icon);
-    comment.appendChild(content);
-
-    // **最新のコメントを上に追加**
-    commentsContainer.prepend(comment);
-  }
-}
-
-// **コメントを全てレンダリングする関数**
-function renderComments() {
-  const commentsContainer = document.getElementById("comments");
-
-  if (commentsContainer) {
-    commentsContainer.innerHTML = ""; // 一度クリア
-
-    // **コメントを逆順にして表示**
-    comments.forEach((commentData) => {
-      addCommentToDOM(commentData);
-    });
-  }
-}
-
-// **ページ読み込み時にコメントを表示**
-renderComments();
-
-// コメント履歴から集計してランキングを表示する関数
-function generateRanking() {
-  const ranking = commentHistory.reduce((acc, comment) => {
-    acc[comment.username] = (acc[comment.username] || 0) + 1;
-    return acc;
-  }, {});
-
-  console.log("ランキング:", ranking);
-}
-
-// **ランキング生成（デモ用）**
-generateRanking();
-
-console.log("コメントリスト:", comments);
-
 window.addEventListener("scroll", function () {
   const sidebar = document.querySelector(".sidebar");
   const separator = document.querySelector(".separator-line");
@@ -752,3 +607,239 @@ document.addEventListener("DOMContentLoaded", () => {
   const chartElement = document.getElementById("strengthChart");
   observer.observe(chartElement); // グラフ要素を監視
 });
+
+// NGワードリスト
+const bannedWords = [
+  // 一般的な暴言・侮辱
+  "ばか",
+  "アホ",
+  "くそ",
+  "しね",
+  "死ね",
+  "うざい",
+  "キモい",
+  "キモ",
+  "ボケ",
+  "カス",
+  "消えろ",
+  "ブス",
+  "デブ",
+  "ガリ",
+  "まぬけ",
+  "能無し",
+  "低脳",
+  "ハゲ",
+  "クズ",
+  "ババア",
+  "ジジイ",
+  "ガキ",
+
+  // 性的な内容
+  "エロ",
+  "セックス",
+  "ちんこ",
+  "まんこ",
+  "やりたい",
+  "ハメ",
+  "レイプ",
+  "変態",
+  "ヌード",
+  "裸",
+  "自慰",
+  "フェラ",
+  "オナニー",
+  "勃起",
+  "射精",
+  "乳首",
+  "パイズリ",
+  "挿入",
+  "中出し",
+  "処女",
+
+  // 差別・ヘイト
+  "障害者",
+  "池沼",
+  "キチガイ",
+  "ホモ",
+  "レズ",
+  "チョン",
+  "在日",
+  "部落",
+  "黒人",
+  "差別",
+
+  // 英語の卑語
+  "fuck",
+  "shit",
+  "bitch",
+  "asshole",
+  "bastard",
+  "nigger",
+  "slut",
+  "whore",
+  "dick",
+  "pussy",
+  "faggot",
+  "cunt",
+  "rape",
+  "nude",
+  "kill",
+  "die",
+  "suck",
+  "stupid",
+  "retard",
+
+  // 荒らしによく使われる絵文字など
+  "💩",
+  "👎",
+  "🖕",
+
+  // 政治・宗教・国家関連（炎上防止）
+  "右翼",
+  "左翼",
+  "ネトウヨ",
+  "パヨク",
+  "保守",
+  "革新",
+  "政治",
+  "選挙",
+  "政党",
+  "自民",
+  "共産",
+  "民主",
+  "習近平",
+  "プーチン",
+  "ゼレンスキー",
+  "安倍",
+  "岸田",
+  "天皇",
+  "皇室",
+  "北朝鮮",
+  "中国",
+  "韓国",
+  "ロシア",
+  "戦争",
+  "大日本帝国",
+  "大東亜",
+  "植民地",
+  "核兵器",
+  "原爆",
+  "南京",
+  "慰安婦",
+  "竹島",
+  "尖閣",
+
+  // 英語ベースの政治・宗教・差別ワード
+  "allah",
+  "jihad",
+  "zion",
+  "jew",
+  "muslim",
+  "christian",
+  "satan",
+  "cult",
+  "bible",
+  "terrorist",
+  "communism",
+  "capitalism",
+  "leftist",
+  "rightist",
+  "democrat",
+  "republican",
+  "trump",
+  "biden",
+  "putin",
+  "xi jinping",
+  "war",
+  "nazi",
+  "hitler",
+  "holocaust",
+  "genocide",
+  "propaganda",
+];
+
+// NGワードを検出（伏せ字など対応）
+function containsBannedWord(text) {
+  const normalized = text.toLowerCase().replace(/\s|\*/g, ""); // 空白や「*」除去
+  return bannedWords.some((word) => normalized.includes(word));
+}
+
+// 投稿制限用の変数
+let lastPostTime = 0;
+let lastCommentContent = "";
+let postTimestamps = [];
+
+document
+  .getElementById("comment-form")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById("username-input").value.trim();
+    const comment = document.getElementById("comment-input").value.trim();
+    const now = Date.now();
+
+    // 入力チェック
+    if (!username || !comment) {
+      alert("ユーザーネームとコメントを入力してください。");
+      return;
+    }
+
+    // 空白のみチェック
+    if (comment.replace(/\s/g, "").length === 0) {
+      alert("空白のみのコメントは投稿できません。");
+      return;
+    }
+
+    // 改行制限
+    if (comment.split("\n").length > 10) {
+      alert("改行が多すぎます。10行以内で投稿してください。");
+      return;
+    }
+
+    // NGワード検出（ユーザーネームも含む）
+    if (containsBannedWord(comment) || containsBannedWord(username)) {
+      alert("不適切な内容が含まれています。修正してください。");
+      return;
+    }
+
+    // 文字数制限
+    if (comment.length > 300) {
+      alert("コメントは300文字以内で入力してください。");
+      return;
+    }
+
+    // 同一コメント防止
+    if (comment === lastCommentContent) {
+      alert("同じコメントを連続して投稿することはできません。");
+      return;
+    }
+
+    // 30秒以内の連投防止
+    if (now - lastPostTime < 30000) {
+      alert("連続投稿は30秒空けてください。");
+      return;
+    }
+
+    // 1分間に3件以上の投稿を制限
+    postTimestamps = postTimestamps.filter((ts) => now - ts < 60000);
+    if (postTimestamps.length >= 3) {
+      alert("短時間に投稿しすぎています。しばらく待ってください。");
+      return;
+    }
+
+    // 通過した場合の処理
+    lastPostTime = now;
+    lastCommentContent = comment;
+    postTimestamps.push(now);
+
+    await addDoc(commentsRef, {
+      username: username,
+      comment: comment,
+      timestamp: serverTimestamp(),
+    });
+
+    // 入力欄クリア＆再読み込み
+    document.getElementById("username-input").value = "";
+    document.getElementById("comment-input").value = "";
+    loadComments();
+  });
