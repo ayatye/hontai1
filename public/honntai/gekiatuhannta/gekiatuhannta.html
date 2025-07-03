@@ -3,116 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>激推しハンター</title>
+    <title>激アツハンター - IdentityV（第五人格）攻略【第五録】</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-        getDocs,
-        query,
-        orderBy,
-        where,
-        serverTimestamp,
-        deleteDoc,
-        doc
-      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-    
-      const firebaseConfig = {
-        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
-        authDomain: "daigoroku-website.firebaseapp.com",
-        projectId: "daigoroku-website",
-        storageBucket: "daigoroku-website.appspot.com",
-        messagingSenderId: "405763623042",
-        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
-      };
-    
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-      const commentsRef = collection(db, "comments");
-      const pageId = "gekiatuhannta"; 
-    
-      document.getElementById("comment-form").addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const username = document.getElementById("username-input").value.trim();
-        const comment = document.getElementById("comment-input").value.trim();
-    
-        if (!username || !comment) return;
-    
-        await addDoc(commentsRef, {
-          username: username,
-          comment: comment,
-          timestamp: serverTimestamp(),
-          pageId: pageId,
-        });
-    
-        document.getElementById("username-input").value = "";
-        document.getElementById("comment-input").value = "";
-        loadComments();
-      });
-    
-      async function loadComments() {
-        const q = query(
-          commentsRef,
-          where("pageId", "==", pageId),
-          orderBy("timestamp", "desc")
-        );
-        const querySnapshot = await getDocs(q);
-    
-        const commentsContainer = document.getElementById("comments");
-        commentsContainer.innerHTML = "";
-    
-        let count = 0;
-        const docsToDelete = [];
-    
-        const icons = [
-          "../images/randomicon/ofensu.jpeg",
-          "../images/randomicon/posutomann.jpeg",
-          "../images/randomicon/kottousyou.jpeg",
-          "../images/randomicon/saisi.jpeg",
-          "../images/randomicon/youhei.jpeg",
-          "../images/randomicon/ouenndann.jpeg",
-          "../images/randomicon/syouzyo.jpeg",
-          "../images/randomicon/kikaigisi.jpeg",
-          "../images/randomicon/kuugunn.jpeg",
-          "../images/randomicon/tyoukousi.jpeg",
-          "../images/randomicon/kisya.jpeg"
-        ];
-    
-        querySnapshot.forEach((docSnap) => {
-          const data = docSnap.data();
-          if (data.username && data.comment && data.timestamp?.seconds) {
-            if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
-              return; // NGワードフィルター
-            }
-    
-            if (count < 50) {
-              const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-              const commentDiv = document.createElement("div");
-              commentDiv.classList.add("comment");
-              commentDiv.innerHTML = `
-                <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
-                <img src="${randomIcon}" alt="User Icon" class="user-icon" />
-                <div class="username"><strong>${data.username}</strong></div>
-                <div class="message">${data.comment}</div>
-              `;
-              commentsContainer.appendChild(commentDiv);
-            } else {
-              docsToDelete.push(doc(db, "comments", docSnap.id));
-            }
-            count++;
-          }
-        });
-    
-        for (const d of docsToDelete) {
-          await deleteDoc(d);
-        }
-      }
-      
-      loadComments();
-    </script>
   </head>
   <body>
     <header>
@@ -183,7 +75,11 @@
 
         <div class="section">
           <h3>■ 雑貨商の魅力</h3>
-          <p>雑貨商は <strong>吸収スキルでサバイバー</strong>を封印できるだけではなく<strong>吸収した能力を使って</strong>サバイバーに2段階の負荷を与えることができる。</p>
+          <p>
+            雑貨商は
+            <strong>吸収スキルでサバイバー</strong
+            >を封印できるだけではなく<strong>吸収した能力を使って</strong>サバイバーに2段階の負荷を与えることができる。
+          </p>
           <div class="highlight">
             吸収スキルがそもそも強いのに、吸収に対するスキルも強い。一石二鳥ハンター
           </div>
@@ -194,19 +90,24 @@
           <h4>● 救助</h4>
           <ul>
             <li>
-              0.5ダメージの砕石で救助狩りを狙ったり、地表で拘束して救助狩りを狙う！</strong>！
+              0.5ダメージの砕石で救助狩りを狙ったり、地表で拘束して救助狩りを狙う！
             </li>
-            <li>また、即座にDDを狙いにいき、自然取引でトンネル対象者を狙いにいくことができる。</li>
+            <li>
+              また、即座にDDを狙いにいき、自然取引でトンネル対象者を狙いにいくことができる。
+            </li>
           </ul>
 
           <h4>● チェイス</h4>
           <ul>
             <li>
               吸収スキルの最適解を極める。
-              <strong>どの場面では、このスキルと最適解を出すことで最強と化す</strong>！
+              <strong
+                >どの場面では、このスキルと最適解を出すことで最強と化す</strong
+              >！
             </li>
             <li>
-              <strong>存在感がたまった雑貨商</strong>は自分へのデバフが一切なく無敵！！
+              <strong>存在感がたまった雑貨商</strong
+              >は自分へのデバフが一切なく無敵！！
             </li>
           </ul>
         </div>
@@ -215,9 +116,7 @@
           <h3>■ 雑貨商のバフ・デバフ</h3>
           <h4>【バフ情報】</h4>
           <ul>
-            <li>
-              吸収スキルと吸収後スキル<strong >の両方とも最強。</strong>
-            </li>
+            <li>吸収スキルと吸収後スキル<strong>の両方とも最強。</strong></li>
           </ul>
           <h4>【デバフ情報】</h4>
           <ul>
@@ -243,10 +142,8 @@
         </div>
 
         <h2>サバイバーは雑貨商にチェイスを延ばすことはほぼ不可能</h2>
-        <p>
-          雑貨商はまさに今、熱い！万能な強キャラをあなたの手で使いこなせ！
-        </p>
-      <hr class="separator-line" />
+        <p>雑貨商はまさに今、熱い！万能な強キャラをあなたの手で使いこなせ！</p>
+        <hr class="separator-line" />
         <img src="../images/kyaragazou/hanntagazou/hurabaru.jpeg" />
         <h2>2025年4月現在、激推しハンターは『フラバルー』！！</h2>
 
@@ -256,7 +153,11 @@
 
         <div class="section">
           <h3>■ フラバルーの魅力</h3>
-          <p>フラバルーは <strong>アイテム＆足の速さ＆操作速度</strong>を封印できるだけではなく<strong>攻撃硬直が存在しない。</strong></p>
+          <p>
+            フラバルーは
+            <strong>アイテム＆足の速さ＆操作速度</strong
+            >を封印できるだけではなく<strong>攻撃硬直が存在しない。</strong>
+          </p>
           <div class="highlight">
             最強の性能なのに追加で最強の性能が備えられた。
           </div>
@@ -269,7 +170,9 @@
             <li>
               中間から見つけることで、アイテムを封印しつつ1ダメージを与え椅子前でも1ダメージと<strong>ダブルダウンを簡単にとれる</strong>！
             </li>
-            <li>また椅子前での1ダメージでも無理にDDをとりにいっても、トンネル対象者を追えるという最強点</li>
+            <li>
+              また椅子前での1ダメージでも無理にDDをとりにいっても、トンネル対象者を追えるという最強点
+            </li>
           </ul>
 
           <h4>● チェイス</h4>
@@ -279,7 +182,8 @@
               <strong>確実にひとつひとつエリアを付与しよう</strong>！
             </li>
             <li>
-              <strong>存在感がたまったフラバルー</strong>は最強ダブルサプライズで一気にダウンをとろう
+              <strong>存在感がたまったフラバルー</strong
+              >は最強ダブルサプライズで一気にダウンをとろう
             </li>
           </ul>
         </div>
@@ -289,7 +193,9 @@
           <h4>【バフ情報】</h4>
           <ul>
             <li>
-              エリアそれぞれに<strong >サバイバーがデバフになる攻撃を与える。</strong>
+              エリアそれぞれに<strong
+                >サバイバーがデバフになる攻撃を与える。</strong
+              >
             </li>
           </ul>
           <h4>【デバフ情報】</h4>
@@ -301,7 +207,9 @@
         <div class="section">
           <h3>■ フラバルーを使う際の注意点</h3>
           <p>ファーストチェイスがそれなりに弱いので焦らないこと！</p>
-          <p>エリアでダメージを与える際にフライホイール効果を合わせられると一からエリアを当てないといけないので、消されないように気を付ける</p>
+          <p>
+            エリアでダメージを与える際にフライホイール効果を合わせられると一からエリアを当てないといけないので、消されないように気を付ける
+          </p>
         </div>
 
         <div class="section">
@@ -309,17 +217,21 @@
           <ul>
             <li>索敵に時間をかけない！</li>
             <li>ダブルサプライズによる2色付与を狙う。</li>
-            <li>ダブルサプライズで黒玉から当て、通り抜けたサバイバーは確実にどちらかの色があたるため黒から狙う</li>
+            <li>
+              ダブルサプライズで黒玉から当て、通り抜けたサバイバーは確実にどちらかの色があたるため黒から狙う
+            </li>
             <li>無理やりDDを狙いにいかない</li>
             <li>ゲートを開門しているサバイバーには白玉から当てよう</li>
           </ul>
         </div>
 
-        <h2>サバイバーはフラバルーに分け以上狙うことはほぼ不可能の性能をしています</h2>
+        <h2>
+          サバイバーはフラバルーに分け以上狙うことはほぼ不可能の性能をしています
+        </h2>
         <p>
           フラバルーはまさに今、熱い！万能な強キャラをあなたの手で使いこなせ！
         </p>
-      <hr class="separator-line" />
+        <hr class="separator-line" />
         <img src="../images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" />
         <h2>2025年1月現在、激推しハンターは『足萎えの羊』！！</h2>
 
@@ -329,7 +241,11 @@
 
         <div class="section">
           <h3>■ 足萎え羊の魅力</h3>
-          <p>なんと足萎え羊は <strong>一定範囲内から外にださせない！</strong>距離がとれないハンター </p>
+          <p>
+            なんと足萎え羊は
+            <strong>一定範囲内から外にださせない！</strong
+            >距離がとれないハンター
+          </p>
           <div class="highlight">
             監禁技術がすさまじく一度つかまれば、牢獄に閉じ込められたと感じます。
           </div>
@@ -339,7 +255,9 @@
           <h3>■ 職務別：足萎えの羊の使い方</h3>
           <h4>● 救助</h4>
           <ul>
-            <li>まずもって檻を使って <strong>救助にこさせない</strong>ことが可能！</li>
+            <li>
+              まずもって檻を使って <strong>救助にこさせない</strong>ことが可能！
+            </li>
             <li>
               檻を2個だしすることで救助後の<strong>ルート制限</strong>を狙える！
             </li>
@@ -349,9 +267,7 @@
             <li>
               ファーストチェイスは檻の枯渇が厳しいので、檻をだした時は確実に一発与える！
             </li>
-            <li>
-              距離をとってきたら <strong>檻で距離をつめて攻撃</strong>
-            </li>
+            <li>距離をとってきたら <strong>檻で距離をつめて攻撃</strong></li>
             <li>
               檻の理解度ですべて決まる。<strong>バックステップ</strong>をうまく使用することができれば、即ダウンが狙える。
             </li>
@@ -362,10 +278,10 @@
           <h3>■ 足萎えの羊のバフ・デバフ</h3>
           <h4>【バフ情報】</h4>
           <ul>
+            <li>いかなるキャラも<strong>直接檻を出入りできない</strong>。</li>
             <li>
-              いかなるキャラも<strong>直接檻を出入りできない</strong>。
+              檻の中に自由に行動できるサバイバーがいる時、他のサバイバーは<strong>外側から檻を解除できない</strong>。
             </li>
-            <li>檻の中に自由に行動できるサバイバーがいる時、他のサバイバーは<strong>外側から檻を解除できない</strong>。</li>
           </ul>
           <h4>【デバフ情報】</h4>
           <ul>
@@ -376,7 +292,9 @@
 
         <div class="section">
           <h3>■ 足萎えの羊を使う際の注意点</h3>
-          <p>ファーストチェイスの檻の枯渇スピードが早いので確実に一発あてる！</p>
+          <p>
+            ファーストチェイスの檻の枯渇スピードが早いので確実に一発あてる！
+          </p>
           <p>一個の檻では、ダメージにつながらない時、2個目を即座に出す</p>
         </div>
 
@@ -450,6 +368,9 @@
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script/kyararisuto.js"></script>
+    <script src="../script/ngcomento.js"></script>
+    <script src="../script/honbaga.js"></script>
+    <script type="module" src="../comentoscript/gekiatuhannta.js"></script>
   </body>
 </html>

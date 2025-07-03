@@ -136,7 +136,6 @@ nav-gert {
 }
 
 .konntent {
-  width: 70%;
   padding-right: 1cm;
 }
 
@@ -496,7 +495,7 @@ footer p {
 
   .wrapper {
     flex-direction: column; /* レイアウトを縦方向に */
-    padding-left: 0cm;
+    padding-left: 1cm;
   }
 
   .sidebar {
@@ -668,6 +667,12 @@ footer p {
   }
   .article-text {
     padding-left: 20px; /* テキストの左パディング */
+  }
+
+  .character-image {
+    max-width: 200px;
+    margin: 10px auto;
+    border-radius: 5px;
   }
 }
 

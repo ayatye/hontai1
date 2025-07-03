@@ -3,121 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>『第五人格(IdentityⅤ)』第五録　最新アップデート情報　第五人格攻略情報</title>
+    <title>最新アップデート情報 - IdentityV（第五人格）攻略【第五録】</title>
     <link rel="stylesheet" href="styles.css" />
-    <meta property="og:title" content="『第五人格(IdentityⅤ)』第五録　最新アップデート情報　第五人格攻略情報">
+    <meta property="og:title" content="最新アップデート情報 - IdentityV（第五人格）攻略【第五録】">
     <meta property="og:image" content="https://daigoroku-website.web.app/images/サイコロicon.jpeg">
     <meta property="og:url" content="https://daigoroku-website.web.app/"> 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- 外部CSSを読み込む -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-        getDocs,
-        query,
-        orderBy,
-        where,
-        serverTimestamp,
-        deleteDoc,
-        doc
-      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-    
-      const firebaseConfig = {
-        apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
-        authDomain: "daigoroku-website.firebaseapp.com",
-        projectId: "daigoroku-website",
-        storageBucket: "daigoroku-website.appspot.com",
-        messagingSenderId: "405763623042",
-        appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
-      };
-    
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-      const commentsRef = collection(db, "comments");
-      const pageId = "saisinnzyouhou"; 
-    
-      document.getElementById("comment-form").addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const username = document.getElementById("username-input").value.trim();
-        const comment = document.getElementById("comment-input").value.trim();
-    
-        if (!username || !comment) return;
-    
-        await addDoc(commentsRef, {
-          username: username,
-          comment: comment,
-          timestamp: serverTimestamp(),
-          pageId: pageId,
-        });
-    
-        document.getElementById("username-input").value = "";
-        document.getElementById("comment-input").value = "";
-        loadComments();
-      });
-    
-      async function loadComments() {
-        const q = query(
-          commentsRef,
-          where("pageId", "==", pageId),
-          orderBy("timestamp", "desc")
-        );
-        const querySnapshot = await getDocs(q);
-    
-        const commentsContainer = document.getElementById("comments");
-        commentsContainer.innerHTML = "";
-    
-        let count = 0;
-        const docsToDelete = [];
-    
-        const icons = [
-          "../images/randomicon/ofensu.jpeg",
-          "../images/randomicon/posutomann.jpeg",
-          "../images/randomicon/kottousyou.jpeg",
-          "../images/randomicon/saisi.jpeg",
-          "../images/randomicon/youhei.jpeg",
-          "../images/randomicon/ouenndann.jpeg",
-          "../images/randomicon/syouzyo.jpeg",
-          "../images/randomicon/kikaigisi.jpeg",
-          "../images/randomicon/kuugunn.jpeg",
-          "../images/randomicon/tyoukousi.jpeg",
-          "../images/randomicon/kisya.jpeg"
-        ];
-    
-        querySnapshot.forEach((docSnap) => {
-          const data = docSnap.data();
-          if (data.username && data.comment && data.timestamp?.seconds) {
-            if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
-              return; // NGワードフィルター
-            }
-    
-            if (count < 50) {
-              const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-              const commentDiv = document.createElement("div");
-              commentDiv.classList.add("comment");
-              commentDiv.innerHTML = `
-                <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
-                <img src="${randomIcon}" alt="User Icon" class="user-icon" />
-                <div class="username"><strong>${data.username}</strong></div>
-                <div class="message">${data.comment}</div>
-              `;
-              commentsContainer.appendChild(commentDiv);
-            } else {
-              docsToDelete.push(doc(db, "comments", docSnap.id));
-            }
-            count++;
-          }
-        });
-    
-        for (const d of docsToDelete) {
-          await deleteDoc(d);
-        }
-      }
-      
-      loadComments();
-    </script>
   </head>
   <body>
     <header>
@@ -185,6 +77,327 @@
 
             <!-- アップデート記事リスト -->
             <div id="updates-container">
+              <article class="update-item">
+                <h3>2025.6.26現在</h3>
+                <h2>夏のイベント情報！！</h2>
+                <li>夏の潮に浮かぶ影</li>
+                <p>
+                  【SR衣装】「囚人」-「案内係」、【料理】サバイバー-ラキヤなどのボーナスを獲得できます。
+                </p>
+                <p>
+                  【SSR家具】砂浜の絨毯、【落書き】貝殻の海鳴り、友情ポイント、欠片などの報酬が獲得できます！
+                </p>
+                <a href="../ibento/ibento.html">詳細はこちら</a>
+              </article>
+
+              <article class="update-item">
+                <h3>2025.6.20現在</h3>
+                <h2>テストサーバー更新予告</h2>
+                <p>天賦ポイント及び内在人格の網調整<br>
+●双陣営の天賦ポイント数が130に増加し、それぞれ4つの天賦位置が追加、天賦の調整が入りました。</p>
+                <h2>サバイバー天賦追加内容</h2>
+                <p>
+                防衛反応、カタルシス効果、共感、感覚順応が追加されました。
+                </p>
+                <div class="toggle-title">更新内容 <span class="arrow">▼</span></div>
+                <div class="toggle-content">
+                  <ul>
+                    <h2>防衛反応</h2>
+                    <li>負傷状態での板・窓の操作速度が6%/9%/12%上昇する。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>カタルシス効果</h2>
+                    <li>いずれかのサバイバーがダウンした時、移動速度が20%上昇する。6秒間持続。自身の付近16メートル以内にハンターがいる、または仲間がダウン状態ではなくなると、効果は即座に終了する。クールダウンは30秒。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>共感</h2>
+                    <li>いずれかのサバイバーがダウンした時、移動速度が20%上昇する。6秒間持続。自身の付近16メートル以内にハンターがいる、または仲間がダウン状態ではなくなると、効果は即座に終了する。クールダウンは30秒。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>感覚順応</h2>
+                    <li>16メートル範囲内でハンターが操作行為（木の板の破壊、窓の乗り越え）を行った場合、ハンターの輪郭が5秒間表示される。クールタイムは16秒。</li>
+                  </ul>
+                  <ul>
+                </div>
+<br>
+<br>
+                <h2>サバイバー天賦調整内容</h2>
+                <p>
+                フライホイール効果、接触効果、避難所、癒合、かすかな音、観客効果、鳥籠効果、雲の中で散歩、共生効果、生存者の本能、孵化効果、一蓮托生、が調整されました。
+                </p>
+                <div class="toggle-title">更新内容 <span class="arrow">▼</span></div>
+                <div class="toggle-content">
+                  <ul>
+                    <h2>フライホイール効果</h2>
+                    <li>クールタイムが120秒→150秒に増加しました。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>自らを欺くを接触効果に変更</h2>
+                    <li>自身または仲間の治療が成功した時、治療を受けた対象の移動速度が即座に15%/25%/35%上昇する。1.5秒間持続。追撃状態ではない場合、加速時間が3秒延長される。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>避難所</h2>
+                    <li>ロケットチェアからサバイバーを救出するたびに、ダウン時の自己治癒速度と治療を受ける速度が10%/20%/30%上昇する。2スタック重ねがけ可能。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>かすかな音</h2>
+                    <li>他のサバイバーがロケットチェアに拘束されている時、ロケットチェアの半径22メートル以内では、走っても足跡が残らない。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>機械精通を観客効果に変更</h2>
+                    <li>他のサバイバーがロケットチェアに拘束された後、自身の解読速度が8%上昇する。2台の暗号機の解読が完了すると、この効果はその対戦中無効になる。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>吊り橋効果を鳥籠効果に変更</h2>
+                    <li>他のサバイバーと自身が地下室にいる時、自身の移動速度が10%上昇、被攻撃加速効果が20%上昇する。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>雲の中で散歩</h2>
+                    <li>足跡の持続時間が1秒減少し、負傷状態で破片痕跡が表示されなくなる。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>共生効果</h2>
+                    <li>ロケットチェアに拘束されたサバイバーに向かって移動する時、移動速度が6%～10%上昇する。ロケットチェアに拘束されたサバイバーから遠いほど、移動速度の上昇量が大きくなる。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>生存者の本能</h2>
+                    <li>1/2/3名のサバイバーが脱落した時、自身の解読速度が6%/18%/36%アップ。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>孵化効果</h2>
+                    <li>解読加速段階開始後、非解読状態のサバイバーの解読速度が1秒ごとに1%増加する。最大12%まで増加可能。解読開始10秒後、または解読状態から離脱した時、この効果は解除される。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>一蓮托生</h2>
+                    <li>18メートル以内にいるサバイバーと、ハンターに追撃されていない負傷中のサバイバーを互いに表示。</li>
+                  </ul>
+                  <ul>
+                </div>
+
+                <h2>ハンター天賦追加内容</h2>
+                <p>
+                執念、警戒、飢餓、枯木を倒すが追加されました。
+                </p>
+                <div class="toggle-title">更新内容 <span class="arrow">▼</span></div>
+                <div class="toggle-content">
+                  <ul>
+                    <h2>執念</h2>
+                    <li>追撃状態から離脱し、自身の正面範囲16メートル以内に行動可能なサバイバーがいない時、移動速度が6%上昇する。15秒間持続。再び追撃状態に入る、風船を持ち上げる、または正面範囲16メートル以内に行動可能なサバイバーが出現すると、この効果は終了する。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>警戒</h2>
+                    <li>最初の3台の暗号機の解読が完了した時、毎回10秒間自身の移動速度が6%、木の板を破壊する速度が15%上昇する。効果は重ねがけ可能。サバイバーがロケットチェアに拘束されると、この効果はその対戦中無効になる。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>飢餓</h2>
+                    <li>ゲーム開始から60秒間、自身の18メートル範囲内にサバイバーがいない場合、全サバイバーの解読速度が6%低下する。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>枯木を倒す</h2>
+                    <li>異なるサバイバーを2/3/4人ダウンさせると、攻撃速度回復が5%/10%/15%上昇する。</li>
+                  </ul>
+                  <ul>
+                </div>
+<br>
+<br>
+                <h2>ハンター天賦調整内容</h2>
+                <p>
+                後遺症、掃除屋、崩壊、支配欲、中毒症、忍耐力、懐旧癖、生還者なし、巨大ペンチ、獲物を追う、幽閉の恐怖が調整されました。
+                </p>
+                <div class="toggle-title">更新内容 <span class="arrow">▼</span></div>
+                <div class="toggle-content">
+                  <ul>
+                    <h2>後遺症</h2>
+                    <li>ダウンしたサバイバーが自己治癒できる上限が10%/20%/30%低下し、ダウン時の自己治癒速度が8%/12%/16%低下する。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>掃除屋</h2>
+                    <li>24/28/32メートル以内の治療中及び治療を受けているサバイバーを表示し、その治療時間を25%/40%/55%増加させる。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>崩壊</h2>
+                    <li>通常攻撃を受けたサバイバーの次の自己治癒（ダウン時の自己治癒は含まない）または他人から受ける治療時間が20%/30%/40%増加する。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>支配欲</h2>
+                    <li>高所から自然垂直落下すると、移動速度が10%増加する。3秒間持続。クールタイムは10秒。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>中毒症</h2>
+                    <li>自身の周囲24メートル以内にロケットチェアに拘束されていないサバイバーが2/3/4人いる時、気絶などの強力なコントロール効果を受けた後の回復速度が10%/25%/40%上昇する。気絶効果が発動した際、即座に24メートル以内のサバイバーに減速効果を与える。距離が遠いほど減速効果が強くなり、最大20%（最低10%）の減速が発生する。4秒間持続。クールタイムは20秒。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>忍耐力</h2>
+                    <li>強大な忍耐力によって、ハンターの受ける撃退効果が12%/22%/32%、減速効果が12%/18%/24%減少する。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>懐旧癖</h2>
+                    <li>発動範囲が24メートルから32メートルに増加する。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>生還者なし</h2>
+                    <li>ダウンしたサバイバー付近25メートル以内に行動可能なサバイバーが1人増える度、この範囲内でのハンターの攻撃回復速度が10%ずつ上昇する。上限は3層まで。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>巨大ペンチ</h2>
+                    <li>風船に縛られたサバイバーの抵抗速度が5%/10%/15%低下する。サバイバーが風船からもがいて解放されるか、仲間に救出されると、全サバイバーの解読速度が10%/15%/20%低下する。10秒間持続。</li>
+                  </ul>
+                  <ul>
+<br>
+                    <h2>獲物を追う</h2>
+                    <li>解読加速段階開始後、非解読状態のサバイバーの解読速度が1秒ごとに1%増加する。最大12%まで増加可能。解読開始10秒後、または解読状態から離脱した時、この効果は解除される。</li>
+                  </ul>
+<br>
+                  <ul>
+                    <h2>幽閉の恐怖</h2>
+                    <li>ゲート通電後の20秒以内に、フィールド上に4/3人の行動可能なサバイバーが存在していた場合（ダウン状態、風船及びロケットチェアは行動不能状態にある）、ゲート開放の速度が70%/15%ダウンする。</li>
+                  </ul>
+                  <ul>
+                </div>
+<br>
+<br>
+                <h2>キャラ調整</h2>
+                <p>●呪術師、弓使い、レディファウロ、気象学者、漁師に調整が入りました。</p>
+                <div class="toggle-title">更新内容 <span class="arrow">▼</span></div>
+                <div class="toggle-content">
+                  <ul>
+                    <h2>呪術師</h2>
+                    <li>呪術師は最初から魔像守護を1スタック所持します。</li>
+                    <li>ハンターの近くにいる時の呪術師の魔像守護蓄積速度が25%低下しました。</li>
+                    <li>追加で魔像守護を獲得することによる蓄積速度低下上限が77%から66%に引き下げられ、初期状態で所持する魔像守護による蓄積速度低下効果（11%）が無効化されました。加護を受けたサバイバーは呪術師に最大3スタックの魔像守護を提供できます。</li>
+                  </ul>
+                  <ul>
+                    <h2>弓使い</h2>
+                    <li>ハンターの付近18メートル以内に他のサバイバーがいる時、その場で立ち止まった際の裂傷度の減少速度を15%速め、重傷裂傷度が100に達した時の気絶時間を15%短縮しました。</li>
+                    <li>竜骨弓とアームボウのクールタイムが12秒から14秒に調整されました。</li>
+                  </ul>
+                  <ul>
+                    <h2>レディ・ファウロ</h2>
+                    <li>雲隠れ状態の時、ハンターに「レディ・ファウロ」のボイスや効果音が聞かれなくなりました。 </li>
+                    <li>「ダウンなどの行動不能状態の間は、雲隠れのクールタイムのカウントが一時停止する」というのが、「ロケットチェアに拘束されると雲隠れのクールタイムのカウントが一時停止する」に変更されました。 </li>
+                    <li>妙計を使用して暗号機を指定し、他の暗号機を解読した時、指定された暗号機の減少速度が0.7%/秒に変更されました。</li>
+                    <li>雲隠れのクールタイム中にアロマの杖を使用すると、雲隠れのクールタイムが即座に7秒減少するようになりました。</li>
+                  </ul>
+                  <ul>
+                    <h2>気象学者</h2>
+                    <li>層雲の耐久消費が50%～60%に増加しました。</li>
+                    <li>暖雨の耐久消費が50%に増加しました。</li>
+                    <li>強風がハンターを障害物に押しやった時のコントロール時間が雑貨商-【高額依頼】、蝋人形師-【蝋の衣】の影響を受けるようになりました。</li>
+                  </ul>
+                  <ul>
+                    <h2>漁師</h2>
+                    <li>2段階解放前に淵が封鎖された時と驚波が命中した時に蓄積される湿気が30%から35%に上昇しました。</li>
+                    <li>弄潮に新しい効果が追加：銛を回収するアクション時間が短縮。</li>
+                    <li>サバイバーが地下室付近の淵にいる時、湿気増加速度が毎秒6%に低下しました。</li>
+                  </ul>
+                </div>
+<br>
+<br>
+                <h2>その他の対戦調整</h2>
+                <p>●付近に他のサバイバーがいない状態で、ハンターがロケットチェアに拘束されたサバイバーを連続で複数回攻撃すると、長時間行動不能状態に陥る。</p>
+              </article>
+
+              <article class="update-item">
+                <h3>2025.6.19現在</h3>
+                <h2>約束のネバーランド×第五人格コラボ開催！（復刻）</h2>
+                <li>コラボイベント【一緒に逃げ出そう！】が復刻で開催！</li>
+                <p>
+                  出荷の日が来る前に毎日ログインすると、欠片、手掛かりなどのボーナスを獲得できます。
+                </p>
+                <p>
+                  ドンとギルダの好感度を上げると、オフェンス-ドン衣装、心眼-ギルダ衣装、またはコラボ【交換券】から1つを選んで獲得できます。
+                </p>
+<br>
+                <li>約束のネバーランドコラボ真髄1</li>
+                <p>
+                  血の女王-イザベラ衣装、庭師-エマ衣装、囚人-レイ衣装、納棺師-ノーマン衣装が入手可能！
+                </p>
+<br>
+                <li>約束のネバーランドコラボ真髄2</li>
+                <p>
+                  昆虫学者-ムジカ衣装、リッパー-ソンジュ衣装、写真家-ピーター・ラートリー衣装、アンデッド-ザジ衣装が入手可能！
+                </p>
+                <a href="../korabo/korabo.html">詳細はこちら</a>
+              </article>
+
+              <article class="update-item">
+                <h3>2025.6.5現在</h3>
+                <h2>脱出マスターがランクマッチで使用可能になりました。</h2><br>
+                <br>
+                <h2>AXIZ WAVE戦隊限定ペット【ウェーブくん】がショップに登場！</h2>
+                <p>
+                  2024IJL秋季大会優勝——AXIZ WAVE戦隊限定ペット【ウェーブくん】がショップに登場。
+                </p>
+<br>
+                <h2>ZETA DIVISION戦隊限定【携帯品】骨董商-電光石火が6月5日メンテナンス後に期間限定で再登場！</h2>
+                <p>
+                  2023IJL秋季大会優勝——ZETA DIVISION戦隊限定【携帯品】骨董商-電光石火が6月5日メンテナンス後に期間限定で再登場！
+                </p>
+                <a href="../ibento/ibento.html">詳細はこちら</a>
+
+                <h2>定型文チャット調整内容</h2>
+                <p>
+                  新しい定型文が追加されました：「脱出口は____にない！」など
+                </p>
+                <a href="../chat/chat.html">詳細はこちら</a>
+              </article>
+
+              <article class="update-item">
+                <h3>2025.5.29現在</h3>
+                <h2>Identity V｜LINE FRIENDS コラボ第二段開始</h2>
+                <p>
+                  ログインしてイベントをシェアすると、コラボ【アイコン枠】LINE FRIENDS Ⅰを獲得可能！
+                </p>
+<br>
+                <p>
+                  機械技師-SALLY、火災調査員-LEONARDがエコーにて購入可能！
+                </p>
+                <a href="../korabo/korabo.html">詳細はこちら</a>
+              </article>
+
+              <article class="update-item">
+                <h3>2025.5.22現在</h3>
+                <h2>脱出マスターが使用可能になりました。</h2>
+                <a href="../sabaiba/dassyutumasuta/dassyutumasuta.html">詳細はこちら</a>
+              </article>
+
+              <article class="update-item">
+                <h3>2025.5.15現在</h3>
+                <h2>Identity V｜LINE FRIENDS コラボ</h2>
+                <p>
+                  イベントに参加してタスクを完了すると、【アイコン】BROWN、【SR携帯品】サバイバー-「MOON」などの豪華ボーナスを。獲得可能！
+                </p>
+<br>
+                <p>
+                  昆虫学者-CONY、傭兵-BROWNがエコーにて購入可能！
+                </p>
+                <a href="../korabo/korabo.html">詳細はこちら</a>
+              </article>
+
               <article class="update-item">
                 <h3>2025.5.8現在</h3>
                 <h2>雑貨商がランク戦に実装されました。</h2>
@@ -485,6 +698,7 @@
                 </p>
                 <a href="../korabo/korabo.html">詳細はこちら</a>
               </article>
+
               <article class="update-item">
                 <h3>2025.4.10現在</h3>
                 <p>
@@ -629,6 +843,9 @@
     </footer>
 
     <script src="script.js"></script>
-    <!-- 外部JavaScriptを読み込む -->
+    <script src="../script/kyararisuto.js"></script>
+    <script src="../script/ngcomento.js"></script>
+    <script src="../script/honbaga.js"></script>
+    <script type="module" src="../comentoscript/saisinnzyouhou.js"></script>
   </body>
 </html>

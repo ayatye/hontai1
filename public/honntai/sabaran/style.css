@@ -1,6 +1,6 @@
 /* ベーススタイル */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -138,7 +138,7 @@ nav-gert {
   padding-left: 2cm;
 }
 
-.konntent{
+.konntent {
   margin: 20px;
   padding-right: 50px;
 }
@@ -174,7 +174,6 @@ a {
   justify-content: flex-start; /* ← 左寄せに変更 */
 }
 
-
 .tier-item {
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -185,7 +184,6 @@ a {
   text-align: center;
   transition: transform 0.2s;
 }
-
 
 .tier-item:hover {
   transform: translateY(-4px);
@@ -202,6 +200,51 @@ a {
   font-size: 18px;
   color: #333;
   font-weight: bold;
+}
+
+.link-box {
+  display: block;
+  border: 1px solid #161515;
+  padding: 20px;
+  width: 80%;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  color: #22262a;
+  text-decoration: none;
+}
+
+.link-box:hover {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+}
+
+.link-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.link-content img {
+  width: 200px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.link-text p {
+  margin: 0 0 10px;
+}
+
+.link-content img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* 画像をトリミングして正方形にフィットさせる */
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.text-sp {
+  display: none; /* 初期状態は非表示 */
 }
 
 /* サイドバーの位置調整 */
@@ -481,6 +524,10 @@ footer p {
     padding-right: 1cm;
   }
 
+  .tier-item {
+    flex: 0 0 100px; /* 最小・最大ともに幅200pxで固定 */
+  }
+
   .sidebar {
     max-height: 800px;
     width: 100%;
@@ -514,13 +561,46 @@ footer p {
     display: none;
   }
 
-  .wrapper {
-    padding-left: 1cm;
-    padding-right: 1cm;
+  .tier-item {
+    flex: 0 0 70px; /* 最小・最大ともに幅200pxで固定 */
   }
 
-  .konntent{
+  .tier-name {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .konntent {
     padding-right: 0px;
+  }
+
+  .link-box {
+    padding: 10px;
+  }
+
+  .link-content {
+    gap: 10px;
+  }
+
+  .link-content img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .link-text p {
+    font-size: 12px;
+  }
+
+  .text-pc {
+    display: none;
+  }
+
+  .text-sp {
+    display: block;
   }
 
   .sidebar {
@@ -677,5 +757,3 @@ footer p {
     padding: 10px; /* パディングを調整 */
   }
 }
-
-

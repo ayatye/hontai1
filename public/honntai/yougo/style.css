@@ -214,6 +214,11 @@ main {
   padding-bottom: 7px; /* 下の余白 */
 }
 
+.yougo-image {
+  width: 70%;
+  padding: 10px;
+}
+
 /* サイドバーの位置調整 */
 .sidebar {
   background-color: #f4f4f4;

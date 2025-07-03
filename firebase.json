@@ -17,9 +17,26 @@
         "headers": [
           {
             "key": "Content-Type",
-            "value": "application/xml"
+            "value": "application/xml; charset=utf-8"
           }
         ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/index.html",
+        "destination": "/",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/sitemap.xml",
+        "destination": "/sitemap.xml"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }

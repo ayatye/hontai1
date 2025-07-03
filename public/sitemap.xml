@@ -4,11 +4,9 @@
 
   <url>
     <loc>https://daigoroku-website.web.app/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
   </url>
 
-  <url>
+    <url>
     <loc>https://daigoroku-website.web.app/hontai/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -525,4 +523,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  
 </urlset>

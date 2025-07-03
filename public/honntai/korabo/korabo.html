@@ -3,117 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Identity V コラボ情報</title>
+  <title>コラボ情報 - IdentityV（第五人格）攻略【第五録】</title>
   <link rel="stylesheet" href="style.css" />
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import {
-      getFirestore,
-      collection,
-      addDoc,
-      getDocs,
-      query,
-      orderBy,
-      where,
-      serverTimestamp,
-      deleteDoc,
-      doc
-    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-  
-    const firebaseConfig = {
-      apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
-      authDomain: "daigoroku-website.firebaseapp.com",
-      projectId: "daigoroku-website",
-      storageBucket: "daigoroku-website.appspot.com",
-      messagingSenderId: "405763623042",
-      appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
-    };
-  
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const commentsRef = collection(db, "comments");
-    const pageId = "korabo"; 
-  
-    document.getElementById("comment-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const username = document.getElementById("username-input").value.trim();
-      const comment = document.getElementById("comment-input").value.trim();
-  
-      if (!username || !comment) return;
-  
-      await addDoc(commentsRef, {
-        username: username,
-        comment: comment,
-        timestamp: serverTimestamp(),
-        pageId: pageId,
-      });
-  
-      document.getElementById("username-input").value = "";
-      document.getElementById("comment-input").value = "";
-      loadComments();
-    });
-  
-    async function loadComments() {
-      const q = query(
-        commentsRef,
-        where("pageId", "==", pageId),
-        orderBy("timestamp", "desc")
-      );
-      const querySnapshot = await getDocs(q);
-  
-      const commentsContainer = document.getElementById("comments");
-      commentsContainer.innerHTML = "";
-  
-      let count = 0;
-      const docsToDelete = [];
-  
-      const icons = [
-        "../images/randomicon/ofensu.jpeg",
-        "../images/randomicon/posutomann.jpeg",
-        "../images/randomicon/kottousyou.jpeg",
-        "../images/randomicon/saisi.jpeg",
-        "../images/randomicon/youhei.jpeg",
-        "../images/randomicon/ouenndann.jpeg",
-        "../images/randomicon/syouzyo.jpeg",
-        "../images/randomicon/kikaigisi.jpeg",
-        "../images/randomicon/kuugunn.jpeg",
-        "../images/randomicon/tyoukousi.jpeg",
-        "../images/randomicon/kisya.jpeg"
-      ];
-  
-      querySnapshot.forEach((docSnap) => {
-        const data = docSnap.data();
-        if (data.username && data.comment && data.timestamp?.seconds) {
-          if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
-            return; // NGワードフィルター
-          }
-  
-          if (count < 50) {
-            const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-            const commentDiv = document.createElement("div");
-            commentDiv.classList.add("comment");
-            commentDiv.innerHTML = `
-              <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
-              <img src="${randomIcon}" alt="User Icon" class="user-icon" />
-              <div class="username"><strong>${data.username}</strong></div>
-              <div class="message">${data.comment}</div>
-            `;
-            commentsContainer.appendChild(commentDiv);
-          } else {
-            docsToDelete.push(doc(db, "comments", docSnap.id));
-          }
-          count++;
-        }
-      });
-  
-      for (const d of docsToDelete) {
-        await deleteDoc(d);
-      }
-    }
-    
-    loadComments();
-  </script>
-
 </head>
 <body>
     <header>
@@ -186,42 +77,100 @@
     <section id="collab-list" class="collab-list">
       <!-- ▼ 約束のネバーランド（復刻） ▼ -->
       <div class="collab-card ongoing">
-        <img src="images/danganronpa.jpg" alt="約束のネバーランド（復刻）">
         <div class="collab-content">
           <h2 class="collab-title">約束のネバーランド（復刻）</h2>
-          <p class="collab-period">2025年4月15日 ～ 2025年5月10日</p>
+          <img src="../images/korabo/yakusokuno/taitoru.jpeg" alt="約束のネバーランド" class="small-image">
+          <p class="collab-period">2025年6月19日 ～ 2025年7月17日</p>
           <div class="collab-description">
             <h3>概要</h3>
-            <p>超高校級のサバイバー＆ハンターたちが登場！</p>
+            <p>出荷される前にコラボ衣装をGETしよう！！</p>
+
+            <h3>やること</h3>
+            <ol>
+              <li>出荷の日が来る前に毎日ログインすると、欠片、手掛かりなどのボーナスを獲得できます。</li>
+              <li>イベントをシェアすることでコラボ【交換券】を入手できます。</li>
+              <img src="../images/korabo/yakusokuno/dongiruda.jpeg" alt="ドンとギルダの衣装" class="colab-big-img "/>
+              <li>イベントタスクを完了するとオフェンスSSR衣装-ドン、心眼SSR衣装-ギルダ、コラボ【交換券】豪華ボーナスを獲得できます。</li>
+              <img src="../images/korabo/yakusokuno/koukanken.jpeg" alt="交換券の内容" class="colab-big-img "/>
+              <p>コラボ【交換券】を使うことで、イベントショップで【約束のネバーランドコラボ真髄1】×10、【約束のネバーランドコラボ真髄2】×10、または霊感×800を引き換えできます。
+              </p>
+            </ol>
+
+            <h3>約束のネバーランドコラボ真髄1</h3>
+            <img src="../images/korabo/yakusokuno/daiitidan.jpeg" alt="約束のネバーランド第一弾" class="colab-big-img "/>
+            <ol>
+              <li>【UR衣装】血の女王-イザベラ、【SSR衣装】庭師-エマ、【SSR衣装】「囚人」-レイ、【SSR衣装】納棺師-ノーマンが入手可能！</li>
+              <li>コラボ限定携帯品、アイコン、落書きのコラボアイテムを入手可能</li>
+            </ol>
+
+            <h3>約束のネバーランドコラボ真髄2</h3>
+            <img src="../images/korabo/yakusokuno/dainidan.jpeg" alt="約束のネバーランド第二弾" class="colab-big-img "/>
+            <ol>
+              <li>【UR衣装】昆虫学者-ムジカ、【SSR衣装】リッパー-ソンジュ、【SSR衣装】写真家-ピーター・ラートリー、【SSR衣装】「アンデッド」-ザジが入手可能！</li>
+              <li>コラボ限定携帯品、アイコン、落書きのコラボアイテムを入手可能</li>
+            </ol>
+
+            <h3>約束のネバーランドコラボ特売パック</h3>
+            <ol>
+              <li>【約束のネバーランドコラボ真髄1】×5、【約束のネバーランドコラボ真髄2】×5、または霊感×400から一つを選択して購入できます。価格は288エコーです。最大6つまで購入可能です。</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collab-list" class="collab-list">
+      <!-- ▼ LINE FRIENDS ▼ -->
+      <div class="collab-card ongoing">
+        <div class="collab-content">
+          <h2 class="collab-title">LINE FRIENDS第2弾</h2>
+          <img src="../images/korabo/linenidan/lineicon.jpeg" alt="LINE FRIENDS2弾" class="small-image">
+          <p class="collab-period">2025年5月29日～2025年6月26日</p>
+          <div class="collab-description">
+            <h3>概要</h3>
+            <p>かわいいキャラ達の訪れ</p>
 
             <h3>入手できるもの</h3>
             <ul>
-              <li>衣装：江ノ島盾子（芸者）</li>
-              <li>携帯品：モノクマ（ペット）</li>
-              <li>待機モーション、アイコン、エモートなど</li>
+              <img src="../images/korabo/linenidan/iconrakugaki.jpeg" alt="落書き" class="colab-big-img "/>
+              <li>コラボ【アイコン枠】LINE FRIENDS Ⅰ</li>
+              <li>【アイコン】PANGYO、【アイコン】JAMES、【落書き】BROWN&CONY、【落書き】SALLY&LEONARD、【SR家具】</li>
             </ul>
 
             <h3>やること</h3>
             <ol>
-              <li>コラボイベントのミッションをクリア</li>
-              <li>専用コラボパックを購入</li>
-              <li>限定ガチャでアイテムを入手</li>
+              <li>ログインしてイベントをシェアすると、コラボ【アイコン枠】LINE FRIENDS Ⅰを獲得できます。</li>
+              <li>イベントタスクを完了すると【アイコン】PANGYO、【アイコン】JAMES、【落書き】BROWN&CONY、【落書き】SALLY&LEONARD、【SR家具】などの豪華ボーナスを獲得できます。</li>
             </ol>
 
-            <div class="collab-images">
-              <img src="images/danganronpa_skin1.jpg" alt="芸者スキン" />
-              <img src="images/danganronpa_pet.jpg" alt="モノクマペット" />
-            </div>
+            <h3>エコー衣装</h3>
+            <ol>
+              <img src="../images/korabo/linenidan/renadokyara.jpeg" alt="レナード衣装" class="colab-big-img"/>
+              <li>【SSR衣装】火災調査員-LEONARDが1388エコーでご購入いただけます。初週は15%オフ、割引価格1178エコーで販売されます。</li>
+              <img src="../images/korabo/linenidan/sarikyara.jpeg" alt="サリースキン" class="colab-big-img"/>
+              <li>【SSR衣装】機械技師-SALLYが1388エコーでご購入いただけます。初週は15%オフ、割引価格1178エコーで販売されます。</li>
+            </ol>
+
+            <h3>エコー家具</h3>
+            <ol>
+              <div class="colab-images">
+                <img src="../images/korabo/linenidan/kaguchico.jpeg" alt="家具" class="colab-img"/><img src="../images/korabo/linenidan/kagukoni.jpeg" alt="家具" class="colab-img"/><img src="../images/korabo/linenidan/kagurenado.jpeg" alt="家具" class="colab-img"/>
+              </div>
+              <li>【SSR家具】ショッピング中のCHOCO、【SR家具】空飛ぶCONY、【SR家具】ギターを弾くLEONARDを含むLINE FRIENDS家具パックが割引価格1128エコーでご購入いただけます。パックは1つのみ購入可能です。</li>
+              <li>【SSR家具】ショッピング中のCHOCOがショップに追加されました。1188エコーでご購入いただけます。初週は期間限定で950エコーまで割り引かれます。 </li>
+              <li>【SR家具】ギターを弾くLEONARDがショップに追加されました。288エコーでご購入いただけます初週は期間限定で230エコーまで割り引かれます。5つまで購入可能です。 </li>
+            </ol>
           </div>
         </div>
       </div>
+    </section>
 
       <section id="collab-list" class="collab-list">
         <!-- ▼ LINE FRIENDS ▼ -->
         <div class="collab-card ongoing">
-          <img src="images/danganronpa.jpg" alt="LINE FRIENDS">
           <div class="collab-content">
             <h2 class="collab-title">LINE FRIENDS</h2>
+            <img src="../images/korabo/linehukkoku/lineicon.jpeg" alt="LINE FRIENDS" class="small-image">
             <p class="collab-period">2025年5月15日～2025年6月26日</p>
             <div class="collab-description">
               <h3>概要</h3>
@@ -229,8 +178,10 @@
   
               <h3>入手できるもの</h3>
               <ul>
+                <img src="../images/korabo/linehukkoku/rakugaki.jpeg" alt="落書き" class="colab-img"/>
                 <li>携帯品：【SR携帯品】サバイバー-「MOON」</li>
                 <li>アイコン、落書き:【アイコン】BROWN、【アイコン】CHOCO、【落書き】CONY、【落書き】SALLY</li>
+                <img src="../images/korabo/linehukkoku/icon.jpeg" alt="アイコン" class="colab-img"/>
                 <li>ラッキーダイス:【アイコン】CONY、【アイコン】LEONARD、【アイコン】MOON、【アイコン】SALLY、【アイコン枠】LINE FRIENDS、【落書き】BROWN、【落書き】CHOCO、【落書き】LEONARD、【落書き】MOON</li>
               </ul>
   
@@ -241,30 +192,29 @@
   
               <h3>エコー衣装</h3>
               <ol>
+                <img src="../images/korabo/linehukkoku/youhei.jpeg" alt="傭兵衣装" class="colab-big-img"/>
                 <li>【SSR衣装】昆虫学者-CONYが1388エコーでご購入いただけます。</li>
+                <img src="../images/korabo/linehukkoku/konntyuu.jpeg" alt="昆虫学者衣装" class="colab-big-img"/>
                 <li>【SSR衣装】傭兵-BROWNが1388エコーでご購入いただけます。</li>
               </ol>
   
               <h3>エコー家具</h3>
               <ol>
+                <img src="../images/korabo/linehukkoku/kaguburaun.jpeg" alt="家具" class="colab-img"/>
                 <li>【SSR家具】BROWNのぬいぐるみが1188エコーでご購入いただけます。</li>
+                <img src="../images/korabo/linehukkoku/kagusari.jpeg" alt="家具" class="colab-img"/>
                 <li>【SR家具】撮影するSALLYが288エコーでご購入いただけます。 </li>
               </ol>
-  
-  
-              <div class="collab-images">
-                <img src="images/danganronpa_skin1.jpg" alt="芸者スキン" />
-                <img src="images/danganronpa_pet.jpg" alt="モノクマペット" />
-              </div>
             </div>
           </div>
         </div>
+      </section>
   
         <!-- ▼ Ibコラボ ▼ -->
         <div class="collab-card past">
-          <img src="images/danganronpa.jpg" alt="Ibコラボ">
           <div class="collab-content">
             <h2 class="collab-title">Ibコラボ</h2>
+            <img src="../images/korabo/ib/ibicon.jpeg" alt="Ibコラボ" class="small-image">
             <p class="collab-period">2025年4月17日 ～ 2025年5月15日</p>
             <div class="collab-description">
               <h3>概要</h3>
@@ -272,9 +222,19 @@
   
               <h3>入手できるもの</h3>
               <ul>
+                <div class="colab-images">
+                  <img src="../images/korabo/ib/ibkyara.jpeg" alt="イブスキン" class="colab-img"/><img src="../images/korabo/ib/ibgyarikyara.jpeg" alt="ギャリースキン" class="colab-img"/><img src="../images/korabo/ib/mearikyara.jpeg" alt="メアリースキン" class="colab-img"/>
+                </div>
                 <li>衣装：【SSR衣装】記者-イヴ、【SSR衣装】リッパー-ギャリー、【SSR衣装】空軍-メアリーの中から一つ</li>
+                <img src="../images/korabo/ib/ibaoi.jpeg" alt="青い人形衣装" class="colab-img"/>
                 <li>携帯品：【SRペット】サバイバー-青い人形</li>
+                <div class="colab-images">
+                  <img src="../images/korabo/ib/ibibicon.jpeg" alt="イブアイコン" class="colab-img"/><img src="../images/korabo/ib/ibgyariicon.jpeg" alt="ギャリーアイコン" class="colab-img"/><img src="../images/korabo/ib/ibmeariicon.jpeg" alt="メアリーアイコン" class="colab-img"/><img src="../images/korabo/ib/ibrakugaki.jpeg" alt="落書き" class="colab-img"/>
+                </div>
                 <li>アイコン、落書き:</li>
+                <div class="colab-images">
+                  <img src="../images/korabo/ib/ibkaguaka.jpeg" alt="家具" class="colab-img"/><img src="../images/korabo/ib/ibkagu.jpeg" alt="家具" class="colab-img"/>
+                </div>
                 <li>家具:コラボ限定家具【SSR家具】深海の世、【SSR家具】赤色の目</li>
               </ul>
   
@@ -298,110 +258,9 @@
                 <li>【SSR家具】指定席が1188エコーで最大1つまでご購入いただけます。初週は950エコーまで割り引かれます。</li>
                 <li>【SSR家具】香りに敏感な針猫が1188エコーで最大1つまでご購入いただけます。初週は950エコーまで割り引かれます。</li>
               </ol>
-  
-              <div class="collab-images">
-                <img src="images/danganronpa_skin1.jpg" alt="芸者スキン" />
-                <img src="images/danganronpa_pet.jpg" alt="モノクマペット" />
-              </div>
             </div>
           </div>
         </div>
-
-      <!-- ▼ ペルソナ5コラボ ▼ -->
-      <div class="collab-card past">
-        <img src="images/danganronpa.jpg" alt="ダンガンロンパコラボ">
-        <div class="collab-content">
-          <h2 class="collab-title">ダンガンロンパ</h2>
-          <p class="collab-period">2025年4月15日 ～ 2025年5月10日</p>
-          <div class="collab-description">
-            <h3>概要</h3>
-            <p>超高校級のサバイバー＆ハンターたちが登場！</p>
-
-            <h3>入手できるもの</h3>
-            <ul>
-              <li>衣装：江ノ島盾子（芸者）</li>
-              <li>携帯品：モノクマ（ペット）</li>
-              <li>待機モーション、アイコン、エモートなど</li>
-            </ul>
-
-            <h3>やること</h3>
-            <ol>
-              <li>コラボイベントのミッションをクリア</li>
-              <li>専用コラボパックを購入</li>
-              <li>限定ガチャでアイテムを入手</li>
-            </ol>
-
-            <div class="collab-images">
-              <img src="images/danganronpa_skin1.jpg" alt="芸者スキン" />
-              <img src="images/danganronpa_pet.jpg" alt="モノクマペット" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ▼ ダンガンロンパコラボ ▼ -->
-      <div class="collab-card past">
-        <img src="images/danganronpa.jpg" alt="ダンガンロンパコラボ">
-        <div class="collab-content">
-          <h2 class="collab-title">ダンガンロンパ</h2>
-          <p class="collab-period">2025年4月15日 ～ 2025年5月10日</p>
-          <div class="collab-description">
-            <h3>概要</h3>
-            <p>超高校級のサバイバー＆ハンターたちが登場！</p>
-
-            <h3>入手できるもの</h3>
-            <ul>
-              <li>衣装：江ノ島盾子（芸者）</li>
-              <li>携帯品：モノクマ（ペット）</li>
-              <li>待機モーション、アイコン、エモートなど</li>
-            </ul>
-
-            <h3>やること</h3>
-            <ol>
-              <li>コラボイベントのミッションをクリア</li>
-              <li>専用コラボパックを購入</li>
-              <li>限定ガチャでアイテムを入手</li>
-            </ol>
-
-            <div class="collab-images">
-              <img src="images/danganronpa_skin1.jpg" alt="芸者スキン" />
-              <img src="images/danganronpa_pet.jpg" alt="モノクマペット" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ▼ 約束のネバーランドコラボ ▼ -->
-      <div class="collab-card past">
-        <img src="images/neverland.jpg" alt="ネバランコラボ">
-        <div class="collab-content">
-          <h2 class="collab-title">約束のネバーランド</h2>
-          <p class="collab-period">2025年3月1日 ～ 2025年3月31日</p>
-          <div class="collab-description">
-            <h3>概要</h3>
-            <p>エマやレイがサバイバーとして登場！</p>
-
-            <h3>入手できるもの</h3>
-            <ul>
-              <li>衣装：エマ（マジシャン）、ノーマン（傭兵）</li>
-              <li>エフェクト付きアイコンフレーム</li>
-            </ul>
-
-            <h3>やること</h3>
-            <ol>
-              <li>ログインボーナスでアイテム獲得</li>
-              <li>イベントステージで専用通貨を集める</li>
-              <li>交換所でアイテムと交換</li>
-            </ol>
-
-            <div class="collab-images">
-              <img src="images/neverland_emma.jpg" alt="エマスキン" />
-              <img src="images/neverland_rewards.jpg" alt="報酬画面" />
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
   </main>
         </div>
@@ -462,8 +321,11 @@
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="../script/kyararisuto.js"></script>
+    <script src="../script/ngcomento.js"></script>
+    <script src="../script/honbaga.js"></script>
+    <script type="module" src="../comentoscript/korabo.js"></script>
 </body>
 </html>
 

@@ -176,6 +176,20 @@ main {
   flex-grow: 1;
 }
 
+.colab-images {
+  display: flex;
+}
+
+.colab-img {
+  padding: 5px;
+  width: 45%;
+}
+
+.colab-big-img {
+  padding: 5px;
+  width: 60%;
+}
+
 /* カードの横幅調整 */
 #collab-list {
   width: 100%;
@@ -196,7 +210,6 @@ main {
 }
 
 .collab-card img {
-  width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
@@ -214,7 +227,7 @@ main {
 }
 
 .collab-images img {
-  width: 48%;
+  width: 55%;
   border-radius: 5px;
 }
 
@@ -252,6 +265,14 @@ main {
 .collab-description ol {
   margin-left: 20px;
   margin-top: 5px;
+}
+
+.small-image {
+  display: block;
+  margin: 20px auto 0; /* 上に20pxの余白、左右自動、下は0 */
+  width: 60%; /* 必要に応じてサイズを調整 */
+  object-fit: cover;
+  border-radius: 8px; /* 任意：角を丸めたいとき */
 }
 
 /* サイドバーの位置調整 */
@@ -607,8 +628,17 @@ footer p {
     align-items: center;
   }
 
+  .colab-img {
+    width: 65%;
+  }
+
   .collab-card {
     width: 90%;
+  }
+
+  .collab-description ul,
+  .collab-description ol {
+    margin-left: 5px;
   }
 
   #comment-section {
@@ -733,6 +763,10 @@ footer p {
 
   nav h2 {
     font-size: 1.2rem; /* 見出しを少し小さく */
+  }
+
+  li {
+    font-size: 12px;
   }
 
   nav ul li a {

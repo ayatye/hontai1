@@ -3,125 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>『第五人格(IdentityⅤ)』第五録　第五人格攻略情報</title>
+    <title>IdentityV（第五人格）攻略【第五録】</title>
     <link rel="stylesheet" href="styles.css" />
-    <meta property="og:title" content="『第五人格(IdentityⅤ)』第五録　第五人格攻略情報">
+    <meta name="description" content="初心者から上級者まで！最新キャラ調整・イベント情報を毎週更新する『第五録』へようこそ。IdentityV攻略に役立つ情報が満載！">
+    <meta property="og:title" content="IdentityV（第五人格）攻略【第五録】">
     <meta property="og:image" content="https://daigoroku-website.web.app/images/サイコロicon.jpeg">
     <meta property="og:url" content="https://daigoroku-website.web.app/">    
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://daigoroku-website.web.app/">
-<!-- Firebase SDKのインポート -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-  import {
-    getFirestore,
-    collection,
-    addDoc,
-    getDocs,
-    query,
-    orderBy,
-    where,
-    serverTimestamp,
-    deleteDoc,
-    doc
-  } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCeDWwlVCPrZIZhGoxuAsuvOD3XwvbBM7o",
-    authDomain: "daigoroku-website.firebaseapp.com",
-    projectId: "daigoroku-website",
-    storageBucket: "daigoroku-website.appspot.com",
-    messagingSenderId: "405763623042",
-    appId: "1:405763623042:web:4371ab95c7b31d341d8c9b"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  const commentsRef = collection(db, "comments");
-  const pageId = "index"; 
-
-  document.getElementById("comment-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const username = document.getElementById("username-input").value.trim();
-    const comment = document.getElementById("comment-input").value.trim();
-
-    if (!username || !comment) return;
-
-    await addDoc(commentsRef, {
-      username: username,
-      comment: comment,
-      timestamp: serverTimestamp(),
-      pageId: pageId,
-    });
-
-    document.getElementById("username-input").value = "";
-    document.getElementById("comment-input").value = "";
-    loadComments();
-  });
-
-  async function loadComments() {
-    const q = query(
-      commentsRef,
-      where("pageId", "==", pageId),
-      orderBy("timestamp", "desc")
-    );
-    const querySnapshot = await getDocs(q);
-
-    const commentsContainer = document.getElementById("comments");
-    commentsContainer.innerHTML = "";
-
-    let count = 0;
-    const docsToDelete = [];
-
-    const icons = [
-      "honntai/images/randomicon/ofensu.jpeg",
-      "honntai/images/randomicon/posutomann.jpeg",
-      "honntai/images/randomicon/kottousyou.jpeg",
-      "honntai/images/randomicon/saisi.jpeg",
-      "honntai/images/randomicon/youhei.jpeg",
-      "honntai/images/randomicon/ouenndann.jpeg",
-      "honntai/images/randomicon/syouzyo.jpeg",
-      "honntai/images/randomicon/kikaigisi.jpeg",
-      "honntai/images/randomicon/kuugunn.jpeg",
-      "honntai/images/randomicon/tyoukousi.jpeg",
-      "honntai/images/randomicon/kisya.jpeg"
-    ];
-
-    querySnapshot.forEach((docSnap) => {
-      const data = docSnap.data();
-      if (data.username && data.comment && data.timestamp?.seconds) {
-        if (containsBannedWord(data.username) || containsBannedWord(data.comment)) {
-          return; // NGワードフィルター
-        }
-
-        if (count < 50) {
-          const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-          const commentDiv = document.createElement("div");
-          commentDiv.classList.add("comment");
-          commentDiv.innerHTML = `
-            <div class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</div>
-            <img src="${randomIcon}" alt="User Icon" class="user-icon" />
-            <div class="username"><strong>${data.username}</strong></div>
-            <div class="message">${data.comment}</div>
-          `;
-          commentsContainer.appendChild(commentDiv);
-        } else {
-          docsToDelete.push(doc(db, "comments", docSnap.id));
-        }
-        count++;
-      }
-    });
-
-    for (const d of docsToDelete) {
-      await deleteDoc(d);
-    }
-  }
-  
-  loadComments();
-</script>
-
-
-
   </head>
   <body>
     <header>
@@ -184,16 +73,17 @@
       <div class="content-wrapper">
         <div id="recommended-explanation">
           <div class="tv-header">
-            <h2>第五録</h2>
+            <h1>第五人格（IdentityV）攻略情報サイト｜第五録</h1>
             <p>
               誰もが必要である情報をお届けします！！<br />
               初心者でも上級者でも必ず役に立つ記事が見つかる！
             </p>
           </div>
         </div>
+
         <!-- 最新アップデート情報セクションの追加 -->
         <div class="latest-update">
-          <h3>最新アップデート情報</h3>
+          <h2>最新アップデート情報</h2>
 
           <!-- 四角い箱 -->
           <div class="update-box">
@@ -217,6 +107,34 @@
             </a>
           </div>
         </div>
+
+        <!-- ビックニュースセクションの追加 -->
+        <div class="latest-update">
+          <h2>ビックニュース！</h2>
+        
+            <!-- 四角い箱 -->
+            <div class="update-box">
+              <a href="honntai/bignews/bignews.html" title="詳しくはこちら">
+              <!-- 左側に写真 -->
+              <div class="update-photo">
+                <img src="honntai/images/bignews.jpeg" alt="ビックニュース画像" />
+              </div>
+              <!-- 右側に説明とリンク -->
+              <div class="update-info">
+                <p>
+                   第五人格の一大イベント、周年、ビックニュースをお届け！！
+                </p>
+              </div>
+              <!-- リンクのマーク -->
+              <div class="update-link">
+                <a href="honntai/bignews/bignews.html" title="詳しくはこちら">
+                <span>＞</span>
+              </a>
+              </div>
+             </a>
+           </div>
+        </div>
+
         <div class="kontentu">
           <div id="recommended-topics" class="info-block">
             <h2>おすすめトピック</h2>
@@ -381,6 +299,11 @@
       <p>&copy; 2024 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="honntai/script/script.js"></script>
+    <script src="honntai/script/kyararisuto.js"></script>
+    <script src="honntai/script/ngcomento.js"></script>
+    <script src="honntai/script/honbaga.js"></script>
+    <script type="module" src="honntai/comentoscript/hontai.js"></script>
+
   </body>
 </html>

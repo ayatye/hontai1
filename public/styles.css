@@ -673,6 +673,10 @@ footer p {
   .c-header__list {
     display: none;
   }
+
+  h1 {
+    font-size: 1em;
+  }
   .wrapper {
     padding-left: 1.5cm;
     margin-right: 0.5cm;
