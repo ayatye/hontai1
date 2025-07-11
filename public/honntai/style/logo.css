@@ -1,0 +1,54 @@
+/* ヘッダー */
+header {
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  position: relative; /* 相対位置指定 */
+  justify-content: space-between;
+  z-index: 100; /* z-indexを設定 */
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 250px;
+  padding-right: 50px;
+}
+
+.logo-photo {
+  width: 40px; /* 写真のサイズ調整 */
+  height: 40px;
+  margin-right: 10px; /* ロゴとの間にスペースを追加 */
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: normal; /* 無効な "none" の代わりに normal を使用 */
+  display: flex;
+  align-items: center;
+}
+
+.logo a:hover {
+  text-decoration: none; /* ホバー時の下線を消す */
+  color: inherit; /* 色の変更を防ぐ */
+}
+
+/* バナー */
+.banner {
+  background-color: #ff5733;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  width: 100%;
+  position: relative; /* 相対位置指定 */
+  z-index: 1; /* バナーは最前面に来ないように設定 */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    padding-right: 0;
+  }
+}

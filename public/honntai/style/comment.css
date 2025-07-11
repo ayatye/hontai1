@@ -1,0 +1,153 @@
+/* コメントセクションの全体スタイル */
+#comment-section {
+  width: 90%;
+  max-width: 800px;
+  background-color: #f7f9fc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 40px auto; /* 上下のマージンを指定し、左右をautoで中央寄せ */
+}
+
+#comment-section h2 {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* ユーザーネームとコメントの入力フォーム */
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#username-input {
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#comment-input {
+  padding: 12px;
+  font-size: 16px;
+  height: 150px; /* コメント入力欄の高さを大きく */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  resize: vertical; /* 縦方向にのみリサイズ可能 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#comment-form button {
+  align-self: flex-end;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* コメントが表示されるエリア */
+#comments-container {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px; /* 上部の余白を追加 */
+}
+.comment {
+  display: block;
+  align-items: flex-start;
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.comment .content {
+  flex-grow: 1;
+}
+
+.comment .username {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.comment .timestamp {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.comment .message {
+  font-size: 14px;
+  color: #555;
+}
+
+/* スクロールバーのカスタマイズ */
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 3px;
+}
+
+/* 横棒のスタイル */
+#scroll-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  display: none; /* 初期は非表示 */
+  z-index: 1000;
+}
+
+#scroll-bar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+#scroll-bar a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #comment-section {
+    width: 80%;
+  }
+
+  #scroll-bar {
+    display: none;
+  }
+}
