@@ -61,8 +61,7 @@ a {
 main {
   max-width: 960px;
   margin: auto;
-  margin-top: 20px;
-  padding: 2em;
+  padding: 1em;
   background-color: #fff;
 }
 
@@ -124,7 +123,7 @@ section {
 /* スマホ対応のレスポンシブデザイン */
 @media (max-width: 768px) {
   .wrapper {
-    padding-left: 1cm;
-    padding-right: 1cm;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }

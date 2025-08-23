@@ -408,6 +408,11 @@ const hunters = [
     url: "/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg",
     link: "/honntai/hanta/zakkasyou/zakkasyou.html",
   },
+  {
+    name: "ビリヤードプレイヤー",
+    url: "/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg",
+    link: "/honntai/hanta/biriyadopureiya/biriyadopureiya.html",
+  },
 ];
 
 // 仮のアイコン画像URL

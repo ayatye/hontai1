@@ -73,6 +73,11 @@ main {
   width: 45%;
 }
 
+.colab-small-img {
+  padding: 5px;
+  width: 20%;
+}
+
 .colab-big-img {
   padding: 5px;
   width: 60%;
@@ -219,6 +224,10 @@ main {
   }
 
   .colab-img {
+    width: 65%;
+  }
+
+  .colab-small-img {
     width: 65%;
   }
 

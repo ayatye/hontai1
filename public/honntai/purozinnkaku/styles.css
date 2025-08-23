@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fff;
+  color: #333;
 }
 
 nav-gert {
@@ -63,6 +64,7 @@ a {
   opacity: 0.9; /* 透明度を少し加える */
   transition: all 0.5s ease; /* アニメーションの動きをスムーズに */
 }
+
 .section {
   padding: 20px;
   margin: 20px auto;
@@ -72,6 +74,7 @@ a {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .section h2 {
   font-size: 24px;
   border-bottom: 2px solid #007bff;

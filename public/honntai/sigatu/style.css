@@ -110,8 +110,8 @@ h4 {
 
   .wrapper {
     flex-direction: column; /* レイアウトを縦方向に */
-    padding-left: 1cm;
-    padding-right: 1cm;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

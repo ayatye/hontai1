@@ -48,6 +48,11 @@ const events = [
     link: "/honntai/sabazinnkaku/sabazinnkaku.html",
     img: "/honntai/images/sabazinnkaku.jpeg",
   },
+  {
+    name: "内在人格とは？？ハンター編",
+    link: "/honntai/hantazinnkaku/hantazinnkaku.html",
+    img: "/honntai/images/hantazinnkaku.jpeg",
+  },
 ];
 
 const tisikis = [

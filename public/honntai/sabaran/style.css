@@ -28,6 +28,10 @@ nav-gert {
   padding-right: 50px;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
 h2 {
   color: #000;
 }

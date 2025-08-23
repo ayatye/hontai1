@@ -22,6 +22,10 @@ nav-gert {
   padding-left: 4cm;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
 h2 {
   color: #000;
 }
@@ -85,15 +89,7 @@ main {
 
   .wrapper {
     flex-direction: column; /* レイアウトを縦方向に */
-    padding-left: 1cm;
-    padding-right: 1cm;
-  }
-}
-
-/* スマホ対応のレスポンシブデザイン */
-@media (max-width: 768px) {
-  .wrapper {
-    padding-left: 1cm;
-    padding-right: 1cm;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

@@ -84,7 +84,7 @@ section.comments {
 /* スマホ対応のレスポンシブデザイン */
 @media (max-width: 768px) {
   .wrapper {
-    padding-left: 1cm;
-    padding-right: 1cm;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }

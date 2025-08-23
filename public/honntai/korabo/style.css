@@ -78,6 +78,11 @@ main {
   width: 60%;
 }
 
+.colab-minimamu-img {
+  padding: 5px;
+  width: 30%;
+}
+
 /* カードの横幅調整 */
 #collab-list {
   width: 100%;
