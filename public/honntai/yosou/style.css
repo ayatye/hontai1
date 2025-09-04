@@ -69,7 +69,7 @@ main {
 
 .collab img {
   width: 80%;
-  height: 80px;
+  height: 200px;
   border-radius: 0;
   margin-right: 0;
 }
@@ -111,5 +111,9 @@ main {
     max-width: 200px;
     margin: 10px auto;
     border-radius: 5px;
+  }
+
+  .collab img {
+    height: 80px;
   }
 }

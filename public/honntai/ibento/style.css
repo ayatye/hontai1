@@ -168,6 +168,18 @@ main {
   border-radius: 8px; /* 任意：角を丸めたいとき */
 }
 
+.flex-ibento {
+  padding: 5px;
+  display: flex;
+}
+
+.torihiki-img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 40px !important;
+}
+
 .latest-updates p {
   color: #555;
 }

@@ -1,541 +1,331 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://daigoroku-website.web.app/</loc>
+   <loc>https://daigoroku-website.web.app/</loc>
   </url>
-
   <url>
     <loc>https://daigoroku-website.web.app/honntai/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-08-29</lastmod>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/uneizyouhou/uneizyouhou.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/rokka/rokka.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kouunzi/kouunzi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/isi/isi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/benngosi/benngosi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kuugunn/kuugunn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/niwasi/niwasi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/dorobou/dorobou.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/youhei/youhei.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/tyoukousi/tyoukousi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/uranaisi/uranaisi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/mazisyann/mazisyann.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kauboi/kauboi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/boukennka/boukennka.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/saisi/saisi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kikaigisi/kikaigisi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/ofensu/ofensu.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/sinngann/sinngann.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/odoriko/odoriko.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honnai/sabaiba/noukannsi/noukannsi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/tannkousya/tannkousya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/zyuzyutusi/zyuzyutusi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/yazinn/yazinn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/hontai/sabaiba/kyokugeisi/kyokugeisi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/ittoukoukaisi/ittoukoukaisi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/bameido/bameido.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/posutomann/posutomann.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/hakamori/hakamori.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/syuuzinn/syuuzinn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/konntyuugakusya/konntyuugakusya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/gaka/gaka.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/battumann/battumann.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/ganngusyokuninn/ganngusyokuninn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kannzya/kannzya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/sinnrigakusya/sinnrigakusya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/syousetuka/syousetuka.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/syouzyo/syouzyo.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/nakipiero/nakipiero.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kyouzyu/kyouzyu.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kottousyou/kottousyou.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/sakkyokuka/sakkyokuka.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kisya/kisya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/koukuuennzinia/koukuuennzinia.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/ouenndann/ouenndann.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/ningyousi/ningyousi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kasaityousainn/kasaityousainn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/redhifauro/redhifauro.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kisi/kisi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/kisyougakusya/kisyougakusya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/yumitukai/yumitukai.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/sabaiba/dassyutumasuta/dassyutumasuta.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/hukusyuusya/hukusyuusya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/doukesi/doukesi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/dannzaikariudo/dannzaikariudo.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/rippa/rippa.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/kekkonnsya/kekkonnsya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/geisya/geisya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/sirokuromuzyou/sirokuromuzyou.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/syasinnka/syasinnka.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/kyougenn/kyougenn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/ika/ika.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/yumenomazyo/yumenomazyo.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/nakimusi/nakimusi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/matokage/matokage.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/marhi/marhi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/bonnbonn/bonnbonn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/sito/sito.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/vaiorinisuto/vaiorinisuto.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/tyoukokusi/tyoukokusi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/anndetto/anndetto.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/harinn/harinn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/ryousi/ryousi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/rouninngyousi/rouninngyousi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/akumu/akumu.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/syokikann/syokikann.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/innzya/innzya.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/yorunobannninn/yorunobannninn.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/hurugo/hurugo.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/operakasyu/operakasyu.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/zikuunokage/zikuunokage.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/asinaenohituzi/asinaenohituzi.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/hurabaru/hurabaru.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://daigoroku-website.web.app/honntai/hanta/zakkasyou/zakkasyou.html</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kouunzi/kouunzi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/isi/isi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/benngosi/benngosi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kuugunn/kuugunn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/niwasi/niwasi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/dorobou/dorobou.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/youhei/youhei.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/tyoukousi/tyoukousi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/uranaisi/uranaisi.html</loc>  
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/mazisyann/mazisyann.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kauboi/kauboi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/boukennka/boukennka.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/saisi/saisi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kikaigisi/kikaigisi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/ofensu/ofensu.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/sinngann/sinngann.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/odoriko/odoriko.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/noukannsi/noukannsi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/tannkousya/tannkousya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/zyuzyutusi/zyuzyutusi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/yazinn/yazinn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kyokugeisi/kyokugeisi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/ittoukoukaisi/ittoukoukaisi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/bameido/bameido.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/posutomann/posutomann.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/hakamori/hakamori.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/syuuzinn/syuuzinn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/konntyuugakusya/konntyuugakusya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/gaka/gaka.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/battumann/battumann.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/ganngusyokuninn/ganngusyokuninn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kannzya/kannzya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/sinnrigakusya/sinnrigakusya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/syousetuka/syousetuka.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/syouzyo/syouzyo.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/nakipiero/nakipiero.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kyouzyu/kyouzyu.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kottousyou/kottousyou.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/sakkyokuka/sakkyokuka.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kisya/kisya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/koukuuennzinia/koukuuennzinia.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/ouenndann/ouenndann.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/ningyousi/ningyousi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kasaityousainn/kasaityousainn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/redhifauro/redhifauro.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kisi/kisi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/kisyougakusya/kisyougakusya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/yumitukai/yumitukai.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/sabaiba/dassyutumasuta/dassyutumasuta.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/hukusyuusya/hukusyuusya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/doukesi/doukesi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/dannzaikariudo/dannzaikariudo.html</loc>
+  </url>
+ <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/rippa/rippa.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/kekkonnsya/kekkonnsya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/geisya/geisya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/sirokuromuzyou/sirokuromuzyou.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/syasinnka/syasinnka.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/kyougenn/kyougenn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/ika/ika.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/yumenomazyo/yumenomazyo.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/nakimusi/nakimusi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/matokage/matokage.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/marhi/marhi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/bonnbonn/bonnbonn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/sito/sito.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/vaiorinisuto/vaiorinisuto.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/tyoukokusi/tyoukokusi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/anndetto/anndetto.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/harinn/harinn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/ryousi/ryousi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/rouninngyousi/rouninngyousi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/akumu/akumu.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/syokikann/syokikann.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/innzya/innzya.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/yorunobannninn/yorunobannninn.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/hurugo/hurugo.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/operakasyu/operakasyu.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/zikuunokage/zikuunokage.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/asinaenohituzi/asinaenohituzi.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/hurabaru/hurabaru.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/zakkasyou/zakkasyou.html</loc>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/hanta/biriyadopureiya/biriyadopureiya.html</loc>
+  </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/yougo/yougo.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/pennsaki/pennsaki.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/kopiki/kopiki.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daigoroku-website.web.app/honntai/otogibanasi/otogibanasi.html</loc>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/sigati/sigati.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/sigatu/sigatu.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/yosou/koraboyosou.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc
-      >https://daigoroku-website.web.app/honntai/gakiatuhannta/gakiatuhannta.html</loc
-    >
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://daigoroku-website.web.app/honntai/gekiatuhannta/gekiatuhannta.html</loc>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/chat/chat.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/gekisaba/gekisaba.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/korabo/korabo.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/ibento/ibento.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/emoto/emoto.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/sabaran/sabaran.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/hanran/hanran.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
     <url>
     <loc>https://daigoroku-website.web.app/honntai/bignews/bignews.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
    <url>
     <loc>https://daigoroku-website.web.app/honntai/purozinnkaku/purozinnkaku.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/sabazinnkaku/sabazinnkaku.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/hantazinnkaku/hantazinnkaku.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/puraibasi/puraibasi.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/%E6%83%85%E5%A0%B1/%E6%83%85%E5%A0%B1.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://daigoroku-website.web.app/honntai/kyarakosei/kyarakosei.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
 </urlset>
