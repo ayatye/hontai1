@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>コピーキャット - IdentityV（第五人格）攻略【第五録】</title>
+    <title>
+      「コピーキャット」完全攻略ガイド - IdentityV（第五人格）攻略【第五録】
+    </title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../style/hanbaga.css" />
     <link rel="stylesheet" href="../style/footer.css" />
@@ -14,14 +16,14 @@
 
   <body>
     <header>
-      <nav-gert>
+      <nav>
         <div class="logo">
           <a href="../../index.html">
             <img src="../images/サイコロicon.jpeg" class="logo-photo" />
             <h1>第五録</h1>
           </a>
         </div>
-        <header class="c-header c-hamburger-menu">
+        <div class="c-header c-hamburger-menu">
           <input
             type="checkbox"
             name="hamburger"
@@ -51,17 +53,13 @@
               >
             </li>
           </ul>
-          <div id="overlay"></div>
-          <nav-gert id="burger-menu">
-            <input type="checkbox" id="hamburger" style="display: none" />
-            <label for="hamburger" class="c-hamburger-menu__button">
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-            </label>
-          </nav-gert>
-        </header>
-      </nav-gert>
+          <label for="hamburger" class="c-hamburger-menu__button">
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+          </label>
+        </div>
+      </nav>
     </header>
 
     <section class="banner">
@@ -73,177 +71,231 @@
       <div class="konntent">
         <main>
           <section id="overview">
-            <h2>コピーキャットモード攻略</h2>
+            <img
+              src="../images/kopiki.jpeg"
+              alt="お伽話の画像"
+              class="kopiki-image"
+            />
+            <h1>コピーキャットモード攻略</h1>
             <p>
-              コピーキャットゲームは10人で対戦する特別モードです。人狼ゲームのような推理ゲームです。
+              10人で対戦する特別モード。人狼ゲームのような推理と駆け引きを楽しめます。
             </p>
           </section>
 
-          <section id="saisinn" class="saisin">
-            <h2>2025.7.17に新しい身分を追加しました。</h2>
-            <ul>
-              <li>
-                薬剤師（探偵団）,レンジャー（探偵団）,処刑人（模倣者）,降霊術師（謎の来客）
-              </li>
-            </ul>
+          <section id="updates">
+            <div class="update-notice">
+              <h3>📌 2025.7.17 新身分追加</h3>
+              <ul>
+                <li>
+                  薬剤師（探偵団）、レンジャー（探偵団）、処刑人（模倣者）、降霊術師（謎の来客）
+                </li>
+              </ul>
+            </div>
+            <div class="update-notice">
+              <h3>📌 2025.4.3 新身分追加</h3>
+              <ul>
+                <li>密偵、ブローカー、闇医者、顧問</li>
+              </ul>
+            </div>
           </section>
 
-          <section id="saisinn" class="saisin">
-            <h2>2025.4.3に新しい身分を追加しました。</h2>
-            <ul>
-              <li>密偵、ブローカー、闇医者、顧問</li>
-            </ul>
-          </section>
+          <section id="game-info">
+            <h2>ゲーム基本情報</h2>
 
-          <section id="rules">
-            <h2>プレイ時間と構成</h2>
-            <ul>
-              <li>
-                通常マッチ: 毎日9時～13時、15時～20時、21時～25時にプレイ可能。
-                探偵陣営6人、模倣者陣営2人、謎の来客陣営2人で構成されます。
-              </li>
-              <li>
-                カスタムマッチ:
-                いつでもプレイ可能（最低7人必要）。各陣営の人数は調整可能。
-              </li>
-            </ul>
+            <h3>プレイ時間と構成</h3>
+            <div class="info-grid">
+              <div class="info-card">
+                <h3>🕐 通常マッチ</h3>
+                <p>
+                  <strong>プレイ時間：</strong><br />9:00〜13:00 / 15:00〜20:00
+                  / 21:00〜25:00
+                </p>
+                <p>
+                  <strong>構成：</strong><br />探偵陣営6人 / 模倣者陣営2人 /
+                  謎の来客陣営2人
+                </p>
+              </div>
+              <div class="info-card">
+                <h3>⚙️ カスタムマッチ</h3>
+                <p>
+                  <strong>プレイ時間：</strong><br />いつでも可能（最低7人必要）
+                </p>
+                <p><strong>構成：</strong><br />各陣営の人数は調整可能</p>
+              </div>
+            </div>
 
-            <h2>勝利条件</h2>
-            <ul>
-              <li>
-                探偵陣営:
-                演繹要求を合計45個達成するか、模倣者を全員脱落させれば勝利
-              </li>
-              <li>模倣者陣営: 模倣者の数が探偵陣営の数以上になれば勝利</li>
-              <li>
-                謎の来客陣営:
-                各役職に設定された固有の勝利条件を達成すると、他の陣営よりも優先して勝利
-              </li>
-            </ul>
+            <h3>勝利条件</h3>
+            <div class="info-grid">
+              <div class="info-card">
+                <h3>🔍 探偵陣営</h3>
+                <p>演繹要求を合計45個達成、または模倣者を全員脱落させる</p>
+              </div>
+              <div class="info-card">
+                <h3>🎭 模倣者陣営</h3>
+                <p>模倣者の数が探偵陣営の数以上になる</p>
+              </div>
+              <div class="info-card">
+                <h3>❓ 謎の来客陣営</h3>
+                <p>各役職固有の勝利条件を達成（最優先勝利）</p>
+              </div>
+            </div>
 
-            <h2>ゲームの流れ</h2>
+            <h3>ゲームの流れ</h3>
             <ol>
-              <li>探偵陣営はマップ上にある演繹要求を達成</li>
-              <li>模倣者陣営は探偵を襲撃</li>
-              <li>謎の来客陣営は自身の勝利条件達成を目指す</li>
-              <li>緊急会議では、投票で最多票のプレイヤーが脱落</li>
+              <li><strong>探偵陣営：</strong>マップ上の演繹要求を達成</li>
+              <li><strong>模倣者陣営：</strong>探偵を襲撃</li>
+              <li><strong>謎の来客陣営：</strong>自身の勝利条件達成を目指す</li>
+              <li><strong>緊急会議：</strong>投票で最多票のプレイヤーが脱落</li>
             </ol>
           </section>
 
           <section id="roles">
-            <h2>コピーキャット役職一覧</h2>
-            <div class="toggle-title">
-              探偵陣営 <span class="arrow">▼</span>
-            </div>
-            <div class="toggle-content">
-              <ul>
-                <li><strong>探偵:</strong> 他プレイヤーの陣営を調査</li>
-                <li><strong>哨兵:</strong> 殺害されると犯人を強制通報</li>
-                <li>
-                  <strong>保安官:</strong>攻撃可。ただし探偵陣営を攻撃すると自滅
-                </li>
-                <li><strong>狩人:</strong> 一度だけ他プレイヤーを殺害可能</li>
-                <li><strong>香料師:</strong> プレイヤーを香りで追跡</li>
-                <li><strong>鍵職人:</strong> 隠し通路の使用・封鎖が可能</li>
-                <li><strong>バンカー:</strong> 投票時に票を2倍に</li>
-                <li><strong>修道士:</strong> 周囲のプレイヤーを強調表示</li>
-                <li><strong>議員:</strong> 殺害されると全員に通知</li>
-                <li><strong>ボクサー:</strong> 警戒状態中に攻撃をカウンター</li>
-                <li>
-                  <strong>密偵:</strong> 模倣者陣営を妨害し、重要な情報を獲得
-                </li>
-                <li>
-                  <strong>ブローカー:</strong>
-                  模倣者はあなたと2人きりになった時だけ、あなたを脱落させることが可能
-                </li>
-                <li>
-                  <strong>薬剤師:</strong>
-                  他の演繹者に薬を渡すことができる。薬を渡された演繹者はその行動段階中は脱落しないが、もう一度薬を渡されると脱落となる。行動段階で薬剤を渡された演繹者は、その段階で薬剤師が脱落すると同時に脱落する。
-                </li>
-                <li>
-                  <strong>レンジャー:</strong>
-                  任意の位置に猟犬の幽霊を設置でき、レンジャーはいつでも猟犬の幽霊と視野を交換することが可能
-                </li>
-              </ul>
+            <h2>役職一覧</h2>
+
+            <div class="faction-section detective-faction">
+              <div class="faction-header" onclick="toggleFaction(this)">
+                <span>🔍 探偵陣営</span>
+                <span class="arrow">▼</span>
+              </div>
+              <div class="faction-content">
+                <ul>
+                  <li><strong>探偵：</strong>他プレイヤーの陣営を調査</li>
+                  <li><strong>哨兵：</strong>殺害されると犯人を強制通報</li>
+                  <li>
+                    <strong>保安官：</strong
+                    >攻撃可能。ただし探偵陣営を攻撃すると自滅
+                  </li>
+                  <li><strong>狩人：</strong>一度だけ他プレイヤーを殺害可能</li>
+                  <li><strong>香料師：</strong>プレイヤーを香りで追跡</li>
+                  <li><strong>鍵職人：</strong>隠し通路の使用・封鎖が可能</li>
+                  <li><strong>バンカー：</strong>投票時に票を2倍に</li>
+                  <li><strong>修道士：</strong>周囲のプレイヤーを強調表示</li>
+                  <li><strong>議員：</strong>殺害されると全員に通知</li>
+                  <li>
+                    <strong>ボクサー：</strong>警戒状態中に攻撃をカウンター
+                  </li>
+                  <li>
+                    <strong>密偵：</strong>模倣者陣営を妨害し、重要な情報を獲得
+                  </li>
+                  <li>
+                    <strong>ブローカー：</strong
+                    >模倣者は2人きりの時だけ脱落させることが可能
+                  </li>
+                  <li>
+                    <strong>薬剤師：</strong
+                    >他の演繹者に薬を渡すことができる。薬を渡された演繹者はその行動段階中は脱落しないが、もう一度薬を渡されると脱落。行動段階で薬剤を渡された演繹者は、その段階で薬剤師が脱落すると同時に脱落
+                  </li>
+                  <li>
+                    <strong>レンジャー：</strong
+                    >任意の位置に猟犬の幽霊を設置でき、いつでも猟犬の幽霊と視野を交換可能
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div class="toggle-title">
-              模倣者陣営<span class="arrow">▼</span>
-            </div>
-            <div class="toggle-content">
-              <ul>
-                <li><strong>大泥棒:</strong> 一定時間透明化</li>
-                <li><strong>百面相:</strong> 他のプレイヤーに変身</li>
-                <li><strong>怪盗:</strong> 他プレイヤーと位置を入れ替え</li>
-                <li>
-                  <strong>策略家:</strong>
-                  会議中に他プレイヤーの役職を当てて殺害（失敗で自滅）
-                </li>
-                <li><strong>花火師:</strong> 他プレイヤーに花火を渡して爆破</li>
-                <li>
-                  <strong>闇医者:</strong>
-                  自分が残した脱落痕跡を揉み消すことが可能
-                </li>
-                <li>
-                  <strong>処刑人:</strong>
-                  模倣者陣営の残りメンバーが自分だけとなった時、追加で他人を脱落させる能力を得る。この追加能力は、本来の脱落能力とは別でクールタイムが計算される。
-                </li>
-              </ul>
+            <div class="faction-section impostor-faction">
+              <div class="faction-header" onclick="toggleFaction(this)">
+                <span>🎭 模倣者陣営</span>
+                <span class="arrow">▼</span>
+              </div>
+              <div class="faction-content">
+                <ul>
+                  <li><strong>大泥棒：</strong>一定時間透明化</li>
+                  <li><strong>百面相：</strong>他のプレイヤーに変身</li>
+                  <li><strong>怪盗：</strong>他プレイヤーと位置を入れ替え</li>
+                  <li>
+                    <strong>策略家：</strong
+                    >会議中に他プレイヤーの役職を当てて殺害（失敗で自滅）
+                  </li>
+                  <li>
+                    <strong>花火師：</strong>他プレイヤーに花火を渡して爆破
+                  </li>
+                  <li>
+                    <strong>闇医者：</strong
+                    >自分が残した脱落痕跡を揉み消すことが可能
+                  </li>
+                  <li>
+                    <strong>処刑人：</strong
+                    >模倣者陣営の残りメンバーが自分だけになった時、追加で他人を脱落させる能力を得る。この追加能力は本来の脱落能力とは別でクールタイムが計算される
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div class="toggle-title">
-              謎の来客陣営<span class="arrow">▼</span>
-            </div>
-            <div class="toggle-content">
-              <ul>
-                <li>
-                  <strong>流浪者:</strong> 他プレイヤーを汚染し全員汚染で勝利
-                </li>
-                <li><strong>愚者:</strong> 投票で追放されると勝利</li>
-                <li>
-                  <strong>配達員:</strong> プレイヤーを箱詰めし全員監禁で勝利
-                </li>
-                <li>
-                  <strong>指し手:</strong> 役職を4回連続で正しく推理で勝利
-                </li>
-                <li>
-                  <strong>顧問:</strong>
-                  顧問は他のプレイヤーを1回脱落させることが可能
-                </li>
-                <li>
-                  <strong>降霊術師:</strong>
-                  自身が脱落すると直接脱落とならず、会議終了後に霊魂状態になる。霊魂状態ではスキルを使用することで他の演繹者から視認されず、追撃者から逃れることが可能
-                </li>
-              </ul>
+            <div class="faction-section visitor-faction">
+              <div class="faction-header" onclick="toggleFaction(this)">
+                <span>❓ 謎の来客陣営</span>
+                <span class="arrow">▼</span>
+              </div>
+              <div class="faction-content">
+                <ul>
+                  <li>
+                    <strong>流浪者：</strong>他プレイヤーを汚染し全員汚染で勝利
+                  </li>
+                  <li><strong>愚者：</strong>投票で追放されると勝利</li>
+                  <li>
+                    <strong>配達員：</strong>プレイヤーを箱詰めし全員監禁で勝利
+                  </li>
+                  <li>
+                    <strong>指し手：</strong>役職を4回連続で正しく推理すると勝利
+                  </li>
+                  <li>
+                    <strong>顧問：</strong
+                    >他のプレイヤーを1回脱落させることが可能
+                  </li>
+                  <li>
+                    <strong>降霊術師：</strong
+                    >脱落すると直接脱落とならず、会議終了後に霊魂状態になる。霊魂状態ではスキルを使用することで他の演繹者から視認されず、追撃者から逃れることが可能
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
 
-          <section id="points">
-            <h2>ゲームの肝となる部分</h2>
-            <p>緊急会議での立ち振る舞いが勝敗を分けます。</p>
-            <ul>
-              <li>
-                <strong>探偵陣営:</strong>
-                模倣者を見つけて追放、謎の来客の勝利条件を妨害
-              </li>
-              <li>
-                <strong>模倣者陣営:</strong>
-                自分の正体を隠しつつ攪乱する心理戦がカギ
-              </li>
-              <li>
-                <strong>謎の来客陣営:</strong>
-                勝利条件に応じた柔軟かつ隠密な行動が必要
-              </li>
-            </ul>
+          <section id="strategy">
+            <h2>勝利のカギ</h2>
+            <div class="strategy-box">
+              <p>緊急会議での立ち振る舞いが勝敗を分けます。</p>
+
+              <h3>🔍 探偵陣営の戦略</h3>
+              <p>
+                模倣者を見つけて追放し、謎の来客の勝利条件を妨害することが重要です。情報を共有し、論理的な推理で真実を見抜きましょう。
+              </p>
+
+              <h3>🎭 模倣者陣営の戦略</h3>
+              <p>
+                自分の正体を隠しつつ攪乱する心理戦がカギです。探偵陣営を装い、疑いを他のプレイヤーに向けることで生き残りましょう。
+              </p>
+
+              <h3>❓ 謎の来客陣営の戦略</h3>
+              <p>
+                勝利条件に応じた柔軟かつ隠密な行動が必要です。どちらの陣営にも味方せず、自分の目的だけを追求しましょう。
+              </p>
+            </div>
           </section>
 
           <section id="summary">
-            <h2>最後に</h2>
-            <p>
-              探偵陣営には「模索力」、模倣者陣営には「攪乱と心理戦」、謎の来客陣営には「隠密行動」など、陣営ごとに求められるスキルが異なります。<br />
-              誰を信じるか、どこで疑うか、どんな演技をするか・・・<br />
-              駆け引きの連続で緊張感あふれるこの新モードを、ぜひプレイして騙し合いのスリルを味わってください！
-            </p>
+            <div class="conclusion">
+              <h2
+                style="
+                  color: #c0392b;
+                  border: none;
+                  padding: 0;
+                  margin-bottom: 20px;
+                "
+              >
+                最後に
+              </h2>
+              <p>
+                探偵陣営には「模索力」、模倣者陣営には「攪乱と心理戦」、謎の来客陣営には「隠密行動」など、陣営ごとに求められるスキルが異なります。
+              </p>
+              <p>誰を信じるか、どこで疑うか、どんな演技をするか……</p>
+              <p>
+                <strong
+                  >駆け引きの連続で緊張感あふれるこの新モードを、ぜひプレイして騙し合いのスリルを味わってください！</strong
+                >
+              </p>
+            </div>
           </section>
         </main>
       </div>

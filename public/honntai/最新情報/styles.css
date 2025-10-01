@@ -13,13 +13,6 @@ body {
   padding-left: 2cm;
 }
 
-nav-gert {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 5px;
-}
-
 h1 {
   font-size: 1.5em;
 }
@@ -28,9 +21,9 @@ h2 {
   color: #000;
 }
 
-a {
+.update-item a {
   font-weight: bold;
-  color: #000;
+  color: #66b3ff;
 }
 /* キャラの写真 */
 .character-image {

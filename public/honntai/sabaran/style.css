@@ -7,14 +7,6 @@ body {
   padding: 0;
   color: #333;
 }
-
-nav-gert {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 5px;
-}
-
 /* メインコンテンツラッパー */
 .wrapper {
   display: flex;
@@ -39,6 +31,11 @@ h2 {
 a {
   font-weight: bold;
   color: #000;
+}
+
+.sabaran-image {
+  width: 80%;
+  padding: 10px;
 }
 
 .tier-ranking {
@@ -134,6 +131,10 @@ a {
 
 .text-sp {
   display: none; /* 初期状態は非表示 */
+}
+
+.sidebar {
+  width: 1200px;
 }
 
 @media (max-width: 1210px) {

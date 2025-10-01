@@ -10,17 +10,35 @@
   <link rel="stylesheet" href="../style/sidebar.css" />
   <link rel="stylesheet" href="../style/logo.css" />
   <link rel="stylesheet" href="../style/comment.css" />
+  <!-- SEO -->
+  <meta name="description" content="IdentityV(第五人格)の最新イベント情報をまとめて掲載。開催中のイベント、衣装情報、入手アイテム、期間限定パックなどを随時更新中。">
+  <meta name="last-modified" content="2025-09-10">
+  
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="イベント情報 - IdentityV（第五人格）攻略【第五録】">
+  <meta property="og:description" content="IdentityV(第五人格)の最新イベント情報をまとめて掲載。開催中のイベント、衣装情報、入手アイテム、期間限定パックなどを随時更新中。">
+  <meta property="og:url" content="https://daigoroku-website.web.app/honntai/ibento/ibento.html">
+  <meta property="og:image" content="https://daigoroku-website.web.app/honntai/images/korabo.jpeg">
+  <meta property="og:site_name" content="第五録">
+  <meta property="article:modified_time" content="2025-09-10T00:00:00+09:00">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="イベント情報 - IdentityV（第五人格）攻略【第五録】">
+  <meta name="twitter:description" content="IdentityV(第五人格)の最新イベント情報をまとめて掲載。">
+  <meta name="twitter:image" content="https://daigoroku-website.web.app/honntai/images/korabo.jpeg">
 </head>
 <body>
     <header>
-      <nav-gert>
+      <nav>
         <div class="logo">
           <a href="../../index.html">
             <img src="../images/サイコロicon.jpeg" class="logo-photo" />
-            <h1>第五録</h1>
+            <span>第五録</span>
           </a>
         </div>
-        <header class="c-header c-hamburger-menu">
+        <div class="c-header c-hamburger-menu">
           <input
             type="checkbox"
             name="hamburger"
@@ -50,17 +68,13 @@
               >
             </li>
           </ul>
-          <div id="overlay"></div>
-          <nav-gert id="burger-menu">
-            <input type="checkbox" id="hamburger" style="display: none" />
-            <label for="hamburger" class="c-hamburger-menu__button">
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-            </label>
-          </nav-gert>
-        </header>
-      </nav-gert>
+          <label for="hamburger" class="c-hamburger-menu__button">
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+          </label>
+        </div>
+      </nav>
     </header>
 
     <section class="banner">
@@ -73,13 +87,48 @@
 
 
   <main>
+
+    <h1>開催中・過去のイベント一覧</h1>
+
     <div class="filter-buttons">
       <button onclick="filterCollabs('all')">すべて</button>
       <button onclick="filterCollabs('ongoing')">開催中</button>
       <button onclick="filterCollabs('past')">終了</button>
     </div>
 
-        <section id="collab-list" class="collab-list">
+    <section id="collab-list" class="collab-list">
+      <!-- ▼ Game on! We are Team BLK! イベント ▼ -->
+      <div class="collab-card ongoing">
+        <img src="../images/ibento/blk/blk.jpeg" alt="Game on! We are Team BLK! イベント" class="small-image">
+        <div class="collab-content">
+          <h2 class="collab-title">Game on! We are Team BLK! イベント</h2>
+          <p class="collab-period">2025年9月10日～2025年10月8日</p>
+          <div class="collab-description">
+            <h3>概要</h3>
+            <h3>eスポーツシリーズ衣装パック</h3>
+            <img src="../images/ibento/blk/isyou.jpeg" alt="衣装" class="colab-img"/>
+            <img src="../images/ibento/blk/keitaihinn.jpeg" alt="携帯品" class="colab-img"/>
+            <ol>
+              <li>パック内容：【SSR衣装】「機械技師」-BLK.TRACY、【UR携帯品】「機械技師」-超知能。</li>
+              <li>3276エコー、割引価格2618エコーでご購入いただけます。</li>
+            </ol>
+
+            <div class="flex-ibento"><h3>エコー衣装</h3><img src="../images/torihiki/eko.jpeg" alt="エコー" class="torihiki-img"></div>
+            <ol>
+              <li>【SSR衣装】「機械技師」-BLK.TRACYが1388エコーでご購入いただけます</li>
+              <li>【UR携帯品】「機械技師」-超知能が1888エコーでご購入いただけます</li>
+              <li>【SSR衣装】骨董商-破裂する音が1388エコーでご購入いただけます</li>
+            </ol>
+
+            <div class="flex-ibento"><h3>手がかり衣装</h3><img src="../images/torihiki/tegakari.jpeg" alt="手がかり" class="torihiki-img"></div>
+            <ol>
+              <li>【SSR衣装】骨董商-破裂する音が4888欠片でご購入いただけます</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="collab-list" class="collab-list">
       <!-- ▼ 象牙の塔シリーズストーリーイベント ▼ -->
       <div class="collab-card ongoing">
@@ -550,11 +599,11 @@
 
     <footer>
       <div class="footer-links">
-        <a href="../プライバシー/プライバシーポリシー.html"
+        <a href="../puraibasi/puraibasi.html"
           >プライバシーポリシー</a
         >
         <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
-        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+        <a href="../uneizyouhou/uneizyouhou.html">運営情報</a>
       </div>
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>

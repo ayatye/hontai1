@@ -9,14 +9,6 @@ body {
 h1 {
   font-size: 1.5em;
 }
-
-nav-gert {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 5px;
-}
-
 /* メインコンテンツラッパー */
 .wrapper {
   display: flex;

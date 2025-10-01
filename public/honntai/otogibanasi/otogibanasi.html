@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>森のお伽話</title>
+  <title>「森のお伽話」完全攻略ガイド - IdentityV（第五人格）攻略【第五録】</title>
   <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="../style/hanbaga.css" />
+    <link rel="stylesheet" href="../style/hanbaga.css" />
     <link rel="stylesheet" href="../style/footer.css" />
     <link rel="stylesheet" href="../style/sidebar.css" />
     <link rel="stylesheet" href="../style/logo.css" />
@@ -15,14 +15,14 @@
 
 <body>
     <header>
-      <nav-gert>
+      <nav>
         <div class="logo">
           <a href="../../index.html">
             <img src="../images/サイコロicon.jpeg" class="logo-photo" />
-            <h1>第五録</h1>
+            <span>第五録</span>
           </a>
         </div>
-        <header class="c-header c-hamburger-menu">
+        <div class="c-header c-hamburger-menu">
           <input
             type="checkbox"
             name="hamburger"
@@ -52,17 +52,13 @@
               >
             </li>
           </ul>
-          <div id="overlay"></div>
-          <nav-gert id="burger-menu">
-            <input type="checkbox" id="hamburger" style="display: none" />
-            <label for="hamburger" class="c-hamburger-menu__button">
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-            </label>
-          </nav-gert>
-        </header>
-      </nav-gert>
+          <label for="hamburger" class="c-hamburger-menu__button">
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+          </label>
+        </div>
+      </nav>
     </header>
 
     <section class="banner">
@@ -73,9 +69,26 @@
       <div class="wrapper">
       <div class="konntent">
   <main>
+            <img src="../images/otogibanasi/otogibanasi.jpeg" alt="お伽話の画像" class="otogibanasi-image"/>
+                <div class="update-history">
+            <div class="update-title">
+                📋 更新履歴
+            </div>
+            <div class="update-item">
+                <div class="update-date">2025/09/29</div>
+                <div class="update-content">「イノシシ」を追加</div>
+            </div>
+            <div class="update-item">
+                <div class="update-date">2025/09/29</div>
+                <div class="update-content">「木刀」を追加</div>
+            </div>
+            <div class="update-item">
+                <div class="update-date">2025/09/29</div>
+                <div class="update-content">「夢見の薬」と「アームボウ」を追加</div>
+            </div>
+        </div>
     <section id="overview">
-        <img src="../images/otogibanasi/otogibanasi.jpeg" alt="お伽話の画像" class="otogibanasi-image"/>
-      <h2>森のお伽話攻略</h2>
+      <h1>森のお伽話攻略</h1>
       <p>16名のサバイバープレイヤーが2人1組のチームとなり、森の中で生き残りをかけたサバイバルバトルを繰り広げ、最後の勝者を決定します！</p>
     </section>
 
@@ -114,6 +127,31 @@
             <!-- デザイン1: カード型 -->
             <div class="design1">
                 <div class="animal-grid">
+                    <!-- イノシシ -->
+                    <div class="animal-card">
+                      <div class="animal-name">
+                      <img src="../images/otogibanasi/inosisi.jpeg" alt="イノシシの画像" class="animal-icon">
+                      イノシシ
+                      <span class="new-badge">NEW</span>
+                    </div>
+                    <div class="animal-description">
+                      分厚い鬣と頑丈な皮膚が絶対的な防御力を発揮。
+                    </div>
+                    <div class="skills-section">
+                      <div class="skill-item skill-passive">
+                        <div class="skill-label">
+                        <span class="skill-badge badge-passive">パッシブ</span>
+                        水たまり・雨天エリアの被ダメージ軽減
+                        </div>
+                      </div>
+                      <div class="skill-item skill-active">
+                      <div class="skill-label">
+                      <span class="skill-badge badge-active">アクティブ</span>
+                      周囲に追従型シールドを展開し、ウォーターバレットを防御。再タップで解除
+                    </div>
+                </div>
+            </div>
+        </div>
                     <div class="animal-card">
                         <div class="animal-name">
                             <img src="../images/otogibanasi/wapiti.jpeg" alt="ワピチの画像" class="animal-icon">
@@ -445,6 +483,59 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 木刀 -->
+<div class="weapon-card">
+  <div class="weapon-header">
+    <div class="weapon-name">
+      <div class="weapon-icon">木刀</div>
+      木刀
+      <span class="new-badge">NEW</span>
+    </div>
+    <div class="weapon-type">近接武器</div>
+  </div>
+
+  <div class="weapon-stats">
+    <div class="stat-item">
+      <span class="stat-label">威力:</span>
+      <span>？</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">弾数:</span>
+      <span>？</span>
+    </div>
+  </div>
+
+  <div class="abilities-section">
+    <div class="section-title">
+      <div class="section-icon">⚡</div>
+      武器能力
+    </div>
+
+    <div class="ability-item">
+      <div class="ability-header">
+        <div class="ability-badge badge-normal">通常</div>
+        <div class="ability-name">近接攻撃 + チャージ攻撃</div>
+      </div>
+      <div class="ability-description">
+        チャージ中にウォーターバレットを消費し攻撃力上昇。正面攻撃をブロック可能。最大チャージでダッシュ攻撃発動。
+      </div>
+    </div>
+
+    <div class="ability-item">
+      <div class="ability-header">
+        <div class="ability-badge badge-improved">改良型</div>
+        <div class="ability-name">スタン近接攻撃</div>
+      </div>
+      <div class="ability-description">
+        最大チャージ時のダッシュ攻撃で敵を短時間気絶。
+      </div>
+      <div class="improvement-note">
+        <strong>改良点:</strong>？
+      </div>
+    </div>
+  </div>
+</div>
 
                 <!-- 蔓(つる) -->
                 <div class="weapon-card">
@@ -870,6 +961,65 @@
       <div class="toggle-content">
         <div class="content">
             <div class="consumable-grid">
+                <!-- 夢見の薬 -->
+<div class="consumable-card card-defense">
+  <div class="consumable-header">
+    <div class="consumable-name">
+      <div class="consumable-icon">💊</div>
+      夢見の薬
+      <span class="new-badge">NEW</span>
+    </div>
+    <div class="consumable-type">変身</div>
+  </div>
+
+  <div class="effect-section">
+    <div class="section-title">
+      <div class="section-icon">💫</div>
+      効果
+    </div>
+
+    <div class="effect-item">
+      <div class="effect-header">
+        <div class="effect-badge badge-defense">敵をワンパン</div>
+        <div class="effect-name">「悪夢」に変身</div>
+      </div>
+      <div class="effect-description">
+        携帯中は全員に位置が表示され、姿を隠せない。夢見の薬は対戦につき1本しか存在せず、使用すると「悪夢」に陥り、消耗品や武器を使えなくなる。他の敵に通常攻撃を行うことができ、変身中の体力上限は敵の数に応じて増加する。
+      </div>
+      <div class="duration-info">
+        <div class="duration-icon">⏱️</div>
+        <strong>持続時間:</strong> 無限
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- アームボウ -->
+<div class="consumable-card card-defense">
+  <div class="consumable-header">
+    <div class="consumable-name">
+      <div class="consumable-icon">🏹</div>
+      アームボウ
+      <span class="new-badge">NEW</span>
+    </div>
+    <div class="consumable-type">瞬発弓</div>
+  </div>
+
+  <div class="effect-section">
+    <div class="section-title">
+      <div class="section-icon">💫</div>
+      効果
+    </div>
+
+    <div class="effect-item">
+      <div class="effect-header">
+        <div class="effect-badge badge-defense">
+          前方発射と同時に後方へ跳躍。命中敵の移動速度を一時低下。
+        </div>
+    </div>
+  </div>
+</div>
+</div>
                 <!-- マジックステッキ -->
                 <div class="consumable-card card-utility">
                     <div class="consumable-header">
@@ -1196,11 +1346,11 @@
 
     <footer>
       <div class="footer-links">
-        <a href="../プライバシー/プライバシーポリシー.html"
+        <a href="../puraibasi/puraibasi.html"
           >プライバシーポリシー</a
         >
         <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
-        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+        <a href="../uneizyouhou/uneizyouhou.html">運営情報</a>
       </div>
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>

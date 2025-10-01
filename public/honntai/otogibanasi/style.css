@@ -5,13 +5,6 @@ body {
   background-color: #fff;
 }
 
-nav-gert {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 5px;
-}
-
 /* メインコンテンツラッパー */
 .wrapper {
   display: flex;
@@ -47,6 +40,72 @@ a {
   padding-top: 20px; /* 上の余白 */
   padding-bottom: 20px; /* 下の余白 */
   padding-right: 20px; /* 右の余白 */
+}
+
+.update-history {
+  background: linear-gradient(135deg, #dfe6e9, #b2bec3);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.update-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.update-item {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.update-item:last-child {
+  margin-bottom: 0;
+}
+
+.update-date {
+  font-weight: 600;
+  color: #0984e3;
+  min-width: 100px;
+}
+
+.update-content {
+  color: #2c3e50;
+}
+
+.new-badge {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 8px;
+  animation: pulse 2s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
 }
 
 #roles {

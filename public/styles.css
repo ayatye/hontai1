@@ -4,15 +4,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #f9f9f9;
   scroll-behavior: smooth;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 5px;
 }
 
 /* メインコンテンツラッパー */
@@ -79,11 +72,14 @@ nav {
   margin: 0;
 }
 
+.update-link {
+  font-size: 1.8em; /* リンクマークのサイズ */
+}
+
 /* リンク部分のスタイル */
 .update-link a {
   text-decoration: none;
   color: #333;
-  font-size: 1.8em; /* リンクマークのサイズ */
   margin-left: 14px;
   display: flex;
   align-items: center;
@@ -96,12 +92,6 @@ nav {
   height: 100%;
   text-decoration: none;
   color: inherit;
-}
-
-/* メインコンテンツ */
-main {
-  padding: 20px;
-  background-color: #fff;
 }
 
 .content-section {

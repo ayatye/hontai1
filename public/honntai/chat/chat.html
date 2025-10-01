@@ -15,14 +15,14 @@
   </head>
   <body>
     <header>
-      <nav-gert>
+      <nav>
         <div class="logo">
           <a href="../../index.html">
             <img src="../images/サイコロicon.jpeg" class="logo-photo" />
-            <h1>第五録</h1>
+            <span>第五録</span>
           </a>
         </div>
-        <header class="c-header c-hamburger-menu">
+        <div class="c-header c-hamburger-menu">
           <input
             type="checkbox"
             name="hamburger"
@@ -52,17 +52,13 @@
               >
             </li>
           </ul>
-          <div id="overlay"></div>
-          <nav-gert id="burger-menu">
-            <input type="checkbox" id="hamburger" style="display: none" />
-            <label for="hamburger" class="c-hamburger-menu__button">
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-              <span class="c-hamburger-menu__button-mark"></span>
-            </label>
-          </nav-gert>
-        </header>
-      </nav-gert>
+          <label for="hamburger" class="c-hamburger-menu__button">
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+          </label>
+        </div>
+      </nav>
     </header>
 
     <section class="banner">
@@ -72,110 +68,718 @@
 
     <div class="wrapper">
       <div class="konntent">
-        <h1>第五人格 - 定型文チャット活用ガイド</h1>
-        <img src="../images/chat/subeterisuto.jpeg" class="chat-image" />
-        <div class="appudeto"><h2>定型文システムに関する調整</h2></div>
-        <img src="../images/chat/boisu.jpeg" class="chatmin-image" />
-        <p>
-          ランク戦マップにエリア名が追加されました。音声定型文機能が搭載され、設定画面でオン/オフが可能です。空所補充定型文も追加され、エリア、キャラ、組み合わせ、スキルカテゴリに分かれています。
-        </p>
-        <div class="flex-taime">
-          <img src="../images/chat/eria.jpeg" class="chatmin-image" />
-          <img src="../images/chat/kyara.jpeg" class="chatmin-image" />
+        <div class="container">
+          <!-- Header -->
+          <div class="fade-in">
+            <img
+              src="../images/chat/icon.jpeg"
+              alt="定型文アイコンの画像"
+              class="chat-image"
+            />
+            <h1 class="title">第五人格 - 定型文チャット完全活用ガイド</h1>
+            <p class="subtitle">プロレベルの連携を実現する究極の攻略法</p>
+          </div>
+
+          <!-- Navigation -->
+          <div class="nav-container fade-in">
+            <h3 class="nav-title">📖 目次</h3>
+            <div class="nav-grid">
+              <div class="nav-item" onclick="scrollToSection('system-update')">
+                システム最新調整
+              </div>
+              <div class="nav-item" onclick="scrollToSection('chat-types')">
+                チャット種類解説
+              </div>
+              <div class="nav-item" onclick="scrollToSection('game-start')">
+                試合開始時の立ち回り
+              </div>
+              <div class="nav-item" onclick="scrollToSection('decoding')">
+                解読フェーズ連携
+              </div>
+              <div class="nav-item" onclick="scrollToSection('chase')">
+                チェイス戦術
+              </div>
+              <div class="nav-item" onclick="scrollToSection('rescue')">
+                救助フェーズ
+              </div>
+              <div class="nav-item" onclick="scrollToSection('endgame')">
+                終盤戦術
+              </div>
+              <div class="nav-item" onclick="scrollToSection('pro-tips')">
+                プロ級テクニック
+              </div>
+            </div>
+          </div>
+
+          <!-- System Updates Section -->
+          <section id="system-update" class="section-card fade-in">
+            <h2 class="section-title">⚡ 定型文システム最新調整</h2>
+
+            <div class="highlight-box">
+              <p class="content-text">
+                ランク戦マップにエリア名が追加され、より正確な位置情報の共有が可能になりました。音声定型文機能が搭載され、設定画面でオン/オフが選択できるようになっています。空所補充定型文も新たに追加され、エリア、キャラクター、組み合わせ、スキルカテゴリに細かく分類されています。
+              </p>
+            </div>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-card-title">🗺️ エリア機能強化</div>
+                <p>
+                  「ハンターが中央エリアにいる！」など、具体的な位置情報を音声とチャットで即座に共有
+                </p>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">🎯 キャラ指定機能</div>
+                <p>
+                  「幸運児は救援に向かって！」など、特定のサバイバーへの指示が可能
+                </p>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">🔊 音声定型文</div>
+                <p>画面を見ながらでも理解しやすい音声での情報共有が実現</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Chat Types Section -->
+          <section id="chat-types" class="section-card fade-in">
+            <h2 class="section-title">💬 定型文チャット種類完全解説</h2>
+            <p class="content-text">
+              定型文チャットには主に3種類あり、それぞれの特徴と最適な使用場面を詳しく解説します。
+            </p>
+
+            <!-- Disc Chat -->
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🎯 円盤チャット - 瞬時の情報共有</span>
+              </div>
+              <div class="collapsible-content">
+                <img
+                  src="../images/chat/ennbann.jpeg"
+                  alt="定型文円盤の画像"
+                  class="chat-mini-image"
+                />
+                <p class="content-text">
+                  8個のチャットが試合中に最も迅速に送信できるシステムです。事前に設定画面から使用頻度の高い8個のチャットを厳選して配置しておくことが重要です。
+                </p>
+
+                <h4 class="section-subtitle">推奨設定例</h4>
+                <ul class="custom-list">
+                  <li>
+                    <strong>位置1:</strong> 「解読に集中して！」-
+                    試合開始時やチェイス開始時に必須
+                  </li>
+                  <li>
+                    <strong>位置2:</strong> 「ハンターが来る！」- 緊急時の警告用
+                  </li>
+                  <li>
+                    <strong>位置3:</strong> 「救助に向かう！」- 救助意思表示
+                  </li>
+                  <li>
+                    <strong>位置4:</strong> 「治療してください」-
+                    負傷時の支援要請
+                  </li>
+                  <li><strong>位置5:</strong> 「待って！」- 急な作戦変更時</li>
+                  <li><strong>位置6:</strong> 「了解」- 指示への返答</li>
+                  <li>
+                    <strong>位置7:</strong> 「ハンターが移動した」- 位置情報更新
+                  </li>
+                  <li>
+                    <strong>位置8:</strong> 「注意して！」- 危険回避の警告
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- List Chat -->
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>📋 リストチャット - 詳細な情報伝達</span>
+              </div>
+              <div class="collapsible-content">
+                <img
+                  src="../images/chat/risutorisuto.jpeg"
+                  alt="定型文リストの画像"
+                  class="chat-mini-image"
+                />
+                <p class="content-text">
+                  送信できるメッセージ数に制限がなく、状況に応じた詳細な情報共有が可能です。設定画面で使用頻度の高いチャットを上位に配置し、アクセスしやすくしておきましょう。
+                </p>
+
+                <h4 class="section-subtitle">活用シーン</h4>
+                <div class="info-grid">
+                  <div class="info-card">
+                    <div class="info-card-title">🔧 解読フェーズ</div>
+                    <p>詳細な進捗報告や暗号機位置の共有</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">⏰ 準備時間</div>
+                    <p>作戦の詳細な打ち合わせ</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">🚑 救助後</div>
+                    <p>次の行動計画の共有</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">🏁 終盤</div>
+                    <p>複雑な状況説明や最終戦略の伝達</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- All Use -->
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🎭 全て使用 - 万能型システム</span>
+              </div>
+              <div class="collapsible-content">
+                <p class="content-text">
+                  円盤チャットとリストチャットの両方を使用できる万能型システムです。設定画面で円盤部分とリスト部分を戦略的に配置することで、あらゆる場面に対応できます。
+                </p>
+
+                <div class="alert alert-info">
+                  <strong>🆕 最新機能：</strong>
+                  エリア選択、スキル情報、キャラクター指定など、より詳細な情報送信が可能になりました。
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Game Start Section -->
+          <section id="game-start" class="section-card fade-in">
+            <h2 class="section-title">🚀 試合開始時の完璧な立ち回り</h2>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-card-title">⏱️ スポーン直後（0-10秒）</div>
+                <p>
+                  自分のスポーン位置を即座に報告。「○○エリアにスポーン」と具体的なエリア名で伝達し、「解読に集中して！」で行動意図を明確化
+                </p>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">🔍 初期探索（10-30秒）</div>
+                <p>
+                  周囲の暗号機や重要設備の位置確認。占い師・弁護士がいる場合はハンター情報の詳細報告
+                </p>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">⚔️ チェイス準備（30-45秒）</div>
+                <p>
+                  チェイス担当決定、他メンバーの解読位置調整、救助担当の事前選定
+                </p>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <h4>占い師・弁護士がいる場合の報告事項</h4>
+              <ul class="custom-list numbered-list">
+                <li>ハンターの種類（「写真家発見」など）</li>
+                <li>ハンターのスポーン位置</li>
+                <li>ハンターの移動方向</li>
+                <li>装備している可能性のある特質</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Decoding Section -->
+          <section id="decoding" class="section-card fade-in">
+            <h2 class="section-title">⚙️ 解読フェーズの高度な連携システム</h2>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>📊 解読計画の立案</span>
+              </div>
+              <div class="collapsible-content">
+                <ul class="custom-list">
+                  <li>
+                    <strong>効率的な解読順序:</strong>
+                    各自の解読予定暗号機を事前に宣言し、重複を避ける
+                  </li>
+                  <li>
+                    <strong>進捗の定期報告:</strong>
+                    「30%完了」「70%完了」など、25%刻みで進捗を報告
+                  </li>
+                  <li>
+                    <strong>中断時の対応:</strong>
+                    解読中断時は暗号機の場所と進捗率を必ず報告
+                  </li>
+                  <li>
+                    <strong>焼入れ対策:</strong>
+                    試合開始50秒後からの焼入れ効果に注意し、事前警告を送信
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>👁️ 解読中の情報収集</span>
+              </div>
+              <div class="collapsible-content">
+                <div class="skill-level">
+                  <span class="skill-label">周辺警戒</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-level">
+                  <span class="skill-label">脱出ルート確認</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-level">
+                  <span class="skill-label">味方位置把握</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-level">
+                  <span class="skill-label">重要施設報告</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Chase Section -->
+          <section id="chase" class="section-card fade-in">
+            <h2 class="section-title">
+              ⚔️ チェイス時の戦術的コミュニケーション
+            </h2>
+
+            <div class="alert alert-warning">
+              <strong>⚠️ 重要：</strong>
+              チェイス担当は情報報告後、チェイスに集中することが最優先です。
+            </div>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-card-title">🎯 チェイス開始時の必須報告</div>
+                <ol class="custom-list numbered-list">
+                  <li><strong>チェイス開始宣言:</strong> 「チェイス開始！」</li>
+                  <li>
+                    <strong>ハンターキャラ確定:</strong>
+                    「写真家」「彫刻師」など
+                  </li>
+                  <li><strong>チェイス場所:</strong> 具体的なエリア名</li>
+                  <li><strong>装備特質:</strong> 確認できた補助特質の報告</li>
+                </ol>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">📡 味方の支援業務</div>
+                <ul class="custom-list">
+                  <li>
+                    <strong>地下室位置報告:</strong> 「地下室は工場エリア」
+                  </li>
+                  <li><strong>解読状況更新:</strong> 自分の解読進捗と位置</li>
+                  <li>
+                    <strong>ハンター能力分析:</strong> 「神出鬼没が使用可能」
+                  </li>
+                  <li><strong>環境情報:</strong> 使用可能な板や窓の残数</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🧠 戦略的判断システム</span>
+              </div>
+              <div class="collapsible-content">
+                <div class="info-grid">
+                  <div class="info-card">
+                    <div class="info-card-title">解読継続の判断</div>
+                    <p>チェイス状況に基づく解読計画の調整</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">救助準備</div>
+                    <p>救助担当者の事前決定と準備</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">フォロー支援</div>
+                    <p>チェイス補助やハンターの注意逸らし</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">脱出準備</div>
+                    <p>終盤に向けた出口ゲートの解読計画</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Rescue Section -->
+          <section id="rescue" class="section-card fade-in">
+            <h2 class="section-title">🚑 救助フェーズの完璧な連携</h2>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🎯 救助前の準備</span>
+              </div>
+              <div class="collapsible-content">
+                <ul class="custom-list">
+                  <li>
+                    <strong>救助者の決定:</strong>
+                    「私が救助に向かう」を明確に宣言
+                  </li>
+                  <li>
+                    <strong>救助タイミング:</strong>
+                    「ハンターが離れたら救助」など条件設定
+                  </li>
+                  <li>
+                    <strong>カバー体制:</strong>
+                    他メンバーの解読継続または支援体制
+                  </li>
+                  <li>
+                    <strong>救助後計画:</strong> 救助後の行動プランを事前共有
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>⚡ 救助実行時</span>
+              </div>
+              <div class="collapsible-content">
+                <div class="info-grid">
+                  <div class="info-card">
+                    <div class="info-card-title">救助開始</div>
+                    <p>「救助開始！」で明確な意思表示</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">状況報告</div>
+                    <p>「ハンター戻ってくる」「安全救助完了」</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">治療指示</div>
+                    <p>「治療してください」「治療場所移動」</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">次の行動</div>
+                    <p>解読再開や隠蔽の指示</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Endgame Section -->
+          <section id="endgame" class="section-card fade-in">
+            <h2 class="section-title">🏁 終盤戦の高度な戦術</h2>
+
+            <div class="alert alert-success">
+              <strong>✨ 成功のカギ：</strong>
+              終盤は冷静な判断と正確な情報共有が勝敗を分けます。
+            </div>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🚪 出口ゲート段階</span>
+              </div>
+              <div class="collapsible-content">
+                <ul class="custom-list">
+                  <li>
+                    <strong>ゲート開放順序:</strong>
+                    どちらのゲートを優先するかチームで決定
+                  </li>
+                  <li><strong>進捗共有:</strong> ゲート解読の詳細な進捗状況</li>
+                  <li>
+                    <strong>警戒体制:</strong>
+                    ハンターの接近に対する警告システム
+                  </li>
+                  <li>
+                    <strong>脱出タイミング:</strong>
+                    全員での脱出か個別脱出かの判断
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🆘 緊急事態対応</span>
+              </div>
+              <div class="collapsible-content">
+                <div class="info-grid">
+                  <div class="info-card">
+                    <div class="info-card-title">残り1人時</div>
+                    <p>地下室回避やハッチ探索の戦略</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">時間切れ対応</div>
+                    <p>最適な生存戦略の選択</p>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-title">特殊状況</div>
+                    <p>ハンターの特殊能力に対する対応策</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Hunter Counter Section -->
+          <section class="section-card fade-in">
+            <h2 class="section-title">👹 ハンター別特殊対応チャート</h2>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-card-title">📸 写真家対策</div>
+                <ul class="custom-list">
+                  <li>「写真世界に注意」- 写真世界使用時の警告</li>
+                  <li>「現実世界で解読」- 写真世界中の行動指示</li>
+                  <li>「写真世界終了」- 能力終了の報告</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">🗿 彫刻師対策</div>
+                <ul class="custom-list">
+                  <li>「彫像に注意」- 彫像の位置と警告</li>
+                  <li>「彫像破壊完了」- 彫像破壊の報告</li>
+                  <li>「彫刻師変身中」- 能力発動時の警告</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">🔮 夢の魔女対策</div>
+                <ul class="custom-list">
+                  <li>「従者発見」- 従者の位置報告</li>
+                  <li>「呪い状態」- デバフ状況の報告</li>
+                  <li>「本体位置確認」- 本体とダミーの区別</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Settings Section -->
+          <section class="section-card fade-in">
+            <h2 class="section-title">⚙️ 設定とカスタマイズの最適化</h2>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-card-title">🔧 個人設定の調整</div>
+                <ul class="custom-list">
+                  <li><strong>音声設定:</strong> 重要度に応じた音量調整</li>
+                  <li><strong>表示設定:</strong> チャットの表示時間と位置</li>
+                  <li>
+                    <strong>操作設定:</strong> チャット送信の操作方法最適化
+                  </li>
+                  <li><strong>自動翻訳:</strong> 多言語チームでの設定活用</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">👥 チーム共通設定</div>
+                <ul class="custom-list">
+                  <li><strong>統一用語:</strong> チーム内での用語統一</li>
+                  <li><strong>優先順位:</strong> 情報の重要度による送信順序</li>
+                  <li>
+                    <strong>緊急コード:</strong> 緊急時の特殊な合図システム
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Practice Section -->
+          <section class="section-card fade-in">
+            <h2 class="section-title">📈 練習方法と上達のコツ</h2>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🎯 基礎練習</span>
+              </div>
+              <div class="collapsible-content">
+                <div class="skill-level">
+                  <span class="skill-label">タイピング速度</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="skill-level">
+                  <span class="skill-label">状況判断</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-level">
+                  <span class="skill-label">マルチタスク</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div class="skill-level">
+                  <span class="skill-label">音声認識</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>👥 チーム練習</span>
+              </div>
+              <div class="collapsible-content">
+                <ul class="custom-list">
+                  <li><strong>連携訓練:</strong> 特定の状況での連携練習</li>
+                  <li><strong>情報共有:</strong> 効率的な情報伝達方法の確立</li>
+                  <li><strong>戦術研究:</strong> 各ハンター対策の共同研究</li>
+                  <li>
+                    <strong>反省会:</strong>
+                    試合後の詳細な分析と改善点の洗い出し
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Common Mistakes Section -->
+          <section class="section-card fade-in">
+            <h2 class="section-title">⚠️ よくある失敗例と対策</h2>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-card-title">📊 情報過多による混乱</div>
+                <p><strong>問題:</strong> 不要な情報の連続送信</p>
+                <p><strong>対策:</strong> 重要度の高い情報のみを厳選</p>
+                <p><strong>改善:</strong> 簡潔で明確な表現の習得</p>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">⏰ タイミングのずれ</div>
+                <p><strong>問題:</strong> 古い情報の遅延送信</p>
+                <p><strong>対策:</strong> リアルタイム性の重視</p>
+                <p><strong>改善:</strong> 状況変化への素早い対応</p>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">💬 コミュニケーション不足</div>
+                <p><strong>問題:</strong> 重要な情報の共有漏れ</p>
+                <p><strong>対策:</strong> チェックリスト形式での確認</p>
+                <p><strong>改善:</strong> 継続的な意識向上</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Advanced Techniques Section -->
+          <section class="section-card fade-in">
+            <h2 class="section-title">🎓 上級者向けのさらなるテクニック</h2>
+
+            <div class="highlight-box">
+              <h4>🔮 予測的コミュニケーション</h4>
+              <p>
+                ハンターの行動パターンを分析し、次の行動を予測して事前に味方に警告を送る高度なテクニックです。
+              </p>
+            </div>
+
+            <div class="highlight-box">
+              <h4>📋 状況別最適化チャート</h4>
+              <p>
+                各状況に応じた最適なチャットパターンを事前に設定し、瞬時に適切な情報を送信できるシステムの構築です。
+              </p>
+            </div>
+
+            <div class="highlight-box">
+              <h4>🧠 心理的要素の活用</h4>
+              <p>
+                ハンターとサバイバー双方の心理を理解し、適切なタイミングでの情報開示により戦況を有利に導く戦術です。
+              </p>
+            </div>
+          </section>
+
+          <!-- Continuous Improvement Section -->
+          <section class="section-card fade-in">
+            <h2 class="section-title">📚 継続的なスキル向上のために</h2>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>📅 日常的な練習</span>
+              </div>
+              <div class="collapsible-content">
+                <ul class="custom-list">
+                  <li>
+                    <strong>毎日の基礎練習:</strong> チャット操作の反復練習
+                  </li>
+                  <li>
+                    <strong>状況分析:</strong> リプレイ機能を活用した詳細分析
+                  </li>
+                  <li>
+                    <strong>新機能学習:</strong> アップデート内容の積極的な習得
+                  </li>
+                  <li>
+                    <strong>コミュニティ参加:</strong> 他プレイヤーとの情報交換
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapsible">
+              <div class="collapsible-header collapsible-toggle">
+                <span>🌟 長期的な成長</span>
+              </div>
+              <div class="collapsible-content">
+                <ul class="custom-list">
+                  <li><strong>メタ理解:</strong> ゲーム環境の変化への適応</li>
+                  <li>
+                    <strong>多角的視点:</strong>
+                    サバイバーとハンター両方の視点習得
+                  </li>
+                  <li>
+                    <strong>チームワーク:</strong>
+                    固定チームでの長期的な連携構築
+                  </li>
+                  <li>
+                    <strong>指導力:</strong> 新規プレイヤーへの適切な指導能力
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Summary Section -->
+          <section class="section-card fade-in">
+            <h2 class="section-title">🎯 まとめ</h2>
+
+            <div class="alert alert-success">
+              <p>
+                <strong
+                  >定型文チャットシステムは単なるコミュニケーションツールではなく、チーム全体の戦術レベルを飛躍的に向上させる重要な戦略要素です。</strong
+                >音声機能と組み合わせることで、より直感的で迅速な情報共有が可能になり、高度な連携プレイの実現に不可欠な要素となります。
+              </p>
+            </div>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-card-title">🎯 効果的な活用に必要な要素</div>
+                <ul class="custom-list">
+                  <li>事前の準備</li>
+                  <li>適切な情報選択</li>
+                  <li>タイミングの把握</li>
+                  <li>継続的な練習</li>
+                </ul>
+              </div>
+              <div class="info-card">
+                <div class="info-card-title">🤝 チーム成長のポイント</div>
+                <ul class="custom-list">
+                  <li>個人スキル向上</li>
+                  <li>チーム全体での成長</li>
+                  <li>信頼関係の構築</li>
+                  <li>深い連携の実現</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <p>
+                <strong
+                  >最も重要なのは、個人のスキル向上だけでなく、チーム全体での成長を意識することです。</strong
+                >定型文チャットを通じて構築される信頼関係と連携は、ゲーム内だけでなく、より深いチームワークの基盤となります。継続的な練習と改善により、プロレベルの連携を目指しましょう！
+              </p>
+            </div>
+          </section>
         </div>
-        <p>
-          これにより「ハンターが中央エリアにいる！」や「幸運児は救援に向かって！」など、より詳細な情報を音声とチャットで共有できるようになりました。
-        </p>
-
-        <h2>定型文チャット種類解説</h2>
-        <p>定型文チャットには3種類あり、円盤、リスト、全て使用があります。</p>
-        <p>それぞれの使い方が異なるため簡単に解説していきます。</p>
-
-        <h2>円盤</h2>
-        <img src="../images/chat/ennbannrisuto.jpeg" class="chat-image" />
-        <img src="../images/chat/ennbann.jpeg" class="chatmin-image" />
-        <p>
-          円盤チャットは、8個のチャットが試合中に簡単に送れるチャットになります。<br />
-          あらかじめ設定から8個の送るチャットを設定しておきましょう。<br />
-          また試合中がチャットボタンを長押しし、送りたいチャットへとドラッグすることで、簡単にチャットが送れます。
-        </p>
-
-        <h2>リスト</h2>
-        <img src="../images/chat/risutorisuto.jpeg" class="chat-image" />
-        <img src="../images/chat/risuto.jpeg" class="chatmin-image" />
-        <p>
-          リストはチャットを送る個数に制限はなく、その時にあったチャットを送れるチャットです。<br />
-          あらかじめ設定から使う回数が多いチャットを自分の好きな位置に配置しましょう。<br />
-          ただし、リストはチャットを送るのに操作が必要となりチェイス中だと少し送ることが難しくあります。
-        </p>
-
-        <h2>全て使用</h2>
-        <img src="../images/chat/risutorisuto.jpeg" class="chat-image" />
-        <img src="../images/chat/risuto.jpeg" class="chatmin-image" />
-        <p>
-          円盤チャット、リストチャットを両方使える万能型となっております。<br />
-          あらかじめ設定から円盤、チャットを配置しましょう<br />
-          また、新たな機能がアップデートされ綿密に情報を送信できるようになりました。
-        </p>
-
-        <div class="flex-taime">
-          <img src="../images/chat/eria.jpeg" class="chatmin-image" />
-          <img src="../images/chat/eriasitei.jpeg" class="chatmin-image" />
-        </div>
-        <p>
-          チャットで位置を選択して送ることで、ハンターの位置などを正確に送ることができるようになりました。
-        </p>
-
-        <img src="../images/chat/sukiru.jpeg" class="chatmin-image" />
-        <p>
-          ハンターの特質やクールタイムなども正確に送ることができるようになりました。
-        </p>
-
-        <img src="../images/chat/kyara.jpeg" class="chatmin-image" />
-        <p>ハンターの種類を正確に送ることができるようになりました。</p>
-
-        <h2>試合開始時の動き</h2>
-        <p>
-          スポーン位置をすぐに伝えましょう。同時に「解読に集中して！」の定型文を送り、味方に自分の位置を知らせます。
-        </p>
-        <p>
-          占い師や弁護士がいる場合は「ハンターのキャラ」「スポーン位置」「どこへ向かっているか」も合わせて報告します。ハンターの行動変化にも警戒しましょう。
-        </p>
-
-        <h2>解読中の連携</h2>
-        <ul>
-          <li>解読予定の暗号機の場所をチャットで共有。</li>
-          <li>解読中は定型文で進捗状況を送信。</li>
-          <li>解読中断時のために暗号機の場所と進捗を把握。</li>
-          <li>試合開始50秒以降、焼入れ効果に注意。</li>
-        </ul>
-
-        <h2>チェイス時のポイント</h2>
-        <p>
-          チェイス担当は、チェイス開始とハンターキャラを報告したら、チェイスに集中しましょう。
-        </p>
-
-        <h3>チェイス担当者の動き</h3>
-        <ul>
-          <li>味方の解読場所を聞く。</li>
-          <li>ハンターの補助特質（巡視者・監視者など）を報告。</li>
-          <li>フクロウやチェイス補助要請時はタイミングを指定。</li>
-          <li>ターゲットチェンジやダウン場所も迅速に伝達。</li>
-        </ul>
-
-        <h3>チェイス担当以外の味方の動き</h3>
-        <ul>
-          <li>地下室の位置を定期的に報告。</li>
-          <li>解読位置をチャットで伝達。</li>
-          <li>ハンターの「神出鬼没」使用可能時に警告。</li>
-          <li>チェイス場所・ダウン位置に応じた解読計画を立案。</li>
-          <li>救助担当者を早めに決める。</li>
-        </ul>
-
-        <h2>まとめ</h2>
-        <p>
-          定型文チャットと音声機能を最大限に活用し、チームの連携を高めましょう！事前の共有、進捗報告、臨機応変な対応が勝利へのカギです。
-        </p>
       </div>
 
       <div class="sidebar">
@@ -233,6 +837,7 @@
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="../script/kyararisuto.js"></script>
     <script src="../script/ngcomento.js"></script>
     <script src="../script/honbaga.js"></script>
