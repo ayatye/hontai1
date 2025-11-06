@@ -132,15 +132,6 @@ main {
   font-size: 1.8em;
   font-weight: 700;
 }
-.probability {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9em;
-  margin-left: 15px;
-}
 .collab-description {
   background: #f8fafc;
   padding: 20px;

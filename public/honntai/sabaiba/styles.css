@@ -329,6 +329,122 @@ main p {
   font-size: 1rem;
 }
 
+/* 表のスタイル */
+.trait-table,
+.damage-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background-color: #fff;
+}
+
+.trait-table th,
+.damage-table th {
+  background-color: #ffb74d;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.trait-table td,
+.damage-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.trait-table tbody tr:nth-child(even),
+.damage-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.trait-table tbody tr:hover,
+.damage-table tbody tr:hover {
+  background-color: #fff3e0;
+}
+
+/* キャラの簡単解説セクション */
+#basics {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+#basics h2 {
+  font-size: 1.8rem;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+.basics-box {
+  background-color: #f0f8ff;
+  border: 2px solid #64b5f6;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.basics-box h3 {
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+.basics-box ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.basics-box ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.basics-box .note {
+  background-color: #fff9c4;
+  padding: 10px;
+  border-left: 4px solid #fbc02d;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+/* 重要なティップボックス */
+.important-tip {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border: 3px solid #ff6f00;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
+  position: relative;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.important-tip h4 {
+  color: #e65100;
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.important-tip p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 111, 0, 0.5);
+  }
+}
+
 /* 基本的な立ち回り方セクション */
 #strategy {
   padding: 20px;
@@ -407,7 +523,7 @@ main p {
 }
 
 /* おすすめの内在人格セクション */
-.recommendation-section {
+#recommendation {
   margin: 20px 0;
   padding: 20px;
   border: 1px solid #ccc;
@@ -954,6 +1070,14 @@ footer p {
   }
   .article-text {
     padding-left: 20px; /* テキストの左パディング */
+  }
+
+  /* 表を横スクロール可能に */
+  .trait-table,
+  .damage-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
 

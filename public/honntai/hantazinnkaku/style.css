@@ -14,7 +14,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding-left: 6cm;
+  padding-left: 2cm;
 }
 
 h2 {
@@ -43,9 +43,13 @@ a {
   position: relative;
 }
 
+.zinnkaku-image {
+  width: 70%;
+  padding: 10px;
+}
+
 .trait-box {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   align-items: flex-start;
   border: 2px solid #ccc;
   border-radius: 12px;
@@ -61,6 +65,7 @@ a {
 }
 
 .trait-image {
+  display: block;
   width: 100px;
   height: 100px;
   object-fit: contain;

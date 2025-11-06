@@ -29,7 +29,6 @@ h2 {
   text-align: center;
   color: #000000;
   padding: 10px 0;
-  border-left: 4px solid #3498db;
   padding-left: 15px;
 }
 h3 {
@@ -89,6 +88,11 @@ li {
   border: 1px solid #c3e6cb;
   margin: 20px 0;
 }
+
+.container h2 {
+  border-left: 4px solid #3498db;
+}
+
 .update-date {
   text-align: right;
   color: #666;

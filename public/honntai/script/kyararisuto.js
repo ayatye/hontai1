@@ -245,6 +245,11 @@ const survivors = [
     url: "/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg",
     link: "/honntai/sabaiba/dassyutumasuta/dassyutumasuta.html",
   },
+  {
+    name: "幻灯師",
+    url: "/honntai/images/kyaragazou/sabaibagazou/genntousi.png",
+    link: "/honntai/sabaiba/genntousi/genntousi.html",
+  },
 ];
 
 const hunters = [

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻灯師 - IdentityV（第五人格）攻略【第五録】</title>
+    <link rel="stylesheet" href="../styles.css">
+    
+              <!-- SEO -->
+  <meta name="description" content="IdentityV（第五人格）のサバイバー「幻灯師」の完全攻略ガイド。外在特質解説、立ち回り方、おすすめ人格、応用テクニックまで詳しく紹介。初心者から上級者まで役立つ攻略情報。">
+  <meta name="keywords" content="IdentityV,幻灯師,第五人格,サバイバー,攻略,人格,立ち回り">
+  <meta name="last-modified" content="2025-10-11">
+  
+  <!-- OGP -->
+  <meta property="og:title" content="幻灯師 - IdentityV（第五人格）攻略【第五録】">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="サバイバー「幻灯師」の立ち回りと外在特質解説。おすすめ人格構成や応用テクニックも詳しく掲載。">
+  <meta property="og:url" content="https://daigoroku-website.web.app/honntai/sabaiba/genntousi/genntousi.html">
+  <meta property="og:image" content="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/genntousi.png">
+  <meta property="og:site_name" content="第五録">
+  <meta property="article:modified_time" content="2025-10-01T00:00:00+09:00">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="幻灯師完全攻略">
+  <meta name="twitter:description" content="外在特質、立ち回り、おすすめ人格を徹底解説">
+  <meta name="twitter:image" content="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/genntousi.png">
+</head>
+<body>
+    <!-- Your custom header goes here -->
+    <header>
+        <nav-gert>
+          <div class="logo">
+            <a href="../../../index.html">
+              <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
+              <span>第五録</span>
+            </a>
+          </div>
+          <header class="c-header c-hamburger-menu">
+            <input
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+              class="c-hamburger-menu__input"
+            />
+            <label for="hamburger" class="c-hamburger-menu__bg"></label>
+            <ul class="c-header__list c-hamburger-menu__list">
+              <li class="c-header__list-item">
+                <a href="../../../index.html" class="c-header__list-link">ホーム</a>
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../最新情報/最新情報.html" class="c-header__list-link"
+                  >最新情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a href="../../情報/情報.html" class="c-header__list-link"
+                  >キャラ情報</a
+                >
+              </li>
+              <li class="c-header__list-item">
+                <a
+                  href="../../お問い合わせ/お問合せフォーム.html"
+                  class="c-header__list-link"
+                  >お問い合わせ</a
+                >
+              </li>
+            </ul>
+            <div id="overlay"></div>
+            <nav-gert id="burger-menu">
+              <input type="checkbox" id="hamburger" style="display: none" />
+              <label for="hamburger" class="c-hamburger-menu__button">
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+                <span class="c-hamburger-menu__button-mark"></span>
+              </label>
+            </nav-gert>
+          </header>
+        </nav-gert>
+      </header>
+
+      <section class="banner">
+        <h2>第五人格最新攻略情報</h2>
+        <p>第五人格の様々の情報が盛りだくさん！！</p>
+      </section>
+
+      <div class="wrapper">
+        <div class="konntent">
+    <nav>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質と特徴</a></li>
+            <li><a href="#basics">キャラの簡単解説</a></li>
+            <li><a href="#strategy">基本的立ち回り方</a></li>
+            <li><a href="#advanced">幻灯師の応用スキル</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- キャラ評価セクション -->
+        <section id="evaluation">
+          	    <img src="../../images/kyaragazou/sabaibagazou/genntousi.png" alt="幻灯師の写真" class="character-image">
+            <h1>幻灯師（アマンダ・ゲイティス）の評価</h1>
+            <p>君が殴っているそれは僕の残像だよ？？</p>
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+        </section>
+
+        <!-- 外在特質と特徴セクション -->
+        <section id="traits">
+            <h2>外在特質と特徴</h2>
+            
+            <div class="traits-box">
+                <div class="trait-item">
+                    <h3>特質1:人物投影</h3>
+                    ・自分を記録すると、10秒間の状態投影と位置投影効果を獲得する。仲間を記録すると、仲間は8秒間の状態投影効果を獲得する。サバイバー1人につき2回まで記録できる。<br><br>
+                    ・記録中に通常攻撃ダメージを受けると、即座に記録が終了する。サバイバーは自分から記録を終了させることもできる。<br><br>
+                    ・サバイバーが拘束されているロケットチェアの付近20メートル以内では、記録時間が75%減少する。<br><br>
+                    
+                    <h4>【状態投影】</h4>
+                    ・サバイバーが通常攻撃以外のダメージ（写真家の写真世界合併と破輪の突刺起爆によるダメージは含まれない）、或いは強力なコントロール効果（スタン系効果）を受けた場合、その影響は記録が終了するまで反映されない。<br><br>
+                    ・記録期間中にダメージを受けると、コントロール効果は無効化される。また、記録期間中に複数のコントロール効果を受けた場合は、最後に受けた効果のみが反映される。<br><br>
+                    
+                    <h4>【位置投影】</h4>
+                    ・使用すると自身をその場に残した状態で離脱し、移動や操作を行うことができ、移動速度が10%上昇する。<br><br>
+                    ・記録期間中は新しい位置を複数回記録でき、位置を記録した後は移動経路に痕跡が残る。
+                </div>
+
+                <div class="trait-item">
+                    <h3>特質2:静止物投影</h3>
+                    ・幻灯師は暗号機、ロケットチェア、脱出ゲートの電源スイッチを記録できる。サバイバーは記録中の対象を操作でき、操作速度が10%上昇する。サバイバーは自分から記録を終了することができる。<br><br>
+                    
+                    <table class="trait-table">
+                        <thead>
+                            <tr>
+                                <th>記録対象</th>
+                                <th>記録時間</th>
+                                <th>効果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>暗号機</td>
+                                <td>20秒間</td>
+                                <td>暗号機の解読進捗を記録中に解読した進捗は記録が終了した瞬間に反映される。</td>
+                            </tr>
+                            <tr>
+                                <td>ロケットチェア</td>
+                                <td>5秒間</td>
+                                <td>ロケットチェアの脱落進度を記録中に増加した脱落進度は記録が終了した瞬間に反映される。</td>
+                            </tr>
+                            <tr>
+                                <td>電源スイッチ</td>
+                                <td>20秒間</td>
+                                <td>脱出ゲートの電源スイッチの解読進捗を記録中に解読した進捗は記録が終了した瞬間に反映される。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="trait-item">
+                    <h3>特質3:光学錯覚</h3>
+                    ・幻灯師が倒した板を1秒間破壊できなくさせる。幻灯師が離脱状態にある場合、効果時間は1.5秒間に延長される。この効果は10秒間に1回のみ発動可能。
+                </div>
+
+                <div class="trait-item">
+                    <h3>特質4:機械音痴</h3>
+                    ・解読速度が10%低下する。
+                </div>
+            </div>
+
+            <div class="features-box">
+                <h3>特徴</h3>
+                ハンター0.5ダメージのものを<span class="blue-text">フライホイール効果で無効化できる</span>。<br>
+                <span class="underline-text">静止物投影</span>で暗号機、ゲート、ロケットチェアを遠隔で触ることができる最強サバイバー<br>
+                <span class="highlight-text">光学錯覚</span>による板破壊1秒阻止は必ず板を割る場面で使用することで確実に次のポジションまでスキルなしで移動できる。
+            </div>
+        </section>
+
+        <!-- キャラの簡単解説セクション -->
+        <section id="basics">
+            <h2>幻灯師の簡単解説</h2>
+            
+            <div class="basics-box">
+                <h3>「人物投影」とは？</h3>
+                <p>
+                    ・記録中の幻灯師の残像が通常攻撃を受けてしまうと、その場で記録が解除され、ダメージを受ける。<br>
+                    なので、記録を更新して絶対に記録中は通常攻撃で殴られないようにしよう。<br>
+                    ・記録中の幻灯師の残像が受けた<span class="blue-text">ダメージ効果やスタン効果が遅延</span>され、記録終了後にまとめて反映される。<br>
+                    
+                    <div class="important-tip">
+                        <h4>💡 ここ大事！</h4>
+                        <p>
+                            フライホイール効果を記録終了後に使用することで<span class="highlight-text">ダメージ、スタンを実質的に無効化</span>することができる。<br>
+                            逆に、フライホイール効果がない場合は、ダメージ後に反映されるため、<span class="red-text">0.5ダメージを受けそうなら、記録を更新してダメージ防ぐ</span>、スタンを記録終了後に受けてしまうなら、<span class="blue-text">殴られない板間越し、窓越しでスタンしよう！</span>
+                        </p>
+                    </div>
+                </p>
+            </div>
+
+            <div class="basics-box">
+                <h3>記録が終了するタイミング</h3>
+                <ul>
+                    <li>記録時間が経過した時（自分:10秒、仲間:8秒）</li>
+                    <li><span class="red-text">通常攻撃のダメージを受けた時</span>（即座に記録終了）</li>
+                    <li>自分から記録を終了させた時</li>
+                    <li>ロケットチェア付近20m以内で記録した場合（記録時間が75%減少）</li>
+                </ul>
+            </div>
+
+            <div class="basics-box">
+                <h3>記録中のダメージとスタン効果</h3>
+                <table class="damage-table">
+                    <thead>
+                        <tr>
+                            <th>攻撃・効果の種類</th>
+                            <th>記録中の影響</th>
+                            <th>具体例</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="red-text">通常攻撃</td>
+                            <td class="red-text">即座に記録終了</td>
+                            <td>ハンターの基本攻撃、リッパーのナイフ、写真家の写真世界合併、破輪の突刺起爆など</td>
+                        </tr>
+                        <tr>
+                            <td class="blue-text">スタン効果</td>
+                            <td class="blue-text">記録終了後に反映（最後の1つのみ）</td>
+                            <td>アンの猫、白黒無常の傘、蠟人形師の蝋、など</td>
+                        </tr>
+                        <tr>
+                            <td class="blue-text">特殊ダメージ</td>
+                            <td class="blue-text">記録終了後に反映</td>
+                            <td>ボンボンの爆弾、彫刻師の彫像、黄衣の触手攻撃など</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">
+                    <span class="bold-text">重要：</span>記録中に<span class="underline-text">複数のスタン効果</span>を受けた場合、<span class="red-text">最後に受けた効果のみ</span>が記録終了後に反映されます。
+                </p>
+            </div>
+        </section>
+
+<!-- 基本的立ち回り方セクション -->
+<section id="strategy">
+  <h2>基本的な立ち回り方</h2>
+
+  <div class="strategy-item">
+    <h3>1. 追われた時</h3>
+    <p>
+      <span class="underline-text">はやめに記録を使うことが重要</span>、ハンターの射程圏内から記録をつかってしまうと記録に<span class="red-text">攻撃を受ける可能性</span>があるため伸びない。<br><br>
+      記録中の<span class="underline-text">透明状態幻灯師には攻撃判定がない</span>ため、板当て攻防に<span class="highlight-text">100％</span>勝つことができるため、板当てを狙おう！<br><br>
+      また、初動はフライホイール効果がたまっていないため<span class="blue-text">0.5ダメージ</span>、スタン効果なども受けないように気を付けよう。<br><br>
+      <span class="bold-text">倒した板</span>は一秒間割ることができないので、強い板の板攻防では<span class="highlight-text">空振りを誘発した場合</span>は、すぐに倒して、距離をとろう。<br><br>
+      もし、余裕があるなら、解読を回している味方に<span class="bold-text">静止物投影</span>で解読速度をあげられたら完璧！！（できれば、救助職）
+    </p>
+  </div>
+
+  <div class="strategy-item">
+    <h3>2. 追われない時</h3>
+    <p>
+      解読しよう！<br><br>
+      <span class="bold-text">静止物投影</span>を使って、救助職などの暗号機にバフをかけよう<br><br>
+      救助が4割、9割で間に合いそうにない場合、<span class="bold-text">静止物投影</span>で進度を止めてあげよう！<br><br>
+      スタンハンターや0.5ダメージハンターの場合、追われている味方に記録をつけてあげるのも有効
+    </p>
+  </div>
+
+  <div class="strategy-item">
+    <h3>3. 注意点</h3>
+    <p>
+      幻灯師を使う際には、以下の点に注意しましょう。<br><br>
+      🔹 ラスト暗号機に記録をかける際は99％で解除しよう<br>
+      →寸止めが作れずに20秒後に自動であがってしまうため。<br><br>
+      🔹 ゲート進捗が100％になった際は記録を解除して開けるようにしよう<br>
+      → ゲートをハンターに守られてしまう可能性があるため<br><br>
+      🔹 ロケットチェアを止める際は4.9割に間に合わない時だけにしよう<br>
+      → 記録で止めている5秒後には5秒間の進捗が一気に増えるのできをつけよう！
+    </p>
+  </div>
+</section>
+
+<section id="advanced">
+  <div class="advanced-skills-section">
+    <h2>幻灯師の応用スキル</h2>
+
+    <!-- 応用スキル1 -->
+    <div class="skill-item">
+      <h3>味方記録硬直消し</h3>
+      <p>味方に記録をつける際に連続でスキルボタンをタップすることで硬直を消すことができる</p>
+      <!-- 動画1を挿入 -->
+      <video controls>
+        <source src="../../movie/sabaiba/genntousi/genntousi1.mp4" type="video/mp4">
+        この動画は第五人格のサバイバー幻灯師の『味方記録硬直消し』の紹介映像です。
+      </video>
+    </div>
+
+    <!-- 応用スキル2 -->
+    <div class="skill-item">
+      <h3>ゴースト板当て</h3>
+      <p>記録透明化中に当たり判定がないのを利用して板当てすること</p>
+      <!-- 動画2を挿入 -->
+      <video controls>
+        <source src="../../movie/sabaiba/genntousi/genntousi2.mp4" type="video/mp4">
+        この動画は第五人格のサバイバー幻灯師の『ゴースト板当て』の紹介映像です。
+      </video>
+    </div>
+  </div>
+</section>
+
+
+        <!-- おすすめの内在人格セクション -->
+        <section id="recommendation">
+            <h2>おすすめの内在人格</h2>
+            
+            <div class="recommendation-item">
+                <h3>解読、チェイス型人格</h3>
+                <p>この内在人格は、観客効果を採用して解読速度を上げつつ、ピアの効果を採用していることで救助後の一伸ばしを狙う！</p>
+                <img src="../../images/kyaragazou/sabazinnkaku/genntousi/genntousi1.png" alt="解読型人格の写真" class="personality-image">
+            </div>
+
+            <div class="recommendation-item">
+                <h3>危機一髪型人格</h3>
+                <p>この内在人格は、癒合3を採用しておくことで、救助後の即座治療可能とし観客効果で解読効率を上げる人格</p>
+                <img src="../../images/kyaragazou/sabazinnkaku/genntousi/genntousi2.png" alt="危機一髪型人格の写真" class="personality-image">
+            </div>
+
+    <div class="article-box">
+        <a href="../../purozinnkaku/purozinnkaku.html" class="article-link">
+            <div class="article-img">
+                <img src="../../images/zinnkakuu.jpeg" alt="Link Image">
+            </div>
+            <div class="article-text">
+                <h3>キャラ別プロが使う人格</h3>
+            </div>
+        </a>
+    </div>
+        </section>
+    </main>
+    </div>
+
+    <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list">
+          <!-- JavaScriptでサバイバーを追加 -->
+        </ul>
+      
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list">
+          <!-- JavaScriptでハンターを追加 -->
+        </ul>
+      </div>
+      </div>
+      </div>
+      <hr class="custom-line" />
+      <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+      
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+      </div>
+      <!-- スクロール時に表示される横棒 -->
+      <div id="scroll-bar">
+      <a href="../../最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../../情報/情報.html">キャラ情報</a>
+      <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+      </div>
+      
+      <footer>
+      <div class="footer-links">
+        <a href="../../puraibasi/puraibasi.html"
+          >プライバシーポリシー</a
+        >
+        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+        <a href="../../unneizyouhou/uneizyouhou.html">運営情報</a>
+      </div>
+      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
+      </footer>
+
+    <!-- Your custom footer goes here -->
+
+      <script src="script.js"></script>
+      <script src="../../script/kyararisuto.js"></script>
+      <script src="../../script/ngcomento.js"></script>
+      <script src="../../script/honbaga.js"></script>
+      <script type="module" src="../../comentoscript/sabaiba.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

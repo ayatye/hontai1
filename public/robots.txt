@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://daigoroku-website.web.app/sitemap.xml
+Sitemap: https://daigoroku-website.web.app/sitemap2025.xml
+# Updated: 2025-10-11

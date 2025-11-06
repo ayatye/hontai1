@@ -95,6 +95,39 @@ h4 {
   color: #e67e22;
 }
 
+.rating-section {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.rating-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rating-label {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.stars .empty {
+  color: #ddd;
+}
+
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;
