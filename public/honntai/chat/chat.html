@@ -8,7 +8,6 @@
     </title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../style/hanbaga.css" />
-    <link rel="stylesheet" href="../style/footer.css" />
     <link rel="stylesheet" href="../style/sidebar.css" />
     <link rel="stylesheet" href="../style/logo.css" />
     <link rel="stylesheet" href="../style/comment.css" />
@@ -112,31 +111,56 @@
           </div>
 
           <!-- System Updates Section -->
+          <!-- System Updates Section -->
           <section id="system-update" class="section-card fade-in">
             <h2 class="section-title">⚡ 定型文システム最新調整</h2>
+            <div class="update-date">📅 2025年11月20日アップデート</div>
 
             <div class="highlight-box">
               <p class="content-text">
-                ランク戦マップにエリア名が追加され、より正確な位置情報の共有が可能になりました。音声定型文機能が搭載され、設定画面でオン/オフが選択できるようになっています。空所補充定型文も新たに追加され、エリア、キャラクター、組み合わせ、スキルカテゴリに細かく分類されています。
+                定型文システムに重要な調整が実施されました。クールタイムの変更、不要な定型文の削除、新規定型文の追加により、より効率的なコミュニケーションが可能になります。
               </p>
             </div>
 
             <div class="info-grid">
               <div class="info-card">
-                <div class="info-card-title">🗺️ エリア機能強化</div>
+                <div class="info-card-title">⏱️ クールタイム調整</div>
                 <p>
-                  「ハンターが中央エリアにいる！」など、具体的な位置情報を音声とチャットで即座に共有
+                  定型文のクールタイムが<strong>3秒</strong>に統一されました。
                 </p>
               </div>
+
               <div class="info-card">
-                <div class="info-card-title">🎯 キャラ指定機能</div>
+                <div class="info-card-title">❌ 削除された定型文</div>
+                <p>「______は位置を教えて！」の定型文が削除されました。</p>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-title">🚫 重複キャラ制限</div>
                 <p>
-                  「幸運児は救援に向かって！」など、特定のサバイバーへの指示が可能
+                  サバイバー陣営に重複キャラが存在しない場合、2つのキャラ名を入力する定型文で同じキャラ名を入力できなくなりました。
                 </p>
               </div>
+
               <div class="info-card">
-                <div class="info-card-title">🔊 音声定型文</div>
-                <p>画面を見ながらでも理解しやすい音声での情報共有が実現</p>
+                <div class="info-card-title">👹 ハンター定型文自動化</div>
+                <p>
+                  ハンターキャラが公開されている対戦では、「ハンターは______だ！」が削除され、スキルカテゴリにそのハンターに関連する定型文が<strong>自動的に表示</strong>されます。定型文でのハンター名変更は不可。
+                </p>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-title">➕ 新規定型文追加</div>
+                <p>
+                  通常カテゴリに「<strong>進捗の多い暗号機はどこ？</strong>」が追加されました。
+                </p>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card-title">🎯 フライホイール効果対応</div>
+                <p>
+                  天賦「フライホイール効果」携帯時、スキルカテゴリに「フライホイール効果クールタイム：__秒」が追加。クールタイムは<strong>システムが自動入力</strong>します。
+                </p>
               </div>
             </div>
           </section>
@@ -826,21 +850,11 @@
       <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
     </div>
 
-    <footer>
-      <div class="footer-links">
-        <a href="../プライバシー/プライバシーポリシー.html"
-          >プライバシーポリシー</a
-        >
-        <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
-        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
-      </div>
-      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
-    </footer>
-
     <script src="script.js"></script>
     <script src="../script/kyararisuto.js"></script>
     <script src="../script/ngcomento.js"></script>
     <script src="../script/honbaga.js"></script>
+    <script src="../script/footer.js"></script>
     <script type="module" src="../comentoscript/chat.js"></script>
   </body>
 </html>

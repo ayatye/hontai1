@@ -333,6 +333,239 @@ h2#right-traits {
   margin-top: 2em;
 }
 
+/* ▼ まとめセクション（ハンター用） */
+.summary-section.hunter-summary {
+  margin: 50px 0 40px;
+}
+
+/* ▼ タイトル */
+.summary-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summary-section h2::before {
+  content: "📋";
+  font-size: 32px;
+}
+
+/* ▼ 説明文 */
+.summary-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+/* ▼ ポイント（リスト） */
+.summary-points {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.summary-points h3 {
+  font-size: 20px;
+  color: #e74c3c;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-points ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.summary-points li {
+  padding: 12px 0;
+  border-bottom: 1px dashed #e0e0e0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.summary-points li:last-child {
+  border-bottom: none;
+}
+
+.summary-points li::before {
+  content: "✓";
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.summary-points strong {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* ▼ Tips ボックス */
+.tip-box {
+  background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 25px;
+  border-left: 5px solid #e17055;
+}
+
+.tip-box h4 {
+  font-size: 18px;
+  color: #d63031;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tip-box h4::before {
+  content: "💡";
+  font-size: 20px;
+}
+
+.tip-box p {
+  color: #2d3436;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ▼ 相互リンクセクション（サバイバー誘導） */
+.other-guide-section {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.85)
+  );
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px 0 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 3px solid #667eea;
+  position: relative;
+  overflow: hidden;
+}
+
+.other-guide-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(102, 126, 234, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.other-guide-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.other-guide-section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* ▼ リンクボタン */
+.guide-link-card {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  padding: 25px 50px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.guide-link-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.guide-link-card:hover::before {
+  left: 100%;
+}
+
+.guide-link-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(118, 75, 162, 0.6);
+}
+
+.guide-link-card span {
+  position: relative;
+  z-index: 1;
+}
+
+.guide-link-card::after {
+  content: "→";
+  margin-left: 10px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.guide-link-card:hover::after {
+  transform: translateX(8px);
+}
+
+.other-guide-section img {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;
@@ -349,5 +582,31 @@ h2#right-traits {
   .wrapper {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .summary-section {
+    padding: 25px;
+    margin: 40px 0 30px;
+  }
+
+  .summary-section h2 {
+    font-size: 24px;
+  }
+
+  .summary-points {
+    padding: 20px;
+  }
+
+  .other-guide-section {
+    padding: 30px 20px;
+  }
+
+  .other-guide-section h2 {
+    font-size: 22px;
+  }
+
+  .guide-link-card {
+    padding: 20px 35px;
+    font-size: 18px;
   }
 }

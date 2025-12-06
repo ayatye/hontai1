@@ -239,6 +239,10 @@ main {
     width: 65%;
   }
 
+  .collab-section {
+    padding: 10px;
+  }
+
   li {
     font-size: 12px;
   }

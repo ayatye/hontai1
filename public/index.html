@@ -6,7 +6,6 @@
     <title>IdentityV（第五人格）攻略【第五録】</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="honntai/style/hanbaga.css" />
-    <link rel="stylesheet" href="honntai/style/footer.css" />
     <link rel="stylesheet" href="honntai/style/sidebar.css" />
     <link rel="stylesheet" href="honntai/style/logo.css" />
     <link rel="stylesheet" href="honntai/style/comment.css" />
@@ -29,6 +28,20 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4556398935658570"
       crossorigin="anonymous"
     ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ET1RB84XRR"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-ET1RB84XRR");
+    </script>
   </head>
   <body>
     <header>
@@ -134,7 +147,7 @@
 
           <!-- Identity V バランス調整まとめの追加 -->
           <div class="latest-update">
-            <h2>Identity V バランス調整まとめ（2025年9月10日）</h2>
+            <h2>Identity V バランス調整まとめ（2025年11月20日）</h2>
 
             <!-- 四角い箱 全体をリンクに -->
             <a
@@ -149,7 +162,7 @@
               <!-- 右側に説明 -->
               <div class="update-info">
                 <p>
-                  2025年9月10日に実装されたキャラクター調整と内在人格調整の詳細をまとめました。今回の調整では、複数のキャラクターの性能見直しと、内在人格システムの大幅な調整が行われています。
+                  2025年11月20日に実装されたキャラクター調整と内在人格調整の詳細をまとめました。今回の調整では、複数のキャラクターの性能見直しと、内在人格システムの大幅な調整が行われています。
                 </p>
               </div>
               <!-- リンクのマーク -->
@@ -325,6 +338,10 @@
         </div>
       </div>
       <hr class="custom-line" />
+
+      <div id="sidebar-widget"></div>
+      <script src="honntai/script/widget.js"></script>
+
       <div id="comment-section" style="clear: both">
         <h2>みんなのコメント</h2>
         <form id="comment-form">
@@ -357,21 +374,11 @@
       <a href="honntai/お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
     </div>
 
-    <footer>
-      <div class="footer-links">
-        <a href="honntai/puraibasi/puraibasi.html">プライバシーポリシー</a>
-        <a href="honntai/お問い合わせ/お問合せフォーム.html"
-          >お問い合わせフォーム</a
-        >
-        <a href="honntai/uneizyouhou/uneizyouhou.html">運営情報</a>
-      </div>
-      <p>&copy; 2024 第五録 IdentityV 第五人格攻略サイト</p>
-    </footer>
-
     <script src="honntai/script/script.js"></script>
     <script src="honntai/script/kyararisuto.js"></script>
     <script src="honntai/script/ngcomento.js"></script>
     <script src="honntai/script/honbaga.js"></script>
+    <script src="honntai/script/footer.js"></script>
     <script type="module" src="honntai/comentoscript/hontai.js"></script>
   </body>
 </html>

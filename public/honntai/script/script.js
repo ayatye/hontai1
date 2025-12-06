@@ -1,14 +1,21 @@
+// スマホ判定（幅768px以下）
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
 // おすすめトピックとイベント情報のデータ
 const topics = [
   {
     name: "激アツサバイバー",
     link: "/honntai/gekisaba/gekisaba.html",
-    img: "/honntai/images/gekiatusabaiba.jpeg",
+    img: isMobile
+      ? "/honntai/images/gekisabasumaho.jpeg"
+      : "/honntai/images/gekiatusabaiba.jpeg",
   },
   {
     name: "激アツハンター",
     link: "/honntai/gekiatuhannta/gekiatuhannta.html",
-    img: "/honntai/images/gekiatuhanta.jpeg",
+    img: isMobile
+      ? "/honntai/images/gekihansumaho.jpeg"
+      : "/honntai/images/gekiatuhanta.jpeg",
   },
   {
     name: "次回のコラボ予想",

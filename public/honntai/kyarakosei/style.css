@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding-left: 4cm;
+  padding-left: 1cm;
 }
 
 h1 {
@@ -35,54 +35,344 @@ main {
   background-color: #fff;
 }
 
-.intro,
-.ranking {
-  margin-bottom: 2rem;
+.navigation {
+  background: #fafafa;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border: 1px solid #e0e0e0;
 }
 
-.ranking-category {
-  background-color: #eaeaea;
-  padding: 1rem;
+.navigation h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.6em;
+}
+
+.nav-parent {
+  background: #ffebee;
+  padding: 12px 20px;
   border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.ranking-category ol {
-  list-style: none;
-  padding: 0;
-}
-
-.ranking-category li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.8rem;
-}
-
-.character-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.rank {
   font-weight: bold;
-  min-width: 2.5em;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 12px;
+  border-left: 4px solid #f44336;
 }
 
-.name {
+.nav-children {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.nav-item {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #555;
+  font-size: 0.95em;
+  border: 1px solid #e0e0e0;
+}
+
+.nav-parent.survivor {
+  background: #e3f2fd;
+  border-left-color: #2196f3;
+}
+
+/* ハンター用 */
+.nav-parent.hunter {
+  background: #ffebee;
+  border-left-color: #f44336;
+}
+
+/* サバイバー用 */
+.nav-section:has(.nav-parent.survivor) .nav-item:hover {
+  border-color: #2196f3;
+  background: #e3f2fd;
+}
+
+/* ハンター用 */
+.nav-section:has(.nav-parent.hunter) .nav-item:hover {
+  border-color: #f44336;
+  background: #fff5f5;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.intro {
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border-left: 5px solid #667eea;
+}
+
+.intro p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.section-title {
+  font-size: 2em;
+  color: #764ba2;
+  margin: 40px 0 30px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#talents .section-title {
+  background: linear-gradient(135deg, #ff4b5c 0%, #e63946 100%);
+}
+
+.ability-category {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ability-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.ability-category h3 {
+  font-size: 1.6em;
+  color: #667eea;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.base-value {
+  background: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.ability-group {
+  margin-bottom: 25px;
+}
+
+.group-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.plus-group .group-title {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.minus-group .group-title {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.character-item {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  transition: all 0.3s ease;
+  flex: 0 1 auto;
+  display: flex;
+}
+
+.plus-group .character-item {
+  border-color: #81c784;
+}
+
+.plus-group .character-item:hover {
+  background: #e8f5e9;
+  transform: scale(1.05);
+}
+
+.minus-group .character-item {
+  border-color: #e57373;
+}
+
+.minus-group .character-item:hover {
+  background: #ffebee;
+  transform: scale(1.05);
+}
+
+.character-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+
+.character-name {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.character-value {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.plus-group .character-value {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.minus-group .character-value {
+  background: #ffcdd2;
+  color: #b71c1c;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 30px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
   flex: 1;
+  padding: 15px 20px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transform: translateY(-1px);
+}
+
+.tab-button:hover:not(.active) {
+  background: #e9ecef;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-button.red-active {
+  background: linear-gradient(135deg, #ff4b5c 0%, #e63946 100%) !important;
+  color: #fff;
+}
+
+.character-item.hidden {
+  display: none;
+}
+
+.show-more-btn {
+  margin-top: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#talents .show-more-btn {
+  background-color: #ff8a8a;
+}
+
+.show-more-btn:hover {
+  background-color: #0056b3;
+}
+
+#talents .show-more-btn:hover {
+  background-color: #e63946;
+}
+
+.kosei-image {
+  width: 70%;
+  padding: 10px;
 }
 
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;
   }
+}
 
+@media (max-width: 768px) {
   .wrapper {
     flex-direction: column; /* レイアウトを縦方向に */
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  main {
+    padding: 0px;
+  }
+
+  .ability-category {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .section-title {
+    font-size: 1.5em;
+  }
+
+  .character-list {
+    flex-direction: column;
   }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>キャラの身体能力とランキング - IdentityV（第五人格）攻略【第五録】</title>
+  <title>キャラクター個性能力一覧 - IdentityV（第五人格）攻略【第五録】</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="../style/hanbaga.css" />
   <link rel="stylesheet" href="../style/footer.css" />
@@ -17,7 +17,7 @@
         <div class="logo">
           <a href="../../index.html">
             <img src="../images/サイコロicon.jpeg" class="logo-photo" />
-            <h1>第五録</h1>
+            <span>第五録</span>
           </a>
         </div>
         <div class="c-header c-hamburger-menu">
@@ -68,111 +68,2944 @@
       <div class="konntent">
 
   <main>
-    <section class="intro">
-      <h2>キャラごとの身体能力の違い</h2>
+  <div class="container">
+    <img src="../images/kosei.jpeg" alt="キャラ個性の画像" class="kosei-image"/>
+    <h1>第五人格 キャラクター身体能力の例外一覧</h1>
+    
+    <div class="intro">
       <p>
-        第五人格では、サバイバーやハンターのキャラクターごとに様々な身体能力の違いがあります。
-        走る速さ、治療速度、攻撃速度、移動速度などが異なり、これがプレイスタイルに大きく影響します。
-        ここでは、それらの能力をランキング形式で紹介していきます。
+        第五人格では、ほとんどのサバイバーが基準となる身体能力を持っていますが、一部のキャラクターは特定の能力が例外的に優れていたり、劣っていたりします。このページでは、各能力ごとに基準値から外れているキャラクターをまとめて紹介します。
       </p>
-    </section>
-<section class="ranking">
-  <h2>サバイバー部門ランキング</h2>
+    </div>
+    
+<div class="tabs">
+            <button class="tab-button active" onclick="switchTab('characters')">サバイバー部門</button>
+            <button class="tab-button" onclick="switchTab('talents')">ハンター部門</button>
+        </div>
+<div id="characters" class="tab-content active">
+    <h2 class="section-title">サバイバー部門</h2>
 
-  <div class="ranking-category">
-    <h3>🧠 解読速度</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/機械技師.png" alt="機械技師" class="character-icon"><span class="name">機械技師</span></li>
-      <li><span class="rank">2位</span><img src="images/心眼.png" alt="心眼" class="character-icon"><span class="name">心眼</span></li>
-      <li><span class="rank">3位</span><img src="images/弁護士.png" alt="弁護士" class="character-icon"><span class="name">弁護士</span></li>
-    </ol>
+    <div class="navigation">
+  <h2>📑 目次 - 見たい項目をクリック</h2>
+  
+  <div class="nav-section">
+    <div class="nav-parent survivor">サバイバー個性</div>
+    <div class="nav-children">
+      <a href="#speed" class="nav-item">🏃 移動速度</a>
+      <a href="#walk" class="nav-item">🚶 歩く速度</a>
+      <a href="#decode" class="nav-item">🧠 解読速度</a>
+      <a href="#gate" class="nav-item">🚪 ゲート開門</a>
+      <a href="#chair" class="nav-item">⏱️ 椅子耐久</a>
+      <a href="#footprint" class="nav-item">👣 足跡持続</a>
+      <a href="#self-heal" class="nav-item">🩹 自己治療</a>
+      <a href="#team-heal" class="nav-item">💊 味方治療</a>
+      <a href="#fast-window" class="nav-item">🪟 速窓越え</a>
+      <a href="#slow-window" class="nav-item">🪟 遅窓越え</a>
+      <a href="#fast-pallet" class="nav-item">🚧 速板越え</a>
+      <a href="#slow-pallet" class="nav-item">🚧 遅板越え</a>
+      <a href="#pallet-drop" class="nav-item">🚧 板倒し</a>
+    </div>
+  </div>
+</div>
+    
+    <!-- 移動速度 -->
+    <div class="ability-category" id="speed">
+      <h3>🏃 移動速度(走る速度)</h3>
+      <div class="base-value">基準値: 3.8</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/benngosi.jpeg" alt="弁護士のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">弁護士</div>
+              <div class="character-value">マックス状態: 3.933 (1.035倍)</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/odoriko.jpeg" alt="踊り子のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">踊り子</div>
+              <div class="character-value">オルゴール状態: 4.37 / 4.75 / 5.13</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/posutomann.jpeg" alt="ポストマンのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">ポストマン</div>
+              <div class="character-value">切迫の手紙状態: 4.18 (1.1倍)</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/konntyuugakusya.jpeg" alt="昆虫学者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">昆虫学者</div>
+              <div class="character-value">虫纏い状態: 4.18 (1.1倍)</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/gaka.jpeg" alt="画家のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">画家</div>
+              <div class="character-value">アイテムなし状態: 一枚につき1.02倍</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kottousyou.jpeg" alt="骨董商のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">骨董商</div>
+              <div class="character-value">回転式状態: 3.99 (1.05倍)</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/genntousi.png" alt="幻灯師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">幻灯師</div>
+              <div class="character-value">記録状態: 4.18 (1.1倍)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/yazinn.jpeg" alt="野人のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">野人</div>
+              <div class="character-value">3.65</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 歩く速度 -->
+    <div class="ability-category" id="walk">
+      <h3>🚶 歩く速度</h3>
+      <div class="base-value">基準値: 2.11</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg" alt="心眼のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">心眼</div>
+            <div class="character-value">2.64</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/yazinn.jpeg" alt="野人のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">野人</div>
+            <div class="character-value">2.03</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 解読速度 -->
+    <div class="ability-category" id="decode">
+      <h3>🧠 解読速度</h3>
+      <div class="base-value">基準値: 81秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg" alt="心眼のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">心眼</div>
+              <div class="character-value">65秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sakkyokuka.jpeg" alt="作曲家のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">作曲家</div>
+              <div class="character-value">67秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/benngosi.jpeg" alt="弁護士のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">弁護士</div>
+              <div class="character-value">70秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/redhifauro.jpeg" alt="レディファウロのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">レディファウロ</div>
+              <div class="character-value">72秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kikaigisi.jpeg" alt="機械技師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">機械技師</div>
+              <div class="character-value">73秒 (負傷で遅くなる)</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/syuuzinn.jpeg" alt="囚人のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">囚人</div>
+              <div class="character-value">73秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/koukuuennzinia.jpeg" alt="航空エンジニアのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">航空エンジニア</div>
+              <div class="character-value">79秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kasaityousainn.jpeg" alt="火災調査員のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">火災調査員</div>
+              <div class="character-value">85秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kauboi.jpeg" alt="カウボーイのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">カウボーイ</div>
+              <div class="character-value">90秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="記者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">記者</div>
+              <div class="character-value">90秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">祭司</div>
+              <div class="character-value">90秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ouenndann.jpeg" alt="応援団のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">応援団</div>
+              <div class="character-value">90秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/genntousi.png" alt="幻灯師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">幻灯師</div>
+              <div class="character-value">90秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/hakamori.jpeg" alt="墓守のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">墓守</div>
+              <div class="character-value">95秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg" alt="脱出マスターのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">脱出マスター</div>
+              <div class="character-value">95秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ittoukoukaisi.jpeg" alt="一等航海士のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">一等航海士</div>
+              <div class="character-value">101秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/battumann.jpeg" alt="バッツマンのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">バッツマン</div>
+              <div class="character-value">101秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisi.jpeg" alt="騎士のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">騎士</div>
+              <div class="character-value">101秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">傭兵</div>
+              <div class="character-value">108秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ofensu.jpeg" alt="オフェンスのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">オフェンス</div>
+              <div class="character-value">108秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/yazinn.jpeg" alt="野人のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">野人</div>
+              <div class="character-value">108秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ゲート開門速度 -->
+    <div class="ability-category" id="gate">
+      <h3>🚪 ゲート開門速度</h3>
+      <div class="base-value">基準値: 18秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/posutomann.jpeg" alt="ポストマンのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">ポストマン</div>
+              <div class="character-value">15%バフ付与</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/genntousi.png" alt="幻灯師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">幻灯師</div>
+              <div class="character-value">10%バフ付与</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kyokugeisi.jpeg" alt="曲芸師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">曲芸師</div>
+              <div class="character-value">25秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kottousyou.jpeg" alt="骨董商のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">骨董商</div>
+              <div class="character-value">25秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 椅子耐久 -->
+    <div class="ability-category" id="chair">
+      <h3>⏱️ 椅子耐久時間</h3>
+      <div class="base-value">基準値: 60秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 長い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ittoukoukaisi.jpeg" alt="一等航海士のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">一等航海士</div>
+              <div class="character-value">75秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/niwasi.jpeg" alt="庭師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">庭師</div>
+              <div class="character-value">66秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">傭兵</div>
+              <div class="character-value">66秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kuugunn.jpeg" alt="空軍のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">空軍</div>
+              <div class="character-value">66秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/noukannsi.jpeg" alt="納棺師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">納棺師</div>
+              <div class="character-value">66秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="記者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">記者</div>
+              <div class="character-value">66秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 足跡持続時間 -->
+    <div class="ability-category" id="footprint">
+      <h3>👣 足跡持続時間</h3>
+      <div class="base-value">基準値: 4秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 短い(有利)</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kottousyou.jpeg" alt="骨董商のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">骨董商</div>
+              <div class="character-value">3秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/boukennka.jpeg" alt="冒険家のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">冒険家</div>
+              <div class="character-value">3秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 長い(不利)</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/yazinn.jpeg" alt="野人のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">野人</div>
+              <div class="character-value">6秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ダウン自己治療 -->
+    <div class="ability-category" id="self-heal">
+      <h3>🩹 ダウン自己治療速度</h3>
+      <div class="base-value">基準値: 30秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">祭司</div>
+              <div class="character-value">21秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/isi.jpeg" alt="医師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">医師</div>
+              <div class="character-value">25秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/tannkousya.jpeg" alt="探鉱者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">探鉱者</div>
+              <div class="character-value">27秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/tyoukousi.jpeg" alt="調香師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">調香師</div>
+              <div class="character-value">34.5秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/zyuzyutusi.jpeg" alt="呪術師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">呪術師</div>
+              <div class="character-value">36秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">傭兵</div>
+              <div class="character-value">39秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 味方を治療する -->
+    <div class="ability-category" id="team-heal">
+      <h3>💊 味方を治療する速度</h3>
+      <div class="base-value">基準値: 15秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/isi.jpeg" alt="医師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">医師</div>
+              <div class="character-value">10秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">祭司</div>
+              <div class="character-value">13秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/tannkousya.jpeg" alt="探鉱者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">探鉱者</div>
+              <div class="character-value">13秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ningyousi.jpeg" alt="人形師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">人形師</div>
+              <div class="character-value">21秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 速窓乗り越え -->
+    <div class="ability-category" id="fast-window">
+      <h3>🪟 速窓乗り越え速度</h3>
+      <div class="base-value">基準値: 0.8秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ofensu.jpeg" alt="オフェンスのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">オフェンス</div>
+              <div class="character-value">0.7秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/battumann.jpeg" alt="バッツマンのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">バッツマン</div>
+              <div class="character-value">0.7秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">傭兵</div>
+              <div class="character-value">0.75秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kuugunn.jpeg" alt="空軍のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">空軍</div>
+              <div class="character-value">0.75秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kasaityousainn.jpeg" alt="火災調査員のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">火災調査員</div>
+              <div class="character-value">0.75秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg" alt="脱出マスターのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">脱出マスター</div>
+              <div class="character-value">0.75秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">祭司</div>
+              <div class="character-value">0.9秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kikaigisi.jpeg" alt="機械技師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">機械技師</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg" alt="心眼のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">心眼</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 遅窓乗り越え -->
+    <div class="ability-category" id="slow-window">
+      <h3>🪟 遅窓乗り越え速度</h3>
+      <div class="base-value">基準値: 1.2秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dorobou.jpeg" alt="泥棒のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">泥棒</div>
+              <div class="character-value">0.8秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/battumann.jpeg" alt="バッツマンのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">バッツマン</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ofensu.jpeg" alt="オフェンスのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">オフェンス</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">傭兵</div>
+              <div class="character-value">1.1秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kuugunn.jpeg" alt="空軍のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">空軍</div>
+              <div class="character-value">1.1秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kasaityousainn.jpeg" alt="火災調査員のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">火災調査員</div>
+              <div class="character-value">1.1秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg" alt="脱出マスターのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">脱出マスター</div>
+              <div class="character-value">1.1秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">祭司</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kikaigisi.jpeg" alt="機械技師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">機械技師</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg" alt="心眼のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">心眼</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 速板乗り越え -->
+    <div class="ability-category" id="fast-pallet">
+      <h3>🚧 速板乗り越え速度</h3>
+      <div class="base-value">基準値: 1.17秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ofensu.jpeg" alt="オフェンスのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">オフェンス</div>
+              <div class="character-value">0.9秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/battumann.jpeg" alt="バッツマンのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">バッツマン</div>
+              <div class="character-value">0.9秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">傭兵</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kuugunn.jpeg" alt="空軍のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">空軍</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kasaityousainn.jpeg" alt="火災調査員のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">火災調査員</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg" alt="脱出マスターのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">脱出マスター</div>
+              <div class="character-value">1.0秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">祭司</div>
+              <div class="character-value">1.3秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kikaigisi.jpeg" alt="機械技師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">機械技師</div>
+              <div class="character-value">1.35秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg" alt="心眼のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">心眼</div>
+              <div class="character-value">1.35秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 遅板乗り越え -->
+    <div class="ability-category" id="slow-pallet">
+      <h3>🚧 遅板乗り越え速度</h3>
+      <div class="base-value">基準値: 1.63秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dorobou.jpeg" alt="泥棒のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">泥棒</div>
+              <div class="character-value">1.1秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ofensu.jpeg" alt="オフェンスのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">オフェンス</div>
+              <div class="character-value">1.3秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/battumann.jpeg" alt="バッツマンのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">バッツマン</div>
+              <div class="character-value">1.3秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">傭兵</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kuugunn.jpeg" alt="空軍のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">空軍</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kasaityousainn.jpeg" alt="火災調査員のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">火災調査員</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg" alt="脱出マスターのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">脱出マスター</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">祭司</div>
+            <div class="character-value">1.8秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kikaigisi.jpeg" alt="機械技師のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">機械技師</div>
+            <div class="character-value">1.9秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg" alt="心眼のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">心眼</div>
+            <div class="character-value">1.9秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 板倒し速度 -->
+    <div class="ability-category" id="pallet-drop">
+      <h3>🚧 板倒し速度</h3>
+      <div class="base-value">基準値: 0.73秒</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/ofensu.jpeg" alt="オフェンスのアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">オフェンス</div>
+            <div class="character-value">0.4秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg" alt="傭兵のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">傭兵</div>
+            <div class="character-value">0.6秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kuugunn.jpeg" alt="空軍のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">空軍</div>
+            <div class="character-value">0.6秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kasaityousainn.jpeg" alt="火災調査員のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">火災調査員</div>
+            <div class="character-value">0.6秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg" alt="脱出マスターのアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">脱出マスター</div>
+            <div class="character-value">0.6秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/battumann.jpeg" alt="バッツマンのアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">バッツマン</div>
+            <div class="character-value">0.6秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg" alt="祭司のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">祭司</div>
+            <div class="character-value">0.8秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/kikaigisi.jpeg" alt="機械技師のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">機械技師</div>
+            <div class="character-value">0.85秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg" alt="心眼のアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">心眼</div>
+            <div class="character-value">0.85秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/sabaibagazou/koukuuennzinia.jpeg" alt="航空エンジニアのアイコン" class="character-img">
+            <div class="character-info">
+            <div class="character-name">航空エンジニア</div>
+            <div class="character-value">0.9秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+   <div id="talents" class="tab-content">
+    <h2 class="section-title">ハンター部門</h2>
+    
+    <div class="navigation">
+      <h2>📑 目次 - 見たい項目をクリック</h2>
+      
+      <div class="nav-section">
+        <div class="nav-parent hunter">ハンター個性</div>
+        <div class="nav-children">
+          <a href="#hunter-speed" class="nav-item">🏃 移動速度</a>
+          <a href="#hunter-window" class="nav-item">🪟 窓乗り越え</a>
+          <a href="#hunter-pallet-break" class="nav-item">🚧 板破壊</a>
+          <a href="#hunter-pallet-stun" class="nav-item">⚡ 板スタン</a>
+          <a href="#hunter-attack-range" class="nav-item">⚔️ 攻撃距離</a>
+          <a href="#hunter-miss-recovery" class="nav-item">💨 空振り硬直</a>
+          <a href="#hunter-charge-recovery" class="nav-item">⚡ 溜め攻撃硬直</a>
+          <a href="#hunter-carry" class="nav-item">🎈 風船持ち</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ハンター移動速度 -->
+    <div class="ability-category" id="hunter-speed">
+      <h3>🏃 移動速度</h3>
+      <div class="base-value">基準値: 4.64</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「フラバルー」</div>
+              <div class="character-value">5.18</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">リッパー</div>
+              <div class="character-value">4.73</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者(美人相)のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">芸者(美人相)</div>
+              <div class="character-value">4.73</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">白無常</div>
+              <div class="character-value">4.73</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「使徒」</div>
+              <div class="character-value">4.73</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg" alt="「アンデッド」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「アンデッド」</div>
+              <div class="character-value">4.73</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">書記官</div>
+              <div class="character-value">4.73</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">蝋人形師</div>
+              <div class="character-value">4.72</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「足萎えの羊」</div>
+              <div class="character-value">4.72</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg" alt="道化師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">道化師</div>
+              <div class="character-value">4.56</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">結魂者</div>
+              <div class="character-value">4.56</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者(般若相)のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">芸者(般若相)</div>
+              <div class="character-value">4.56</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="黒無常のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">黒無常</div>
+              <div class="character-value">4.56</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">信徒</div>
+              <div class="character-value">4.56</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">泣き虫</div>
+              <div class="character-value">4.56</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">オペラ歌手</div>
+              <div class="character-value">4.56</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 窓乗り越え速度 -->
+    <div class="ability-category" id="hunter-window">
+      <h3>🪟 窓乗り越え速度</h3>
+      <div class="base-value">※全ハンター異なる数値を持ちます</div>
+      
+      <div class="ability-group plus-group">
+        <div class="group-title">⬆️ 速い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hukusyuusya.jpeg" alt="復讐者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">復讐者</div>
+              <div class="character-value">1.31秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg" alt="道化師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">道化師</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg" alt="断罪狩人のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">断罪狩人</div>
+              <div class="character-value">1.4秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">写真家</div>
+              <div class="character-value">1.6秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/harinn.jpeg" alt="破輪のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">破輪</div>
+              <div class="character-value">1.79秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">芸者</div>
+              <div class="character-value">1.8秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="黒無常のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">黒無常</div>
+              <div class="character-value">1.8秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg" alt="時空の影のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">時空の影</div>
+              <div class="character-value">1.81秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg" alt="雑貨商のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">雑貨商</div>
+              <div class="character-value">1.83秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg" alt="ガードNo.26のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">ガードNo.26</div>
+              <div class="character-value">1.84秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「使徒」</div>
+              <div class="character-value">1.86秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">書記官</div>
+              <div class="character-value">1.86秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「足萎えの羊」</div>
+              <div class="character-value">1.86秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="ヴァイオリニストのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">ヴァイオリニスト</div>
+              <div class="character-value">1.9秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg" alt="彫刻師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">彫刻師</div>
+              <div class="character-value">1.9秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/akumu.jpeg" alt="「悪夢」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「悪夢」</div>
+              <div class="character-value">1.9秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">白無常</div>
+              <div class="character-value">1.91秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg" alt="漁師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">漁師</div>
+              <div class="character-value">1.91秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">蝋人形師</div>
+              <div class="character-value">1.91秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/matokage.jpeg" alt="魔トカゲのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">魔トカゲ</div>
+              <div class="character-value">1.93秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg" alt="「アンデッド」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「アンデッド」</div>
+              <div class="character-value">1.95秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">リッパー</div>
+              <div class="character-value">1.98秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/marhi.jpeg" alt="血の女王のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">血の女王</div>
+              <div class="character-value">1.98秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">信徒</div>
+              <div class="character-value">1.98秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">泣き虫</div>
+              <div class="character-value">1.98秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">隠者</div>
+              <div class="character-value">2秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg" alt="「ビリヤードプレイヤー」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「ビリヤードプレイヤー」</div>
+              <div class="character-value">2秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg" alt="「フールズ・ゴールド」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「フールズ・ゴールド」</div>
+              <div class="character-value">2.05秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ability-group minus-group">
+        <div class="group-title">⬇️ 遅い</div>
+        <div class="character-list">
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">黄衣の王</div>
+              <div class="character-value">2.13秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">「フラバルー」</div>
+              <div class="character-value">2.17秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg" alt="狂眼のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">狂眼</div>
+              <div class="character-value">2.22秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">夜の番人</div>
+              <div class="character-value">2.23秒</div>
+            </div>
+          </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">オペラ歌手</div>
+              <div class="character-value">2.33秒</div>
+            </div>
+          </div>
+          <div class="character-item">
+            <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者のアイコン" class="character-img">
+            <div class="character-info">
+              <div class="character-name">結魂者</div>
+              <div class="character-value">2.81秒</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 板破壊速度 -->
+<div class="ability-category" id="hunter-pallet-break">
+  <h3>🚧 板破壊速度</h3>
+  <div class="base-value">基準値: 2.54秒</div>
+  
+  <div class="ability-group plus-group">
+    <div class="group-title">⬆️ 速い</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg" alt="狂眼のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">狂眼</div>
+          <div class="character-value">1.89秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">写真家</div>
+          <div class="character-value">1.92秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="黒無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黒無常</div>
+          <div class="character-value">2秒</div>
+        </div>
+      </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">書記官</div>
+          <div class="character-value">2.13秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「使徒」</div>
+          <div class="character-value">2.17秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">信徒</div>
+          <div class="character-value">2.22秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">泣き虫</div>
+          <div class="character-value">2.23秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">芸者</div>
+          <div class="character-value">2.27秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/akumu.jpeg" alt="「悪夢」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「悪夢」</div>
+          <div class="character-value">2.27秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/matokage.jpeg" alt="魔トカゲのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">魔トカゲ</div>
+          <div class="character-value">2.32秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="彫刻師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">彫刻師</div>
+          <div class="character-value">2.38秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg" alt="「フールズ・ゴールド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フールズ・ゴールド」</div>
+          <div class="character-value">2.42秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">リッパー</div>
+          <div class="character-value">2.43秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg" alt="ガードNo.26のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ガードNo.26</div>
+          <div class="character-value">2.43秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg" alt="「アンデッド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「アンデッド」</div>
+          <div class="character-value">2.5秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ability-group minus-group">
+    <div class="group-title">⬇️ 遅い</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/harinn.jpeg" alt="破輪のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">破輪</div>
+          <div class="character-value">2.56秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">蝋人形師</div>
+          <div class="character-value">2.63秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg" alt="断罪狩人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">断罪狩人</div>
+          <div class="character-value">2.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg" alt="漁師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">漁師</div>
+          <div class="character-value">2.67秒</div>
+        </div>
+      </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">隠者</div>
+          <div class="character-value">2.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">夜の番人</div>
+          <div class="character-value">2.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「足萎えの羊」</div>
+          <div class="character-value">2.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="ヴァイオリニストのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ヴァイオリニスト</div>
+          <div class="character-value">2.73秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黄衣の王</div>
+          <div class="character-value">2.87秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フラバルー」</div>
+          <div class="character-value">2.87秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">オペラ歌手</div>
+          <div class="character-value">2.92秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">白無常</div>
+          <div class="character-value">2.95秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/marhi.jpeg" alt="血の女王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">血の女王</div>
+          <div class="character-value">2.96秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">結魂者</div>
+          <div class="character-value">3.14秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- 板スタン時間 -->
+<div class="ability-category" id="hunter-pallet-stun">
+  <h3>⚡ 板スタン時間</h3>
+  <div class="base-value">※全ハンター異なる数値を持ちます</div>
+  
+  <div class="ability-group plus-group">
+    <div class="group-title">⬆️ 短い(有利)</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg" alt="断罪狩人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">断罪狩人</div>
+          <div class="character-value">2.83秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">蝋人形師</div>
+          <div class="character-value">2.96秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="黒無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黒無常</div>
+          <div class="character-value">2.98秒</div>
+        </div>
+      </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg" alt="「フールズ・ゴールド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フールズ・ゴールド」</div>
+          <div class="character-value">3.14秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">リッパー</div>
+          <div class="character-value">3.27秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黄衣の王</div>
+          <div class="character-value">3.27秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">書記官</div>
+          <div class="character-value">3.3秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="ヴァイオリニストのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ヴァイオリニスト</div>
+          <div class="character-value">3.33秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/marhi.jpeg" alt="彫刻師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">彫刻師</div>
+          <div class="character-value">3.33秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg" alt="「アンデッド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「アンデッド」</div>
+          <div class="character-value">3.36秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">泣き虫</div>
+          <div class="character-value">3.42秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フラバルー」</div>
+          <div class="character-value">3.47秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg" alt="「ビリヤードプレイヤー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「ビリヤードプレイヤー」</div>
+          <div class="character-value">3.49秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hukusyuusya.jpeg" alt="復讐者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">復讐者</div>
+          <div class="character-value">3.53秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">隠者</div>
+          <div class="character-value">3.59秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg" alt="ガードNo.26のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ガードNo.26</div>
+          <div class="character-value">3.64秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/harinn.jpeg" alt="破輪のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">破輪</div>
+          <div class="character-value">3.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg" alt="漁師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">漁師</div>
+          <div class="character-value">3.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/akumu.jpeg" alt="「悪夢」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「悪夢」</div>
+          <div class="character-value">3.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg" alt="時空の影のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">時空の影</div>
+          <div class="character-value">3.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">芸者</div>
+          <div class="character-value">3.72秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">夜の番人</div>
+          <div class="character-value">3.75秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/marhi.jpeg" alt="血の女王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">血の女王</div>
+          <div class="character-value">3.76秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg" alt="道化師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">道化師</div>
+          <div class="character-value">3.8秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「使徒」</div>
+          <div class="character-value">3.81秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">結魂者</div>
+          <div class="character-value">3.85秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">信徒</div>
+          <div class="character-value">3.85秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">写真家</div>
+          <div class="character-value">3.94秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/matokage.jpeg" alt="魔トカゲのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">魔トカゲ</div>
+          <div class="character-value">4秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg" alt="雑貨商のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">雑貨商</div>
+          <div class="character-value">4秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ability-group minus-group">
+    <div class="group-title">⬇️ 長い(不利)</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「足萎えの羊」</div>
+          <div class="character-value">4.17秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">オペラ歌手</div>
+          <div class="character-value">4.17秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg" alt="狂眼のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">狂眼</div>
+          <div class="character-value">4.5秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">白無常</div>
+          <div class="character-value">4.66秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 通常攻撃距離 -->
+<div class="ability-category" id="hunter-attack-range">
+  <h3>⚔️ 通常攻撃距離</h3>
+  <div class="base-value">基準値: 2.87</div>
+  
+  <div class="ability-group plus-group">
+    <div class="group-title">⬆️ 長い</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黄衣の王</div>
+          <div class="character-value">3.54</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg" alt="「アンデッド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「アンデッド」</div>
+          <div class="character-value">3.54</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">書記官</div>
+          <div class="character-value">3.54</div>
+        </div>
+      </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">写真家</div>
+          <div class="character-value">3.46</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg" alt="彫刻師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">彫刻師</div>
+          <div class="character-value">3.46</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg" alt="「フールズ・ゴールド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フールズ・ゴールド」</div>
+          <div class="character-value">3.46</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「使徒」</div>
+          <div class="character-value">3.38</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">隠者</div>
+          <div class="character-value">3.37</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フラバルー」</div>
+          <div class="character-value">3.37</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/matokage.jpeg" alt="魔トカゲのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">魔トカゲ</div>
+          <div class="character-value">3.29</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg" alt="狂眼のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">狂眼</div>
+          <div class="character-value">3.21</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg" alt="漁師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">漁師</div>
+          <div class="character-value">3.21</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/harinn.jpeg" alt="破輪のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">破輪</div>
+          <div class="character-value">3.21</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">蝋人形師</div>
+          <div class="character-value">3.21</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">夜の番人</div>
+          <div class="character-value">3.2</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">白無常</div>
+          <div class="character-value">3.15</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「足萎えの羊」</div>
+          <div class="character-value">3.12</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/akumu.jpeg" alt="「悪夢」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「悪夢」</div>
+          <div class="character-value">3.12</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg" alt="「ビリヤードプレイヤー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「ビリヤードプレイヤー」</div>
+          <div class="character-value">3.12</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="黒無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黒無常</div>
+          <div class="character-value">3.06</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg" alt="道化師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">道化師</div>
+          <div class="character-value">3.04</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">泣き虫</div>
+          <div class="character-value">3.04</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="ヴァイオリニストのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ヴァイオリニスト</div>
+          <div class="character-value">3.04</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg" alt="雑貨商のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">雑貨商</div>
+          <div class="character-value">3.03</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg" alt="断罪狩人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">断罪狩人</div>
+          <div class="character-value">2.95</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg" alt="時空の影のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">時空の影</div>
+          <div class="character-value">2.95</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ability-group minus-group">
+    <div class="group-title">⬇️ 短い</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">オペラ歌手</div>
+          <div class="character-value">2.78</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg" alt="ガードNo.26のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ガードNo.26</div>
+          <div class="character-value">2.78</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">リッパー</div>
+          <div class="character-value">2.7</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">信徒</div>
+          <div class="character-value">2.7</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">芸者</div>
+          <div class="character-value">2.7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 空振り硬直時間 -->
+<div class="ability-category" id="hunter-miss-recovery">
+  <h3>💨 空振り硬直時間</h3>
+  <div class="base-value">基準値: 0.84秒</div>
+  
+  <div class="ability-group plus-group">
+    <div class="group-title">⬆️ 短い(有利)</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="黒無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黒無常</div>
+          <div class="character-value">0.39秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">白無常</div>
+          <div class="character-value">0.43秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">オペラ歌手</div>
+          <div class="character-value">0.46秒</div>
+        </div>
+      </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「足萎えの羊」</div>
+          <div class="character-value">0.47秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="血の女王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">血の女王</div>
+          <div class="character-value">0.5秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">書記官</div>
+          <div class="character-value">0.57秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">写真家</div>
+          <div class="character-value">0.58秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg" alt="時空の影のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">時空の影</div>
+          <div class="character-value">0.6秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg" alt="「フールズ・ゴールド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フールズ・ゴールド」</div>
+          <div class="character-value">0.62秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">蝋人形師</div>
+          <div class="character-value">0.64秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/harinn.jpeg" alt="破輪のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">破輪</div>
+          <div class="character-value">0.64秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="ヴァイオリニストのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ヴァイオリニスト</div>
+          <div class="character-value">0.64秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">隠者</div>
+          <div class="character-value">0.66秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">夜の番人</div>
+          <div class="character-value">0.66秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg" alt="雑貨商のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">雑貨商</div>
+          <div class="character-value">0.66秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg" alt="「ビリヤードプレイヤー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「ビリヤードプレイヤー」</div>
+          <div class="character-value">0.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg" alt="漁師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">漁師</div>
+          <div class="character-value">0.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">信徒</div>
+          <div class="character-value">0.69秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">泣き虫</div>
+          <div class="character-value">0.7秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黄衣の王</div>
+          <div class="character-value">0.73秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">結魂者</div>
+          <div class="character-value">0.74秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">芸者</div>
+          <div class="character-value">0.77秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「使徒」</div>
+          <div class="character-value">0.78秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg" alt="ガードNo.26のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ガードNo.26</div>
+          <div class="character-value">0.79秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg" alt="道化師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">道化師</div>
+          <div class="character-value">0.8秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg" alt="断罪狩人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">断罪狩人</div>
+          <div class="character-value">0.8秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg" alt="「アンデッド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「アンデッド」</div>
+          <div class="character-value">0.8秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フラバルー」</div>
+          <div class="character-value">0.81秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/matokage.jpeg" alt="魔トカゲのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">魔トカゲ</div>
+          <div class="character-value">0.82秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ability-group minus-group">
+    <div class="group-title">⬇️ 長い(不利)</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">リッパー</div>
+          <div class="character-value">0.87秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg" alt="彫刻師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">彫刻師</div>
+          <div class="character-value">0.93秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/akumu.jpeg" alt="「悪夢」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「悪夢」</div>
+          <div class="character-value">0.94秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg" alt="狂眼のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">狂眼</div>
+          <div class="character-value">0.98秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 溜め攻撃硬直時間 -->
+<div class="ability-category" id="hunter-charge-recovery">
+  <h3>⚡ 溜め攻撃硬直時間</h3>
+  <div class="base-value">基準値: 3.46秒</div>
+  
+  <div class="ability-group plus-group">
+    <div class="group-title">⬆️ 短い(有利)</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">写真家</div>
+          <div class="character-value">2.58秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="黒無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黒無常</div>
+          <div class="character-value">3秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">オペラ歌手</div>
+          <div class="character-value">3.04秒</div>
+        </div>
+      </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">芸者</div>
+          <div class="character-value">3.04秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">信徒</div>
+          <div class="character-value">3.12秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">泣き虫</div>
+          <div class="character-value">3.12秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">結魂者</div>
+          <div class="character-value">3.12秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">白無常</div>
+          <div class="character-value">3.2秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/akumu.jpeg" alt="「悪夢」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「悪夢」</div>
+          <div class="character-value">3.29秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">夜の番人</div>
+          <div class="character-value">3.33秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg" alt="狂眼のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">狂眼</div>
+          <div class="character-value">3.36秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg" alt="雑貨商のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">雑貨商</div>
+          <div class="character-value">3.37秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg" alt="道化師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">道化師</div>
+          <div class="character-value">3.38秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="ヴァイオリニストのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ヴァイオリニスト</div>
+          <div class="character-value">3.38秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg" alt="「ビリヤードプレイヤー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「ビリヤードプレイヤー」</div>
+          <div class="character-value">3.38秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">隠者</div>
+          <div class="character-value">3.52秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/harinn.jpeg" alt="破輪のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">破輪</div>
+          <div class="character-value">3.54秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フラバルー」</div>
+          <div class="character-value">3.54秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">蝋人形師</div>
+          <div class="character-value">3.54秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">写真家</div>
+          <div class="character-value">3.63秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「足萎えの羊」</div>
+          <div class="character-value">3.63秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg" alt="漁師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">漁師</div>
+          <div class="character-value">3.67秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">隠者</div>
+          <div class="character-value">3.71秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg" alt="「フールズ・ゴールド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フールズ・ゴールド」</div>
+          <div class="character-value">3.76秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「使徒」</div>
+          <div class="character-value">3.77秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg" alt="ガードNo.26のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ガードNo.26</div>
+          <div class="character-value">3.79秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">書記官</div>
+          <div class="character-value">3.8秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/matokage.jpeg" alt="魔トカゲのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">魔トカゲ</div>
+          <div class="character-value">3.8秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">白無常</div>
+          <div class="character-value">3.83秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hukusyuusya.jpeg" alt="復讐者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">復讐者</div>
+          <div class="character-value">3.86秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg" alt="「アンデッド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「アンデッド」</div>
+          <div class="character-value">3.88秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg" alt="彫刻師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">彫刻師</div>
+          <div class="character-value">4.05秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg" alt="時空の影のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">時空の影</div>
+          <div class="character-value">4.14秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ability-group minus-group">
+    <div class="group-title">⬇️ 長い(不利)</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黄衣の王</div>
+          <div class="character-value">4.2秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">泣き虫</div>
+          <div class="character-value">4.25秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">芸者</div>
+          <div class="character-value">4.27秒</div>
+        </div>
+      </div>
+    <!-- もっと見るボタン -->
+    <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg" alt="断罪狩人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">断罪狩人</div>
+          <div class="character-value">4.29秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">リッパー</div>
+          <div class="character-value">4.37秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hukusyuusya.jpeg" alt="復讐者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">復讐者</div>
+          <div class="character-value">4.47秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg" alt="白無常のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">白無常</div>
+          <div class="character-value">5.49秒</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黄衣の王</div>
+          <div class="character-value">5.57秒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 風船持ち時の移動速度 -->
+<div class="ability-category" id="hunter-carry">
+  <h3>🎈 風船持ち時の移動速度</h3>
+  <div class="base-value">基準値: 1.96</div>
+  
+  <div class="ability-group plus-group">
+    <div class="group-title">⬆️ 速い</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hukusyuusya.jpeg" alt="復讐者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">復讐者</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg" alt="道化師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">道化師</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg" alt="断罪狩人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">断罪狩人</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <!-- もっと見るボタン -->
+      <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパーのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">リッパー</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">結魂者</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/geisya.jpeg" alt="芸者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">芸者</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">黄衣の王</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「足萎えの羊」</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg" alt="「ビリヤードプレイヤー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「ビリヤードプレイヤー」</div>
+          <div class="character-value">1.96</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg" alt="オペラ歌手のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">オペラ歌手</div>
+          <div class="character-value">1.94</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/harinn.jpeg" alt="破輪のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">破輪</div>
+          <div class="character-value">1.92</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg" alt="蝋人形師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">蝋人形師</div>
+          <div class="character-value">1.91</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">夜の番人</div>
+          <div class="character-value">1.91</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/innzya.jpeg" alt="隠者のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">隠者</div>
+          <div class="character-value">1.87</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ability-group minus-group">
+    <div class="group-title">⬇️ 遅い</div>
+    <div class="character-list">
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg" alt="狂眼のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">狂眼</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg" alt="写真家のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">写真家</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg" alt="信徒のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">信徒</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <!-- もっと見るボタン -->
+      <button class="show-more-btn">もっと見る</button>
+      <div class="character-item">
+        <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg" alt="泣き虫のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">泣き虫</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/matokage.jpeg" alt="魔トカゲのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">魔トカゲ</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="	https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/marhi.jpeg" alt="血の女王のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">血の女王</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg" alt="ガードNo.26のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ガードNo.26</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/sito.jpeg" alt="「使徒」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「使徒」</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg" alt="ヴァイオリニストのアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">ヴァイオリニスト</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg" alt="彫刻師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">彫刻師</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/akumu.jpeg" alt="「悪夢」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「悪夢」</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg" alt="「フールズ・ゴールド」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フールズ・ゴールド」</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg" alt="時空の影のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">時空の影</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg" alt="雑貨商のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">雑貨商</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">「フラバルー」</div>
+          <div class="character-value">1.8</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg" alt="書記官のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">書記官</div>
+          <div class="character-value">1.78</div>
+        </div>
+      </div>
+      <div class="character-item">
+        <img src="https://daigoroku-website.web.app/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg" alt="漁師のアイコン" class="character-img">
+        <div class="character-info">
+          <div class="character-name">漁師</div>
+          <div class="character-value">1.74</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
   </div>
 
-  <div class="ranking-category">
-    <h3>🆘 救助速度</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/傭兵.png" alt="傭兵" class="character-icon"><span class="name">傭兵</span></li>
-      <li><span class="rank">2位</span><img src="images/オフェンス.png" alt="オフェンス" class="character-icon"><span class="name">オフェンス</span></li>
-      <li><span class="rank">3位</span><img src="images/一等航海士.png" alt="一等航海士" class="character-icon"><span class="name">一等航海士</span></li>
-    </ol>
-  </div>
 
-  <div class="ranking-category">
-    <h3>🌿 隠密特化</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/曲芸師.png" alt="曲芸師" class="character-icon"><span class="name">曲芸師</span></li>
-      <li><span class="rank">2位</span><img src="images/冒険家.png" alt="冒険家" class="character-icon"><span class="name">冒険家</span></li>
-      <li><span class="rank">3位</span><img src="images/納棺師.png" alt="納棺師" class="character-icon"><span class="name">納棺師</span></li>
-    </ol>
-  </div>
-
-  <div class="ranking-category">
-    <h3>🏃‍♂️ 走る速さ</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/曲芸師.png" alt="曲芸師" class="character-icon"><span class="name">曲芸師</span></li>
-      <li><span class="rank">2位</span><img src="images/泥棒.png" alt="泥棒" class="character-icon"><span class="name">泥棒</span></li>
-      <li><span class="rank">3位</span><img src="images/納棺師.png" alt="納棺師" class="character-icon"><span class="name">納棺師</span></li>
-    </ol>
-  </div>
-
-  <div class="ranking-category">
-    <h3>🩹 治療速度</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/医師.png" alt="医師" class="character-icon"><span class="name">医師</span></li>
-      <li><span class="rank">2位</span><img src="images/心理学者.png" alt="心理学者" class="character-icon"><span class="name">心理学者</span></li>
-      <li><span class="rank">3位</span><img src="images/昆虫学者.png" alt="昆虫学者" class="character-icon"><span class="name">昆虫学者</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="ranking">
-  <h2>ハンター部門ランキング</h2>
-
-  <div class="ranking-category">
-    <h3>📏 攻撃範囲の広さ</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/血の女王.png" alt="血の女王" class="character-icon"><span class="name">血の女王</span></li>
-      <li><span class="rank">2位</span><img src="images/蝋人形師.png" alt="蝋人形師" class="character-icon"><span class="name">蝋人形師</span></li>
-      <li><span class="rank">3位</span><img src="images/写真家.png" alt="写真家" class="character-icon"><span class="name">写真家</span></li>
-    </ol>
-  </div>
-
-  <div class="ranking-category">
-    <h3>⏳ ため攻撃範囲</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/泣き虫.png" alt="泣き虫" class="character-icon"><span class="name">泣き虫</span></li>
-      <li><span class="rank">2位</span><img src="images/破輪.png" alt="破輪" class="character-icon"><span class="name">破輪</span></li>
-      <li><span class="rank">3位</span><img src="images/道化師.png" alt="道化師" class="character-icon"><span class="name">道化師</span></li>
-    </ol>
-  </div>
-
-  <div class="ranking-category">
-    <h3>⚡ スタンからの復帰の速さ</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/使徒.png" alt="使徒" class="character-icon"><span class="name">使徒</span></li>
-      <li><span class="rank">2位</span><img src="images/レオ.png" alt="レオ" class="character-icon"><span class="name">レオ</span></li>
-      <li><span class="rank">3位</span><img src="images/アンデッド.png" alt="アンデッド" class="character-icon"><span class="name">アンデッド</span></li>
-    </ol>
-  </div>
-
-  <div class="ranking-category">
-    <h3>🚶‍♀️ 移動速度</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/血の女王.png" alt="血の女王" class="character-icon"><span class="name">血の女王</span></li>
-      <li><span class="rank">2位</span><img src="images/ヴァイオリニスト.png" alt="ヴァイオリニスト" class="character-icon"><span class="name">ヴァイオリニスト</span></li>
-      <li><span class="rank">3位</span><img src="images/リッパー.png" alt="リッパー" class="character-icon"><span class="name">リッパー</span></li>
-    </ol>
-  </div>
-
-  <div class="ranking-category">
-    <h3>⚔️ 攻撃の出の速さ</h3>
-    <ol>
-      <li><span class="rank">1位</span><img src="images/彫刻師.png" alt="彫刻師" class="character-icon"><span class="name">彫刻師</span></li>
-      <li><span class="rank">2位</span><img src="images/夢の魔女.png" alt="夢の魔女" class="character-icon"><span class="name">夢の魔女</span></li>
-      <li><span class="rank">3位</span><img src="images/白黒無常.png" alt="白黒無常" class="character-icon"><span class="name">白黒無常</span></li>
-    </ol>
-  </div>
-</section>
   </main>
 
         </div>
@@ -224,16 +3057,16 @@
 
     <footer>
       <div class="footer-links">
-        <a href="../プライバシー/プライバシーポリシー.html"
+        <a href="../puraibasi/puraibasi.html"
           >プライバシーポリシー</a
         >
         <a href="../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
-        <a href="../運営者情報/運営者ブロック.html">運営情報</a>
+        <a href="../uneizyouhou/uneizyouhou.html">運営情報</a>
       </div>
       <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
     </footer>
 
-
+    <script src="script.js"></script>
     <script src="../script/kyararisuto.js"></script>
     <script src="../script/ngcomento.js"></script>
     <script src="../script/honbaga.js"></script>

@@ -334,6 +334,162 @@ h2#right-traits {
   margin-top: 2em;
 }
 
+/* ▼ サマリーセクション（サバイバー） */
+.summary-section.survivor {
+  margin: 50px 0 40px;
+}
+
+.summary-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summary-section h2::before {
+  content: "📋";
+  font-size: 32px;
+}
+
+.summary-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* ▼ 重要ポイント */
+.summary-points {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.summary-points h3 {
+  font-size: 20px;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.summary-points ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.summary-points li {
+  padding: 12px 0;
+  border-bottom: 1px dashed #e0e0e0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.summary-points li:last-child {
+  border-bottom: none;
+}
+
+.summary-points li::before {
+  content: "✓";
+  color: #3498db;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.summary-points strong {
+  color: #3498db;
+  font-weight: 600;
+}
+
+/* ▼ Tips ボックス */
+.tip-box {
+  background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 25px;
+  border-left: 5px solid #e17055;
+}
+
+.tip-box h4 {
+  font-size: 18px;
+  color: #d63031;
+  margin-bottom: 10px;
+}
+
+.tip-box h4::before {
+  content: "💡";
+  margin-right: 6px;
+  font-size: 20px;
+}
+
+.tip-box p {
+  color: #2d3436;
+  font-size: 15px;
+}
+
+/* ▼ 他ガイド誘導（ハンターへ） */
+.other-guide-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px 0 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 3px solid #764ba2;
+  position: relative;
+}
+
+.other-guide-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.other-guide-section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.other-guide-section img {
+  width: 70%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ▼ リンクボタン */
+.guide-link-card {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  padding: 25px 50px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+}
+
+.guide-link-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(118, 75, 162, 0.6);
+}
+
+.guide-link-card::after {
+  content: "→";
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.guide-link-card:hover::after {
+  transform: translateX(8px);
+}
+
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;

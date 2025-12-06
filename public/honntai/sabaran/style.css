@@ -196,4 +196,7 @@ a {
   .text-sp {
     display: block;
   }
+  .tier-ranking {
+    padding: 10px;
+  }
 }

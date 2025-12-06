@@ -231,6 +231,10 @@ h2 {
   background-color: #ffe0b2;
 }
 
+.site-summary {
+  margin-bottom: 2cm;
+}
+
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;

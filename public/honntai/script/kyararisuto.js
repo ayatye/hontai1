@@ -418,6 +418,11 @@ const hunters = [
     url: "/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg",
     link: "/honntai/hanta/biriyadopureiya/biriyadopureiya.html",
   },
+  {
+    name: "女王蜂",
+    url: "/honntai/images/kyaragazou/hanntagazou/zyououbati.jpeg",
+    link: "/honntai/hanta/zyououbati/zyououbati.html",
+  },
 ];
 
 // 仮のアイコン画像URL
