@@ -250,6 +250,11 @@ const survivors = [
     url: "/honntai/images/kyaragazou/sabaibagazou/genntousi.png",
     link: "/honntai/sabaiba/genntousi/genntousi.html",
   },
+  {
+    name: "闘牛士",
+    url: "/honntai/images/kyaragazou/sabaibagazou/tougyuusi.jpeg",
+    link: "/honntai/sabaiba/tougyuusi/tougyuusi.html",
+  },
 ];
 
 const hunters = [
@@ -439,6 +444,7 @@ survivors.forEach((survivor) => {
   // アイコン画像を作成
   const img = document.createElement("img");
   img.src = survivor.url;
+  img.alt = survivor.name;
 
   // 矢印を作成
   const arrow = document.createElement("span");
@@ -464,6 +470,7 @@ hunters.forEach((hunter) => {
   // アイコン画像を作成
   const img = document.createElement("img");
   img.src = hunter.url;
+  img.alt = hunter.name;
 
   const a = document.createElement("a");
   a.href = hunter.link;

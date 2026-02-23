@@ -699,6 +699,97 @@ a {
   font-size: 0.9rem;
 }
 
+.feature-section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #43e97b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.feature-description {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 5px solid #43e97b;
+}
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.rules-table th {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.rules-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: top;
+}
+.rules-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+.rules-table tr:hover {
+  background-color: #e3f2fd;
+}
+.rule-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  min-width: 180px;
+}
+.rule-detail {
+  color: #555;
+  line-height: 1.6;
+}
+.new-badge {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 8px;
+  animation: pulse 2s infinite;
+  display: inline-block;
+}
+.removed-badge {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 8px;
+  display: inline-block;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;

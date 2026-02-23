@@ -193,6 +193,32 @@ main {
   display: none; /* 初期状態で非表示 */
 }
 
+.event-phase {
+  background-color: #f0f8ff;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+.event-phase h4 {
+  color: #007bff;
+  margin-top: 0;
+  font-size: 1.1em;
+}
+.event-phase p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.period-tag {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin-bottom: 10px;
+}
+
 /* もっと見るボタン */
 #load-more-btn {
   display: block;

@@ -1,18 +1,99 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- 基本設定 -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
     <title>
       「コピーキャット」完全攻略ガイド - IdentityV（第五人格）攻略【第五録】
     </title>
+    <meta
+      name="description"
+      content="IdentityV（第五人格）のコピーキャットモード完全攻略ガイド。探偵、模倣者、謎の来客の全役職解説、勝利条件、立ち回り戦略を徹底紹介。2025年7月最新アップデート対応で人狼ゲームのような推理と駆け引きを楽しもう。"
+    />
+    <meta
+      name="keywords"
+      content="IdentityV,第五人格,コピーキャットモード,人狼ゲーム,探偵,模倣者,謎の来客,役職,推理,心理戦,攻略"
+    />
+    <meta name="last-modified" content="2025-01-09" />
+
+    <!-- OGP -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="コピーキャットモード完全攻略 - IdentityV【第五録】"
+    />
+    <meta
+      property="og:description"
+      content="探偵・模倣者・謎の来客の全役職解説と勝利戦略を徹底紹介。2025年7月最新アップデート対応の完全ガイド。"
+    />
+    <meta
+      property="og:url"
+      content="https://daigoroku-website.web.app/honntai/kopiki/kopiki.html"
+    />
+    <meta
+      property="og:image"
+      content="https://daigoroku-website.web.app/honntai/images/kopiki.jpeg"
+    />
+    <meta property="og:site_name" content="第五録" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta
+      property="article:modified_time"
+      content="2025-01-09T00:00:00+09:00"
+    />
+    <meta
+      property="article:published_time"
+      content="2025-01-09T00:00:00+09:00"
+    />
+    <meta property="article:author" content="第五録" />
+    <meta property="article:section" content="ゲーム攻略" />
+    <meta property="article:tag" content="IdentityV" />
+    <meta property="article:tag" content="第五人格" />
+    <meta property="article:tag" content="コピーキャットモード" />
+    <meta property="article:tag" content="人狼ゲーム" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="【2025年最新】コピーキャットモード完全攻略 - IdentityV"
+    />
+    <meta
+      name="twitter:description"
+      content="全役職＆勝利戦略を徹底解説！探偵・模倣者・謎の来客の立ち回りから心理戦まで。最新アップデート対応"
+    />
+    <meta
+      name="twitter:image"
+      content="https://daigoroku-website.web.app/honntai/images/kopiki.jpeg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="コピーキャットモード攻略ガイドのサムネイル画像"
+    />
+
+    <!-- favicon -->
+    <link rel="icon" href="../images/サイコロicon.jpeg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="../images/サイコロicon.jpeg" />
+
+    <!-- 検索エンジン最適化 -->
+    <link
+      rel="canonical"
+      href="https://daigoroku-website.web.app/honntai/kopiki/kopiki.html"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../style/hanbaga.css" />
     <link rel="stylesheet" href="../style/sidebar.css" />
     <link rel="stylesheet" href="../style/logo.css" />
     <link rel="stylesheet" href="../style/comment.css" />
   </head>
-
   <body>
     <header>
       <nav>
@@ -82,6 +163,14 @@
           </section>
 
           <section id="updates">
+            <div class="update-notice">
+              <h3>📌 2026.2.12 新身分追加</h3>
+              <ul>
+                <li>
+                  ライトキーパー（探偵団）、評論家（探偵団）、指揮者（模倣者）、監督（謎の来客）
+                </li>
+              </ul>
+            </div>
             <div class="update-notice">
               <h3>📌 2025.7.17 新身分追加</h3>
               <ul>
@@ -188,6 +277,14 @@
                     <strong>レンジャー：</strong
                     >任意の位置に猟犬の幽霊を設置でき、いつでも猟犬の幽霊と視野を交換可能
                   </li>
+                  <li>
+                    <strong>ライトキーパー：</strong
+                    >ライトキーパーはスキルを使用することで現在生存している演繹者の位置を確認できる。
+                  </li>
+                  <li>
+                    <strong>評論家<span class="new-badge">NEW</span>：</strong
+                    >評論家は会議中に投じられた投票数を蓄積できる。被投票数が一定に達する度、他の演繹者を脱落させる能力を1回得る。
+                  </li>
                 </ul>
               </div>
             </div>
@@ -217,6 +314,12 @@
                     <strong>処刑人：</strong
                     >模倣者陣営の残りメンバーが自分だけになった時、追加で他人を脱落させる能力を得る。この追加能力は本来の脱落能力とは別でクールタイムが計算される
                   </li>
+                  <li>
+                    <strong>指揮者<span class="new-badge">NEW</span>：</strong
+                    >指揮者は任意のエリアに円形ステージを設置できる。舞台範囲内にいる他陣営の演繹者は混乱状態に陥り、範囲外へ出ると効果は解除される。<br />
+                    混乱状態効果：演繹者の視界がぼやけ、視認する他の演繹者のモデルと番号が乱れ、指揮者が奏でる楽曲しか聞こえなくなる。<br />
+                    勝利目標：他の陣営のメンバーを脱落させることで大多数の投票権を占有するか、他の演繹者が突発事件-バルブを閉じるを達成できなかった場合、勝利となる。
+                  </li>
                 </ul>
               </div>
             </div>
@@ -245,6 +348,11 @@
                   <li>
                     <strong>降霊術師：</strong
                     >脱落すると直接脱落とならず、会議終了後に霊魂状態になる。霊魂状態ではスキルを使用することで他の演繹者から視認されず、追撃者から逃れることが可能
+                  </li>
+                  <li>
+                    <strong>監督<span class="new-badge">NEW</span>：</strong
+                    >監督は全ての模倣者が脱落するまで、他の演繹者を脱落させる能力を得られない。監督は会議段階中にゲームフィールドに戻り、ヒントに応じて対応する身分の演繹者の映像を脱落させることができる。脱落対象が正しければ、その演繹者は実際に脱落する。脱落対象が間違っていた場合、監督は今回の会議でゲームフィールドに戻れなくなる。監督が会議段階で他の演繹者を2回脱落させるか、生存している模倣者がいなくなり、残り演繹者の数が3以下になると、「エンディング」に突入する。<br />
+                    エンディング：65/75秒間持続し、この期間中は会議を開始できない。監督は姿を隠し、移動速度が上昇するとともに、クールタイムなしで脱落能力を使用可能になる。エンディング終了時に監督以外の演繹者が生存していれば、監督が脱落となる。
                   </li>
                 </ul>
               </div>

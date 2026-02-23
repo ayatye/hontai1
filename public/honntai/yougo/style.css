@@ -279,12 +279,6 @@ main {
   .filter-tabs {
     justify-content: flex-start;
   }
-  .sidebar {
-    padding: 10px;
-  }
-  #comment-section {
-    width: 80%;
-  }
 
   .character-image {
     max-width: 200px;

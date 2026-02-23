@@ -15,11 +15,9 @@ body {
 h1 {
   font-size: 1.5em;
 }
-
 h2 {
   color: #000;
 }
-
 a {
   font-weight: bold;
   color: #000;
@@ -33,7 +31,6 @@ a {
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .separator-line {
   border: none;
   border-top: 2px solid #ddd;
@@ -41,13 +38,129 @@ a {
   width: 90%;
   position: relative;
 }
-
 .konntent {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+/* キャラクターアイコン（ヘッダー内） */
+.character-icon {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+}
+.emoto-image {
+  width: 70%;
+  padding: 10px;
+}
 
-#locker-usage {
+/* ステップガイド用スタイル */
+.step-guide {
+  margin-top: 20px;
+}
+
+.step {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+}
+
+.step-number {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.step-text {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.guide-image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* おさらいボックス */
+.summary-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff3e0;
+  border-radius: 10px;
+  border: 2px solid #ff9800;
+}
+
+.summary-box h4 {
+  margin-top: 0;
+  color: #ff6f00;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.summary-steps {
+  margin: 0;
+  padding-left: 25px;
+  line-height: 2;
+}
+
+.summary-steps li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.summary-steps strong {
+  color: #ff6f00;
+}
+
+/* 新規追加:アップデート情報セクション */
+#update-info {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background: #fff9e6;
+  border-radius: 10px;
+  border: 2px solid #ffd700;
+  font-family: "Arial", sans-serif;
+}
+#update-info h2 {
+  font-size: 24px;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  color: #ff6b00;
+}
+#update-info h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #444;
+}
+.update-date {
+  font-weight: bold;
+  color: #ff6b00;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.placeholder-text {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #666;
+  font-style: italic;
+  border-left: 4px solid #ccc;
+}
+#emoto-usage {
   max-width: 700px;
   margin: auto;
   padding: 20px;
@@ -56,54 +169,76 @@ a {
   border: 1px solid #ddd;
   font-family: "Arial", sans-serif;
 }
-
-#locker-usage h2 {
+#emoto-usage h2 {
   font-size: 24px;
   border-bottom: 2px solid #ccc;
   padding-bottom: 6px;
   margin-bottom: 16px;
 }
-
-#locker-usage h3 {
+#emoto-usage h3 {
   margin-top: 24px;
   font-size: 20px;
   color: #444;
 }
-
-#locker-usage ul {
+#emoto-usage ul {
   padding-left: 20px;
   margin-top: 10px;
 }
-
-#locker-usage li {
+#emoto-usage li {
   margin-bottom: 12px;
 }
-
-.video-placeholder {
-  display: inline-block;
-  background: #eee;
-  color: #666;
-  font-size: 14px;
-  padding: 4px 10px;
-  margin-top: 4px;
-  border-radius: 4px;
+#emoto-usage video {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  display: block;
 }
-
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;
   }
-
   .wrapper {
-    flex-direction: column; /* レイアウトを縦方向に */
+    flex-direction: column;
     padding-left: 2cm;
   }
 }
-
 /* スマホ対応のレスポンシブデザイン */
 @media (max-width: 768px) {
   .wrapper {
     padding-left: 1cm;
     padding-right: 1cm;
+  }
+
+  #update-info,
+  #emoto-usage {
+    padding: 15px;
+  }
+  .character-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .step {
+    padding: 12px;
+  }
+
+  .step-number {
+    font-size: 13px;
+    padding: 4px 12px;
+  }
+
+  .guide-image {
+    max-width: 100%;
+  }
+
+  .summary-box {
+    padding: 15px;
+  }
+
+  .summary-steps {
+    padding-left: 20px;
+    font-size: 14px;
   }
 }

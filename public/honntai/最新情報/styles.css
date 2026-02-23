@@ -182,6 +182,63 @@ main h2 {
   background-color: #0056b3;
 }
 
+.red-marker {
+  color: #000000;
+  background: linear-gradient(transparent 60%, #ff000080 60%);
+  font-weight: bold;
+}
+
+.sub-section {
+  background-color: #f9f9f9;
+  border-left: 4px solid #007bff;
+  padding: 10px 15px;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+}
+.sub-section h4 {
+  margin: 0 0 6px 0;
+  color: #007bff;
+  font-size: 1em;
+}
+.sub-section p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 0.95em;
+}
+.period-badge {
+  display: inline-block;
+  background-color: #ffe082;
+  color: #6d4c00;
+  font-size: 0.82em;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+.identity-block {
+  background: #f0f4ff;
+  border: 1px solid #b0c4ff;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.identity-block h4 {
+  margin: 0 0 4px 0;
+  color: #2244aa;
+  font-size: 1em;
+}
+.identity-block .faction {
+  font-size: 0.85em;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 4px;
+}
+.identity-block p {
+  margin: 3px 0;
+  font-size: 0.93em;
+  color: #444;
+}
+
 @media (max-width: 1210px) {
   body {
     line-height: 1.4;

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野人 - IdentityV（第五人格）攻略【第五録】</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../style/hanbaga.css" />
+    <link rel="stylesheet" href="../../style/sidebar.css" />
+    <link rel="stylesheet" href="../../style/logo.css" />
+    <link rel="stylesheet" href="../../style/comment.css" />
                   <!-- SEO -->
   <meta name="description" content="IdentityV（第五人格）のサバイバー「野人」の完全攻略ガイド。外在特質解説、立ち回り方、おすすめ人格、応用テクニックまで詳しく紹介。初心者から上級者まで役立つ攻略情報。">
   <meta name="keywords" content="IdentityV,野人,第五人格,サバイバー,攻略,人格,立ち回り">
@@ -28,7 +32,7 @@
 <body>
     <!-- Your custom header goes here -->
     <header>
-        <nav-gert>
+        <nav>
           <div class="logo">
             <a href="../../../index.html">
               <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
@@ -65,17 +69,16 @@
                 >
               </li>
             </ul>
-            <div id="overlay"></div>
-            <nav-gert id="burger-menu">
-              <input type="checkbox" id="hamburger" style="display: none" />
-              <label for="hamburger" class="c-hamburger-menu__button">
-                <span class="c-hamburger-menu__button-mark"></span>
-                <span class="c-hamburger-menu__button-mark"></span>
-                <span class="c-hamburger-menu__button-mark"></span>
-              </label>
-            </nav-gert>
-          </header>
-        </nav-gert>
+              <li class="c-header__list-item">
+                <a href="/honntai/puraibasi/puraibasi.html" class="c-header__list-link">プライバシーポリシー</a>
+              </li>
+            </ul>
+          <label for="hamburger" class="c-hamburger-menu__button">
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+          </label>
+        </nav>
       </header>
 
       <section class="banner">
@@ -85,7 +88,7 @@
 
       <div class="wrapper">
         <div class="konntent">
-    <nav>
+    <nav class="character-nav">
         <h2>目次</h2>
         <ul>
             <li><a href="#evaluation">キャラの評価</a></li>
@@ -170,55 +173,7 @@
         </div>
     </section>
         </section>
-        <section id="advanced">
-	<div class="advanced-skills-section">
-    <h2>探鉱者の応用スキル</h2>
 
-    <!-- 応用スキル1 -->
-    <div class="skill-item">
-        <h3>磁石保存</h3>
-        <p>板倒し、乗り越えをして磁石を永遠に保存させる</p>
-        <!-- 動画1を挿入 -->
-        <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            お使いのブラウザは動画タグをサポートしていません。
-        </video>
-    </div>
-
-    <!-- 応用スキル2 -->
-    <div class="skill-item">
-        <h3>磁石エレベーター</h3>
-        <p>磁石の引き寄せを使って味方を上にあげる。</p>
-        <!-- 動画2を挿入 -->
-        <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            お使いのブラウザは動画タグをサポートしていません。
-        </video>
-    </div>
-
-    <!-- 応用スキル3 -->
-    <div class="skill-item">
-        <h3>磁石落とし</h3>
-        <p>磁石の引き離し、引き寄せを使ってハンターを落下させる</p>
-        <!-- 動画3を挿入 -->
-        <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            お使いのブラウザは動画タグをサポートしていません。
-        </video>
-    </div>
-
-    <!-- 応用スキル4 -->
-    <div class="skill-item">
-        <h3>磁石乗り越え</h3>
-        <p>磁石の反発を使って乗り越える</p>
-        <!-- 動画4を挿入 -->
-        <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            お使いのブラウザは動画タグをサポートしていません。
-        </video>
-    </div>
-</div>
-</section>
 	<!-- おすすめの内在人格セクション -->
 <section id="recommendation" class="recommendation-section">
     <h2>おすすめの内在人格</h2>
@@ -262,6 +217,11 @@
       </div>
       </div>
       <hr class="custom-line" />
+
+    <br>
+    <div id="sidebar-widget"></div>
+    <div id="idv-program-slider"></div>
+
       <div id="comment-section" style="clear: both">
       <h2>みんなのコメント</h2>
       <form id="comment-form">
@@ -293,21 +253,13 @@
       <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
       </div>
       
-      <footer>
-      <div class="footer-links">
-        <a href="../../puraibasi/puraibasi.html"
-          >プライバシーポリシー</a
-        >
-        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
-        <a href="../../uneizyouhou/uneizyouhou.html">運営情報</a>
-      </div>
-      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
-      </footer>
-      
       <script src="script.js"></script>
       <script src="../../script/kyararisuto.js"></script>
       <script src="../../script/ngcomento.js"></script>
       <script src="../../script/honbaga.js"></script>
+      <script src="../../script/footer.js"></script>
+      <script src="../../script/program-slider.js"></script>
+      <script src="../../script/widget.js"></script>
       <script type="module" src="../../comentoscript/sabaiba.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>

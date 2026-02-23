@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>幻灯師 - IdentityV（第五人格）攻略【第五録】</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../style/hanbaga.css" />
+    <link rel="stylesheet" href="../../style/sidebar.css" />
+    <link rel="stylesheet" href="../../style/logo.css" />
+    <link rel="stylesheet" href="../../style/comment.css" />
     
               <!-- SEO -->
   <meta name="description" content="IdentityV（第五人格）のサバイバー「幻灯師」の完全攻略ガイド。外在特質解説、立ち回り方、おすすめ人格、応用テクニックまで詳しく紹介。初心者から上級者まで役立つ攻略情報。">
@@ -29,7 +33,7 @@
 <body>
     <!-- Your custom header goes here -->
     <header>
-        <nav-gert>
+        <nav>
           <div class="logo">
             <a href="../../../index.html">
               <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
@@ -65,18 +69,16 @@
                   >お問い合わせ</a
                 >
               </li>
+              <li class="c-header__list-item">
+                <a href="/honntai/puraibasi/puraibasi.html" class="c-header__list-link">プライバシーポリシー</a>
+              </li>
             </ul>
-            <div id="overlay"></div>
-            <nav-gert id="burger-menu">
-              <input type="checkbox" id="hamburger" style="display: none" />
-              <label for="hamburger" class="c-hamburger-menu__button">
-                <span class="c-hamburger-menu__button-mark"></span>
-                <span class="c-hamburger-menu__button-mark"></span>
-                <span class="c-hamburger-menu__button-mark"></span>
-              </label>
-            </nav-gert>
-          </header>
-        </nav-gert>
+          <label for="hamburger" class="c-hamburger-menu__button">
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+          </label>
+        </nav>
       </header>
 
       <section class="banner">
@@ -86,7 +88,7 @@
 
       <div class="wrapper">
         <div class="konntent">
-    <nav>
+    <nav class="character-nav">
         <h2>目次</h2>
         <ul>
             <li><a href="#evaluation">キャラの評価</a></li>
@@ -117,7 +119,7 @@
                     ・自分を記録すると、10秒間の状態投影と位置投影効果を獲得する。仲間を記録すると、仲間は8秒間の状態投影効果を獲得する。サバイバー1人につき2回まで記録できる。<br><br>
                     ・記録中に通常攻撃ダメージを受けると、即座に記録が終了する。サバイバーは自分から記録を終了させることもできる。<br><br>
                     ・サバイバーが拘束されているロケットチェアの付近20メートル以内では、記録時間が75%減少する。<br><br>
-                    
+                    脱出ゲートが通電または脱出口が開放された後、記録時間が50%に減少します。<br><br>                    
                     <h4>【状態投影】</h4>
                     ・サバイバーが通常攻撃以外のダメージ（写真家の写真世界合併と破輪の突刺起爆によるダメージは含まれない）、或いは強力なコントロール効果（スタン系効果）を受けた場合、その影響は記録が終了するまで反映されない。<br><br>
                     ・記録期間中にダメージを受けると、コントロール効果は無効化される。また、記録期間中に複数のコントロール効果を受けた場合は、最後に受けた効果のみが反映される。<br><br>
@@ -355,6 +357,11 @@
       </div>
       </div>
       <hr class="custom-line" />
+
+    <br>
+    <div id="sidebar-widget"></div>
+    <div id="idv-program-slider"></div>
+
       <div id="comment-section" style="clear: both">
       <h2>みんなのコメント</h2>
       <form id="comment-form">
@@ -385,17 +392,6 @@
       <a href="../../情報/情報.html">キャラ情報</a>
       <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
       </div>
-      
-      <footer>
-      <div class="footer-links">
-        <a href="../../puraibasi/puraibasi.html"
-          >プライバシーポリシー</a
-        >
-        <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
-        <a href="../../unneizyouhou/uneizyouhou.html">運営情報</a>
-      </div>
-      <p>&copy; 2025 第五録 IdentityV 第五人格攻略サイト</p>
-      </footer>
 
     <!-- Your custom footer goes here -->
 
@@ -403,6 +399,9 @@
       <script src="../../script/kyararisuto.js"></script>
       <script src="../../script/ngcomento.js"></script>
       <script src="../../script/honbaga.js"></script>
+      <script src="../../script/footer.js"></script>
+      <script src="../../script/program-slider.js"></script>
+      <script src="../../script/widget.js"></script>
       <script type="module" src="../../comentoscript/sabaiba.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>

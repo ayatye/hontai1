@@ -7,10 +7,10 @@ body {
 }
 /* メインコンテンツラッパー */
 .wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* メイン:サイドバー = 3:1 */
   margin: 0 auto;
-  padding-left: 2cm;
+  padding-left: 1cm;
 }
 
 h1 {
@@ -35,7 +35,7 @@ a {
 .pennsaki-image {
   display: block;
   width: 30%;
-  max-width: 400px;
+  max-width: 250px;
   height: auto;
   margin: 0 auto 20px;
   padding: 10px;
@@ -44,7 +44,7 @@ a {
 /* キャラの写真 */
 .character-image {
   display: block;
-  width: 180px;
+  width: 150px;
   height: auto;
   margin: 20px auto;
   border-radius: 8px;
@@ -276,6 +276,7 @@ a {
     flex-direction: column; /* レイアウトを縦方向に */
     padding-left: 0cm;
     padding-right: 0cm;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -284,5 +285,6 @@ a {
   .wrapper {
     padding-left: 20px;
     padding-right: 20px;
+    grid-template-columns: 1fr;
   }
 }

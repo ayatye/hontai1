@@ -76,7 +76,7 @@ const createChart = () => {
             ctx.font = fontSize + "em 'Comic Sans MS', cursive";
             ctx.textBaseline = "middle";
 
-            const text = "5"; // 表示する得点
+            const text = "9"; // 表示する得点
             const textX = Math.round((width - ctx.measureText(text).width) / 2);
             const textY = height / 2;
 

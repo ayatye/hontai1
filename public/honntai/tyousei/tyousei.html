@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>キャラ調整・天賦調整 - IdentityV（第五人格）攻略【第五録】</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <title>キャラ・天賦バランス調整 - IdentityV（第五人格）攻略【第五録】</title>
+  <meta name="description" content="IdentityV（第五人格）のバランス調整まとめページ。キャラクター性能調整や内在人格（天賦）の変更内容を、数値・効果の変更前後で詳しく掲載。最新アップデートをすぐ確認できます。">
+  <meta name="keywords" content="IdentityV,第五人格,バランス調整,天賦調整,キャラ調整,人格調整,アップデート">
+  <meta name="last-modified" content="2025-10-01">
+  
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="キャラ・天賦バランス調整まとめ - IdentityV【第五録】">
+  <meta property="og:description" content="最新のキャラ調整・天賦変更を詳しく解説。変更前後の数値比較で分かりやすく掲載。">
+  <meta property="og:url" content="https://daigoroku-website.web.app/honntai/tyousei/tyousei.html">
+  <meta property="og:image" content="https://daigoroku-website.web.app/honntai/images/tyousei.jpeg">
+  <meta property="og:site_name" content="第五録">
+  <meta property="article:modified_time" content="2025-10-01T00:00:00+09:00">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="キャラ・天賦バランス調整まとめ">
+  <meta name="twitter:description" content="最新の調整内容を変更前後で詳しく解説">
+  <meta name="twitter:image" content="https://daigoroku-website.web.app/honntai/images/tyousei.jpeg">
+  
+  <!-- favicon -->
+  <link rel="icon" href="../images/サイコロicon.jpeg" type="image/jpeg">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="../style/hanbaga.css" />
   <link rel="stylesheet" href="../style/sidebar.css" />
@@ -80,6 +105,353 @@
         </div>
 
         <div id="characters" class="tab-content active">
+
+            <!-- ========== 2026年1月23日の更新 ========== -->
+            <div class="update-section">
+                <div class="update-title">📅 2026年1月29日アップデート</div>
+
+                <!-- キャラクター一覧 -->
+                <div class="character-list">
+                    <a href="#explorer-20260123" class="character-link">冒険家</a>
+                    <a href="#perfumer-20260123" class="character-link">調香師</a>
+                    <a href="#thief-20260123" class="character-link">泥棒</a>
+                    <a href="#patient-20260123" class="character-link">患者</a>
+                    <a href="#cowboy-20260123" class="character-link">カウボーイ</a>
+                    <a href="#cheerleader-20260123" class="character-link">応援団</a>
+                    <a href="#batter-20260123" class="character-link">バッツマン</a>
+                    <a href="#genntousi-20260123" class="character-link">幻灯師</a>
+                    <a href="#psychologist-20260123" class="character-link">結魂者</a>
+                    <a href="#hastur-20260123" class="character-link">黄衣の王</a>
+                    <a href="#warden-20260123" class="character-link">夜の番人</a>
+                    <a href="#hullabaloo-20260123" class="character-link">「フラバルー」</a>
+                    <a href="#chrono-20260123" class="character-link">時空の影</a>
+                    <a href="#billiard-player-20260123" class="character-link">「ビリヤードプレイヤー」</a>
+                </div>
+
+                <!-- 冒険家 -->
+                <div class="character-update" id="explorer-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/boukennka.jpeg" alt="冒険家" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">冒険家</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">しゃがみ移動や歩行によって外在特質「実力蓄積」の移動速度上昇効果が発動しなくなりました。</div>
+                                <div class="update-item buff">「実力蓄積」特質による移動速度ボーナスが25%から35%に上昇しました。</div>
+                                <div class="update-item buff">縮小状態で板・窓の操作やロケットチェアに拘束されたサバイバーの救助が可能になりました。操作時に自動的に縮小状態が解除されます。</div>
+                                <div class="update-item buff">落ちた暗号ページに関する画面ヒントが追加されました。</div>
+                                <div class="update-item buff">外在特質「好奇心」による調整成功時の暗号機解読進捗増加量が0.8%から1.2%に上昇しました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 調香師 -->
+                <div class="character-update" id="perfumer-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/tyoukousi.jpeg" alt="調香師" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">調香師</div>
+                            <div class="character-content">
+                                <div class="update-item buff">
+                                    忘却の香を使用して時を遡った後に得られるダメージ軽減効果が2.5秒から3.3秒に増加しました。ダメージ軽減効果終了後の香水消散エフェクトの持続時間を短縮しました。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 泥棒 -->
+                <div class="character-update" id="thief-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/dorobou.jpeg" alt="泥棒" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">泥棒</div>
+                            <div class="character-content">
+                                <div class="update-item adjustment">
+                                    懐中電灯使用時のカメラ視点が以前より遠くなりました。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 患者 -->
+                <div class="character-update" id="patient-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/kannzya.jpeg" alt="患者" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">患者</div>
+                            <div class="character-content">
+                                <div class="update-item buff">患者の障害物を乗り越えるアクション速度が向上しました。</div>
+                                <div class="update-item adjustment">患者が障害物に引き寄せられた後、そこから飛び出すアクションに移行するまでの時間が短縮されました。</div>
+                                <div class="update-item buff">患者の鉤爪スキル使用中の衝突判定体積が縮小され、障害物に遮られにくくなりました。</div>
+                                <div class="update-item buff">ハンターが患者の引き寄せ・飛び出しを防げなくなりました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- カウボーイ -->
+                <div class="character-update" id="cowboy-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/kauboi.jpeg" alt="カウボーイ" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">カウボーイ</div>
+                            <div class="character-content">
+                                <div class="update-item buff">投げ縄の命中ロジックを最適化し、低い障害物の向こうにいる対象に命中しやすくなりました。</div>
+                                <div class="update-item adjustment">投げ縄がサバイバー(風船やロケットチェア上のサバイバーを除く)に命中した際の加速効果が追加で1.5秒増加し、耐久消費が10%から20%に増加しました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 応援団 -->
+                <div class="character-update" id="cheerleader-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/ouenndann.jpeg" alt="応援団" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">応援団</div>
+                            <div class="character-content">
+                                <div class="update-item adjustment">激励持続中、仲間と自身の移動速度増加量が5%から4%に減少し、小躍りの移動速度増加時間が1.5秒から1.3秒に短縮され、減速時間が0.75秒から0.65秒に短縮されました。</div>
+                                <div class="update-item buff">奮起を長押しで使用する際、仲間のメイン持ち物のクールタイムを確認できるようになりました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- バッツマン -->
+                <div class="character-update" id="batter-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/battumann.jpeg" alt="バッツマン" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">バッツマン</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">ヒットのクールタイムが10秒から14秒に増加しました。</div>
+                                <div class="update-item nerf">ブーストのクールタイムが40秒から55秒に増加しました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 幻灯師 -->
+                <div class="character-update" id="genntousi-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/genntousi.png" alt="幻灯師" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">幻灯師</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">自分を記録する持続時間が10秒から9秒に短縮されました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 結魂者 -->
+                <div class="character-update" id="psychologist-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/kekkonnsya.jpeg" alt="結魂者" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">結魂者</div>
+                            <div class="character-content">
+                                <div class="update-item buff">窓を乗り越える時間が2.81秒から2.31秒に短縮されました。</div>
+                                <div class="update-item buff">糸を吐くと網を吐くのクールタイムが10秒から8秒に短縮されました。</div>
+                                <div class="update-item buff">「網を張る」によってサバイバーに付与されるクモの巣がからむ効果の最大重ね掛け数が2層から3層に増加しました。</div>
+                                <div class="update-item buff">サバイバーが2層のクモの巣がからむ効果を受けている場合の移動速度低下量が5%から8%に増加しました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 黄衣の王 -->
+                <div class="character-update" id="hastur-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/ika.jpeg" alt="黄衣の王" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">黄衣の王</div>
+                            <div class="character-content">
+                                <div class="update-item buff">木の板を破壊するアクション時間が2.87秒から2.57秒に短縮されました。</div>
+                                <div class="update-item buff">触手を長押しで選択する際の移動速度低下量が10%から6%に減少しました。</div>
+                                <div class="update-item buff">触手の選択判定ロジックを最適化し、視界内にある触手が選択できない問題を回避しました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 夜の番人 -->
+                <div class="character-update" id="warden-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/yorunobannninn.jpeg" alt="夜の番人" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">夜の番人</div>
+                            <div class="character-content">
+                                <div class="update-item buff">1段階の風行-遠距離急襲のダッシュ判定を最適化し、障害物に阻まれにくくしました。</div>
+                                <div class="update-item buff">風域の最大吸引距離が10%増加しました。初期風力の大きさが増加し、風力の増加速度が低下しましたが、最大風力は変わりません。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 「フラバルー」 -->
+                <div class="character-update" id="hullabaloo-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">「フラバルー」</div>
+                            <div class="character-content">
+                                <div class="update-item buff">ダブルサプライズのクールタイムが18秒から16秒に短縮されました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 時空の影 -->
+                <div class="character-update" id="chrono-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/zikuunokage.jpeg" alt="時空の影" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">時空の影</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">サバイバーが脱落、またはゲートが通電した際の侵蝕の破片の最大存在時間が60秒に短縮され、破壊不能時間が9秒から6秒に短縮されました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 「ビリヤードプレイヤー」 -->
+                <div class="character-update" id="billiard-player-20260123">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/biriyadopureiya.jpeg" alt="「ビリヤードプレイヤー」" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">「ビリヤードプレイヤー」</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">サバイバーが脱落した後、封鎖領域が減少させる暗号機の解読進捗が15%から12%に調整されました。</div>
+                                <div class="update-item nerf">サバイバーが拘束されているロケットチェアの付近では、手球がサバイバーを捕捉した後の移動時間が3秒から1.2秒に短縮されました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- ========== 2025年12月25日の更新 ========== -->
+            <div class="update-section">
+                <div class="update-title">📅 2025年12月25日アップデート</div>
+
+                <!-- キャラクター一覧 -->
+                <div class="character-list">
+                    <a href="#priestess-nov2025" class="character-link">幸運児</a>
+                    <a href="#perfumer-nov2025" class="character-link">幻灯師</a>
+                    <a href="#toymaker-nov2025" class="character-link">復讐者</a>
+                    <a href="#professor-nov2025" class="character-link">リッパー</a>
+                    <a href="#cowboy-nov2025" class="character-link">「フラバルー」</a>
+                    <a href="#doctor-nov2025" class="character-link">「足萎えの羊」</a>
+                    <a href="#lawyer-nov2025" class="character-link">「女王蜂」</a>
+                </div>
+
+                <!-- 幸運児 -->
+                <div class="character-update" id="priestess-nov2025">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/kouunzi.jpeg" alt="幸運児" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">幸運児</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">箱を開ける速度が100%増加から40%増加に調整されました。</div>
+                                <div class="update-item nerf">幸運児が箱を開ける度に次に箱を開ける時間が2.5秒増加から3.5秒増加に調整されました。</div>
+                                <div class="update-item nerf">サバイバーが箱を開けて得られる機械人形の耐久が50%から35%に調整されました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 幻灯師 -->
+                <div class="character-update" id="perfumer-nov2025">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/sabaibagazou/genntousi.png" alt="幻灯師" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">幻灯師</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">
+                                    脱出ゲートが通電または脱出口が開放された後、記録時間が50%に減少します。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 復讐者 -->
+                <div class="character-update" id="toymaker-nov2025">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/hukusyuusya.jpeg" alt="復讐者" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">復讐者</div>
+                            <div class="character-content">
+                                <div class="update-item buff">
+                                    通常状態での怨みの火蓄積進捗が毎秒0.2%から毎秒0.3%に増加しました。
+                                </div>
+                                <div class="update-item buff">基礎移動速度が4.64メートル/秒から4.73メートル/秒に上昇しました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- リッパー -->
+                <div class="character-update" id="professor-nov2025">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/rippa.jpeg" alt="リッパー" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">リッパー</div>
+                            <div class="character-content">
+                                <div class="update-item buff">自身が霧エリア内にいる場合、風船を持ち上げるアクションが20%、板・窓の操作速度が10%上昇する効果が追加されました。</div>
+                                <div class="update-item adjustment">サバイバーがダウンしたり、ロケットチェアに拘束された際に生成される霧エリアのエフェクト表現を最適化し、実際の判定により適合させました。</div>
+                                <div class="update-item buff">2段階に達した後、霧に隠れる状態に入ると移動速度が1段階よりもさらに5%上昇します。</div>
+                                <div class="update-item buff">攻撃がモジュールに命中した場合のアクション回復時間と、寒霧攻撃がモジュールに命中した場合のアクション回復時間をやや短縮させました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 「フラバルー」 -->
+                <div class="character-update" id="cowboy-nov2025">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/hurabaru.jpeg" alt="「フラバルー」" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">「フラバルー」</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">基礎移動速度が5.18メートル/秒から5.10メートル/秒に低下しました。</div>
+                                <div class="update-item nerf">スキル「ダブルサプライズ」のクールタイムが15秒から18秒に延長されました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 「足萎えの羊」 -->
+                <div class="character-update" id="doctor-nov2025">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/asinaenohituzi.jpeg" alt="「足萎えの羊」" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">「足萎えの羊」</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">基礎移動速度が4.72メートル/秒から4.64メートル/秒に低下しました。</div>
+                                <div class="update-item nerf">檻の範囲内にいるサバイバーの板・窓の操作速度が10%低下する効果を削除しました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 「女王蜂」 -->
+                <div class="character-update" id="lawyer-nov2025">
+                    <div class="character-info">
+                        <img src="../images/kyaragazou/hanntagazou/zyououbati.jpeg" alt="「女王蜂」" class="character-image">
+                        <div class="character-details">
+                            <div class="character-name">「女王蜂」</div>
+                            <div class="character-content">
+                                <div class="update-item nerf">吸収効果の発動間隔が1.4秒に調整されました。</div>
+                                <div class="update-item nerf">吸収効果の移動速度上昇効果が13%に調整されました。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- ========== 2025年11月20日の更新 ========== -->
 <div class="update-section">
     <div class="update-title">📅 2025年11月20日アップデート</div>
@@ -486,6 +858,101 @@
 
 
         <div id="talents" class="tab-content">
+            <div class="update-section">
+                <div class="update-title">2025年12月25日 内在人格調整</div>
+
+                <!-- ハンター内在人格調整 -->
+                <div class="talent-update">
+                    <div class="talent-date">📅 2025年12月25日</div>
+                    <div class="talent-info">
+                        <img src="../images/hanta.jpeg" alt="ハンター内在人格" class="talent-image">
+                        <div class="talent-details">
+                            <div class="talent-name">ハンター内在人格調整</div>
+                            <p style="color:#666;font-size:0.9em;margin-top:5px;">個別の内在人格画像は各項目に追加可能</p>
+                        </div>
+                    </div>
+
+                    <div class="talent-comparison">
+                        <h4 style="color:#dc3545;margin-bottom:15px;">ハンター内在人格調整内容</h4>
+
+                        <!-- 幽閉の恐怖 -->
+                        <div style="margin-bottom:20px;">
+                            <h5 style="color:#666;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
+                                <img src="../images/hanntazinnkaku/yuuhei.jpeg" alt="幽閉の恐怖" style="width:32px;height:32px;border-radius:6px;border:2px solid #666;">
+                                「幽閉の恐怖」
+                            </h5>
+                            <div class="comparison-container">
+                                <div class="before-change">
+                                    <div class="change-label">変更前</div>
+                                    ゲート通電後の<strong>20秒</strong>以内に、フィールド上に行動可能なサバイバーが4人または3人存在している場合(ダウン・風船・ロケットチェア拘束を除く)、ゲート開放速度が65%(4人時)/10%(3人時)ダウンする。
+                                </div>
+                                <div class="change-arrow">→</div>
+                                <div class="after-change">
+                                    <div class="change-label">変更後</div>
+                                    ゲート通電後の<strong>16秒</strong>以内に、フィールド上に行動可能なサバイバーが4人または3人存在している場合(ダウン・風船・ロケットチェア拘束を除く)、ゲート開放速度が65%(4人時)/10%(3人時)ダウンする。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- サバイバー内在人格調整 -->
+                <div class="talent-update">
+                    <div class="talent-date">📅 2025年12月25日</div>
+                    <div class="talent-info">
+                        <img src="../images/sabaiba.jpeg" alt="サバイバー内在人格" class="talent-image">
+                        <div class="talent-details">
+                            <div class="talent-name">サバイバー内在人格調整</div>
+                            <p style="color:#666;font-size:0.9em;margin-top:5px;">個別の内在人格画像は各項目に追加可能</p>
+                        </div>
+                    </div>
+
+                    <div class="talent-comparison">
+                        <h4 style="color:#dc3545;margin-bottom:15px;">サバイバー内在人格調整内容</h4>
+
+                        <!-- 癒合 -->
+                        <div style="margin-bottom:20px;">
+                            <h5 style="color:#666;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
+                                <img src="../images/sabazinnkaku/tiai.jpeg" alt="癒合" style="width:32px;height:32px;border-radius:6px;border:2px solid #666;">
+                                「癒合」
+                            </h5>
+                            <div class="comparison-container">
+                                <div class="before-change">
+                                    <div class="change-label">変更前</div>
+                                    治療時間を15%短縮。
+                                </div>
+                                <div class="change-arrow">→</div>
+                                <div class="after-change">
+                                    <div class="change-label">変更後</div>
+                                    治療時間を10%短縮。
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 観客効果 -->
+                        <div style="margin-bottom:20px;">
+                            <h5 style="color:#666;margin-bottom:10px;display:flex;align-items:center;gap:10px;">
+                                <img src="../images/sabazinnkaku/kannkyakukouka.jpeg" alt="観客効果" style="width:32px;height:32px;border-radius:6px;border:2px solid #666;">
+                                「観客効果」
+                            </h5>
+                            <div class="comparison-container">
+                                <div class="before-change">
+                                    <div class="change-label">変更前</div>
+                                    2台の暗号機の解読が完了すると、この効果はその対戦中無効になる。
+                                </div>
+                                <div class="change-arrow">→</div>
+                                <div class="after-change">
+                                    <div class="change-label">変更後</div>
+                                    全ての暗号機の解読進捗が合計300%に達すると、この効果はその対戦中無効になる。
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="update-section">
     <div class="update-title">2025年11月20日 内在人格調整</div>
 

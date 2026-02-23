@@ -42,6 +42,25 @@
 
       gtag("config", "G-ET1RB84XRR");
     </script>
+    <style>
+      /* PC用画像（デフォルト） */
+      .special-item--gekisaba {
+        background-image: url("/honntai/images/gekiatusabaiba.jpeg");
+      }
+      .special-item--gekihanta {
+        background-image: url("/honntai/images/gekiatuhanta.jpeg");
+      }
+
+      /* スマホ用画像（768px以下） */
+      @media (max-width: 768px) {
+        .special-item--gekisaba {
+          background-image: url("/honntai/images/gekisabasumaho.jpeg");
+        }
+        .special-item--gekihanta {
+          background-image: url("/honntai/images/gekihansumaho.jpeg");
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -85,6 +104,13 @@
                 href="honntai/お問い合わせ/お問合せフォーム.html"
                 class="c-header__list-link"
                 >お問い合わせ</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="/honntai/puraibasi/puraibasi.html"
+                class="c-header__list-link"
+                >プライバシーポリシー</a
               >
             </li>
           </ul>
@@ -147,7 +173,7 @@
 
           <!-- Identity V バランス調整まとめの追加 -->
           <div class="latest-update">
-            <h2>Identity V バランス調整まとめ（2025年11月20日）</h2>
+            <h2>Identity V バランス調整まとめ（2025年1月29日）</h2>
 
             <!-- 四角い箱 全体をリンクに -->
             <a
@@ -173,21 +199,328 @@
           </div>
 
           <div class="kontentu">
+            <!-- おすすめトピック -->
             <div id="recommended-topics" class="info-block">
               <h2>おすすめトピック</h2>
-              <ul id="topics"></ul>
+              <ul id="topics">
+                <!-- 激アツサバイバー：スマホとPCで画像を切り替え -->
+                <li>
+                  <a
+                    href="/honntai/gekisaba/gekisaba.html"
+                    class="special-item special-item--gekisaba"
+                    style="color: white"
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >激アツサバイバー</span
+                    >
+                  </a>
+                </li>
+
+                <!-- 激アツハンター：スマホとPCで画像を切り替え -->
+                <li>
+                  <a
+                    href="/honntai/gekiatuhannta/gekiatuhannta.html"
+                    class="special-item special-item--gekihanta"
+                    style="color: white"
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >激アツハンター</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/yosou/koraboyosou.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/zikainokorabo.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >次回のコラボ予想</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/purozinnkaku/purozinnkaku.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/zinnkaku.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >キャラクター別プロが使う人格</span
+                    >
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            <!-- 初心者必見 -->
             <div id="events" class="info-block">
               <h2>初心者必見</h2>
-              <ul id="events-list"></ul>
+              <ul id="events-list">
+                <li>
+                  <a
+                    href="/honntai/sigatu/sigatu.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/syosinnsya.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >初心者に使ってほしいキャラ</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/sigati/sigati.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/suteppu.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >初心者が中級者になる確実なステップ</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/chat/chat.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/chat/icon.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >定型文チャットとは？？</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/yougo/yougo.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/yougo.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >第五人格知っておきたい用語集</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/sabazinnkaku/sabazinnkaku.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/sabazinnkaku.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >内在人格とは？？サバイバー編</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/hantazinnkaku/hantazinnkaku.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/hantazinnkaku.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >内在人格とは？？ハンター編</span
+                    >
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            <!-- 第五人格必須情報 -->
             <div id="tisikis" class="info-block">
               <h2>第五人格必須情報</h2>
-              <ul id="tisiki-list"></ul>
+              <ul id="tisiki-list">
+                <li>
+                  <a
+                    href="/honntai/sabaran/sabaran.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/sabaran.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >サバイバーランキング</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/hanran/hanran.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/hanran.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >ハンターランキング</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/rokka/rokka.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/rokka.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >マップ内のロッカーの活用方法</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/emoto/emoto.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/emoto.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >エモート利用</span
+                    >
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            <!-- 中級者〜上級者必見 -->
             <div id="masters" class="info-block">
               <h2>中級者〜上級者必見</h2>
-              <ul id="master-list"></ul>
+              <ul id="master-list">
+                <li>
+                  <a
+                    href="/honntai/kyarakosei/kyarakosei.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/kosei.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >キャラの個性について</span
+                    >
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/honntai/purozinnkaku/purozinnkaku.html"
+                    class="special-item"
+                    style="
+                      background-image: url('/honntai/images/zinnkaku.jpeg');
+                      color: white;
+                    "
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >キャラ別プロが使っている人格</span
+                    >
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
           <hr class="separator-line" />
@@ -328,19 +661,1033 @@
         <div class="sidebar">
           <h2>サバイバー一覧</h2>
           <ul id="survivor-list">
-            <!-- JavaScriptでサバイバーを追加 -->
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kouunzi.jpeg"
+                alt="幸運児"
+              />
+              <a href="/honntai/sabaiba/kouunzi/kouunzi.html"
+                ><span>幸運児</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/isi.jpeg"
+                alt="医師"
+              />
+              <a href="/honntai/sabaiba/isi/isi.html"><span>医師</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/benngosi.jpeg"
+                alt="弁護士"
+              />
+              <a href="/honntai/sabaiba/benngosi/benngosi.html"
+                ><span>弁護士</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kuugunn.jpeg"
+                alt="空軍"
+              />
+              <a href="/honntai/sabaiba/kuugunn/kuugunn.html"
+                ><span>空軍</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/niwasi.jpeg"
+                alt="庭師"
+              />
+              <a href="/honntai/sabaiba/niwasi/niwasi.html"
+                ><span>庭師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/dorobou.jpeg"
+                alt="泥棒"
+              />
+              <a href="/honntai/sabaiba/dorobou/dorobou.html"
+                ><span>泥棒</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/youhei.jpeg"
+                alt="傭兵"
+              />
+              <a href="/honntai/sabaiba/youhei/youhei.html"
+                ><span>傭兵</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/tyoukousi.jpeg"
+                alt="調香師"
+              />
+              <a href="/honntai/sabaiba/tyoukousi/tyoukousi.html"
+                ><span>調香師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/uranaisi.jpeg"
+                alt="占い師"
+              />
+              <a href="/honntai/sabaiba/uranaisi/uranaisi.html"
+                ><span>占い師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/mazisyann.jpeg"
+                alt="マジシャン"
+              />
+              <a href="/honntai/sabaiba/mazisyann/mazisyann.html"
+                ><span>マジシャン</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kauboi.jpeg"
+                alt="カウボーイ"
+              />
+              <a href="/honntai/sabaiba/kauboi/kauboi.html"
+                ><span>カウボーイ</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/boukennka.jpeg"
+                alt="冒険家"
+              />
+              <a href="/honntai/sabaiba/boukennka/boukennka.html"
+                ><span>冒険家</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/saisi.jpeg"
+                alt="祭司"
+              />
+              <a href="/honntai/sabaiba/saisi/saisi.html"><span>祭司</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kikaigisi.jpeg"
+                alt="機械技師"
+              />
+              <a href="/honntai/sabaiba/kikaigisi/kikaigisi.html"
+                ><span>機械技師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/ofensu.jpeg"
+                alt="オフェンス"
+              />
+              <a href="/honntai/sabaiba/ofensu/ofensu.html"
+                ><span>オフェンス</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/sinngann.jpeg"
+                alt="心眼"
+              />
+              <a href="/honntai/sabaiba/sinngann/sinngann.html"
+                ><span>心眼</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/odoriko.jpeg"
+                alt="踊り子"
+              />
+              <a href="/honntai/sabaiba/odoriko/odoriko.html"
+                ><span>踊り子</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/noukannsi.jpeg"
+                alt="納棺師"
+              />
+              <a href="/honntai/sabaiba/noukannsi/noukannsi.html"
+                ><span>納棺師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/tannkousya.jpeg"
+                alt="探鉱者"
+              />
+              <a href="/honntai/sabaiba/tannkousya/tannkousya.html"
+                ><span>探鉱者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/zyuzyutusi.jpeg"
+                alt="呪術師"
+              />
+              <a href="/honntai/sabaiba/zyuzyutusi/zyuzyutusi.html"
+                ><span>呪術師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/yazinn.jpeg"
+                alt="野人"
+              />
+              <a href="/honntai/sabaiba/yazinn/yazinn.html"
+                ><span>野人</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kyokugeisi.jpeg"
+                alt="曲芸師"
+              />
+              <a href="/honntai/sabaiba/kyokugeisi/kyokugeisi.html"
+                ><span>曲芸師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/ittoukoukaisi.jpeg"
+                alt="一等航海士"
+              />
+              <a href="/honntai/sabaiba/ittoukoukaisi/ittoukoukaisi.html"
+                ><span>一等航海士</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/bameido.jpeg"
+                alt="バーメイド"
+              />
+              <a href="/honntai/sabaiba/bameido/bameido.html"
+                ><span>バーメイド</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/posutomann.jpeg"
+                alt="ポストマン"
+              />
+              <a href="/honntai/sabaiba/posutomann/posutomann.html"
+                ><span>ポストマン</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/hakamori.jpeg"
+                alt="墓守"
+              />
+              <a href="/honntai/sabaiba/hakamori/hakamori.html"
+                ><span>墓守</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/syuuzinn.jpeg"
+                alt="囚人"
+              />
+              <a href="/honntai/sabaiba/syuuzinn/syuuzinn.html"
+                ><span>囚人</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/konntyuugakusya.jpeg"
+                alt="昆虫学者"
+              />
+              <a href="/honntai/sabaiba/konntyuugakusya/konntyuugakusya.html"
+                ><span>昆虫学者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/gaka.jpeg"
+                alt="画家"
+              />
+              <a href="/honntai/sabaiba/gaka/gaka.html"><span>画家</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/battumann.jpeg"
+                alt="バッツマン"
+              />
+              <a href="/honntai/sabaiba/battumann/battumann.html"
+                ><span>バッツマン</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/ganngusyokuninn.jpeg"
+                alt="玩具職人"
+              />
+              <a href="/honntai/sabaiba/ganngusyokuninn/ganngusyokuninn.html"
+                ><span>玩具職人</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kannzya.jpeg"
+                alt="患者"
+              />
+              <a href="/honntai/sabaiba/kannzya/kannzya.html"
+                ><span>患者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/sinnrigakusya.jpeg"
+                alt="心理学者"
+              />
+              <a href="/honntai/sabaiba/sinnrigakusya/sinnrigakusya.html"
+                ><span>心理学者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/syousetuka.jpeg"
+                alt="小説家"
+              />
+              <a href="/honntai/sabaiba/syousetuka/syousetuka.html"
+                ><span>小説家</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/syouzyo.jpeg"
+                alt="少女"
+              />
+              <a href="/honntai/sabaiba/syouzyo/syouzyo.html"
+                ><span>少女</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/nakipiero.jpeg"
+                alt="泣きピエロ"
+              />
+              <a href="/honntai/sabaiba/nakipiero/nakipiero.html"
+                ><span>泣きピエロ</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kyouzyu.jpeg"
+                alt="教授"
+              />
+              <a href="/honntai/sabaiba/kyouzyu/kyouzyu.html"
+                ><span>教授</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kottousyou.jpeg"
+                alt="骨董商"
+              />
+              <a href="/honntai/sabaiba/kottousyou/kottousyou.html"
+                ><span>骨董商</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/sakkyokuka.jpeg"
+                alt="作曲家"
+              />
+              <a href="/honntai/sabaiba/sakkyokuka/sakkyokuka.html"
+                ><span>作曲家</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kisya.jpeg"
+                alt="記者"
+              />
+              <a href="/honntai/sabaiba/kisya/kisya.html"><span>記者</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/koukuuennzinia.jpeg"
+                alt="航空エンジニア"
+              />
+              <a href="/honntai/sabaiba/koukuuennzinia/koukuuennzinia.html"
+                ><span>航空エンジニア</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/ouenndann.jpeg"
+                alt="応援団"
+              />
+              <a href="/honntai/sabaiba/ouenndann/ouenndann.html"
+                ><span>応援団</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/ningyousi.jpeg"
+                alt="人形師"
+              />
+              <a href="/honntai/sabaiba/ningyousi/ningyousi.html"
+                ><span>人形師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kasaityousainn.jpeg"
+                alt="火災調査員"
+              />
+              <a href="/honntai/sabaiba/kasaityousainn/kasaityousainn.html"
+                ><span>火災調査員</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/redhifauro.jpeg"
+                alt="レディファウロ"
+              />
+              <a href="/honntai/sabaiba/redhifauro/redhifauro.html"
+                ><span>レディファウロ</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kisi.jpeg"
+                alt="騎士"
+              />
+              <a href="/honntai/sabaiba/kisi/kisi.html"><span>騎士</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/kisyougakusya.jpeg"
+                alt="気象学者"
+              />
+              <a href="/honntai/sabaiba/kisyougakusya/kisyougakusya.html"
+                ><span>気象学者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/yumitukai.jpeg"
+                alt="弓使い"
+              />
+              <a href="/honntai/sabaiba/yumitukai/yumitukai.html"
+                ><span>弓使い</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/dassyutumasuta.jpeg"
+                alt="脱出マスター"
+              />
+              <a href="/honntai/sabaiba/dassyutumasuta/dassyutumasuta.html"
+                ><span>脱出マスター</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/genntousi.png"
+                alt="幻灯師"
+              />
+              <a href="/honntai/sabaiba/genntousi/genntousi.html"
+                ><span>幻灯師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/tougyuusi.jpeg"
+                alt="闘牛士"
+              />
+              <a href="/honntai/sabaiba/tougyuusi/tougyuusi.html"
+                ><span>闘牛士</span></a
+              >
+              <span class="arrow">></span>
+            </li>
           </ul>
 
           <h2>ハンター一覧</h2>
           <ul id="hunter-list">
-            <!-- JavaScriptでハンターを追加 -->
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/hukusyuusya.jpeg"
+                alt="復讐者"
+              />
+              <a href="/honntai/hanta/hukusyuusya/hukusyuusya.html"
+                ><span>復讐者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/doukesi.jpeg"
+                alt="道化師"
+              />
+              <a href="/honntai/hanta/doukesi/doukesi.html"
+                ><span>道化師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/dannzaikariudo.jpeg"
+                alt="断罪狩人"
+              />
+              <a href="/honntai/hanta/dannzaikariudo/dannzaikariudo.html"
+                ><span>断罪狩人</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/rippa.jpeg"
+                alt="リッパー"
+              />
+              <a href="/honntai/hanta/rippa/rippa.html"
+                ><span>リッパー</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/kekkonnsya.jpeg"
+                alt="結魂者"
+              />
+              <a href="/honntai/hanta/kekkonnsya/kekkonnsya.html"
+                ><span>結魂者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/geisya.jpeg"
+                alt="芸者"
+              />
+              <a href="/honntai/hanta/geisya/geisya.html"><span>芸者</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/sirokuromuzyou.jpeg"
+                alt="白黒無常"
+              />
+              <a href="/honntai/hanta/sirokuromuzyou/sirokuromuzyou.html"
+                ><span>白黒無常</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/syasinnka.jpeg"
+                alt="写真家"
+              />
+              <a href="/honntai/hanta/syasinnka/syasinnka.html"
+                ><span>写真家</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/kyougenn.jpeg"
+                alt="狂眼"
+              />
+              <a href="/honntai/hanta/kyougenn/kyougenn.html"
+                ><span>狂眼</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/ika.jpeg"
+                alt="黄衣の王"
+              />
+              <a href="/honntai/hanta/ika/ika.html"><span>黄衣の王</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg"
+                alt="夢の魔女"
+              />
+              <a href="/honntai/hanta/yumenomazyo/yumenomazyo.html"
+                ><span>夢の魔女</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/nakimusi.jpeg"
+                alt="泣き虫"
+              />
+              <a href="/honntai/hanta/nakimusi/nakimusi.html"
+                ><span>泣き虫</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/matokage.jpeg"
+                alt="魔トカゲ"
+              />
+              <a href="/honntai/hanta/matokage/matokage.html"
+                ><span>魔トカゲ</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/marhi.jpeg"
+                alt="血の女王"
+              />
+              <a href="/honntai/hanta/marhi/marhi.html"
+                ><span>血の女王</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/bonnbonn.jpeg"
+                alt="ガードNo.26"
+              />
+              <a href="/honntai/hanta/bonnbonn/bonnbonn.html"
+                ><span>ガードNo.26</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/sito.jpeg"
+                alt="使徒"
+              />
+              <a href="/honntai/hanta/sito/sito.html"><span>使徒</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg"
+                alt="ヴァイオリニスト"
+              />
+              <a href="/honntai/hanta/vaiorinisuto/vaiorinisuto.html"
+                ><span>ヴァイオリニスト</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg"
+                alt="彫刻家"
+              />
+              <a href="/honntai/hanta/tyoukokusi/tyoukokusi.html"
+                ><span>彫刻家</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/anndetto.jpeg"
+                alt="アンデッド"
+              />
+              <a href="/honntai/hanta/anndetto/anndetto.html"
+                ><span>アンデッド</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/harinn.jpeg"
+                alt="破輪"
+              />
+              <a href="/honntai/hanta/harinn/harinn.html"><span>破輪</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/ryousi.jpeg"
+                alt="漁師"
+              />
+              <a href="/honntai/hanta/ryousi/ryousi.html"><span>漁師</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/rouninngyousi.jpeg"
+                alt="蝋人形師"
+              />
+              <a href="/honntai/hanta/rouninngyousi/rouninngyousi.html"
+                ><span>蝋人形師</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/akumu.jpeg"
+                alt="悪夢"
+              />
+              <a href="/honntai/hanta/akumu/akumu.html"><span>悪夢</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/syokikann.jpeg"
+                alt="書記官"
+              />
+              <a href="/honntai/hanta/syokikann/syokikann.html"
+                ><span>書記官</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/innzya.jpeg"
+                alt="隠者"
+              />
+              <a href="/honntai/hanta/innzya/innzya.html"><span>隠者</span></a>
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/yorunobannninn.jpeg"
+                alt="夜の番人"
+              />
+              <a href="/honntai/hanta/yorunobannninn/yorunobannninn.html"
+                ><span>夜の番人</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/hurugo.jpeg"
+                alt="フールズ・ゴールド"
+              />
+              <a href="/honntai/hanta/hurugo/hurugo.html"
+                ><span>フールズ・ゴールド</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg"
+                alt="オペラ歌手"
+              />
+              <a href="/honntai/hanta/operakasyu/operakasyu.html"
+                ><span>オペラ歌手</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg"
+                alt="時空の影"
+              />
+              <a href="/honntai/hanta/zikuunokage/zikuunokage.html"
+                ><span>時空の影</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/asinaenohituzi.jpeg"
+                alt="足萎えの羊"
+              />
+              <a href="/honntai/hanta/asinaenohituzi/asinaenohituzi.html"
+                ><span>足萎えの羊</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/hurabaru.jpeg"
+                alt="フラバルー"
+              />
+              <a href="/honntai/hanta/hurabaru/hurabaru.html"
+                ><span>フラバルー</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/zakkasyou.jpeg"
+                alt="雑貨商"
+              />
+              <a href="/honntai/hanta/zakkasyou/zakkasyou.html"
+                ><span>雑貨商</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/biriyadopureiya.jpeg"
+                alt="ビリヤードプレイヤー"
+              />
+              <a href="/honntai/hanta/biriyadopureiya/biriyadopureiya.html"
+                ><span>ビリヤードプレイヤー</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/zyououbati.jpeg"
+                alt="女王蜂"
+              />
+              <a href="/honntai/hanta/zyououbati/zyououbati.html"
+                ><span>女王蜂</span></a
+              >
+              <span class="arrow">></span>
+            </li>
           </ul>
         </div>
       </div>
       <hr class="custom-line" />
 
-      <div id="sidebar-widget"></div>
-      <script src="honntai/script/widget.js"></script>
+      <div id="sidebar-widget">
+        <!-- 人気記事ランキング（静的HTML） -->
+        <div class="daigoroku-widget">
+          <h3>人気記事ランキング</h3>
+
+          <div class="widget-item">
+            <a href="/honntai/yougo/yougo.html">
+              <div class="widget-item-content">
+                <span class="widget-rank">1</span>
+                <div class="widget-item-text">
+                  <div>IdentityV 用語一覧</div>
+                  <div class="widget-item-meta">
+                    <span class="widget-category">初心者向け</span>
+                    <span class="widget-views">👁 1,044</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/korabo/korabo.html">
+              <div class="widget-item-content">
+                <span class="widget-rank">2</span>
+                <div class="widget-item-text">
+                  <div>コラボ情報</div>
+                  <div class="widget-item-meta">
+                    <span class="widget-category">コラボ</span>
+                    <span class="widget-views">👁 187</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/最新情報/最新情報.html">
+              <div class="widget-item-content">
+                <span class="widget-rank">3</span>
+                <div class="widget-item-text">
+                  <div>最新アップデート情報</div>
+                  <div class="widget-item-meta">
+                    <span class="widget-category">更新情報</span>
+                    <span class="widget-views">👁 183</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/sabaran/sabaran.html">
+              <div class="widget-item-content">
+                <span class="widget-rank">4</span>
+                <div class="widget-item-text">
+                  <div>サバイバー tier表 2025</div>
+                  <div class="widget-item-meta">
+                    <span class="widget-category">ランキング</span>
+                    <span class="widget-views">👁 97</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/hanta/biriyadopureiya/biriyadopureiya.html">
+              <div class="widget-item-content">
+                <span class="widget-rank">5</span>
+                <div class="widget-item-text">
+                  <div>ビリヤードプレイヤー攻略</div>
+                  <div class="widget-item-meta">
+                    <span class="widget-category">ハンター</span>
+                    <span class="widget-views">👁 56</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 最近の更新（静的HTML） -->
+        <div class="daigoroku-widget">
+          <h3>最近の更新</h3>
+
+          <div class="widget-item">
+            <a href="/honntai/最新情報/最新情報.html">
+              <div>最新アップデート情報</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">更新情報</span>
+                <span>2026/2/12</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/ibento/ibento.html">
+              <div>最新イベント情報</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">イベント</span>
+                <span>2026/2/12</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/korabo/korabo.html">
+              <div>最新コラボ情報</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">コラボ</span>
+                <span>2026/2/12</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/tyousei/tyousei.html">
+              <div>第五人格 アップデート追跡 キャラ調整・天賦調整</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">キャラ調整</span>
+                <span>2025/12/29</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/sabaiba/tougyuusi/tougyuusi.html">
+              <div>「闘牛士」攻略</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">サバイバー</span>
+                <span>2025/12/29</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/idv-program-slider/idv-program-slider.html">
+              <div>第五人格情報発表番組～2025年クリスマス直前SP～</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">新規ページ開設</span>
+                <span>2025/12/19</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/hanta/zyououbati/zyououbati.html">
+              <div>「女王蜂」攻略</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">ハンター</span>
+                <span>2025/11/27</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/tyousei/tyousei.html">
+              <div>バランス調整まとめ（2025年11月20日）</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">重要</span>
+                <span>2025/11/20</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- おすすめ記事はJSで生成（widget.jsが挿入する） -->
+        <div id="recommended-widget"></div>
+      </div>
+
+      <div id="idv-program-slider">
+        <!-- クローラー向け静的リンク（display:noneではなくvisibility:hiddenで隠す） -->
+        <div
+          style="
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+          "
+        >
+          <h2>第五人格情報発表番組</h2>
+          <ul>
+            <li>
+              <a href="/honntai/idv-program-slider/idv-program-slider.html">
+                第五人格情報発表番組～2025年クリスマス直前SP～（2025.12.19）
+              </a>
+            </li>
+            <!-- 今後番組が増えたらここに追加 -->
+          </ul>
+        </div>
+      </div>
 
       <div id="comment-section" style="clear: both">
         <h2>みんなのコメント</h2>
@@ -374,11 +1721,137 @@
       <a href="honntai/お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
     </div>
 
-    <script src="honntai/script/script.js"></script>
-    <script src="honntai/script/kyararisuto.js"></script>
+    <!-- クローラー向け静的フッターリンク（footer.jsと併用） -->
+    <div
+      id="static-footer-links"
+      style="
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      "
+    >
+      <nav aria-label="フッターナビゲーション（静的）">
+        <div>
+          <h3>最新情報</h3>
+          <ul>
+            <li>
+              <a href="/honntai/最新情報/最新情報.html">最新アップデート情報</a>
+            </li>
+            <li>
+              <a href="/honntai/tyousei/tyousei.html">キャラ調整・天賦調整</a>
+            </li>
+            <li><a href="/honntai/ibento/ibento.html">イベント情報</a></li>
+            <li><a href="/honntai/korabo/korabo.html">コラボ情報</a></li>
+            <li><a href="/honntai/yosou/koraboyosou.html">コラボ予想</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>攻略・ランキング</h3>
+          <ul>
+            <li>
+              <a href="/honntai/gekisaba/gekisaba.html">激アツ最強サバイバー</a>
+            </li>
+            <li>
+              <a href="/honntai/gekiatuhannta/gekiatuhannta.html"
+                >激アツ最強ハンター</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/sabaran/sabaran.html">サバイバーランキング</a>
+            </li>
+            <li>
+              <a href="/honntai/hanran/hanran.html">ハンターランキング</a>
+            </li>
+            <li>
+              <a href="/honntai/purozinnkaku/purozinnkaku.html"
+                >プロが使う人格</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/kyarakosei/kyarakosei.html">キャラの身体能力</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>初心者向け</h3>
+          <ul>
+            <li>
+              <a href="/honntai/sigatu/sigatu.html">初心者におすすめキャラ</a>
+            </li>
+            <li>
+              <a href="/honntai/sigati/sigati.html"
+                >初心者〜中級者の5ステップ</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/chat/chat.html">定型文チャット活用ガイド</a>
+            </li>
+            <li><a href="/honntai/rokka/rokka.html">ロッカーの活用方法</a></li>
+            <li><a href="/honntai/yougo/yougo.html">用語集</a></li>
+            <li>
+              <a href="/honntai/sabazinnkaku/sabazinnkaku.html"
+                >内在人格（サバイバー）</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/hantazinnkaku/hantazinnkaku.html"
+                >内在人格（ハンター）</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>モード攻略</h3>
+          <ul>
+            <li>
+              <a href="/honntai/otogibanasi/otogibanasi.html"
+                >森のお伽話 攻略ガイド</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/pennsaki/pennsaki.html"
+                >ペン先空想モード 攻略ガイド</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/kopiki/kopiki.html"
+                >コピーキャット 攻略ガイド</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>サイト情報</h3>
+          <ul>
+            <li>
+              <a href="/honntai/puraibasi/puraibasi.html"
+                >プライバシーポリシー</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/お問い合わせ/お問合せフォーム.html"
+                >お問い合わせフォーム</a
+              >
+            </li>
+            <li>
+              <a href="/honntai/uneizyouhou/uneizyouhou.html">運営情報</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
     <script src="honntai/script/ngcomento.js"></script>
     <script src="honntai/script/honbaga.js"></script>
     <script src="honntai/script/footer.js"></script>
+    <script src="honntai/script/widget_recommended.js"></script>
+    <script src="honntai/script/program-slider.js"></script>
     <script type="module" src="honntai/comentoscript/hontai.js"></script>
   </body>
 </html>
