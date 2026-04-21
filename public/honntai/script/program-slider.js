@@ -3,6 +3,13 @@
   // 番組データ（新しい順）
   const programs = [
     {
+      title: "第五人格情報発表番組～新バージョン～",
+      image:
+        "/honntai/images/programsidber/2026sinnbazyon/sinnbazyontaitoru.jpeg",
+      url: "/honntai/idv-program-slider/idv-program-slider.html",
+      date: "2026.3.6",
+    },
+    {
       title: "第五人格情報発表番組～2025年クリスマス直前SP～",
       image:
         "/honntai/images/programsidber/2025kurisumasu/kurisumasutaitoru.jpeg",
@@ -104,6 +111,7 @@
       .program-image {
         position: relative;
         width: 85%;
+        margin: 0 auto;
         padding-top: 56.25%;
         background: #f0f0f0;
         border-radius: 12px;
@@ -165,10 +173,10 @@
         background: white;
       }
       .slider-btn.prev {
-        left: 10px;
+        left: calc(7.5% + 10px); 
       }
       .slider-btn.next {
-        right: 10px;
+        right: calc(7.5% + 10px);
       }
       .slider-dots {
         display: flex;

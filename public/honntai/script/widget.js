@@ -44,28 +44,34 @@
     // 最近の更新
     recentUpdates: [
       {
+        title: "第五人格 アップデート追跡 キャラ調整・天賦調整",
+        url: "/honntai/tyousei/tyousei.html",
+        date: "2026-4-10",
+        tag: "キャラ調整",
+      },
+      {
         title: "最新アップデート情報",
         url: "/honntai/最新情報/最新情報.html",
-        date: "2026-2-12",
+        date: "2026-4-9",
         tag: "更新情報",
       },
       {
         title: "最新イベント情報",
         url: "/honntai/ibento/ibento.html",
-        date: "2026-2-12",
+        date: "2026-3-26",
         tag: "イベント",
+      },
+      {
+        title: "第五人格情報発表番組～新バージョン～",
+        url: "/honntai/idv-program-slider/idv-program-slider.html",
+        date: "2026-3-12",
+        tag: "第五人格情報番組まとめ",
       },
       {
         title: "最新コラボ情報",
         url: "/honntai/korobo/korobo.html",
         date: "2026-2-12",
         tag: "イベント",
-      },
-      {
-        title: "第五人格 アップデート追跡 キャラ調整・天賦調整",
-        url: "/honntai/tyousei/tyousei.html",
-        date: "2025-12-29",
-        tag: "キャラ調整",
       },
       {
         title: "「闘牛士」攻略",
@@ -402,14 +408,14 @@
               <div class="widget-item-meta">
                 <span class="widget-category">${article.category}</span>
                 <span class="widget-views">👁 ${formatViews(
-                  article.views
+                  article.views,
                 )}</span>
               </div>
             </div>
           </div>
         </a>
       </div>
-    `
+    `,
       )
       .join("");
 
@@ -434,7 +440,7 @@
           </div>
         </a>
       </div>
-    `
+    `,
       )
       .join("");
 
@@ -449,7 +455,7 @@
   function generateRecommendedSection() {
     const today = new Date();
     const dayOfYear = Math.floor(
-      (today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
+      (today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24,
     );
     const index = dayOfYear % widgetData.recommendedArticles.length;
     const article = widgetData.recommendedArticles[index];
@@ -461,8 +467,8 @@
           <div class="recommended-article">
             <div class="recommended-header">
               <img src="${article.image}" alt="${
-      article.title
-    }" class="recommended-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect fill=%22%23e94560%22 width=%2260%22 height=%2260%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3E?%3C/text%3E%3C/svg%3E'">
+                article.title
+              }" class="recommended-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect fill=%22%23e94560%22 width=%2260%22 height=%2260%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3E?%3C/text%3E%3C/svg%3E'">
               <h4 class="recommended-title">${article.title}</h4>
             </div>
             <p class="recommended-description">${article.description}</p>
