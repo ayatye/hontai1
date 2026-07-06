@@ -103,7 +103,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .sidebar {
-    margin-right: 1.5cm; /* コメントセクションとの余白を追加 */
+    margin-right: 0;
     margin-left: 0;
     padding: 10px;
   }

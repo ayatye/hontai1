@@ -41,13 +41,6 @@
       image: "/honntai/images/widget/otogibanasi.jpeg",
     },
     {
-      title: "コラボ予想",
-      url: "/honntai/yosou/koraboyosou.html",
-      description: "第五人格の雰囲気にマッチした最高のコラボ候補を徹底分析！",
-      category: "予想",
-      image: "/honntai/images/widget/zikainokorabo.jpeg",
-    },
-    {
       title: "激アツ最強サバイバー",
       url: "/honntai/gekisaba/gekisaba.html",
       description: "第五人格 最強サバイバー、今激アツサバイバーを紹介！",
@@ -280,7 +273,7 @@
 
     const today = new Date();
     const dayOfYear = Math.floor(
-      (today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
+      (today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24,
     );
     const index = dayOfYear % recommendedArticles.length;
     const article = recommendedArticles[index];
@@ -292,8 +285,8 @@
           <div class="recommended-article">
             <div class="recommended-header">
               <img src="${article.image}" alt="${
-      article.title
-    }" class="recommended-icon"
+                article.title
+              }" class="recommended-icon"
                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect fill=%22%23e94560%22 width=%2260%22 height=%2260%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3E?%3C/text%3E%3C/svg%3E'">
               <h4 class="recommended-title">${article.title}</h4>
             </div>

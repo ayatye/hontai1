@@ -271,10 +271,10 @@
       alt: "火災調査員の画像",
     },
     {
-      name: "レディファウロ",
+      name: "レディ・ファウロ",
       url: "/honntai/sabaiba/redhifauro/redhifauro.html",
       img: "/honntai/images/kyaragazou/sabaibagazou/redhifauro.jpeg",
-      alt: "レディファウロの画像",
+      alt: "レディ・ファウロの画像",
     },
     {
       name: "騎士",
@@ -311,6 +311,12 @@
       url: "/honntai/sabaiba/tougyuusi/tougyuusi.html",
       img: "/honntai/images/kyaragazou/sabaibagazou/tougyuusi.jpeg",
       alt: "闘牛士の画像",
+    },
+    {
+      name: "マイムアーティスト",
+      url: "/honntai/sabaiba/maimu/maimu.html",
+      img: "/honntai/images/kyaragazou/sabaibagazou/maimu.jpeg",
+      alt: "マイムアーティストの画像",
     },
   ];
 
@@ -520,6 +526,12 @@
       img: "/honntai/images/kyaragazou/hanntagazou/zyououbati.jpeg",
       alt: "女王蜂の画像",
     },
+    {
+      name: "歯医者",
+      url: "/honntai/hanta/haisya/haisya.html",
+      img: "/honntai/images/kyaragazou/hanntagazou/haisya.jpeg",
+      alt: "歯医者の画像",
+    },
   ];
 
   // キャラクターカードを生成（画像付き）
@@ -530,7 +542,7 @@
           `<a href="${char.url}" class="character-card">
         <img src="${char.img}" alt="${char.alt}" loading="lazy">
         <span class="character-name">${char.name}</span>
-      </a>`
+      </a>`,
       )
       .join("");
   }
@@ -568,7 +580,7 @@
           <div class="footer-section">
             <h3>📰 最新情報</h3>
             <ul>
-              <li><a href="/honntai/最新情報/最新情報.html">最新アップデート情報</a></li>
+              <li><a href="/honntai/saisinn/saisinn.html">最新アップデート情報</a></li>
               <li><a href="/honntai/tyousei/tyousei.html">キャラ調整・天賦調整</a></li>
               <li><a href="/honntai/ibento/ibento.html">イベント情報</a></li>
               <li><a href="/honntai/korabo/korabo.html">コラボ情報</a></li>
@@ -877,7 +889,7 @@
   function setupToggle() {
     setTimeout(function () {
       const toggleButtons = document.querySelectorAll(
-        "footer#site-footer .character-toggle-btn"
+        "footer#site-footer .character-toggle-btn",
       );
 
       toggleButtons.forEach((button) => {

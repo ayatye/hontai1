@@ -4,8 +4,13 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "redirects": [
       {
-        "source": "**",
-        "destination": "https://daigoroku.com/:splat",
+        "source": "/honntai/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1.html",
+        "destination": "/honntai/saisinn/saisinn.html",
+        "type": 301
+      },
+      {
+        "source": "/honntai/最新情報/**",
+        "destination": "/honntai/saisinn/saisinn.html",
         "type": 301
       }
     ]

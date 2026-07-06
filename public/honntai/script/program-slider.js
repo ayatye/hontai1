@@ -3,17 +3,24 @@
   // 番組データ（新しい順）
   const programs = [
     {
+      title: "第五人格情報発表番組～8th-anniversary～",
+      image:
+        "/honntai/images/programsidber/8th-anniversary/8th-anniversarytaitoru.jpeg",
+      url: "/honntai/idv-program-slider/8th-anniversary.html",
+      date: "2026.6.3",
+    },
+    {
       title: "第五人格情報発表番組～新バージョン～",
       image:
         "/honntai/images/programsidber/2026sinnbazyon/sinnbazyontaitoru.jpeg",
-      url: "/honntai/idv-program-slider/idv-program-slider.html",
+      url: "/honntai/idv-program-slider/2026shinban.html",
       date: "2026.3.6",
     },
     {
       title: "第五人格情報発表番組～2025年クリスマス直前SP～",
       image:
         "/honntai/images/programsidber/2025kurisumasu/kurisumasutaitoru.jpeg",
-      url: "/honntai/idv-program-slider/idv-program-slider.html",
+      url: "/honntai/idv-program-slider/2025christmas.html",
       date: "2025.12.19",
     },
     // 今後の番組はここに追加
@@ -50,7 +57,7 @@
                 <div class="program-title">${program.title}</div>
               </a>
             </div>
-          `
+          `,
             )
             .join("")}
         </div>
@@ -63,7 +70,7 @@
           <button class="dot ${
             index === 0 ? "active" : ""
           }" data-index="${index}"></button>
-        `
+        `,
           )
           .join("")}
       </div>
@@ -75,11 +82,11 @@
       .idv-program-slider {
         text-align: center;
         max-width: 1200px;
-        padding-left: 2.5cm;
+        margin: 0 auto;
+        padding: 0 10px;
       }
       .slider-header {
         margin-bottom: 30px;
-        transform: translateX(-55px);
       }
       .slider-header h2 {
         font-size: 28px;
@@ -96,6 +103,7 @@
       }
       .slider-item {
         min-width: 100%;
+        box-sizing: border-box;
         padding: 0 10px;
         opacity: 0;
         transition: opacity 0.4s ease;
@@ -152,7 +160,6 @@
         font-weight: bold;
         text-align: center;
         color: #333;
-        transform: translateX(-55px);
       }
       .slider-btn {
         position: absolute;
@@ -207,13 +214,6 @@
         }
         .program-title {
           font-size: 16px;
-          transform: translateX(-45px);
-        }
-        .idv-program-slider {
-        padding-left: 0.5cm;
-        }
-        .slider-header {
-        transform: translateX(-45px);
         }
       }
     `;

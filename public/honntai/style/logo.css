@@ -2,7 +2,8 @@
   font-size: 1rem;
   font-weight: bold;
   width: 250px;
-  padding-right: 50px;
+  padding-right: 30px;
+  padding-left: 20px;
 }
 
 .logo-photo {
@@ -13,29 +14,174 @@
 
 .logo a {
   text-decoration: none;
-  color: #ffffff;
+  color: #1e1b4b; /* #ffffff → 濃紺 */
   display: flex;
   align-items: center;
 }
 
 .logo a:hover {
-  text-decoration: none; /* ホバー時の下線を消す */
-  color: inherit; /* 色の変更を防ぐ */
+  text-decoration: none;
+  color: inherit;
 }
 
 /* バナー */
 .banner {
-  background-color: #ff5733;
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f3ff 0%, #eff6ff 60%, #faf5ff 100%);
+  color: #1e1b4b;
+  text-align: center; /* left → center に変更 */
+  padding: 64px 0 56px;
   width: 100%;
-  position: relative; /* 相対位置指定 */
-  z-index: 1; /* バナーは最前面に来ないように設定 */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ボタン行も中央に */
+.banner-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  justify-content: center; /* 追加 */
+}
+
+/* バナー内ラッパー */
+.banner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px; /* ← padding をこちらに移動 */
+}
+
+/* 水玉ドット背景 */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #c4b5fd 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.banner h2,
+.banner .banner-title {
+  color: #1e1b4b;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0;
+}
+
+.banner h2 span,
+.banner .banner-title span {
+  color: #7c3aed; /* アクセントカラー */
+}
+
+.banner p {
+  color: #6b7280;
+}
+
+/* バッジ */
+.banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ede9fe;
+  border: 1.5px solid #c4b5fd;
+  color: #6d28d9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.07em;
+}
+
+.banner-badge::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7c3aed;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(90deg, #7c3aed, #60a5fa);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: #fff;
+  color: #7c3aed;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 11px 26px;
+  border-radius: 10px;
+  border: 2px solid #c4b5fd;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #f5f3ff;
+  transform: translateY(-1px);
+}
+
+/* 装飾サイコロ */
+.banner-deco {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 100px;
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
 }
 
 @media (max-width: 768px) {
   .logo {
     padding-right: 0;
+  }
+
+  .banner {
+    padding: 44px 20px 40px;
+    text-align: center;
+    width: auto;
+  }
+
+  .banner-inner {
+    padding: 0; /* 追加：二重paddingをなくす */
+  }
+
+  .banner-btns {
+    justify-content: center;
+  }
+
+  .banner-deco {
+    display: none;
   }
 }

@@ -1,20 +1,28 @@
+/* ===== 追加：CSS変数 ===== */
+:root {
+  --color-primary: #7c3aed;
+  --color-primary-light: #ede9fe;
+  --color-primary-mid: #c4b5fd;
+  --color-text-main: #1e1b4b;
+  --color-text-sub: #6b7280;
+}
+
 /* ヘッダー */
 header {
   width: 100%;
   margin: 0;
-  padding: 10px 20px;
-  background-color: #333333;
-  color: #fff;
-  position: relative;
-  justify-content: space-between;
+  background: #ede9fe;
+  position: sticky;
+  top: 0;
   z-index: 100;
+  border-bottom: 2.5px solid var(--color-primary);
+  box-shadow: 0 2px 16px rgba(124, 58, 237, 0.08);
 }
 
 .c-header {
-  background-color: #333333;
+  background-color: #ede9fe;
   box-sizing: border-box;
   display: flex;
-  color: #ffffff;
   cursor: pointer;
   width: 100%;
   margin: 0;
@@ -34,15 +42,21 @@ header {
 }
 
 .c-header__list-link {
-  color: #fff;
-  margin-right: 20px;
+  color: #4b5563;
+  margin-right: 4px;
   text-decoration: none;
-  padding: 10px 0px;
+  padding: 6px 12px;
   font-weight: bold;
+  border-radius: 20px;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .c-header__list-link:hover {
-  opacity: 0.6;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  opacity: 1;
 }
 
 nav {
@@ -50,6 +64,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   top: 5px;
+  width: 100%;
 }
 
 .c-hamburger-menu__input {
@@ -57,11 +72,9 @@ nav {
 }
 
 .c-hamburger-menu__bg {
-  background-color: #000000;
   cursor: pointer;
   display: none;
   left: 0;
-  opacity: 0.4;
   top: 0;
   width: 0;
   z-index: -1;
@@ -72,6 +85,10 @@ nav {
 }
 
 @media (max-width: 768px) {
+  nav {
+    min-height: 60px;
+  }
+
   .c-header__list {
     display: none;
   }
@@ -91,7 +108,7 @@ nav {
   }
 
   .c-hamburger-menu__button-mark {
-    background-color: #ffffff;
+    background-color: var(--color-primary); /* #ffffff → 紫 */
     height: 2px;
     width: 20px;
     transition: 0.3s;
@@ -123,16 +140,18 @@ nav {
     top: 100%;
     left: 50%;
     transform: translateX(-40%);
-    background-color: #333333;
+    background-color: #fff; /* #333333 → 白 */
+    border: 1.5px solid var(--color-primary-light);
     padding: 20px 0;
     width: 80%;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.15);
     z-index: 100;
     opacity: 0;
     transition: opacity 0.3s ease;
     overflow-y: auto;
   }
+
   /* メニューが開いたときの表示 */
   #hamburger:checked ~ .c-hamburger-menu__list {
     opacity: 1;
@@ -144,18 +163,18 @@ nav {
     margin: 20px 0;
     padding: 12px;
     text-align: center;
-    color: #fff;
+    color: var(--color-text-main); /* #fff → 濃紺 */
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    background-color: #444444;
-    border: 2px solid #007bff;
+    background-color: #f9f8ff; /* #444444 → 薄紫白 */
+    border: 1px solid var(--color-primary-light); /* #007bff → 薄紫 */
     border-radius: 6px;
     transition: background-color 0.3s ease;
     padding-left: 20px;
   }
 
   .c-hamburger-menu__list-item:hover {
-    background-color: #007bff;
+    background-color: var(--color-primary-light); /* #007bff → 薄紫 */
   }
 }

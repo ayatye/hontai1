@@ -220,7 +220,7 @@ const survivors = [
     link: "../../sabaiba/kasaityousainn/kasaityousainn.html",
   },
   {
-    name: "レディファウロ",
+    name: "レディ・ファウロ",
     url: "../../images/kyaragazou/sabaibagazou/redhifauro.jpeg",
     link: "../../sabaiba/redhifauro/redhifauro.html",
   },
@@ -600,7 +600,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 ); // グラフが10%表示されたらトリガー
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -134,7 +134,7 @@ a {
 }
 
 .sidebar {
-  width: 1200px;
+  width: 1200px !important;
 }
 
 @media (max-width: 1210px) {
@@ -199,4 +199,171 @@ a {
   .tier-ranking {
     padding: 10px;
   }
+}
+
+
+/* ===== ランキング独自見解ブロック（2026/06追加） ===== */
+.rank-section {
+  margin: 40px auto;
+  max-width: 800px;
+}
+.rank-section h2 {
+  border-left: 6px solid #8b5a2b;
+  padding-left: 12px;
+  margin-bottom: 16px;
+}
+.rank-section h3 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 6px;
+  margin-top: 28px;
+}
+.role-label {
+  display: inline-block;
+  background: #8b5a2b;
+  color: #fff;
+  font-size: 0.8em;
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.criteria-box {
+  background: #faf6f0;
+  border: 1px solid #e0d5c5;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.criteria-box dt {
+  font-weight: bold;
+  margin-top: 12px;
+}
+.criteria-box dd {
+  margin: 4px 0 0 0;
+  line-height: 1.8;
+}
+.pickup-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 12px 0;
+}
+.pickup-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.pickup-card .pickup-name {
+  font-weight: bold;
+  font-size: 1.05em;
+  margin: 0 0 6px;
+}
+.pickup-card p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 0.95em;
+}
+.uplift {
+  background: #f0f6fa;
+  border-left: 4px solid #2b6a8b;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 0.92em;
+  line-height: 1.7;
+}
+.uplift::before {
+  content: "▲ 浮上の条件：";
+  font-weight: bold;
+  color: #2b6a8b;
+}
+.faq-item {
+  margin: 16px 0;
+}
+.faq-item .q {
+  font-weight: bold;
+}
+.faq-item .q::before {
+  content: "Q. ";
+  color: #8b5a2b;
+}
+.faq-item .a {
+  margin-top: 6px;
+  line-height: 1.8;
+}
+.faq-item .a::before {
+  content: "A. ";
+  color: #2b6a8b;
+  font-weight: bold;
+}
+.update-log {
+  font-size: 0.9em;
+  color: #555;
+  border-top: 1px dashed #ccc;
+  padding-top: 12px;
+  margin-top: 16px;
+}
+@media (max-width: 600px) {
+  .pickup-card {
+    gap: 10px;
+    padding: 10px;
+  }
+  .pickup-card img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+
+/* ===== ティア表⇔解説 アンカーリンク（2026/06追加） ===== */
+html {
+  scroll-behavior: smooth;
+}
+.jump-link {
+  font-size: 0.6em;
+  font-weight: normal;
+  margin-left: 10px;
+  color: #8b5a2b;
+  text-decoration: none;
+  border: 1px solid #8b5a2b;
+  border-radius: 12px;
+  padding: 2px 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.jump-link:hover {
+  background: #8b5a2b;
+  color: #fff;
+}
+.back-to-tier {
+  text-align: right;
+  margin: 8px 0 0;
+}
+.back-to-tier a {
+  font-size: 0.85em;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px dotted #999;
+}
+.back-to-tier a:hover {
+  color: #8b5a2b;
+}
+
+/* ===== 迷った候補欄（2026/06追加） ===== */
+.candidates {
+  background: #f5efe6;
+  border-left: 4px solid #8b5a2b;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 0.9em;
+  line-height: 1.8;
+}
+.candidates strong {
+  color: #8b5a2b;
 }

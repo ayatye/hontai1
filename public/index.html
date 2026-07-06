@@ -22,6 +22,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://daigoroku.com/" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
     <link rel="canonical" href="https://daigoroku.com/" />
     <script
       async
@@ -68,7 +69,7 @@
         <div class="logo">
           <a href="index.html">
             <img
-              src="honntai/images/サイコロicon.jpeg"
+              src="/honntai/images/サイコロicon.jpeg"
               alt="第五録のアイコン"
               class="logo-photo"
             />
@@ -89,19 +90,19 @@
             </li>
             <li class="c-header__list-item">
               <a
-                href="honntai/最新情報/最新情報.html"
+                href="/honntai/saisinn/saisinn.html"
                 class="c-header__list-link"
                 >最新情報</a
               >
             </li>
             <li class="c-header__list-item">
-              <a href="honntai/情報/情報.html" class="c-header__list-link"
+              <a href="/honntai/情報/情報.html" class="c-header__list-link"
                 >キャラ情報</a
               >
             </li>
             <li class="c-header__list-item">
               <a
-                href="honntai/お問い合わせ/お問合せフォーム.html"
+                href="/honntai/お問い合わせ/お問合せフォーム.html"
                 class="c-header__list-link"
                 >お問い合わせ</a
               >
@@ -124,8 +125,22 @@
     </header>
 
     <section class="banner">
-      <h2>第五人格最新攻略情報</h2>
-      <p>第五人格の様々の情報が盛りだくさん！！</p>
+      <div class="banner-deco">🎲</div>
+      <div class="banner-inner">
+        <div class="banner-badge">第五人格 攻略情報サイト</div>
+        <p class="banner-title">
+          第五人格の<span>最新攻略情報</span>、<br />ここに集結。
+        </p>
+        <p>キャラ情報・最新アップデート・攻略まで情報が盛りだくさん！！</p>
+        <div class="banner-btns">
+          <a href="/honntai/saisinn/saisinn.html" class="btn-primary"
+            >最新情報を見る</a
+          >
+          <a href="/honntai/情報/情報.html" class="btn-secondary"
+            >キャラ一覧へ</a
+          >
+        </div>
+      </div>
     </section>
 
     <main>
@@ -141,20 +156,194 @@
             </div>
           </div>
 
+          <!-- <div class="souen-banner-wrap">
+            <div class="souen-attn-bar">
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+              <span class="souen-attn-text"
+                >📣 新コミュニティサイト 開設のお知らせ</span
+              >
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+            </div>
+
+
+            <div class="souen-ribbon">
+              <span>NEW</span>
+            </div>
+
+            <div class="souen-arrow-right">
+              <span class="souen-arr">›</span>
+              <span class="souen-arr">›</span>
+              <span class="souen-arr">›</span>
+            </div>
+
+            <div class="souen-glow-wrap">
+              <a
+                href="https://souen-channeru.com/"
+                class="souen-banner-c"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="bc-bg"></div>
+                <div class="bc-shimmer"></div>
+                <div class="bc-shimmer2"></div>
+                <div class="bc-line-t"></div>
+                <div class="bc-line-b"></div>
+
+                <div class="bc-inner">
+
+                  <div class="bc-left">
+                    <span class="bc-badge">NEW OPEN</span>
+                    <span class="bc-icon">🏚️</span>
+                    <span class="bc-from">第五録 より</span>
+                  </div>
+
+                  <div class="bc-center">
+                    <p class="bc-eyebrow">コミュニティサイト 開設のお知らせ</p>
+                    <p class="bc-title">
+                      <span class="bc-hl">荘園ちゃんねる</span>で話そう
+                    </p>
+                    <div class="bc-tags">
+                      <span class="bc-tag">💬 雑談</span>
+                      <span class="bc-tag">❓ 質問</span>
+                      <span class="bc-tag">📖 豆知識</span>
+                      <span class="bc-tag">📚 用語集</span>
+                      <span class="bc-tag">🔧 アプデ調整情報</span>
+                      <span class="bc-tag">👥 フレマ募集</span>
+                      <span class="bc-tag">🏆 段位別チャット</span>
+                    </div>
+                  </div>
+
+                  <div class="bc-right">
+                    <div class="bc-stats">
+                      <div class="bc-stat">
+                        <span class="bc-stat-num">5</span>
+                        <span class="bc-stat-label">会員数</span>
+                      </div>
+                      <div class="bc-stat">
+                        <span class="bc-stat-num">17</span>
+                        <span class="bc-stat-label">総投稿数</span>
+                      </div>
+                      <div class="bc-stat">
+                        <span class="bc-stat-num">2</span>
+                        <span class="bc-stat-label">豆知識</span>
+                      </div>
+                    </div>
+                    <span class="bc-btn">
+                      コミュニティへ
+                      <span class="bc-arrow">→</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          -->
+
+          <!-- 新モード「手記の加筆」注目バナー（既存 souen / bc-* スタイルを流用） -->
+          <div class="souen-banner-wrap">
+            <!-- 上部アテンションバー -->
+            <div class="souen-attn-bar">
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+              <span class="souen-attn-text"
+                >📜 新モード「手記の加筆」攻略ガイド公開</span
+              >
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+              <div class="souen-attn-dot"></div>
+            </div>
+
+            <!-- コーナーリボン -->
+            <div class="souen-ribbon"><span>NEW</span></div>
+
+            <!-- 右の跳ねる矢印 -->
+            <div class="souen-arrow-right">
+              <span class="souen-arr">›</span>
+              <span class="souen-arr">›</span>
+              <span class="souen-arr">›</span>
+            </div>
+
+            <!-- バナー本体 -->
+            <div class="souen-glow-wrap">
+              <a
+                href="/honntai/shukikahitsu/shukikahitsu.html"
+                class="souen-banner-c"
+              >
+                <div class="bc-bg"></div>
+                <div class="bc-shimmer"></div>
+                <div class="bc-shimmer2"></div>
+                <div class="bc-line-t"></div>
+                <div class="bc-line-b"></div>
+
+                <div class="bc-inner">
+                  <!-- 左 -->
+                  <div class="bc-left">
+                    <span class="bc-badge">NEW MODE</span>
+                    <span class="bc-icon">📖</span>
+                    <span class="bc-from">第五録 攻略</span>
+                  </div>
+
+                  <!-- 中央 -->
+                  <div class="bc-center">
+                    <p class="bc-eyebrow">新モード 完全攻略ガイド</p>
+                    <p class="bc-title">
+                      <span class="bc-hl">手記の加筆</span> 完全攻略
+                    </p>
+                    <div class="bc-tags">
+                      <span class="bc-tag">🗺️ 遊び方</span>
+                      <span class="bc-tag">⚔️ おすすめ武器</span>
+                      <span class="bc-tag">🎒 装備変更方法</span>
+                      <span class="bc-tag">🧙 おすすめ職業</span>
+                      <span class="bc-tag">👻 異象対策</span>
+                      <span class="bc-tag">💎 詞章システム</span>
+                    </div>
+                  </div>
+
+                  <!-- 右 -->
+                  <div class="bc-right">
+                    <div class="bc-stats">
+                      <div class="bc-stat">
+                        <span class="bc-stat-num">8</span>
+                        <span class="bc-stat-label">異象解説</span>
+                      </div>
+                      <div class="bc-stat">
+                        <span class="bc-stat-num">3</span>
+                        <span class="bc-stat-label">職業</span>
+                      </div>
+                      <div class="bc-stat">
+                        <span class="bc-stat-num">4</span>
+                        <span class="bc-stat-label">難易度</span>
+                      </div>
+                    </div>
+                    <span class="bc-btn">
+                      攻略を見る
+                      <span class="bc-arrow">→</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
           <!-- 最新アップデート情報セクションの追加 -->
           <div class="latest-update">
             <h2>最新アップデート情報</h2>
 
             <!-- 四角い箱 -->
             <a
-              href="honntai/最新情報/最新情報.html"
+              href="/honntai/saisinn/saisinn.html"
               title="詳しくはこちら"
               class="update-box"
             >
               <!-- 左側に写真 -->
               <div class="update-photo">
                 <img
-                  src="honntai/images/kyarakonn.jpeg"
+                  src="/honntai/images/kyarakonn.jpeg"
                   alt="アップデート画像"
                 />
               </div>
@@ -177,13 +366,16 @@
 
             <!-- 四角い箱 全体をリンクに -->
             <a
-              href="honntai/tyousei/tyousei.html"
+              href="/honntai/tyousei/tyousei.html"
               title="詳しくはこちら"
               class="update-box"
             >
               <!-- 左側に写真 -->
               <div class="update-photo">
-                <img src="honntai/images/tyousei.jpeg" alt="バランス調整画像" />
+                <img
+                  src="/honntai/images/tyousei.jpeg"
+                  alt="バランス調整画像"
+                />
               </div>
               <!-- 右側に説明 -->
               <div class="update-info">
@@ -233,25 +425,6 @@
                         padding: 10px;
                       "
                       >激アツハンター</span
-                    >
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/honntai/yosou/koraboyosou.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/zikainokorabo.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >次回のコラボ予想</span
                     >
                   </a>
                 </li>
@@ -457,25 +630,6 @@
                     >
                   </a>
                 </li>
-
-                <li>
-                  <a
-                    href="/honntai/emoto/emoto.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/emoto.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >エモート利用</span
-                    >
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -529,12 +683,12 @@
           <!-- 四角い箱 -->
           <!-- 左側に写真 -->
           <a
-            href="honntai/ibento/ibento.html"
+            href="/honntai/ibento/ibento.html"
             title="詳しくはこちら"
             class="update-box"
           >
             <div class="update-photo">
-              <img src="honntai/images/ibento.jpeg" alt="イベント画像" />
+              <img src="/honntai/images/ibento.jpeg" alt="イベント画像" />
             </div>
             <!-- 右側に説明とリンク -->
             <div class="update-info">
@@ -555,12 +709,12 @@
             <!-- 四角い箱 -->
             <!-- 左側に写真 -->
             <a
-              href="honntai/korabo/korabo.html"
+              href="/honntai/korabo/korabo.html"
               title="詳しくはこちら"
               class="update-box"
             >
               <div class="update-photo">
-                <img src="honntai/images/korabo.jpeg" alt="コラボ情報画像" />
+                <img src="/honntai/images/korabo.jpeg" alt="コラボ情報画像" />
               </div>
               <!-- 右側に説明とリンク -->
               <div class="update-info">
@@ -580,13 +734,36 @@
             <!-- モードごとの攻略ボックス -->
             <!-- 左側に写真 -->
             <a
-              href="honntai/otogibanasi/otogibanasi.html"
+              href="/honntai/shukikahitsu/shukikahitsu.html"
               title="詳しくはこちら"
               class="update-box"
             >
               <div class="update-photo">
                 <img
-                  src="honntai/images/otogibanasi/otogibanasi.jpeg"
+                  src="/honntai/images/shukikahitsu/shukikahitsu.jpeg"
+                  alt="手記の加筆モード画像"
+                />
+              </div>
+              <!-- 右側に説明とリンク -->
+              <div class="update-info">
+                <p>
+                  新モード「手記の加筆」の攻略情報を紹介。遊び方や最初に買うべきアイテム、武器・アイテムの装備（変更）方法、職業・異象の立ち回りまでまとめています。
+                </p>
+              </div>
+              <!-- リンクのマーク -->
+              <div class="update-link">
+                <span>＞</span>
+              </div>
+            </a>
+            <!-- 左側に写真 -->
+            <a
+              href="/honntai/otogibanasi/otogibanasi.html"
+              title="詳しくはこちら"
+              class="update-box"
+            >
+              <div class="update-photo">
+                <img
+                  src="/honntai/images/otogibanasi/otogibanasi.jpeg"
                   alt="森のお伽話モード画像"
                 />
               </div>
@@ -604,13 +781,13 @@
 
             <!-- 左側に写真 -->
             <a
-              href="honntai/pennsaki/pennsaki.html"
+              href="/honntai/pennsaki/pennsaki.html"
               title="詳しくはこちら"
               class="update-box"
             >
               <div class="update-photo">
                 <img
-                  src="honntai/images/pennsaki.jpeg"
+                  src="/honntai/images/pennsaki.jpeg"
                   alt="べん先の空想モード画像"
                 />
               </div>
@@ -628,13 +805,13 @@
 
             <!-- 他のモードの攻略ボックスを必要に応じて追加 -->
             <a
-              href="honntai/kopiki/kopiki.html"
+              href="/honntai/kopiki/kopiki.html"
               title="詳しくはこちら"
               class="update-box"
             >
               <div class="update-photo">
                 <img
-                  src="honntai/images/kopiki.jpeg"
+                  src="/honntai/images/kopiki.jpeg"
                   alt="コピーキャットモード画像"
                 />
               </div>
@@ -1096,10 +1273,10 @@
             <li>
               <img
                 src="/honntai/images/kyaragazou/sabaibagazou/redhifauro.jpeg"
-                alt="レディファウロ"
+                alt="レディ・ファウロ"
               />
               <a href="/honntai/sabaiba/redhifauro/redhifauro.html"
-                ><span>レディファウロ</span></a
+                ><span>レディ・ファウロ</span></a
               >
               <span class="arrow">></span>
             </li>
@@ -1158,6 +1335,16 @@
               />
               <a href="/honntai/sabaiba/tougyuusi/tougyuusi.html"
                 ><span>闘牛士</span></a
+              >
+              <span class="arrow">></span>
+            </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/sabaibagazou/maimu.jpeg"
+                alt="マイムアーティスト"
+              />
+              <a href="/honntai/sabaiba/maimu/maimu.html"
+                ><span>マイムアーティスト</span></a
               >
               <span class="arrow">></span>
             </li>
@@ -1491,6 +1678,16 @@
               >
               <span class="arrow">></span>
             </li>
+            <li>
+              <img
+                src="/honntai/images/kyaragazou/hanntagazou/haisya.jpeg"
+                alt="歯医者"
+              />
+              <a href="/honntai/hanta/haisya/haisya.html"
+                ><span>歯医者</span></a
+              >
+              <span class="arrow">></span>
+            </li>
           </ul>
         </div>
       </div>
@@ -1509,37 +1706,7 @@
                   <div>IdentityV 用語一覧</div>
                   <div class="widget-item-meta">
                     <span class="widget-category">初心者向け</span>
-                    <span class="widget-views">👁 1,044</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="widget-item">
-            <a href="/honntai/korabo/korabo.html">
-              <div class="widget-item-content">
-                <span class="widget-rank">2</span>
-                <div class="widget-item-text">
-                  <div>コラボ情報</div>
-                  <div class="widget-item-meta">
-                    <span class="widget-category">コラボ</span>
-                    <span class="widget-views">👁 187</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="widget-item">
-            <a href="/honntai/最新情報/最新情報.html">
-              <div class="widget-item-content">
-                <span class="widget-rank">3</span>
-                <div class="widget-item-text">
-                  <div>最新アップデート情報</div>
-                  <div class="widget-item-meta">
-                    <span class="widget-category">更新情報</span>
-                    <span class="widget-views">👁 183</span>
+                    <span class="widget-views">👁 3,054</span>
                   </div>
                 </div>
               </div>
@@ -1549,12 +1716,42 @@
           <div class="widget-item">
             <a href="/honntai/sabaran/sabaran.html">
               <div class="widget-item-content">
-                <span class="widget-rank">4</span>
+                <span class="widget-rank">2</span>
                 <div class="widget-item-text">
-                  <div>サバイバー tier表 2025</div>
+                  <div>サバイバー tier表 2026</div>
                   <div class="widget-item-meta">
                     <span class="widget-category">ランキング</span>
-                    <span class="widget-views">👁 97</span>
+                    <span class="widget-views">👁 1,826</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/korabo/korabo.html">
+              <div class="widget-item-content">
+                <span class="widget-rank">3</span>
+                <div class="widget-item-text">
+                  <div>コラボ情報</div>
+                  <div class="widget-item-meta">
+                    <span class="widget-category">コラボ</span>
+                    <span class="widget-views">👁 990</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/saisinn/saisinn.html">
+              <div class="widget-item-content">
+                <span class="widget-rank">4</span>
+                <div class="widget-item-text">
+                  <div>最新アップデート情報</div>
+                  <div class="widget-item-meta">
+                    <span class="widget-category">更新情報</span>
+                    <span class="widget-views">👁 856</span>
                   </div>
                 </div>
               </div>
@@ -1582,21 +1779,21 @@
           <h3>最近の更新</h3>
 
           <div class="widget-item">
-            <a href="/honntai/tyousei/tyousei.html">
-              <div>第五人格 アップデート追跡 キャラ調整・天賦調整</div>
+            <a href="/honntai/hanta/haisya/haisya.html">
+              <div>「歯医者」攻略</div>
               <div class="widget-item-meta">
-                <span class="widget-tag">キャラ調整</span>
-                <span>2026/4/16</span>
+                <span class="widget-tag">ハンター</span>
+                <span>2026/4/30</span>
               </div>
             </a>
           </div>
 
           <div class="widget-item">
-            <a href="/honntai/最新情報/最新情報.html">
+            <a href="/honntai/saisinn/saisinn.html">
               <div>最新アップデート情報</div>
               <div class="widget-item-meta">
                 <span class="widget-tag">更新情報</span>
-                <span>2026/4/16</span>
+                <span>2026/4/30</span>
               </div>
             </a>
           </div>
@@ -1606,7 +1803,17 @@
               <div>最新イベント情報</div>
               <div class="widget-item-meta">
                 <span class="widget-tag">イベント</span>
-                <span>2026/3/26</span>
+                <span>2026/4/30</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="widget-item">
+            <a href="/honntai/tyousei/tyousei.html">
+              <div>第五人格 アップデート追跡 キャラ調整・天賦調整</div>
+              <div class="widget-item-meta">
+                <span class="widget-tag">キャラ調整</span>
+                <span>2026/4/16</span>
               </div>
             </a>
           </div>
@@ -1680,7 +1887,17 @@
           <h2>第五人格情報発表番組</h2>
           <ul>
             <li>
-              <a href="/honntai/idv-program-slider/idv-program-slider.html">
+              <a href="/honntai/idv-program-slider/8th-anniversary.html">
+                第五人格情報発表番組～8th-anniversary～（2026.6.3）
+              </a>
+            </li>
+            <li>
+              <a href="/honntai/idv-program-slider/2026shinban.html">
+                第第五人格情報発表番組～新バージョン～（2026.3.6）
+              </a>
+            </li>
+            <li>
+              <a href="/honntai/idv-program-slider/2025christmas.html">
                 第五人格情報発表番組～2025年クリスマス直前SP～（2025.12.19）
               </a>
             </li>
@@ -1704,21 +1921,26 @@
             required
           ></textarea>
           <button type="submit">コメントを投稿</button>
+          <p class="comment-note">
+            ※不適切な投稿は予告なく削除される場合があります。
+          </p>
         </form>
 
         <div id="comments-container">
           <div id="comments" class="scrollable">
-            <!-- コメントがここに追加されます -->
+            <p class="comment-empty">
+              まだコメントはありません。最初のコメントを書いてみませんか？
+            </p>
           </div>
         </div>
       </div>
     </main>
     <!-- スクロール時に表示される横棒 -->
     <div id="scroll-bar">
-      <a href="honntai/最新情報/最新情報.html">最新アップデート情報</a>
+      <a href="/honntai/saisinn/saisinn.html">最新アップデート情報</a>
       <a href="#comments">みんなのコメント</a>
-      <a href="honntai/情報/情報.html">キャラ情報</a>
-      <a href="honntai/お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+      <a href="/honntai/情報/情報.html">キャラ情報</a>
+      <a href="/honntai/お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
     </div>
 
     <!-- クローラー向け静的フッターリンク（footer.jsと併用） -->
@@ -1737,14 +1959,13 @@
           <h3>最新情報</h3>
           <ul>
             <li>
-              <a href="/honntai/最新情報/最新情報.html">最新アップデート情報</a>
+              <a href="/honntai/saisinn/saisinn.html">最新アップデート情報</a>
             </li>
             <li>
               <a href="/honntai/tyousei/tyousei.html">キャラ調整・天賦調整</a>
             </li>
             <li><a href="/honntai/ibento/ibento.html">イベント情報</a></li>
             <li><a href="/honntai/korabo/korabo.html">コラボ情報</a></li>
-            <li><a href="/honntai/yosou/koraboyosou.html">コラボ予想</a></li>
           </ul>
         </div>
 

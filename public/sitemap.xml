@@ -4,17 +4,105 @@
 <!-- トップページ -->
 <url>
   <loc>https://daigoroku.com/</loc>
-  <lastmod>2026-02-12</lastmod>
+  <lastmod>2026-06-21</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
 </url>
 
-<!-- 最新情報 -->
+<!-- サバイバー・ハンター一覧（キャラ情報ハブ） -->
 <url>
-  <loc>https://daigoroku.com/honntai/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1/%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1.html</loc>
-  <lastmod>2026-02-12</lastmod>
+  <loc>https://daigoroku.com/honntai/情報/情報.html</loc>
+  <lastmod>2026-06-21</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
+</url>
+
+<!-- 最新情報 -->
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/saisinn.html</loc>
+  <lastmod>2026-06-12</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- 最新情報 月別アーカイブ -->
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2026-05.html</loc>
+  <lastmod>2026-05-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2026-04.html</loc>
+  <lastmod>2026-04-30</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2026-03.html</loc>
+  <lastmod>2026-03-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2026-02.html</loc>
+  <lastmod>2026-02-19</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2026-01.html</loc>
+  <lastmod>2026-01-29</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-11.html</loc>
+  <lastmod>2025-11-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-10.html</loc>
+  <lastmod>2025-10-23</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-09.html</loc>
+  <lastmod>2025-09-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-08.html</loc>
+  <lastmod>2025-08-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-07.html</loc>
+  <lastmod>2025-07-30</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-06.html</loc>
+  <lastmod>2025-06-26</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-05.html</loc>
+  <lastmod>2025-05-29</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/saisinn/2025-04.html</loc>
+  <lastmod>2025-04-30</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
 </url>
 
 <!-- バランス調整 -->
@@ -41,24 +129,16 @@
   <priority>0.8</priority>
 </url>
 
-<!-- コラボ予想 -->
-<url>
-  <loc>https://daigoroku.com/honntai/yosou/koraboyosou.html</loc>
-  <lastmod>2026-02-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
 <!-- ランキング -->
 <url>
   <loc>https://daigoroku.com/honntai/sabaran/sabaran.html</loc>
-  <lastmod>2026-01-29</lastmod>
+  <lastmod>2026-06-11</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://daigoroku.com/honntai/hanran/hanran.html</loc>
-  <lastmod>2026-01-29</lastmod>
+  <lastmod>2026-06-11</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
@@ -93,12 +173,6 @@
   <lastmod>2026-01-29</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://daigoroku.com/honntai/emoto/emoto.html</loc>
-  <lastmod>2026-01-29</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
 </url>
 
 <!-- 攻略情報 -->
@@ -158,101 +232,129 @@
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
+<url>
+  <loc>https://daigoroku.com/honntai/shukikahitsu/shukikahitsu.html</loc>
+  <lastmod>2026-06-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
 
 <!-- 情報発表番組 -->
 <url>
   <loc>https://daigoroku.com/honntai/idv-program-slider/idv-program-slider.html</loc>
+  <lastmod>2026-06-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/idv-program-slider/8th-anniversary.html</loc>
+  <lastmod>2026-06-21</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/idv-program-slider/2026shinban.html</loc>
+  <lastmod>2026-03-06</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://daigoroku.com/honntai/idv-program-slider/2025christmas.html</loc>
   <lastmod>2025-12-19</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
 
 <!-- サバイバーページ -->
-<url><loc>https://daigoroku.com/honntai/sabaiba/kouunzi/kouunzi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/isi/isi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/benngosi/benngosi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kuugunn/kuugunn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/niwasi/niwasi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/dorobou/dorobou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/youhei/youhei.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/tyoukousi/tyoukousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/uranaisi/uranaisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/mazisyann/mazisyann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kauboi/kauboi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/boukennka/boukennka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/saisi/saisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kikaigisi/kikaigisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/ofensu/ofensu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/sinngann/sinngann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/odoriko/odoriko.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/noukannsi/noukannsi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/tannkousya/tannkousya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/zyuzyutusi/zyuzyutusi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/yazinn/yazinn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kyokugeisi/kyokugeisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/ittoukoukaisi/ittoukoukaisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/bameido/bameido.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/posutomann/posutomann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/hakamori/hakamori.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/syuuzinn/syuuzinn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/konntyuugakusya/konntyuugakusya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/gaka/gaka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/battumann/battumann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/benngosi/benngosi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/boukennka/boukennka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/dassyutumasuta/dassyutumasuta.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/dorobou/dorobou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/gaka/gaka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/ganngusyokuninn/ganngusyokuninn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/genntousi/genntousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/hakamori/hakamori.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/isi/isi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/ittoukoukaisi/ittoukoukaisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/kannzya/kannzya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kasaityousainn/kasaityousainn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kauboi/kauboi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kikaigisi/kikaigisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kisi/kisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kisya/kisya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kisyougakusya/kisyougakusya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/konntyuugakusya/konntyuugakusya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kottousyou/kottousyou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/koukuuennzinia/koukuuennzinia.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kouunzi/kouunzi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kuugunn/kuugunn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kyokugeisi/kyokugeisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/kyouzyu/kyouzyu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/maimu/maimu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/mazisyann/mazisyann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/nakipiero/nakipiero.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/ningyousi/ningyousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/niwasi/niwasi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/noukannsi/noukannsi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/odoriko/odoriko.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/ofensu/ofensu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/ouenndann/ouenndann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/posutomann/posutomann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/redhifauro/redhifauro.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/saisi/saisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/sakkyokuka/sakkyokuka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/sinngann/sinngann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/sinnrigakusya/sinnrigakusya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/syousetuka/syousetuka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/syouzyo/syouzyo.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/nakipiero/nakipiero.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kyouzyu/kyouzyu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kottousyou/kottousyou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/sakkyokuka/sakkyokuka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kisya/kisya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/koukuuennzinia/koukuuennzinia.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/ouenndann/ouenndann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/ningyousi/ningyousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kasaityousainn/kasaityousainn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/redhifauro/redhifauro.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kisi/kisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/kisyougakusya/kisyougakusya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/syuuzinn/syuuzinn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/tannkousya/tannkousya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/tougyuusi/tougyuusi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/tyoukousi/tyoukousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/uranaisi/uranaisi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/yazinn/yazinn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/youhei/youhei.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/sabaiba/yumitukai/yumitukai.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/dassyutumasuta/dassyutumasuta.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/genntousi/genntousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/sabaiba/tougyuusi/tougyuusi.html</loc><lastmod>2025-12-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/sabaiba/zyuzyutusi/zyuzyutusi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 <!-- ハンターページ -->
-<url><loc>https://daigoroku.com/honntai/hanta/hukusyuusya/hukusyuusya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/doukesi/doukesi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/dannzaikariudo/dannzaikariudo.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/rippa/rippa.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/kekkonnsya/kekkonnsya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/geisya/geisya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/sirokuromuzyou/sirokuromuzyou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/syasinnka/syasinnka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/kyougenn/kyougenn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/ika/ika.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/yumenomazyo/yumenomazyo.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/nakimusi/nakimusi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/matokage/matokage.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/marhi/marhi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/bonnbonn/bonnbonn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/sito/sito.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/anndetto/anndetto.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/harinn/harinn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/ryousi/ryousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/rouninngyousi/rouninngyousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/hanta/akumu/akumu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/syokikann/syokikann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/innzya/innzya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/yorunobannninn/yorunobannninn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/hurugo/hurugo.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/operakasyu/operakasyu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/zikuunokage/zikuunokage.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/anndetto/anndetto.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/hanta/asinaenohituzi/asinaenohituzi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/hurabaru/hurabaru.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/zakkasyou/zakkasyou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://daigoroku.com/honntai/hanta/biriyadopureiya/biriyadopureiya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://daigoroku.com/honntai/hanta/zyououbati/zyououbati.html</loc><lastmod>2025-11-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/bonnbonn/bonnbonn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/dannzaikariudo/dannzaikariudo.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/doukesi/doukesi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/geisya/geisya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/haisya/haisya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/harinn/harinn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/hukusyuusya/hukusyuusya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/hurabaru/hurabaru.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/hurugo/hurugo.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/ika/ika.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/innzya/innzya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/kekkonnsya/kekkonnsya.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/kyougenn/kyougenn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/marhi/marhi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/matokage/matokage.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/nakimusi/nakimusi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/operakasyu/operakasyu.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/rippa/rippa.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/rouninngyousi/rouninngyousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/ryousi/ryousi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/sirokuromuzyou/sirokuromuzyou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/sito/sito.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/syasinnka/syasinnka.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/syokikann/syokikann.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/tyoukokusi/tyoukokusi.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/vaiorinisuto/vaiorinisuto.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/yorunobannninn/yorunobannninn.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/yumenomazyo/yumenomazyo.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/zakkasyou/zakkasyou.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/zikuunokage/zikuunokage.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://daigoroku.com/honntai/hanta/zyououbati/zyououbati.html</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 <!-- サイト情報 -->
 <url>
@@ -262,10 +364,15 @@
   <priority>0.5</priority>
 </url>
 <url>
+  <loc>https://daigoroku.com/honntai/お問い合わせ/お問合せフォーム.html</loc>
+  <lastmod>2026-06-21</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
   <loc>https://daigoroku.com/honntai/puraibasi/puraibasi.html</loc>
   <lastmod>2024-11-01</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.5</priority>
 </url>
-
 </urlset>

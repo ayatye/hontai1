@@ -221,7 +221,7 @@ const survivors = [
     link: "/honntai/sabaiba/kasaityousainn/kasaityousainn.html",
   },
   {
-    name: "レディファウロ",
+    name: "レディ・ファウロ",
     url: "/honntai/images/kyaragazou/sabaibagazou/redhifauro.jpeg",
     link: "/honntai/sabaiba/redhifauro/redhifauro.html",
   },
@@ -254,6 +254,11 @@ const survivors = [
     name: "闘牛士",
     url: "/honntai/images/kyaragazou/sabaibagazou/tougyuusi.jpeg",
     link: "/honntai/sabaiba/tougyuusi/tougyuusi.html",
+  },
+  {
+    name: "マイムアーティスト",
+    url: "/honntai/images/kyaragazou/sabaibagazou/maimu.jpeg",
+    link: "/honntai/sabaiba/maimu/maimu.html",
   },
 ];
 
@@ -427,6 +432,11 @@ const hunters = [
     name: "女王蜂",
     url: "/honntai/images/kyaragazou/hanntagazou/zyououbati.jpeg",
     link: "/honntai/hanta/zyououbati/zyououbati.html",
+  },
+  {
+    name: "歯医者",
+    url: "/honntai/images/kyaragazou/hanntagazou/haisya.jpeg",
+    link: "/honntai/hanta/haisya/haisya.html",
   },
 ];
 

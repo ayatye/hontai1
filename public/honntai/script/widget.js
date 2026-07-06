@@ -12,26 +12,26 @@
       {
         title: "IdentityV 用語一覧",
         url: "/honntai/yougo/yougo.html",
-        views: 1044,
+        views: 3054,
         category: "初心者向け",
+      },
+      {
+        title: "サバイバー tier表 2026",
+        url: "/honntai/sabaran/sabaran.html",
+        views: 1826,
+        category: "ランキング",
       },
       {
         title: "コラボ情報",
         url: "/honntai/korabo/korabo.html",
-        views: 187,
+        views: 990,
         category: "コラボ",
       },
       {
         title: "最新アップデート情報",
-        url: "/honntai/最新情報/最新情報.html",
-        views: 183,
+        url: "/honntai/saisinn/saisinn.html",
+        views: 856,
         category: "更新情報",
-      },
-      {
-        title: "サバイバー tier表 2025",
-        url: "/honntai/sabaran/sabaran.html",
-        views: 97,
-        category: "ランキング",
       },
       {
         title: "ビリヤードプレイヤー攻略",
@@ -44,22 +44,28 @@
     // 最近の更新
     recentUpdates: [
       {
-        title: "第五人格 アップデート追跡 キャラ調整・天賦調整",
-        url: "/honntai/tyousei/tyousei.html",
-        date: "2026-4-10",
-        tag: "キャラ調整",
+        title: "「歯医者」攻略",
+        url: "/honntai/hanta/haisya/haisya.html",
+        date: "2026-4-30",
+        tag: "ハンター",
       },
       {
         title: "最新アップデート情報",
-        url: "/honntai/最新情報/最新情報.html",
-        date: "2026-4-9",
+        url: "//honntai/saisinn/saisinn.htmln/.html",
+        date: "2026-4-30",
         tag: "更新情報",
       },
       {
         title: "最新イベント情報",
         url: "/honntai/ibento/ibento.html",
-        date: "2026-3-26",
+        date: "2026-4-30",
         tag: "イベント",
+      },
+      {
+        title: "第五人格 アップデート追跡 キャラ調整・天賦調整",
+        url: "/honntai/tyousei/tyousei.html",
+        date: "2026-4-13",
+        tag: "キャラ調整",
       },
       {
         title: "第五人格情報発表番組～新バージョン～",
@@ -138,13 +144,6 @@
           "ルール解説、動物の特殊能力、武器の効果まで完全網羅した攻略ガイド",
         category: "モード攻略",
         image: "/honntai/images/widget/otogibanasi.jpeg",
-      },
-      {
-        title: "コラボ予想",
-        url: "/honntai/yosou/koraboyosou.html",
-        description: "第五人格の雰囲気にマッチした最高のコラボ候補を徹底分析！",
-        category: "予想",
-        image: "/honntai/images/widget/zikainokorabo.jpeg",
       },
       {
         title: "激アツ最強サバイバー",
