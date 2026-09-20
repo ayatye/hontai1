@@ -1,0 +1,32 @@
+# =========================================================
+# .gitattributes — 第五録 / daigoroku.com
+# 改行コードの差分ノイズを防ぎ、バイナリを正しく扱う
+# =========================================================
+
+# テキストファイルは LF に統一（差分がきれいになる）
+* text=auto eol=lf
+
+# --- 画像 ---
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.svg   text eol=lf
+
+# --- 動画・音声 ---
+*.mp4   binary
+*.mov   binary
+*.webm  binary
+*.mp3   binary
+
+# --- フォント ---
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+
+# --- アーカイブ ---
+*.zip   binary
+*.gz    binary
