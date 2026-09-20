@@ -438,6 +438,11 @@ const hunters = [
     url: "/honntai/images/kyaragazou/hanntagazou/haisya.jpeg",
     link: "/honntai/hanta/haisya/haisya.html",
   },
+  {
+    name: "心の獣",
+    url: "/honntai/images/kyaragazou/hanntagazou/haisinokiba.jpeg",
+    link: "/honntai/hanta/haisinokiba/haisinokiba.html",
+  },
 ];
 
 // 仮のアイコン画像URL

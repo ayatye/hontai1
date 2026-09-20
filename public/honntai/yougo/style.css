@@ -13,6 +13,12 @@ body {
   margin: 0 auto;
   padding-left: 2cm;
 }
+
+/* 本文が縮まずサイドバーを押し潰すのを防ぐ */
+.konntent {
+  flex: 1;
+  min-width: 0;
+}
 h1 {
   font-size: 1.5em;
 }

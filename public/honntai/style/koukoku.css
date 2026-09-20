@@ -1,0 +1,119 @@
+/* =========================================================
+   koukoku.css  —  AdSense 手動広告 共通スタイル
+   第五録 / daigoroku.com
+   ---------------------------------------------------------
+   使い方: 各HTMLの <head> で読み込む
+   <link rel="stylesheet" href="/css/koukoku.css">
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. 広告枠コンテナ
+   min-height で高さを先に予約 → CLS（レイアウトシフト）対策
+   --------------------------------------------------------- */
+.ad-slot {
+  display: block;
+  margin: 2.5rem auto;
+  text-align: center;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+/* サイドバー内の広告枠 */
+.sidebar .ad-slot {
+  margin: 1.5rem 0;
+  min-height: 250px;
+}
+
+@media (min-width: 768px) {
+  .ad-slot {
+    margin: 3rem auto;
+    min-height: 300px;
+  }
+}
+
+/* 「広告」ラベル
+   義務ではないが、コンテンツとの混同を防げるので推奨 */
+.ad-slot::before {
+  content: "広告";
+  display: block;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: #999;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------------------------------------------------------
+   2. 未配信（unfilled）のとき枠を潰す
+   広告が返ってこなかったときに空白の穴が残るのを防ぐ
+   :has() は 2023年以降の主要ブラウザで利用可
+   --------------------------------------------------------- */
+.ad-slot ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
+}
+
+.ad-slot:has(ins[data-ad-status="unfilled"]) {
+  min-height: 0;
+  margin: 0;
+}
+
+.ad-slot:has(ins[data-ad-status="unfilled"])::before {
+  content: none;
+}
+
+/* ---------------------------------------------------------
+   3. デバイス出し分け（Google公式のメディアクエリ方式）
+   ---------------------------------------------------------
+   重要:
+   - display は必ず「このCSS側」で指定する
+   - <ins> に style="display:block" を書くとインラインが勝って
+     メディアクエリが効かなくなる。device系クラスを使う枠には
+     style属性を書かないこと
+   - この方式はサイズ固定になるので data-ad-format="auto" は付けない
+   --------------------------------------------------------- */
+
+/* PCだけ表示（サイドバー用・スカイスクレイパー） */
+.ad-pc-only {
+  display: none;
+}
+@media (min-width: 768px) {
+  .ad-pc-only {
+    display: inline-block;
+    width: 300px;
+    height: 600px;
+  }
+}
+
+/* スマホだけ表示（レクタングル） */
+.ad-sp-only {
+  display: none;
+}
+@media (max-width: 767px) {
+  .ad-sp-only {
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+  }
+}
+
+/* ---------------------------------------------------------
+   4. サイドバー用スティッキー枠（PCのみ）
+   --------------------------------------------------------- */
+.ad-slot--side {
+  min-height: 0;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .ad-slot--side {
+    position: sticky;
+    top: 80px;
+  }
+}
+
+/* ---------------------------------------------------------
+   5. 記事末 Multiplex 用（横幅いっぱい・高さ可変）
+   --------------------------------------------------------- */
+.ad-slot--matome {
+  min-height: 400px;
+}

@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>「心の獣」 - IdentityV（第五人格）攻略【第五録】</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../../style/hanbaga.css" />
+    <link rel="stylesheet" href="../../style/sidebar.css" />
+    <link rel="stylesheet" href="../../style/logo.css" />
+    <link rel="stylesheet" href="../../style/comment.css" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="IdentityV（第五人格）のハンター「心の獣」エミールの完全攻略ガイド。スキル解説、立ち回り方、おすすめ人格、応用テクニックまで詳しく紹介。初心者から上級者まで役立つ攻略情報。"
+    />
+    <meta
+      name="keywords"
+      content="IdentityV,第五人格,心の獣,エミール,ハンター,攻略,人格,立ち回り"
+    />
+    <meta name="last-modified" content="2026-04-23" />
+    <link
+      rel="canonical"
+      href="https://daigoroku.com/honntai/hanta/kokoro-no-kemono/kokoro-no-kemono.html"
+    />
+
+    <!-- OGP -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="「心の獣」 - IdentityV（第五人格）攻略【第五録】"
+    />
+    <meta
+      property="og:description"
+      content="ハンター「心の獣」エミールの立ち回りとスキル解説。おすすめ人格構成や応用テクニックも詳しく掲載。"
+    />
+    <meta
+      property="og:url"
+      content="https://daigoroku.com/honntai/hanta/kokoro-no-kemono/kokoro-no-kemono.html"
+    />
+    <meta property="og:site_name" content="第五録" />
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4556398935658570"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ET1RB84XRR"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-ET1RB84XRR");
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="konntent">
+        <nav class="character-nav">
+          <h2>目次</h2>
+          <ul>
+            <li><a href="#evaluation">キャラの評価</a></li>
+            <li><a href="#traits">外在特質とスキル</a></li>
+            <li><a href="#skilldetail">スキル詳細解説</a></li>
+            <li><a href="#strategy">ハンター立ち回り方</a></li>
+            <li><a href="#recommendation">おすすめの内在人格</a></li>
+          </ul>
+        </nav>
+
+        <main>
+          <!-- キャラ評価セクション -->
+          <section id="evaluation">
+            <img
+              src="../../images/kyaragazou/hanntagazou/kokoro-no-kemono.jpeg"
+              alt="心の獣の写真"
+              class="character-image"
+            />
+            <h1>「心の獣」（エミール）評価</h1>
+
+            <p>
+              獲物マーク＆追跡型！高い機動力を活かした狩人ハンター。
+              獲物マークで粘着力を強化し、追跡で全体マップを支配する戦略ハンター！！
+            </p>
+
+            <table class="merit-table">
+              <tr>
+                <th class="th-good">✅ 長所</th>
+                <th class="th-bad">❌ 短所</th>
+              </tr>
+              <tr>
+                <td class="td-good">
+                  飛びかかりと追襲による2段階攻撃で高いダメージ効率
+                </td>
+                <td class="td-bad">初期状態では感知範囲が限定的（36m～48m）</td>
+              </tr>
+              <tr>
+                <td class="td-good">
+                  獲物マークによる追加ダメージで粘着力が非常に高い
+                </td>
+                <td class="td-bad">
+                  スキル使用で獣形態に切り替わるため立ち回りが固定される
+                </td>
+              </tr>
+              <tr>
+                <td class="td-good">
+                  追跡スキルで全サバイバーの位置を把握可能
+                </td>
+                <td class="td-bad">
+                  飛びかかり1段階目ではダメージを与えられない
+                </td>
+              </tr>
+              <tr>
+                <td class="td-good">
+                  痕跡を踏むことで移動速度が10%上昇し、能力が強化される
+                </td>
+                <td class="td-bad">
+                  追襲のクールタイムが初期状態では14秒と長め
+                </td>
+              </tr>
+              <tr>
+                <td class="td-good">
+                  存在感2で獲物マークの発動回数が3回に増加し、粘着が強化
+                </td>
+                <td class="td-bad">人間形態での索敵能力が限定的</td>
+              </tr>
+              <tr>
+                <td class="td-good">
+                  追襲で長押しにより最大14mの距離移動が可能
+                </td>
+                <td class="td-bad">
+                  獲物マークは40秒間の期限があり、マーク管理が必要
+                </td>
+              </tr>
+            </table>
+
+            <canvas id="strengthChart" width="300" height="300"></canvas>
+          </section>
+
+          <!-- 外在特質と特徴セクション -->
+          <section id="traits">
+            <h2>外在特質とスキル</h2>
+
+            <div class="point-box">
+              <div class="point-title">⚠️ 最新の下方修正（調整済み）</div>
+              ・追襲の移動速度と命中判定幅をわずかに下方修正、<span
+                class="red-text"
+                >クールタイム14秒→15秒</span
+              >に延長<br />
+              ・追襲が、<span class="bold-text"
+                >窓以外の低い建物の裏側にいるサバイバーに命中しなくなった</span
+              ><br />
+              ・痕跡感知による追襲のクールタイム短縮を<span class="red-text"
+                >6秒→4秒</span
+              >に調整、アクション速度上昇もわずかに下方修正<br />
+              ・<span class="bold-text"
+                >攻撃命中時の回復アクション速度が上昇しなくなった</span
+              ><br />
+              ・襲撃溜め攻撃による<span class="bold-text"
+                >最大ジャンプ高度をわずかに下方修正</span
+              ><br />
+              ・引っかき攻撃の命中判定継続時間をわずかに短縮（アクション合計時間は変化なし）
+            </div>
+
+            <div class="traits-box">
+              <div class="trait-item">
+                <h3>特質：【獣性覚醒】</h3>
+                通常、「心の獣」は人間形態を維持している。この形態では感覚過負荷を発動し、自身の付近<span
+                  class="bold-text"
+                  >36メートルから48メートル以内</span
+                >にいるサバイバーを感知できる。<br /><br />
+                スキル使用・通常攻撃・木の板の破壊などの行動を行うと、<span
+                  class="bold-text"
+                  >獣形態に切り替わる</span
+                >。獣形態は<span class="bold-text">8秒間持続</span>する。
+              </div>
+
+              <div class="trait-item">
+                <h3>特質：【飛びかかり】</h3>
+                「心の獣」の通常攻撃による飛びかかりは、<span class="bold-text"
+                  >2段階に分かれている</span
+                >。<br /><br />
+                <span class="bold-text">第1段階</span
+                >では一定の高さまで跳躍し、落下時に対象を襲撃する（<span
+                  class="blue-text"
+                  >長押しでより高く跳躍できる</span
+                >）。この攻撃では<span class="red-text">ダメージを与えず</span
+                >、命中後に追加の回復アクションも発生しない。<br /><br />
+                <span class="bold-text">4.5秒以内</span
+                >に再度攻撃を行うと、<span class="bold-text"
+                  >第2段階の引っ掻き攻撃</span
+                >が発動し、<span class="blue-text"
+                  >通常攻撃の半分に値するダメージ</span
+                >を与える。
+              </div>
+
+              <div class="trait-item">
+                <h3>特質：【獲物マーク】</h3>
+                「心の獣」の飛びかかりまたは追襲がサバイバーに命中すると、対象に<span
+                  class="highlight-text"
+                  >獲物マークを付与</span
+                >する。<br /><br />
+                獲物マークは<span class="bold-text">40秒間持続</span
+                >し、「心の獣」がその後に行う飛びかかりまたは追襲が獲物マークを持つサバイバーに命中した場合、<span
+                  class="blue-text"
+                  >追加で通常攻撃の半分に値するダメージ</span
+                >を与える。<br /><br />
+                獲物マークは<span class="red-text">2回発動すると解除</span
+                >される。（存在感2で3回に増加）
+              </div>
+            </div>
+
+            <div class="features-box">
+              <div class="trait-item">
+                <h3>存在感0：【追襲】　クールタイム：15秒</h3>
+                スキルボタンをタップすると、指定方向に<span class="bold-text"
+                  >7メートル突進</span
+                >し、追襲を行う。<br /><br />
+                長押しすると、その場で力を溜めてから追襲できる。<span
+                  class="bold-text"
+                  >長押し時間が長いほど追襲の距離も増加</span
+                >する（<span class="red-text">最大14メートル</span
+                >まで）。<br /><br />
+                <span class="blue-text"
+                  >1段目の追襲発動から5秒以内に、再度追襲を使用できる。</span
+                >
+              </div>
+
+              <div class="trait-item">
+                <h3>存在感1：【追跡】　クールタイム：45秒</h3>
+                スキルボタンをタップすると、<span class="bold-text"
+                  >30メートル範囲内にいるサバイバーを探知</span
+                >する。<br /><br />
+                探知されたサバイバーは<span class="bold-text">18秒ごとに</span
+                >その場に痕跡を残す。痕跡は<span class="blue-text"
+                  >最大3回分</span
+                >まで表示され、それぞれ<span class="bold-text">30秒間持続</span
+                >する。<br /><br />
+                「心の獣」が痕跡を感知する（痕跡を踏む）と、<span
+                  class="bold-text"
+                  >10秒間</span
+                >：<br />
+                ・<span class="blue-text">移動速度が8%上昇</span><br />
+                ・<span class="blue-text">追襲と飛びかかりの性能が強化</span
+                >（速度上昇、アクション時間短縮）<br />
+                ・<span class="blue-text">追襲のクールタイムが4秒短縮</span
+                >される
+              </div>
+
+              <div class="trait-item">
+                <h3>存在感2：【獲物マーク-追撃】</h3>
+                獲物マークの発動回数上限が<span class="bold-text"
+                  >2回から3回に増加</span
+                >する。
+              </div>
+            </div>
+          </section>
+
+          <!-- スキル詳細解説セクション -->
+          <section id="skilldetail" class="advanced-skills-section">
+            <h2>スキル詳細解説</h2>
+
+            <div class="skill-item">
+              <h3>🐺 飛びかかりの活用法</h3>
+              <p>
+                飛びかかりは<span class="bold-text"
+                  >溜め攻撃にすると高さが増す</span
+                >ので、<span class="blue-text"
+                  >高いオブジェクトも乗り越えることができる</span
+                >ようになる。<br /><br />
+                強い板窓以外は<span class="bold-text"
+                  >飛びかかりで乗り越え攻撃</span
+                >を与えていこう。<br /><br />
+                <span class="highlight-text"
+                  >落下場所で飛びかかりを使用することで落下硬直がなくなる</span
+                >ため、飛びかかりは絶対に使おう。<br /><br />
+                飛びかかり後の<span class="red-text"
+                  >4.5秒間は引っかき攻撃しかできない</span
+                >が、無理に引っかき攻撃を使わずに<span class="bold-text"
+                  >もう一度飛びかかりから始めることも大事</span
+                >。
+              </p>
+              <div class="point-box">
+                <div class="point-title">💡 ポイント</div>
+                落下場所での飛びかかりは硬直をなくせるので、積極的に活用しましょう。
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <h3>🐺 初動の連続攻撃</h3>
+              <p>
+                始まった瞬間に<span class="bold-text">追襲を2回使用</span
+                >してファーストチェイスを早めよう。<br /><br />
+                <span class="blue-text">追襲→追襲→飛びかかり→引っかき攻撃</span
+                >の連携が基本。<br /><br />
+                <span class="bold-text">存在感がない時</span
+                >に初動で連続で与えられるダメージは<span class="red-text"
+                  >最大1.5ダメージ</span
+                >（獲物マークが2回なので）。<br /><br />
+                <span class="bold-text">存在感MAX時</span
+                >は与えられる最大ダメージは<span class="red-text"
+                  >2ダメージ＝ダウン</span
+                >（獲物マークが3回なので）。
+              </p>
+            </div>
+
+            <div class="skill-item">
+              <h3>🐺 獲物マークの計算方法（簡単版）</h3>
+              <p>
+                心の獣は攻撃の種類によってダメージが変わるため、初見だと分かりにくいです。まずは<span
+                  class="bold-text"
+                  >攻撃ごとの基本ダメージ</span
+                >を押さえましょう。
+              </p>
+
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>攻撃の種類</th>
+                    <th>マークなし</th>
+                    <th>マークあり</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>飛びかかり攻撃</td>
+                    <td>0ダメージ</td>
+                    <td><span class="red-text">0.5</span>ダメージ</td>
+                  </tr>
+                  <tr>
+                    <td>追襲（突進）攻撃</td>
+                    <td>0ダメージ</td>
+                    <td><span class="red-text">0.5</span>ダメージ</td>
+                  </tr>
+                  <tr>
+                    <td>引っかき攻撃</td>
+                    <td>0.5ダメージ</td>
+                    <td><span class="red-text">1.0</span>ダメージ</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="point-box">
+                <div class="point-title">📌 まず覚える3つのルール</div>
+                ① どの攻撃も当てると
+                <span class="highlight-text">獲物マークを付与</span>する<br />
+                ② <span class="bold-text">マーク持ち</span>に当てると、<span
+                  class="red-text"
+                  >全ての攻撃に＋0.5ダメージ</span
+                >（飛びかかり・追襲・引っかきすべて）<br />
+                ③ マークは<span class="bold-text">2回発動で解除</span
+                >（存在感MAXなら<span class="bold-text">3回</span>）
+              </div>
+
+              <p>
+                これを踏まえた、<span class="bold-text"
+                  >おすすめの最大ダメージコンボ</span
+                >がこちら。
+              </p>
+
+              <div class="point-box">
+                <div class="point-title">
+                  🔥 最大ダメージコンボ（存在感なし）
+                </div>
+                <span class="bold-text">追襲 → 飛びかかり → 引っかき攻撃</span
+                ><br /><br />
+                ・追襲（マーク付与）：0ダメージ<br />
+                ・飛びかかり（マーク1回発動）：<span class="red-text"
+                  >0.5ダメージ</span
+                ><br />
+                ・引っかき（マーク2回発動）：<span class="red-text"
+                  >1.0ダメージ</span
+                ><br /><br />
+                合計
+                <span class="red-text">1.5ダメージ</span>
+                を一気に与えられる！<br />
+                <span class="highlight-text"
+                  >すでに0.5ダメージ入っている相手なら、このコンボで即ダウン！</span
+                >
+              </div>
+
+              <div class="point-box">
+                <div class="point-title">
+                  🔥 最大ダメージコンボ（存在感MAX・マーク3回）
+                </div>
+                <span class="bold-text"
+                  >追襲 → 追襲 → 飛びかかり → 引っかき攻撃</span
+                ><br /><br />
+                ・追襲（マーク付与）：0ダメージ<br />
+                ・追襲（マーク1回発動）：<span class="red-text"
+                  >0.5ダメージ</span
+                ><br />
+                ・飛びかかり（マーク2回発動）：<span class="red-text"
+                  >0.5ダメージ</span
+                ><br />
+                ・引っかき（マーク3回発動）：<span class="red-text"
+                  >1.0ダメージ</span
+                ><br /><br />
+                合計
+                <span class="red-text">2ダメージ＝ダウン</span>
+                まで一気に持っていける！
+              </div>
+
+              <div class="point-box">
+                <div class="point-title">💡 実戦での考え方</div>
+                ・<span class="bold-text">存在感なし（マーク2回まで）</span> →
+                コンボで <span class="red-text">最大1.5ダメージ</span><br />
+                ・<span class="bold-text">存在感MAX（マーク3回まで）</span> →
+                マークが1回分多く乗るので
+                <span class="red-text">2ダメージ＝ダウン</span>
+                まで狙える<br /><br />
+                <span class="highlight-text"
+                  >ポイントは「1発目でマークを付けて、2発目以降で追加ダメージを取る」こと！</span
+                >
+              </div>
+
+              <div class="point-box">
+                <div class="point-title">⚠️ 注意</div>
+                飛びかかり攻撃命中後、<span class="bold-text"
+                  >4.5秒待たずに攻撃を当てると硬直ありの引っかき攻撃</span
+                >になってしまう。即ダウンを狙うなら、一旦時間切れを待つ判断も大切。
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <h3>🐺 追襲での獲物マーク付与テクニック</h3>
+              <p>
+                <span class="bold-text">板間にいく時に追襲で突っ込む</span
+                >と、<span class="highlight-text"
+                  >必ず獲物マークを付与できる</span
+                >。覚えておいて損はないかも。<br /><br />
+                このテクニックを使うことで、板攻防をしながら確実にマークを付けられるため、粘着力が大幅に向上します。
+              </p>
+            </div>
+
+            <div class="skill-item">
+              <h3>🐺 追跡スキルの立ち回り</h3>
+              <p>
+                <span class="bold-text">30メートル範囲内</span
+                >のサバイバーを探知し、<span class="blue-text"
+                  >18秒ごとに痕跡を残す</span
+                >。<br /><br />
+                痕跡を踏むことで<span class="bold-text">10秒間</span>：<br />
+                ・移動速度が8%上昇<br />
+                ・飛びかかりと追襲が強化<br />
+                ・追襲のクールタイムが4秒短縮<br /><br />
+                これにより、追跡状態のサバイバーに対しては<span
+                  class="bold-text"
+                  >圧倒的な追撃性能</span
+                >を発揮できる。
+              </p>
+            </div>
+          </section>
+
+          <!-- ハンター性能 -->
+          <section id="strategy">
+            <h2>ハンターの立ち回り方</h2>
+
+            <div class="strategy-item">
+              <h3>1. 初動の立ち回り</h3>
+              <p>
+                始まった瞬間に<span class="bold-text">追襲を2回使用</span
+                >してファーストチェイスを早めよう。<br /><br />
+                <span class="blue-text">追襲→追襲→飛びかかり→引っかき攻撃</span
+                >の連携で、序盤から素早くダメージを与えていく。<br /><br />
+                <span class="bold-text">✅ 初動フロー:</span><br />
+                追襲 → 追襲 → 飛びかかり → 引っかき攻撃 → 獲物マーク付与
+              </p>
+              <div class="point-box">
+                <div class="point-title">💡 ポイント</div>
+                初動の連続攻撃で最大1.5ダメージ（存在感なし）を狙えます。
+              </div>
+            </div>
+
+            <div class="strategy-item">
+              <h3>2. チェイス中の立ち回り</h3>
+              <p>
+                強い板窓以外は<span class="bold-text"
+                  >飛びかかりで乗り越え攻撃</span
+                >を与えていこう。<br /><br />
+                飛びかかりは溜め攻撃にすると高さが増すので、<span
+                  class="blue-text"
+                  >高いオブジェクトも乗り越え可能</span
+                >。<br /><br />
+                <span class="highlight-text"
+                  >落下場所で飛びかかりを使用すると落下硬直がなくなる</span
+                >ため、積極的に活用しよう。<br /><br />
+                飛びかかり後の<span class="red-text"
+                  >4.5秒間は引っかき攻撃しかできない</span
+                >が、無理に引っかき攻撃を使わず、<span class="bold-text"
+                  >もう一度飛びかかりから始めることも大事</span
+                >。
+              </p>
+            </div>
+
+            <div class="strategy-item">
+              <h3>3. 板間での追襲テクニック</h3>
+              <p>
+                <span class="bold-text">板間にいく時に追襲で突っ込む</span
+                >と、<span class="highlight-text"
+                  >必ず獲物マークを付与できる</span
+                >。<br /><br />
+                このテクニックを覚えておくことで、板攻防をしながら確実にマークを付けられるため、粘着力が大幅に向上します。<br /><br />
+                <span class="underline-text"
+                  >覚えておいて損はないテクニック</span
+                >です。
+              </p>
+            </div>
+
+            <div class="strategy-item">
+              <h3>4. 追跡スキルの活用</h3>
+              <p>
+                存在感1で解放される追跡スキルは、<span class="bold-text"
+                  >全サバイバーの位置を把握</span
+                >できる強力なスキル。<br /><br />
+                痕跡を踏むことで<span class="bold-text"
+                  >10秒間、移動速度が8%上昇</span
+                >し、スキルの性能が強化される。<br /><br />
+                複数の痕跡を踏むことで、<span class="blue-text"
+                  >連続的なダッシュが可能</span
+                >になり、サバイバーへの追撃性能が劇的に向上する。
+              </p>
+            </div>
+
+            <div class="strategy-item">
+              <h3>5. 通電間際・通電後の立ち回り</h3>
+              <p>
+                <span class="bold-text">存在感MAX時</span
+                >は与えられる最大ダメージが<span class="red-text"
+                  >2ダメージ＝ダウン</span
+                >になる（獲物マークが3回）。<br /><br />
+                通電後は、獲物マークの追加ダメージを活用して即死を狙おう。<br /><br />
+                追襲のクールタイムが短縮される状態を活用して、逃げるサバイバーを確実にキャッチしよう。
+              </p>
+            </div>
+          </section>
+
+          <!-- おすすめの内在人格セクション -->
+          <section id="recommendation" class="recommendation-section">
+            <h2>おすすめの内在人格</h2>
+
+            <div class="recommendation-item">
+              <h3>引き留める＋裏向きカード人格</h3>
+              <p>
+                <span class="bold-text">臨界点0.5ダメージが多い</span
+                >ので、<span class="red-text"
+                  >引き留めるは絶対に採用したいところ</span
+                >。<br /><br />
+                また、<span class="bold-text"
+                  >攻撃空振りが多いため表現欲を入れても強い</span
+                >！<br /><br />
+                <span class="highlight-text">特質による使い分け:</span><br />
+                ・特質が<span class="bold-text">監視者</span>の場合は<span
+                  class="underline-text"
+                  >表現欲は外して</span
+                ><br />
+                ・特質が<span class="bold-text">移形</span>の場合は<span
+                  class="blue-text"
+                  >表現欲と懐旧癖まで採用</span
+                >しても面白いかも
+              </p>
+              <img
+                src="../../images/kyaragazou/hantazinnkaku/kokoro-no-kemono/kokoro-no-kemono1.jpeg"
+                alt="おすすめ人格の写真"
+                class="personality-image"
+              />
+            </div>
+
+            <div class="article-box">
+              <a
+                href="../../purozinnkaku/purozinnkaku.html"
+                class="article-link"
+              >
+                <div class="article-img">
+                  <img src="../../images/zinnkakuu.jpeg" alt="Link Image" />
+                </div>
+                <div class="article-text">
+                  <h3>キャラ別プロが使う人格</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <div class="sidebar">
+        <h2>サバイバー一覧</h2>
+        <ul id="survivor-list"></ul>
+        <h2>ハンター一覧</h2>
+        <ul id="hunter-list"></ul>
+      </div>
+    </div>
+
+    <hr class="custom-line" />
+    <br />
+    <div id="sidebar-widget"></div>
+
+    <div id="comment-section" style="clear: both">
+      <h2>みんなのコメント</h2>
+      <form id="comment-form">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="ユーザーネームを入力してください"
+          required
+        />
+        <textarea
+          id="comment-input"
+          placeholder="コメントを入力してください..."
+          required
+        ></textarea>
+        <button type="submit">コメントを投稿</button>
+      </form>
+
+      <div id="comments-container">
+        <div id="comments" class="scrollable">
+          <!-- コメントがここに追加されます -->
+        </div>
+      </div>
+    </div>
+    <div class="ad-slot ad-slot--matome" data-ad="kiji-sita"></div>
+
+    <!-- スクロール時に表示される横棒 -->
+    <div id="scroll-bar">
+      <a href="../../honntai/saisinn/saisinn.html">最新アップデート情報</a>
+      <a href="#comments">みんなのコメント</a>
+      <a href="../../情報/情報.html">キャラ情報</a>
+      <a href="../../お問い合わせ/お問合せフォーム.html">お問い合わせ</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="../../script/kyararisuto.js"></script>
+    <script src="../../script/koukoku.js"></script>
+    <script src="../../script/ngcomento.js"></script>
+    <script src="../../script/honbaga.js"></script>
+    <script src="../../script/footer.js"></script>
+    <script src="../../script/program-slider.js"></script>
+    <script src="../../script/widget.js"></script>
+    <script type="module" src="../../comentoscript/hanta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

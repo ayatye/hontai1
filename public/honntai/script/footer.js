@@ -532,6 +532,12 @@
       img: "/honntai/images/kyaragazou/hanntagazou/haisya.jpeg",
       alt: "歯医者の画像",
     },
+    {
+      name: "心の獣",
+      url: "/honntai/hanta/haisinokiba/haisinokiba.html",
+      img: "/honntai/images/kyaragazou/hanntagazou/haisinokiba.jpeg",
+      alt: "心の獣の画像",
+    },
   ];
 
   // キャラクターカードを生成（画像付き）

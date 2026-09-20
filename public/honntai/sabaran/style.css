@@ -18,6 +18,8 @@ body {
 .konntent {
   margin: 20px;
   padding-right: 50px;
+  flex: 1;
+  min-width: 0; /* ティア表が横に広いので、これが無いと本文が縮まない */
 }
 
 h1 {
@@ -131,10 +133,6 @@ a {
 
 .text-sp {
   display: none; /* 初期状態は非表示 */
-}
-
-.sidebar {
-  width: 1200px !important;
 }
 
 @media (max-width: 1210px) {

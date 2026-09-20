@@ -1,5 +1,6 @@
 // 第五録 - サイドバーウィジェット
 // このファイルを編集するだけで全ページに反映されます
+// 最終更新：2026-09-12（公開中のページ構成に合わせて更新）
 
 (function () {
   // ========================================
@@ -8,6 +9,7 @@
 
   const widgetData = {
     // 人気記事ランキング
+    // ※ views はアナリティクスの数字に随時差し替えてください
     popularArticles: [
       {
         title: "IdentityV 用語一覧",
@@ -41,8 +43,44 @@
       },
     ],
 
-    // 最近の更新
+    // 最近の更新（新しい順）
     recentUpdates: [
+      {
+        title: "最新コラボ情報（九色の岩絵 ほか）",
+        url: "/honntai/korabo/korabo.html",
+        date: "2026-8-20",
+        tag: "コラボ",
+      },
+      {
+        title: "最新アップデート情報",
+        url: "/honntai/saisinn/saisinn.html",
+        date: "2026-7-30",
+        tag: "更新情報",
+      },
+      {
+        title: "「手記の加筆」完全攻略ガイド",
+        url: "/honntai/shukikahitsu/shukikahitsu.html",
+        date: "2026-7-30", // ← 悪夢難易度・ハンターモードを追記した日に上げてください
+        tag: "モード攻略",
+      },
+      {
+        title: "最新イベント情報（パンダの守護者）",
+        url: "/honntai/ibento/ibento.html",
+        date: "2026-7-23",
+        tag: "イベント",
+      },
+      {
+        title: "第五人格 アップデート追跡 キャラ調整・天賦調整",
+        url: "/honntai/tyousei/tyousei.html",
+        date: "2026-7-2",
+        tag: "キャラ調整",
+      },
+      {
+        title: "第五人格情報発表番組～8th anniversary～",
+        url: "/honntai/idv-program-slider/8th-anniversary.html",
+        date: "2026-6-3",
+        tag: "情報番組",
+      },
       {
         title: "「歯医者」攻略",
         url: "/honntai/hanta/haisya/haisya.html",
@@ -50,34 +88,10 @@
         tag: "ハンター",
       },
       {
-        title: "最新アップデート情報",
-        url: "//honntai/saisinn/saisinn.htmln/.html",
-        date: "2026-4-30",
-        tag: "更新情報",
-      },
-      {
-        title: "最新イベント情報",
-        url: "/honntai/ibento/ibento.html",
-        date: "2026-4-30",
-        tag: "イベント",
-      },
-      {
-        title: "第五人格 アップデート追跡 キャラ調整・天賦調整",
-        url: "/honntai/tyousei/tyousei.html",
-        date: "2026-4-13",
-        tag: "キャラ調整",
-      },
-      {
         title: "第五人格情報発表番組～新バージョン～",
-        url: "/honntai/idv-program-slider/idv-program-slider.html",
-        date: "2026-3-12",
-        tag: "第五人格情報番組まとめ",
-      },
-      {
-        title: "最新コラボ情報",
-        url: "/honntai/korobo/korobo.html",
-        date: "2026-2-12",
-        tag: "イベント",
+        url: "/honntai/idv-program-slider/2026shinban.html",
+        date: "2026-3-6",
+        tag: "情報番組",
       },
       {
         title: "「闘牛士」攻略",
@@ -86,27 +100,23 @@
         tag: "サバイバー",
       },
       {
-        title: "第五人格情報発表番組～2025年クリスマス直前SP～",
-        url: "/honntai/idv-program-slider/idv-program-slider.html",
-        date: "2025-12-19",
-        tag: "新規ページ開設",
-      },
-      {
         title: "「女王蜂」攻略",
         url: "/honntai/hanta/zyououbati/zyououbati.html",
         date: "2025-11-27",
         tag: "ハンター",
       },
-      {
-        title: "バランス調整まとめ（2025年11月20日）",
-        url: "/honntai/tyousei/tyousei.html",
-        date: "2025-11-20",
-        tag: "重要",
-      },
     ],
 
     // 今日のおすすめ記事（日替わりで1つ表示）
     recommendedArticles: [
+      {
+        title: "「手記の加筆」完全攻略ガイド",
+        url: "/honntai/shukikahitsu/shukikahitsu.html",
+        description:
+          "遊び方・職業・詞章システム・悪夢難易度・ハンターモードまで完全網羅！",
+        category: "モード攻略",
+        image: "/honntai/images/shukikahitsu/shukikahitsu.jpeg",
+      },
       {
         title: "初心者が中級者になるための完全ガイド",
         url: "/honntai/sigati/sigati.html",
@@ -116,22 +126,29 @@
         image: "/honntai/images/widget/suteppu.jpeg",
       },
       {
-        title: "サバイバー最強ランキング2025",
+        title: "サバイバー最強ランキング2026",
         url: "/honntai/sabaran/sabaran.html",
         description: "現環境で強いサバイバーをランク形式で紹介",
         category: "ランキング",
         image: "/honntai/images/widget/sabaran.jpeg",
       },
       {
-        title: "ハンター最強ランキング2025",
+        title: "ハンター最強ランキング2026",
         url: "/honntai/hanran/hanran.html",
         description: "現環境で強いハンターをランク形式で紹介",
         category: "ランキング",
         image: "/honntai/images/widget/hanran.jpeg",
       },
       {
+        title: "キャラクター別 プロが使う内在人格",
+        url: "/honntai/purozinnkaku/purozinnkaku.html",
+        description: "プロが実際に使っている内在人格をキャラ別に紹介します。",
+        category: "内在人格",
+        image: "/honntai/images/widget/purozinnkaku.jpeg", // ← 画像パス要確認
+      },
+      {
         title: "第五人格 キャラクター身体能力の例外一覧",
-        url: "/honntai/images/widget//kyarakosei.html",
+        url: "/honntai/kyarakosei/kyarakosei.html",
         description:
           "このページでは、各能力ごとに基準値から外れているキャラクターをまとめて紹介します。",
         category: "キャラクター身体能力",
@@ -146,6 +163,21 @@
         image: "/honntai/images/widget/otogibanasi.jpeg",
       },
       {
+        title: "ペン先の空想モード 攻略ガイド",
+        url: "/honntai/pennsaki/pennsaki.html",
+        description: "通常マッチとは違う特殊ルールでの立ち回りを解説します。",
+        category: "モード攻略",
+        image: "/honntai/images/widget/pennsaki.jpeg", // ← 画像パス要確認
+      },
+      {
+        title: "コピーキャットモード 攻略ガイド",
+        url: "/honntai/kopiki/kopiki.html",
+        description:
+          "特殊な能力を持つハンターにどう対応するかが攻略のカギになります。",
+        category: "モード攻略",
+        image: "/honntai/images/widget/kopiki.jpeg", // ← 画像パス要確認
+      },
+      {
         title: "激アツ最強サバイバー",
         url: "/honntai/gekisaba/gekisaba.html",
         description: "第五人格 最強サバイバー、今激アツサバイバーを紹介！",
@@ -158,6 +190,13 @@
         description: "第五人格 最強ハンター、今激アツハンターを紹介！",
         category: "ハンター",
         image: "/honntai/images/widget/gekihan.jpeg",
+      },
+      {
+        title: "マップ内のロッカー活用方法",
+        url: "/honntai/rokka/rokka.html",
+        description: "意外と知らないロッカーの使いどころをまとめました。",
+        category: "攻略",
+        image: "/honntai/images/widget/rokka.jpeg", // ← 画像パス要確認
       },
       {
         title: "第五人格 - 定型文チャット完全活用ガイド",
@@ -369,24 +408,23 @@
       @media (max-width: 768px) {
         .daigoroku-widget {
           padding: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
         }
-        .daigoroku-widget {
-        margin-left: 10px;
-        margin-right: 10px;
-      }
       }
     </style>
   `;
 
   function formatDate(dateStr) {
-    const date = new Date(dateStr);
+    // Safari は "2026-7-30" 形式を解釈できないため "/" 区切りに変換
+    const date = new Date(String(dateStr).replace(/-/g, "/"));
+    if (isNaN(date.getTime())) return dateStr;
     const now = new Date();
-    const diffTime = Math.abs(now - date);
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    const diffDays = Math.floor(Math.abs(now - date) / (1000 * 60 * 60 * 24));
     if (diffDays === 0) return "今日";
     if (diffDays === 1) return "昨日";
     if (diffDays < 7) return `${diffDays}日前`;
-    return `${date.getMonth() + 1}/${date.getDate()}`;
+    return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
   }
 
   function formatViews(views) {
@@ -467,7 +505,7 @@
             <div class="recommended-header">
               <img src="${article.image}" alt="${
                 article.title
-              }" class="recommended-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect fill=%22%23e94560%22 width=%2260%22 height=%2260%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3E?%3C/text%3E%3C/svg%3E'">
+              }" class="recommended-icon" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect fill=%22%23e94560%22 width=%2260%22 height=%2260%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2230%22%3E?%3C/text%3E%3C/svg%3E'">
               <h4 class="recommended-title">${article.title}</h4>
             </div>
             <p class="recommended-description">${article.description}</p>

@@ -17,7 +17,7 @@
     />
     <meta
       name="description"
-      content="IdentityV（第五人格）の新モード「手記の加筆」完全攻略ガイド。遊び方、職業（智者・主人公・メッセンジャー）、マップ「災いの女」、墨痕・詞章システム、シーズンS0コレクション一覧まで詳しく解説。"
+      content="IdentityV（第五人格）の新モード「手記の加筆」完全攻略ガイド。遊び方、職業、ハンターモード、マップ「災いの女」、墨痕・詞章システム、盗墓筆記コラボ、S0コレクションまで詳しく解説。"
     />
     <meta
       name="keywords"
@@ -53,6 +53,81 @@
       content="https://daigoroku.com/honntai/images/shukikahitsu/shukikahitsu.jpeg"
     />
 
+    <!-- ============================================================
+       サイドバーが潰れる問題の修正（このページ用の上書き）
+       このページは本文に幅広カード(minmax 350px)やテーブル(width:100%)が
+       多く、flexの初期設定(min-width:auto)だと本文が縮まずサイドバーが
+       潰れてしまう。そこで「本文は縮めてよい・サイドバーは縮ませない」の
+       2点だけ指定。サイドバーの幅は sidebar.css 任せにするので、
+       他ページと同じ大きさで表示されます。
+       ============================================================ -->
+    <style>
+      .konntent {
+        flex: 1 1 auto;
+        min-width: 0; /* ★これが肝。無いと本文が縮まずサイドバーが潰れる */
+      }
+      .sidebar {
+        flex: 0 0 auto; /* 縮ませない＝sidebar.css の幅のまま＝他ページと同じ */
+      }
+
+      /* --- 中間幅（タブレット〜小さめPC）で崩れる問題の修正 ---
+         元CSSは .wrapper の padding が cm 固定、カードが最小350/380px 指定のため、
+         幅を少しずつ縮めると横にはみ出す。ここで可変に上書きする。 */
+      .wrapper {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+      .konntent img,
+      .konntent table {
+        max-width: 100%;
+      }
+      /* カードは画面幅に応じて1列まで自動で落ちる */
+      .design1 .animal-grid,
+      .consumable-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        gap: 20px;
+      }
+      /* 表は入りきらない時だけ、その表を横スクロール（レイアウトは壊さない） */
+      .enhancement-table,
+      .rules-table {
+        display: block;
+        overflow-x: auto;
+      }
+      /* padding の cm 固定を可変に */
+      @media (max-width: 1210px) {
+        .wrapper {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        .wrapper {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+        .konntent {
+          padding-right: 0;
+        }
+      }
+
+      /* --- カードの丸アイコンに写真を表示（少し大きめに） --- */
+      .consumable-icon {
+        width: 56px !important;
+        height: 56px !important;
+        flex: 0 0 56px;
+        font-size: 1.1rem !important;
+      }
+      .animal-icon {
+        width: 46px !important;
+        height: 46px !important;
+        flex: 0 0 46px;
+      }
+      .consumable-name,
+      .animal-name {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+    </style>
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4556398935658570"
@@ -72,24 +147,6 @@
 
       gtag("config", "G-ET1RB84XRR");
     </script>
-
-    <!-- ============================================================
-       サイドバーが潰れる問題の修正（このページ用の上書き）
-       このページは本文に幅広カード(minmax 350px)やテーブル(width:100%)が
-       多く、flexの初期設定(min-width:auto)だと本文が縮まずサイドバーが
-       潰れてしまう。そこで「本文は縮めてよい・サイドバーは縮ませない」の
-       2点だけ指定。サイドバーの幅は sidebar.css 任せにするので、
-       他ページと同じ大きさで表示されます。
-       ============================================================ -->
-    <style>
-      .konntent {
-        flex: 1 1 auto;
-        min-width: 0; /* ★これが肝。無いと本文が縮まずサイドバーが潰れる */
-      }
-      .sidebar {
-        flex: 0 0 auto; /* 縮ませない＝sidebar.css の幅のまま＝他ページと同じ */
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -172,6 +229,39 @@
         <div class="update-history">
           <div class="update-title">📋 更新履歴</div>
           <div class="update-item">
+            <div class="update-date">最新</div>
+            <div class="update-content">
+              悪夢難易度＆ボス「災いの女」戦を実装！新職業「英雄」・新異象・新詞章・新アイテムを追加<span
+                class="new-badge"
+                >NEW</span
+              >
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">前回</div>
+            <div class="update-content">
+              ハンターモード実装！配役サバイバーと詞章を奪い合う新モード・新詞章「別紙」を追加
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">2026/7/30</div>
+            <div class="update-content">
+              バランス調整。角笛の陰兵・祝祷の炉・躍動する嘲弄・特殊怠慢な守衛を調整
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">前回</div>
+            <div class="update-content">
+              盗墓筆記コラボ開催！限定異象・詞章「鬼璽」・叙事手法「陰兵借道」が登場
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">前回</div>
+            <div class="update-content">
+              新アイテム「躍動する嘲弄」・新異象「故紙の山」を追加。主人公の果敢が強化
+            </div>
+          </div>
+          <div class="update-item">
             <div class="update-date">2026年6月18日</div>
             <div class="update-content">
               新モード「手記の加筆」が実装！シーズン0「災いの女」開幕<span
@@ -247,71 +337,120 @@
         <!-- 職業 -->
         <h2>使用できる職業</h2>
         <p class="lead-text">
-          現在は<strong>サバイバーモードのみ</strong>プレイ可能です（ハンターモードは今後のアップデートで実装予定）。サバイバーで使える職業は次の3種です。
+          サバイバーモードで使える職業は次の3種です。なお<strong>ハンターモードも実装済み</strong>で、詳しくは後半の「ハンターモード」セクションで解説しています。
         </p>
         <div class="design1">
           <div class="animal-grid">
             <div class="animal-card">
               <div class="animal-name">
-                <span class="animal-icon">智</span>智者
+                <span
+                  class="animal-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/chisya.jpeg"
+                    alt="智者"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">智</span></span
+                >智者
               </div>
-              <img
-                src="../images/shukikahitsu/chisya.jpeg"
-                alt="智者"
-                onerror="this.style.display = 'none'"
-                style="
-                  width: 100%;
-                  height: 160px;
-                  object-fit: cover;
-                  border-radius: 8px;
-                  margin: 0 0 10px;
-                  display: block;
-                "
-              />
               <div class="animal-description">
                 あらゆる痕跡を見逃さず、迷路の中でも迷うことなく突き進むことができる索敵型。
               </div>
             </div>
             <div class="animal-card">
               <div class="animal-name">
-                <span class="animal-icon">主</span>主人公
+                <span
+                  class="animal-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/syujinkou.jpeg"
+                    alt="主人公"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">主</span></span
+                >主人公
               </div>
-              <img
-                src="../images/shukikahitsu/syujinkou.jpeg"
-                alt="主人公"
-                onerror="this.style.display = 'none'"
-                style="
-                  width: 100%;
-                  height: 160px;
-                  object-fit: cover;
-                  border-radius: 8px;
-                  margin: 0 0 10px;
-                  display: block;
-                "
-              />
               <div class="animal-description">
                 常に最前線に立ち、あらゆる敵意と茨をその身に受ける宿命を背負う、前衛・盾役。
               </div>
             </div>
             <div class="animal-card">
               <div class="animal-name">
-                <span class="animal-icon">使</span>メッセンジャー
+                <span
+                  class="animal-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/messenger.jpeg"
+                    alt="メッセンジャー"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">使</span></span
+                >メッセンジャー
               </div>
-              <img
-                src="../images/shukikahitsu/messenger.jpeg"
-                alt="メッセンジャー"
-                onerror="this.style.display = 'none'"
-                style="
-                  width: 100%;
-                  height: 160px;
-                  object-fit: cover;
-                  border-radius: 8px;
-                  margin: 0 0 10px;
-                  display: block;
-                "
-              />
               <div class="animal-description">
                 癒しの恩恵を届け、窮地の中で活路を切り拓くサポート・回復型。
+              </div>
+            </div>
+            <div class="animal-card">
+              <div class="animal-name">
+                <span
+                  class="consumable-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/eiyuu.jpeg"
+                    alt="英雄"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">英</span></span
+                >英雄<span class="new-badge">NEW</span>
+              </div>
+              <div class="animal-description">
+                攻撃特化の新職業。<strong>斬道</strong>（前方突進で命中数ぶん淬鋒スタックを獲得）に加え、パッシブ<strong>淬鋒</strong>（移動・ジャンプで体力を13消費するたび次の武器攻撃が+25%／最大3スタック）、<strong>戦魂</strong>（異象を撃破するたび体力40回復）を持つ、殴りながら立て直せるアタッカー。
               </div>
             </div>
           </div>
@@ -329,15 +468,157 @@
           <span class="weapon-type">簡単</span>
           <span class="weapon-type">普通</span>
           <span class="weapon-type">困難</span>
-          <span class="weapon-type" style="opacity: 0.55"
-            >🔒 悪夢（今後実装）</span
+          <span
+            class="weapon-type"
+            style="background: #2c1a3a; color: #fff; border-color: #6c5ce7"
+            >悪夢</span
           >
         </div>
 
         <!-- 叙事手法（新要素） -->
+        <!-- ===== 悪夢難易度（ボス戦） ===== -->
+        <h2>
+          悪夢難易度 ＆ ボス「災いの女」<span class="new-badge">実装</span>
+        </h2>
+        <img
+          src="../images/shukikahitsu/akumu.jpeg"
+          alt="悪夢難易度 災いの女"
+          onerror="this.style.display = 'none'"
+          style="
+            width: 100%;
+            max-width: 640px;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: block;
+          "
+        />
+        <p class="lead-text">
+          【災いの女】に最高難易度<strong>悪夢</strong>が実装。最深部には見たことのない異象が徘徊し、新たな地下室や特殊部屋【災いの女-エンディング】エリアも開放。ついに<strong>ボス「災いの女」</strong>との対決が楽しめます。※現在はサバイバーモードのみ。
+        </p>
+        <div class="warning-note">
+          <span class="warning-icon">⚠️</span>
+          <div>
+            <strong>【災いの追徴】に注意</strong
+            >。走ったり探索したりすると災いの女を騒がせて追徴が蓄積し、<strong>4段階まで上がる（前の段階には戻せない）</strong>。災いの詠唱が始まると、その時点の追徴段階に応じた脅威を受けます。<strong>災いの女を撃破すれば追徴は完全に解除</strong>。
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">悪夢の新異象</h3>
+        <p class="lead-text">
+          第一弾はいずれも<strong>悪夢難易度のみ</strong>に出現（当面ほかの難易度には出ません）。
+        </p>
+        <table class="enhancement-table">
+          <tr>
+            <th>画像</th>
+            <th>異象</th>
+            <th>特徴・攻略のヒント</th>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/syuui.jpeg"
+                alt="拾遺の人形"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">拾遺の人形</td>
+            <td>
+              音もなく現れ、大きなバッグでコレクションを待つ。<strong>優しく接するのが吉</strong>。価値の高いアイテムを渡すと、より良い転送先を狙える。
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/dokusya-oku.jpeg"
+                alt="読者の憶測"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">読者の憶測</td>
+            <td>
+              物語が読まれた時に生まれた残像で、認められることを渇望する。近づいてきたら<strong>少なくとも一度は演目を見届けよう</strong>。自ら退場するタイミングを心得ている。
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/katamuita.jpeg"
+                alt="傾いた本棚"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">傾いた本棚</td>
+            <td>
+              よろめきながらさまよう残片。<strong>躯体を攻撃しても効きにくい</strong>ので、<strong>開かれた本を直接狙う</strong>のが正解。
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/dokusya-sinsa.jpeg"
+                alt="読者の審査"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">読者の審査</td>
+            <td>
+              物語の上方に浮かび冷たい眼で検分し、不合理なものを修正してくる。<strong>瞳孔が収縮する瞬間を見極め、そのタイミングで完全に静止</strong>して見つからないように。
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/wazawainoonna.jpeg"
+                alt="災いの女（ボス）"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">災いの女（ボス）</td>
+            <td>
+              <strong>このモードのボス</strong
+              >。七歳前は荘園の小さな主で、両親の「ナイチンゲール」だった少女。容易な相手ではないので、<strong>建物を使ってタイミングよく身を隠す／誘導する</strong>のが鍵。対抗しきれなければ<strong>引き返すのも立派な選択</strong>。
+            </td>
+          </tr>
+        </table>
+
         <h2>叙事手法（新要素）</h2>
         <p class="lead-text">
-          対戦内モードに【叙事手法】が追加。各探索の開始時に<strong>低確率でランダムに1種</strong>発動し、対応する物語に入ると参加者全員に種類が通知されます。効果はその探索中ずっと有効です。※一部の叙事手法は全難易度では開放されません。
+          各探索の開始時に<strong>低確率でランダムに1種</strong>発動する特殊ルール。対応する物語に入ると参加者全員に種類が通知され、効果はその探索中ずっと有効です。当たりを引くと一気に稼ぎやすくなります。※一部の叙事手法は全難易度では開放されません。
         </p>
         <div class="consumable-grid">
           <div class="consumable-card" style="border-left-color: #0984e3">
@@ -345,24 +626,31 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #74b9ff, #0984e3)"
-                  >📘</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #74b9ff, #0984e3);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kanryaku.jpeg"
+                    alt="簡略叙事"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">📘</span></span
                 >簡略叙事
               </div>
             </div>
-            <img
-              src="../images/shukikahitsu/kanryaku.jpeg"
-              alt="簡略叙事"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               詞章の<strong>重量値が割合で軽減</strong>。手稿が軽くなり、より多くの重量の荷物を持ち運べるようになる。
             </div>
@@ -372,24 +660,31 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #43e97b, #00b894)"
-                  >📗</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #43e97b, #00b894);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/yohaku.jpeg"
+                    alt="余白叙事"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">📗</span></span
                 >余白叙事
               </div>
             </div>
-            <img
-              src="../images/shukikahitsu/yohaku.jpeg"
-              alt="余白叙事"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               全サバイバーの<strong>走行時のスタミナ消費が軽減</strong>。テンポを緩め、焦らず余裕を持って動ける。
             </div>
@@ -399,28 +694,509 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #ff6b6b, #ee5a24)"
-                  >📙</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kouritsu.jpeg"
+                    alt="効率叙事"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">📙</span></span
                 >効率叙事
               </div>
             </div>
-            <img
-              src="../images/shukikahitsu/kouritsu.jpeg"
-              alt="効率叙事"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               全異象のステータスが上昇。ただし<strong>異象を倒すと確率で詞章やアイテムをドロップ</strong>する、ハイリスク・ハイリターン型。
             </div>
           </div>
+          <div class="consumable-card" style="border-left-color: #6c5ce7">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/dokuhaku.jpeg"
+                    alt="独白叙事"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">📓</span></span
+                >独白叙事<span class="new-badge">NEW</span>
+              </div>
+            </div>
+            <div class="effect-description">
+              出現する異象が<strong>1種類に統一される</strong>。普通では不器用な盗賊または強欲な盗賊に、困難では強欲な盗賊または強欲な盗賊・特殊に置き換わる。相手の手が読めるぶん立ち回りやすい。
+            </div>
+          </div>
+          <div class="consumable-card" style="border-left-color: #00b894">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #55efc4, #00b894);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/juuitsu.jpeg"
+                    alt="充溢叙事"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">📔</span></span
+                >充溢叙事<span class="new-badge">NEW</span>
+              </div>
+            </div>
+            <div class="effect-description">
+              全異象のステータスが上昇するかわりに、<strong>鍵がかかった精巧な棚が必ず追加で出現</strong>（普通は+1つ、困難は+2つ）。リスクと引き換えに稼ぎが伸びるタイプ。
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== 盗墓筆記コラボ（期間限定） ===== -->
+        <h2>盗墓筆記コラボ（期間限定）<span class="new-badge">開催中</span></h2>
+        <p class="lead-text">
+          コラボ期間中は【災いの女】に専用の異象・詞章・叙事手法が登場します。とくに<strong>UR詞章「鬼璽」</strong>は陰兵を従えられる目玉アイテム。期間限定なので、狙うなら早めに動きましょう。
+        </p>
+        <img
+          src="../images/shukikahitsu/toubohikki.jpeg"
+          alt="盗墓筆記コラボ"
+          onerror="this.style.display = 'none'"
+          style="
+            width: 100%;
+            max-width: 640px;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: block;
+          "
+        />
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">コラボ限定の異象</h3>
+        <p class="lead-text">
+          普通・困難の【災いの女】に出現します（他の異象の出現枠を置き換え）。
+        </p>
+        <table class="enhancement-table">
+          <tr>
+            <th>画像</th>
+            <th>異象</th>
+            <th>特徴・立ち回り</th>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/hatamochi.jpeg"
+                alt="旗持ちの陰兵"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">旗持ちの陰兵</td>
+            <td>
+              <strong>静止している相手は察知できない</strong
+              >が、動く相手には非常に敏感。見つかりそうな時は止まってやり過ごすのが有効。角笛の陰兵に鼓舞されると、より強力な技を使ってくる。
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/tsunobue.jpeg"
+                alt="角笛の陰兵"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">角笛の陰兵</td>
+            <td>
+              広範囲の<strong>移動中の相手・物音を立てた相手</strong>を感知。見つかると角笛を吹き、<strong>周囲の異象すべてをその場所へ呼び寄せて巡回させる</strong>。こいつに気づかれると一気に危険度が上がるので、静かに動くのが最優先。
+            </td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">コラボ限定の詞章</h3>
+        <p class="lead-text">
+          初心者〜困難のすべての【災いの女】に登場します。
+        </p>
+        <div class="consumable-grid">
+          <div class="consumable-card" style="border-left-color: #c8a84a">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #c8a84a, #a07820);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kiji.jpeg"
+                    alt="鬼璽"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🔱</span></span
+                >鬼璽<span class="new-badge">UR</span>
+              </div>
+            </div>
+            <div class="effect-description">
+              手に入れると<strong>一定範囲内の陰兵がすべて自分に服従</strong>する目玉詞章。使用すれば<strong>陰兵を召喚して3種類の陣列を敷いたり、他の異象を攻撃させたり</strong>できます。コラボ期間の主役アイテム。
+            </div>
+          </div>
+          <div class="consumable-card" style="border-left-color: #00b894">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #55efc4, #00b894);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/zyabidouguo.jpeg"
+                    alt="蛇眉銅魚"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🐟</span></span
+                >蛇眉銅魚
+              </div>
+            </div>
+            <div class="effect-description">
+              コラボ期間中に登場する限定詞章。こちらも【災いの女】の全難易度で入手できます。
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">
+          コラボ限定の叙事手法「陰兵借道」
+        </h3>
+        <div class="duration-info">
+          <span class="duration-icon">🏮</span>
+          <div>
+            普通・困難の【災いの女】に一定確率で発動。その探索では<strong>陰兵が大量に出現</strong>し、<strong>UR詞章「鬼璽」の出現確率が大幅アップ</strong>。さらに<strong>マップ内に探索可能な隠し部屋</strong>まで出現します。鬼璽狙いなら引きたい当たり枠。
+          </div>
+        </div>
+
+        <!-- ===== ハンターモード ===== -->
+        <h2>ハンターモード<span class="new-badge">実装</span></h2>
+        <img
+          src="../images/shukikahitsu/huntermode.jpeg"
+          alt="手記の加筆 ハンターモード"
+          onerror="this.style.display = 'none'"
+          style="
+            width: 100%;
+            max-width: 640px;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: block;
+          "
+        />
+        <p class="lead-text">
+          ついに<strong>ハンターモードが実装</strong>。ハンター側で物語に潜り、配役サバイバー（身代わり人格）と詞章を奪い合う新モードです。職業選択は不要で、キャラのスキルを装備して戦います。現在の難易度は<strong>普通・困難</strong>、ソロと2人チームに対応。
+        </p>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">基礎ルール</h3>
+        <div class="feature-description">
+          <ul style="margin: 0; padding-left: 20px; line-height: 1.9">
+            <li>
+              ハンターは基礎能力が強化され、<strong>体力と移動速度が高め</strong>。骨董棚の数が増え、高価値詞章の出現率も上がる。
+            </li>
+            <li>
+              ハンターは<strong>自分の武器を最初から携帯</strong>（下部アイテム欄に格納）。他アイテムと位置は入れ替えられるが、武器そのものは外せない。
+            </li>
+            <li>
+              キャラ間の強さを揃えるため、一部ハンターの通常・溜め攻撃の発生前アクションや攻撃距離、硬直時間などを調整。
+            </li>
+            <li>
+              武器以外のアイテムは購入・使用可能。「呪われたサファイア」「鬼璽」などの特殊詞章の能力も通常どおり使える。
+            </li>
+            <li>
+              「手記の加筆」のイベントタスクもこのモードで進行できる。独立した操作カスタマイズ設定あり。
+            </li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">
+          配役サバイバー（身代わり人格）
+        </h3>
+        <div class="feature-description">
+          マップ内に出現し、<strong>詞章資源を奪い合う相手</strong>。撃破すると所持詞章をすべてドロップします。
+          <ul style="margin: 10px 0 0; padding-left: 20px; line-height: 1.9">
+            <li>
+              <strong>恐怖の一撃</strong
+              >：骨董棚を開けている/木の板を乗り越えている配役サバイバーに攻撃を当てると発動し、追加ダメージ。
+            </li>
+            <li>
+              所持詞章の品質に応じて<strong>残像エフェクトの色が変化</strong>し、高品質ほど残像が長く残る＝良い詞章を持ってる相手が一目で分かる。
+            </li>
+            <li>
+              骨董棚を開けている最中は<strong>位置が露出</strong>し、開け終わると<strong>特殊な足跡</strong>が残る（追跡の手がかりに）。
+            </li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">
+          スキル（職業選択なし）
+        </h3>
+        <p class="lead-text">
+          職業は選ばず、キャラのスキルを装備して使います。第一弾で解放された「アンデッド」のスキルは以下の通り。
+        </p>
+        <div class="consumable-grid">
+          <div class="consumable-card" style="border-left-color: #6c5ce7">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/undead.jpeg"
+                    alt="アンデッド"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">💀</span></span
+                >アンデッド
+              </div>
+            </div>
+            <div class="effect-description">
+              <strong>アクティブ</strong
+              >：前方へ一定距離ダッシュ。命中した対象にダメージを与え、障害物にぶつかるか最大距離で終了。<br />
+              <strong>パッシブ①</strong>：負荷による影響を受けにくい。<br />
+              <strong>パッシブ②</strong>：異象を倒すたびに健康値を回復。
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">
+          補助スキル（ハンターモード専用）
+        </h3>
+        <p class="lead-text">
+          対戦に持ち込む補助スキルを1つ追加で選べます。現在は3種類。
+        </p>
+        <div class="consumable-grid">
+          <div class="consumable-card" style="border-left-color: #ff6b6b">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kyousyuu.jpeg"
+                    alt="強襲"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">💥</span></span
+                >強襲
+              </div>
+            </div>
+            <div class="effect-description">
+              謎の手稿を投げて、命中した対象に<strong>ダメージ＋気絶</strong>効果を与える。
+            </div>
+          </div>
+          <div class="consumable-card" style="border-left-color: #0984e3">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #74b9ff, #0984e3);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/tsuibi.jpeg"
+                    alt="追尾"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🧭</span></span
+                >追尾
+              </div>
+            </div>
+            <div class="effect-description">
+              付近の<strong>詞章と容器を感知してナビ</strong>。さらに小範囲内の異象の輪郭も見える。
+            </div>
+          </div>
+          <div class="consumable-card" style="border-left-color: #00b894">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span
+                  class="consumable-icon"
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #55efc4, #00b894);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kenei.jpeg"
+                    alt="顕影"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">👁️</span></span
+                >顕影
+              </div>
+            </div>
+            <div class="effect-description">
+              36m範囲内にいる<strong>全ての配役サバイバーの輪郭を10秒間表示</strong>。獲物の位置把握に強力。
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">参加方法</h3>
+        <div class="duration-info">
+          <span class="duration-icon">🗝️</span>
+          <div>
+            解放条件：<strong>【災いの女・一】「血の夜の始まり」タスクを完了</strong>すると解放。無料プレイは<strong>週7回</strong>（毎週月曜0時にリセット）。消費する<strong>【別紙】詞章の数</strong>に応じて挑戦できる難易度が変わります。
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">新詞章【別紙】</h3>
+        <div class="feature-description">
+          手記から切り離された独立した1枚のページ。ハンターモードの<strong>挑戦チケット</strong>的な役割を持つ詞章です。<br />
+          <strong>価値</strong>：墨痕×10000 ／ <strong>重さ</strong>：7kg ／
+          対戦中は1スロットに2個までストック可、倉庫上限999個。<strong>サバイバーモードで入手できます</strong>（＝サバイバーで別紙を貯めてハンターで使う流れ）。
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">
+          第一弾で使用可能なハンター（14人）
+        </h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px">
+          <span class="weapon-type">復讐者</span>
+          <span class="weapon-type">道化師</span>
+          <span class="weapon-type">断罪狩人</span>
+          <span class="weapon-type">リッパー</span>
+          <span class="weapon-type">結魂者</span>
+          <span class="weapon-type">芸者</span>
+          <span class="weapon-type">黄衣の王</span>
+          <span class="weapon-type">白黒無常</span>
+          <span class="weapon-type">写真家</span>
+          <span class="weapon-type">狂眼</span>
+          <span class="weapon-type">夢の魔女</span>
+          <span class="weapon-type">泣き虫</span>
+          <span class="weapon-type">魔トカゲ</span>
+          <span class="weapon-type">血の女王</span>
         </div>
 
         <!-- シーズンタスクとペット -->
@@ -500,6 +1276,27 @@
         </div>
 
         <!-- シーズン情報 -->
+        <h2>
+          暗喩集録（新コレクション要素）<span class="new-badge">NEW</span>
+        </h2>
+        <div class="feature-description">
+          悪夢アプデで追加された新しい集録システム。従来の集録に加え、以下の要素で埋めていきます。
+          <ul style="margin: 10px 0 0; padding-left: 20px; line-height: 1.9">
+            <li>
+              <strong>異象暗喩</strong
+              >：各異象を撃破・遭遇すると解放され、専用の背景ストーリーが読める。
+            </li>
+            <li>
+              <strong>詞章暗喩</strong
+              >：特定の詞章を集めることで解放される記録。
+            </li>
+            <li>
+              <strong>物語暗喩</strong>：物語の進行・分岐に応じて解放される。
+            </li>
+          </ul>
+          コンプリートを目指すと、モードの世界観をより深く楽しめます。
+        </div>
+
         <h2>シーズン0（S0）情報</h2>
         <div class="duration-info">
           <span class="duration-icon">📅</span>
@@ -634,25 +1431,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #ff6b6b, #ee5a24)"
-                  >⚔️</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/wasure.jpeg"
+                    alt="忘れられた信仰"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">⚔️</span></span
                 >忘れられた信仰
               </div>
               <span class="consumable-type">武器</span>
             </div>
-            <img
-              src="../images/shukikahitsu/wasure.jpeg"
-              alt="忘れられた信仰"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               必殺技（防御からの反撃）が強く、墨痕20000と安いのに攻撃力が高い。<strong>近距離ならこれが一番コスパが良く、困難まではこの1本で戦えます</strong>。遠距離武器にはもっと火力の出るものもあるけど、墨痕が高くてコスパは正直イマイチ。まず近接で1本買うならコレ。
             </div>
@@ -662,25 +1466,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #fdcb6e, #e17055)"
-                  >🏮</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #fdcb6e, #e17055);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/rantan.jpeg"
+                    alt="ランタン"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🏮</span></span
                 >ランタン
               </div>
               <span class="consumable-type">探索補助</span>
             </div>
-            <img
-              src="../images/shukikahitsu/rantan.jpeg"
-              alt="ランタン"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               点けている間、前方を明るく照らせる。鹿の罠・崩れた石・異象などを<strong>早めに察知</strong>できて事故が激減。墨痕も修理費も安いのが嬉しい。
             </div>
@@ -690,25 +1501,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #fd79a8, #e84393)"
-                  >➕</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #fd79a8, #e84393);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kyuukyuu.jpeg"
+                    alt="救急用針"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">➕</span></span
                 >救急用針
               </div>
               <span class="consumable-type">回復</span>
             </div>
-            <img
-              src="../images/shukikahitsu/kyuukyuu.jpeg"
-              alt="救急用針"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               ダメージを回復できる<strong>唯一の手段＝実質必須アイテム</strong>。これが無いと事故ったときに立て直せない。墨痕も修理費も安いので即購入推奨。
             </div>
@@ -716,23 +1534,30 @@
           <div class="consumable-card" style="border-left-color: #a29bfe">
             <div class="consumable-header">
               <div class="consumable-name">
-                <span class="consumable-icon">🛡️</span>祝祷の炉
+                <span
+                  class="consumable-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/syukutouro.jpeg"
+                    alt="祝祷の炉"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🛡️</span></span
+                >祝祷の炉
               </div>
               <span class="consumable-type">保険</span>
             </div>
-            <img
-              src="../images/shukikahitsu/syukutouro.jpeg"
-              alt="祝祷の炉"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               致死量のダメージを<strong>1回だけ耐えられる</strong>保険アイテム。要するに「きあいのタスキ」感覚で、どのゲームでも必須級。これまた安いので付けっぱなしでOK。
             </div>
@@ -749,8 +1574,28 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #ff6b6b, #ee5a24)"
-                  >⚔️</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/wasure.jpeg"
+                    alt="忘れられた信仰"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">⚔️</span></span
                 >忘れられた信仰<span
                   style="
                     background: linear-gradient(135deg, #c8a84a, #e8c860);
@@ -767,19 +1612,6 @@
               </div>
               <span class="consumable-type">武器</span>
             </div>
-            <img
-              src="../images/shukikahitsu/wasure.jpeg"
-              alt="忘れられた信仰"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               攻撃はこれさえあれば<strong>全異象を倒しきれる</strong>。あとは異象ごとの対処法さえ知っていればOK。<strong>初心者から上級者まで、序盤〜終盤ずっと主力を張れる一本</strong>なので、初心者おすすめにもここにも登場します。
             </div>
@@ -789,25 +1621,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #fd79a8, #e84393)"
-                  >➕</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #fd79a8, #e84393);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kyuukyuu.jpeg"
+                    alt="救急用針"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">➕</span></span
                 >救急用針
               </div>
               <span class="consumable-type">回復</span>
             </div>
-            <img
-              src="../images/shukikahitsu/kyuukyuu.jpeg"
-              alt="救急用針"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               回復できる<strong>唯一のアイテム</strong>。中級者でも当然必須。切らさないように。
             </div>
@@ -817,25 +1656,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #fdcb6e, #e17055)"
-                  >🏃</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #fdcb6e, #e17055);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kitsuke.jpeg"
+                    alt="気つけの箱"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🏃</span></span
                 >気つけの箱
               </div>
               <span class="consumable-type">周回</span>
             </div>
-            <img
-              src="../images/shukikahitsu/kitsuke.jpeg"
-              alt="気つけの箱"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               <strong>スタミナを消費せずに走れる</strong
               >。マップを周回して詞章を集める上でめちゃくちゃ重要。緊急離脱にも使える。
@@ -844,23 +1690,30 @@
           <div class="consumable-card" style="border-left-color: #a29bfe">
             <div class="consumable-header">
               <div class="consumable-name">
-                <span class="consumable-icon">👁️</span>虚言の眼
+                <span
+                  class="consumable-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/kyogen.jpeg"
+                    alt="虚言の眼"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">👁️</span></span
+                >虚言の眼
               </div>
               <span class="consumable-type">探索補助</span>
             </div>
-            <img
-              src="../images/shukikahitsu/kyogen.jpeg"
-              alt="虚言の眼"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               <strong>ランタンの完全上位互換</strong
               >。視界内を全部照らせて点灯時間も長い。ここまで来たら確実にランタンから乗り換えたい。
@@ -871,25 +1724,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #74b9ff, #0984e3)"
-                  >📕</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #74b9ff, #0984e3);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/kyuusoku.jpeg"
+                    alt="休息の閑章"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">📕</span></span
                 >休息の閑章
               </div>
               <span class="consumable-type">周回</span>
             </div>
-            <img
-              src="../images/shukikahitsu/kyuusoku.jpeg"
-              alt="休息の閑章"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               準備ホールに<strong>即座（約10秒）に帰還</strong>できる。良い詞章を持っている時・時間がない時・周回短縮に。高価だけど持っておきたい一品。
             </div>
@@ -919,24 +1779,31 @@
           <div class="animal-grid">
             <div class="animal-card">
               <div class="animal-name">
-                <span class="animal-icon">智</span>智者
+                <span
+                  class="animal-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/chisya.jpeg"
+                    alt="智者"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">智</span></span
+                >智者
                 <span class="weapon-type" style="margin-left: auto"
                   >探索向け ◎</span
                 >
               </div>
-              <img
-                src="../images/shukikahitsu/chisya.jpeg"
-                alt="智者"
-                onerror="this.style.display = 'none'"
-                style="
-                  width: 100%;
-                  height: 160px;
-                  object-fit: cover;
-                  border-radius: 8px;
-                  margin: 0 0 10px;
-                  display: block;
-                "
-              />
               <div class="animal-description">
                 <strong>探索ならコレ。</strong
                 >啓示スキルで箱や壺をスキャンできるから、詞章の在り処が一発で分かる。部屋に入ったらまず啓示、で回収効率がグッと上がります。
@@ -944,49 +1811,63 @@
             </div>
             <div class="animal-card">
               <div class="animal-name">
-                <span class="animal-icon">主</span>主人公
+                <span
+                  class="animal-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/syujinkou.jpeg"
+                    alt="主人公"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">主</span></span
+                >主人公
                 <span class="weapon-type" style="margin-left: auto"
                   >防御向け ◎</span
                 >
               </div>
-              <img
-                src="../images/shukikahitsu/syujinkou.jpeg"
-                alt="主人公"
-                onerror="this.style.display = 'none'"
-                style="
-                  width: 100%;
-                  height: 160px;
-                  object-fit: cover;
-                  border-radius: 8px;
-                  margin: 0 0 10px;
-                  display: block;
-                "
-              />
               <div class="animal-description">
                 <strong>身を守るならコレ。</strong
-                >逃げる時の果敢（タックル）が優秀で、ある程度殴ってからタックルを入れれば<strong>無傷で生還</strong>も狙える。事故りたくない人向け。
+                >逃げる時の果敢（タックル）が優秀で、ある程度殴ってからタックルを入れれば<strong>無傷で生還</strong>も狙える。事故りたくない人向け。さらにアプデで、<strong>果敢の使用中は落石の罠が発動せず、トラバサミにも挟まれなくなった</strong>うえ、ダッシュ速度が恩恵効果や気つけの箱の影響を受けるように。突破力がぐっと上がりました。
               </div>
             </div>
             <div class="animal-card">
               <div class="animal-name">
-                <span class="animal-icon">使</span>メッセンジャー
+                <span
+                  class="animal-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/messenger.jpeg"
+                    alt="メッセンジャー"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">使</span></span
+                >メッセンジャー
                 <span class="weapon-type" style="margin-left: auto"
                   >サポート ○</span
                 >
               </div>
-              <img
-                src="../images/shukikahitsu/messenger.jpeg"
-                alt="メッセンジャー"
-                onerror="this.style.display = 'none'"
-                style="
-                  width: 100%;
-                  height: 160px;
-                  object-fit: cover;
-                  border-radius: 8px;
-                  margin: 0 0 10px;
-                  display: block;
-                "
-              />
               <div class="animal-description">
                 蘇生・回復のサポート型。<strong>自身が体力0で倒れても1度だけ自力で復活でき、さらに味方の復活も可能</strong>。ソロでも「もう1回」の保険になり、チームなら立て直し役として頼れる。見た目より腐らない職業です。
               </div>
@@ -1166,6 +2047,29 @@
               唯一の遠距離持ちで一番面倒。<strong>壁をすり抜けて攻撃</strong>＆攻撃不能化までしてくる。遠距離攻撃は鹿のチェーンクロウみたいに<strong>当たると引き寄せられる</strong>が、この引き寄せは<strong>しゃがむ（クラウチ）ことで回避できる</strong>ので、これをうまく使おう。基本は食らわないこと最優先。
             </td>
           </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/kosinoyama.jpeg"
+                alt="故紙の山"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">
+              故紙の山<span class="new-badge">NEW</span>
+            </td>
+            <td>
+              <strong>倒す相手ではなく、道案内役</strong
+              >。簡単・普通・困難の【災いの女】に出現し、<strong>隠された詞章のもとへプレイヤーを導いてくれる</strong>。逆らわず、素直について行くのが賢明。
+            </td>
+          </tr>
         </table>
 
         <h2>立ち回りの大原則</h2>
@@ -1184,23 +2088,30 @@
           <div class="consumable-card" style="border-left-color: #a29bfe">
             <div class="consumable-header">
               <div class="consumable-name">
-                <span class="consumable-icon">🦯</span>庇護者の杖
+                <span
+                  class="consumable-icon"
+                  style="position: relative; overflow: hidden"
+                  ><img
+                    src="../images/shukikahitsu/higosya.jpeg"
+                    alt="庇護者の杖"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🦯</span></span
+                >庇護者の杖
               </div>
               <span class="consumable-type">墨痕 15000</span>
             </div>
-            <img
-              src="../images/shukikahitsu/higosya.jpeg"
-              alt="庇護者の杖"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               <strong>通常</strong>：杖を前方に振る<br />
               <strong>溜め</strong>：大きく振りかぶって振る<br />
@@ -1223,8 +2134,28 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #ff6b6b, #ee5a24)"
-                  >⚔️</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/wasure.jpeg"
+                    alt="忘れられた信仰"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">⚔️</span></span
                 >忘れられた信仰<span
                   style="
                     background: linear-gradient(135deg, #c8a84a, #e8c860);
@@ -1241,19 +2172,6 @@
               </div>
               <span class="consumable-type">墨痕 20000</span>
             </div>
-            <img
-              src="../images/shukikahitsu/wasure.jpeg"
-              alt="忘れられた信仰"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               <strong>通常</strong>：杖を前方に振る<br />
               <strong>溜め</strong
@@ -1278,25 +2196,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #fdcb6e, #e17055)"
-                  >🔥</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #fdcb6e, #e17055);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/moeru.jpeg"
+                    alt="燃える怨恨"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🔥</span></span
                 >燃える怨恨
               </div>
               <span class="consumable-type">墨痕 25000</span>
             </div>
-            <img
-              src="../images/shukikahitsu/moeru.jpeg"
-              alt="燃える怨恨"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               <strong>通常＆溜め</strong
               >：中距離まで火炎放射。当たると燃焼継続ダメージ<br />
@@ -1319,25 +2244,32 @@
               <div class="consumable-name">
                 <span
                   class="consumable-icon"
-                  style="background: linear-gradient(135deg, #74b9ff, #0984e3)"
-                  >🔫</span
+                  style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #74b9ff, #0984e3);
+                  "
+                  ><img
+                    src="../images/shukikahitsu/juu.jpeg"
+                    alt="装填された猟銃"
+                    onerror="this.remove()"
+                    onload="
+                      if (this.nextElementSibling)
+                        this.nextElementSibling.style.display = 'none';
+                    "
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      position: absolute;
+                      inset: 0;
+                    "
+                  /><span style="position: relative">🔫</span></span
                 >装填された猟銃
               </div>
               <span class="consumable-type">墨痕 50000</span>
             </div>
-            <img
-              src="../images/shukikahitsu/juu.jpeg"
-              alt="装填された猟銃"
-              onerror="this.style.display = 'none'"
-              style="
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin: 0 0 10px;
-                display: block;
-              "
-            />
             <div class="effect-description">
               <strong>通常</strong
               >：正面へ遠距離攻撃。散弾のため距離が離れると威力が大きく減衰<br />
@@ -1512,6 +2444,52 @@
             <td>50000</td>
             <td>
               その場から準備ホールへ戻れるアイテム（設置に約10秒かかり、途中で殴られると中断）。使い切りで値段は最高クラス。良い詞章を抱えている時や周回短縮に便利。<strong>アプデで、使用から数秒間は大半の異象のダメージを無効化する効果</strong>も付いた。
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/yakudou.jpeg"
+                alt="躍動する嘲弄"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">
+              躍動する嘲弄<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>
+              投げた位置に<strong>幻影</strong>を生成する新アイテム。幻影は挑発効果を持ち、倒されるか持続時間が切れるまで異象を引きつけ続ける。効果が終わると<strong>幻影が爆発し、範囲内の異象に減速効果</strong>を与える。囮を立てて安全に周回したい時に。<strong>バッグ1マスにつき最大2個</strong>まで持てます。
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/kakonohankyou.jpeg"
+                alt="過去の反響"
+                onerror="this.style.display = 'none'"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  object-fit: cover;
+                  border-radius: 6px;
+                  display: inline-block;
+                "
+              />
+            </td>
+            <td class="item-name">
+              過去の反響<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>
+              設置すると地面に<strong>球状のシールド</strong>を生成し、<strong>異象の侵入を防ぐ</strong>（中のプレイヤーは攻撃されない）。ただし<strong>中からシールド外の異象を攻撃することもできない</strong>ので、あくまで籠城・やり過ごし用。
             </td>
           </tr>
         </table>
@@ -1700,6 +2678,83 @@
               鑑定によって価値が変わる。アイテム欄に入れて掲げると、周囲の敵の動きを鈍らせる
             </td>
           </tr>
+          <tr>
+            <td>SR</td>
+            <td class="item-name">水筒<span class="new-badge">NEW</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>SR</td>
+            <td class="item-name">
+              破損したぬいぐるみ<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>SSR</td>
+            <td class="item-name">
+              宝の地図<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>SSR</td>
+            <td class="item-name">単眼鏡<span class="new-badge">NEW</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>SSR</td>
+            <td class="item-name">銀の櫛<span class="new-badge">NEW</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>SSR</td>
+            <td class="item-name">
+              災いの贈り物<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>UR</td>
+            <td class="item-name">
+              ティーポット<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>UR</td>
+            <td class="item-name">
+              舞踏会の仮面<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>UR</td>
+            <td class="item-name">
+              幽火の瓶<span class="new-badge">NEW</span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              入手すると対戦中に「災厄の代わり身」へ変身でき、変身中は異象に見つかりにくくなる（ハンターモードではこの変身は不可）
+            </td>
+          </tr>
         </table>
         <p class="note-sub">
           ※へむへむが実際にプレイして確認できた範囲のまとめです。検証が進み次第、随時追記・修正していきます。
@@ -1710,6 +2765,237 @@
         <p class="lead-text">
           手記の加筆モードに入った戦闘調整・体験最適化のまとめ。長いので折りたたみにしています（見出しをタップで開閉）。
         </p>
+        <details
+          open
+          style="
+            background: #2c1a3a;
+            border: 1px solid #6c5ce7;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+          "
+        >
+          <summary style="cursor: pointer; font-weight: 700; color: #d6c8f5">
+            🌙 悪夢難易度＆ボス戦 実装<span class="new-badge">NEW</span>
+          </summary>
+          <ul
+            style="
+              margin: 12px 0 0;
+              padding-left: 20px;
+              line-height: 1.9;
+              color: #e8e0f5;
+            "
+          >
+            <li>
+              <strong>【災いの女】に最高難易度「悪夢」を実装</strong
+              >。地下室・特殊部屋【エンディング】が開放され、<strong>ボス「災いの女」戦</strong>が登場（現在サバイバーのみ）。
+            </li>
+            <li>
+              <strong>新職業「英雄」を追加</strong
+              >（斬道／淬鋒／戦魂を持つ攻撃特化アタッカー）。
+            </li>
+            <li>
+              <strong>悪夢専用の新異象5体</strong
+              >（拾遺の人形・読者の憶測・傾いた本棚・読者の審査・ボス災いの女）を追加。
+            </li>
+            <li>
+              <strong>新詞章9種</strong
+              >（水筒・破損したぬいぐるみ・宝の地図・単眼鏡・銀の櫛・災いの贈り物・ティーポット・舞踏会の仮面・幽火の瓶）を追加。
+            </li>
+            <li>
+              <strong>新アイテム「過去の反響」を追加</strong
+              >（異象の侵入を防ぐ球状シールドを設置）。
+            </li>
+            <li>
+              <strong>暗喩集録</strong
+              >（異象／詞章／物語の暗喩）を新コレクション要素として追加。
+            </li>
+            <li>
+              【災いの追徴】システムを追加：探索で騒がせると追徴が最大4段階まで蓄積、災いの詠唱で脅威に。ボス撃破で解除。
+            </li>
+          </ul>
+        </details>
+        <details
+          style="
+            background: #fff8e1;
+            border: 1px solid #e8c860;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+          "
+        >
+          <summary style="cursor: pointer; font-weight: 700; color: #8a4a00">
+            👹 ハンターモード実装！
+          </summary>
+          <ul style="margin: 12px 0 0; padding-left: 20px; line-height: 1.9">
+            <li>
+              <strong>ハンターモードが実装</strong
+              >。配役サバイバーと詞章を奪い合う新モード。職業選択なしでキャラスキル＋補助スキルを装備して戦う（詳細は上の「ハンターモード」セクション参照）。
+            </li>
+            <li>
+              難易度は普通・困難。ソロ／2人チーム対応。第一弾は14ハンターが使用可能。
+            </li>
+            <li>
+              <strong>新詞章【別紙】を追加</strong
+              >（サバイバーモードで入手）。これを消費してハンターモードの難易度を選ぶ。
+            </li>
+            <li>
+              解放条件は【災いの女・一】「血の夜の始まり」タスク完了。無料プレイは週7回（月曜0時リセット）。
+            </li>
+          </ul>
+        </details>
+        <details
+          style="
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+          "
+        >
+          <summary style="cursor: pointer; font-weight: 700; color: #2c3e50">
+            🛠️ バランス調整（2026/7/30）
+          </summary>
+          <ul style="margin: 12px 0 0; padding-left: 20px; line-height: 1.9">
+            <li>
+              <strong>角笛の陰兵</strong
+              >：同じ階層にいない他の異象を召集・強化できなくなった（別フロアの異象まで呼ばれる事故が減少）。
+            </li>
+            <li>
+              <strong>祝祷の炉</strong
+              >：発動ロジックを調整し、<strong>メッセンジャーの飛箋よりも後に発動する</strong>ようになった。
+            </li>
+            <li>
+              <strong>躍動する嘲弄</strong
+              >：スタック数が追加され、<strong>携帯バッグ1マスにつき最大2個</strong>まで持てるように。
+            </li>
+            <li>
+              <strong>【災いの女-困難】の特殊-怠慢な守衛</strong
+              >：出現数の上限を引き下げ。さらに<strong>ソロで困難に入った場合は、マルチより出現数が少なくなる</strong>ように調整。
+            </li>
+          </ul>
+        </details>
+        <details
+          style="
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+          "
+        >
+          <summary style="cursor: pointer; font-weight: 700; color: #2c3e50">
+            🏮 盗墓筆記コラボ回の調整
+          </summary>
+          <ul style="margin: 12px 0 0; padding-left: 20px; line-height: 1.9">
+            <li>
+              <strong>叙事手法「独白叙事」「充溢叙事」を追加</strong
+              >（詳細は上の叙事手法セクション参照）。
+            </li>
+            <li>
+              <strong>UR詞章のすべてで手持ちが可能に</strong>なる機能を追加。
+            </li>
+            <li>
+              <strong>【キャンセル操作】ボタン/キーを追加</strong
+              >：長押し中やエイム中に押すと、その状態を終了できる。
+            </li>
+            <li>ダウン状態での救助要請定型文にハイライト表示を追加。</li>
+            <li>「燃える怨恨」使用時のキャンセル処理を最適化。</li>
+            <li>新しいマップ難易度を初めて解放した際のガイドを追加。</li>
+            <li>
+              <strong>ジャンプ操作を大幅改善</strong
+              >：足場の端からジャンプする際の許容範囲を追加、連続ジャンプに短時間の入力バッファを追加、スティックを離した際の水平減速の度合いを調整（逆方向入力でも減速が発生）、ジャンプ中のスティック入力による速度加算量も調整。
+            </li>
+            <li>
+              <strong>手つなぎ機能を最適化</strong
+              >：手つなぎ状態でしゃがめるようになり、細部表現を強化。手つなぎ中のプレイヤー間の優先取得保護時間は廃止。
+            </li>
+            <li>
+              連続して消極的なプレイを行った場合、一定時間ゲームへの参加が禁止される検知機能を追加。
+            </li>
+            <li>【簡略叙事】の説明文を調整。</li>
+            <li>
+              モード内の音声処理を最適化し、一部で発生していた電子音を軽減。
+            </li>
+          </ul>
+        </details>
+        <details
+          style="
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+          "
+        >
+          <summary style="cursor: pointer; font-weight: 700; color: #2c3e50">
+            🆕 前回アップデート（新要素・調整）
+          </summary>
+          <ul style="margin: 12px 0 0; padding-left: 20px; line-height: 1.9">
+            <li>
+              <strong>新アイテム「躍動する嘲弄」を追加</strong
+              >：投げた位置に幻影を生成。幻影は挑発効果で異象を引きつけ続け、効果終了時に爆発して範囲内の異象を減速させる。
+            </li>
+            <li>
+              <strong>新異象「故紙の山」を追加</strong
+              >：簡単・普通・困難の【災いの女】に出現し、隠された詞章までプレイヤーを導いてくれる。逆らわないのが賢明。
+            </li>
+            <li>マップ【災いの女】に新しいランダムレイアウトを追加。</li>
+            <li>
+              「仲間を自動補充」に<strong>「仲間を補充-2人」モード</strong>を追加し、補充人数を柔軟に選べるように。
+            </li>
+            <li>
+              <strong>二級パスワード機能を追加</strong
+              >：設定画面から有効にすると、手記の加筆内の資産を保護できる。
+            </li>
+            <li>
+              <strong>アイテム/詞章のロック機能を追加</strong
+              >：ロック中のものは売却できなくなる（誤売却防止）。
+            </li>
+            <li>
+              <strong>主人公</strong
+              >：果敢スキルの使用中は落石の罠が発動せず、トラバサミにも挟まれなくなった。また果敢のダッシュ速度が、自身の恩恵効果および気つけの箱の影響を受けるように。
+            </li>
+            <li>
+              ジャンプ中にスティックを離した後も慣性が残るようになり、助走ジャンプで足場に届かない事故が減少。障害物に密着した状態でのジャンプロジックも最適化され、密着した障害物に飛び乗れない状況が減った。
+            </li>
+            <li>
+              <strong>優先開放保護機能を追加</strong
+              >：鍵で密室や宝物庫を開けたプレイヤーは、一定時間、鍵がかかった骨董木棚・精巧な木棚を優先的に開けられる。
+            </li>
+            <li>
+              容器を開けたり花瓶を割って生成された詞章にも、<strong>短時間の優先取得保護</strong>が付くように。
+            </li>
+            <li>
+              <strong>沈黙の紳士</strong
+              >：失礼判定範囲に入ったプレイヤーへ、動作で合図を送るモーションを追加。返礼の内容と確率も調整され、返礼のバリエーションが豊富に。
+            </li>
+            <li>
+              怠慢な守衛が窓辺で目覚める際、専用の効果音が再生されるように。
+            </li>
+            <li>
+              【効率叙事】で異象を倒した際、贈り物がドロップした場合の演出効果を追加。
+            </li>
+            <li>
+              密室内で異象のスポーンに異常が発生する問題を修正（現在は正常に出現）。
+            </li>
+            <li>
+              サバイバーが吐息の玉からもがいて落下するまでの時間が統一されていなかった問題を修正。
+            </li>
+            <li>
+              ショップのTipsからアイテムを素早く倉庫へ移動、倉庫のTipsからアイテム/詞章を素早く売却できる機能を追加。売却画面にドロップダウン整理機能も追加。
+            </li>
+            <li>
+              バッグと倉庫間のドラッグ時、アイテムが空いている倉庫スロットに優先配置されるように最適化。
+            </li>
+            <li>
+              セット購入時の割引表示、段位のスコア計算ルールの説明文、負荷レベルタスクへのジャンプガイドを最適化。
+            </li>
+            <li>
+              メールの件数が多すぎて推理を開始できない場合に、通知メッセージが出るように。
+            </li>
+          </ul>
+        </details>
         <details
           style="
             background: #f8f9fa;
