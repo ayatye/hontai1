@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../style/hanbaga.css" />
     <link rel="stylesheet" href="../../style/sidebar.css" />
     <link rel="stylesheet" href="../../style/logo.css" />
+    <link rel="stylesheet" href="../../style/koukoku.css" />
     <link rel="stylesheet" href="../../style/comment.css" />
 
     <!-- SEO -->
@@ -62,6 +63,81 @@
     </script>
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html">
+            <img src="../../images/サイコロicon.jpeg" class="logo-photo" />
+            <span>第五録</span>
+          </a>
+        </div>
+        <div class="c-header c-hamburger-menu">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="c-hamburger-menu__input"
+          />
+          <label for="hamburger" class="c-hamburger-menu__bg"></label>
+          <ul class="c-header__list c-hamburger-menu__list">
+            <li class="c-header__list-item">
+              <a href="../../../index.html" class="c-header__list-link"
+                >ホーム</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../../saisinn/saisinn.html" class="c-header__list-link"
+                >最新情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a href="../../情報/情報.html" class="c-header__list-link"
+                >キャラ情報</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="../../お問い合わせ/お問合せフォーム.html"
+                class="c-header__list-link"
+                >お問い合わせ</a
+              >
+            </li>
+            <li class="c-header__list-item">
+              <a
+                href="/honntai/puraibasi/puraibasi.html"
+                class="c-header__list-link"
+                >プライバシーポリシー</a
+              >
+            </li>
+          </ul>
+          <label for="hamburger" class="c-hamburger-menu__button">
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+          </label>
+        </div>
+      </nav>
+    </header>
+
+    <section class="banner">
+      <div class="banner-deco">🎲</div>
+      <div class="banner-inner">
+        <div class="banner-badge">第五人格 攻略情報サイト</div>
+        <p class="banner-title">
+          第五人格の<span>最新攻略情報</span>、<br />ここに集結。
+        </p>
+        <p>キャラ情報・最新アップデート・攻略まで情報が盛りだくさん！！</p>
+        <div class="banner-btns">
+          <a href="/honntai/saisinn/saisinn.html" class="btn-primary"
+            >最新情報を見る</a
+          >
+          <a href="/honntai/情報/情報.html" class="btn-secondary"
+            >キャラ一覧へ</a
+          >
+        </div>
+      </div>
+    </section>
+
     <div class="wrapper">
       <div class="konntent">
         <nav class="character-nav">
@@ -144,6 +220,7 @@
             <canvas id="strengthChart" width="300" height="300"></canvas>
           </section>
 
+          <div class="ad-slot" data-ad="kiji-ue"></div>
           <!-- 外在特質と特徴セクション -->
           <section id="traits">
             <h2>外在特質とスキル</h2>
@@ -543,6 +620,8 @@
           </section>
 
           <!-- おすすめの内在人格セクション -->
+          <div class="ad-slot" data-ad="h2-mae"></div>
+
           <section id="recommendation" class="recommendation-section">
             <h2>おすすめの内在人格</h2>
 
@@ -587,20 +666,26 @@
               </a>
             </div>
           </section>
+          <div class="ad-slot" data-ad="h2-mae"></div>
         </main>
       </div>
 
-      <div class="sidebar">
-        <h2>サバイバー一覧</h2>
-        <ul id="survivor-list"></ul>
-        <h2>ハンター一覧</h2>
-        <ul id="hunter-list"></ul>
+      <div class="side-column">
+        <div class="sidebar">
+          <h2>サバイバー一覧</h2>
+          <ul id="survivor-list"></ul>
+          <h2>ハンター一覧</h2>
+          <ul id="hunter-list"></ul>
+        </div>
+
+        <div class="ad-slot" data-ad="side" data-device="pc"></div>
       </div>
     </div>
 
     <hr class="custom-line" />
     <br />
     <div id="sidebar-widget"></div>
+    <div id="idv-program-slider"></div>
 
     <div id="comment-section" style="clear: both">
       <h2>みんなのコメント</h2>

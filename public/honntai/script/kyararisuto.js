@@ -440,8 +440,8 @@ const hunters = [
   },
   {
     name: "心の獣",
-    url: "/honntai/images/kyaragazou/hanntagazou/haisinokiba.jpeg",
-    link: "/honntai/hanta/haisinokiba/haisinokiba.html",
+    url: "/honntai/images/kyaragazou/hanntagazou/kokoro-no-kemono.jpeg",
+    link: "/honntai/hanta/kokoronokemono/kokoronokemono.html",
   },
 ];
 

@@ -534,8 +534,8 @@
     },
     {
       name: "心の獣",
-      url: "/honntai/hanta/haisinokiba/haisinokiba.html",
-      img: "/honntai/images/kyaragazou/hanntagazou/haisinokiba.jpeg",
+      url: "/honntai/hanta/kokoronokemono/kokoronokemono.html",
+      img: "/honntai/images/kyaragazou/hanntagazou/kokoro-no-kemono.jpeg",
       alt: "心の獣の画像",
     },
   ];
