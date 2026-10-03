@@ -176,3 +176,5 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 5. 広告枠(`kiji-ue` / `h2-mae` / `side`+`data-device="pc"` / `kiji-sita`+`ad-slot--matome`)と `koukoku.css` / `koukoku.js` の読み込みが揃っているか。
 6. キャラなら `footer.js` / `kyararisuto.js`、記事なら `widget.js` に登録。`sitemap.xml` も更新。
 7. ブラウザでスマホ幅(<768px)とPC幅の両方を確認し、DevTools コンソールに `404` と `[koukoku]` 警告が無いことを確認。
+
+最終更新:2026-9-20

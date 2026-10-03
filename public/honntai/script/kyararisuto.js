@@ -260,6 +260,11 @@ const survivors = [
     url: "/honntai/images/kyaragazou/sabaibagazou/maimu.jpeg",
     link: "/honntai/sabaiba/maimu/maimu.html",
   },
+  {
+    name: "神童",
+    url: "/honntai/images/kyaragazou/sabaibagazou/sinndou.jpeg",
+    link: "/honntai/sabaiba/sinndou/sinndou.html",
+  },
 ];
 
 const hunters = [

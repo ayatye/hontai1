@@ -318,6 +318,12 @@
       img: "/honntai/images/kyaragazou/sabaibagazou/maimu.jpeg",
       alt: "マイムアーティストの画像",
     },
+    {
+      name: "神童",
+      url: "/honntai/sabaiba/sinndou/sinndou.html",
+      img: "/honntai/images/kyaragazou/sabaibagazou/sinndou.jpeg",
+      alt: "神童の画像",
+    },
   ];
 
   // ハンター一覧データ（画像付き）
