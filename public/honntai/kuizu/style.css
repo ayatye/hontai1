@@ -1,0 +1,478 @@
+/* ===== 基本レイアウト（人格解説ページと同じ） ===== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-left: 2cm;
+}
+
+.konntent {
+  flex: 1;
+  min-width: 0;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  color: #000;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 1.5em auto 10px;
+  padding: 0 1em;
+}
+
+main {
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 1em;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  scroll-margin-top: 90px;
+}
+
+:root {
+  --q-accent: #7c3aed;
+  --q-accent-soft: #f3edff;
+  --q-ok: #16a34a;
+  --q-ok-soft: #e8f8ee;
+  --q-ng: #dc2626;
+  --q-ng-soft: #fdecec;
+}
+
+.quiz-screen[hidden] {
+  display: none;
+}
+
+/* ===== モード選択 ===== */
+.mode-card {
+  border: 2px solid #e5e0f5;
+  border-radius: 12px;
+  padding: 1em 1.2em;
+  margin-bottom: 1em;
+  background: #fff;
+}
+
+.mode-card--kentei {
+  border-color: var(--q-accent);
+  background: linear-gradient(135deg, #f7f2ff, #ffffff);
+}
+
+.mode-head {
+  display: flex;
+  gap: 0.8em;
+  align-items: flex-start;
+}
+
+.mode-icon {
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.mode-head h3 {
+  margin: 0 0 0.2em;
+  font-size: 1.15em;
+}
+
+.mode-head p {
+  margin: 0;
+  font-size: 0.92em;
+  color: #555;
+}
+
+.mode-btns {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-top: 0.8em;
+}
+
+.mode-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.6em 1em;
+  font-size: 1em;
+  font-weight: bold;
+  border: 2px solid var(--q-accent);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--q-accent);
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.mode-btn:hover {
+  background: var(--q-accent-soft);
+}
+
+.mode-btn--main {
+  background: var(--q-accent);
+  color: #fff;
+}
+
+.mode-btn--main:hover {
+  background: #6d28d9;
+}
+
+.mode-note {
+  margin: 0.6em 0 0;
+  font-size: 0.82em;
+  color: #888;
+}
+
+.mode-best {
+  margin: 0.4em 0 0;
+  font-size: 0.85em;
+  color: var(--q-accent);
+  font-weight: bold;
+}
+
+.mode-best:empty {
+  display: none;
+}
+
+/* ===== 出題画面 ===== */
+.play-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #555;
+}
+
+#play-mode {
+  color: var(--q-accent);
+}
+
+.timer {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.6em 0 1em;
+}
+
+#timer-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--q-accent);
+  transform-origin: left;
+}
+
+#timer-bar.is-low {
+  background: var(--q-ng);
+}
+
+#play-media {
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+
+#play-canvas {
+  width: 240px;
+  height: 240px;
+  max-width: 70vw;
+  max-height: 70vw;
+  border-radius: 12px;
+  background: #222;
+  image-rendering: pixelated;
+}
+
+#play-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f4f4f4;
+}
+
+.play-tag {
+  display: inline-block;
+  margin: 0 0 0.3em;
+  padding: 0.1em 0.7em;
+  border-radius: 999px;
+  background: var(--q-accent-soft);
+  color: var(--q-accent);
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.play-question {
+  font-size: 1.15em;
+  font-weight: bold;
+  margin: 0.2em 0 1em;
+  white-space: pre-wrap;
+}
+
+.play-question small {
+  display: block;
+  margin-top: 0.4em;
+  padding: 0.6em 0.8em;
+  background: #f7f7f9;
+  border-radius: 8px;
+  font-size: 0.82em;
+  font-weight: normal;
+  color: #444;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6em;
+}
+
+.choice-btn {
+  padding: 0.85em 0.6em;
+  font-size: 1em;
+  font-weight: bold;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: 0.15s;
+  line-height: 1.4;
+}
+
+.choice-btn:hover:not(:disabled) {
+  border-color: var(--q-accent);
+  background: var(--q-accent-soft);
+}
+
+.choice-btn:disabled {
+  cursor: default;
+}
+
+.choice-btn.is-ok {
+  border-color: var(--q-ok);
+  background: var(--q-ok-soft);
+  color: var(--q-ok);
+}
+
+.choice-btn.is-ng {
+  border-color: var(--q-ng);
+  background: var(--q-ng-soft);
+  color: var(--q-ng);
+}
+
+.feedback {
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  background: #fafafa;
+  border: 1px solid #eee;
+}
+
+.feedback[hidden] {
+  display: none;
+}
+
+.feedback-result {
+  margin: 0 0 0.4em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.feedback-result.is-ok {
+  color: var(--q-ok);
+}
+
+.feedback-result.is-ng {
+  color: var(--q-ng);
+}
+
+#feedback-text {
+  margin: 0;
+}
+
+#feedback-text a {
+  color: var(--q-accent);
+}
+
+.feedback-asof {
+  margin: 0.5em 0 0;
+  font-size: 0.8em;
+  color: #888;
+}
+
+.next-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.8em;
+  padding: 0.8em;
+  font-size: 1.05em;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: var(--q-accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.quit-btn {
+  display: block;
+  margin: 1.2em auto 0;
+  background: none;
+  border: none;
+  color: #999;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+/* ===== 結果画面 ===== */
+#quiz-result {
+  text-align: center;
+}
+
+.result-mode {
+  margin: 0;
+  color: #666;
+  font-weight: bold;
+}
+
+.result-rank {
+  margin: 0.4em 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--q-accent);
+}
+
+.result-score {
+  margin: 0.2em 0;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+.result-detail,
+.result-best {
+  margin: 0.2em 0;
+  color: #555;
+}
+
+.result-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  max-width: 360px;
+  margin: 1.2em auto;
+}
+
+.share-btn {
+  display: block;
+  padding: 0.7em;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.result-review {
+  text-align: left;
+  margin-top: 1.5em;
+}
+
+.result-review h3 {
+  font-size: 1em;
+  border-left: 5px solid var(--q-accent);
+  padding-left: 0.5em;
+}
+
+.review-item {
+  padding: 0.6em 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.92em;
+}
+
+.review-item b {
+  color: var(--q-ok);
+}
+
+.review-item a {
+  color: var(--q-accent);
+}
+
+/* ===== 遊び方 ===== */
+.howto {
+  margin-top: 2em;
+}
+
+.howto h2 {
+  border-left: 6px solid var(--q-accent);
+  padding-left: 0.5em;
+  font-size: 1.25em;
+}
+
+.howto li {
+  margin-bottom: 0.3em;
+}
+
+.rank-list {
+  list-style: none;
+  padding: 0;
+}
+
+.rank-list li {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  padding: 0.3em 0.6em;
+  border-bottom: 1px dashed #ddd;
+}
+
+.rank-list span {
+  font-weight: bold;
+  color: var(--q-accent);
+}
+
+.howto-note {
+  font-size: 0.85em;
+  color: #777;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 1210px) {
+  body {
+    line-height: 1.4;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding-left: 1cm;
+    padding-right: 1cm;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  main {
+    padding: 0.8em;
+  }
+
+  .choices {
+    grid-template-columns: 1fr;
+  }
+
+  .play-question {
+    font-size: 1.05em;
+  }
+}
