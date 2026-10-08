@@ -38,6 +38,10 @@
   const usable = (q) => q.v !== false;
   const HAIKEI = D.haikei.filter(usable);
   const MAME = D.mame.filter(usable);
+  // 誕生日問題（id が bd で始まる）は数が多いので1回あたりの出題数を絞る
+  const isBd = (q) => q.id.indexOf("bd") === 0;
+  const MAME_BD = MAME.filter(isBd);
+  const MAME_ETC = MAME.filter((q) => !isBd(q));
   const JINKAKU = D.jinkaku;
   const SV = typeof survivors !== "undefined" ? survivors : [];
   const HT = typeof hunters !== "undefined" ? hunters : [];
@@ -129,7 +133,8 @@
     if (mode === "kyara") return pick(CHARAS, ROUND).map((c) => kyaraQ(c, level));
     if (mode === "haikei")
       return pick(HAIKEI.filter((q) => q.level === level), ROUND).map((q) => fromData(q, "背景推理・" + LEVEL_NAME[level]));
-    if (mode === "mame") return pick(MAME, ROUND).map((q) => fromData(q, "荘園豆知識"));
+    if (mode === "mame")
+      return shuffle(pick(MAME_ETC, ROUND - 3).concat(pick(MAME_BD, 3))).map((q) => fromData(q, isBd(q) ? "誕生日" : "荘園豆知識"));
     if (mode === "jinkaku")
       return pick(JINKAKU, ROUND).map((j, i) => jinkakuQ(j, i % 2 ? "icon" : "effect"));
 
@@ -140,7 +145,8 @@
     [1, 2, 3].forEach((lv) =>
       pick(HAIKEI.filter((q) => q.level === lv), 2).forEach((q) => list.push(fromData(q, "背景推理・" + LEVEL_NAME[lv]))),
     );
-    pick(MAME, 4).forEach((q) => list.push(fromData(q, "荘園豆知識")));
+    pick(MAME_ETC, 3).forEach((q) => list.push(fromData(q, "荘園豆知識")));
+    pick(MAME_BD, 1).forEach((q) => list.push(fromData(q, "誕生日")));
     pick(JINKAKU, 6).forEach((j, i) => list.push(jinkakuQ(j, i % 2 ? "icon" : "effect")));
     // 易しい問題から順に並べる（同じ難易度の中はランダム）
     return shuffle(list).sort((a, b) => a.level - b.level);
