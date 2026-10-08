@@ -33,6 +33,8 @@
   const MOSAIC = { 1: [14, 48], 2: [7, 20] };
   const PART_SIZE = 0.38; // 上級：画像の何割を切り出すか
 
+  const SMOOTH = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+
   // ===== データ =====
   const D = typeof QUIZ_DATA !== "undefined" ? QUIZ_DATA : { haikei: [], mame: [], jinkaku: [] };
   const usable = (q) => q.v !== false;
@@ -195,8 +197,9 @@
       }
     });
     $("play-mode").textContent = MODE_NAME[mode] + (level ? "・" + LEVEL_NAME[level] : "");
+    $("play-pips").innerHTML = qs.map(() => "<li></li>").join("");
     show("play");
-    document.querySelector("main").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector("main").scrollIntoView({ behavior: SMOOTH, block: "start" });
     ask();
   }
 
@@ -204,7 +207,9 @@
   function ask() {
     const q = S.qs[S.i];
     S.answered = false;
-    $("play-count").textContent = `${S.i + 1} / ${S.qs.length}問`;
+    $("play-count").textContent = `第${S.i + 1}問 / 全${S.qs.length}問`;
+    const pip = $("play-pips").children[S.i];
+    if (pip) pip.className = "is-now";
     $("play-score").textContent = `${S.score}点`;
     $("play-tag").hidden = !q.tag;
     $("play-tag").textContent = q.tag || "";
@@ -232,10 +237,16 @@
     // 選択肢
     const box = $("play-choices");
     box.innerHTML = "";
-    q.choices.forEach((c) => {
+    q.choices.forEach((c, n) => {
       const b = document.createElement("button");
       b.className = "choice-btn";
-      b.textContent = c;
+      b.dataset.choice = c;
+      const key = document.createElement("span");
+      key.className = "key";
+      key.textContent = n + 1;
+      const label = document.createElement("span");
+      label.textContent = c;
+      b.append(key, label);
       b.addEventListener("click", () => answer(c));
       box.appendChild(b);
     });
@@ -326,9 +337,11 @@
 
     document.querySelectorAll(".choice-btn").forEach((b) => {
       b.disabled = true;
-      if (b.textContent === q.answer) b.classList.add("is-ok");
-      else if (b.textContent === choice) b.classList.add("is-ng");
+      if (b.dataset.choice === q.answer) b.classList.add("is-ok");
+      else if (b.dataset.choice === choice) b.classList.add("is-ng");
     });
+    const pipNow = $("play-pips").children[S.i];
+    if (pipNow) pipNow.className = ok ? "is-ok" : "is-ng";
     if (q.kind === "kyara") drawKyara(q, 1, true);
 
     const r = $("feedback-result");
@@ -355,9 +368,11 @@
     const modeLabel = MODE_NAME[S.mode] + (S.level ? "・" + LEVEL_NAME[S.level] : "");
     const rank = S.mode === "kentei" ? RANKS.find((r) => ratio >= r[0])[1] : "";
 
-    $("result-mode").textContent = modeLabel;
+    $("result-mode").textContent = S.mode === "kentei" ? "荘園検定 認定証" : modeLabel + " 結果";
+    const now = new Date();
+    $("result-date").textContent = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日　第五録`;
     $("result-rank").hidden = !rank;
-    $("result-rank").textContent = rank ? `あなたの荘園ランクは「${rank}」` : "";
+    $("result-rank").innerHTML = rank ? `<small>あなたの荘園ランク</small>${esc(rank)}` : "";
     $("result-score").textContent = `${S.score}点`;
     $("result-detail").textContent = `${S.qs.length}問中 ${S.correct}問正解`;
 
@@ -399,7 +414,7 @@
     }
     show("result");
     renderBest();
-    document.querySelector("main").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector("main").scrollIntoView({ behavior: SMOOTH, block: "start" });
   }
 
   // ===== イベント =====
@@ -407,6 +422,14 @@
     b.addEventListener("click", () => start(b.dataset.mode, b.dataset.level ? Number(b.dataset.level) : 0)),
   );
   $("next-btn").addEventListener("click", next);
+  // キーボード：1〜4で回答
+  document.addEventListener("keydown", (e) => {
+    if (!S || screens.play.hidden || S.answered || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+    const n = Number(e.key);
+    const q = S.qs[S.i];
+    if (n >= 1 && n <= q.choices.length) answer(q.choices[n - 1]);
+  });
   $("quit-btn").addEventListener("click", () => {
     stopTimer();
     show("menu");

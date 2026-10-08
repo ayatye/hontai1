@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第五人格クイズ｜キャラ当て・背景推理・人格・荘園検定 - IdentityV（第五人格）攻略【第五録】</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../style/hanbaga.css" />
     <link rel="stylesheet" href="../style/sidebar.css" />
@@ -99,11 +105,15 @@
 
     <div class="wrapper">
       <div class="konntent">
-        <section class="intro">
-          <h1>第五人格クイズ</h1>
-          <p>
-            荘園の知識、どこまで自信ある？<strong>キャラ当て・背景推理・荘園豆知識・人格</strong>の4ジャンルに、全部まぜた<strong>「荘園検定」</strong>でランク判定もできます。
+        <section class="invite" aria-labelledby="invite-title">
+          <div class="invite-seal" aria-hidden="true">録</div>
+          <p class="invite-from">エウリュディケ荘園より、招待状</p>
+          <h1 id="invite-title">第五人格クイズ</h1>
+          <p class="invite-body">
+            あなたの荘園の知識を試すゲームへ招待します。キャラ当て・背景推理・荘園豆知識・人格の4ジャンルから20問。最後に荘園ランクを判定します。
           </p>
+          <button class="q-btn" data-mode="kentei">荘園検定を受ける（20問）</button>
+          <p class="mode-best invite-best" data-best="kentei"></p>
         </section>
 
         <div class="ad-slot" data-ad="kiji-ue"></div>
@@ -111,124 +121,102 @@
         <main>
           <!-- モード選択 -->
           <section id="quiz-menu" class="quiz-screen">
-            <h2>モードを選ぶ</h2>
-
-            <div class="mode-card mode-card--kentei">
-              <div class="mode-head">
-                <span class="mode-icon">🎓</span>
-                <div>
-                  <h3>荘園検定</h3>
-                  <p>全ジャンルから20問。結果で荘園ランクを判定！</p>
-                </div>
-              </div>
-              <div class="mode-btns">
-                <button class="mode-btn mode-btn--main" data-mode="kentei">検定を受ける</button>
-              </div>
-              <p class="mode-best" data-best="kentei"></p>
-            </div>
-
-            <div class="mode-card">
-              <div class="mode-head">
-                <span class="mode-icon">🔍</span>
-                <div>
+            <h2 class="menu-title">ジャンル別に遊ぶ</h2>
+            <p class="menu-lead">どのジャンルも10問。難易度が上がるほど1問の点数も上がります。</p>
+            <ul class="mode-list">
+              <li class="mode-row">
+                <div class="mode-text">
                   <h3>このキャラ誰でしょう？</h3>
-                  <p>初級・中級はモザイク（時間がたつと少しずつ見えてくる）、上級はキャラの一部分だけで当てる！</p>
+                  <p>初級・中級はモザイク（時間がたつと少しずつ見えてくる）、上級はキャラの一部分だけで当てる。</p>
+                  <p class="mode-best" data-best="kyara"></p>
                 </div>
-              </div>
-              <div class="mode-btns">
-                <button class="mode-btn" data-mode="kyara" data-level="1">初級</button>
-                <button class="mode-btn" data-mode="kyara" data-level="2">中級</button>
-                <button class="mode-btn" data-mode="kyara" data-level="3">上級</button>
-              </div>
-              <p class="mode-best" data-best="kyara"></p>
-            </div>
-
-            <div class="mode-card">
-              <div class="mode-head">
-                <span class="mode-icon">📖</span>
-                <div>
+                <div class="level-group" role="group" aria-label="難易度を選ぶ">
+                  <button class="level-btn" data-mode="kyara" data-level="1"><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>初級</button>
+                  <button class="level-btn" data-mode="kyara" data-level="2"><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>中級</button>
+                  <button class="level-btn" data-mode="kyara" data-level="3"><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>上級</button>
+                </div>
+              </li>
+              <li class="mode-row">
+                <div class="mode-text">
                   <h3>背景推理クイズ</h3>
                   <p>キャラの本名やストーリーから出題。上級は背景推理をやりこんだ人向け。</p>
+                  <p class="mode-best" data-best="haikei"></p>
                 </div>
-              </div>
-              <div class="mode-btns">
-                <button class="mode-btn" data-mode="haikei" data-level="1">初級</button>
-                <button class="mode-btn" data-mode="haikei" data-level="2">中級</button>
-                <button class="mode-btn" data-mode="haikei" data-level="3">上級</button>
-              </div>
-              <p class="mode-best" data-best="haikei"></p>
-            </div>
-
-            <div class="mode-card">
-              <div class="mode-head">
-                <span class="mode-icon">💡</span>
-                <div>
+                <div class="level-group" role="group" aria-label="難易度を選ぶ">
+                  <button class="level-btn" data-mode="haikei" data-level="1"><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>初級</button>
+                  <button class="level-btn" data-mode="haikei" data-level="2"><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>中級</button>
+                  <button class="level-btn" data-mode="haikei" data-level="3"><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>上級</button>
+                </div>
+              </li>
+              <li class="mode-row">
+                <div class="mode-text">
                   <h3>荘園豆知識</h3>
-                  <p>ゲームの仕様や公式Xネタなど。</p>
+                  <p>ゲームの仕様、昔の荘園の話、キャラの誕生日など。</p>
+                  <p class="mode-note">アップデートで内容が過去のものになる可能性があります。</p>
+                  <p class="mode-best" data-best="mame"></p>
                 </div>
-              </div>
-              <div class="mode-btns">
-                <button class="mode-btn" data-mode="mame">挑戦する</button>
-              </div>
-              <p class="mode-note">※アップデートで内容が過去のものになる可能性があります。</p>
-              <p class="mode-best" data-best="mame"></p>
-            </div>
-
-            <div class="mode-card">
-              <div class="mode-head">
-                <span class="mode-icon">🧠</span>
-                <div>
+                <div class="level-group">
+                  <button class="level-btn level-btn--wide" data-mode="mame">挑戦する</button>
+                </div>
+              </li>
+              <li class="mode-row">
+                <div class="mode-text">
                   <h3>人格クイズ</h3>
-                  <p>アイコンや効果から内在人格の名前を当てる。</p>
+                  <p>アイコンや効果から、内在人格の名前を当てる。</p>
+                  <p class="mode-note">天賦調整で効果が変わる可能性があります。</p>
+                  <p class="mode-best" data-best="jinkaku"></p>
                 </div>
-              </div>
-              <div class="mode-btns">
-                <button class="mode-btn" data-mode="jinkaku">挑戦する</button>
-              </div>
-              <p class="mode-note">※天賦調整で効果が変わる可能性があります。</p>
-              <p class="mode-best" data-best="jinkaku"></p>
-            </div>
+                <div class="level-group">
+                  <button class="level-btn level-btn--wide" data-mode="jinkaku">挑戦する</button>
+                </div>
+              </li>
+            </ul>
           </section>
 
           <!-- 出題画面 -->
           <section id="quiz-play" class="quiz-screen" hidden>
             <div class="play-head">
               <span id="play-mode"></span>
-              <span id="play-count"></span>
               <span id="play-score"></span>
             </div>
-            <div class="timer"><div id="timer-bar"></div></div>
+            <ol id="play-pips" class="progress" aria-label="解答状況"></ol>
+            <p id="play-count" class="play-count"></p>
+            <div class="timer" aria-hidden="true"><div id="timer-bar"></div></div>
 
             <div id="play-media" hidden>
-              <canvas id="play-canvas" width="480" height="480"></canvas>
-              <img id="play-icon" alt="" hidden />
+              <canvas id="play-canvas" width="480" height="480" aria-label="キャラ画像"></canvas>
+              <img id="play-icon" alt="人格アイコン" hidden />
             </div>
             <p id="play-tag" class="play-tag" hidden></p>
             <p id="play-question" class="play-question"></p>
 
             <div id="play-choices" class="choices"></div>
+            <p class="key-hint">キーボードの 1〜4 でも答えられます</p>
 
-            <div id="play-feedback" class="feedback" hidden>
+            <div id="play-feedback" class="feedback" hidden aria-live="polite">
               <p id="feedback-result" class="feedback-result"></p>
               <p id="feedback-text"></p>
               <p id="feedback-asof" class="feedback-asof" hidden></p>
-              <button id="next-btn" class="next-btn">次へ</button>
+              <button id="next-btn" class="q-btn next-btn">次へ</button>
             </div>
-            <button id="quit-btn" class="quit-btn">やめる</button>
+            <button id="quit-btn" class="quit-btn">やめてモード選択に戻る</button>
           </section>
 
           <!-- 結果画面 -->
           <section id="quiz-result" class="quiz-screen" hidden>
-            <h2>結果</h2>
-            <p id="result-mode" class="result-mode"></p>
-            <p id="result-rank" class="result-rank" hidden></p>
-            <p id="result-score" class="result-score"></p>
-            <p id="result-detail" class="result-detail"></p>
+            <div id="result-cert" class="cert">
+              <div class="cert-seal" aria-hidden="true">録</div>
+              <p id="result-mode" class="cert-head"></p>
+              <p id="result-rank" class="result-rank" hidden></p>
+              <p id="result-score" class="result-score"></p>
+              <p id="result-detail" class="result-detail"></p>
+              <p id="result-date" class="cert-date"></p>
+            </div>
             <p id="result-best" class="result-best"></p>
             <div class="result-btns">
               <a id="share-btn" class="share-btn" target="_blank" rel="noopener">結果をXでシェア</a>
-              <button id="retry-btn" class="mode-btn mode-btn--main">もう一回</button>
-              <button id="menu-btn" class="mode-btn">モード選択に戻る</button>
+              <button id="retry-btn" class="q-btn">もう一回挑戦する</button>
+              <button id="menu-btn" class="q-btn-ghost">モード選択に戻る</button>
             </div>
             <div id="result-review" class="result-review"></div>
           </section>
@@ -238,22 +226,22 @@
           <section id="asobikata" class="howto">
             <h2>遊び方</h2>
             <ul>
-              <li>どのモードも<strong>4択</strong>。制限時間内に答えを選んでください（文章問題15秒、画像問題20秒）。</li>
-              <li><strong>早く答えるほど高得点</strong>。モザイク問題は時間がたつほど見えやすくなるので、どこで答えるかが勝負。</li>
-              <li>難易度が上がるほど1問あたりの点数もアップ。</li>
-              <li><strong>荘園検定</strong>は全ジャンルから20問。最後に荘園ランクを判定します。</li>
+              <li>どのモードも4択。制限時間内に答えを選んでください（文章問題15秒、画像問題20秒）。</li>
+              <li>早く答えるほど高得点。モザイク問題は時間がたつほど見えやすくなるので、どこで答えるかが勝負です。</li>
+              <li>難易度が上がるほど1問あたりの点数もアップします。</li>
+              <li>荘園検定は全ジャンルから20問。最後に荘園ランクを判定します。</li>
               <li>自己ベストはこのブラウザに保存されます。</li>
             </ul>
-            <h3>荘園ランク一覧</h3>
-            <ul class="rank-list">
-              <li><span>荘園の主</span>90%以上</li>
-              <li><span>探偵の右腕</span>75%以上</li>
-              <li><span>歴戦のサバイバー</span>55%以上</li>
-              <li><span>新米サバイバー</span>35%以上</li>
-              <li><span>迷い込んだ来客</span>35%未満</li>
-            </ul>
+            <h3>荘園ランク</h3>
+            <table class="rank-table">
+              <tr><th>荘園の主</th><td>満点の90%以上</td></tr>
+              <tr><th>探偵の右腕</th><td>75%以上</td></tr>
+              <tr><th>歴戦のサバイバー</th><td>55%以上</td></tr>
+              <tr><th>新米サバイバー</th><td>35%以上</td></tr>
+              <tr><th>迷い込んだ来客</th><td>35%未満</td></tr>
+            </table>
             <p class="howto-note">
-              ※背景推理・荘園豆知識・人格の問題は<span id="data-updated"></span>時点の情報をもとに作っています。アップデートで変わった内容があれば、コメント欄で教えてもらえると助かります。
+              背景推理・荘園豆知識・人格の問題は<span id="data-updated"></span>時点の情報をもとに作っています。アップデートで変わった内容があれば、コメント欄で教えてもらえると助かります。
             </p>
           </section>
         </main>
