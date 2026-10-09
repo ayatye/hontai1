@@ -732,6 +732,24 @@ button {
   color: var(--q-sub);
 }
 
+/* ===== PC：右のキャラ一覧を画面の高さに収める =====
+   キャラ一覧（約90件・最大3650px）がクイズ本体より長く、
+   PCではクイズの下に大きな空白ができてページが間延びするため、
+   このページだけ一覧を画面の高さに固定して中でスクロールさせる */
+@media (min-width: 1211px) {
+  .wrapper {
+    align-items: flex-start;
+  }
+
+  .wrapper > .sidebar {
+    position: sticky;
+    top: 90px;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+}
+
 /* ===== レスポンシブ ===== */
 @media (max-width: 1210px) {
   body {
