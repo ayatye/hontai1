@@ -217,6 +217,12 @@
 
 <!-- 攻略情報 -->
 <url>
+  <loc>https://daigoroku.com/honntai/kuizu/kuizu.html</loc>
+  <lastmod>2026-10-08</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
   <loc>https://daigoroku.com/honntai/sabazinnkaku/sabazinnkaku.html</loc>
   <lastmod>2026-01-29</lastmod>
   <changefreq>monthly</changefreq>

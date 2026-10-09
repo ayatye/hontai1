@@ -826,3 +826,143 @@ h2 {
     display: none;
   }
 }
+
+
+/* =====================================================
+   第五人格クイズへの誘導カード
+   クイズページ冒頭の「招待状」と同じ見た目（白×紫・明朝・封蝋）
+   ===================================================== */
+.quiz-invite,
+.quiz-invite * {
+  box-sizing: border-box;
+}
+
+.quiz-invite {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 28px 0 8px;
+  padding: 22px 26px;
+  background:
+    linear-gradient(#ede9fe, #ede9fe) top / 100% 5px no-repeat,
+    #fff;
+  border: 1px solid #c4b5fd;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 5px #fff,
+    0 0 0 6px #e4dff5;
+  color: #1e1b4b;
+  text-decoration: none;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.quiz-invite:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 5px #fff,
+    0 0 0 6px #c4b5fd,
+    0 10px 24px rgba(124, 58, 237, 0.15);
+}
+
+.quiz-invite:focus-visible {
+  outline: 3px solid #c4b5fd;
+  outline-offset: 8px;
+}
+
+.quiz-invite__seal {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #9d6bf2, #7c3aed 60%, #5b21b6);
+  box-shadow: 0 2px 0 #5b21b6;
+  color: #fff;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 26px;
+  font-weight: 800;
+  transform: rotate(-8deg);
+}
+
+.quiz-invite__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-invite__from {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #7c3aed;
+}
+
+.quiz-invite__title {
+  margin: 2px 0 6px;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+}
+
+.quiz-invite__text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #4b4870;
+}
+
+.quiz-invite__btn {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.quiz-invite:hover .quiz-invite__btn {
+  background: #5b21b6;
+}
+
+@media (max-width: 768px) {
+  .quiz-invite {
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+    padding: 20px 18px 18px;
+  }
+
+  .quiz-invite__seal {
+    position: absolute;
+    top: -20px;
+    right: 14px;
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+  }
+
+  .quiz-invite__title {
+    font-size: 24px;
+  }
+
+  .quiz-invite__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz-invite,
+  .quiz-invite:hover {
+    transition: none;
+    transform: none;
+  }
+}
