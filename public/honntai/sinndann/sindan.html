@@ -241,6 +241,7 @@
     background:radial-gradient(circle at 40% 45%, var(--side) 0 42%, transparent 46%);
     filter:url(#ink);
   }
+  .diary-error{margin:0 0 12px;font-size:.88rem;color:var(--crimson);}
   .diary-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;}
   .diary-back{
     background:none;border:none;cursor:pointer;
@@ -903,7 +904,10 @@ function renderPage(){
     `<i class="${i < current ? "done" : i === current ? "now" : ""}"></i>`).join("");
 }
 
-let turning = false;
+let turning = false;     // ページをめくっている途中
+let advancing = false;   // 答えを選んで、次へ進む予約が入っている
+let queued = null;       // めくり中に選ばれた答えの続き
+
 function turnPage(next){
   const diary = $("diary");
   if(reduceMotion){ next(); return; }
@@ -913,27 +917,53 @@ function turnPage(next){
     diary.classList.remove("turn-out");
     next();
     diary.classList.add("turn-in");
-    setTimeout(() => { diary.classList.remove("turn-in"); turning = false; }, 380);
+    setTimeout(() => {
+      diary.classList.remove("turn-in");
+      turning = false;
+      // めくっている間に押された答えも、取りこぼさずに進める
+      if(queued){ const go = queued; queued = null; go(); }
+    }, 380);
   }, 380);
 }
 
 function choose(i, el){
-  if(turning) return;
+  if(advancing) return;           // 二度押しで2ページ進まないように
   answers[current] = i;
+  $("answers").querySelectorAll(".answer").forEach(b => b.classList.remove("picked"));
   el.classList.add("picked");
-  setTimeout(() => {
+  advancing = true;
+  const go = () => setTimeout(() => {
     if(current < QUESTIONS.length - 1){
-      turnPage(() => { current++; renderPage(); });
+      turnPage(() => { current++; renderPage(); advancing = false; });
     }else{
-      showResult();
+      advancing = false;
+      safeShowResult();
     }
   }, 220);
+  if(turning){ queued = go; return; }
+  go();
 }
 
 $("diary-back").addEventListener("click", () => {
-  if(turning || current === 0) return;
+  if(turning || advancing || current === 0) return;
   turnPage(() => { current--; renderPage(); });
 });
+
+/* 結果の表示で何か起きても、画面が止まったままにならないようにする */
+function safeShowResult(){
+  try{
+    if(typeof CHARACTERS === "undefined") throw new Error("キャラデータ（characters.js）を読み込めませんでした");
+    showResult();
+  }catch(e){
+    console.error(e);
+    $("diary-q").textContent = "結果を表示できませんでした。ページを再読み込みして、もう一度お試しください。";
+    $("answers").innerHTML =
+      `<p class="diary-error">原因：${String(e && e.message || e).replace(/[<>&]/g, "")}</p>` +
+      `<button class="answer" id="retry-result">もう一度結果を表示する</button>`;
+    const r = document.getElementById("retry-result");
+    if(r) r.addEventListener("click", safeShowResult);
+  }
+}
 
 /* =========================================================
    結果
@@ -1316,6 +1346,8 @@ document.addEventListener("keydown", e => {
 $("act-retry").addEventListener("click", () => {
   current = 0;
   answers = [];
+  advancing = false;
+  queued = null;
   showScene("scene-invite");
 });
 </script>
