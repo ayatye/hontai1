@@ -344,6 +344,23 @@
             <span class="quiz-invite__btn">クイズに挑戦する</span>
           </a>
 
+          <!-- 荘園人格診断への誘導（押すと闇が広がり心音が鳴る：sindan-link.js） -->
+          <a
+            href="/honntai/sinndann/sindan.html"
+            class="quiz-invite quiz-invite--sindan"
+            data-sindan-link
+          >
+            <span class="quiz-invite__seal" aria-hidden="true">鏡</span>
+            <span class="quiz-invite__body">
+              <span class="quiz-invite__from">荘園から、もう一通の招待状</span>
+              <span class="quiz-invite__title">荘園人格診断</span>
+              <span class="quiz-invite__text"
+                >16の問いに答えると、第五人格の世界であなたがなるキャラクターがわかります。サバイバーとハンター、どちらでも診断できます。</span
+              >
+            </span>
+            <span class="quiz-invite__btn">診断をはじめる</span>
+          </a>
+
           <!-- 最新アップデート情報セクションの追加 -->
           <div class="latest-update">
             <h2>最新アップデート情報</h2>
@@ -2118,5 +2135,6 @@
     <script src="honntai/script/widget_recommended.js"></script>
     <script src="honntai/script/program-slider.js"></script>
     <script type="module" src="honntai/comentoscript/hontai.js"></script>
+    <script src="honntai/script/sindan-link.js" defer></script>
   </body>
 </html>

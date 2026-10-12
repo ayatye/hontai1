@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>荘園人格診断｜第五録</title>
+<meta name="description" content="第五人格の世界に入ったら、あなたは誰になる？16の問いから、あなたがなるサバイバー・ハンターを背景推理をもとに診断します。">
+<meta property="og:title" content="荘園人格診断｜第五録">
+<meta property="og:description" content="第五人格の世界に入ったら、あなたは誰になる？背景推理から読み解く性格診断">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daigoroku.com/honntai/sinndann/sindan.html">
+<meta property="og:image" content="https://daigoroku.com/images/サイコロicon.jpeg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://daigoroku.com/honntai/sinndann/sindan.html">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+<meta name="theme-color" content="#1b1216">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ET1RB84XRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-ET1RB84XRR");
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Shippori+Mincho+B1:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#1b1216;
+    --night-deep:#120b0e;
+    --glass:#2b242a;
+    --parchment:#e6d8bd;
+    --parchment-dark:#cdbb98;
+    --ink:#3b2820;
+    --ink-soft:#6e5546;
+    --brass:#b0925f;
+    --crimson:#8e2433;
+    --mist:#a89ba0;
+    --side:var(--brass);
+
+    --mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+    --hand:"Klee One","Hiragino Maru Gothic ProN",cursive;
+
+    --mirror-bg:
+      linear-gradient(112deg, transparent 38%, rgba(255,255,255,.05) 47%, rgba(255,255,255,.015) 53%, transparent 62%),
+      radial-gradient(ellipse 70% 60% at 50% 42%, #3a3238 0%, var(--glass) 38%, #171115 100%);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    font-family:var(--mincho);
+    color:var(--parchment);
+    background:var(--night);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  button{font:inherit;color:inherit;}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:4px;}
+  .hidden{display:none !important;}
+
+  /* ===== 舞台（荘園の夜） ===== */
+  .manor{
+    min-height:100vh;
+    min-height:100svh;
+    background:
+      radial-gradient(ellipse 80% 55% at 50% 0%, rgba(142,36,51,.18), transparent 70%),
+      radial-gradient(ellipse 120% 90% at 50% 120%, #0b0709 30%, transparent 70%),
+      var(--night);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:48px 20px;
+  }
+  .scene{width:100%;max-width:640px;}
+
+  /* ===== 鏡 ===== */
+  .mirror{
+    position:fixed;inset:0;z-index:30;
+    background:var(--mirror-bg);
+    display:flex;align-items:center;justify-content:center;
+    padding:24px;
+  }
+  .mirror::after{ /* 銀の縁 */
+    content:"";position:absolute;inset:14px;
+    border:1px solid rgba(176,146,95,.35);
+    box-shadow:inset 0 0 120px rgba(0,0,0,.55);
+    pointer-events:none;
+  }
+  .mirror-inner{position:relative;z-index:1;text-align:center;max-width:30em;transition:opacity .25s;}
+  .mirror-from{font-size:.9rem;color:var(--mist);margin:0 0 28px;letter-spacing:.08em;}
+  .mirror-q{
+    font-size:clamp(1.6rem, 5.4vw, 2.5rem);
+    font-weight:600;
+    line-height:1.6;
+    margin:0 0 40px;
+    color:#efe6d6;
+    text-shadow:0 0 1px rgba(255,255,255,.2);
+  }
+  .mirror-q .reflect{
+    display:block;
+    transform:scaleY(-1);
+    opacity:.09;
+    filter:blur(1px);
+    margin-top:-.35em;
+    -webkit-mask-image:linear-gradient(to top, #000, transparent 70%);
+            mask-image:linear-gradient(to top, #000, transparent 70%);
+    pointer-events:none;
+    user-select:none;
+  }
+  .mirror-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+  .mirror-btn{
+    min-width:9em;padding:12px 28px;
+    background:transparent;
+    border:1px solid rgba(230,216,189,.55);
+    color:var(--parchment);
+    font-size:1.1rem;letter-spacing:.3em;text-indent:.3em;
+    cursor:pointer;
+    transition:background .2s, border-color .2s;
+  }
+  .mirror-btn:hover{background:rgba(230,216,189,.08);border-color:var(--parchment);}
+  .mirror-note{margin:26px 0 0;font-size:.85rem;color:var(--mist);}
+
+  /* 入場（トップページから来た時は闇の中から鏡が浮かぶ） */
+  .entry-dark{position:fixed;inset:0;z-index:50;background:var(--night);pointer-events:none;}
+  .mirror.entering .mirror-from,
+  .mirror.entering .mirror-q,
+  .mirror.entering .mirror-btns,
+  .mirror.entering .mirror-note{opacity:0;}
+
+  /* 割れる演出 */
+  .crack-layer{position:fixed;inset:0;z-index:40;pointer-events:none;}
+  .crack-layer path{fill:none;stroke:rgba(255,255,255,.85);stroke-width:1.2;stroke-linecap:round;}
+  .crack-layer path.thin{stroke:rgba(255,255,255,.45);stroke-width:.7;}
+  .shard-layer{position:fixed;inset:0;z-index:41;pointer-events:none;overflow:hidden;}
+  .shard{
+    position:absolute;inset:0;
+    background:var(--mirror-bg);
+    will-change:transform,opacity;
+  }
+  .shard::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(135deg, rgba(255,255,255,.18), transparent 40%);
+  }
+  .shake{animation:shake .32s linear;}
+  @keyframes shake{
+    0%,100%{transform:translate(0,0);}
+    20%{transform:translate(-5px,3px);}
+    40%{transform:translate(4px,-4px);}
+    60%{transform:translate(-3px,-2px);}
+    80%{transform:translate(2px,3px);}
+  }
+
+  /* ===== 招待（入り口） ===== */
+  .invite{text-align:center;}
+  .invite-title{
+    font-size:clamp(1.9rem, 6vw, 2.8rem);
+    font-weight:800;
+    margin:0 0 6px;
+    letter-spacing:.12em;
+    color:var(--parchment);
+  }
+  .invite-sub{color:var(--mist);margin:0 0 30px;font-size:.95rem;}
+  .invite-body{
+    max-width:28em;margin:0 auto 40px;
+    color:#d8cbb2;
+  }
+  .doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .door{
+    position:relative;
+    padding:56px 18px 28px;
+    border:1px solid var(--door);
+    border-radius:999px 999px 6px 6px;
+    background:linear-gradient(to bottom, color-mix(in srgb, var(--door) 16%, transparent), transparent 75%);
+    cursor:pointer;
+    text-align:center;
+    transition:background .25s, transform .25s;
+  }
+  .door:hover{background:linear-gradient(to bottom, color-mix(in srgb, var(--door) 30%, transparent), transparent 85%);}
+  .door:active{transform:scale(.985);}
+  .door.survivor{--door:var(--brass);}
+  .door.hunter{--door:var(--crimson);}
+  .door-name{display:block;font-size:1.35rem;font-weight:800;letter-spacing:.14em;margin-bottom:8px;}
+  .door.survivor .door-name{color:#d9bd86;}
+  .door.hunter .door-name{color:#d4606f;}
+  .door-desc{display:block;font-size:.88rem;color:var(--mist);line-height:1.7;}
+
+  /* ===== 日記（質問） ===== */
+  .diary-wrap{perspective:1600px;}
+  .diary{
+    position:relative;
+    color:var(--ink);
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,.35), transparent 50%),
+      radial-gradient(ellipse at 90% 100%, rgba(120,84,48,.28), transparent 55%),
+      linear-gradient(var(--parchment), var(--parchment-dark));
+    padding:40px 36px 30px;
+    box-shadow:0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(59,40,32,.25);
+    transform-origin:left center;
+  }
+  .diary-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px solid rgba(59,40,32,.3);
+    padding-bottom:8px;margin-bottom:22px;
+    font-size:.9rem;color:var(--ink-soft);
+  }
+  .diary-side{color:var(--side);font-weight:600;}
+  .diary-q{
+    position:relative;
+    font-size:clamp(1.2rem, 4vw, 1.45rem);
+    font-weight:600;
+    line-height:1.7;
+    margin:0 0 22px;
+  }
+  .answers{position:relative;list-style:none;margin:0;padding:0;}
+  .answer{
+    display:block;width:100%;
+    text-align:left;
+    background:none;border:none;
+    border-bottom:1px dashed rgba(59,40,32,.28);
+    padding:12px 4px 10px 30px;
+    font-family:var(--hand);
+    font-size:1.08rem;
+    color:var(--ink);
+    cursor:pointer;
+    position:relative;
+  }
+  .answer::before{ /* チェック欄 */
+    content:"";position:absolute;left:4px;top:50%;
+    width:14px;height:14px;margin-top:-7px;
+    border:1.5px solid var(--ink-soft);
+    border-radius:2px;
+  }
+  .answer:hover{color:#1f140f;}
+  .answer:hover::before{border-color:var(--ink);}
+  .answer.picked::after{ /* インクの印 */
+    content:"";position:absolute;left:1px;top:50%;
+    width:22px;height:22px;margin-top:-13px;
+    background:radial-gradient(circle at 40% 45%, var(--side) 0 42%, transparent 46%);
+    filter:url(#ink);
+  }
+  .diary-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;}
+  .diary-back{
+    background:none;border:none;cursor:pointer;
+    color:var(--ink-soft);font-size:.9rem;padding:4px 0;
+  }
+  .diary-back:hover{color:var(--ink);text-decoration:underline;}
+  .diary-progress{display:flex;gap:4px;}
+  .diary-progress i{width:8px;height:8px;border-radius:50%;border:1px solid var(--ink-soft);}
+  .diary-progress i.done{background:var(--ink-soft);}
+  .diary-progress i.now{background:var(--side);border-color:var(--side);}
+
+  .turn-out{animation:turnOut .38s ease-in forwards;}
+  .turn-in{animation:turnIn .38s ease-out;}
+  @keyframes turnOut{to{transform:rotateY(-78deg);opacity:0;}}
+  @keyframes turnIn{from{transform:rotateY(60deg);opacity:0;}to{transform:none;opacity:1;}}
+
+  /* ===== 結果（背景推理） ===== */
+  .file{
+    position:relative;
+    color:var(--ink);
+    background:
+      radial-gradient(ellipse at 15% 0%, rgba(255,255,255,.35), transparent 50%),
+      radial-gradient(ellipse at 100% 100%, rgba(120,84,48,.3), transparent 60%),
+      linear-gradient(var(--parchment), var(--parchment-dark));
+    padding:44px 36px 34px;
+    box-shadow:0 30px 60px rgba(0,0,0,.55);
+  }
+  .file-tab{
+    position:absolute;top:-1px;left:36px;
+    background:var(--side);color:#f4ead6;
+    font-size:.85rem;padding:6px 14px 8px;
+    letter-spacing:.1em;
+  }
+  .file-intro{margin:0;color:var(--ink-soft);font-size:.95rem;}
+  .file-name{
+    font-size:clamp(2.4rem, 10vw, 3.6rem);
+    font-weight:800;
+    line-height:1.25;
+    margin:4px 0 6px;
+    letter-spacing:.04em;
+    color:#24170f;
+  }
+  .file-note{font-size:1.08rem;margin:0 0 18px;line-height:1.8;}
+
+  /* 書類にクリップで留めた写真 */
+  .file-hero{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;}
+  .file-hero-text{min-width:0;}
+  .file-photo{
+    position:relative;
+    margin:8px 4px 10px 0;
+    width:132px;
+    padding:7px 7px 22px;
+    background:#f3ead8;
+    box-shadow:0 6px 14px rgba(40,24,16,.35), 0 0 0 1px rgba(59,40,32,.18);
+    transform:rotate(3.5deg);
+  }
+  .file-photo img{
+    display:block;width:100%;max-width:100%;
+    aspect-ratio:3/4;object-fit:cover;object-position:50% 12%;
+    background:#2b242a;
+    filter:sepia(.35) saturate(.85) contrast(1.05);
+  }
+  .file-photo::before{ /* クリップ */
+    content:"";position:absolute;z-index:1;
+    top:-14px;left:22px;width:12px;height:38px;
+    border:2px solid var(--brass);border-radius:7px;
+    box-shadow:0 1px 1px rgba(0,0,0,.3);
+  }
+  .file-link{
+    display:inline-block;margin:0 0 18px;
+    color:var(--ink);font-size:.95rem;
+    text-decoration:underline;text-underline-offset:3px;
+    text-decoration-color:color-mix(in srgb, var(--side) 70%, transparent);
+  }
+  .file-link:hover{color:var(--side);}
+  .invite-note{margin:26px auto 0;max-width:28em;font-size:.8rem;color:var(--mist);}
+  .file-alt{
+    border-left:3px solid var(--crimson);
+    padding:6px 0 6px 14px;margin:0 0 18px;
+    font-size:.95rem;
+  }
+  .file-alt b{color:var(--crimson);font-size:1.1rem;}
+  .file-conf{font-size:.8rem;color:var(--ink-soft);margin:-8px 0 18px;}
+
+  .file-rule{border:none;border-top:1px solid rgba(59,40,32,.3);margin:24px 0;}
+
+  .type-line{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 6px;}
+  .type-name{font-size:1.45rem;font-weight:800;}
+  .type-code{font-size:.85rem;color:var(--ink-soft);letter-spacing:.2em;}
+  .type-desc{margin:0 0 22px;}
+
+  .axes{display:grid;gap:14px;}
+  .axis-labels{display:flex;justify-content:space-between;font-size:.88rem;color:var(--ink-soft);}
+  .axis-labels .on{color:var(--ink);font-weight:600;}
+  .axis-track{position:relative;height:2px;background:rgba(59,40,32,.35);margin:10px 0 4px;}
+  .axis-track::before{content:"";position:absolute;left:50%;top:-5px;width:1px;height:12px;background:rgba(59,40,32,.45);}
+  .axis-seal{
+    position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, color-mix(in srgb, var(--side) 70%, #fff), var(--side) 55%, color-mix(in srgb, var(--side) 70%, #000));
+    box-shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+
+  .near-title{font-weight:600;margin:0 0 8px;}
+  .near{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .near li{font-size:1rem;}
+  .near li::before{content:"・";color:var(--ink-soft);}
+
+  .file-actions{display:grid;gap:10px;margin-top:28px;}
+  .act{
+    padding:13px;cursor:pointer;
+    border:1px solid var(--ink);background:transparent;color:var(--ink);
+    font-size:1rem;letter-spacing:.06em;
+    transition:background .2s,color .2s;
+  }
+  .act:hover{background:var(--ink);color:var(--parchment);}
+  .act.primary{background:var(--ink);color:var(--parchment);}
+  .act.primary:hover{background:#24170f;}
+  .act.switch{border-color:var(--crimson);color:var(--crimson);}
+  .act.switch:hover{background:var(--crimson);color:#f4ead6;}
+  .disclaimer{margin:22px 0 0;font-size:.78rem;color:var(--ink-soft);line-height:1.7;}
+
+  /* ===== シェア用パネル ===== */
+  .share-panel{
+    position:fixed;inset:0;z-index:60;
+    background:rgba(18,11,14,.97);
+    display:flex;align-items:center;justify-content:center;
+    padding:24px 16px;
+    overflow-y:auto;
+  }
+  .share-box{
+    width:100%;max-width:420px;
+    display:grid;gap:12px;
+    text-align:center;
+  }
+  .share-title{margin:0;font-size:1.1rem;font-weight:600;letter-spacing:.1em;}
+  .share-preview{
+    display:block;width:100%;max-width:100%;max-height:52vh;object-fit:contain;
+    box-shadow:0 20px 40px rgba(0,0,0,.6);
+  }
+  .share-how{margin:0;font-size:.88rem;color:var(--mist);}
+  .share-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .share-btn{
+    display:block;padding:12px;cursor:pointer;
+    border:1px solid rgba(230,216,189,.55);background:transparent;color:var(--parchment);
+    font-size:.98rem;text-decoration:none;
+  }
+  .share-btn:hover{background:rgba(230,216,189,.08);border-color:var(--parchment);}
+  .share-btn.primary{background:var(--parchment);color:var(--ink);border-color:var(--parchment);}
+  .share-btn.primary:hover{background:#f1e6cf;}
+  .share-msg{margin:0;min-height:1.4em;font-size:.88rem;color:var(--parchment);}
+  .share-close{background:none;border:none;color:var(--mist);cursor:pointer;padding:6px;text-decoration:underline;text-underline-offset:3px;}
+
+  body[data-side="hunter"]{--side:var(--crimson);}
+  body[data-side="survivor"]{--side:#8a6d3b;}
+
+  @media (max-width:560px){
+    .file-photo{width:96px;padding:5px 5px 16px;}
+    .doors{grid-template-columns:1fr;}
+    .door{padding:40px 18px 22px;}
+    .diary{padding:32px 22px 24px;}
+    .file{padding:62px 22px 24px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .turn-out,.turn-in,.shake{animation:none !important;}
+  }
+</style>
+</head>
+<body data-side="survivor">
+
+<!-- インクのにじみ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+</svg>
+
+<!-- ===== 鏡 ===== -->
+<!-- 入場用の闇（最初から表示しておき、読み込み後に明ける。一瞬画面が見えるのを防ぐ） -->
+<div class="entry-dark" id="entry-dark"></div>
+<noscript><style>.entry-dark{display:none}.mirror.entering .mirror-from,.mirror.entering .mirror-q,.mirror.entering .mirror-btns,.mirror.entering .mirror-note{opacity:1}</style></noscript>
+
+<div class="mirror entering" id="mirror">
+  <div class="mirror-inner" id="mirror-inner">
+    <p class="mirror-from">荘園から、招待状が届いています</p>
+    <p class="mirror-q">
+      第五人格の世界に入り、<br>キャラクターになりますか。
+      <span class="reflect" aria-hidden="true">第五人格の世界に入り、<br>キャラクターになりますか。</span>
+    </p>
+    <div class="mirror-btns">
+      <button class="mirror-btn" data-enter>はい</button>
+      <button class="mirror-btn" data-enter>はい</button>
+    </div>
+    <p class="mirror-note">どちらを選んでも、扉は開きます。</p>
+  </div>
+</div>
+
+<main class="manor">
+  <div class="scene">
+
+    <!-- ===== 入り口 ===== -->
+    <section class="invite" id="scene-invite" aria-live="polite">
+      <h1 class="invite-title">荘園人格診断</h1>
+      <p class="invite-sub">ようこそ、荘園へ。</p>
+      <p class="invite-body">
+        これから16の問いに、日記をつけるように答えてください。<br>
+        その答えから、この世界であなたが<br>
+        どのキャラクターになるのかが決まります。
+      </p>
+      <div class="doors">
+        <button class="door survivor" data-side="survivor">
+          <span class="door-name">サバイバー</span>
+          <span class="door-desc">招かれた者として<br>答える</span>
+        </button>
+        <button class="door hunter" data-side="hunter">
+          <span class="door-name">ハンター</span>
+          <span class="door-desc">追う者として<br>答える</span>
+        </button>
+      </div>
+      <p class="invite-note">キャラクターの性格は、ストーリーをもとにした運営者の独断と偏見で分析しています。</p>
+    </section>
+
+    <!-- ===== 日記 ===== -->
+    <section class="diary-wrap hidden" id="scene-diary">
+      <article class="diary" id="diary">
+        <header class="diary-head">
+          <span id="diary-day"></span>
+          <span class="diary-side" id="diary-side"></span>
+        </header>
+        <p class="diary-q" id="diary-q"></p>
+        <div class="answers" id="answers"></div>
+        <footer class="diary-foot">
+          <button class="diary-back" id="diary-back">前のページへ</button>
+          <span class="diary-progress" id="diary-progress" aria-hidden="true"></span>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===== 結果 ===== -->
+    <section class="hidden" id="scene-result">
+      <article class="file">
+        <span class="file-tab" id="file-tab"></span>
+        <div class="file-hero">
+          <div class="file-hero-text">
+            <p class="file-intro">第五人格の世界で、あなたがなるのは</p>
+            <h2 class="file-name" id="file-name"></h2>
+          </div>
+          <figure class="file-photo hidden" id="file-photo">
+            <img id="file-img" alt="" decoding="async">
+          </figure>
+        </div>
+        <p class="file-note" id="file-note"></p>
+        <a class="file-link hidden" id="file-link" href="#"></a>
+        <div class="file-alt hidden" id="file-alt"></div>
+        <p class="file-conf hidden" id="file-conf">この人物の分析は、まだ検証中です。</p>
+
+        <hr class="file-rule">
+
+        <p class="type-line"><span class="type-name" id="type-name"></span><span class="type-code" id="type-code"></span></p>
+        <p class="type-desc" id="type-desc"></p>
+        <div class="axes" id="axes"></div>
+
+        <hr class="file-rule">
+
+        <p class="near-title">ほかになれそうなキャラクター</p>
+        <ul class="near" id="near"></ul>
+
+        <div class="file-actions">
+          <button class="act primary" id="act-share">結果を画像でシェアする</button>
+          <button class="act switch" id="act-switch"></button>
+          <button class="act" id="act-retry">最初からやり直す</button>
+        </div>
+
+        <p class="disclaimer">※この診断は、運営者がストーリーや背景推理を見て読み解いたキャラクター像を参考にしています。性格の分析は運営者の独断と偏見によるもので、公式の設定ではありません。</p>
+      </article>
+    </section>
+
+  </div>
+</main>
+
+<!-- ===== シェア用の画像（PCなど、共有メニューが使えない時） ===== -->
+<div class="share-panel hidden" id="share-panel" role="dialog" aria-modal="true" aria-labelledby="share-title">
+  <div class="share-box">
+    <p class="share-title" id="share-title">結果の画像</p>
+    <img class="share-preview" id="share-preview" alt="診断結果の画像">
+    <p class="share-how">画像を保存するかコピーしてから、Xの投稿画面で添付してください。</p>
+    <div class="share-tools" id="share-tools">
+      <a class="share-btn" id="share-save" href="#" download="shoen-jinkaku.png">画像を保存</a>
+      <button class="share-btn" id="share-copy">画像をコピー</button>
+    </div>
+    <a class="share-btn primary" id="share-x" href="#" target="_blank" rel="noopener">Xの投稿画面を開く</a>
+    <p class="share-msg" id="share-msg" aria-live="polite"></p>
+    <button class="share-close" id="share-close">閉じる</button>
+  </div>
+</div>
+
+<!-- キャラデータ（同じフォルダに置く） -->
+<script src="characters.js"></script>
+<script>
+/* =========================================================
+   設定
+   ========================================================= */
+const AXES = [
+  { key:"who",  plus:"誰かのため", minus:"自分のため", pc:"W", mc:"S" },
+  { key:"mind", plus:"理性",       minus:"感情",       pc:"L", mc:"E" },
+  { key:"face", plus:"仮面",       minus:"素顔",       pc:"M", mc:"N" },
+  { key:"time", plus:"過去",       minus:"未来",       pc:"P", mc:"F" },
+];
+
+/* 質問（各軸4問・計16問）
+   v = その軸への点数（+2〜-2）
+   hunter が付いた質問は、ハンターで答える時だけ文面が変わる */
+const QUESTIONS = [
+  { axis:"who", q:"いちばん頑張れるのは、どんなとき？", a:[
+    { t:"誰かが喜んでくれるとき", v:2 },
+    { t:"自分の目標に近づけたとき", v:-1 },
+    { t:"大切な人に頼られたとき", v:1 },
+    { t:"自分が心から納得できたとき", v:-2 },
+  ]},
+  { axis:"mind", q:"大事なことを決めるとき、あなたは？", a:[
+    { t:"とことん情報を集めてから決める", v:2 },
+    { t:"最後は直感で決める", v:-1 },
+    { t:"損得を一度整理してから決める", v:1 },
+    { t:"その時の気持ちに従う", v:-2 },
+  ]},
+  { axis:"face", q:"初対面の人の前では？", a:[
+    { t:"わりと普段どおり", v:-1 },
+    { t:"相手が求めていそうな自分を演じる", v:2 },
+    { t:"最初から素のまま", v:-2 },
+    { t:"少しだけよそ行きの自分", v:1 },
+  ]},
+  { axis:"time", q:"ひとりの夜、ふと考えるのは？", a:[
+    { t:"昔のあの出来事", v:2 },
+    { t:"来週の予定", v:-1 },
+    { t:"もう会えない人のこと", v:1 },
+    { t:"何年も先の夢", v:-2 },
+  ]},
+
+  { axis:"who", q:"荘園からの招待状。報酬をひとつ選ぶなら？", a:[
+    { t:"誰にも縛られない自由", v:-2 },
+    { t:"大切な人を救う方法", v:2 },
+    { t:"自分の夢を叶える力", v:-1 },
+    { t:"家族や仲間が安心して暮らせる場所", v:1 },
+  ]},
+  { axis:"mind", q:"理不尽なことをされたら？", a:[
+    { t:"その場で言い返してしまう", v:-2 },
+    { t:"冷静に記録して、あとで対処する", v:2 },
+    { t:"顔に出てしまう", v:-1 },
+    { t:"一度落ち着いてから伝える", v:1 },
+  ]},
+  { axis:"face", q:"本当の気持ちを話せる相手は？", a:[
+    { t:"ほとんどいない", v:2 },
+    { t:"わりといる", v:-1 },
+    { t:"ごく一部だけ", v:1 },
+    { t:"誰にでも話せる", v:-2 },
+  ]},
+  { axis:"time", q:"後悔していることについて", a:[
+    { t:"次に活かして、もう引きずらない", v:-2 },
+    { t:"ずっと忘れられない", v:2 },
+    { t:"あまり気にしない", v:-1 },
+    { t:"ふとした時に思い出す", v:1 },
+  ]},
+
+  { axis:"who", q:"友人との約束と、自分のやりたいことが重なった", a:[
+    { t:"少し迷って、自分のほうを選ぶ", v:-1 },
+    { t:"迷わず友人を優先する", v:2 },
+    { t:"自分のやりたいことを優先する", v:-2 },
+    { t:"少し迷って、友人を選ぶ", v:1 },
+  ]},
+  { axis:"mind", q:"誰かが目の前で泣いていたら？", a:[
+    { t:"原因を聞いて、解決策を一緒に考える", v:2 },
+    { t:"こちらまで泣きそうになる", v:-2 },
+    { t:"話を聞いて、気持ちの整理を手伝う", v:1 },
+    { t:"何も言わず、そばにいる", v:-1 },
+  ]},
+  { axis:"face", q:"嘘については？", a:[
+    { t:"苦手で、すぐ顔に出る", v:-1 },
+    { t:"人を守るためならつける", v:1 },
+    { t:"必要なら迷わずつく", v:2 },
+    { t:"つけないし、つきたくない", v:-2 },
+  ]},
+  { axis:"time", q:"宝物にしているのは？", a:[
+    { t:"これから叶えたいことのリスト", v:-1 },
+    { t:"昔もらった手紙や贈り物", v:2 },
+    { t:"まだ見ぬ何か", v:-2 },
+    { t:"思い出の写真", v:1 },
+  ]},
+
+  { axis:"who", q:"試合が負けそう。あなたが考えるのは？", a:[
+    { t:"自分のプレイに悔いを残したくない", v:-2 },
+    { t:"チームで一人でも多く逃がしたい", v:1 },
+    { t:"味方だけでも逃がしたい", v:2 },
+    { t:"せめて自分だけでも生き残りたい", v:-1 },
+  ], hunter:{ q:"試合が思うように進まない。あなたが考えるのは？", a:[
+    "自分のプレイに悔いを残したくない",
+    "対戦相手にも、いい試合だったと思ってほしい",
+    "応援してくれる誰かのために勝ちたい",
+    "とにかく勝ちたい",
+  ]}},
+  { axis:"mind", q:"ハンターに追われているとき、頭の中は？", a:[
+    { t:"とにかく逃げる", v:-1 },
+    { t:"次の板と窓まで全部計算してる", v:2 },
+    { t:"頭が真っ白", v:-2 },
+    { t:"いつもの定石どおりに動く", v:1 },
+  ], hunter:{ q:"サバイバーを追っているとき、頭の中は？", a:[
+    "目の前の一人をとにかく追う",
+    "解読の進みと全員の位置まで計算してる",
+    "熱くなって周りが見えない",
+    "いつもの定石どおりに動く",
+  ]}},
+  { axis:"face", q:"SNSでのあなたは？", a:[
+    { t:"いい部分だけを見せている", v:1 },
+    { t:"ほぼ普段の自分のまま", v:-1 },
+    { t:"現実とは完全に別人", v:2 },
+    { t:"愚痴も弱音もそのまま出す", v:-2 },
+  ]},
+  { axis:"time", q:"あなたが荘園に来た理由は？", a:[
+    { t:"新しい人生を始めるため", v:-1 },
+    { t:"失ったものの真相を知るため", v:2 },
+    { t:"欲しいものを手に入れるため", v:-2 },
+    { t:"過去にけりをつけるため", v:1 },
+  ]},
+];
+
+/* 16タイプ（コード順：①W/S ②L/E ③M/N ④P/F） */
+const TYPES = {
+  WLMP:{ n:"贖罪の策士",         d:"大切な人のためなら、本心を隠して冷静に動ける人。過去に背負ったものを、誰にも見せずに抱えています。" },
+  WLMF:{ n:"秘めた守護者",       d:"守りたい誰かのために、先を読んで静かに手を打つ人。表に出さない優しさが持ち味です。" },
+  WLNP:{ n:"一途な探求者",       d:"失った誰かや大切な記憶のために、まっすぐ答えを探し続ける人。ごまかしのない誠実さがあります。" },
+  WLNF:{ n:"静かな献身家",       d:"誰かの明日のために、淡々と自分にできることを積み重ねる人。頼られると強いタイプです。" },
+  WEMP:{ n:"仮面の番人",         d:"大切な人を守るためなら、怪物にでもなれる人。深い情を、仮面の下に隠しています。" },
+  WEMF:{ n:"やさしい嘘つき",     d:"誰かを笑顔にするためなら、ちょっとした嘘も演技もいとわない人。場を明るくする力があります。" },
+  WENP:{ n:"想い続ける人",       d:"もう会えない誰かのことを、ずっと胸に抱き続ける人。情に厚く、裏表がありません。" },
+  WENF:{ n:"まっすぐな救い手",   d:"考えるより先に、目の前の誰かに手を伸ばしてしまう人。その素直さが誰かを救います。" },
+  SLMP:{ n:"孤高の裁定者",       d:"自分の物差しで物事を見極め、決して本心を明かさない人。過去に下した決断を、今も背負っています。" },
+  SLMF:{ n:"野心の策略家",       d:"欲しいものを手に入れるために、顔を使い分けて先を読む人。計画を立てさせたら右に出る者はいません。" },
+  SLNP:{ n:"沈思の観測者",       d:"過去の出来事を冷静に見つめ、自分なりの答えを出そうとする人。理屈と誠実さを併せ持っています。" },
+  SLNF:{ n:"真理の探究者",       d:"知りたいことのためなら、どこまでも突き進む人。常識に縛られない発想が武器です。" },
+  SEMP:{ n:"偽りの名を生きる人", d:"過去から逃れるように、別の自分を演じ続ける人。その仮面は、誰よりも傷つきやすい心の裏返しです。" },
+  SEMF:{ n:"華やかな仮面",       d:"憧れの自分になるために、美しい仮面をまとう人。人を惹きつける魅力にあふれています。" },
+  SENP:{ n:"剥き出しの魂",       d:"取り繕うことなく、自分の想いや傷をそのまま抱えて生きる人。その純粋さが人の心を打ちます。" },
+  SENF:{ n:"衝動の表現者",       d:"今この瞬間に全てを懸けて、輝こうとする人。感情の強さが、そのまま表現力になります。" },
+};
+
+const SIDE_LABEL = { survivor:"サバイバー", hunter:"ハンター" };
+
+/* 画像とキャラページの場所（sindan.html を honntai/sinndann/ に置く前提）
+   画像：sinndann フォルダの中の「key.webp」
+   ページ：honntai/sabaiba/key/key.html ・ honntai/hanta/key/key.html */
+const IMG_DIR  = "";        // 画像をサブフォルダに入れたら "img/" のように書く
+const IMG_EXT  = ".webp";
+const PAGE_DIR = "../";
+
+/* =========================================================
+   状態
+   ========================================================= */
+const $ = id => document.getElementById(id);
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let side = "survivor";
+let current = 0;
+let answers = [];
+
+/* =========================================================
+   鏡が割れる演出
+   ========================================================= */
+function shatter(x, y, done){
+  const mirror = $("mirror");
+  if(reduceMotion){
+    mirror.animate([{opacity:1},{opacity:0}], {duration:400, fill:"forwards"})
+      .onfinish = () => { mirror.remove(); done(); };
+    return;
+  }
+
+  const W = window.innerWidth, H = window.innerHeight;
+  const R = Math.hypot(Math.max(x, W - x), Math.max(y, H - y)) * 1.15;
+
+  // 放射状の角度と、3重のリング
+  const N = 13;
+  const angles = [];
+  for(let i = 0; i < N; i++){
+    angles.push((i + Math.random() * 0.7) / N * Math.PI * 2);
+  }
+  const rings = [0.08 + Math.random()*0.04, 0.3 + Math.random()*0.08, 0.62, 1].map(r => r * R);
+  const pts = rings.map((r, ri) => angles.map(a => {
+    const j = ri === rings.length - 1 ? 0 : (Math.random() - 0.5) * r * 0.22;
+    return [x + Math.cos(a) * (r + j), y + Math.sin(a) * (r + j)];
+  }));
+
+  // ひび（SVG）
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("class", "crack-layer");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("width", W);
+  svg.setAttribute("height", H);
+  const lines = [];
+  angles.forEach((_, k) => { // 放射線
+    const d = `M${x},${y} ` + pts.slice(0, 3).map(p => `L${p[k][0]},${p[k][1]}`).join(" ");
+    lines.push({ d, thin:false });
+  });
+  for(let ri = 0; ri < 2; ri++){ // 同心のひび
+    angles.forEach((_, k) => {
+      if(Math.random() < 0.25) return;
+      const a = pts[ri][k], b = pts[ri][(k + 1) % N];
+      lines.push({ d:`M${a[0]},${a[1]} L${b[0]},${b[1]}`, thin:ri > 0 });
+    });
+  }
+  lines.forEach(l => {
+    const p = document.createElementNS(svgNS, "path");
+    p.setAttribute("d", l.d);
+    if(l.thin) p.setAttribute("class", "thin");
+    svg.appendChild(p);
+  });
+  document.body.appendChild(svg);
+  svg.querySelectorAll("path").forEach(p => {
+    const len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.animate([{strokeDashoffset:len},{strokeDashoffset:0}],
+      {duration:260 + Math.random()*160, easing:"cubic-bezier(.2,.8,.3,1)", fill:"forwards"});
+  });
+  mirror.classList.add("shake");
+  $("mirror-inner").style.opacity = ".35";
+
+  // 破片
+  setTimeout(() => {
+    const layer = document.createElement("div");
+    layer.className = "shard-layer";
+    const polys = [];
+    angles.forEach((_, k) => {
+      const k2 = (k + 1) % N;
+      polys.push({ p:[[x, y], pts[0][k], pts[0][k2]], ring:0 });
+      for(let ri = 0; ri < rings.length - 1; ri++){
+        polys.push({ p:[pts[ri][k], pts[ri][k2], pts[ri+1][k2], pts[ri+1][k]], ring:ri + 1 });
+      }
+    });
+    polys.forEach(({ p, ring }) => {
+      const el = document.createElement("div");
+      el.className = "shard";
+      el.style.clipPath = `polygon(${p.map(q => `${q[0]}px ${q[1]}px`).join(",")})`;
+      layer.appendChild(el);
+
+      const cx = p.reduce((s, q) => s + q[0], 0) / p.length;
+      const cy = p.reduce((s, q) => s + q[1], 0) / p.length;
+      const dx = (cx - x) * (0.12 + Math.random()*0.15);
+      const dy = (cy - y) * 0.08 + H * (0.7 + Math.random()*0.5);
+      const rot = (Math.random() - 0.5) * 50;
+      el.style.transformOrigin = `${cx}px ${cy}px`;
+      el.animate([
+        { transform:"translate(0,0) rotate(0deg)", opacity:1 },
+        { transform:`translate(${dx*0.3}px, ${-12 - Math.random()*18}px) rotate(${rot*0.2}deg)`, opacity:1, offset:0.18 },
+        { transform:`translate(${dx}px, ${dy}px) rotate(${rot}deg)`, opacity:0 },
+      ], {
+        duration:1000 + Math.random()*500,
+        delay:ring * 70 + Math.random()*90,
+        easing:"cubic-bezier(.45,0,.9,.5)",
+        fill:"forwards",
+      });
+    });
+    document.body.appendChild(layer);
+    mirror.remove();
+    svg.remove();
+    done();
+    setTimeout(() => layer.remove(), 2000);
+  }, 520);
+}
+
+/* =========================================================
+   入場：闇の中から鏡が浮かび上がる
+   トップページの演出（sindan-link.js）から来た時は、
+   闇が少し長く残ってから明ける
+   ========================================================= */
+(function entrance(){
+  let fromTop = false;
+  try{
+    fromTop = sessionStorage.getItem("sindan-entry") === "1";
+    sessionStorage.removeItem("sindan-entry");
+  }catch(_){}
+  const mirror = $("mirror");
+  const dark = $("entry-dark");
+  if(reduceMotion){
+    dark.remove();
+    mirror.classList.remove("entering");
+    return;
+  }
+
+  const wait = fromTop ? 500 : 0;
+  dark.animate([{opacity:1},{opacity:0}],
+    { duration: fromTop ? 1400 : 700, delay:wait, easing:"ease-in", fill:"forwards" })
+    .onfinish = () => dark.remove();
+
+  const parts = [".mirror-from", ".mirror-q", ".mirror-btns", ".mirror-note"];
+  parts.forEach((sel, i) => {
+    const el = mirror.querySelector(sel);
+    el.animate(
+      [{opacity:0, filter:"blur(6px)"}, {opacity:1, filter:"blur(0)"}],
+      { duration:900, delay: wait + (fromTop ? 600 : 200) + i * 380, easing:"ease-out", fill:"forwards" }
+    );
+  });
+  setTimeout(() => mirror.classList.remove("entering"),
+    wait + (fromTop ? 600 : 200) + parts.length * 380 + 900);
+})();
+
+document.querySelectorAll("[data-enter]").forEach(btn => {
+  btn.addEventListener("click", e => {
+    document.querySelectorAll("[data-enter]").forEach(b => b.disabled = true);
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX || r.left + r.width / 2;
+    const y = e.clientY || r.top + r.height / 2;
+    shatter(x, y, () => { document.querySelector(".door").focus({preventScroll:true}); });
+  });
+});
+
+/* =========================================================
+   画面の切り替え
+   ========================================================= */
+function showScene(id){
+  ["scene-invite","scene-diary","scene-result"].forEach(s => $(s).classList.add("hidden"));
+  $(id).classList.remove("hidden");
+  window.scrollTo({top:0, behavior: reduceMotion ? "auto" : "smooth"});
+}
+
+document.querySelectorAll(".door").forEach(door => {
+  door.addEventListener("click", () => {
+    side = door.dataset.side;
+    document.body.dataset.side = side;
+    current = 0;
+    answers = [];
+    renderPage();
+    showScene("scene-diary");
+  });
+});
+
+/* =========================================================
+   日記（質問）
+   ========================================================= */
+function questionText(q){
+  if(side === "hunter" && q.hunter){
+    return { q:q.hunter.q, a:q.a.map((o, i) => ({ t:q.hunter.a[i], v:o.v })) };
+  }
+  return { q:q.q, a:q.a };
+}
+
+function renderPage(){
+  const item = questionText(QUESTIONS[current]);
+  $("diary-day").textContent = `${current + 1}日目`;
+  $("diary-side").textContent = `${SIDE_LABEL[side]}の日記`;
+  $("diary-q").textContent = item.q;
+  $("diary-back").style.visibility = current === 0 ? "hidden" : "visible";
+
+  const box = $("answers");
+  box.innerHTML = "";
+  item.a.forEach((opt, i) => {
+    const b = document.createElement("button");
+    b.className = "answer";
+    b.textContent = opt.t;
+    if(answers[current] === i) b.classList.add("picked");
+    b.addEventListener("click", () => choose(i, b));
+    box.appendChild(b);
+  });
+
+  $("diary-progress").innerHTML = QUESTIONS.map((_, i) =>
+    `<i class="${i < current ? "done" : i === current ? "now" : ""}"></i>`).join("");
+}
+
+let turning = false;
+function turnPage(next){
+  const diary = $("diary");
+  if(reduceMotion){ next(); return; }
+  turning = true;
+  diary.classList.add("turn-out");
+  setTimeout(() => {
+    diary.classList.remove("turn-out");
+    next();
+    diary.classList.add("turn-in");
+    setTimeout(() => { diary.classList.remove("turn-in"); turning = false; }, 380);
+  }, 380);
+}
+
+function choose(i, el){
+  if(turning) return;
+  answers[current] = i;
+  el.classList.add("picked");
+  setTimeout(() => {
+    if(current < QUESTIONS.length - 1){
+      turnPage(() => { current++; renderPage(); });
+    }else{
+      showResult();
+    }
+  }, 220);
+}
+
+$("diary-back").addEventListener("click", () => {
+  if(turning || current === 0) return;
+  turnPage(() => { current--; renderPage(); });
+});
+
+/* =========================================================
+   結果
+   ========================================================= */
+function calcUser(){
+  const sum = { who:0, mind:0, face:0, time:0 };
+  const cnt = { who:0, mind:0, face:0, time:0 };
+  answers.forEach((ans, qi) => {
+    const q = QUESTIONS[qi];
+    sum[q.axis] += q.a[ans].v;
+    cnt[q.axis] += 1;
+  });
+  const u = {};
+  AXES.forEach(ax => { u[ax.key] = cnt[ax.key] ? sum[ax.key] / cnt[ax.key] : 0; });
+  return u;
+}
+
+/* 近さ＝4軸の向きの一致度（コサイン類似度）。
+   距離で比べると中間的な人物ばかり選ばれるため、向きで比べる */
+function similarity(u, c){
+  let dot = 0, nu = 0, nc = 0;
+  AXES.forEach(ax => {
+    dot += u[ax.key] * c[ax.key];
+    nu  += u[ax.key] * u[ax.key];
+    nc  += c[ax.key] * c[ax.key];
+  });
+  return (nu && nc) ? dot / Math.sqrt(nu * nc) : 0;
+}
+
+function typeCode(u){
+  return AXES.map(ax => u[ax.key] >= 0 ? ax.pc : ax.mc).join("");
+}
+
+function showResult(){
+  const u = calcUser();
+  const code = typeCode(u);
+  const type = TYPES[code];
+
+  const pool = CHARACTERS
+    .filter(c => c.conf !== "保留" && c.side === side)
+    .map(c => ({ ...c, s: similarity(u, c) + Math.random() * 0.001 }))
+    .sort((a, b) => b.s - a.s);
+  const top = pool[0];
+  // key から画像とキャラページの場所を決める（img / link を直接書いたキャラはそちらを優先）
+  if(!top.img && top.key)  top.img  = IMG_DIR + top.key + IMG_EXT;
+  if(!top.link && top.key) top.link = `${PAGE_DIR}${top.side === "hunter" ? "hanta" : "sabaiba"}/${top.key}/${top.key}.html`;
+
+  $("file-tab").textContent = SIDE_LABEL[side];
+  $("file-name").textContent = top.name;
+  $("file-note").textContent = top.note;
+
+  // 写真（characters.js の img があれば表示。読み込めなければ隠す）
+  const photo = $("file-photo"), img = $("file-img");
+  if(top.img){
+    img.onerror = () => photo.classList.add("hidden");
+    img.src = top.img;
+    img.alt = `${top.name}の立ち絵`;
+    photo.classList.remove("hidden");
+  }else{
+    img.removeAttribute("src");
+    photo.classList.add("hidden");
+  }
+
+  // キャラページへのリンク（characters.js の link があれば表示）
+  const link = $("file-link");
+  if(top.link){
+    link.href = top.link;
+    link.textContent = `${top.name}の解説ページを読む`;
+    link.classList.remove("hidden");
+  }else{
+    link.classList.add("hidden");
+  }
+
+  const alt = $("file-alt");
+  if(top.alt){
+    alt.innerHTML = `もう一つの姿　<b>${top.alt.name}</b><br>${top.alt.note}`;
+    alt.classList.remove("hidden");
+  }else{
+    alt.classList.add("hidden");
+  }
+  $("file-conf").classList.toggle("hidden", top.conf !== "低");
+
+  $("type-name").textContent = type.n;
+  $("type-code").textContent = code;
+  $("type-desc").textContent = type.d;
+
+  $("axes").innerHTML = AXES.map(ax => {
+    const v = u[ax.key];
+    const pos = 50 - (v / 2) * 50;   // +2 → 左端 / -2 → 右端
+    return `
+      <div>
+        <div class="axis-labels">
+          <span class="${v >= 0 ? "on" : ""}">${ax.plus}</span>
+          <span class="${v < 0 ? "on" : ""}">${ax.minus}</span>
+        </div>
+        <div class="axis-track"><span class="axis-seal" style="left:${pos}%"></span></div>
+      </div>`;
+  }).join("");
+
+  $("near").innerHTML = pool.slice(1, 5).map(c => `<li>${c.name}</li>`).join("");
+
+  const other = side === "survivor" ? "hunter" : "survivor";
+  $("act-switch").textContent = `${SIDE_LABEL[other]}の自分も見る`;
+  $("act-switch").onclick = () => {
+    side = other;
+    document.body.dataset.side = side;
+    showResult();
+  };
+
+  // シェア用の画像は結果表示と同時に作っておく（押した瞬間にすぐ共有できるように）
+  const result = { side, top, type, code, u };
+  cardPromise = makeCard(result).catch(() => null);
+  shareText = `荘園人格診断
+第五人格の世界で、私は${SIDE_LABEL[side]}「${top.name}」になりました
+人格タイプ：${type.n}
+#第五人格 #荘園人格診断
+`;
+
+  showScene("scene-result");
+}
+
+/* =========================================================
+   結果画像（Xシェア用）
+   1080×1350（X のタイムラインで切れずに表示される縦長）
+   ========================================================= */
+let cardPromise = null;
+let shareText = "";
+const PAGE_URL = location.href.split(/[?#]/)[0];
+
+function wrapLines(ctx, text, maxW){
+  const lines = [];
+  let line = "";
+  for(const ch of text){
+    if(ctx.measureText(line + ch).width > maxW && line){
+      // 句読点で行が始まらないようにする
+      if("、。」）".includes(ch)){ lines.push(line + ch); line = ""; continue; }
+      lines.push(line); line = ch;
+    }else{
+      line += ch;
+    }
+  }
+  if(line) lines.push(line);
+  return lines;
+}
+
+function loadImage(src){
+  return new Promise((ok, ng) => {
+    const im = new Image();
+    im.onload = () => ok(im);
+    im.onerror = ng;
+    im.src = src;
+  });
+}
+
+async function makeCard({ side, top, type, code, u }){
+  const W = 1080, H = 1350;
+  const MINCHO = `"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif`;
+  const C = {
+    night:"#1b1216", parchment:"#e6d8bd", parchmentDark:"#cdbb98", ink:"#3b2820",
+    inkSoft:"#6e5546", brass:"#b0925f", crimson:"#8e2433", mist:"#a89ba0",
+    side: side === "hunter" ? "#8e2433" : "#8a6d3b",
+  };
+
+  try{
+    await Promise.all([
+      document.fonts.load(`800 120px "Shippori Mincho B1"`),
+      document.fonts.load(`600 40px "Shippori Mincho B1"`),
+      document.fonts.load(`400 34px "Shippori Mincho B1"`),
+    ]);
+  }catch(_){}
+
+  let photo = null;
+  if(top.img){ try{ photo = await loadImage(top.img); }catch(_){} }
+
+  const cv = document.createElement("canvas");
+  cv.width = W; cv.height = H;
+  const x = cv.getContext("2d");
+
+  // 夜の背景
+  x.fillStyle = C.night; x.fillRect(0, 0, W, H);
+  let g = x.createRadialGradient(W/2, -100, 50, W/2, -100, 900);
+  g.addColorStop(0, "rgba(142,36,51,.35)"); g.addColorStop(1, "rgba(142,36,51,0)");
+  x.fillStyle = g; x.fillRect(0, 0, W, H);
+
+  // 上の題字
+  x.fillStyle = C.parchment;
+  x.font = `800 46px ${MINCHO}`;
+  x.textAlign = "center"; x.textBaseline = "alphabetic";
+  x.fillText("荘 園 人 格 診 断", W/2, 90);
+
+  // 羊皮紙の書類
+  const P = { l:70, t:132, r:W-70, b:1206 };
+  x.save();
+  x.shadowColor = "rgba(0,0,0,.6)"; x.shadowBlur = 50; x.shadowOffsetY = 20;
+  g = x.createLinearGradient(0, P.t, 0, P.b);
+  g.addColorStop(0, C.parchment); g.addColorStop(1, C.parchmentDark);
+  x.fillStyle = g; x.fillRect(P.l, P.t, P.r - P.l, P.b - P.t);
+  x.restore();
+  g = x.createRadialGradient(P.l + 150, P.t, 10, P.l + 150, P.t, 600);
+  g.addColorStop(0, "rgba(255,255,255,.35)"); g.addColorStop(1, "rgba(255,255,255,0)");
+  x.fillStyle = g; x.fillRect(P.l, P.t, P.r - P.l, P.b - P.t);
+
+  // 陣営のタブ
+  x.font = `600 30px ${MINCHO}`;
+  const tab = SIDE_LABEL[side];
+  const tabW = x.measureText(tab).width + 56;
+  x.fillStyle = C.side; x.fillRect(P.l + 50, P.t, tabW, 58);
+  x.fillStyle = "#f4ead6"; x.textAlign = "left";
+  x.fillText(tab, P.l + 78, P.t + 40);
+
+  const L = P.l + 56;               // 本文の左端
+  const R = P.r - 56;               // 本文の右端
+  const PW = 230, PH = 307;         // 写真の大きさ
+  const textR = photo ? P.r - PW - 90 : R;
+  let photoBottom = 0;
+
+  // 写真
+  if(photo){
+    const px = P.r - PW - 46, py = P.t + 64;
+    photoBottom = py + PH + 40;
+    x.save();
+    x.translate(px + PW/2, py + PH/2);
+    x.rotate(3.5 * Math.PI / 180);
+    x.shadowColor = "rgba(40,24,16,.45)"; x.shadowBlur = 24; x.shadowOffsetY = 10;
+    x.fillStyle = "#f3ead8";
+    x.fillRect(-PW/2 - 11, -PH/2 - 11, PW + 22, PH + 40);
+    x.shadowColor = "transparent";
+    x.fillStyle = "#2b242a"; x.fillRect(-PW/2, -PH/2, PW, PH);
+    // 画像を 3:4 に切り抜いて上寄せ
+    const s = Math.max(PW / photo.width, PH / photo.height);
+    const sw = PW / s, sh = PH / s;
+    const sx = (photo.width - sw) / 2, sy = (photo.height - sh) * 0.12;
+    x.filter = "sepia(.35) saturate(.85) contrast(1.05)";
+    x.drawImage(photo, sx, sy, sw, sh, -PW/2, -PH/2, PW, PH);
+    x.filter = "none";
+    // クリップ
+    x.strokeStyle = C.brass; x.lineWidth = 4;
+    x.beginPath(); x.roundRect(-PW/2 + 30, -PH/2 - 28, 20, 62, 10); x.stroke();
+    x.restore();
+  }
+
+  // 「第五人格の世界で、私がなるのは」
+  x.fillStyle = C.inkSoft; x.font = `400 32px ${MINCHO}`; x.textAlign = "left";
+  let y = P.t + 130;
+  wrapLines(x, "第五人格の世界で、私がなるのは", textR - L).forEach(l => { x.fillText(l, L, y); y += 46; });
+
+  // キャラ名（幅に合わせて文字を小さくする）
+  let size = 120;
+  x.font = `800 ${size}px ${MINCHO}`;
+  while(x.measureText(top.name).width > textR - L && size > 44){
+    size -= 4; x.font = `800 ${size}px ${MINCHO}`;
+  }
+  y += size * 0.92;
+  x.fillStyle = "#24170f";
+  x.fillText(top.name, L, y);
+
+  // ひとこと（写真がある時は写真の左に収める）
+  y += 82;
+  x.fillStyle = C.ink; x.font = `400 36px ${MINCHO}`;
+  wrapLines(x, top.note, textR - L).slice(0, 4).forEach(l => { x.fillText(l, L, y); y += 56; });
+
+  // もう一つの姿
+  if(top.alt){
+    y += 4;
+    x.fillStyle = C.crimson; x.fillRect(L, y - 30, 5, 42);
+    x.fillStyle = C.ink; x.font = `400 30px ${MINCHO}`;
+    x.fillText("もう一つの姿　", L + 22, y);
+    const w = x.measureText("もう一つの姿　").width;
+    x.fillStyle = C.crimson; x.font = `800 32px ${MINCHO}`;
+    x.fillText(top.alt.name, L + 22 + w, y);
+    y += 54;
+  }
+
+  // 区切り線
+  y = Math.max(y - 16, photoBottom + 24);
+  x.strokeStyle = "rgba(59,40,32,.3)"; x.lineWidth = 2;
+  x.beginPath(); x.moveTo(L, y); x.lineTo(R, y); x.stroke();
+  y += 70;
+
+  // 人格タイプ
+  x.fillStyle = C.ink; x.font = `800 50px ${MINCHO}`;
+  x.fillText(type.n, L, y);
+  const tw = x.measureText(type.n).width;
+  x.fillStyle = C.inkSoft; x.font = `400 26px ${MINCHO}`;
+  x.fillText(code.split("").join(" "), L + tw + 20, y);
+  y += 72;
+
+  // 4つの軸（残りの高さに合わせて間隔を決める）
+  const gap = Math.min(112, (P.b - 46 - y) / AXES.length);
+  AXES.forEach(ax => {
+    const v = u[ax.key];
+    x.font = `${v >= 0 ? 600 : 400} 30px ${MINCHO}`;
+    x.fillStyle = v >= 0 ? C.ink : C.inkSoft;
+    x.textAlign = "left"; x.fillText(ax.plus, L, y);
+    x.font = `${v < 0 ? 600 : 400} 30px ${MINCHO}`;
+    x.fillStyle = v < 0 ? C.ink : C.inkSoft;
+    x.textAlign = "right"; x.fillText(ax.minus, P.r - 56, y);
+    const ty = y + 30;
+    x.strokeStyle = "rgba(59,40,32,.35)"; x.lineWidth = 3;
+    x.beginPath(); x.moveTo(L, ty); x.lineTo(P.r - 56, ty); x.stroke();
+    const mid = (L + P.r - 56) / 2;
+    x.beginPath(); x.moveTo(mid, ty - 10); x.lineTo(mid, ty + 10); x.stroke();
+    const sx = L + (0.5 - v / 4) * (P.r - 56 - L);
+    const sg = x.createRadialGradient(sx - 5, ty - 5, 2, sx, ty, 16);
+    sg.addColorStop(0, "#e0c9a0"); sg.addColorStop(.55, C.side); sg.addColorStop(1, "#3a2414");
+    x.fillStyle = sg;
+    x.beginPath(); x.arc(sx, ty, 15, 0, Math.PI * 2); x.fill();
+    y += gap;
+  });
+
+  // 下のサイン
+  x.textAlign = "center";
+  x.fillStyle = C.mist; x.font = `400 30px ${MINCHO}`;
+  x.fillText("#第五人格　#荘園人格診断", W/2, 1266);
+  x.fillStyle = C.parchment; x.font = `600 32px ${MINCHO}`;
+  x.fillText("第五録 ｜ daigoroku.com", W/2, 1314);
+
+  return new Promise(ok => cv.toBlob(ok, "image/png"));
+}
+
+/* ---------- シェア ---------- */
+function tweetUrl(){
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(PAGE_URL)}`;
+}
+
+$("act-share").addEventListener("click", async () => {
+  const blob = cardPromise ? await cardPromise : null;
+  if(blob){
+    const file = new File([blob], "shoen-jinkaku.png", { type:"image/png" });
+    // スマホ：共有メニューから X を選ぶと、画像付きで投稿できる
+    if(navigator.canShare && navigator.canShare({ files:[file] })){
+      try{
+        await navigator.share({ files:[file], text: shareText + PAGE_URL });
+        return;
+      }catch(e){
+        if(e && e.name === "AbortError") return;   // 自分で閉じた時は何もしない
+      }
+    }
+  }
+  openSharePanel(blob);
+});
+
+let panelUrl = null;
+function openSharePanel(blob){
+  const panel = $("share-panel");
+  const msg = $("share-msg");
+  msg.textContent = "";
+  if(panelUrl){ URL.revokeObjectURL(panelUrl); panelUrl = null; }
+  if(blob){
+    panelUrl = URL.createObjectURL(blob);
+    $("share-preview").src = panelUrl;
+    $("share-save").href = panelUrl;
+    $("share-preview").classList.remove("hidden");
+    $("share-tools").classList.remove("hidden");
+  }else{
+    $("share-preview").classList.add("hidden");
+    $("share-tools").classList.add("hidden");
+  }
+  $("share-x").href = tweetUrl();
+  $("share-copy").onclick = async () => {
+    try{
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+      msg.textContent = "画像をコピーしました。Xの投稿画面に貼り付けてください。";
+    }catch(_){
+      msg.textContent = "このブラウザではコピーできませんでした。画像を保存して添付してください。";
+    }
+  };
+  panel.classList.remove("hidden");
+  $("share-close").focus();
+}
+
+$("share-close").addEventListener("click", () => $("share-panel").classList.add("hidden"));
+$("share-panel").addEventListener("click", e => {
+  if(e.target.id === "share-panel") $("share-panel").classList.add("hidden");
+});
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") $("share-panel").classList.add("hidden");
+});
+
+$("act-retry").addEventListener("click", () => {
+  current = 0;
+  answers = [];
+  showScene("scene-invite");
+});
+</script>
+</body>
+</html>

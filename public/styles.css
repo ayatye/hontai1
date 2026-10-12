@@ -966,3 +966,54 @@ h2 {
     transform: none;
   }
 }
+
+/* =====================================================
+   荘園人格診断への誘導カード（クイズの招待状の「夜」版）
+   診断ページと同じ、夜の荘園×羊皮紙×深紅の封蝋
+   ===================================================== */
+.quiz-invite--sindan {
+  margin-top: 22px;
+  background:
+    linear-gradient(#8e2433, #8e2433) top / 100% 3px no-repeat,
+    radial-gradient(ellipse 80% 120% at 0% 0%, rgba(142, 36, 51, 0.28), transparent 60%),
+    #1b1216;
+  border-color: #4a2a33;
+  box-shadow:
+    0 0 0 5px #fff,
+    0 0 0 6px #d8c9cf;
+  color: #e6d8bd;
+}
+
+.quiz-invite--sindan:hover {
+  box-shadow:
+    0 0 0 5px #fff,
+    0 0 0 6px #8e2433,
+    0 10px 24px rgba(27, 18, 22, 0.35);
+}
+
+.quiz-invite--sindan:focus-visible {
+  outline-color: #8e2433;
+}
+
+.quiz-invite--sindan .quiz-invite__seal {
+  background: radial-gradient(circle at 35% 30%, #c0475a, #8e2433 60%, #5c1520);
+  box-shadow: 0 2px 0 #5c1520;
+  color: #f4ead6;
+}
+
+.quiz-invite--sindan .quiz-invite__from {
+  color: #b0925f;
+}
+
+.quiz-invite--sindan .quiz-invite__text {
+  color: #b9aab0;
+}
+
+.quiz-invite--sindan .quiz-invite__btn {
+  background: #e6d8bd;
+  color: #3b2820;
+}
+
+.quiz-invite--sindan:hover .quiz-invite__btn {
+  background: #f4ead6;
+}
