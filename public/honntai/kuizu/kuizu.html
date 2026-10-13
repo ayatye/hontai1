@@ -214,12 +214,28 @@
             </div>
             <p id="result-best" class="result-best"></p>
             <div class="result-btns">
-              <a id="share-btn" class="share-btn" target="_blank" rel="noopener">結果をXでシェア</a>
-              <button id="retry-btn" class="q-btn">もう一回挑戦する</button>
+              <button id="share-btn" class="q-btn">結果を画像でシェアする</button>
+              <button id="retry-btn" class="q-btn-ghost">もう一回挑戦する</button>
               <button id="menu-btn" class="q-btn-ghost">モード選択に戻る</button>
             </div>
             <div id="result-review" class="result-review"></div>
           </section>
+
+          <!-- シェア用パネル（PCなど、共有メニューが使えない時） -->
+          <div id="share-panel" class="share-panel" role="dialog" aria-modal="true" aria-labelledby="share-title" hidden>
+            <div class="share-box">
+              <p id="share-title" class="share-title">結果の画像</p>
+              <img id="share-preview" class="share-preview" alt="クイズ結果の画像" />
+              <p class="share-how">画像を保存するかコピーしてから、Xの投稿画面で添付してください。</p>
+              <div id="share-tools" class="share-tools">
+                <a id="share-save" class="q-btn-ghost" href="#" download="daigoroku-quiz.png">画像を保存</a>
+                <button id="share-copy" class="q-btn-ghost">画像をコピー</button>
+              </div>
+              <a id="share-x" class="share-x" href="#" target="_blank" rel="noopener">Xの投稿画面を開く</a>
+              <p id="share-msg" class="share-msg" aria-live="polite"></p>
+              <button id="share-close" class="share-close">閉じる</button>
+            </div>
+          </div>
 
           <div class="ad-slot" data-ad="h2-mae"></div>
 
@@ -229,17 +245,22 @@
               <li>どのモードも4択。制限時間内に答えを選んでください（文章問題15秒、画像問題20秒）。</li>
               <li>早く答えるほど高得点。モザイク問題は時間がたつほど見えやすくなるので、どこで答えるかが勝負です。</li>
               <li>難易度が上がるほど1問あたりの点数もアップします。</li>
-              <li>荘園検定は全ジャンルから20問。最後に荘園ランクを判定します。</li>
+              <li>結果は、ランクマッチと同じ段位（1段Ⅲ〜最高峰7段）で判定します。荘園検定は全ジャンルから20問です。</li>
+              <li>結果は画像にしてシェアできます。スマホではX・LINEなどの共有メニューが開き、PCでは画像の保存・コピーとXの投稿画面を開けます。</li>
               <li>自己ベストはこのブラウザに保存されます。</li>
             </ul>
-            <h3>荘園ランク</h3>
+            <h3>段位の目安</h3>
             <table class="rank-table">
-              <tr><th>荘園の主</th><td>満点の90%以上</td></tr>
-              <tr><th>探偵の右腕</th><td>75%以上</td></tr>
-              <tr><th>歴戦のサバイバー</th><td>55%以上</td></tr>
-              <tr><th>新米サバイバー</th><td>35%以上</td></tr>
-              <tr><th>迷い込んだ来客</th><td>35%未満</td></tr>
+              <tr><th>最高峰7段</th><td>ヘラクレス</td><td>満点の92%以上</td></tr>
+              <tr><th>7段</th><td>勇士</td><td>84%以上</td></tr>
+              <tr><th>6段</th><td>ユニコーン</td><td>72%以上</td></tr>
+              <tr><th>5段</th><td>グリフォン</td><td>60%以上</td></tr>
+              <tr><th>4段</th><td>マンモス</td><td>48%以上</td></tr>
+              <tr><th>3段</th><td>ヘラジカ</td><td>34%以上</td></tr>
+              <tr><th>2段</th><td>犬</td><td>18%以上</td></tr>
+              <tr><th>1段</th><td>ハチ</td><td>18%未満</td></tr>
             </table>
+            <p class="howto-note">満点は「全問正解・すべて即答」した時の点数です。1〜6段はさらにⅢ→Ⅱ→Ⅰの3段階に分かれます。</p>
             <p class="howto-note">
               背景推理・荘園豆知識・人格の問題は<span id="data-updated"></span>時点の情報をもとに作っています。アップデートで変わった内容があれば、コメント欄で教えてもらえると助かります。
             </p>
