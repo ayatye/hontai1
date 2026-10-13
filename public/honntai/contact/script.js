@@ -19,7 +19,7 @@ window.addEventListener("resize", handleScroll);
  * 届いたメールに「返信」すると、問い合わせた人のアドレスに返信できる（email 欄が reply-to になる）。
  * 下の FORMSPREE_ID を、Formspree のフォームURL https://formspree.io/f/xxxxxxxx の xxxxxxxx に書き換える。
  */
-const FORMSPREE_ID = "YOUR_FORM_ID";
+const FORMSPREE_ID = "mgaoljve";
 const COOLDOWN_SEC = 60; // 連続送信の防止
 
 (function () {
