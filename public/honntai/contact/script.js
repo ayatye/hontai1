@@ -14,15 +14,12 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("resize", handleScroll);
 
-/* ===== お問い合わせフォーム（EmailJS でメール送信） =====
- * 送信先メールアドレスは EmailJS の管理画面（Email Services / Email Templates）側で設定。
- * テンプレートは従来どおり {{name}} {{email}} {{message}} だけで動くよう、
- * 種類・該当ページは message の先頭にまとめて入れている。
- * テンプレート側で個別に使いたい場合は {{category}} {{page}} {{title}} も渡している。
+/* ===== お問い合わせフォーム（Formspree でメール送信） =====
+ * 送信先メールアドレスは Formspree（https://formspree.io）の管理画面で設定。
+ * 届いたメールに「返信」すると、問い合わせた人のアドレスに返信できる（email 欄が reply-to になる）。
+ * 下の FORMSPREE_ID を、Formspree のフォームURL https://formspree.io/f/xxxxxxxx の xxxxxxxx に書き換える。
  */
-const EMAILJS_PUBLIC_KEY = "bSyvqjmbdKvFTZ6sS";
-const EMAILJS_SERVICE_ID = "service_5t2mhxz";
-const EMAILJS_TEMPLATE_ID = "template_87izika";
+const FORMSPREE_ID = "YOUR_FORM_ID";
 const COOLDOWN_SEC = 60; // 連続送信の防止
 
 (function () {
@@ -34,8 +31,6 @@ const COOLDOWN_SEC = 60; // 連続送信の防止
   const btn = $("submitBtn");
   const msg = $("message");
   const page = $("page");
-
-  if (window.emailjs) emailjs.init(EMAILJS_PUBLIC_KEY);
 
   // 文字数カウンター
   msg.addEventListener("input", () => {
@@ -104,49 +99,51 @@ const COOLDOWN_SEC = 60; // 連続送信の防止
       return;
     }
 
-    if (!window.emailjs) {
-      setStatus("送信の準備ができていません。ページを再読み込みしてお試しください。", "error");
+    if (!FORMSPREE_ID || FORMSPREE_ID === "YOUR_FORM_ID") {
+      setStatus("現在フォームの準備中です。しばらくしてからお試しください。", "error");
+      console.error("script.js の FORMSPREE_ID が未設定です。");
       return;
     }
-
-    const message =
-      `【種類】${data.category}\n` +
-      `【該当ページ】${data.page || "（なし）"}\n` +
-      `【送信元】${navigator.userAgent}\n` +
-      `----------------------------------------\n` +
-      data.body;
 
     btn.disabled = true;
     btn.textContent = "送信中…";
     setStatus("");
 
-    emailjs
-      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-        name: data.name,
+    fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `【第五録】${data.category}`,
+        種類: data.category,
+        名前: data.name,
         email: data.email,
-        message,
-        category: data.category,
-        page: data.page,
-        title: `【第五録】${data.category}`,
+        該当ページ: data.page || "（なし）",
+        内容: data.body,
+        送信元: navigator.userAgent,
+      }),
+    })
+      .then(async (res) => {
+        if (res.ok) return;
+        const json = await res.json().catch(() => ({}));
+        const detail = (json.errors || []).map((e) => e.message).join(" / ");
+        throw new Error(`HTTP ${res.status} ${detail}`);
       })
-      .then(
-        function () {
-          try {
-            localStorage.setItem("daigoroku_contact_sent", String(Date.now()));
-          } catch (e) {}
-          if (window.gtag) gtag("event", "contact_submit", { category: data.category });
-          showThanks();
-        },
-        function (error) {
-          console.error("送信エラー:", error);
-          setStatus(
-            "送信に失敗しました。時間をおいて再度お試しください。（入力内容は残っています）",
-            "error",
-          );
-          btn.disabled = false;
-          btn.textContent = "送信する";
-        },
-      );
+      .then(() => {
+        try {
+          localStorage.setItem("daigoroku_contact_sent", String(Date.now()));
+        } catch (e) {}
+        if (window.gtag) gtag("event", "contact_submit", { category: data.category });
+        showThanks();
+      })
+      .catch((error) => {
+        console.error("送信エラー:", error);
+        setStatus(
+          "送信に失敗しました。時間をおいて再度お試しください。（入力内容は残っています）",
+          "error",
+        );
+        btn.disabled = false;
+        btn.textContent = "送信する";
+      });
   });
 
   function showThanks() {
