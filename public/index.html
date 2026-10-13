@@ -52,6 +52,9 @@
       .special-item--gekihanta {
         background-image: url("/honntai/images/gekiatuhanta.jpeg");
       }
+      .special-item--sindan {
+        background-image: url("/honntai/images/sindan/tile-pc.jpg");
+      }
 
       /* スマホ用画像（768px以下） */
       @media (max-width: 768px) {
@@ -60,6 +63,9 @@
         }
         .special-item--gekihanta {
           background-image: url("/honntai/images/gekihansumaho.jpeg");
+        }
+        .special-item--sindan {
+          background-image: url("/honntai/images/sindan/tile-sp.jpg");
         }
       }
     </style>
@@ -350,6 +356,14 @@
             class="quiz-invite quiz-invite--sindan"
             data-sindan-link
           >
+            <img
+              class="quiz-invite__kv"
+              src="honntai/images/sindan/card.jpg"
+              alt="荘園人格診断 第五人格のキャラクターになるとしたら、あなたは誰？"
+              width="800"
+              height="450"
+              loading="lazy"
+            />
             <span class="quiz-invite__seal" aria-hidden="true">鏡</span>
             <span class="quiz-invite__body">
               <span class="quiz-invite__from">荘園から、もう一通の招待状</span>
@@ -426,6 +440,24 @@
             <div id="recommended-topics" class="info-block">
               <h2>おすすめトピック</h2>
               <ul id="topics">
+                <!-- 荘園人格診断：スマホとPCで画像を切り替え（押すと入口の演出） -->
+                <li>
+                  <a
+                    href="/honntai/sinndann/sindan.html"
+                    class="special-item special-item--sindan"
+                    style="color: white"
+                    data-sindan-link
+                  >
+                    <span
+                      style="
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 10px;
+                      "
+                      >荘園人格診断</span
+                    >
+                  </a>
+                </li>
+
                 <!-- 激アツサバイバー：スマホとPCで画像を切り替え -->
                 <li>
                   <a

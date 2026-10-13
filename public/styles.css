@@ -1017,3 +1017,28 @@ h2 {
 .quiz-invite--sindan:hover .quiz-invite__btn {
   background: #f4ead6;
 }
+
+/* 診断カードのキービジュアル（カード上部に全幅で表示） */
+.quiz-invite--sindan {
+  flex-wrap: wrap;
+}
+
+.quiz-invite__kv {
+  display: block;
+  flex: 0 0 calc(100% + 52px);
+  width: calc(100% + 52px);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: -22px -26px 4px;
+  border-bottom: 1px solid #4a2a33;
+}
+
+@media (max-width: 768px) {
+  .quiz-invite__kv {
+    flex-basis: calc(100% + 36px);
+    width: calc(100% + 36px);
+    margin: -20px -18px 2px;
+  }
+}
