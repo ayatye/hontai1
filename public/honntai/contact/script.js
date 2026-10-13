@@ -113,7 +113,8 @@ const COOLDOWN_SEC = 60; // 連続送信の防止
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        _subject: `【第五録】${data.category}`,
+        _subject: `${$("urgent").checked ? "【至急】" : ""}【第五録】${data.category}`,
+        至急: $("urgent").checked ? "はい" : "いいえ",
         種類: data.category,
         名前: data.name,
         email: data.email,

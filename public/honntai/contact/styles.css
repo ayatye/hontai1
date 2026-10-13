@@ -117,6 +117,22 @@ body {
   text-align: right;
 }
 
+.urgent label {
+  font-weight: normal !important;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.urgent input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--error);
+}
+.urgent .hint {
+  margin-left: 26px;
+}
+
 .agree label {
   font-weight: normal !important;
   display: flex !important;
