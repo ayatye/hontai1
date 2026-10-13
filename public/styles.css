@@ -1018,9 +1018,14 @@ h2 {
   background: #f4ead6;
 }
 
-/* 診断カードのキービジュアル（カード上部に全幅で表示） */
-.quiz-invite--sindan {
+/* 診断・クイズカードのキービジュアル（カード上部に全幅で表示） */
+.quiz-invite--sindan,
+.quiz-invite--kuizu {
   flex-wrap: wrap;
+}
+
+.quiz-invite--kuizu .quiz-invite__kv {
+  border-bottom-color: #c4b5fd;
 }
 
 .quiz-invite__kv {
