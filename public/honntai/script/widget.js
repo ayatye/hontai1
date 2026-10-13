@@ -46,6 +46,12 @@
     // 最近の更新（新しい順）
     recentUpdates: [
       {
+        title: "荘園人格診断を公開",
+        url: "/honntai/sinndann/sindan.html",
+        date: "2026-10-13",
+        tag: "診断",
+      },
+      {
         title: "最新コラボ情報（九色の岩絵 ほか）",
         url: "/honntai/korabo/korabo.html",
         date: "2026-8-20",
@@ -109,6 +115,14 @@
 
     // 今日のおすすめ記事（日替わりで1つ表示）
     recommendedArticles: [
+      {
+        title: "荘園人格診断",
+        url: "/honntai/sinndann/sindan.html",
+        description:
+          "16の問いに答えると、第五人格の世界であなたがなるキャラクターがわかる診断",
+        category: "診断",
+        image: "/honntai/images/sindan/icon.jpg",
+      },
       {
         title: "「手記の加筆」完全攻略ガイド",
         url: "/honntai/shukikahitsu/shukikahitsu.html",
