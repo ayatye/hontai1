@@ -641,7 +641,7 @@
         <!-- ポリシーリンク -->
         <div class="footer-links">
           <a href="/honntai/puraibasi/puraibasi.html">プライバシーポリシー</a>
-          <a href="/honntai/お問い合わせ/お問合せフォーム.html">お問い合わせフォーム</a>
+          <a href="/honntai/contact/contact.html">お問い合わせフォーム</a>
           <a href="/honntai/uneizyouhou/uneizyouhou.html">運営情報</a>
         </div>
 
