@@ -9,6 +9,9 @@
          <div data-karenda="widget"></div>
      ・月表示のフルカレンダー（karenda/karenda.html 用）
          <div data-karenda="page"></div>
+     ・「今日の荘園」の下にカレンダー本体もつける（トップページ用）
+         <div data-karenda="widget" data-calendar="on"></div>
+       ※この場合は月ごとの一覧は出さず、URLも書き換えない
      ・読み込み（パスは深さに合わせる）
          <script src="honntai/script/karenda.js" defer></script>
 
@@ -286,6 +289,9 @@
   .krd-w__ev:hover .krd-w__ev-t,.krd-w__bd:hover .krd-w__bd-name{text-decoration:underline}
   .krd-w__more{display:block;text-align:right;padding:.65em 1.1em;border-top:1px solid var(--krd-line);font-size:.88rem;font-weight:700;color:var(--krd-p)!important;background:#faf8ff}
   .krd-w__more:hover{background:var(--krd-l)}
+  .krd-w__cal{padding:1em 1.1em 1.1em;border-top:1px solid var(--krd-line);background:#fdfcff}
+  .krd-w__cal .krd-cell{min-height:84px}
+  @media (max-width:640px){.krd-w__cal{padding:.8em .5em .9em}.krd-w__cal .krd-cell{min-height:52px}}
   @media (max-width:640px){
     .krd-w__body{grid-template-columns:1fr}
     .krd-w__col+.krd-w__col{border-left:0;border-top:1px solid var(--krd-line)}
@@ -445,18 +451,23 @@
       '<div class="krd-w__col"><p class="krd-w__label">' + (todays.length ? "誕生日" : "次の誕生日") + "</p>" + bdHTML + "</div>" +
       '<div class="krd-w__col"><p class="krd-w__label">開催中・もうすぐ</p>' + evHTML + "</div>" +
       "</div>" +
-      '<a class="krd-w__more" href="' + PAGE_URL + '">第五カレンダーを見る →</a>' +
+      (el.dataset.calendar === "on" ? '<div class="krd-w__cal"></div>' : "") +
+      '<a class="krd-w__more" href="' + PAGE_URL + '">' + (el.dataset.calendar === "on" ? "月ごとの一覧・大会日程をくわしく見る →" : "第五カレンダーを見る →") + "</a>" +
       "</section>";
+
+    const cal = el.querySelector(".krd-w__cal");
+    if (cal) renderPage(cal, { compact: true });
   }
 
   /* ---------- フルカレンダー ---------- */
-  function renderPage(el) {
+  function renderPage(el, opts) {
+    const compact = !!(opts && opts.compact);
     const today = todayJST();
     const t = parse(today);
     const state = { y: t.y, m: t.m, busy: false };
 
     // URLの ?m=2026-10 で月を指定できる（共有用）
-    const q = new URLSearchParams(location.search).get("m");
+    const q = compact ? null : new URLSearchParams(location.search).get("m");
     if (q && /^\d{4}-\d{1,2}$/.test(q)) {
       const [qy, qm] = q.split("-").map(Number);
       if (qm >= 1 && qm <= 12) {
@@ -474,7 +485,7 @@
       '<div class="krd-legend"><span><i style="background:#db2777"></i>誕生日</span><span><i style="background:#d97706"></i>イベント</span>' +
       '<span><i style="background:#0e7490"></i>コラボ</span><span><i style="background:#15803d"></i>大会</span></div>' +
       '<p class="krd-hint">日付を押すと、その日の詳細が見られます</p>' +
-      '<div class="krd-month-list" aria-live="polite"></div>' +
+      (compact ? "" : '<div class="krd-month-list" aria-live="polite"></div>') +
       "</div>" +
       '<div class="krd krd-modal" hidden role="dialog" aria-modal="true" aria-label="日付の詳細"></div>';
 
@@ -549,8 +560,10 @@
 
     function show(dir) {
       const next = makeSheet();
-      list.innerHTML = monthListHTML(state.y, state.m);
-      try { history.replaceState(null, "", "?m=" + state.y + "-" + state.m); } catch (_) {}
+      if (list) {
+        list.innerHTML = monthListHTML(state.y, state.m);
+        try { history.replaceState(null, "", "?m=" + state.y + "-" + state.m); } catch (_) {}
+      }
       if (!sheet || !dir || reduceMotion || !next.animate) {
         if (sheet) sheet.replaceWith(next);
         else book.appendChild(next);
