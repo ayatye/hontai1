@@ -36,6 +36,12 @@ body {
   font-size: 1.2em;
 }
 
+/* 第五カレンダー（最新情報・調整まとめと同じ幅。中身は karenda.js） */
+.karenda-top {
+  padding: 10px;
+  max-width: 1000px;
+}
+
 /* 四角い箱のスタイル */
 .update-box {
   display: flex;

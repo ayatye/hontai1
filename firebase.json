@@ -23,6 +23,12 @@
         "destination": "/honntai/contact/contact.html",
         "type": 301
       }
+    ],
+    "headers": [
+      {
+        "source": "/honntai/script/karenda.js",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
     ]
   }
 }
