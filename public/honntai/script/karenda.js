@@ -9,9 +9,9 @@
          <div data-karenda="widget"></div>
      ・月表示のフルカレンダー（karenda/karenda.html 用）
          <div data-karenda="page"></div>
-     ・「今日の荘園」の下にカレンダー本体もつける（トップページ用）
-         <div data-karenda="widget" data-calendar="on"></div>
-       ※この場合は月ごとの一覧は出さず、URLも書き換えない
+     ・カレンダー部分だけ（トップページ下部用）
+         <div data-karenda="mini"></div>
+       ※月ごとの一覧は出さず、URLも書き換えない。下にカレンダーページへのリンク
      ・読み込み（パスは深さに合わせる）
          <script src="honntai/script/karenda.js" defer></script>
 
@@ -295,6 +295,9 @@
   .krd-w__more{display:block;text-align:right;padding:.65em 1.1em;border-top:1px solid var(--krd-line);font-size:.88rem;font-weight:700;color:var(--krd-p)!important;background:#faf8ff}
   .krd-w__more:hover{background:var(--krd-l)}
   .krd-w__cal{padding:1em 1.1em 1.1em;border-top:1px solid var(--krd-line);background:#fdfcff}
+  .krd-mini .krd-w__cal{border-top:0}
+  .krd-w__title{white-space:nowrap}
+  @media (max-width:640px){.krd-mini .krd-w__head{flex-wrap:wrap;row-gap:.1em}.krd-mini .krd-w__date{font-size:.78rem}}
   .krd-w__cal .krd-cell{min-height:84px}
   @media (max-width:640px){.krd-w__cal{padding:.8em .5em .9em}.krd-w__cal .krd-cell{min-height:52px}}
   @media (max-width:640px){
@@ -462,6 +465,18 @@
 
     const cal = el.querySelector(".krd-w__cal");
     if (cal) renderPage(cal, { compact: true });
+  }
+
+  /* ---------- カレンダー部分だけ（トップページ用） ---------- */
+  function renderMini(el) {
+    el.innerHTML =
+      '<section class="krd krd-w krd-mini" aria-labelledby="krd-mini-title">' +
+      '<div class="krd-w__head"><h2 class="krd-w__title" id="krd-mini-title">第五カレンダー</h2>' +
+      '<span class="krd-w__date">誕生日・イベント・コラボ・大会</span></div>' +
+      '<div class="krd-w__cal"></div>' +
+      '<a class="krd-w__more" href="' + PAGE_URL + '">月ごとの一覧・大会日程をくわしく見る →</a>' +
+      "</section>";
+    renderPage(el.querySelector(".krd-w__cal"), { compact: true });
   }
 
   /* ---------- フルカレンダー ---------- */
@@ -732,6 +747,7 @@
       if (el.dataset.karendaReady) return;
       el.dataset.karendaReady = "1";
       if (el.dataset.karenda === "page") renderPage(el);
+      else if (el.dataset.karenda === "mini") renderMini(el);
       else renderWidget(el);
     });
   }
