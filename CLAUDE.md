@@ -102,6 +102,7 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)+投稿フォーム処理 | `#comment-form` |
 | `honbaga.js` | スクロール時に出る横棒 | `#scroll-bar` |
 | `script.js` | トップ用の特集タイル生成(`topics` `events` `tisikis` `masters`) | `isMobile` で画像を出し分け |
+| `karenda.js` | 第五カレンダー(誕生日・イベント・コラボ・大会)。データは冒頭の `KARENDA_DATA` だけ | `[data-karenda="page"]`(karenda/karenda.html)/ `[data-karenda="mini"]`(トップ)。`firebase.json` で `no-cache`。読み込みは `karenda.js?v=日付` |
 
 各ページの `comentoscript/<name>.js` は Firestore への投稿・取得。`pageId` がページ固有で、他ページと重複させない。新規ページは既存ファイルをコピーして `pageId` を変える(Firebase の `apiKey` 等は Web 用で公開前提。保護は Firestore ルール側)。
 
