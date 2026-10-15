@@ -78,6 +78,7 @@
       [9, 28, "オペラ歌手", "/honntai/hanta/operakasyu/operakasyu.html", "/honntai/images/kyaragazou/hanntagazou/operakasyu.jpeg", "h"],
       [10, 2, "夢の魔女", "/honntai/hanta/yumenomazyo/yumenomazyo.html", "/honntai/images/kyaragazou/hanntagazou/yumenomazyo.jpeg", "h"],
       [10, 19, "幻灯師", "/honntai/sabaiba/genntousi/genntousi.html", "/honntai/images/kyaragazou/sabaibagazou/genntousi.png", "s"],
+      [10, 21, "時空の影", "/honntai/hanta/zikuunokage/zikuunokage.html", "/honntai/images/kyaragazou/hanntagazou/zikuunokage.jpeg", "h"],
       [10, 27, "ヴァイオリニスト", "/honntai/hanta/vaiorinisuto/vaiorinisuto.html", "/honntai/images/kyaragazou/hanntagazou/vaiorinisuto.jpeg", "h"],
       [10, 31, "占い師", "/honntai/sabaiba/uranaisi/uranaisi.html", "/honntai/images/kyaragazou/sabaibagazou/uranaisi.jpeg", "s"],
       [11, 2, "血の女王", "/honntai/hanta/marhi/marhi.html", "/honntai/images/kyaragazou/hanntagazou/marhi.jpeg", "h"],
@@ -143,6 +144,10 @@
       { t: "「光と夢を追って」テーマイベント", type: "ibento", s: "2026-09-17", e: "2026-10-07", link: "/honntai/ibento/ibento.html" },
       { t: "桂下の祈り", type: "ibento", s: "2026-09-24", e: "2026-10-07", link: "/honntai/ibento/ibento.html" },
       { t: "Identity V×大理寺日誌コラボ", type: "korabo", s: "2026-09-30", e: "2026-10-30", link: "/honntai/korabo/korabo.html" },
+      // 2026/10/15 アップデート告知より
+      { t: "夜半の囁き", type: "ibento", s: "2026-10-15", e: "2026-10-22", link: "/honntai/ibento/ibento.html" },
+      { t: "ハロウィン復刻（イベントショップ・ショップ）", type: "ibento", s: "2026-10-15", e: "2026-11-11", link: "/honntai/ibento/ibento.html" },
+      { t: "キャラの日 二次開放（幻灯師・時空の影）", type: "ibento", s: "2026-10-23", e: "2026-10-25", link: "/honntai/ibento/ibento.html" },
     ],
     // 大会。type: "taikai"。place=会場、url=外部リンク、tentative=true は未確定（「予定」表示）
     taikai: [
