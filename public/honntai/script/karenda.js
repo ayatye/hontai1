@@ -157,6 +157,7 @@
       { t: "COA Ⅸ トーナメント戦", s: "2026-05-01", e: "2026-05-05", place: "中国・上海", url: "https://x.com/IdentityVChamp" },
       { t: "2026夏季IJL レギュラーシーズン", s: "2026-06-06", e: "2026-07-19", place: "浜町スタジオ", url: "https://x.com/IdentityVChamp" },
       { t: "2026夏季IJL プレイオフ", s: "2026-07-31", e: "2026-08-02", place: "千葉JPFドーム", url: "https://x.com/IdentityVChamp" },
+      { t: "アジア競技大会 第五人格（グループ戦・決勝）", s: "2026-09-29", e: "2026-09-30", place: "愛知・名古屋", url: "https://kamigame.jp/identity5/page/442115465620272108.html" },
       { t: "2026秋季IJL レギュラーシーズン", s: "2026-10-24", e: "2026-12-06", place: "浜町スタジオ", url: "https://x.com/IdentityVChamp", tentative: true },
       { t: "2026秋季IJL プレイオフ", s: "2026-12-26", e: "2026-12-28", place: "神戸国際展示場", url: "https://x.com/IdentityVChamp", tentative: true },
     ],
@@ -213,8 +214,12 @@
   function birthdaysOn(m, d) {
     return birthdays.filter((b) => b.m === m && b.d === d);
   }
+  // その日に開催中のもの。大会 → コラボ → イベントの順（同じ種類は開始が早い順）
+  const TYPE_ORDER = { taikai: 0, korabo: 1, ibento: 2 };
   function eventsOn(day) {
-    return events.filter((e) => e.s <= day && day <= e.e);
+    return events
+      .filter((e) => e.s <= day && day <= e.e)
+      .sort((a, b) => TYPE_ORDER[a.type] - TYPE_ORDER[b.type] || (a.s < b.s ? -1 : 1));
   }
   // 今日から見て次の誕生日（今日は含まない）を近い順に
   function nextBirthdays(today, count) {
@@ -421,7 +426,7 @@
     const today = todayJST();
     const t = parse(today);
     const todays = birthdaysOn(t.m, t.d);
-    const ongoing = events.filter((e) => e.s <= today && today <= e.e).sort((a, b) => (a.e < b.e ? -1 : 1));
+    const ongoing = eventsOn(today);
     const upcoming = events.filter((e) => e.s > today && diffDays(today, e.s) <= 14);
 
     let bdHTML = todays
@@ -542,7 +547,7 @@
           let bars = evs.slice(0, 2).map((e) => '<span class="krd-bar krd-bar--' + e.type + '">' + esc(e.t) + "</span>").join("");
           if (evs.length > 2) bars += '<span class="krd-bar krd-bar--more">ほか' + (evs.length - 2) + "件</span>";
           const avas = bds.length ? '<span class="krd-avas">' + bds.map(avatar).join("") + "</span>" : "";
-          const types = ["ibento", "korabo", "taikai"].filter((ty) => evs.some((e) => e.type === ty));
+          const types = ["taikai", "korabo", "ibento"].filter((ty) => evs.some((e) => e.type === ty));
           const dots = '<span class="krd-dots" aria-hidden="true">' + (bds.length ? '<i class="krd-dot--bd"></i>' : "") + types.map((ty) => '<i class="krd-dot--' + ty + '"></i>').join("") + "</span>";
           const label = p.m + "月" + p.d + "日" + (bds.length ? "、誕生日" + bds.length + "人" : "") + (evs.length ? "、予定" + evs.length + "件" : "");
           return '<button type="button" class="' + cls.join(" ") + '" data-day="' + day + '" aria-label="' + label + '"><span class="krd-num">' + p.d + "</span>" + avas + bars + dots + "</button>";
@@ -648,8 +653,7 @@
       const starts = events.filter((e) => e.s === day);
       let body = "";
       if (bds.length) body += '<p class="krd-card__sec">誕生日</p><ul class="krd-list">' + bds.map((b) => bdRow(b, true)).join("") + "</ul>";
-      const order = { taikai: 0, korabo: 1, ibento: 2 };
-      const sorted = evs.slice().sort((a, b) => order[a.type] - order[b.type]);
+      const sorted = evs;
       if (sorted.length) body += '<p class="krd-card__sec">この日に開催中</p><ul class="krd-list">' + sorted.map((e) => eventRow(e, today)).join("") + "</ul>";
       if (!body) body = '<p class="krd-empty">この日の予定はありません。</p>';
       if (starts.length) body += '<p class="krd-card__more">' + starts.length + "件がこの日からスタート</p>";
