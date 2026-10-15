@@ -151,15 +151,17 @@
       { t: "キャラの日 二次開放（幻灯師・時空の影）", type: "ibento", s: "2026-10-23", e: "2026-10-25", link: "/honntai/ibento/ibento.html" },
     ],
     // 大会。type: "taikai"。place=会場、url=外部リンク、tentative=true は未確定（「予定」表示）
+    // days: [6, 0] のように書くと、その曜日だけ表示（0=日 … 6=土）。リーグ戦の土日開催用
     taikai: [
-      { t: "2025秋季IJL レギュラーシーズン", s: "2025-10-25", e: "2025-12-07", place: "", url: "https://x.com/IdentityVChamp" },
+      { t: "2025秋季IJL レギュラーシーズン", s: "2025-10-25", e: "2025-12-07", days: [6, 0], place: "", url: "https://x.com/IdentityVChamp" },
       { t: "COA Ⅸ 日本地区予選", s: "2026-02-27", e: "2026-03-15", place: "", url: "https://x.com/IdentityVChamp" },
       { t: "COA Ⅸ ワールド決勝 開幕", s: "2026-04-10", e: "2026-04-10", place: "中国・上海", url: "https://x.com/IdentityVChamp" },
       { t: "COA Ⅸ トーナメント戦", s: "2026-05-01", e: "2026-05-05", place: "中国・上海", url: "https://x.com/IdentityVChamp" },
-      { t: "2026夏季IJL レギュラーシーズン", s: "2026-06-06", e: "2026-07-19", place: "浜町スタジオ", url: "https://x.com/IdentityVChamp" },
+      { t: "2026夏季IJL レギュラーシーズン", s: "2026-06-06", e: "2026-07-19", days: [6, 0], place: "浜町スタジオ", url: "https://x.com/IdentityVChamp" },
       { t: "2026夏季IJL プレイオフ", s: "2026-07-31", e: "2026-08-02", place: "千葉JPFドーム", url: "https://x.com/IdentityVChamp" },
       { t: "アジア競技大会 第五人格（グループ戦・決勝）", s: "2026-09-29", e: "2026-09-30", place: "愛知・名古屋", url: "https://kamigame.jp/identity5/page/442115465620272108.html" },
-      { t: "2026秋季IJL レギュラーシーズン", s: "2026-10-24", e: "2026-12-06", place: "浜町スタジオ", url: "https://x.com/IdentityVChamp", tentative: true },
+      { t: "2026秋季IJL ロスター発表", s: "2026-10-15", e: "2026-10-15", place: "公式X", url: "https://x.com/IdentityVChamp" },
+      { t: "2026秋季IJL レギュラーシーズン", s: "2026-10-24", e: "2026-12-06", days: [6, 0], place: "浜町スタジオ", url: "https://x.com/IdentityVChamp", tentative: true },
       { t: "2026秋季IJL プレイオフ", s: "2026-12-26", e: "2026-12-28", place: "神戸国際展示場", url: "https://x.com/IdentityVChamp", tentative: true },
     ],
   };
@@ -215,11 +217,26 @@
   function birthdaysOn(m, d) {
     return birthdays.filter((b) => b.m === m && b.d === d);
   }
+  // days 指定がある場合、その曜日かどうか
+  function onDay(e, day) {
+    return !e.days || e.days.indexOf(weekdayIndex(day)) !== -1;
+  }
+  // 試合日の何日目か（Day1, Day2 …）
+  function dayNumber(e, day) {
+    let n = 0;
+    for (let d = e.s; d <= day; d = addDays(d, 1)) if (onDay(e, d)) n++;
+    return n;
+  }
+  // 次の試合日（今日を含む）
+  function nextMatchDay(e, today) {
+    for (let d = e.s > today ? e.s : today; d <= e.e; d = addDays(d, 1)) if (onDay(e, d)) return d;
+    return null;
+  }
   // その日に開催中のもの。大会 → コラボ → イベントの順（同じ種類は開始が早い順）
   const TYPE_ORDER = { taikai: 0, korabo: 1, ibento: 2 };
   function eventsOn(day) {
     return events
-      .filter((e) => e.s <= day && day <= e.e)
+      .filter((e) => e.s <= day && day <= e.e && onDay(e, day))
       .sort((a, b) => TYPE_ORDER[a.type] - TYPE_ORDER[b.type] || (a.s < b.s ? -1 : 1));
   }
   // 今日から見て次の誕生日（今日は含まない）を近い順に
@@ -242,6 +259,12 @@
     return 'href="' + esc(href) + '"' + (ext ? ' target="_blank" rel="noopener"' : "");
   }
   function statusHTML(e, today) {
+    if (e.days && e.s <= today && today <= e.e) {
+      const nd = nextMatchDay(e, today);
+      if (nd === today) return '<span class="krd-left krd-left--soon">本日 Day' + dayNumber(e, today) + "</span>";
+      if (nd) return '<span class="krd-left">次は' + md(nd) + "（" + WEEK[weekdayIndex(nd)] + "）</span>";
+      return '<span class="krd-left krd-left--end">終了</span>';
+    }
     if (e.s <= today && today <= e.e) {
       const n = diffDays(today, e.e);
       if (e.s === e.e) return '<span class="krd-left krd-left--soon">本日</span>';
@@ -254,7 +277,10 @@
     return '<span class="krd-left krd-left--end">終了</span>';
   }
   function periodText(e) {
-    return e.s === e.e ? slash(e.s) : slash(e.s) + " 〜 " + slash(e.e);
+    const base = e.s === e.e ? slash(e.s) : slash(e.s) + " 〜 " + slash(e.e);
+    if (!e.days) return base;
+    const order = [1, 2, 3, 4, 5, 6, 0];
+    return base + "（毎週" + order.filter((w) => e.days.indexOf(w) !== -1).map((w) => WEEK[w]).join("") + "）";
   }
   function tentativeHTML(e) {
     return e.tentative ? '<span class="krd-tent">予定</span>' : "";
@@ -406,8 +432,8 @@
   function sideLabel(b) {
     return b.side === "h" ? "ハンター" : "サバイバー";
   }
-  function eventRow(e, today) {
-    const sub = periodText(e) + (e.place ? "・" + esc(e.place) : "");
+  function eventRow(e, today, day) {
+    const sub = (e.days && day ? "Day" + dayNumber(e, day) + "・" : "") + periodText(e) + (e.place ? "・" + esc(e.place) : "");
     return (
       "<li><a class=\"krd-row\" " + linkAttrs(e) + '><span class="krd-tag krd-tag--' + e.type + '">' + TYPE_LABEL[e.type] + "</span>" +
       '<span class="krd-row__t">' + esc(e.t) + tentativeHTML(e) + '<span class="krd-row__sub">' + sub + "</span></span>" +
@@ -657,7 +683,7 @@
       let body = "";
       if (bds.length) body += '<p class="krd-card__sec">誕生日</p><ul class="krd-list">' + bds.map((b) => bdRow(b, true)).join("") + "</ul>";
       const sorted = evs;
-      if (sorted.length) body += '<p class="krd-card__sec">この日に開催中</p><ul class="krd-list">' + sorted.map((e) => eventRow(e, today)).join("") + "</ul>";
+      if (sorted.length) body += '<p class="krd-card__sec">この日に開催中</p><ul class="krd-list">' + sorted.map((e) => eventRow(e, today, day)).join("") + "</ul>";
       if (!body) body = '<p class="krd-empty">この日の予定はありません。</p>';
       if (starts.length) body += '<p class="krd-card__more">' + starts.length + "件がこの日からスタート</p>";
       return (
