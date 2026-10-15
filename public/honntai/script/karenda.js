@@ -11,6 +11,7 @@
          <div data-karenda="page"></div>
      ・カレンダー部分だけ（トップページ下部用）
          <div data-karenda="mini"></div>
+         見出しをページ側で付けるときは data-head="off"
        ※月ごとの一覧は出さず、URLも書き換えない。下にカレンダーページへのリンク
      ・読み込み（パスは深さに合わせる）
          <script src="honntai/script/karenda.js" defer></script>
@@ -475,9 +476,11 @@
   /* ---------- カレンダー部分だけ（トップページ用） ---------- */
   function renderMini(el) {
     el.innerHTML =
-      '<section class="krd krd-w krd-mini" aria-labelledby="krd-mini-title">' +
-      '<div class="krd-w__head"><h2 class="krd-w__title" id="krd-mini-title">第五カレンダー</h2>' +
-      '<span class="krd-w__date">誕生日・イベント・コラボ・大会</span></div>' +
+      '<section class="krd krd-w krd-mini"' + (el.dataset.head === "off" ? ' aria-label="第五カレンダー"' : ' aria-labelledby="krd-mini-title"') + ">" +
+      (el.dataset.head === "off"
+        ? ""
+        : '<div class="krd-w__head"><h2 class="krd-w__title" id="krd-mini-title">第五カレンダー</h2>' +
+          '<span class="krd-w__date">誕生日・イベント・コラボ・大会</span></div>') +
       '<div class="krd-w__cal"></div>' +
       '<a class="krd-w__more" href="' + PAGE_URL + '">月ごとの一覧・大会日程をくわしく見る →</a>' +
       "</section>";
