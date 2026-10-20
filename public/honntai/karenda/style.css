@@ -1,0 +1,117 @@
+/* =====================================================
+   第五カレンダー
+   カレンダー本体の見た目は script/karenda.js が持っている。
+   ここはページの枠（レイアウト・見出し）だけ。
+   ===================================================== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-left: 2cm;
+}
+
+.konntent {
+  flex: 1;
+  min-width: 0;
+}
+
+main {
+  max-width: 880px;
+  margin: 1.5em auto 2em;
+  padding: 1.5em 1.75em;
+  background: #fff;
+  border: 1px solid #e4dff5;
+  border-radius: 14px;
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  color: #1e1b4b;
+}
+
+.krd-intro {
+  max-width: 880px;
+  margin: 1.5em auto 0;
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+}
+
+.krd-intro h1 {
+  margin: 0 0 0.3em;
+  font-size: 1.7rem;
+  color: #1e1b4b;
+}
+
+.krd-intro p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.krd-note {
+  margin: 1.8em 0 0;
+  padding: 0.9em 1.1em;
+  background: #faf8ff;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.krd-note p {
+  margin: 0.2em 0;
+}
+
+.krd-note a {
+  color: #7c3aed;
+}
+
+/* PC：右のキャラ一覧を画面の高さに収める（クイズページと同じ） */
+@media (min-width: 1211px) {
+  .wrapper {
+    align-items: flex-start;
+  }
+
+  .wrapper > .sidebar {
+    position: sticky;
+    top: 90px;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1210px) {
+  body {
+    line-height: 1.4;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding-left: 1cm;
+    padding-right: 1cm;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  main {
+    padding: 1em 0.7em;
+  }
+
+  .krd-intro {
+    padding: 0 0.3em;
+  }
+
+  .krd-intro h1 {
+    font-size: 1.35rem;
+  }
+}

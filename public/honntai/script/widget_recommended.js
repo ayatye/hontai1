@@ -4,6 +4,14 @@
 (function () {
   const recommendedArticles = [
     {
+      title: "荘園人格診断",
+      url: "/honntai/sinndann/sindan.html",
+      description:
+        "16の問いに答えると、第五人格の世界であなたがなるキャラクターがわかる診断",
+      category: "診断",
+      image: "/honntai/images/sindan/icon.jpg",
+    },
+    {
       title: "初心者が中級者になるための完全ガイド",
       url: "/honntai/sigati/sigati.html",
       description: "初心者から中級者になるための、確実なステップを詳しく解説！",

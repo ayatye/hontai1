@@ -223,6 +223,12 @@
   <priority>0.8</priority>
 </url>
 <url>
+  <loc>https://daigoroku.com/honntai/karenda/karenda.html</loc>
+  <lastmod>2026-10-14</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
   <loc>https://daigoroku.com/honntai/sinndann/sindan.html</loc>
   <lastmod>2026-10-12</lastmod>
   <changefreq>monthly</changefreq>
@@ -417,8 +423,8 @@
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://daigoroku.com/honntai/お問い合わせ/お問合せフォーム.html</loc>
-  <lastmod>2026-06-21</lastmod>
+  <loc>https://daigoroku.com/honntai/contact/contact.html</loc>
+  <lastmod>2026-10-13</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.5</priority>
 </url>

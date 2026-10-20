@@ -12,6 +12,22 @@
         "source": "/honntai/最新情報/**",
         "destination": "/honntai/saisinn/saisinn.html",
         "type": 301
+      },
+      {
+        "source": "/honntai/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/**",
+        "destination": "/honntai/contact/contact.html",
+        "type": 301
+      },
+      {
+        "source": "/honntai/お問い合わせ/**",
+        "destination": "/honntai/contact/contact.html",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "/honntai/script/karenda.js",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
       }
     ]
   }

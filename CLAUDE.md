@@ -30,11 +30,12 @@ public/
    ├─ hantazinnkaku/ sabazinnkaku/ purozinnkaku/    人格解説
    ├─ gekiatuhannta/ gekisaba/ chat/                特集・チャット
    ├─ idv-program-slider/                           情報発表番組の記事
-   └─ 情報/ お問い合わせ/                            ※日本語ディレクトリ名
+   └─ 情報/                                       ※日本語ディレクトリ名(contact/ はお問い合わせ)
 ```
 
 ディレクトリ名は日本語のローマ字造語(`honntai`, `hanta`, `sabaiba` …)。綴りは不規則(例: `sabaiba`, `hukusyuusya`)なので**推測で作らず既存名を `ls` で確認する**。
 `honntai/最新情報/**` は `firebase.json` で `honntai/saisinn/saisinn.html` に 301 リダイレクトされている。
+`honntai/お問い合わせ/**` は `honntai/contact/contact.html` に 301 リダイレクト(2026-10 に移行)。
 
 ## 階層ごとの相対パス(最重要)
 
@@ -74,7 +75,7 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 ### 相対パスと絶対パスの使い分け
 - **HTML の `<link>` / `<script>` / ページ間 `<a>` / `<img>`**: 相対パス(上表)。
 - **JS の中で生成するリンクと画像**(`footer.js` `kyararisuto.js` `widget.js` `program-slider.js` `script.js` 等): **ルート絶対パス**(`/honntai/sabaiba/isi/isi.html`, `/honntai/images/…`)。深さに依存しないので、JS データ側は絶対パスのまま書く。
-- ページ内 `<a href>` は深さで変わる例: 3階層から最新情報へ `../../saisinn/saisinn.html`、日本語ディレクトリへ `../../情報/情報.html`、`../../お問い合わせ/お問合せフォーム.html`。
+- ページ内 `<a href>` は深さで変わる例: 3階層から最新情報へ `../../saisinn/saisinn.html`、日本語ディレクトリへ `../../情報/情報.html`、`../../contact/contact.html`。
 - canonical / og:url / og:image は `https://daigoroku.com/…` の**絶対URL**。ページ追加時は canonical・OGP・`last-modified`・`article:modified_time` も更新し、必要なら `sitemap.xml` にも追加する。
 
 ## 共有 CSS(`honntai/style/`)
@@ -101,6 +102,7 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)+投稿フォーム処理 | `#comment-form` |
 | `honbaga.js` | スクロール時に出る横棒 | `#scroll-bar` |
 | `script.js` | トップ用の特集タイル生成(`topics` `events` `tisikis` `masters`) | `isMobile` で画像を出し分け |
+| `karenda.js` | 第五カレンダー(誕生日・イベント・コラボ・大会)。データは冒頭の `KARENDA_DATA` だけ | `[data-karenda="page"]`(karenda/karenda.html)/ `[data-karenda="mini"]`(トップ)。`firebase.json` で `no-cache`。読み込みは `karenda.js?v=日付` |
 
 各ページの `comentoscript/<name>.js` は Firestore への投稿・取得。`pageId` がページ固有で、他ページと重複させない。新規ページは既存ファイルをコピーして `pageId` を変える(Firebase の `apiKey` 等は Web 用で公開前提。保護は Firestore ルール側)。
 
@@ -115,7 +117,7 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 - **現在は AdSense 自動広告と手動配置(`ad-slot`)の併用期間**。段階的に手動配置へ移行中。
   - 自動広告の設定は AdSense 管理画面側にあり、このリポジトリには無い。手動枠を増やしたり自動広告を止めたりする判断は運営者が行うので、勝手に枠を大量追加・削除しない。
   - 併用中は自動広告と手動枠が近接することがあり得る。配置の変更時は表示を確認する。
-- **広告を入れないページ**: `puraibasi`(プライバシーポリシー)/ `uneizyouhou`(運営情報)/ `お問い合わせ`。`koukoku.css` / `koukoku.js` の読み込みも枠も入れない。
+- **広告を入れないページ**: `puraibasi`(プライバシーポリシー)/ `uneizyouhou`(運営情報)/ `contact`(お問い合わせ)。`koukoku.css` / `koukoku.js` の読み込みも枠も入れない。
 - **今後入れる予定(未着手)**: `chat` と `gekisaba`。現時点では枠も CSS/JS 読み込みも無い。着手時は「深さ表」に従って `koukoku.css` / `koukoku.js` を読み込み、枠を置く。
 - 上記以外で広告が無いページ(`index.html`、`情報`、`idv-program-slider/*` など)の方針は未確認。入れる前に運営者へ確認する。
 
@@ -166,7 +168,7 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 - `.ad-slot` は `min-height`(モバイル280px / PC 300px / サイドバー内 250px / `--matome` 400px)を先に確保して CLS を抑える。「広告」ラベルは `::before` で表示。
 - `.ad-slot--side`(PC のみ `position: sticky; top: 80px`)は CSS に用意済みだが、現状のページでは `side` に付けていない。
 - **`DEBUG = true`**(`koukoku.js`)で本番でもコンソールにログが出る。切り替えるなら `false` に。
-- `koukoku.js` を読んでいないページが約20ある(`index.html`、`chat`、`gekisaba`、`情報`、`puraibasi`、`uneizyouhou`、`お問い合わせ`、`idv-program-slider/*` など)。広告を入れるには **CSS・JS の読み込みと枠の両方**が必要。入れてよいページは上の「運用状況」に従う。
+- `koukoku.js` を読んでいないページが約20ある(`index.html`、`chat`、`gekisaba`、`情報`、`puraibasi`、`uneizyouhou`、`contact`、`idv-program-slider/*` など)。広告を入れるには **CSS・JS の読み込みと枠の両方**が必要。入れてよいページは上の「運用状況」に従う。
 
 ## 新規ページ作成のチェックリスト
 1. 同じ種類(ハンター/サバイバー/記事)の既存ページを**同じ深さの場所**にコピー。
