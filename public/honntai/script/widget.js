@@ -144,7 +144,7 @@
         url: "/honntai/purozinnkaku/purozinnkaku.html",
         description: "プロが実際に使っている内在人格をキャラ別に紹介します。",
         category: "内在人格",
-        image: "/honntai/images/widget/purozinnkaku.jpeg", // ← 画像パス要確認
+        image: "/honntai/images/widget/purozinnkaku.jpeg",
       },
       {
         title: "第五人格 キャラクター身体能力の例外一覧",
@@ -167,7 +167,7 @@
         url: "/honntai/pennsaki/pennsaki.html",
         description: "通常マッチとは違う特殊ルールでの立ち回りを解説します。",
         category: "モード攻略",
-        image: "/honntai/images/widget/pennsaki.jpeg", // ← 画像パス要確認
+        image: "/honntai/images/widget/pennsaki.jpeg",
       },
       {
         title: "コピーキャットモード 攻略ガイド",
@@ -175,7 +175,7 @@
         description:
           "特殊な能力を持つハンターにどう対応するかが攻略のカギになります。",
         category: "モード攻略",
-        image: "/honntai/images/widget/kopiki.jpeg", // ← 画像パス要確認
+        image: "/honntai/images/widget/kopiki.jpeg",
       },
       {
         title: "激アツ最強サバイバー",
@@ -196,7 +196,7 @@
         url: "/honntai/rokka/rokka.html",
         description: "意外と知らないロッカーの使いどころをまとめました。",
         category: "攻略",
-        image: "/honntai/images/widget/rokka.jpeg", // ← 画像パス要確認
+        image: "/honntai/images/widget/rokka.jpeg",
       },
       {
         title: "第五人格 - 定型文チャット完全活用ガイド",

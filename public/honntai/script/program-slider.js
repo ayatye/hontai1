@@ -49,7 +49,7 @@
             <div class="slider-item ${index === 0 ? "active" : ""}">
               <a href="${program.url}" class="program-link">
                 <div class="program-image">
-                  <img src="${program.image}" alt="${program.title}">
+                  <img src="${program.image}" alt="${program.title}" loading="lazy" decoding="async">
                   <div class="program-overlay">
                     <span class="program-date">${program.date}</span>
                   </div>

@@ -312,6 +312,12 @@ const survivors = [
     url: "/honntai/images/kyaragazou/sabaibagazou/maimu.jpeg",
     alt: "マイムアーティストの画像",
   },
+  {
+    name: "神童",
+    link: "/honntai/sabaiba/sinndou/sinndou.html",
+    url: "/honntai/images/kyaragazou/sabaibagazou/sinndou.jpeg",
+    alt: "神童の画像",
+  },
 ];
 
 const hunters = [
@@ -521,9 +527,15 @@ const hunters = [
   },
   {
     name: "歯医者",
-    url: "/honntai/images/kyaragazou/hanntagazou/haisha.jpeg",
-    link: "/honntai/hanta/haisha/haisha.html",
+    url: "/honntai/images/kyaragazou/hanntagazou/haisya.jpeg",
+    link: "/honntai/hanta/haisya/haisya.html",
     alt: "歯医者の画像",
+  },
+  {
+    name: "心の獣",
+    url: "/honntai/images/kyaragazou/hanntagazou/kokoro-no-kemono.jpeg",
+    link: "/honntai/hanta/kokoronokemono/kokoronokemono.html",
+    alt: "心の獣の画像",
   },
 ];
 

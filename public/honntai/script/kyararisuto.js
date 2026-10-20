@@ -463,6 +463,8 @@ survivors.forEach((survivor) => {
 
   // アイコン画像を作成
   const img = document.createElement("img");
+  img.loading = "lazy";
+  img.decoding = "async";
   img.src = survivor.url;
   img.alt = survivor.name;
 
@@ -489,6 +491,8 @@ hunters.forEach((hunter) => {
 
   // アイコン画像を作成
   const img = document.createElement("img");
+  img.loading = "lazy";
+  img.decoding = "async";
   img.src = hunter.url;
   img.alt = hunter.name;
 
