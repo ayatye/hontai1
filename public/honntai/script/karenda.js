@@ -145,6 +145,8 @@
       { t: "「光と夢を追って」テーマイベント", type: "ibento", s: "2026-09-17", e: "2026-10-07", link: "/honntai/ibento/ibento.html" },
       { t: "桂下の祈り", type: "ibento", s: "2026-09-24", e: "2026-10-07", link: "/honntai/ibento/ibento.html" },
       { t: "Identity V×大理寺日誌コラボ", type: "korabo", s: "2026-09-30", e: "2026-10-30", link: "/honntai/korabo/korabo.html" },
+      // 情報発表番組（type: "bangumi"、time で放送時刻）
+      { t: "情報発表番組〜新サブストーリー「分岐点」直前SP〜", type: "bangumi", s: "2026-10-23", e: "2026-10-23", time: "19:00〜", place: "YouTubeほか", link: "/honntai/idv-program-slider/idv-program-slider.html" },
       // 2026/10/15 アップデート告知より
       { t: "夜半の囁き", type: "ibento", s: "2026-10-15", e: "2026-10-22", link: "/honntai/ibento/ibento.html" },
       { t: "ハロウィン復刻（イベントショップ・ショップ）", type: "ibento", s: "2026-10-15", e: "2026-11-11", link: "/honntai/ibento/ibento.html" },
@@ -168,7 +170,7 @@
 
   const PAGE_URL = "/honntai/karenda/karenda.html";
   const WEEK = ["日", "月", "火", "水", "木", "金", "土"];
-  const TYPE_LABEL = { ibento: "イベント", korabo: "コラボ", taikai: "大会" };
+  const TYPE_LABEL = { ibento: "イベント", korabo: "コラボ", taikai: "大会", bangumi: "番組" };
   const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- 日付まわり（日本時間） ---------- */
@@ -233,7 +235,7 @@
     return null;
   }
   // その日に開催中のもの。大会 → コラボ → イベントの順（同じ種類は開始が早い順）
-  const TYPE_ORDER = { taikai: 0, korabo: 1, ibento: 2 };
+  const TYPE_ORDER = { taikai: 0, bangumi: 1, korabo: 2, ibento: 3 };
   function eventsOn(day) {
     return events
       .filter((e) => e.s <= day && day <= e.e && onDay(e, day))
@@ -289,7 +291,7 @@
   /* ---------- 見た目（このファイルだけで完結させる） ---------- */
   const css = `
   .krd{--krd-p:#7c3aed;--krd-pd:#5b21b6;--krd-l:#ede9fe;--krd-line:#e4dff5;--krd-ink:#1e1b4b;--krd-sub:#6b7280;
-    --krd-ev:#d97706;--krd-ev-soft:#fef3c7;--krd-ko:#0e7490;--krd-ko-soft:#cffafe;--krd-tk:#15803d;--krd-tk-soft:#dcfce7;
+    --krd-ev:#d97706;--krd-ev-soft:#fef3c7;--krd-ko:#0e7490;--krd-ko-soft:#cffafe;--krd-tk:#15803d;--krd-tk-soft:#dcfce7;--krd-bg:#4338ca;--krd-bg-soft:#e0e7ff;
     --krd-bd:#db2777;--krd-bd-soft:#fce7f3;
     font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--krd-ink);box-sizing:border-box}
   .krd *,.krd *::before,.krd *::after{box-sizing:border-box}
@@ -298,6 +300,7 @@
   .krd-tag--ibento{background:var(--krd-ev-soft);color:var(--krd-ev)}
   .krd-tag--korabo{background:var(--krd-ko-soft);color:var(--krd-ko)}
   .krd-tag--taikai{background:var(--krd-tk-soft);color:var(--krd-tk)}
+  .krd-tag--bangumi{background:var(--krd-bg-soft);color:var(--krd-bg)}
   .krd-tag--bd{background:var(--krd-bd-soft);color:var(--krd-bd)}
   .krd-tent{display:inline-block;margin-left:.4em;font-size:.68rem;font-weight:700;color:var(--krd-sub);border:1px solid var(--krd-line);border-radius:4px;padding:.05em .35em;vertical-align:.1em}
   .krd-left{flex:none;font-size:.8rem;font-weight:700;color:var(--krd-p);white-space:nowrap}
@@ -369,12 +372,13 @@
   .krd-bar--ibento{background:var(--krd-ev-soft);color:#92400e}
   .krd-bar--korabo{background:var(--krd-ko-soft);color:#155e75}
   .krd-bar--taikai{background:var(--krd-tk-soft);color:#166534}
+  .krd-bar--bangumi{background:var(--krd-bg-soft);color:#3730a3}
   .krd-bar--more{color:var(--krd-sub);font-weight:500;padding-left:.35em}
   .krd-cell .krd-avas{display:flex;flex-wrap:wrap;gap:2px}
   .krd-cell .krd-ava{width:24px;height:24px;border-width:1px;box-shadow:0 0 0 1.5px var(--krd-bd)}
   .krd-dots{display:none;gap:3px;flex-wrap:wrap;justify-content:center}
   .krd-dots i{width:7px;height:7px;border-radius:50%;display:block}
-  .krd-dot--ibento{background:var(--krd-ev)}.krd-dot--korabo{background:var(--krd-ko)}.krd-dot--taikai{background:var(--krd-tk)}.krd-dot--bd{background:var(--krd-bd)}
+  .krd-dot--ibento{background:var(--krd-ev)}.krd-dot--korabo{background:var(--krd-ko)}.krd-dot--taikai{background:var(--krd-tk)}.krd-dot--bangumi{background:var(--krd-bg)}.krd-dot--bd{background:var(--krd-bd)}
   .krd-hint{text-align:center;font-size:.78rem;color:var(--krd-sub);margin:.6em 0 0}
 
   .krd-list{list-style:none;margin:0;padding:0}
@@ -397,10 +401,10 @@
   .krd-card__d{font-size:4.2rem;font-weight:700;line-height:1;margin:.05em 0}
   .krd-card__w{font-size:.95rem;font-weight:700}
   .krd-card__today{display:inline-block;margin-left:.4em;font-size:.72rem;background:#fff;color:var(--krd-p);border-radius:999px;padding:.15em .55em;vertical-align:.15em}
-  .krd-card__step{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:1.3rem;font-weight:700;cursor:pointer}
+  .krd-card__step{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:1.3rem;font-weight:700;cursor:pointer}
   .krd-card__step:hover{background:rgba(255,255,255,.3)}
   .krd-card__step--prev{left:12px}.krd-card__step--next{right:12px}
-  .krd-x{position:absolute;top:8px;right:10px;width:34px;height:34px;border:0;background:none;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;border-radius:50%}
+  .krd-x{position:absolute;z-index:3;top:8px;right:10px;width:34px;height:34px;border:0;background:none;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;border-radius:50%}
   .krd-card__body{overflow-y:auto;padding:.6em 1.1em 1.1em}
   .krd-card__sec{margin:.8em 0 .2em;font-size:.8rem;font-weight:700;color:var(--krd-sub);letter-spacing:.05em}
   .krd-card .krd-row--bd .krd-ava{width:52px;height:52px;box-shadow:0 0 0 3px var(--krd-bd)}
@@ -433,7 +437,7 @@
     return b.side === "h" ? "ハンター" : "サバイバー";
   }
   function eventRow(e, today, day) {
-    const sub = (e.days && day ? "Day" + dayNumber(e, day) + "・" : "") + periodText(e) + (e.place ? "・" + esc(e.place) : "");
+    const sub = (e.days && day ? "Day" + dayNumber(e, day) + "・" : "") + periodText(e) + (e.time ? " " + esc(e.time) : "") + (e.place ? "・" + esc(e.place) : "");
     return (
       "<li><a class=\"krd-row\" " + linkAttrs(e) + '><span class="krd-tag krd-tag--' + e.type + '">' + TYPE_LABEL[e.type] + "</span>" +
       '<span class="krd-row__t">' + esc(e.t) + tentativeHTML(e) + '<span class="krd-row__sub">' + sub + "</span></span>" +
@@ -537,7 +541,7 @@
       '<button type="button" class="krd-btn" data-go="1" aria-label="次の月へめくる">次月 ›</button></div>' +
       '<div class="krd-book"><div class="krd-rings" aria-hidden="true">' + "<i></i>".repeat(8) + "</div></div>" +
       '<div class="krd-legend"><span><i style="background:#db2777"></i>誕生日</span><span><i style="background:#d97706"></i>イベント</span>' +
-      '<span><i style="background:#0e7490"></i>コラボ</span><span><i style="background:#15803d"></i>大会</span></div>' +
+      '<span><i style="background:#0e7490"></i>コラボ</span><span><i style="background:#15803d"></i>大会</span><span><i style="background:#4338ca"></i>番組</span></div>' +
       '<p class="krd-hint">日付を押すと、その日の詳細が見られます</p>' +
       (compact ? "" : '<div class="krd-month-list" aria-live="polite"></div>') +
       "</div>" +
@@ -576,7 +580,7 @@
           let bars = evs.slice(0, 2).map((e) => '<span class="krd-bar krd-bar--' + e.type + '">' + esc(e.t) + "</span>").join("");
           if (evs.length > 2) bars += '<span class="krd-bar krd-bar--more">ほか' + (evs.length - 2) + "件</span>";
           const avas = bds.length ? '<span class="krd-avas">' + bds.map(avatar).join("") + "</span>" : "";
-          const types = ["taikai", "korabo", "ibento"].filter((ty) => evs.some((e) => e.type === ty));
+          const types = ["taikai", "bangumi", "korabo", "ibento"].filter((ty) => evs.some((e) => e.type === ty));
           const dots = '<span class="krd-dots" aria-hidden="true">' + (bds.length ? '<i class="krd-dot--bd"></i>' : "") + types.map((ty) => '<i class="krd-dot--' + ty + '"></i>').join("") + "</span>";
           const label = p.m + "月" + p.d + "日" + (bds.length ? "、誕生日" + bds.length + "人" : "") + (evs.length ? "、予定" + evs.length + "件" : "");
           return '<button type="button" class="' + cls.join(" ") + '" data-day="' + day + '" aria-label="' + label + '"><span class="krd-num">' + p.d + "</span>" + avas + bars + dots + "</button>";
@@ -594,12 +598,14 @@
       const last = ymd(y, m, new Date(Date.UTC(y, m, 0)).getUTCDate());
       const inMonth = events.filter((e) => e.s <= last && e.e >= first);
       const tk = inMonth.filter((e) => e.type === "taikai");
-      const ev = inMonth.filter((e) => e.type !== "taikai");
+      const bg = inMonth.filter((e) => e.type === "bangumi");
+      const ev = inMonth.filter((e) => e.type === "korabo" || e.type === "ibento");
       const bds = birthdays.filter((b) => b.m === m);
       const block = (title, arr, row, empty) =>
         "<h3>" + title + "（" + arr.length + "）</h3>" + (arr.length ? '<ul class="krd-list">' + arr.map(row).join("") + "</ul>" : '<p class="krd-empty">' + empty + "</p>");
       return (
         block(m + "月の大会", tk, (e) => eventRow(e, today), "この月に登録されている大会はありません。") +
+        (bg.length ? block(m + "月の情報発表番組", bg, (e) => eventRow(e, today), "") : "") +
         block(m + "月のイベント・コラボ", ev, (e) => eventRow(e, today), "この月に掲載中のイベント・コラボはありません。") +
         block(m + "月が誕生日のキャラ", bds, (b) => bdRow(b, false), "この月が誕生日のキャラは登録されていません。")
       );
