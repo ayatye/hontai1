@@ -189,13 +189,13 @@ li .arrow {
 .sidebar li a {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 8px;
+  gap: 10px;
+  padding: 7px 10px;
   border: 1px solid #f0edf9;
   border-radius: 8px;
   background: #faf9fe;
   color: var(--sb-text);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   text-decoration: none;
@@ -212,8 +212,8 @@ li .arrow {
   color: #fff;
 }
 .sidebar li img {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
@@ -230,6 +230,32 @@ li .arrow {
 /* HTML直書きの一覧(JSが動かない時)の矢印は出さない */
 .sidebar li .arrow {
   display: none;
+}
+
+/* ---------- PCでは本文+サイドバーを画面の真ん中に寄せる ----------
+   (各ページの .wrapper は左に余白をとって右端までいっぱいに広がるので、
+    大きい画面ほど本文が左に寄り、サイドバーが右端に離れていた) */
+@media (min-width: 1211px) {
+  body .wrapper {
+    box-sizing: border-box;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    justify-content: center;
+    gap: 40px;
+  }
+  body .wrapper > :first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: 0;
+  }
+  body .wrapper .sidebar,
+  body .wrapper .side-column {
+    flex: 0 0 400px;
+    margin-left: 0;
+  }
 }
 
 /* ---------- 区切り線(既存) ---------- */

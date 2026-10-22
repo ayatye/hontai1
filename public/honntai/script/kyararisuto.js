@@ -484,8 +484,8 @@ const sidebarFeature = {
       img.decoding = "async";
       img.src = c.url;
       img.alt = c.name;
-      img.width = 34;
-      img.height = 34;
+      img.width = 40;
+      img.height = 40;
 
       const name = document.createElement("span");
       name.textContent = c.name;
