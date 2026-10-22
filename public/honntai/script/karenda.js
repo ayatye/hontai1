@@ -163,7 +163,16 @@
       { t: "2026夏季IJL プレイオフ", s: "2026-07-31", e: "2026-08-02", place: "千葉JPFドーム", url: "https://x.com/IdentityVChamp" },
       { t: "アジア競技大会 第五人格（グループ戦・決勝）", s: "2026-09-29", e: "2026-09-30", place: "愛知・名古屋", url: "https://kamigame.jp/identity5/page/442115465620272108.html" },
       { t: "2026秋季IJL ロスター発表", s: "2026-10-15", e: "2026-10-15", place: "公式X", url: "https://x.com/IdentityVChamp" },
-      { t: "2026秋季IJL レギュラーシーズン", s: "2026-10-24", e: "2026-12-06", days: [6, 0], place: "浜町スタジオ", url: "https://x.com/IdentityVChamp", tentative: true },
+      // matches: 日付ごとの対戦カード [時刻, 対戦]。日付を押すと詳細カードに表として出る
+      {
+        t: "2026秋季IJL レギュラーシーズン", s: "2026-10-24", e: "2026-12-06", days: [6, 0],
+        place: "公式YouTube・X・TikTokで生配信", url: "https://x.com/IdentityVChamp",
+        note: "出場：AWG・AXIZ・DFM・FL・QTD・RC・SZ・ZETA",
+        matches: {
+          "2026-10-24": [["12:00", "SZ vs RC"], ["14:00", "AXIZ vs ZETA"], ["16:00", "DFM vs QTD"], ["18:00", "AWG vs FL"]],
+          "2026-10-25": [["12:00", "QTD vs AXIZ"], ["14:00", "RC vs AWG"], ["16:00", "FL vs DFM"], ["18:00", "ZETA vs SZ"]],
+        },
+      },
       { t: "2026秋季IJL プレイオフ", s: "2026-12-26", e: "2026-12-28", place: "神戸国際展示場", url: "https://x.com/IdentityVChamp", tentative: true },
     ],
   };
@@ -386,6 +395,11 @@
   .krd-list li:last-child{border-bottom:0}
   .krd-row{display:flex;align-items:center;gap:.6em;padding:.6em .1em}
   .krd-row:hover .krd-row__t{text-decoration:underline}
+  .krd-match{width:100%;border-collapse:collapse;margin:-.1em 0 .7em;font-size:.88rem}
+  .krd-match th{width:4.2em;text-align:left;font-weight:700;color:var(--krd-tk);padding:.3em .4em;border-bottom:1px solid var(--krd-line);white-space:nowrap}
+  .krd-match td{padding:.3em .4em;border-bottom:1px solid var(--krd-line);font-weight:700}
+  .krd-match tr:last-child th,.krd-match tr:last-child td{border-bottom:0}
+  .krd-match-none{margin:-.1em 0 .7em;font-size:.8rem;color:var(--krd-sub)}
   .krd-row__t{flex:1;min-width:0;font-weight:700;font-size:.95rem}
   .krd-row__sub{display:block;font-weight:400;font-size:.8rem;color:var(--krd-sub)}
   .krd-month-list{margin-top:2em}
@@ -441,8 +455,23 @@
     return (
       "<li><a class=\"krd-row\" " + linkAttrs(e) + '><span class="krd-tag krd-tag--' + e.type + '">' + TYPE_LABEL[e.type] + "</span>" +
       '<span class="krd-row__t">' + esc(e.t) + tentativeHTML(e) + '<span class="krd-row__sub">' + sub + "</span></span>" +
-      statusHTML(e, today) + "</a></li>"
+      statusHTML(e, today) + "</a>" + matchesHTML(e, day) + "</li>"
     );
+  }
+  // その日の対戦カード（詳細カードでだけ出す）
+  function matchesHTML(e, day) {
+    if (!day) return "";
+    const list = e.matches && e.matches[day];
+    let h = "";
+    if (list && list.length) {
+      h += '<table class="krd-match"><tbody>' +
+        list.map((m) => "<tr><th>" + esc(m[0]) + "</th><td>" + esc(m[1]) + "</td></tr>").join("") +
+        "</tbody></table>";
+    } else if (e.matches && onDay(e, day)) {
+      h += '<p class="krd-match-none">対戦カードは発表され次第追加します</p>';
+    }
+    if (e.note && h) h += '<p class="krd-match-none">' + esc(e.note) + "</p>";
+    return h;
   }
   function bdRow(b, big) {
     return (
