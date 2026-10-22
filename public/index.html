@@ -343,51 +343,54 @@
             </div>
           </div>
 
-          <!-- 第五人格クイズへの誘導（クイズページの「招待状」と同じデザイン） -->
-          <a href="/honntai/kuizu/kuizu.html" class="quiz-invite quiz-invite--kuizu">
-            <img
-              class="quiz-invite__kv"
-              src="honntai/images/kuizu/card.jpg"
-              alt="第五人格クイズ あなたは何段？ キャラ当て・背景推理・荘園豆知識・人格"
-              width="1200"
-              height="675"
-              loading="lazy"
-            />
-            <span class="quiz-invite__seal" aria-hidden="true">録</span>
-            <span class="quiz-invite__body">
-              <span class="quiz-invite__from">エウリュディケ荘園より、招待状</span>
-              <span class="quiz-invite__title">第五人格クイズ</span>
-              <span class="quiz-invite__text"
-                >キャラ当て・背景推理・荘園豆知識・人格の4ジャンル。全部まぜた「荘園検定」で、ランクマと同じ段位（1段〜最高峰7段）を判定します。</span
-              >
-            </span>
-            <span class="quiz-invite__btn">クイズに挑戦する</span>
-          </a>
+          <!-- クイズと診断の招待状（PCは横に2枚並べる） -->
+          <div class="invite-pair">
+            <!-- 第五人格クイズへの誘導（クイズページの「招待状」と同じデザイン） -->
+            <a href="/honntai/kuizu/kuizu.html" class="quiz-invite quiz-invite--kuizu">
+              <img
+                class="quiz-invite__kv"
+                src="honntai/images/kuizu/card.jpg"
+                alt="第五人格クイズ あなたは何段？ キャラ当て・背景推理・荘園豆知識・人格"
+                width="1200"
+                height="675"
+                loading="lazy"
+              />
+              <span class="quiz-invite__seal" aria-hidden="true">録</span>
+              <span class="quiz-invite__body">
+                <span class="quiz-invite__from">エウリュディケ荘園より、招待状</span>
+                <span class="quiz-invite__title">第五人格クイズ</span>
+                <span class="quiz-invite__text"
+                  >キャラ当て・背景推理・荘園豆知識・人格の4ジャンル。全部まぜた「荘園検定」で、ランクマと同じ段位（1段〜最高峰7段）を判定します。</span
+                >
+              </span>
+              <span class="quiz-invite__btn">クイズに挑戦する</span>
+            </a>
 
-          <!-- 荘園人格診断への誘導（押すと闇が広がり心音が鳴る：sindan-link.js） -->
-          <a
-            href="/honntai/sinndann/sindan.html"
-            class="quiz-invite quiz-invite--sindan"
-            data-sindan-link
-          >
-            <img
-              class="quiz-invite__kv"
-              src="honntai/images/sindan/card.jpg"
-              alt="荘園人格診断 第五人格のキャラクターになるとしたら、あなたは誰？"
-              width="800"
-              height="450"
-              loading="lazy"
-            />
-            <span class="quiz-invite__seal" aria-hidden="true">鏡</span>
-            <span class="quiz-invite__body">
-              <span class="quiz-invite__from">荘園から、もう一通の招待状</span>
-              <span class="quiz-invite__title">荘園人格診断</span>
-              <span class="quiz-invite__text"
-                >16の問いに答えると、第五人格の世界であなたがなるキャラクターがわかります。サバイバーとハンター、どちらでも診断できます。</span
-              >
-            </span>
-            <span class="quiz-invite__btn">診断をはじめる</span>
-          </a>
+            <!-- 荘園人格診断への誘導（押すと闇が広がり心音が鳴る：sindan-link.js） -->
+            <a
+              href="/honntai/sinndann/sindan.html"
+              class="quiz-invite quiz-invite--sindan"
+              data-sindan-link
+            >
+              <img
+                class="quiz-invite__kv"
+                src="honntai/images/sindan/card.jpg"
+                alt="荘園人格診断 第五人格のキャラクターになるとしたら、あなたは誰？"
+                width="800"
+                height="450"
+                loading="lazy"
+              />
+              <span class="quiz-invite__seal" aria-hidden="true">鏡</span>
+              <span class="quiz-invite__body">
+                <span class="quiz-invite__from">荘園から、もう一通の招待状</span>
+                <span class="quiz-invite__title">荘園人格診断</span>
+                <span class="quiz-invite__text"
+                  >16の問いに答えると、第五人格の世界であなたがなるキャラクターがわかります。サバイバーとハンター、どちらでも診断できます。</span
+                >
+              </span>
+              <span class="quiz-invite__btn">診断をはじめる</span>
+            </a>
+          </div>
 
           <!-- 最新アップデート情報セクションの追加 -->
           <div class="latest-update">
