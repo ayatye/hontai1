@@ -83,7 +83,8 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | ファイル | 役割 |
 |---|---|
 | `hanbaga.css` | ヘッダー/ハンバーガーメニュー(`#hamburger`) |
-| `sidebar.css` | 右サイドバー(`.sidebar`、幅400px、`#survivor-list` `#hunter-list` の見た目)。**PC/スマホ境界は 768px** |
+| `sidebar.css` | 右サイドバー(`.sidebar`、幅400px、`#survivor-list` `#hunter-list` の見た目)。**PC/スマホ境界は 768px**。1211px以上では `.wrapper` を最大1320pxで画面中央に寄せる。冒頭にサイト全体の `a` / `li` の基本スタイルも入っている(本文が依存しているので消さない) |
+| `hidari.css` | 左サイドバー(`hidari.js` が作る `.hidari`)。1400px以上だけ表示し、そのときは 左210px / 本文 / 右340px の3列 |
 | `logo.css` | ロゴ・共通レイアウト |
 | `comment.css` | コメント欄(`#comment-section`) |
 | `footer.css` | 共通フッター(`footer.js` が生成する要素用) |
@@ -95,7 +96,8 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 |---|---|---|
 | `koukoku.js` | AdSense 広告枠の挿入(後述) | `.ad-slot[data-ad]` |
 | `footer.js` | 共通フッター生成。サバイバー/ハンター一覧データを内蔵 | **キャラ追加時はここも更新** |
-| `kyararisuto.js` | サイドバーのキャラ一覧を生成 | `#survivor-list` `#hunter-list`。**キャラ追加時はここも更新** |
+| `kyararisuto.js` | サイドバーのキャラ一覧を生成(タブ・検索・上の特集枠 `sidebarFeature` も) | `#survivor-list` `#hunter-list`。**キャラ追加時はここも更新** |
+| `hidari.js` | 左サイドバー。中身は `HIDARI_MODULES`(mokuji=目次 / menu=カテゴリー / kyou=今日の荘園 / kousin=最近の更新)。最近の更新は `KOUSIN` を手で更新。URLに `?hidari=menu,kyou` を付けるとお試し表示 | kyararisuto.js の直後で読み込む。`kyou` は karenda.js を自動で読み込む |
 | `widget.js` | サイドバーの人気記事ランキング等(`widgetData` を編集するだけで全ページ反映) | `#sidebar-widget` |
 | `widget_recommended.js` | 「今日のおすすめ」のみ。index.html が `widget.js` の代わりに使う | `#recommended-widget` |
 | `program-slider.js` | 情報発表番組スライダー(`programs` 配列、新しい順) | `#idv-program-slider` |

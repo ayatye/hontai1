@@ -1,0 +1,245 @@
+/* =========================================================
+   左サイドバー(hidari.js が作る .hidari)
+   PCの広い画面(1400px以上)だけ表示。3列のときは
+   左 210px / 本文 / 右サイドバー 340px にする。
+   ブレークポイントを変えるときは hidari.js の MIN_WIDTH も合わせる
+   ========================================================= */
+.hidari {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  body .wrapper.has-hidari {
+    max-width: 1640px;
+    gap: 32px;
+  }
+
+  .hidari {
+    display: block;
+    flex: 0 0 210px;
+    width: 210px;
+    min-width: 0;
+    align-self: stretch;
+    --hd-primary: var(--color-primary, #7c3aed);
+    --hd-light: var(--color-primary-light, #ede9fe);
+    --hd-mid: var(--color-primary-mid, #c4b5fd);
+    --hd-text: var(--color-text-main, #1e1b4b);
+    --hd-sub: var(--color-text-sub, #6b7280);
+  }
+
+  /* 右サイドバーは3列のときだけ少し細く */
+  body .wrapper.has-hidari .side-column {
+    flex: 0 0 340px;
+    width: 340px;
+  }
+  body .wrapper.has-hidari .side-column .sidebar {
+    width: 100%;
+  }
+  body .wrapper.has-hidari > .sidebar {
+    flex: 0 0 340px;
+    width: 340px;
+  }
+}
+
+.hidari *,
+.hidari *::before,
+.hidari *::after {
+  box-sizing: border-box;
+}
+
+/* スクロールしても画面についてくる */
+.hidari__inner {
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.hidari .hd-box {
+  background: #fff;
+  border: 1px solid var(--hd-light);
+  border-radius: 12px;
+  padding: 12px 10px 10px;
+}
+
+.hidari .hd-box__title {
+  margin: 0 4px 8px;
+  padding-left: 8px;
+  border-left: 3px solid var(--hd-primary);
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--hd-text);
+  line-height: 1.4;
+}
+
+.hidari ul,
+.hidari ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hidari li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.hidari li:hover {
+  box-shadow: none;
+}
+
+.hidari :is(.hd-menu, .hd-mokuji, .hd-kousin) a {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: var(--hd-text);
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.hidari :is(.hd-menu, .hd-mokuji, .hd-kousin) a:hover {
+  background: var(--hd-light);
+  color: var(--hd-primary);
+}
+.hidari :is(.hd-menu, .hd-mokuji, .hd-kousin) a.is-current {
+  background: var(--hd-light);
+  color: var(--hd-primary);
+  font-weight: bold;
+}
+
+/* ---------- 目次 ---------- */
+.hidari .hd-mokuji ol {
+  max-height: 46vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  border-left: 2px solid var(--hd-light);
+  margin-left: 4px;
+}
+.hidari .hd-mokuji a {
+  border-radius: 0 6px 6px 0;
+  margin-left: -2px;
+  border-left: 2px solid transparent;
+}
+.hidari .hd-mokuji a.is-current {
+  border-left-color: var(--hd-primary);
+}
+.hidari .hd-mokuji li.is-sub a {
+  padding-left: 20px;
+  font-size: 12px;
+  color: var(--hd-sub);
+}
+.hidari .hd-mokuji li.is-sub a.is-current {
+  color: var(--hd-primary);
+}
+/* 目次から飛んだとき、見出しが固定ヘッダーに隠れないように */
+.hd-anchor {
+  scroll-margin-top: 90px;
+}
+
+/* ---------- カテゴリー ---------- */
+.hidari .hd-menu a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hidari .hd-tag {
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: var(--hd-primary);
+  color: #fff;
+}
+
+/* ---------- 最近の更新 ---------- */
+.hidari .hd-kousin a {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.hidari .hd-date {
+  font-size: 11px;
+  color: var(--hd-sub);
+}
+.hidari .hd-kousin__t {
+  font-size: 13px;
+}
+
+/* ---------- 今日の荘園(karenda.js のウィジェットを細い列用に) ---------- */
+.hidari .hd-kyou {
+  padding: 0;
+  overflow: hidden;
+}
+.hidari .hd-kyou .krd-w {
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.hidari .hd-kyou .krd-w__body {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+.hidari .hd-kyou .krd-w__col + .krd-w__col {
+  margin-top: 10px;
+}
+.hidari .hd-kyou .krd-w__head {
+  flex-wrap: wrap;
+  row-gap: 2px;
+  padding: 10px 12px;
+}
+.hidari .hd-kyou .krd-w__title {
+  font-size: 15px;
+}
+.hidari .hd-kyou .krd-w__date {
+  font-size: 12px;
+}
+.hidari .hd-kyou .krd-w__col {
+  padding: 10px 12px;
+  border-left: 0;
+}
+.hidari .hd-kyou .krd-w__col + .krd-w__col {
+  margin-top: 0;
+  border-top: 1px solid var(--hd-light);
+}
+.hidari .hd-kyou .krd-ava {
+  width: 32px;
+  height: 32px;
+}
+.hidari .hd-kyou .krd-w__bd--today .krd-ava {
+  width: 40px;
+  height: 40px;
+}
+.hidari .hd-kyou .krd-w__bd-name {
+  font-size: 14px;
+}
+.hidari .hd-kyou .krd-w__bd-sub {
+  font-size: 11px;
+}
+/* イベント：1行目にラベルと残り日数、2行目にタイトル(省略しない) */
+.hidari .hd-kyou .krd-w__ev {
+  flex-wrap: wrap;
+  row-gap: 2px;
+  justify-content: space-between;
+}
+.hidari .hd-kyou .krd-w__ev-t {
+  order: 3;
+  flex: 1 0 100%;
+  white-space: normal;
+  overflow: visible;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.hidari .hd-kyou .krd-w__more {
+  padding: 8px 12px;
+  font-size: 12px;
+}

@@ -246,7 +246,7 @@ li .arrow {
     justify-content: center;
     gap: 40px;
   }
-  body .wrapper > :first-child {
+  body .wrapper > :not(.hidari):not(.sidebar):not(.side-column) {
     flex: 1 1 auto;
     min-width: 0;
     margin-right: 0;
