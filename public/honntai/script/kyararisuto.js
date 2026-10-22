@@ -469,6 +469,8 @@ const sidebarFeature = {
 
   // リストを作る
   function buildList(listEl, chars) {
+    // トップページなどHTMLに直書きされた一覧があれば入れ替える
+    listEl.innerHTML = "";
     chars.forEach((c) => {
       const li = document.createElement("li");
       li.dataset.name = c.name;
