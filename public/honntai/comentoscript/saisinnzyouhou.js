@@ -26,6 +26,18 @@ const db = getFirestore(app);
 const commentsRef = collection(db, "comments");
 const pageId = "saisinnzyouhou";
 
+// コメントはユーザー入力なので、HTML に挿し込む前に必ずエスケープする
+const ESCAPE_MAP = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
+};
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (ch) => ESCAPE_MAP[ch]);
+}
+
 document
   .getElementById("comment-form")
   .addEventListener("submit", async (e) => {
@@ -94,8 +106,8 @@ async function loadComments() {
             data.timestamp.seconds * 1000
           ).toLocaleString()}</div>
           <img src="${randomIcon}" alt="User Icon" class="user-icon" />
-          <div class="username"><strong>${data.username}</strong></div>
-          <div class="message">${data.comment}</div>
+          <div class="username"><strong>${escapeHtml(data.username)}</strong></div>
+          <div class="message">${escapeHtml(data.comment)}</div>
         `;
         commentsContainer.appendChild(commentDiv);
       } else {
