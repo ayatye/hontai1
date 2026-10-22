@@ -450,67 +450,143 @@ const hunters = [
   },
 ];
 
-// 仮のアイコン画像URL
-const placeholderIcon = "https://via.placeholder.com/40";
 
-// サバイバーリストをHTMLに追加
-const survivorList = document.getElementById("survivor-list");
-survivors.forEach((survivor) => {
-  const li = document.createElement("li");
+// ===== サイドバー上の特集枠(ここを書き換えるだけで全ページに反映) =====
+const sidebarFeature = {
+  badge: "NEW",
+  title: "第五人格クイズ",
+  sub: "あなたは荘園マスター?",
+  link: "/honntai/kuizu/kuizu.html",
+};
 
-  const a = document.createElement("a");
-  a.href = survivor.link;
+(function () {
+  const sidebar = document.querySelector(".sidebar");
+  const survivorList = document.getElementById("survivor-list");
+  const hunterList = document.getElementById("hunter-list");
+  if (!survivorList || !hunterList) return;
 
-  // アイコン画像を作成
-  const img = document.createElement("img");
-  img.loading = "lazy";
-  img.decoding = "async";
-  img.src = survivor.url;
-  img.alt = survivor.name;
+  const currentPath = location.pathname.replace(/\/index\.html$/, "/");
 
-  // 矢印を作成
-  const arrow = document.createElement("span");
-  arrow.classList.add("arrow");
-  arrow.textContent = ">";
+  // リストを作る
+  function buildList(listEl, chars) {
+    chars.forEach((c) => {
+      const li = document.createElement("li");
+      li.dataset.name = c.name;
 
-  // 名前の部分もリンクでラップ
-  const name = document.createElement("span");
-  name.textContent = survivor.name;
-  a.appendChild(name);
+      const a = document.createElement("a");
+      a.href = c.link;
+      if (decodeURI(currentPath) === c.link) a.classList.add("is-current");
 
-  li.appendChild(img);
-  li.appendChild(a);
-  li.appendChild(arrow);
-  survivorList.appendChild(li);
-});
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.src = c.url;
+      img.alt = c.name;
+      img.width = 34;
+      img.height = 34;
 
-// ハンターリストをHTMLに追加
-const hunterList = document.getElementById("hunter-list");
-hunters.forEach((hunter) => {
-  const li = document.createElement("li");
+      const name = document.createElement("span");
+      name.textContent = c.name;
 
-  // アイコン画像を作成
-  const img = document.createElement("img");
-  img.loading = "lazy";
-  img.decoding = "async";
-  img.src = hunter.url;
-  img.alt = hunter.name;
+      a.appendChild(img);
+      a.appendChild(name);
+      li.appendChild(a);
+      listEl.appendChild(li);
+    });
+  }
+  buildList(survivorList, survivors);
+  buildList(hunterList, hunters);
 
-  const a = document.createElement("a");
-  a.href = hunter.link;
+  if (!sidebar) return;
 
-  // 矢印を作成
-  const arrow = document.createElement("span");
-  arrow.classList.add("arrow");
-  arrow.textContent = ">";
+  // 特集枠
+  if (sidebarFeature && sidebarFeature.link) {
+    const f = document.createElement("a");
+    f.className = "sb-feature";
+    f.href = sidebarFeature.link;
+    f.innerHTML =
+      '<span class="sb-feature-badge"></span>' +
+      '<span class="sb-feature-text"><span class="sb-feature-title"></span>' +
+      '<span class="sb-feature-sub"></span></span>';
+    f.querySelector(".sb-feature-badge").textContent = sidebarFeature.badge;
+    f.querySelector(".sb-feature-title").textContent = sidebarFeature.title;
+    f.querySelector(".sb-feature-sub").textContent = sidebarFeature.sub;
+    sidebar.insertBefore(f, sidebar.firstChild);
+  }
 
-  // 名前の部分もリンクでラップ
-  const name = document.createElement("span");
-  name.textContent = hunter.name;
-  a.appendChild(name);
+  // タブ
+  const tabs = document.createElement("div");
+  tabs.className = "sb-tabs";
+  tabs.setAttribute("role", "tablist");
+  const tabDefs = [
+    { key: "sabaiba", label: "サバイバー", list: survivorList, n: survivors.length },
+    { key: "hanta", label: "ハンター", list: hunterList, n: hunters.length },
+  ];
+  tabDefs.forEach((t) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "sb-tab";
+    b.dataset.tab = t.key;
+    b.setAttribute("role", "tab");
+    b.innerHTML = '<span></span><span class="sb-count"></span>';
+    b.firstChild.textContent = t.label;
+    b.lastChild.textContent = t.n;
+    b.addEventListener("click", () => switchTab(t.key));
+    tabs.appendChild(b);
+    t.btn = b;
+  });
 
-  li.appendChild(img);
-  li.appendChild(a);
-  li.appendChild(arrow);
-  hunterList.appendChild(li);
-});
+  // 検索
+  const search = document.createElement("input");
+  search.type = "search";
+  search.className = "sb-search";
+  search.placeholder = "キャラ名で探す";
+  search.setAttribute("aria-label", "キャラ名で探す");
+
+  const empty = document.createElement("p");
+  empty.className = "sb-empty";
+  empty.textContent = "見つかりませんでした";
+  empty.hidden = true;
+
+  const firstH2 = sidebar.querySelector(":scope > h2") || survivorList;
+  sidebar.insertBefore(tabs, firstH2);
+  sidebar.insertBefore(search, firstH2);
+  sidebar.appendChild(empty);
+  sidebar.classList.add("sb-ready");
+
+  let active = "sabaiba";
+  function switchTab(key) {
+    active = key;
+    tabDefs.forEach((t) => {
+      const on = t.key === key;
+      t.btn.classList.toggle("is-active", on);
+      t.btn.setAttribute("aria-selected", on);
+      t.list.classList.toggle("is-hidden", !on);
+    });
+    filter();
+  }
+
+  function filter() {
+    const q = search.value.trim();
+    let hit = 0;
+    tabDefs.forEach((t) => {
+      t.list.querySelectorAll("li").forEach((li) => {
+        const ok = !q || li.dataset.name.includes(q);
+        li.classList.toggle("is-filtered", !ok);
+        if (ok && t.key === active) hit++;
+      });
+    });
+    // 今のタブに無くて、もう片方にあるなら自動で切り替え
+    if (q && hit === 0) {
+      const other = tabDefs.find(
+        (t) => t.key !== active && t.list.querySelector("li:not(.is-filtered)")
+      );
+      if (other) return switchTab(other.key);
+    }
+    empty.hidden = hit > 0;
+  }
+  search.addEventListener("input", filter);
+
+  // ハンターのページならハンタータブから開く
+  switchTab(currentPath.indexOf("/hanta/") !== -1 ? "hanta" : "sabaiba");
+})();

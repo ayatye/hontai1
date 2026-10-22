@@ -1,86 +1,213 @@
-/* サイドバーの位置調整 */
+/* =========================================
+   サイドバー(キャラ一覧)
+   ※すべて .sidebar の中だけに効くように限定
+   ※色は hanbaga.css の変数を使用(未読込でも同じ色になるよう予備値あり)
+   ========================================= */
 .sidebar {
-  background-color: #f4f4f4;
-  padding: 15px;
-  border-left: 1px solid #ccc;
-  width: 400px; /* サイドバーの幅 */
-  position: static; /* またはこの行を削除 */
-  overflow-y: auto;
-  margin-left: 20px; /* コメントセクションとの余白を追加 */
-  max-height: 3650px; /* サイドバーの最大高さ */
+  --sb-primary: var(--color-primary, #7c3aed);
+  --sb-light: var(--color-primary-light, #ede9fe);
+  --sb-mid: var(--color-primary-mid, #c4b5fd);
+  --sb-text: var(--color-text-main, #1e1b4b);
+  --sb-sub: var(--color-text-sub, #6b7280);
+
+  box-sizing: border-box;
+  width: 400px;
+  margin-left: 20px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--sb-light);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.06);
+  position: static;
+  color: var(--sb-text);
 }
 
+.sidebar *,
+.sidebar *::before,
+.sidebar *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- 特集枠 ---------- */
+.sidebar .sb-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--sb-primary), #a78bfa);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.sidebar .sb-feature:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);
+  color: #fff;
+}
+.sidebar .sb-feature-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.sidebar .sb-feature-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+.sidebar .sb-feature-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+.sidebar .sb-feature-sub {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ---------- タブ ---------- */
+.sidebar .sb-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 10px;
+  background: var(--sb-light);
+  border-radius: 10px;
+}
+.sidebar .sb-tab {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--sb-primary);
+  font-size: 14px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.sidebar .sb-tab .sb-count {
+  font-size: 11px;
+  font-weight: normal;
+  opacity: 0.75;
+  margin-left: 4px;
+}
+.sidebar .sb-tab.is-active {
+  background: #fff;
+  color: var(--sb-text);
+  box-shadow: 0 1px 4px rgba(30, 27, 75, 0.12);
+}
+
+/* ---------- 検索 ---------- */
+.sidebar .sb-search {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border: 1.5px solid var(--sb-light);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--sb-text);
+  background: #fff;
+  outline: none;
+}
+.sidebar .sb-search:focus {
+  border-color: var(--sb-mid);
+}
+
+/* JSが動いたら元の見出しは隠す(JSなしの時はそのまま表示) */
+.sidebar.sb-ready > h2 {
+  display: none;
+}
+.sidebar > h2 {
+  font-size: 16px;
+  color: var(--sb-text);
+  border-left: 4px solid var(--sb-primary);
+  padding-left: 8px;
+  margin: 12px 0 8px;
+}
+
+/* ---------- キャラ一覧(2列グリッド) ---------- */
 .sidebar ul {
   list-style: none;
+  margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.sidebar ul.is-hidden {
+  display: none;
 }
 .sidebar li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.sidebar li.is-filtered {
+  display: none;
+}
+.sidebar li a {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid #f0edf9;
   border-radius: 8px;
-}
-
-/* 各リストアイテム */
-#survivor-list li,
-#hunter-list li {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-#survivor-list li a,
-#hunter-list li a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  width: 100%; /* リストアイテム内にフル幅で広がる */
-}
-
-li:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-li img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-li .arrow {
-  font-size: 1.5em;
-  color: #007bff;
-  margin-left: auto; /* 矢印を右に配置 */
-}
-
-a {
-  text-decoration: none;
-  color: #333;
+  background: #faf9fe;
+  color: var(--sb-text);
+  font-size: 13px;
   font-weight: bold;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.sidebar li a:hover {
+  background: var(--sb-light);
+  border-color: var(--sb-mid);
+  color: var(--sb-primary);
+}
+.sidebar li a.is-current {
+  background: var(--sb-primary);
+  border-color: var(--sb-primary);
+  color: #fff;
+}
+.sidebar li img {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0;
+  background: var(--sb-light);
+}
+.sidebar .sb-empty {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--sb-sub);
+  text-align: center;
 }
 
-a:hover {
-  color: #007bff;
-}
-
+/* ---------- 区切り線(既存) ---------- */
 .custom-line {
   display: none;
 }
 
+/* ---------- 画面幅1210px以下:本文の下に全幅で表示 ---------- */
 @media (max-width: 1210px) {
   .sidebar {
-    max-height: 800px;
     width: 100%;
-    border-left: none;
-    float: none; /* 浮かせない */
+    margin-left: 0;
+    float: none;
+  }
+  .sidebar ul {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
   .custom-line {
     display: block;
@@ -90,12 +217,12 @@ a:hover {
     margin: 20px auto;
     background-image: linear-gradient(
       to right,
-      #333,
-      #333 33%,
+      var(--color-primary-mid, #c4b5fd),
+      var(--color-primary-mid, #c4b5fd) 33%,
       transparent 33%,
       transparent 66%,
-      #333 66%,
-      #333
+      var(--color-primary-mid, #c4b5fd) 66%,
+      var(--color-primary-mid, #c4b5fd)
     );
     background-size: 8px 3px;
   }
@@ -103,8 +230,10 @@ a:hover {
 
 @media (max-width: 768px) {
   .sidebar {
-    margin-right: 0;
-    margin-left: 0;
-    padding: 10px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .sidebar ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
