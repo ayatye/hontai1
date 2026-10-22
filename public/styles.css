@@ -1053,3 +1053,67 @@ h2 {
     margin: -20px -18px 2px;
   }
 }
+
+/* =====================================================
+   クイズ・診断の招待状を2枚並べる(PC)/縦に並べる(スマホ)
+   画像が大きすぎて主張が強かったため、PCでは横並びにして高さを半分に
+   ===================================================== */
+.invite-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 28px 0 8px;
+}
+
+.invite-pair .quiz-invite {
+  margin: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 8px;
+  padding: 14px 16px 16px;
+}
+
+.invite-pair .quiz-invite__kv {
+  flex: none;
+  width: calc(100% + 32px);
+  margin: -14px -16px 4px;
+}
+
+/* 画像の中に封蝋・タイトルが入っているので、ここでは出さない */
+.invite-pair .quiz-invite__seal {
+  display: none;
+}
+
+.invite-pair .quiz-invite__title {
+  margin: 0 0 4px;
+  font-size: 21px;
+}
+
+.invite-pair .quiz-invite__text {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.invite-pair .quiz-invite__btn {
+  margin-top: auto;
+  padding: 10px 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.invite-pair .quiz-invite__body {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+  .invite-pair {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 24px;
+  }
+
+  .invite-pair .quiz-invite__text {
+    display: none; /* スマホでは説明文を省いて短く */
+  }
+}

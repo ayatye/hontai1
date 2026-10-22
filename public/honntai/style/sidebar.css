@@ -1,4 +1,33 @@
 /* =========================================
+   サイト全体のリンク・リストの基本スタイル
+   ※元々このファイルにあったもの。本文のリンク等が
+     これに頼っているので残している(サイドバー専用ではない)
+   ========================================= */
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+a:hover {
+  color: #007bff;
+}
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+li .arrow {
+  font-size: 1.5em;
+  color: #007bff;
+  margin-left: auto;
+}
+
+/* =========================================
    サイドバー(キャラ一覧)
    ※すべて .sidebar の中だけに効くように限定
    ※色は hanbaga.css の変数を使用(未読込でも同じ色になるよう予備値あり)
@@ -150,6 +179,9 @@
   padding: 0;
   border: none;
   background: none;
+}
+.sidebar li:hover {
+  box-shadow: none;
 }
 .sidebar li.is-filtered {
   display: none;
