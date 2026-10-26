@@ -3,6 +3,12 @@
   // 番組データ（新しい順）
   const programs = [
     {
+      title: "第五人格情報発表番組～『分岐点』バージョン～",
+      image: "/honntai/images/programsidber/2026bunkiten/taitoru.jpeg",
+      url: "/honntai/idv-program-slider/2026bunkiten.html",
+      date: "2026.10.23",
+    },
+    {
       title: "第五人格情報発表番組～8th-anniversary～",
       image:
         "/honntai/images/programsidber/8th-anniversary/8th-anniversarytaitoru.jpeg",
