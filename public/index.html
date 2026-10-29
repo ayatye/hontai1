@@ -393,34 +393,34 @@
           </div>
 
           <!-- 最新アップデート情報セクションの追加 -->
-          <div class="latest-update">
-            <h2>最新アップデート情報</h2>
-
-            <!-- 四角い箱 -->
-            <a
-              href="/honntai/saisinn/saisinn.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <!-- 左側に写真 -->
-              <div class="update-photo">
-                <img
-                  src="/honntai/images/kyarakonn.jpeg"
-                  alt="アップデート画像"
-                />
-              </div>
-              <!-- 右側に説明とリンク -->
-              <div class="update-info">
-                <p>
-                  直近のアップデート内容をまとめています。新キャラクターの追加や既存キャラの調整など、ランク戦環境に関わる最新情報をいち早くチェックできます。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
+          <!-- 毎月：月・見出し3つ・リンク先(saisinn/YYYY-MM.html)を書き換える -->
+          <section class="news-hero" aria-labelledby="news-hero-title">
+            <div class="news-hero__head">
+              <span class="news-hero__badge">NEW</span>
+              <h2 id="news-hero-title" class="news-hero__title">
+                第五人格 最新情報
+              </h2>
+              <span class="news-hero__month">2026年9月</span>
+            </div>
+            <a href="/honntai/saisinn/2026-09.html" class="news-hero__card">
+              <img
+                class="news-hero__img"
+                src="/honntai/images/kyarakonn.jpeg"
+                alt="第五人格 最新アップデート"
+                width="120"
+                height="120"
+              />
+              <ul class="news-hero__list">
+                <li>新サバイバー「神童」カイが登場！</li>
+                <li>シーズン真髄 S44・真髄2が開放！</li>
+                <li>Identity V×大理寺日誌コラボ開催！</li>
+              </ul>
+              <span class="news-hero__more">今月の情報を見る →</span>
             </a>
-          </div>
+            <a href="/honntai/saisinn/saisinn.html" class="news-hero__all"
+              >過去の最新情報一覧</a
+            >
+          </section>
 
           <!-- Identity V バランス調整まとめの追加 -->
           <div class="latest-update">
