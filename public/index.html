@@ -423,34 +423,40 @@
           </section>
 
           <!-- Identity V バランス調整まとめの追加 -->
-          <div class="latest-update">
-            <h2>Identity V バランス調整まとめ（2026年9月3日）</h2>
-
-            <!-- 四角い箱 全体をリンクに -->
-            <a
-              href="/honntai/tyousei/tyousei.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <!-- 左側に写真 -->
-              <div class="update-photo">
-                <img loading="lazy" decoding="async"
-                  src="/honntai/images/tyousei.jpeg"
-                  alt="バランス調整画像"
-                />
+          <!-- 調整のたびに：日付・対象キャラを書き換える -->
+          <section class="news-hero news-hero--tyousei" aria-labelledby="tyousei-hero-title">
+            <div class="news-hero__head">
+              <span class="news-hero__badge news-hero__badge--tyousei">調整</span>
+              <h2 id="tyousei-hero-title" class="news-hero__title">
+                バランス調整まとめ
+              </h2>
+              <span class="news-hero__month">2026年9月3日</span>
+            </div>
+            <a href="/honntai/tyousei/tyousei.html" class="news-hero__card">
+              <img
+                class="news-hero__img"
+                src="/honntai/images/tyousei.jpeg"
+                alt="第五人格 バランス調整"
+                width="120"
+                height="120"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="tyousei-hero__body">
+                <p class="tyousei-hero__label">今回の調整対象</p>
+                <ul class="tyousei-hero__chips">
+                  <li>マイムアーティスト</li>
+                  <li>作曲家</li>
+                  <li>小説家</li>
+                  <li>復讐者</li>
+                  <li>夢の魔女</li>
+                  <li>「心の獣」</li>
+                </ul>
+                <p class="tyousei-hero__label">＋ 内在人格の調整あり</p>
               </div>
-              <!-- 右側に説明 -->
-              <div class="update-info">
-                <p>
-                  2026年9月3日に実装されたキャラクター調整と内在人格調整の詳細をまとめました。今回の調整では、複数のキャラクターの性能見直しと、内在人格システムの大幅な調整が行われています。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
+              <span class="news-hero__more">調整内容を見る →</span>
             </a>
-          </div>
+          </section>
 
           <!-- 第五カレンダー（カレンダー部分のみ。データは honntai/script/karenda.js） -->
           <div class="karenda-top">
