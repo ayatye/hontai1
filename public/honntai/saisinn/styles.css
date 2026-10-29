@@ -351,6 +351,12 @@ main h2 {
 .archive-link:active {
   transform: scale(0.96);
 }
+/* 月別ページで今見ている月 */
+.archive-link.is-current {
+  background: #66b3ff;
+  border-color: #66b3ff;
+  color: #fff;
+}
 /* スマホでは1行3個に */
 @media (max-width: 600px) {
   .archive-link {
