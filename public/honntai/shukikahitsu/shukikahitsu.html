@@ -93,11 +93,21 @@
         display: block;
         overflow-x: auto;
       }
-      /* padding の cm 固定を可変に */
+      /* ★中間幅の崩れ修正：
+         このページの style.css は 768px まで本文＋サイドバーが横並びのまま。
+         769〜1210px の中間幅で窮屈に並んで崩れるので、他ページと同じく
+         1210px でサイドバーを下へ落として縦積みにする。 */
       @media (max-width: 1210px) {
         .wrapper {
+          flex-direction: column;
           padding-left: 20px;
           padding-right: 20px;
+        }
+        .konntent {
+          padding-right: 0;
+        }
+        .sidebar {
+          width: 100%;
         }
       }
       @media (max-width: 768px) {
@@ -229,12 +239,18 @@
         <div class="update-history">
           <div class="update-title">📋 更新履歴</div>
           <div class="update-item">
-            <div class="update-date">2026/9/30</div>
+            <div class="update-date">2026/10/29</div>
             <div class="update-content">
-              故宮観唐シリーズコラボ開催！コラボ詞章「金甌永固杯」・叙事手法「日時計の導き」が登場<span
+              ハロウィンイベント「月宴の巡り」開催！限定詞章「カボチャ閣下」、ハンター10人追加（計36人）、悪夢に新レイアウト<span
                 class="new-badge"
                 >NEW</span
               >
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">2026/9/30</div>
+            <div class="update-content">
+              故宮観唐シリーズコラボ開催！コラボ詞章「金甌永固杯」・叙事手法「日時計の導き」が登場
             </div>
           </div>
           <div class="update-item">
@@ -513,6 +529,35 @@
             <strong>【災いの追徴】に注意</strong
             >。走ったり探索したりすると災いの女を騒がせて追徴が蓄積し、<strong>4段階まで上がる（前の段階には戻せない）</strong>。災いの詠唱が始まると、その時点の追徴段階に応じた脅威を受けます。<strong>災いの女を撃破すれば追徴は完全に解除</strong>。
           </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #8a4a00">
+          🏛️ ボス戦「災いの女」会場への入り方
+        </h3>
+        <div
+          style="
+            background: linear-gradient(135deg, #fff8e1, #ffe9b8);
+            border: 2px solid #e8c860;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(200, 168, 74, 0.25);
+          "
+        >
+          <p style="margin: 0 0 10px; font-weight: 700; color: #8a4a00">
+            💡
+            「会場（ボス戦エリア）にどうやって行くの？」で詰まる人が続出！入り方はこれです👇
+          </p>
+          <ol style="margin: 0; padding-left: 22px; line-height: 2; color: #4a3210">
+            <li>
+              <strong>ミューズの部屋を開ける</strong>（オルゴールの部屋）
+            </li>
+            <li>開いた後、<strong>中にある絵画を触る（調べる）</strong></li>
+            <li>これで<strong>ボス戦「災いの女」エリアが解放</strong>されます</li>
+          </ol>
+          <p style="margin: 10px 0 0; font-size: 0.9rem; color: #7a5a20">
+            ※ ミューズの部屋を開けるには詞章「ミューズの秘密」が鍵の役割を持っています。
+          </p>
         </div>
 
         <h3 style="margin-top: 1.5rem; color: #2c3e50">悪夢の新異象</h3>
@@ -823,6 +868,66 @@
             </div>
           </div>
         </div>
+
+        <!-- ===== 月宴の巡り（ハロウィンイベント・期間限定） ===== -->
+        <h2>月宴の巡り（ハロウィンイベント）<span class="new-badge">開催中</span></h2>
+        <img
+          src="../images/shukikahitsu/getsuen.jpeg"
+          alt="月宴の巡り ハロウィンイベント"
+          loading="lazy"
+          decoding="async"
+          onerror="this.style.display='none'"
+          style="
+            width: 100%;
+            max-width: 640px;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: block;
+          "
+        />
+        <div class="duration-info">
+          <span class="duration-icon">🎃</span>
+          <div><strong>イベント期間：2026年10月29日 〜 11月18日</strong></div>
+        </div>
+        <div class="feature-description">
+          イベントタスクを完了すると<strong>孤光・スコープ・手掛かり・欠片</strong>などのボーナスを獲得できます。あわせて<strong>新デイリータスク</strong>も開放され、毎日クリアで対応ボーナスがもらえます。期間中は【災いの女】の屋外にイベント専用装飾が登場し、荘園内の<strong>磁器の瓶がジャック・オー・ランタンに置き換わります</strong>🎃
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">
+          ハロウィン限定の詞章・コレクション
+        </h3>
+        <p class="lead-text">
+          期間中、<strong>初心者〜悪夢の全難易度</strong>の【災いの女】に登場します。
+        </p>
+        <table class="enhancement-table">
+          <tr>
+            <th>レア</th>
+            <th>名前</th>
+            <th>内容</th>
+          </tr>
+          <tr>
+            <td>UR</td>
+            <td class="item-name">カボチャ閣下<span class="new-badge">目玉</span></td>
+            <td>
+              入手すると<strong>カボチャの被り物を身につけた異象が攻撃してこなくなる</strong>。さらにアイテム欄で使用すると周囲に小さな妖精が現れ、閣下の輝きが探索の道を照らす。
+            </td>
+          </tr>
+          <tr>
+            <td>SSR</td>
+            <td class="item-name">新月カボチャタルト</td>
+            <td>ハロウィン限定のSSR詞章。</td>
+          </tr>
+          <tr>
+            <td>SSR</td>
+            <td class="item-name">カボチャの入れ物</td>
+            <td>「トリック・オア・トリート」。ハロウィン限定のコレクション。</td>
+          </tr>
+          <tr>
+            <td>SSR武器外観</td>
+            <td class="item-name">幽霊の花飾り</td>
+            <td>シュガーシューター用の武器スキン。初週割引175エコー。</td>
+          </tr>
+        </table>
 
         <!-- ===== 故宮観唐シリーズコラボ（期間限定） ===== -->
         <h2>
@@ -1336,7 +1441,7 @@
         </div>
 
         <h3 style="margin-top: 1.5rem; color: #2c3e50">
-          使用可能なハンター（26人）
+          使用可能なハンター（36人）
         </h3>
         <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px">
           <span class="weapon-type">復讐者</span>
@@ -1366,6 +1471,17 @@
           <span class="weapon-type">書記官</span>
           <span class="weapon-type">隠者</span>
           <span class="weapon-type">夜の番人</span>
+          <span class="new-badge" style="margin: 0 4px">10/29追加↓</span>
+          <span class="weapon-type">オペラ歌手</span>
+          <span class="weapon-type">フールズ・ゴールド</span>
+          <span class="weapon-type">時空の影</span>
+          <span class="weapon-type">足萎えの羊</span>
+          <span class="weapon-type">フラバルー</span>
+          <span class="weapon-type">雑貨商</span>
+          <span class="weapon-type">ビリヤードプレイヤー</span>
+          <span class="weapon-type">女王蜂</span>
+          <span class="weapon-type">歯医者</span>
+          <span class="weapon-type">心の獣</span>
         </div>
 
         <!-- シーズンタスクとペット -->
@@ -1424,7 +1540,7 @@
               <span class="consumable-type">洗練</span>
             </div>
             <div class="effect-description">
-              【墨痕】と【詞章孤光】を消費して、限定武器スキン「庇護者の杖【過去の名作】」を洗練。洗練後は唯一無二の外観を持つ特別な武器になります。
+              【墨痕】と【詞章孤光】を消費して、限定武器スキンを洗練（スキン変更）できます。<strong>新たに「原始形態-銅鉱灯」の洗練が追加</strong>され、燐光ガス／スピネル／Ⅲ型破壊のつるはしの3種から選んで外観を変えられます。
             </div>
           </div>
           <div class="consumable-card" style="border-left-color: #43e97b">
@@ -3260,7 +3376,7 @@
         <h2>へむへむの一言</h2>
         <div class="feature-description">
           🎲 <strong>へむへむの一言</strong><br />
-          「手記の加筆」は対戦の駆け引きとは別軸の、探索＆コレクションを楽しむ新モード。詞章集め・異象回避・時間管理の3すくみが効いてて、ソロでもチームでもじっくり遊べます。まずは低難易度で異象の挙動と立ち回りに慣れて、ペット入手タスクを進めつつ、サファイアペンダント狙いで困難に挑戦――の流れがおすすめ。ハンターモードと「悪夢」難易度の実装で、さらに化けそうな予感です！
+          「手記の加筆」は対戦の駆け引きとは別軸の、探索＆コレクションを楽しむ新モード。詞章集め・異象回避・時間管理の3すくみが効いてて、ソロでもチームでもじっくり遊べます。まずは低難易度で異象の挙動と立ち回りに慣れて、ペット入手タスクを進めつつ、サファイアペンダント狙いで困難に挑戦――の流れがおすすめ。ハンターモードや「悪夢」難易度、コラボやイベントで毎回アツい！今回の「月宴の巡り」でハンターモードにオペラ歌手が追加されたのが個人的に嬉しい。手記モードでオペラ使いたかったんよな〜。
         </div>
       </div>
 
