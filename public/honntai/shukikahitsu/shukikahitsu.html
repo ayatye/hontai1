@@ -120,6 +120,39 @@
         }
       }
 
+      /* --- 終了したコラボの折りたたみ（縮小表示） --- */
+      .ended-collab {
+        background: #f4f5f6;
+        border: 1px solid #dcdfe1;
+        border-radius: 8px;
+        margin: 12px 0;
+      }
+      .ended-collab > summary {
+        cursor: pointer;
+        padding: 12px 16px;
+        font-weight: 700;
+        color: #7f8c8d;
+        list-style: none;
+        font-size: 1.05rem;
+      }
+      .ended-collab > summary::-webkit-details-marker {
+        display: none;
+      }
+      .ended-collab > summary::before {
+        content: "▶ ";
+        font-size: 0.8em;
+      }
+      .ended-collab[open] > summary::before {
+        content: "▼ ";
+      }
+      .ended-collab > *:not(summary) {
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+      .ended-collab[open] {
+        padding-bottom: 12px;
+      }
+
       /* --- カードの丸アイコンに写真を表示（少し大きめに） --- */
       .consumable-icon {
         width: 56px !important;
@@ -885,6 +918,20 @@
             display: block;
           "
         />
+        <img
+          src="../images/shukikahitsu/getsuen-art.jpeg"
+          alt="月宴の巡り イベントアート"
+          loading="lazy"
+          decoding="async"
+          onerror="this.style.display='none'"
+          style="
+            width: 100%;
+            max-width: 640px;
+            border-radius: 8px;
+            margin: 0 0 12px;
+            display: block;
+          "
+        />
         <div class="duration-info">
           <span class="duration-icon">🎃</span>
           <div><strong>イベント期間：2026年10月29日 〜 11月18日</strong></div>
@@ -901,11 +948,22 @@
         </p>
         <table class="enhancement-table">
           <tr>
+            <th>画像</th>
             <th>レア</th>
             <th>名前</th>
             <th>内容</th>
           </tr>
           <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/kabochakakka.jpeg"
+                alt="カボチャ閣下"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'"
+                style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block"
+              />
+            </td>
             <td>UR</td>
             <td class="item-name">カボチャ閣下<span class="new-badge">目玉</span></td>
             <td>
@@ -913,28 +971,60 @@
             </td>
           </tr>
           <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/shingetsutart.jpeg"
+                alt="新月カボチャタルト"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'"
+                style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block"
+              />
+            </td>
             <td>SSR</td>
             <td class="item-name">新月カボチャタルト</td>
             <td>ハロウィン限定のSSR詞章。</td>
           </tr>
           <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/kabochaire.jpeg"
+                alt="カボチャの入れ物"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'"
+                style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block"
+              />
+            </td>
             <td>SSR</td>
             <td class="item-name">カボチャの入れ物</td>
             <td>「トリック・オア・トリート」。ハロウィン限定のコレクション。</td>
           </tr>
           <tr>
+            <td style="width: 84px; text-align: center">
+              <img
+                src="../images/shukikahitsu/yuureihanakazari.jpeg"
+                alt="幽霊の花飾り"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'"
+                style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block"
+              />
+            </td>
             <td>SSR武器外観</td>
             <td class="item-name">幽霊の花飾り</td>
             <td>シュガーシューター用の武器スキン。初週割引175エコー。</td>
           </tr>
         </table>
 
-        <!-- ===== 故宮観唐シリーズコラボ（期間限定） ===== -->
-        <h2>
-          故宮観唐シリーズコラボ（期間限定）<span class="new-badge"
-            >開催中</span
-          >
-        </h2>
+        <!-- ===== 終了したコラボ（アーカイブ・折りたたみ） ===== -->
+        <h2 style="color: #7f8c8d">終了したコラボ（アーカイブ）</h2>
+        <p class="lead-text" style="color: #7f8c8d">
+          開催が終了したコラボです（記録用に残しています）。見出しをタップで開けます。
+        </p>
+
+        <details class="ended-collab">
+          <summary>🏮 故宮観唐シリーズコラボ（終了：〜10/22）</summary>
         <img loading="lazy" decoding="async"
           src="../images/shukikahitsu/kokyu.jpeg"
           alt="故宮観唐シリーズコラボ"
@@ -1049,13 +1139,10 @@
             今回の探索に<strong>複数の日時計</strong>が出現。いずれか1つをアクティベートすると、<strong>特定の詞章が収められた「鍵がかかった精巧な棚」へ導いてくれる</strong>。（期間：9/30メンテ後〜10/22メンテ後）
           </div>
         </div>
+        </details>
 
-        <!-- ===== 盗墓筆記コラボ（期間限定・終了） ===== -->
-        <h2>
-          盗墓筆記コラボ（期間限定・終了）<span class="removed-badge"
-            >終了</span
-          >
-        </h2>
+        <details class="ended-collab">
+          <summary>⚰️ 盗墓筆記コラボ（終了）</summary>
         <p class="lead-text">
           コラボ期間中は【災いの女】に専用の異象・詞章・叙事手法が登場します。とくに<strong>UR詞章「鬼璽」</strong>は陰兵を従えられる目玉アイテム。期間限定なので、狙うなら早めに動きましょう。
         </p>
@@ -1209,6 +1296,7 @@
             普通・困難の【災いの女】に一定確率で発動。その探索では<strong>陰兵が大量に出現</strong>し、<strong>UR詞章「鬼璽」の出現確率が大幅アップ</strong>。さらに<strong>マップ内に探索可能な隠し部屋</strong>まで出現します。鬼璽狙いなら引きたい当たり枠。
           </div>
         </div>
+        </details>
 
         <!-- ===== ハンターモード ===== -->
         <h2>ハンターモード<span class="new-badge">実装</span></h2>
@@ -1541,6 +1629,14 @@
             </div>
             <div class="effect-description">
               【墨痕】と【詞章孤光】を消費して、限定武器スキンを洗練（スキン変更）できます。<strong>新たに「原始形態-銅鉱灯」の洗練が追加</strong>され、燐光ガス／スピネル／Ⅲ型破壊のつるはしの3種から選んで外観を変えられます。
+              <img
+                src="../images/shukikahitsu/sentan-doukoutou.jpeg"
+                alt="原始形態-銅鉱灯 洗練（燐光ガス／スピネル／Ⅲ型破壊のつるはし）"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'"
+                style="width: 100%; border-radius: 6px; margin-top: 10px; display: block"
+              />
             </div>
           </div>
           <div class="consumable-card" style="border-left-color: #43e97b">
