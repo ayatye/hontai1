@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const rankingItem = document.createElement("div");
       rankingItem.classList.add("ranking-item");
       rankingItem.innerHTML = `
-                <img src="${item.img}" alt="${item.title}">
+                <img src="${item.img}" alt="${item.title}" loading="lazy" decoding="async">
                 <div class="ranking-text">
                     <h3>${item.title}</h3>
                     <p>${item.desc}</p>
