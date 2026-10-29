@@ -1277,3 +1277,84 @@ h2 {
   /* サイドバーが本文の下に回る幅では、サイド広告は出さない */
   .side-column > .ad-slot { display: none; }
 }
+
+/* ===== トップ：イベント・コラボ・モード攻略（カード群） ===== */
+.guide-hub {
+  max-width: 1000px;
+  margin: 24px 10px;
+  box-sizing: border-box;
+}
+.guide-hub__title {
+  margin: 0 0 4px;
+  font-size: 1.5em;
+  color: #222;
+  padding-left: 12px;
+  border-left: 5px solid #475569;
+}
+.guide-hub__sub {
+  margin: 18px 0 8px;
+  font-size: 1em;
+  color: #475569;
+  letter-spacing: 0.05em;
+}
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.guide-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  text-decoration: none;
+  color: #1e293b;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.guide-card:hover {
+  transform: translateY(-2px);
+  border-color: #94a3b8;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+.guide-card__img {
+  flex: 0 0 88px;
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.guide-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.guide-card__tag {
+  align-self: flex-start;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #475569;
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 1px 7px;
+}
+.guide-card__title {
+  font-weight: bold;
+  font-size: 1.05em;
+}
+.guide-card__desc {
+  font-size: 0.85em;
+  color: #64748b;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  .guide-hub { margin: 18px 8px; }
+  .guide-hub__title { font-size: 1.2em; }
+  .guide-grid { grid-template-columns: 1fr; gap: 10px; }
+  .guide-card { padding: 10px; gap: 12px; }
+  .guide-card__img { flex-basis: 72px; width: 72px; height: 72px; }
+}
