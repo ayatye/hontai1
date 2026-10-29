@@ -390,3 +390,48 @@ a {
     justify-content: center;
   }
 }
+
+/* ===== 最新以外の調整を折りたたむ（script.js） ===== */
+.update-section.is-foldable > .update-title {
+  cursor: pointer;
+  user-select: none;
+}
+.update-section.is-foldable > .update-title::after {
+  content: "▲ 閉じる";
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: bold;
+  color: #667eea;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+.update-section.is-collapsed > .update-title::after {
+  content: "▼ 開く";
+  background: #eef2ff;
+}
+.update-section.is-collapsed {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  margin-bottom: 14px;
+}
+.update-section.is-collapsed > .update-title {
+  font-size: 1.25em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  color: #555;
+}
+.update-section.is-collapsed > :not(.update-title) {
+  display: none;
+}
+/* 閉じた調整の直後の広告は隠す（開いたら読み込まれる） */
+.update-section.is-collapsed + .ad-slot {
+  display: none;
+}
+@media (max-width: 767px) {
+  .update-section.is-foldable > .update-title::after { font-size: 12px; padding: 3px 9px; }
+  .update-section.is-collapsed > .update-title { font-size: 0.95em; }
+  .update-section.is-collapsed { padding: 12px 15px; }
+}
