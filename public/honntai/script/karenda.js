@@ -151,6 +151,12 @@
       { t: "夜半の囁き", type: "ibento", s: "2026-10-15", e: "2026-10-22", link: "/honntai/ibento/ibento.html" },
       { t: "ハロウィン復刻（イベントショップ・ショップ）", type: "ibento", s: "2026-10-15", e: "2026-11-11", link: "/honntai/ibento/ibento.html" },
       { t: "キャラの日 二次開放（幻灯師・時空の影）", type: "ibento", s: "2026-10-23", e: "2026-10-25", link: "/honntai/ibento/ibento.html" },
+      // 2026/10/29 アップデート告知より
+      { t: "リトルナイトメアコラボ復刻（シックスとモノの荘園探索）", type: "korabo", s: "2026-10-29", e: "2026-11-29", link: "/honntai/korabo/korabo.html" },
+      { t: "手記の加筆「月宴の巡り」", type: "ibento", s: "2026-10-29", e: "2026-11-18", link: "/honntai/shukikahitsu/shukikahitsu.html" },
+      { t: "手記の加筆 ハロウィン外観（初週無料）", type: "ibento", s: "2026-10-29", e: "2026-11-04", link: "/honntai/shukikahitsu/shukikahitsu.html" },
+      { t: "コピーキャット【自由の仮面】ハロウィン調整", type: "ibento", s: "2026-10-29", e: "2026-11-01", link: "/honntai/kopiki/kopiki.html" },
+      { t: "キャラの日 二次開放（占い師・血の女王）", type: "ibento", s: "2026-11-06", e: "2026-11-08", link: "/honntai/ibento/ibento.html" },
     ],
     // 大会。type: "taikai"。place=会場、url=外部リンク、tentative=true は未確定（「予定」表示）
     // days: [6, 0] のように書くと、その曜日だけ表示（0=日 … 6=土）。リーグ戦の土日開催用
@@ -171,6 +177,8 @@
         matches: {
           "2026-10-24": [["12:00", "SZ vs RC"], ["14:00", "AXIZ vs ZETA"], ["16:00", "DFM vs QTD"], ["18:00", "AWG vs FL"]],
           "2026-10-25": [["12:00", "QTD vs AXIZ"], ["14:00", "RC vs AWG"], ["16:00", "FL vs DFM"], ["18:00", "ZETA vs SZ"]],
+          "2026-10-31": [["12:00", "AWG vs ZETA"], ["14:00", "SZ vs QTD"], ["16:00", "DFM vs RC"], ["18:00", "AXIZ vs FL"]],
+          "2026-11-01": [["12:00", "QTD vs AWG"], ["14:00", "ZETA vs DFM"], ["16:00", "RC vs AXIZ"], ["18:00", "FL vs SZ"]],
         },
       },
       { t: "2026秋季IJL プレイオフ", s: "2026-12-26", e: "2026-12-28", place: "神戸国際展示場", url: "https://x.com/IdentityVChamp", tentative: true },
