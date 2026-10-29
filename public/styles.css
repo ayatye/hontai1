@@ -1262,3 +1262,18 @@ h2 {
   font-weight: bold;
   color: #134e4a;
 }
+
+/* ===== トップ：サイドバー＋下の広告（.side-column） ===== */
+.side-column {
+  flex: 0 0 auto;
+  margin-left: 20px;
+}
+.side-column .sidebar {
+  margin-left: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 1210px) {
+  .side-column { width: 100%; margin-left: 0; }
+  /* サイドバーが本文の下に回る幅では、サイド広告は出さない */
+  .side-column > .ad-slot { display: none; }
+}
