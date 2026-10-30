@@ -1,6 +1,6 @@
 // 第五録 - サイドバーウィジェット
 // このファイルを編集するだけで全ページに反映されます
-// 最終更新：2026-09-12（公開中のページ構成に合わせて更新）
+// 最終更新：2026-10-30（最近の更新を10月分に差し替え）
 
 (function () {
   // ========================================
@@ -46,70 +46,64 @@
     // 最近の更新（新しい順）
     recentUpdates: [
       {
+        title: "サバイバーランキング：神童をSティアに追加",
+        url: "/honntai/sabaran/sabaran.html",
+        date: "2026-10-30",
+        tag: "ランキング",
+      },
+      {
+        title: "激アツサバイバー／ハンターを更新（脱出マスター・泣きピエロ・断罪狩人）",
+        url: "/honntai/gekisaba/gekisaba.html",
+        date: "2026-10-30",
+        tag: "特集",
+      },
+      {
+        title: "初心者が中級者になる5ステップを見やすくリニューアル",
+        url: "/honntai/sigati/sigati.html",
+        date: "2026-10-30",
+        tag: "初心者向け",
+      },
+      {
+        title: "最新アップデート情報（10/29）",
+        url: "/honntai/saisinn/saisinn.html",
+        date: "2026-10-29",
+        tag: "更新情報",
+      },
+      {
+        title: "手記の加筆：月宴の巡りイベントを追加",
+        url: "/honntai/shukikahitsu/shukikahitsu.html",
+        date: "2026-10-29",
+        tag: "モード攻略",
+      },
+      {
+        title: "ペン先の空想：ハロウィン異聞イベントを追加",
+        url: "/honntai/pennsaki/pennsaki.html",
+        date: "2026-10-29",
+        tag: "モード攻略",
+      },
+      {
+        title: "情報発表番組『分岐点』バージョン",
+        url: "/honntai/idv-program-slider/2026bunkiten.html",
+        date: "2026-10-29",
+        tag: "情報番組",
+      },
+      {
+        title: "第五カレンダーを公開",
+        url: "/honntai/karenda/karenda.html",
+        date: "2026-10-15",
+        tag: "カレンダー",
+      },
+      {
         title: "荘園人格診断を公開",
         url: "/honntai/sinndann/sindan.html",
         date: "2026-10-13",
         tag: "診断",
       },
       {
-        title: "最新コラボ情報（九色の岩絵 ほか）",
-        url: "/honntai/korabo/korabo.html",
-        date: "2026-8-20",
-        tag: "コラボ",
-      },
-      {
-        title: "最新アップデート情報",
-        url: "/honntai/saisinn/saisinn.html",
-        date: "2026-7-30",
-        tag: "更新情報",
-      },
-      {
-        title: "「手記の加筆」完全攻略ガイド",
-        url: "/honntai/shukikahitsu/shukikahitsu.html",
-        date: "2026-7-30", // ← 悪夢難易度・ハンターモードを追記した日に上げてください
-        tag: "モード攻略",
-      },
-      {
-        title: "最新イベント情報（パンダの守護者）",
-        url: "/honntai/ibento/ibento.html",
-        date: "2026-7-23",
-        tag: "イベント",
-      },
-      {
-        title: "第五人格 アップデート追跡 キャラ調整・天賦調整",
-        url: "/honntai/tyousei/tyousei.html",
-        date: "2026-7-2",
-        tag: "キャラ調整",
-      },
-      {
-        title: "第五人格情報発表番組～8th anniversary～",
-        url: "/honntai/idv-program-slider/8th-anniversary.html",
-        date: "2026-6-3",
-        tag: "情報番組",
-      },
-      {
-        title: "「歯医者」攻略",
-        url: "/honntai/hanta/haisya/haisya.html",
-        date: "2026-4-30",
-        tag: "ハンター",
-      },
-      {
-        title: "第五人格情報発表番組～新バージョン～",
-        url: "/honntai/idv-program-slider/2026shinban.html",
-        date: "2026-3-6",
-        tag: "情報番組",
-      },
-      {
-        title: "「闘牛士」攻略",
-        url: "/honntai/sabaiba/tougyuusi/tougyuusi.html",
-        date: "2025-12-29",
-        tag: "サバイバー",
-      },
-      {
-        title: "「女王蜂」攻略",
-        url: "/honntai/hanta/zyououbati/zyououbati.html",
-        date: "2025-11-27",
-        tag: "ハンター",
+        title: "第五人格クイズを公開",
+        url: "/honntai/kuizu/kuizu.html",
+        date: "2026-10-09",
+        tag: "クイズ",
       },
     ],
 
