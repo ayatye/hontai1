@@ -145,6 +145,7 @@ a {
 }
 
 nav.page-index {
+  box-sizing: border-box; /* 画面幅からはみ出さないように */
   background: #ffffff;
   padding: 1em;
   border-bottom: 2px solid #ddd;
