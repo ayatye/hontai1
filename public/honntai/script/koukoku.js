@@ -45,7 +45,7 @@
   var RETRY_MAX = 15; // 最大3秒
 
   // コンソールにログを出す（本番では false）
-  var DEBUG = true;
+  var DEBUG = false;
 
   /* ============ ここから下は触らなくてOK ============ */
 

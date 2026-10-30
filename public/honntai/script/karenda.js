@@ -146,11 +146,34 @@
       { t: "桂下の祈り", type: "ibento", s: "2026-09-24", e: "2026-10-07", link: "/honntai/ibento/ibento.html" },
       { t: "Identity V×大理寺日誌コラボ", type: "korabo", s: "2026-09-30", e: "2026-10-30", link: "/honntai/korabo/korabo.html" },
       // 情報発表番組（type: "bangumi"、time で放送時刻）
-      { t: "情報発表番組〜新サブストーリー「分岐点」直前SP〜", type: "bangumi", s: "2026-10-23", e: "2026-10-23", time: "19:00〜", place: "YouTubeほか", link: "/honntai/idv-program-slider/idv-program-slider.html" },
+      { t: "情報発表番組〜新サブストーリー「分岐点」直前SP〜", type: "bangumi", s: "2026-10-23", e: "2026-10-23", time: "19:00〜", place: "YouTubeほか", link: "/honntai/idv-program-slider/2026bunkiten.html" },
       // 2026/10/15 アップデート告知より
       { t: "夜半の囁き", type: "ibento", s: "2026-10-15", e: "2026-10-22", link: "/honntai/ibento/ibento.html" },
       { t: "ハロウィン復刻（イベントショップ・ショップ）", type: "ibento", s: "2026-10-15", e: "2026-11-11", link: "/honntai/ibento/ibento.html" },
       { t: "キャラの日 二次開放（幻灯師・時空の影）", type: "ibento", s: "2026-10-23", e: "2026-10-25", link: "/honntai/ibento/ibento.html" },
+      // 10/23 情報発表番組『分岐点』バージョンで発表された日程（開始日だけわかるものは s=e で「開始」表記）
+      { t: "手記の加筆 シーズン1開始（新マップ「鉱山」）", type: "ibento", s: "2026-11-05", e: "2026-11-05", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "チャリティー「平凡な1日」開始（気象学者の衣装が無料）", type: "ibento", s: "2026-11-12", e: "2026-11-12", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "シーズン45開幕＆感謝祭（真髄1×10配布）", type: "ibento", s: "2026-11-19", e: "2026-11-19", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "感謝祭 衣装復刻・タスク報酬開始", type: "ibento", s: "2026-11-26", e: "2026-11-26", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "アイドルグループ「PerVade」衣装登場（庭師）", type: "ibento", s: "2026-11-26", e: "2026-11-26", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "上海美術映画製作所コラボ第2弾「雪孩子」開始", type: "korabo", s: "2026-11-26", e: "2026-11-26", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "演繹の星シリーズ衣装 開始（毎週1人）", type: "ibento", s: "2026-12-03", e: "2026-12-03", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "新サバイバー「出版編集者」＆ストーリー「分岐点」実装", type: "ibento", s: "2026-12-10", e: "2026-12-10", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "ストーリーテーマアイテム復刻", type: "ibento", s: "2026-12-10", e: "2027-01-03", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "B.Duckコラボ復刻（第1〜3弾）開始", type: "korabo", s: "2026-12-10", e: "2026-12-10", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "クリスマスイベント開始", type: "ibento", s: "2026-12-17", e: "2026-12-17", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "クリスマス1V4（期間限定モード）開始", type: "ibento", s: "2026-12-24", e: "2026-12-24", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "サンリオキャラクターズコラボ第3弾開始", type: "korabo", s: "2026-12-31", e: "2026-12-31", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "ローソンコラボ開始", type: "korabo", s: "2026-10-27", e: "2026-10-27", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "アニメイトカフェコラボ開始（池袋・天王寺・名古屋）", type: "korabo", s: "2026-12-12", e: "2026-12-12", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "ウェンディーズコラボ開始", type: "korabo", s: "2026-12-17", e: "2026-12-17", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      // 2026/10/29 アップデート告知より
+      { t: "リトルナイトメアコラボ復刻（シックスとモノの荘園探索）", type: "korabo", s: "2026-10-29", e: "2026-11-29", link: "/honntai/korabo/korabo.html" },
+      { t: "手記の加筆「月宴の巡り」", type: "ibento", s: "2026-10-29", e: "2026-11-18", link: "/honntai/shukikahitsu/shukikahitsu.html" },
+      { t: "手記の加筆 ハロウィン外観（初週無料）", type: "ibento", s: "2026-10-29", e: "2026-11-04", link: "/honntai/shukikahitsu/shukikahitsu.html" },
+      { t: "コピーキャット【自由の仮面】ハロウィン調整", type: "ibento", s: "2026-10-29", e: "2026-11-01", link: "/honntai/kopiki/kopiki.html" },
+      { t: "キャラの日 二次開放（占い師・血の女王）", type: "ibento", s: "2026-11-06", e: "2026-11-08", link: "/honntai/ibento/ibento.html" },
     ],
     // 大会。type: "taikai"。place=会場、url=外部リンク、tentative=true は未確定（「予定」表示）
     // days: [6, 0] のように書くと、その曜日だけ表示（0=日 … 6=土）。リーグ戦の土日開催用
@@ -171,9 +194,14 @@
         matches: {
           "2026-10-24": [["12:00", "SZ vs RC"], ["14:00", "AXIZ vs ZETA"], ["16:00", "DFM vs QTD"], ["18:00", "AWG vs FL"]],
           "2026-10-25": [["12:00", "QTD vs AXIZ"], ["14:00", "RC vs AWG"], ["16:00", "FL vs DFM"], ["18:00", "ZETA vs SZ"]],
+          "2026-10-31": [["12:00", "AWG vs ZETA"], ["14:00", "SZ vs QTD"], ["16:00", "DFM vs RC"], ["18:00", "AXIZ vs FL"]],
+          "2026-11-01": [["12:00", "QTD vs AWG"], ["14:00", "ZETA vs DFM"], ["16:00", "RC vs AXIZ"], ["18:00", "FL vs SZ"]],
         },
       },
-      { t: "2026秋季IJL プレイオフ", s: "2026-12-26", e: "2026-12-28", place: "神戸国際展示場", url: "https://x.com/IdentityVChamp", tentative: true },
+      { t: "Fan Meeting＆2026秋季IJL決勝戦「荘園クリスマスマーケット」", s: "2026-12-26", e: "2026-12-28", place: "神戸国際展示場 1・2号館", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "決勝戦チケット ゲーム内抽選", s: "2026-10-24", e: "2026-11-05", place: "ユーザーIDの入力が必要", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "決勝戦チケット 抽選", s: "2026-11-19", e: "2026-11-26", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "決勝戦チケット 一般販売開始", s: "2026-12-12", e: "2026-12-12", time: "10:00〜", link: "/honntai/idv-program-slider/2026bunkiten.html" },
     ],
   };
 
@@ -248,7 +276,12 @@
   function eventsOn(day) {
     return events
       .filter((e) => e.s <= day && day <= e.e && onDay(e, day))
-      .sort((a, b) => TYPE_ORDER[a.type] - TYPE_ORDER[b.type] || (a.s < b.s ? -1 : 1));
+      // 大会を一番上に。次に「その日に始まるもの」、そのあと種類順・開始日順
+      .sort((a, b) =>
+        (a.type === "taikai" ? 0 : 1) - (b.type === "taikai" ? 0 : 1) ||
+        (a.s === day ? 0 : 1) - (b.s === day ? 0 : 1) ||
+        TYPE_ORDER[a.type] - TYPE_ORDER[b.type] ||
+        (a.s < b.s ? -1 : 1));
   }
   // 今日から見て次の誕生日（今日は含まない）を近い順に
   function nextBirthdays(today, count) {
@@ -285,6 +318,8 @@
       const n = diffDays(today, e.s);
       return '<span class="krd-left">' + (n === 1 ? "明日から" : "あと" + n + "日で開始") + "</span>";
     }
+    // 「〇〇開始」の1日だけの予定は、過ぎても「終了」ではなく「開始済み」
+    if (e.s === e.e && /開始/.test(e.t)) return '<span class="krd-left krd-left--end">開始済み</span>';
     return '<span class="krd-left krd-left--end">終了</span>';
   }
   function periodText(e) {

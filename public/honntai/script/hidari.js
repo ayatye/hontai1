@@ -42,11 +42,11 @@ const HIDARI_MENU = [
 
 // ===== 最近の更新(新しい順。5件くらいがちょうどいい) =====
 const KOUSIN = [
-  { date: "2026-10-22", title: "第五カレンダーにIJL秋季の対戦カードを追加", link: "/honntai/karenda/karenda.html" },
-  { date: "2026-10-20", title: "最新情報：ハロウィン再登場2026", link: "/honntai/saisinn/saisinn.html" },
-  { date: "2026-10-12", title: "荘園人格診断を公開", link: "/honntai/sinndann/sindan.html" },
-  { date: "2026-10-09", title: "第五人格クイズを公開", link: "/honntai/kuizu/kuizu.html" },
-  { date: "2026-10-03", title: "新サバイバー「神童」を追加", link: "/honntai/sabaiba/sinndou/sinndou.html" },
+  { date: "2026-10-30", title: "サバイバーランキング：神童をSティアに追加", link: "/honntai/sabaran/sabaran.html" },
+  { date: "2026-10-30", title: "激熱サバイバー／ハンターを更新", link: "/honntai/gekisaba/gekisaba.html" },
+  { date: "2026-10-29", title: "最新情報：10/29アップデート", link: "/honntai/saisinn/saisinn.html" },
+  { date: "2026-10-29", title: "手記の加筆：月宴の巡りイベント", link: "/honntai/shukikahitsu/shukikahitsu.html" },
+  { date: "2026-10-29", title: "情報発表番組『分岐点』バージョン", link: "/honntai/idv-program-slider/2026bunkiten.html" },
 ];
 
 (function () {

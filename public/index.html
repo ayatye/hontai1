@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="honntai/style/hidari.css" />
     <link rel="stylesheet" href="honntai/style/logo.css" />
     <link rel="stylesheet" href="honntai/style/comment.css" />
+    <link rel="stylesheet" href="honntai/style/koukoku.css" />
     <meta
       name="description"
       content="IdentityV（第五人格）の攻略情報サイト「第五録」。6年以上プレイしたへむへむが、初心者から上級者まで役立つキャラ攻略・最新情報・イベント・コラボ・ランキングをわかりやすく解説しています。
@@ -394,64 +395,70 @@
           </div>
 
           <!-- 最新アップデート情報セクションの追加 -->
-          <div class="latest-update">
-            <h2>最新アップデート情報</h2>
-
-            <!-- 四角い箱 -->
-            <a
-              href="/honntai/saisinn/saisinn.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <!-- 左側に写真 -->
-              <div class="update-photo">
-                <img
-                  src="/honntai/images/kyarakonn.jpeg"
-                  alt="アップデート画像"
-                />
-              </div>
-              <!-- 右側に説明とリンク -->
-              <div class="update-info">
-                <p>
-                  直近のアップデート内容をまとめています。新キャラクターの追加や既存キャラの調整など、ランク戦環境に関わる最新情報をいち早くチェックできます。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
+          <!-- 毎月：月・見出し3つを書き換える。今月分は saisinn.html、月が終わったら saisinn/YYYY-MM.html に分かれる -->
+          <section class="news-hero" aria-labelledby="news-hero-title">
+            <div class="news-hero__head">
+              <span class="news-hero__badge">NEW</span>
+              <h2 id="news-hero-title" class="news-hero__title">
+                第五人格 最新情報
+              </h2>
+              <span class="news-hero__month">2026年10月</span>
+            </div>
+            <a href="/honntai/saisinn/saisinn.html" class="news-hero__card">
+              <img
+                class="news-hero__img"
+                src="/honntai/images/kyarakonn.jpeg"
+                alt="第五人格 最新アップデート"
+                width="120"
+                height="120"
+              />
+              <ul class="news-hero__list">
+                <li>Identity V×リトルナイトメアコラボが復刻！</li>
+                <li>「手記の加筆」ハロウィンイベント『月宴の巡り』開催！</li>
+                <li>「神童」がランク戦モードに追加！</li>
+              </ul>
+              <span class="news-hero__more">今月の情報を見る →</span>
             </a>
-          </div>
+            <a href="/honntai/saisinn/2026-09.html" class="news-hero__all"
+              >先月（9月）の最新情報</a
+            >
+          </section>
 
           <!-- Identity V バランス調整まとめの追加 -->
-          <div class="latest-update">
-            <h2>Identity V バランス調整まとめ（2026年9月3日）</h2>
-
-            <!-- 四角い箱 全体をリンクに -->
-            <a
-              href="/honntai/tyousei/tyousei.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <!-- 左側に写真 -->
-              <div class="update-photo">
-                <img loading="lazy" decoding="async"
-                  src="/honntai/images/tyousei.jpeg"
-                  alt="バランス調整画像"
-                />
+          <!-- 調整のたびに：日付・対象キャラを書き換える -->
+          <section class="news-hero news-hero--tyousei" aria-labelledby="tyousei-hero-title">
+            <div class="news-hero__head">
+              <span class="news-hero__badge news-hero__badge--tyousei">調整</span>
+              <h2 id="tyousei-hero-title" class="news-hero__title">
+                バランス調整まとめ
+              </h2>
+              <span class="news-hero__month">2026年9月3日</span>
+            </div>
+            <a href="/honntai/tyousei/tyousei.html" class="news-hero__card">
+              <img
+                class="news-hero__img"
+                src="/honntai/images/tyousei.jpeg"
+                alt="第五人格 バランス調整"
+                width="120"
+                height="120"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="tyousei-hero__body">
+                <p class="tyousei-hero__label">今回の調整対象</p>
+                <ul class="tyousei-hero__chips">
+                  <li>マイムアーティスト</li>
+                  <li>作曲家</li>
+                  <li>小説家</li>
+                  <li>復讐者</li>
+                  <li>夢の魔女</li>
+                  <li>「心の獣」</li>
+                </ul>
+                <p class="tyousei-hero__label">＋ 内在人格の調整あり</p>
               </div>
-              <!-- 右側に説明 -->
-              <div class="update-info">
-                <p>
-                  2026年9月3日に実装されたキャラクター調整と内在人格調整の詳細をまとめました。今回の調整では、複数のキャラクターの性能見直しと、内在人格システムの大幅な調整が行われています。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
+              <span class="news-hero__more">調整内容を見る →</span>
             </a>
-          </div>
+          </section>
 
           <!-- 第五カレンダー（カレンダー部分のみ。データは honntai/script/karenda.js） -->
           <div class="karenda-top">
@@ -459,476 +466,177 @@
             <div data-karenda="mini" data-head="off"></div>
           </div>
 
+          <!-- 最強キャラランキング（トップでの入口はここだけ） -->
+          <section class="rank-hub" aria-labelledby="rank-hub-title">
+            <h2 id="rank-hub-title" class="rank-hub__title">
+              <span class="rank-hub__crown" aria-hidden="true">♛</span>最強キャラランキング
+            </h2>
+            <p class="rank-hub__lead">ランク戦で今強いキャラをS〜Cティアで評価</p>
+            <div class="rank-hub__grid">
+              <a href="/honntai/sabaran/sabaran.html" class="rank-card rank-card--saba">
+                <img class="rank-card__img" src="/honntai/images/sabaran.jpeg" alt="サバイバーランキング" width="1054" height="288" loading="lazy" decoding="async" />
+                <span class="rank-card__label">サバイバー</span>
+                <span class="rank-card__more">ランキングを見る →</span>
+              </a>
+              <a href="/honntai/hanran/hanran.html" class="rank-card rank-card--hanta">
+                <img class="rank-card__img" src="/honntai/images/hanran.jpeg" alt="ハンターランキング" width="1048" height="286" loading="lazy" decoding="async" />
+                <span class="rank-card__label">ハンター</span>
+                <span class="rank-card__more">ランキングを見る →</span>
+              </a>
+            </div>
+          </section>
+
+          <div class="ad-slot" data-ad="h2-mae"></div>
+
           <div class="kontentu">
-            <!-- おすすめトピック -->
-            <div id="recommended-topics" class="info-block">
-              <h2>おすすめトピック</h2>
-              <ul id="topics">
-                <!-- 荘園人格診断：スマホとPCで画像を切り替え（押すと入口の演出） -->
+            <!-- 激熱キャラ特集 -->
+            <section id="recommended-topics" class="info-block">
+              <h2><span class="info-block__label">PICK UP</span>激熱キャラ特集</h2>
+              <ul id="topics" class="topic-grid">
                 <li>
-                  <a
-                    href="/honntai/sinndann/sindan.html"
-                    class="special-item special-item--sindan"
-                    style="color: white"
-                    data-sindan-link
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >荘園人格診断</span
-                    >
+                  <a href="/honntai/gekisaba/gekisaba.html" class="topic-card">
+                    <span class="topic-card__thumb topic-card__thumb--wide special-item--gekisaba"></span>
+                    <span class="topic-card__title">激アツサバイバー</span>
                   </a>
                 </li>
-
-                <!-- 第五人格クイズ：スマホとPCで画像を切り替え -->
                 <li>
-                  <a
-                    href="/honntai/kuizu/kuizu.html"
-                    class="special-item special-item--kuizu"
-                    style="color: white"
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >第五人格クイズ</span
-                    >
-                  </a>
-                </li>
-
-                <!-- 激アツサバイバー：スマホとPCで画像を切り替え -->
-                <li>
-                  <a
-                    href="/honntai/gekisaba/gekisaba.html"
-                    class="special-item special-item--gekisaba"
-                    style="color: white"
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >激アツサバイバー</span
-                    >
-                  </a>
-                </li>
-
-                <!-- 激アツハンター：スマホとPCで画像を切り替え -->
-                <li>
-                  <a
-                    href="/honntai/gekiatuhannta/gekiatuhannta.html"
-                    class="special-item special-item--gekihanta"
-                    style="color: white"
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >激アツハンター</span
-                    >
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/honntai/purozinnkaku/purozinnkaku.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/zinnkaku.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >キャラクター別プロが使う人格</span
-                    >
+                  <a href="/honntai/gekiatuhannta/gekiatuhannta.html" class="topic-card">
+                    <span class="topic-card__thumb topic-card__thumb--wide special-item--gekihanta"></span>
+                    <span class="topic-card__title">激アツハンター</span>
                   </a>
                 </li>
               </ul>
-            </div>
+            </section>
 
             <!-- 初心者必見 -->
-            <div id="events" class="info-block">
-              <h2>初心者必見</h2>
-              <ul id="events-list">
+            <section id="events" class="info-block">
+              <h2><span class="info-block__label">BEGINNER</span>初心者必見</h2>
+              <ul id="events-list" class="topic-grid">
                 <li>
-                  <a
-                    href="/honntai/sigatu/sigatu.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/syosinnsya.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >初心者に使ってほしいキャラ</span
-                    >
+                  <a href="/honntai/sigatu/sigatu.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/syosinnsya.jpeg')"></span>
+                    <span class="topic-card__title">初心者に使ってほしいキャラ</span>
                   </a>
                 </li>
-
                 <li>
-                  <a
-                    href="/honntai/sigati/sigati.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/suteppu.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >初心者が中級者になる確実なステップ</span
-                    >
+                  <a href="/honntai/sigati/sigati.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/suteppu.jpeg')"></span>
+                    <span class="topic-card__title">初心者が中級者になる確実なステップ</span>
                   </a>
                 </li>
-
                 <li>
-                  <a
-                    href="/honntai/chat/chat.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/chat/icon.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >定型文チャットとは？？</span
-                    >
+                  <a href="/honntai/chat/chat.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/chat/icon.jpeg')"></span>
+                    <span class="topic-card__title">定型文チャットとは？？</span>
                   </a>
                 </li>
-
                 <li>
-                  <a
-                    href="/honntai/yougo/yougo.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/yougo.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >第五人格知っておきたい用語集</span
-                    >
+                  <a href="/honntai/yougo/yougo.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/yougo.jpeg')"></span>
+                    <span class="topic-card__title">第五人格知っておきたい用語集</span>
                   </a>
                 </li>
-
                 <li>
-                  <a
-                    href="/honntai/sabazinnkaku/sabazinnkaku.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/sabazinnkaku.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >内在人格とは？？サバイバー編</span
-                    >
+                  <a href="/honntai/sabazinnkaku/sabazinnkaku.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/sabazinnkaku.jpeg')"></span>
+                    <span class="topic-card__title">内在人格とは？？サバイバー編</span>
                   </a>
                 </li>
-
                 <li>
-                  <a
-                    href="/honntai/hantazinnkaku/hantazinnkaku.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/hantazinnkaku.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >内在人格とは？？ハンター編</span
-                    >
+                  <a href="/honntai/hantazinnkaku/hantazinnkaku.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/hantazinnkaku.jpeg')"></span>
+                    <span class="topic-card__title">内在人格とは？？ハンター編</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/honntai/rokka/rokka.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/rokka.jpeg')"></span>
+                    <span class="topic-card__title">マップ内のロッカーの活用方法</span>
                   </a>
                 </li>
               </ul>
-            </div>
-
-            <!-- 第五人格必須情報 -->
-            <div id="tisikis" class="info-block">
-              <h2>第五人格必須情報</h2>
-              <ul id="tisiki-list">
-                <li>
-                  <a
-                    href="/honntai/sabaran/sabaran.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/sabaran.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >サバイバーランキング</span
-                    >
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/honntai/hanran/hanran.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/hanran.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >ハンターランキング</span
-                    >
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/honntai/rokka/rokka.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/rokka.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >マップ内のロッカーの活用方法</span
-                    >
-                  </a>
-                </li>
-              </ul>
-            </div>
+            </section>
 
             <!-- 中級者〜上級者必見 -->
-            <div id="masters" class="info-block">
-              <h2>中級者〜上級者必見</h2>
-              <ul id="master-list">
+            <section id="masters" class="info-block">
+              <h2><span class="info-block__label">ADVANCED</span>中級者〜上級者必見</h2>
+              <ul id="master-list" class="topic-grid">
                 <li>
-                  <a
-                    href="/honntai/kyarakosei/kyarakosei.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/kosei.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >キャラの個性について</span
-                    >
+                  <a href="/honntai/kyarakosei/kyarakosei.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/kosei.jpeg')"></span>
+                    <span class="topic-card__title">キャラの個性について</span>
                   </a>
                 </li>
-
                 <li>
-                  <a
-                    href="/honntai/purozinnkaku/purozinnkaku.html"
-                    class="special-item"
-                    style="
-                      background-image: url(&quot;/honntai/images/zinnkaku.jpeg&quot;);
-                      color: white;
-                    "
-                  >
-                    <span
-                      style="
-                        background-color: rgba(0, 0, 0, 0.5);
-                        padding: 10px;
-                      "
-                      >キャラ別プロが使っている人格</span
-                    >
+                  <a href="/honntai/purozinnkaku/purozinnkaku.html" class="topic-card">
+                    <span class="topic-card__thumb" style="background-image: url('/honntai/images/zinnkaku.jpeg')"></span>
+                    <span class="topic-card__title">キャラ別プロが使っている人格</span>
                   </a>
                 </li>
               </ul>
-            </div>
+            </section>
           </div>
           <hr class="separator-line" />
-          <h2>イベント情報</h2>
+          <!-- イベント・コラボ・モード攻略（カード群。CSSは styles.css の .guide-*） -->
+          <section class="guide-hub" aria-labelledby="guide-hub-title">
+            <h2 id="guide-hub-title" class="guide-hub__title">イベント・コラボ・モード攻略</h2>
 
-          <!-- 四角い箱 -->
-          <!-- 左側に写真 -->
-          <a
-            href="/honntai/ibento/ibento.html"
-            title="詳しくはこちら"
-            class="update-box"
-          >
-            <div class="update-photo">
-              <img loading="lazy" decoding="async" src="/honntai/images/ibento.jpeg" alt="イベント画像" />
+            <h3 class="guide-hub__sub">イベント・コラボ</h3>
+            <div class="guide-grid">
+              <a href="/honntai/ibento/ibento.html" class="guide-card">
+                <img class="guide-card__img" src="/honntai/images/ibento.jpeg" alt="第五人格 イベント情報" width="88" height="88" loading="lazy" decoding="async" />
+                <span class="guide-card__body">
+                  <span class="guide-card__tag">イベント</span>
+                  <span class="guide-card__title">イベント情報</span>
+                  <span class="guide-card__desc">期間限定イベントの内容と報酬の入手方法</span>
+                </span>
+              </a>
+              <a href="/honntai/korabo/korabo.html" class="guide-card">
+                <img class="guide-card__img" src="/honntai/images/korabo.jpeg" alt="第五人格 コラボ情報" width="88" height="88" loading="lazy" decoding="async" />
+                <span class="guide-card__body">
+                  <span class="guide-card__tag">コラボ</span>
+                  <span class="guide-card__title">コラボ情報</span>
+                  <span class="guide-card__desc">開催中・過去のコラボと限定衣装のまとめ</span>
+                </span>
+              </a>
             </div>
-            <!-- 右側に説明とリンク -->
-            <div class="update-info">
-              <p>
-                最新のイベント情報をまとめています。期間限定のキャンペーンや特別報酬の入手方法を紹介し、
-                初心者でも分かりやすく参加できるように解説しています。見逃せないお得情報をチェックしましょう。
-              </p>
+
+            <h3 class="guide-hub__sub">モード別攻略</h3>
+            <div class="guide-grid">
+              <a href="/honntai/shukikahitsu/shukikahitsu.html" class="guide-card">
+                <img class="guide-card__img" src="/honntai/images/shukikahitsu/shukikahitsu.jpeg" alt="手記の加筆モード" width="88" height="88" loading="lazy" decoding="async" />
+                <span class="guide-card__body">
+                  <span class="guide-card__tag">モード</span>
+                  <span class="guide-card__title">手記の加筆</span>
+                  <span class="guide-card__desc">最初に買うアイテム・装備変更・職業と異象の立ち回り</span>
+                </span>
+              </a>
+              <a href="/honntai/otogibanasi/otogibanasi.html" class="guide-card">
+                <img class="guide-card__img" src="/honntai/images/otogibanasi/otogibanasi.jpeg" alt="森のお伽話モード" width="88" height="88" loading="lazy" decoding="async" />
+                <span class="guide-card__body">
+                  <span class="guide-card__tag">モード</span>
+                  <span class="guide-card__title">森のお伽話</span>
+                  <span class="guide-card__desc">特殊ルールでの効率的な立ち回りと勝つコツ</span>
+                </span>
+              </a>
+              <a href="/honntai/pennsaki/pennsaki.html" class="guide-card">
+                <img class="guide-card__img" src="/honntai/images/pennsaki.jpeg" alt="ペン先の空想モード" width="88" height="88" loading="lazy" decoding="async" />
+                <span class="guide-card__body">
+                  <span class="guide-card__tag">モード</span>
+                  <span class="guide-card__title">ペン先の空想</span>
+                  <span class="guide-card__desc">通常マッチと違うルールでの遊び方と攻略</span>
+                </span>
+              </a>
+              <a href="/honntai/kopiki/kopiki.html" class="guide-card">
+                <img class="guide-card__img" src="/honntai/images/kopiki.jpeg" alt="コピーキャットモード" width="88" height="88" loading="lazy" decoding="async" />
+                <span class="guide-card__body">
+                  <span class="guide-card__tag">モード</span>
+                  <span class="guide-card__title">コピーキャット</span>
+                  <span class="guide-card__desc">ルールと、特殊な能力を持つハンターへの対処</span>
+                </span>
+              </a>
             </div>
-            <!-- リンクのマーク -->
-            <div class="update-link">
-              <span>＞</span>
-            </div>
-          </a>
-          <!-- コラボ情報セクション -->
-          <div class="collaboration-info">
-            <h2>コラボ情報</h2>
-
-            <!-- 四角い箱 -->
-            <!-- 左側に写真 -->
-            <a
-              href="/honntai/korabo/korabo.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <div class="update-photo">
-                <img loading="lazy" decoding="async" src="/honntai/images/korabo.jpeg" alt="コラボ情報画像" />
-              </div>
-              <!-- 右側に説明とリンク -->
-              <div class="update-info">
-                <p>
-                  第五人格と人気作品のコラボ情報をまとめています。限定スキンやイベント報酬など、特典の入手方法はこちらからチェックできます。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
-            </a>
-          </div>
-          <div class="mode-strategy">
-            <h3>モード別攻略</h3>
-
-            <!-- モードごとの攻略ボックス -->
-            <!-- 左側に写真 -->
-            <a
-              href="/honntai/shukikahitsu/shukikahitsu.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <div class="update-photo">
-                <img loading="lazy" decoding="async"
-                  src="/honntai/images/shukikahitsu/shukikahitsu.jpeg"
-                  alt="手記の加筆モード画像"
-                />
-              </div>
-              <!-- 右側に説明とリンク -->
-              <div class="update-info">
-                <p>
-                  新モード「手記の加筆」の攻略情報を紹介。遊び方や最初に買うべきアイテム、武器・アイテムの装備（変更）方法、職業・異象の立ち回りまでまとめています。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
-            </a>
-            <!-- 左側に写真 -->
-            <a
-              href="/honntai/otogibanasi/otogibanasi.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <div class="update-photo">
-                <img loading="lazy" decoding="async"
-                  src="/honntai/images/otogibanasi/otogibanasi.jpeg"
-                  alt="森のお伽話モード画像"
-                />
-              </div>
-              <!-- 右側に説明とリンク -->
-              <div class="update-info">
-                <p>
-                  特殊ルールが楽しめる「森のお伽話」モードの攻略情報を紹介。効率的な立ち回りや勝つためのポイントをまとめています。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
-            </a>
-
-            <!-- 左側に写真 -->
-            <a
-              href="/honntai/pennsaki/pennsaki.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <div class="update-photo">
-                <img loading="lazy" decoding="async"
-                  src="/honntai/images/pennsaki.jpeg"
-                  alt="べん先の空想モード画像"
-                />
-              </div>
-              <!-- 右側に説明とリンク -->
-              <div class="update-info">
-                <p>
-                  「ペン先の空想」モードの遊び方や攻略情報を紹介。通常マッチとは違う特殊ルールでの立ち回りを分かりやすくまとめています。
-                </p>
-              </div>
-              <!-- リンクのマーク -->
-              <div class="update-link">
-                <span>＞</span>
-              </div>
-            </a>
-
-            <!-- 他のモードの攻略ボックスを必要に応じて追加 -->
-            <a
-              href="/honntai/kopiki/kopiki.html"
-              title="詳しくはこちら"
-              class="update-box"
-            >
-              <div class="update-photo">
-                <img loading="lazy" decoding="async"
-                  src="/honntai/images/kopiki.jpeg"
-                  alt="コピーキャットモード画像"
-                />
-              </div>
-              <div class="update-info">
-                <p>
-                  コピーキャットモードのルールや立ち回りを解説。特殊な能力を持つハンターにどう対応するかが攻略のカギになります。
-                </p>
-              </div>
-              <div class="update-link">
-                <span>＞</span>
-              </div>
-            </a>
-          </div>
+          </section>
           <section class="site-summary">
             <h2>第五録について</h2>
             <p>
@@ -939,6 +647,7 @@
           </section>
         </div>
 
+        <div class="side-column">
         <div class="sidebar">
           <h2>サバイバー一覧</h2>
           <ul id="survivor-list">
@@ -1814,6 +1523,8 @@
             </li>
           </ul>
         </div>
+        <div class="ad-slot" data-ad="side" data-device="pc"></div>
+        </div>
       </div>
       <hr class="custom-line" />
 
@@ -2068,14 +1779,8 @@
           </div>
         </div>
       </div>
+    <div class="ad-slot ad-slot--matome" data-ad="kiji-sita"></div>
     </main>
-    <!-- スクロール時に表示される横棒 -->
-    <div id="scroll-bar">
-      <a href="/honntai/saisinn/saisinn.html">最新アップデート情報</a>
-      <a href="#comments">みんなのコメント</a>
-      <a href="/honntai/情報/情報.html">キャラ情報</a>
-      <a href="/honntai/contact/contact.html">お問い合わせ</a>
-    </div>
 
     <!-- クローラー向け静的フッターリンク（footer.jsと併用） -->
     <div
@@ -2202,15 +1907,15 @@
       </nav>
     </div>
 
+    <script src="honntai/script/koukoku.js"></script>
     <script src="honntai/script/ngcomento.js"></script>
-    <script src="honntai/script/honbaga.js"></script>
     <script src="honntai/script/footer.js"></script>
     <script src="honntai/script/kyararisuto.js"></script>
     <script src="honntai/script/hidari.js"></script>
     <script src="honntai/script/widget_recommended.js"></script>
     <script src="honntai/script/program-slider.js"></script>
-    <script type="module" src="honntai/comentoscript/hontai.js"></script>
+    <script type="module" src="honntai/comentoscript/minna.js"></script>
     <script src="honntai/script/sindan-link.js" defer></script>
-    <script src="honntai/script/karenda.js?v=2026102201" defer></script>
+    <script src="honntai/script/karenda.js?v=2026102902" defer></script>
   </body>
 </html>

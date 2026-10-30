@@ -62,11 +62,10 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 <script src="../../script/kyararisuto.js"></script>
 <script src="../../script/koukoku.js"></script>
 <script src="../../script/ngcomento.js"></script>
-<script src="../../script/honbaga.js"></script>
 <script src="../../script/footer.js"></script>
 <script src="../../script/program-slider.js"></script>
 <script src="../../script/widget.js"></script>
-<script type="module" src="../../comentoscript/hanta.js"></script>
+<script type="module" src="../../comentoscript/minna.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 ```
 
@@ -89,6 +88,7 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `comment.css` | コメント欄(`#comment-section`) |
 | `footer.css` | 共通フッター(`footer.js` が生成する要素用) |
 | `koukoku.css` | 広告枠 `.ad-slot` のスタイル(後述) |
+| `gekiatu.css` | 激熱サバイバー/ハンター(`gekisaba` / `gekiatuhannta`)共通のレイアウト。`.geki--saba`(青)/`.geki--hanta`(赤)で色を切替。今の推しは `.geki-card`、過去の推しは `<details class="geki-old">` に折りたたむ |
 
 ## 共有 JS(`honntai/script/`)
 
@@ -101,12 +101,11 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `widget.js` | サイドバーの人気記事ランキング等(`widgetData` を編集するだけで全ページ反映) | `#sidebar-widget` |
 | `widget_recommended.js` | 「今日のおすすめ」のみ。index.html が `widget.js` の代わりに使う | `#recommended-widget` |
 | `program-slider.js` | 情報発表番組スライダー(`programs` 配列、新しい順) | `#idv-program-slider` |
-| `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)+投稿フォーム処理 | `#comment-form` |
-| `honbaga.js` | スクロール時に出る横棒 | `#scroll-bar` |
+| `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)と投稿前チェック `window.ngcomentoCheck` | 投稿処理自体は `comentoscript/minna.js` |
 | `script.js` | トップ用の特集タイル生成(`topics` `events` `tisikis` `masters`) | `isMobile` で画像を出し分け |
 | `karenda.js` | 第五カレンダー(誕生日・イベント・コラボ・大会)。データは冒頭の `KARENDA_DATA` だけ | `[data-karenda="page"]`(karenda/karenda.html)/ `[data-karenda="mini"]`(トップ)。`firebase.json` で `no-cache`。読み込みは `karenda.js?v=日付` |
 
-各ページの `comentoscript/<name>.js` は Firestore への投稿・取得。`pageId` がページ固有で、他ページと重複させない。新規ページは既存ファイルをコピーして `pageId` を変える(Firebase の `apiKey` 等は Web 用で公開前提。保護は Firestore ルール側)。
+コメント欄は全ページ共通で `comentoscript/minna.js` 1本(2026-10 に統合)。どのページでもサイト全体の新しいコメントを50件表示し、各コメントに「📍 ○○より」と書かれたページへのリンクを付ける。投稿時に `pagePath`(URLパス)と `pageTitle`(`<title>` の「 - 」より前)を保存する。旧コメント(`pageId` だけのもの)の表示名は `minna.js` の `OLD_PAGES`。自動削除はしない。投稿前チェック(NGワード・連投制限)は `script/ngcomento.js` の `window.ngcomentoCheck`。新規ページは深さに合わせて `…/comentoscript/minna.js` を読み込むだけでよい(Firebase の `apiKey` 等は Web 用で公開前提。保護は Firestore ルール側)。
 
 新キャラ追加時に触る場所の目安: キャラ個別ページ新規作成 / `footer.js` / `kyararisuto.js` / `widget.js` / 画像追加(`images/kyaragazou/…`)/ `sitemap.xml`。
 
@@ -115,13 +114,12 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-ad="…">` へ JS が `<ins class="adsbygoogle">` を挿入する**方式。
 `<head>` の `adsbygoogle.js` 本体(`ca-pub-4556398935658570`)は別途必要なので**消さない**。
 
-### 運用状況(移行期)
-- **現在は AdSense 自動広告と手動配置(`ad-slot`)の併用期間**。段階的に手動配置へ移行中。
-  - 自動広告の設定は AdSense 管理画面側にあり、このリポジトリには無い。手動枠を増やしたり自動広告を止めたりする判断は運営者が行うので、勝手に枠を大量追加・削除しない。
-  - 併用中は自動広告と手動枠が近接することがあり得る。配置の変更時は表示を確認する。
-- **広告を入れないページ**: `puraibasi`(プライバシーポリシー)/ `uneizyouhou`(運営情報)/ `contact`(お問い合わせ)。`koukoku.css` / `koukoku.js` の読み込みも枠も入れない。
-- **今後入れる予定(未着手)**: `chat` と `gekisaba`。現時点では枠も CSS/JS 読み込みも無い。着手時は「深さ表」に従って `koukoku.css` / `koukoku.js` を読み込み、枠を置く。
-- 上記以外で広告が無いページ(`index.html`、`情報`、`idv-program-slider/*` など)の方針は未確認。入れる前に運営者へ確認する。
+### 運用状況
+- 2026-10-30 に、広告枠が無かったページ(`index.html`、`chat`、`gekisaba`、`gekiatuhannta`、`情報`、`idv-program-slider/*`、`kopiki`、`kyarakosei`、`otogibanasi`、`pennsaki`、`purozinnkaku`、`rokka`、`shukikahitsu`、`sigati`、`sigatu`)にも手動枠を入れ、全記事ページが手動配置になった。**AdSense 自動広告は運営者が管理画面で OFF にする方針**(OFF にしたかはリポジトリからは分からない)。
+- 手動枠を増やしたり減らしたりする判断は運営者が行うので、勝手に枠を大量追加・削除しない。
+- **広告を入れないページ**: `puraibasi`(プライバシーポリシー)/ `uneizyouhou`(運営情報)/ `contact`(お問い合わせ)/ `sinndann`(荘園人格診断。世界観重視のダークデザイン)。`koukoku.css` / `koukoku.js` の読み込みも枠も入れない。
+- 2階層の記事ページで `side` 枠を `.side-column` で囲えないページ(サイドバーが flex の子で幅が崩れるもの)は、`.sidebar` の**内側の末尾**に置いている(`sabaran` / `hanran` と同じ方式)。
+- `index.html` は `h2-mae`(激熱キャラ特集の前)・`side`(`.side-column` 内、1210px 以下は非表示)・`kiji-sita` の3枠。
 
 ### 枠の置き方
 
@@ -143,7 +141,7 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 | `kiji-ue` | ディスプレイ(記事上) | 2088406002 | `<main>` 冒頭、最初の `<section>` の直後あたり。1ページ1つ | なし |
 | `h2-mae` | ディスプレイ(本文中) | 4641437218 | 見出し(h2/section)の**前**。本文の区切りに複数可(現状 1ページ2〜3個) | なし |
 | `side` | ディスプレイ(サイドバー下) | 7256972200 | `.side-column` 内、`.sidebar` の直後。1ページ1つ | `data-device="pc"` を付ける |
-| `kiji-sita` | Multiplex(記事末) | 6689995998 | コメント欄の後、`#scroll-bar` の前。1ページ1つ | `ad-slot--matome` を付ける |
+| `kiji-sita` | Multiplex(記事末) | 6689995998 | コメント欄の後(旧 `#scroll-bar` の位置)。1ページ1つ | `ad-slot--matome` を付ける |
 
 - 現状の使用数: `h2-mae` 約290、`side` 120、`kiji-sita` 120、`kiji-ue` 89。
 - `kiji-sita` は `MATOME_SLOTS` に入っており `data-ad-format="autorelaxed"`(Multiplex)、他は `auto` + `data-full-width-responsive="true"`。Multiplex にしたいスロットを増やす時は `MATOME_SLOTS` に追記。
@@ -170,15 +168,15 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 - `.ad-slot` は `min-height`(モバイル280px / PC 300px / サイドバー内 250px / `--matome` 400px)を先に確保して CLS を抑える。「広告」ラベルは `::before` で表示。
 - `.ad-slot--side`(PC のみ `position: sticky; top: 80px`)は CSS に用意済みだが、現状のページでは `side` に付けていない。
 - **`DEBUG = true`**(`koukoku.js`)で本番でもコンソールにログが出る。切り替えるなら `false` に。
-- `koukoku.js` を読んでいないページが約20ある(`index.html`、`chat`、`gekisaba`、`情報`、`puraibasi`、`uneizyouhou`、`contact`、`idv-program-slider/*` など)。広告を入れるには **CSS・JS の読み込みと枠の両方**が必要。入れてよいページは上の「運用状況」に従う。
+- `koukoku.js` を読んでいないのは広告を入れないページ(`puraibasi`、`uneizyouhou`、`contact`、`sinndann`)だけ。広告を入れるには **CSS・JS の読み込みと枠の両方**が必要。
 
 ## 新規ページ作成のチェックリスト
 1. 同じ種類(ハンター/サバイバー/記事)の既存ページを**同じ深さの場所**にコピー。
 2. `<title>`・description・keywords・canonical・OGP・`last-modified` を更新。
 3. 相対パス(上の深さ表)を確認。コピー元と深さが違う場合は全部書き換える。
-4. `comentoscript` の `pageId` を新しい値に。
+4. コメント欄は `comentoscript/minna.js` を読み込む(ページごとの設定は不要)。
 5. 広告枠(`kiji-ue` / `h2-mae` / `side`+`data-device="pc"` / `kiji-sita`+`ad-slot--matome`)と `koukoku.css` / `koukoku.js` の読み込みが揃っているか。
 6. キャラなら `footer.js` / `kyararisuto.js`、記事なら `widget.js` に登録。`sitemap.xml` も更新。
 7. ブラウザでスマホ幅(<768px)とPC幅の両方を確認し、DevTools コンソールに `404` と `[koukoku]` 警告が無いことを確認。
 
-最終更新:2026-9-20
+最終更新:2026-10-30(スクロール時の横棒 honbaga.js / #scroll-bar は全ページから削除済み)
