@@ -654,6 +654,7 @@
   const footerCSS = `
     /* フッター専用スタイル */
     footer#site-footer {
+      box-sizing: border-box; /* 幅100%+左右の余白で画面からはみ出さないように */
       background-color: #333;
       color: #fff;
       padding: 40px 20px 20px;
