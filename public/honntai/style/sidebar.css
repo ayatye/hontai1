@@ -258,6 +258,76 @@ li .arrow {
   }
 }
 
+/* ---------- ページ下の「人気記事ランキング / 最近の更新 / 今日のおすすめ」(widget.js) ----------
+   PCでは上の本文+サイドバーと同じ横幅にそろえ、3つを横に並べる。色はサイトの紫に統一 */
+#sidebar-widget {
+  --wd-primary: var(--color-primary, #7c3aed);
+  --wd-light: var(--color-primary-light, #ede9fe);
+}
+#sidebar-widget .daigoroku-widget h3 {
+  color: var(--color-text-main, #1e1b4b);
+  border-bottom: 2px solid var(--wd-light);
+  font-size: 16px;
+}
+#sidebar-widget .daigoroku-widget h3::before {
+  content: "";
+  width: 4px;
+  height: 1em;
+  border-radius: 2px;
+  background: var(--wd-primary);
+}
+#sidebar-widget .widget-item:hover {
+  background: #faf8ff;
+  border-left-color: var(--wd-primary);
+}
+#sidebar-widget .widget-item a:hover {
+  color: var(--wd-primary);
+}
+#sidebar-widget .widget-tag,
+#sidebar-widget .recommended-category {
+  background: var(--wd-light);
+  color: var(--wd-primary);
+}
+#sidebar-widget .widget-rank {
+  background: var(--wd-primary);
+}
+#sidebar-widget .recommended-icon {
+  border-color: var(--wd-light) !important;
+  background-color: #fff;
+}
+#sidebar-widget .recommended-article {
+  background: linear-gradient(135deg, #faf8ff 0%, var(--wd-light) 100%);
+  border-color: var(--wd-light);
+}
+/* 最近の更新は5件までにして、長くなりすぎないように */
+#sidebar-widget .daigoroku-widget .widget-item:nth-of-type(n + 6) {
+  display: none;
+}
+
+@media (min-width: 1211px) {
+  #sidebar-widget {
+    box-sizing: border-box;
+    max-width: 1320px;
+    margin: 32px auto 8px;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  #sidebar-widget .daigoroku-widget {
+    max-width: none;
+    margin: 0;
+    box-shadow: none;
+    border: 1px solid var(--wd-light);
+  }
+}
+@media (min-width: 1400px) {
+  .wrapper.has-hidari ~ #sidebar-widget {
+    max-width: 1640px;
+  }
+}
+
 /* ---------- 区切り線(既存) ---------- */
 .custom-line {
   display: none;
