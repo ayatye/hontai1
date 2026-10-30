@@ -1358,3 +1358,87 @@ h2 {
   .guide-card { padding: 10px; gap: 12px; }
   .guide-card__img { flex-basis: 72px; width: 72px; height: 72px; }
 }
+
+/* ===== トップ：最強キャラランキング ===== */
+.rank-hub {
+  max-width: 1000px;
+  margin: 24px 10px 8px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 65%);
+  border: 2px solid #d97706;
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.13);
+  box-sizing: border-box;
+}
+.rank-hub__title {
+  margin: 0;
+  font-size: 1.5em;
+  color: #78350f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rank-hub__crown { color: #d97706; font-size: 1.1em; }
+.rank-hub__lead {
+  margin: 4px 0 14px;
+  font-size: 0.9em;
+  color: #92400e;
+}
+.rank-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.rank-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.rank-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(217, 119, 6, 0.22);
+}
+.rank-card__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1054 / 288;
+  object-fit: cover;
+  display: block;
+}
+.rank-card__label {
+  padding: 10px 12px 0;
+  font-weight: bold;
+  font-size: 1.15em;
+}
+.rank-card--saba .rank-card__label::before { content: "S"; }
+.rank-card--hanta .rank-card__label::before { content: "H"; }
+.rank-card__label::before {
+  display: inline-block;
+  width: 1.5em;
+  margin-right: 6px;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.8em;
+}
+.rank-card--saba .rank-card__label::before { background: #2563eb; }
+.rank-card--hanta .rank-card__label::before { background: #b91c1c; }
+.rank-card__more {
+  padding: 2px 12px 10px;
+  align-self: flex-end;
+  color: #b45309;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+@media (max-width: 767px) {
+  .rank-hub { margin: 18px 8px 6px; padding: 14px 12px; }
+  .rank-hub__title { font-size: 1.2em; }
+  .rank-hub__grid { grid-template-columns: 1fr; gap: 10px; }
+}
