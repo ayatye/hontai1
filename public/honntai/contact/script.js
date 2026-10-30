@@ -1,19 +1,3 @@
-/* ===== スクロール時の横棒 ===== */
-let lastScrollY = window.scrollY;
-const scrollBar = document.getElementById("scroll-bar");
-
-function handleScroll() {
-  if (!scrollBar) return;
-  if (window.scrollY === 0 || window.innerWidth <= 600) {
-    scrollBar.style.display = "none";
-  } else {
-    scrollBar.style.display = window.scrollY < lastScrollY ? "block" : "none";
-  }
-  lastScrollY = window.scrollY;
-}
-window.addEventListener("scroll", handleScroll);
-window.addEventListener("resize", handleScroll);
-
 /* ===== お問い合わせフォーム（Formspree でメール送信） =====
  * 送信先メールアドレスは Formspree（https://formspree.io）の管理画面で設定。
  * 届いたメールに「返信」すると、問い合わせた人のアドレスに返信できる（email 欄が reply-to になる）。

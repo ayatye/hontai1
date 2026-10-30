@@ -220,24 +220,3 @@ body {
   }
 }
 
-/* ===== 横棒 ===== */
-#scroll-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  display: none;
-  z-index: 1000;
-}
-#scroll-bar a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-#scroll-bar a:hover {
-  text-decoration: underline;
-}

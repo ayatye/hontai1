@@ -62,7 +62,6 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 <script src="../../script/kyararisuto.js"></script>
 <script src="../../script/koukoku.js"></script>
 <script src="../../script/ngcomento.js"></script>
-<script src="../../script/honbaga.js"></script>
 <script src="../../script/footer.js"></script>
 <script src="../../script/program-slider.js"></script>
 <script src="../../script/widget.js"></script>
@@ -100,7 +99,6 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `widget_recommended.js` | 「今日のおすすめ」のみ。index.html が `widget.js` の代わりに使う | `#recommended-widget` |
 | `program-slider.js` | 情報発表番組スライダー(`programs` 配列、新しい順) | `#idv-program-slider` |
 | `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)+投稿フォーム処理 | `#comment-form` |
-| `honbaga.js` | スクロール時に出る横棒 | `#scroll-bar` |
 | `script.js` | トップ用の特集タイル生成(`topics` `events` `tisikis` `masters`) | `isMobile` で画像を出し分け |
 | `karenda.js` | 第五カレンダー(誕生日・イベント・コラボ・大会)。データは冒頭の `KARENDA_DATA` だけ | `[data-karenda="page"]`(karenda/karenda.html)/ `[data-karenda="mini"]`(トップ)。`firebase.json` で `no-cache`。読み込みは `karenda.js?v=日付` |
 
@@ -141,7 +139,7 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 | `kiji-ue` | ディスプレイ(記事上) | 2088406002 | `<main>` 冒頭、最初の `<section>` の直後あたり。1ページ1つ | なし |
 | `h2-mae` | ディスプレイ(本文中) | 4641437218 | 見出し(h2/section)の**前**。本文の区切りに複数可(現状 1ページ2〜3個) | なし |
 | `side` | ディスプレイ(サイドバー下) | 7256972200 | `.side-column` 内、`.sidebar` の直後。1ページ1つ | `data-device="pc"` を付ける |
-| `kiji-sita` | Multiplex(記事末) | 6689995998 | コメント欄の後、`#scroll-bar` の前。1ページ1つ | `ad-slot--matome` を付ける |
+| `kiji-sita` | Multiplex(記事末) | 6689995998 | コメント欄の後(旧 `#scroll-bar` の位置)。1ページ1つ | `ad-slot--matome` を付ける |
 
 - 現状の使用数: `h2-mae` 約290、`side` 120、`kiji-sita` 120、`kiji-ue` 89。
 - `kiji-sita` は `MATOME_SLOTS` に入っており `data-ad-format="autorelaxed"`(Multiplex)、他は `auto` + `data-full-width-responsive="true"`。Multiplex にしたいスロットを増やす時は `MATOME_SLOTS` に追記。
@@ -179,4 +177,4 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 6. キャラなら `footer.js` / `kyararisuto.js`、記事なら `widget.js` に登録。`sitemap.xml` も更新。
 7. ブラウザでスマホ幅(<768px)とPC幅の両方を確認し、DevTools コンソールに `404` と `[koukoku]` 警告が無いことを確認。
 
-最終更新:2026-9-20
+最終更新:2026-10-30(スクロール時の横棒 honbaga.js / #scroll-bar は全ページから削除済み)
