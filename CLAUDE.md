@@ -87,6 +87,7 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `comment.css` | コメント欄(`#comment-section`) |
 | `footer.css` | 共通フッター(`footer.js` が生成する要素用) |
 | `koukoku.css` | 広告枠 `.ad-slot` のスタイル(後述) |
+| `gekiatu.css` | 激熱サバイバー/ハンター(`gekisaba` / `gekiatuhannta`)共通のレイアウト。`.geki--saba`(青)/`.geki--hanta`(赤)で色を切替。今の推しは `.geki-card`、過去の推しは `<details class="geki-old">` に折りたたむ |
 
 ## 共有 JS(`honntai/script/`)
 
