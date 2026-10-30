@@ -111,13 +111,12 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-ad="…">` へ JS が `<ins class="adsbygoogle">` を挿入する**方式。
 `<head>` の `adsbygoogle.js` 本体(`ca-pub-4556398935658570`)は別途必要なので**消さない**。
 
-### 運用状況(移行期)
-- **現在は AdSense 自動広告と手動配置(`ad-slot`)の併用期間**。段階的に手動配置へ移行中。
-  - 自動広告の設定は AdSense 管理画面側にあり、このリポジトリには無い。手動枠を増やしたり自動広告を止めたりする判断は運営者が行うので、勝手に枠を大量追加・削除しない。
-  - 併用中は自動広告と手動枠が近接することがあり得る。配置の変更時は表示を確認する。
-- **広告を入れないページ**: `puraibasi`(プライバシーポリシー)/ `uneizyouhou`(運営情報)/ `contact`(お問い合わせ)。`koukoku.css` / `koukoku.js` の読み込みも枠も入れない。
-- **今後入れる予定(未着手)**: `chat` と `gekisaba`。現時点では枠も CSS/JS 読み込みも無い。着手時は「深さ表」に従って `koukoku.css` / `koukoku.js` を読み込み、枠を置く。
-- 上記以外で広告が無いページ(`index.html`、`情報`、`idv-program-slider/*` など)の方針は未確認。入れる前に運営者へ確認する。
+### 運用状況
+- 2026-10-30 に、広告枠が無かったページ(`index.html`、`chat`、`gekisaba`、`gekiatuhannta`、`情報`、`idv-program-slider/*`、`kopiki`、`kyarakosei`、`otogibanasi`、`pennsaki`、`purozinnkaku`、`rokka`、`shukikahitsu`、`sigati`、`sigatu`)にも手動枠を入れ、全記事ページが手動配置になった。**AdSense 自動広告は運営者が管理画面で OFF にする方針**(OFF にしたかはリポジトリからは分からない)。
+- 手動枠を増やしたり減らしたりする判断は運営者が行うので、勝手に枠を大量追加・削除しない。
+- **広告を入れないページ**: `puraibasi`(プライバシーポリシー)/ `uneizyouhou`(運営情報)/ `contact`(お問い合わせ)/ `sinndann`(荘園人格診断。世界観重視のダークデザイン)。`koukoku.css` / `koukoku.js` の読み込みも枠も入れない。
+- 2階層の記事ページで `side` 枠を `.side-column` で囲えないページ(サイドバーが flex の子で幅が崩れるもの)は、`.sidebar` の**内側の末尾**に置いている(`sabaran` / `hanran` と同じ方式)。
+- `index.html` は `h2-mae`(激熱キャラ特集の前)・`side`(`.side-column` 内、1210px 以下は非表示)・`kiji-sita` の3枠。
 
 ### 枠の置き方
 
@@ -166,7 +165,7 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 - `.ad-slot` は `min-height`(モバイル280px / PC 300px / サイドバー内 250px / `--matome` 400px)を先に確保して CLS を抑える。「広告」ラベルは `::before` で表示。
 - `.ad-slot--side`(PC のみ `position: sticky; top: 80px`)は CSS に用意済みだが、現状のページでは `side` に付けていない。
 - **`DEBUG = true`**(`koukoku.js`)で本番でもコンソールにログが出る。切り替えるなら `false` に。
-- `koukoku.js` を読んでいないページが約20ある(`index.html`、`chat`、`gekisaba`、`情報`、`puraibasi`、`uneizyouhou`、`contact`、`idv-program-slider/*` など)。広告を入れるには **CSS・JS の読み込みと枠の両方**が必要。入れてよいページは上の「運用状況」に従う。
+- `koukoku.js` を読んでいないのは広告を入れないページ(`puraibasi`、`uneizyouhou`、`contact`、`sinndann`)だけ。広告を入れるには **CSS・JS の読み込みと枠の両方**が必要。
 
 ## 新規ページ作成のチェックリスト
 1. 同じ種類(ハンター/サバイバー/記事)の既存ページを**同じ深さの場所**にコピー。
