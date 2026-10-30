@@ -158,77 +158,25 @@ let lastPostTime = 0;
 let lastCommentContent = "";
 let postTimestamps = [];
 
-document
-  .getElementById("comment-form")
-  .addEventListener("submit", async (e) => {
-    e.preventDefault();
+// 投稿前チェック。問題があればメッセージ文字列、OKなら null を返す。
+// 実際の投稿は comentoscript/minna.js が行う（このファイルは submit を直接扱わない）
+window.ngcomentoCheck = function (username, comment) {
+  const now = Date.now();
+  if (!username || !comment) return "ユーザーネームとコメントを入力してください。";
+  if (comment.replace(/\s/g, "").length === 0) return "空白のみのコメントは投稿できません。";
+  if (comment.split("\n").length > 10) return "改行が多すぎます。10行以内で投稿してください。";
+  if (containsBannedWord(comment) || containsBannedWord(username))
+    return "不適切な内容が含まれています。修正してください。";
+  if (username.length > 20) return "ユーザーネームは20文字以内で入力してください。";
+  if (comment.length > 300) return "コメントは300文字以内で入力してください。";
+  if (comment === lastCommentContent) return "同じコメントを連続して投稿することはできません。";
+  if (now - lastPostTime < 30000) return "連続投稿は30秒空けてください。";
+  postTimestamps = postTimestamps.filter((ts) => now - ts < 60000);
+  if (postTimestamps.length >= 3) return "短時間に投稿しすぎています。しばらく待ってください。";
+  lastPostTime = now;
+  lastCommentContent = comment;
+  postTimestamps.push(now);
+  return null;
+};
 
-    const username = document.getElementById("username-input").value.trim();
-    const comment = document.getElementById("comment-input").value.trim();
-    const now = Date.now();
-
-    // 入力チェック
-    if (!username || !comment) {
-      alert("ユーザーネームとコメントを入力してください。");
-      return;
-    }
-
-    // 空白のみチェック
-    if (comment.replace(/\s/g, "").length === 0) {
-      alert("空白のみのコメントは投稿できません。");
-      return;
-    }
-
-    // 改行制限
-    if (comment.split("\n").length > 10) {
-      alert("改行が多すぎます。10行以内で投稿してください。");
-      return;
-    }
-
-    // NGワード検出（ユーザーネームも含む）
-    if (containsBannedWord(comment) || containsBannedWord(username)) {
-      alert("不適切な内容が含まれています。修正してください。");
-      return;
-    }
-
-    // 文字数制限
-    if (comment.length > 300) {
-      alert("コメントは300文字以内で入力してください。");
-      return;
-    }
-
-    // 同一コメント防止
-    if (comment === lastCommentContent) {
-      alert("同じコメントを連続して投稿することはできません。");
-      return;
-    }
-
-    // 30秒以内の連投防止
-    if (now - lastPostTime < 30000) {
-      alert("連続投稿は30秒空けてください。");
-      return;
-    }
-
-    // 1分間に3件以上の投稿を制限
-    postTimestamps = postTimestamps.filter((ts) => now - ts < 60000);
-    if (postTimestamps.length >= 3) {
-      alert("短時間に投稿しすぎています。しばらく待ってください。");
-      return;
-    }
-
-    // 通過した場合の処理
-    lastPostTime = now;
-    lastCommentContent = comment;
-    postTimestamps.push(now);
-
-    await addDoc(commentsRef, {
-      username: username,
-      comment: comment,
-      timestamp: serverTimestamp(),
-    });
-
-    // 入力欄クリア＆再読み込み
-    document.getElementById("username-input").value = "";
-    document.getElementById("comment-input").value = "";
-    loadComments();
-  });
+window.ngcomentoIsBanned = containsBannedWord;

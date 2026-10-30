@@ -65,7 +65,7 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 <script src="../../script/footer.js"></script>
 <script src="../../script/program-slider.js"></script>
 <script src="../../script/widget.js"></script>
-<script type="module" src="../../comentoscript/hanta.js"></script>
+<script type="module" src="../../comentoscript/minna.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 ```
 
@@ -98,11 +98,11 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `widget.js` | サイドバーの人気記事ランキング等(`widgetData` を編集するだけで全ページ反映) | `#sidebar-widget` |
 | `widget_recommended.js` | 「今日のおすすめ」のみ。index.html が `widget.js` の代わりに使う | `#recommended-widget` |
 | `program-slider.js` | 情報発表番組スライダー(`programs` 配列、新しい順) | `#idv-program-slider` |
-| `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)+投稿フォーム処理 | `#comment-form` |
+| `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)と投稿前チェック `window.ngcomentoCheck` | 投稿処理自体は `comentoscript/minna.js` |
 | `script.js` | トップ用の特集タイル生成(`topics` `events` `tisikis` `masters`) | `isMobile` で画像を出し分け |
 | `karenda.js` | 第五カレンダー(誕生日・イベント・コラボ・大会)。データは冒頭の `KARENDA_DATA` だけ | `[data-karenda="page"]`(karenda/karenda.html)/ `[data-karenda="mini"]`(トップ)。`firebase.json` で `no-cache`。読み込みは `karenda.js?v=日付` |
 
-各ページの `comentoscript/<name>.js` は Firestore への投稿・取得。`pageId` がページ固有で、他ページと重複させない。新規ページは既存ファイルをコピーして `pageId` を変える(Firebase の `apiKey` 等は Web 用で公開前提。保護は Firestore ルール側)。
+コメント欄は全ページ共通で `comentoscript/minna.js` 1本(2026-10 に統合)。どのページでもサイト全体の新しいコメントを50件表示し、各コメントに「📍 ○○より」と書かれたページへのリンクを付ける。投稿時に `pagePath`(URLパス)と `pageTitle`(`<title>` の「 - 」より前)を保存する。旧コメント(`pageId` だけのもの)の表示名は `minna.js` の `OLD_PAGES`。自動削除はしない。投稿前チェック(NGワード・連投制限)は `script/ngcomento.js` の `window.ngcomentoCheck`。新規ページは深さに合わせて `…/comentoscript/minna.js` を読み込むだけでよい(Firebase の `apiKey` 等は Web 用で公開前提。保護は Firestore ルール側)。
 
 新キャラ追加時に触る場所の目安: キャラ個別ページ新規作成 / `footer.js` / `kyararisuto.js` / `widget.js` / 画像追加(`images/kyaragazou/…`)/ `sitemap.xml`。
 
@@ -172,7 +172,7 @@ AdSense の手動広告を、HTML に置いた**枠 `<div class="ad-slot" data-a
 1. 同じ種類(ハンター/サバイバー/記事)の既存ページを**同じ深さの場所**にコピー。
 2. `<title>`・description・keywords・canonical・OGP・`last-modified` を更新。
 3. 相対パス(上の深さ表)を確認。コピー元と深さが違う場合は全部書き換える。
-4. `comentoscript` の `pageId` を新しい値に。
+4. コメント欄は `comentoscript/minna.js` を読み込む(ページごとの設定は不要)。
 5. 広告枠(`kiji-ue` / `h2-mae` / `side`+`data-device="pc"` / `kiji-sita`+`ad-slot--matome`)と `koukoku.css` / `koukoku.js` の読み込みが揃っているか。
 6. キャラなら `footer.js` / `kyararisuto.js`、記事なら `widget.js` に登録。`sitemap.xml` も更新。
 7. ブラウザでスマホ幅(<768px)とPC幅の両方を確認し、DevTools コンソールに `404` と `[koukoku]` 警告が無いことを確認。

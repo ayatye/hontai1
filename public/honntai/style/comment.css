@@ -136,3 +136,23 @@
   }
 
   }
+
+/* コメントの出どころ（comentoscript/minna.js） */
+.comment .comment-from {
+  display: inline-block;
+  margin: 0 0 6px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #6d28d9;
+  background: #f3e8ff;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.comment a.comment-from:hover { background: #e9d5ff; }
+.comment .comment-from--here { color: #555; background: #e5e7eb; }
+.comment-lead {
+  margin: -4px 0 12px;
+  font-size: 0.85em;
+  color: #666;
+}
