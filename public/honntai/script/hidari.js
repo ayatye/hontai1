@@ -66,7 +66,10 @@ const KOUSIN = [
   if (!modules.length) return;
 
   // 本文(サイドバーでも左列でもない子要素)
-  const main = Array.prototype.find.call(wrapper.children, (el) => el !== col);
+  const main = Array.prototype.find.call(
+    wrapper.children,
+    (el) => el !== col && !el.classList.contains("google-auto-placed") && el.tagName !== "INS"
+  );
   const path = decodeURI(location.pathname);
 
   const aside = document.createElement("aside");
