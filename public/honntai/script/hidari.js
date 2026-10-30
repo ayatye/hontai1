@@ -19,7 +19,7 @@
    ========================================================= */
 
 // ===== 出す中身と順番 =====
-const HIDARI_MODULES = ["mokuji", "menu", "kyou", "kousin"];
+const HIDARI_MODULES = ["mokuji"];
 
 // ===== カテゴリー一覧 =====
 const HIDARI_MENU = [

@@ -243,3 +243,37 @@
   padding: 8px 12px;
   font-size: 12px;
 }
+
+/* ---------- すっきり版：枠を消して、文字だけの静かな見た目に ---------- */
+.hidari .hd-box:not(.hd-kyou) {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.hidari .hd-box__title {
+  margin: 0 0 6px;
+  padding-left: 0;
+  border-left: none;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  color: var(--hd-sub);
+}
+.hidari .hd-mokuji ol {
+  max-height: calc(100vh - 160px);
+}
+.hidari :is(.hd-menu, .hd-mokuji, .hd-kousin) a {
+  font-size: 13px;
+  padding: 5px 10px;
+}
+.hidari .hd-mokuji a.is-current {
+  background: transparent;
+}
+/* 固定ヘッダーの下に隠れないように */
+.hidari__inner {
+  top: 112px;
+  max-height: calc(100vh - 130px);
+}
+.hd-anchor {
+  scroll-margin-top: 112px;
+}
