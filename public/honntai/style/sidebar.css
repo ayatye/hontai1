@@ -288,6 +288,13 @@ li .arrow {
   background: var(--wd-light);
   color: var(--wd-primary);
 }
+#sidebar-widget .widget-category {
+  color: var(--wd-primary);
+}
+#sidebar-widget .widget-views,
+#sidebar-widget .recommended-date {
+  color: var(--color-text-sub, #6b7280);
+}
 #sidebar-widget .widget-rank {
   background: var(--wd-primary);
 }
