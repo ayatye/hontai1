@@ -452,12 +452,9 @@ const hunters = [
 
 
 // ===== サイドバー上の特集枠(ここを書き換えるだけで全ページに反映) =====
-const sidebarFeature = {
-  badge: "NEW",
-  title: "第五人格クイズ",
-  sub: "あなたは荘園マスター?",
-  link: "/honntai/kuizu/kuizu.html",
-};
+// 出さないときは null。出すときは下の形で書く
+// { badge: "NEW", title: "第五人格クイズ", sub: "あなたは荘園マスター?", link: "/honntai/kuizu/kuizu.html" }
+const sidebarFeature = null;
 
 (function () {
   const sidebar = document.querySelector(".sidebar");
