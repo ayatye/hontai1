@@ -274,12 +274,18 @@
         <div class="update-history">
           <div class="update-title">📋 更新履歴</div>
           <div class="update-item">
-            <div class="update-date">2026/10/29</div>
+            <div class="update-date">2026/11/5</div>
             <div class="update-content">
-              ハロウィンイベント「月宴の巡り」開催！限定詞章「カボチャ閣下」、ハンター10人追加（計36人）、悪夢に新レイアウト<span
+              新シーズン『燐光症』実装！新マップ・新職業「庇護者」・新異象5種・虚妄詞章「ムトゥラの核」・大型バランス調整<span
                 class="new-badge"
                 >NEW</span
               >
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date">2026/10/29</div>
+            <div class="update-content">
+              ハロウィンイベント「月宴の巡り」開催！限定詞章「カボチャ閣下」、ハンター10人追加（計36人）、悪夢に新レイアウト
             </div>
           </div>
           <div class="update-item">
@@ -429,7 +435,7 @@
         <!-- 職業 -->
         <h2>使用できる職業</h2>
         <p class="lead-text">
-          サバイバーモードで使える職業は次の3種です。なお<strong>ハンターモードも実装済み</strong>で、詳しくは後半の「ハンターモード」セクションで解説しています。
+          サバイバーモードで使える職業は次の通りです（アタッカーの英雄、サポートの庇護者も追加済み）。なお<strong>ハンターモードも実装済み</strong>で、詳しくは後半の「ハンターモード」セクションで解説しています。
         </p>
         <div class="design1">
           <div class="animal-grid">
@@ -545,6 +551,14 @@
                 攻撃特化の新職業。<strong>斬道</strong>（前方突進で命中数ぶん淬鋒スタックを獲得）に加え、パッシブ<strong>淬鋒</strong>（移動・ジャンプで体力を13消費するたび次の武器攻撃が+25%／最大3スタック）、<strong>戦魂</strong>（異象を撃破するたび体力40回復）を持つ、殴りながら立て直せるアタッカー。
               </div>
             </div>
+            <div class="animal-card">
+              <div class="animal-name">
+                <span class="animal-icon">庇</span>庇護者<span class="new-badge">NEW</span>
+              </div>
+              <div class="animal-description">
+                味方に<strong>憑依</strong>してサポートする変則職業（アクティブ「庇身」）。憑依中は「探索」（未知の部屋を調査）「制圧」（自動で索敵・攻撃）「震撼」（異象を吹き飛ばす）を使い分けられる。パッシブ<strong>充盈</strong>で憑依対象の回復速度+20%・体力消費-20%・スキルCT回復+50%、<strong>眷顧</strong>で憑依解除時に強化効果を付与。憑依中もアイテム・詞章は拾え、相手の負荷にも影響しません。
+              </div>
+            </div>
           </div>
         </div>
 
@@ -565,6 +579,104 @@
             style="background: #2c1a3a; color: #fff; border-color: #6c5ce7"
             >悪夢</span
           >
+        </div>
+
+        <!-- ===== 新マップ「燐光症」 ===== -->
+        <h2>新マップ「燐光症」<span class="new-badge">NEW</span></h2>
+        <p class="lead-text">
+          2つ目のプレイアブルマップ【燐光症】が実装。難易度は<strong>普通・困難・悪夢</strong>の3種。オルフェウスのもう一冊の手稿『燐光症』が舞台で、忌み嫌われる鉱山を探索し、地下部族の痕跡と「燐光症」に隠された秘密を解き明かします。限られた視界の中で資源を集め、リスクが積み重なる前に撤退する、ルート選択とタイミングが問われるマップです。<strong>※現在はサバイバーモードのみ（ハンターモードは今後）。</strong>
+        </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px">
+          <span class="weapon-type">普通</span>
+          <span class="weapon-type">困難</span>
+          <span
+            class="weapon-type"
+            style="background: #2c1a3a; color: #fff; border-color: #6c5ce7"
+            >悪夢</span
+          >
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">マップメカニズム</h3>
+        <div class="consumable-grid">
+          <div class="consumable-card" style="border-left-color: #fdcb6e">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span class="consumable-icon" style="background: linear-gradient(135deg, #fdcb6e, #e17055)">🛤️</span>トロッコ隠し通路
+              </div>
+            </div>
+            <div class="effect-description">
+              未有効化の隠し通路を発見することがある。マップに散らばる<strong>【機械パーツ】を集めて有効化</strong>すると追加の脱出ルートが開放され、動けるルートが増える。
+            </div>
+          </div>
+          <div class="consumable-card" style="border-left-color: #0984e3">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span class="consumable-icon" style="background: linear-gradient(135deg, #74b9ff, #0984e3)">🧲</span>鉱脈エネルギー
+              </div>
+            </div>
+            <div class="effect-description">
+              地面の発光鉱石で鉱脈エネルギーの状態が分かる。<strong>【希少鉱石】を掘り続けるとエネルギーが枯渇</strong>し、特殊な【磁石の通路】の磁石が落ちて通行不能になることも。こまめに状態を見てルートを調整しよう。
+            </div>
+          </div>
+          <div class="consumable-card" style="border-left-color: #6c5ce7">
+            <div class="consumable-header">
+              <div class="consumable-name">
+                <span class="consumable-icon" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7)">☣️</span>燐光症（悪夢限定）
+              </div>
+            </div>
+            <div class="effect-description">
+              地下2階以下を探索中、<strong>「燐光症」に感染</strong>。時間で悪化し、深い階層ほど進行が速い（3段階）。各地の<strong>【薬石粉砕台】で1段階下げられる</strong>。奥へ進むときは自分の感染度にも注意。
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">燐光症の新異象</h3>
+        <table class="enhancement-table">
+          <tr>
+            <th>画像</th>
+            <th>異象</th>
+            <th>特徴・立ち回り</th>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img src="../images/shukikahitsu/syusenningyou.jpeg" alt="守銭人形" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block" />
+            </td>
+            <td class="item-name">守銭人形</td>
+            <td>重い袋に貴重品を詰めて徘徊する。<strong>こちらの持ち物を盗もうと狙ってくる</strong>ので、大切な詞章を奪われないよう注意。</td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img src="../images/shukikahitsu/rinkouigai.jpeg" alt="燐光遺骸" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block" />
+            </td>
+            <td class="item-name">燐光遺骸</td>
+            <td><strong>群れで潜伏</strong>し、通りかかると突然目覚めて襲ってくる。単独で坑道を徘徊する個体もいる。不用意に群れへ近づかないこと。</td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img src="../images/shukikahitsu/rinennlamp.jpeg" alt="燐焔のランプ" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block" />
+            </td>
+            <td class="item-name">燐焔のランプ</td>
+            <td>鉱石を燃やして道を照らしながら進む。<strong>遠くのランプと、地面に残る燐火に要注意</strong>。燐火は踏まないように。</td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img src="../images/shukikahitsu/gikeiensyusya.jpeg" alt="擬形の演習者" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block" />
+            </td>
+            <td class="item-name">擬形の演習者</td>
+            <td>公演に招き、自分が唯一無二だと証明しようとする。単独個体は記憶が曖昧。<strong>その姿を見られるのは唯一の観客だけ</strong>という特殊な異象。</td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img src="../images/shukikahitsu/mukouzanei.jpeg" alt="無光の残影" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block" />
+            </td>
+            <td class="item-name">無光の残影</td>
+            <td>あらゆる影に潜む。黒い霧の中にいるため<strong>直接攻撃が当たりにくい</strong>。<strong>まず強い光を当てて姿を現させて</strong>から対処しよう。</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 1.5rem; color: #2c3e50">燐光症の目玉：虚妄品質「ムトゥラの核」</h3>
+        <div class="feature-description">
+          🌟 新レアリティ<strong>「虚妄品質」の華麗なる詞章【ムトゥラの核】</strong>が登場。初回入手時に鑑定でき、一定確率で高価値・新外観に。アイテム欄で使うと<strong>落石の雨で範囲内の異象に大ダメージ</strong>＋条件次第で足場になる<strong>浮遊石台を生成</strong>。さらに所持中は、鉱脈エネルギー枯渇で途切れた道を<strong>一時的に再構築</strong>できる。燐光症マップの最重要アイテム。
         </div>
 
         <!-- 叙事手法（新要素） -->
@@ -1786,52 +1898,55 @@
           <tr>
             <td>洗練可能な武器スキン</td>
             <td class="item-name">
-              <span class="item-icon">⚔️</span>原始形態-銅鉱灯（→燐光ガス／スピネル／Ⅲ型破壊のつるはし）
+              <span class="item-icon">⚔️</span>忘れられた信仰【銅鉱灯】（→燐光ガス／スピネル／Ⅲ型破壊のつるはし）
+            </td>
+          </tr>
+          <tr>
+            <td>アイテムスキン</td>
+            <td class="item-name">
+              <span class="item-icon">💉</span>治療針【鉱脈の結晶】
+            </td>
+          </tr>
+          <tr>
+            <td>アイテムスキン</td>
+            <td class="item-name">
+              <span class="item-icon">🏃</span>気つけの箱【ロジンフラックス】
             </td>
           </tr>
           <tr>
             <td>SR衣装</td>
             <td class="item-name">
-              <span class="item-icon">👗</span>泣きピエロ-縹水晶
+              <span class="item-icon">👗</span>泣きピエロ【紫水晶】
             </td>
           </tr>
           <tr>
-            <td>アイテムスキン（SSR）</td>
+            <td>居館家具</td>
             <td class="item-name">
-              <span class="item-icon">💠</span>鉱脈の結晶
+              <span class="item-icon">🪨</span>【変質岩の鉱脈】
             </td>
           </tr>
           <tr>
-            <td>居館家具（SSR）</td>
+            <td>居館家具</td>
             <td class="item-name">
-              <span class="item-icon">🪨</span>変質岩の鉱脈
+              <span class="item-icon">🏮</span>【燐焔のランプ】
             </td>
           </tr>
           <tr>
-            <td>居館家具（SSR）</td>
+            <td>居館家具</td>
             <td class="item-name">
-              <span class="item-icon">🏮</span>燐焔のランプ
+              <span class="item-icon">💎</span>【集晶】
             </td>
           </tr>
           <tr>
-            <td>居館家具（SR）</td>
+            <td>居館家具</td>
             <td class="item-name">
-              <span class="item-icon">🛒</span>運送用トロッコ
-            </td>
-          </tr>
-          <tr>
-            <td>居館家具（SR）</td>
-            <td class="item-name">
-              <span class="item-icon">💎</span>集晶
-            </td>
-          </tr>
-          <tr>
-            <td>SR</td>
-            <td class="item-name">
-              <span class="item-icon">📦</span>ロジンフラックス
+              <span class="item-icon">🛒</span>【運送用トロッコ】
             </td>
           </tr>
         </table>
+        <p class="note-sub">
+          ※ 泣きピエロ【紫水晶】・治療針【鉱脈の結晶】・気つけの箱【ロジンフラックス】は、次シーズン開始後に【過去シーズンショップ】で交換できるようになります。
+        </p>
 
         <!-- S0コレクション一覧（終了・折りたたみ） -->
         <details class="ended-collab">
@@ -2984,6 +3099,22 @@
               設置すると地面に<strong>球状のシールド</strong>を生成し、<strong>異象の侵入を防ぐ</strong>（中のプレイヤーは攻撃されない）。ただし<strong>中からシールド外の異象を攻撃することもできない</strong>ので、あくまで籠城・やり過ごし用。
             </td>
           </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img src="../images/shukikahitsu/kyoushinzai.jpeg" alt="強心剤" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block" />
+            </td>
+            <td class="item-name">強心剤<span class="new-badge">NEW</span></td>
+            <td>-</td>
+            <td>所持していると、<strong>負傷状態の時に自分を治療できる</strong>。治療成功でより多く回復。治療中も移動は可能（走るのは不可）。</td>
+          </tr>
+          <tr>
+            <td style="width: 84px; text-align: center">
+              <img src="../images/shukikahitsu/watashimori.jpeg" alt="渡し守の古銭" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: inline-block" />
+            </td>
+            <td class="item-name">渡し守の古銭<span class="new-badge">NEW</span></td>
+            <td>-</td>
+            <td>使うと<strong>ダウン状態</strong>になり、移動不可になる代わりに<strong>異象に狙われなくなる</strong>。もう一度使うと解除。※サバイバーモード専用。</td>
+          </tr>
         </table>
 
         <h2>詞章（宝物）一覧</h2>
@@ -3247,6 +3378,22 @@
               入手すると対戦中に「災厄の代わり身」へ変身でき、変身中は異象に見つかりにくくなる（ハンターモードではこの変身は不可）
             </td>
           </tr>
+          <tr><td>SR</td><td class="item-name">鉱石顔料<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>燐光症マップでドロップ</td></tr>
+          <tr><td>SR</td><td class="item-name">スピネルの調査日誌<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>燐光症マップでドロップ</td></tr>
+          <tr><td>SR</td><td class="item-name">つるはし<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>燐光症マップでドロップ</td></tr>
+          <tr><td>SR</td><td class="item-name">スタートライン案内板<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>燐光症マップでドロップ</td></tr>
+          <tr><td>SR</td><td class="item-name">共生原鉱<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>燐光症マップでドロップ</td></tr>
+          <tr><td>SSR</td><td class="item-name">競走の勲章<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>SSR</td><td class="item-name">薬石の髄<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>SSR</td><td class="item-name">法典碑<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>SSR</td><td class="item-name">失われた星<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>SSR</td><td class="item-name">機械の残骸<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>トロッコ隠し通路の有効化にも使う機械パーツ系</td></tr>
+          <tr><td>SSR</td><td class="item-name">孤光-燐光<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>武器洗練に使用可能</td></tr>
+          <tr><td>UR</td><td class="item-name">アカオノスリのペンダント<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>UR</td><td class="item-name">ヌネシの加護<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>UR</td><td class="item-name">アパラチアの残響<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>UR</td><td class="item-name">崇光の杖<span class="new-badge">燐光症</span></td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>虚妄</td><td class="item-name">ムトゥラの核<span class="new-badge">目玉</span></td><td>-</td><td>-</td><td>華麗なる詞章。鑑定可。使用で落石の雨→範囲の異象に大ダメージ＋浮遊石台を生成。所持中は鉱脈枯渇で途切れた道を一時再構築できる</td></tr>
         </table>
         <p class="note-sub">
           ※へむへむが実際にプレイして確認できた範囲のまとめです。検証が進み次第、随時追記・修正していきます。
@@ -3258,18 +3405,26 @@
         <p class="lead-text">
           手記の加筆モードに入った戦闘調整・体験最適化のまとめ。長いので折りたたみにしています（見出しをタップで開閉）。
         </p>
-        <details
-          open
-          style="
-            background: #2c1a3a;
-            border: 1px solid #6c5ce7;
-            border-radius: 10px;
-            padding: 12px 16px;
-            margin-bottom: 14px;
-          "
-        >
+        <details open style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 16px; margin-bottom: 14px;">
+          <summary style="cursor: pointer; font-weight: 700; color: #2c3e50">
+            ⛏️ 新シーズン『燐光症』実装・大型調整（11/5）<span class="new-badge">NEW</span>
+          </summary>
+          <ul style="margin: 12px 0 0; padding-left: 20px; line-height: 1.9">
+            <li><strong>新マップ『燐光症』</strong>・新職業『庇護者』・新異象5種・新アイテム（強心剤／渡し守の古銭）・虚妄品質『ムトゥラの核』を実装（詳細は上の各セクション）。</li>
+            <li><strong>ストーリータスク調整</strong>：『災いの女』は<strong>常設タスク</strong>（報酬は長期有効）、『燐光症』以降は<strong>シーズンタスク</strong>（今シーズンのみ有効）に。</li>
+            <li><strong>ランク</strong>：段位リセットを実施。段位ポイントを調整し、<strong>真相解明スコアの比率を下げ、探索スコアを大幅に引き上げ</strong>（詞章収集・容器探索・チーム救助・十分な探索時間にボーナス）。行方不明でも探索スコアの15%を保持。負の確率イベントで行方不明時の【バランス補償】を追加。段位説明・過去段位画面も追加。</li>
+            <li><strong>コレクションショップ</strong>：S1ラインナップに更新＋<strong>【過去シーズンショップ】を追加</strong>。毎日1回の無料単発を廃止し、<strong>毎週1回の無料10連</strong>に変更（月曜0時更新）。500回の抽選上限を撤廃。</li>
+            <li><strong>体力消費を大幅緩和</strong>：走行を負荷別7〜10.5/s→<strong>一律4.5/s</strong>、ジャンプを8.05〜11.9→<strong>一律5.15</strong>、回復を<strong>一律10/s</strong>に。負荷の移動速度係数は育成レベルに応じ8/7/6%へ。</li>
+            <li><strong>職業調整</strong>：メッセンジャー庇護「治療+50%」→「治療+7」。智者・啓示の感知範囲1200→1500＋ナビ色を4色化（レア度で色分け）。主人公・果敢のフルチャージ最大ダッシュ3.6→5秒。英雄・淬鋒の必要体力13→10。</li>
+            <li><strong>アイテム調整</strong>：救急用針の治療25→30。躍動する嘲弄に爆発150ダメージ追加。過去の反響の最大耐ダメ300→400。燃える怨恨を強化（噴射17→25ほか）。気つけの箱に<strong>ミント耐性制限</strong>追加（3個目以降は効果減）。</li>
+            <li><strong>ハンター補助スキル</strong>：追尾の感知範囲1200→1500・ナビ色4色化。ベースキャンプ内では体力を消費しないように。</li>
+            <li><strong>システム改善</strong>：前シーズンの軌跡を振り返る「履歴」機能、集録の最新収録・絞り込み追加、<strong>武器洗練の携帯枠5→6</strong>、孤光スタック上限999→9999、倉庫+50枠解放（墨痕消費）、デイリー必要詞章2個に引き下げ。</li>
+          </ul>
+        </details>
+
+        <details style="background: #2c1a3a; border: 1px solid #6c5ce7; border-radius: 10px; padding: 12px 16px; margin-bottom: 14px;">
           <summary style="cursor: pointer; font-weight: 700; color: #d6c8f5">
-            🌙 悪夢難易度＆ボス戦 実装<span class="new-badge">NEW</span>
+            🌙 悪夢難易度＆ボス戦 実装
           </summary>
           <ul
             style="

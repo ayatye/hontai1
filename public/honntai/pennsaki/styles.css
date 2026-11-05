@@ -669,3 +669,81 @@ a {
     padding: 8px 10px;
   }
 }
+
+/* ===== 2026-11 プレイレベル・アイデアレベル ===== */
+.pen-h3 {
+  font-size: 1.1em;
+  margin: 32px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px dotted #f3c1cc;
+  color: var(--pen-main);
+  scroll-margin-top: 80px;
+}
+
+.level-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.level-card {
+  border-radius: 12px;
+  padding: 16px 18px;
+  border: 2px solid;
+  background: #fff;
+}
+.level-card p { margin: 0; font-size: 0.92em; line-height: 1.6; }
+.level-card--play { border-color: #4dabf7; background: #f0f8ff; }
+.level-card--idea { border-color: #ffc94d; background: #fffbea; }
+.level-card-label {
+  display: inline-block;
+  font-size: 0.75em !important;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 20px;
+  padding: 1px 10px !important;
+  margin-bottom: 6px !important;
+}
+.level-card--play .level-card-label { background: #1c7ed6; }
+.level-card--idea .level-card-label { background: #d4a100; }
+.level-card-name {
+  font-size: 1.15em !important;
+  font-weight: bold;
+  margin-bottom: 6px !important;
+  color: #222;
+}
+
+.rank-ladder {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+  margin-top: 14px;
+}
+.rank-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #ddd0f5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.92em;
+}
+.rank-dan {
+  flex-shrink: 0;
+  min-width: 3.2em;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background: var(--pen-sub);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+.rank-stars { color: #b8860b; letter-spacing: 0.02em; }
+.rank-row--max { border-color: #e0b84a; background: #fffbea; }
+.rank-row--max .rank-dan { background: #d4a100; }
+
+@media (max-width: 768px) {
+  .level-compare { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .rank-row { font-size: 0.85em; padding: 7px 10px; gap: 8px; }
+}
