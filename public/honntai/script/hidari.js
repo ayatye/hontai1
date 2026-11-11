@@ -43,7 +43,7 @@ const HIDARI_MENU = [
 // ===== 最近の更新(新しい順。5件くらいがちょうどいい) =====
 const KOUSIN = [
   { date: "2026-11-09", title: "最新情報：11/5アップデート", link: "/honntai/saisinn/saisinn.html" },
-  { date: "2026-11-06", title: "手記の加筆：新シーズン『燐光症』", link: "/honntai/shukikahitsu/shukikahitsu.html" },
+  { date: "2026-11-06", title: "手記の加筆：新シーズン『燐光症』を追加", link: "/honntai/shukikahitsu/shukikahitsu.html" },
   { date: "2026-11-05", title: "ペン先の空想：11月アプデ", link: "/honntai/pennsaki/pennsaki.html" },
   { date: "2026-11-05", title: "第五カレンダー：11/5アプデ・IJL Week3", link: "/honntai/karenda/karenda.html" },
   { date: "2026-10-30", title: "サバイバーランキング：神童をSティアに追加", link: "/honntai/sabaran/sabaran.html" },
