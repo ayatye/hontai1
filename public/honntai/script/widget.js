@@ -46,6 +46,12 @@
     // 最近の更新（新しい順）
     recentUpdates: [
       {
+        title: "手記の加筆：新シーズン『燐光症』を追加（新マップ・新職業・新異象）",
+        url: "/honntai/shukikahitsu/shukikahitsu.html",
+        date: "2026-11-06",
+        tag: "モード攻略",
+      },
+      {
         title: "サバイバーランキング：神童をSティアに追加",
         url: "/honntai/sabaran/sabaran.html",
         date: "2026-10-30",
