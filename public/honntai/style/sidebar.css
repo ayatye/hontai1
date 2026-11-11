@@ -246,10 +246,21 @@ li .arrow {
     justify-content: center;
     gap: 40px;
   }
-  body .wrapper > :not(.hidari):not(.sidebar):not(.side-column) {
-    flex: 1 1 auto;
+  body .wrapper > :not(.hidari):not(.sidebar):not(.side-column):not(.google-auto-placed):not(ins) {
+    flex: 1 1 0%; /* 0%基準にしておくと、折り返し可(wrap)でも本文が下に落ちない */
     min-width: 0;
     margin-right: 0;
+  }
+  /* AdSense の自動広告が .wrapper の中に直接差し込まれると、4本目の列になって
+     本文が細くなってしまう。折り返して本文+サイドバーの下に全幅で出す */
+  body .wrapper {
+    flex-wrap: wrap;
+  }
+  body .wrapper > .google-auto-placed,
+  body .wrapper > ins {
+    flex: 0 0 100%;
+    order: 99;
+    min-width: 0;
   }
   body .wrapper .sidebar,
   body .wrapper .side-column {
