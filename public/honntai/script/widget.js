@@ -46,10 +46,28 @@
     // 最近の更新（新しい順）
     recentUpdates: [
       {
+        title: "最新アップデート情報（11/5）",
+        url: "/honntai/saisinn/saisinn.html",
+        date: "2026-11-09",
+        tag: "更新情報",
+      },
+      {
         title: "手記の加筆：新シーズン『燐光症』を追加（新マップ・新職業・新異象）",
         url: "/honntai/shukikahitsu/shukikahitsu.html",
         date: "2026-11-06",
         tag: "モード攻略",
+      },
+      {
+        title: "ペン先の空想：11月アプデ（プレイレベル・アイデアレベル等）を追加",
+        url: "/honntai/pennsaki/pennsaki.html",
+        date: "2026-11-05",
+        tag: "モード攻略",
+      },
+      {
+        title: "第五カレンダー：11/5アップデートとIJL Week3の対戦カードを追加",
+        url: "/honntai/karenda/karenda.html",
+        date: "2026-11-05",
+        tag: "カレンダー",
       },
       {
         title: "サバイバーランキング：神童をSティアに追加",
