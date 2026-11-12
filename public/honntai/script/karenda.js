@@ -84,6 +84,8 @@
       [10, 31, "占い師", "/honntai/sabaiba/uranaisi/uranaisi.html", "/honntai/images/kyaragazou/sabaibagazou/uranaisi.jpeg", "s"],
       [11, 2, "血の女王", "/honntai/hanta/marhi/marhi.html", "/honntai/images/kyaragazou/hanntagazou/marhi.jpeg", "h"],
       [11, 13, "魔トカゲ", "/honntai/hanta/matokage/matokage.html", "/honntai/images/kyaragazou/hanntagazou/matokage.jpeg", "h"],
+      [11, 13, "教授", "/honntai/sabaiba/kyouzyu/kyouzyu.html", "/honntai/images/kyaragazou/sabaibagazou/kyouzyu.jpeg", "s"],
+      [11, 13, "応援団", "/honntai/sabaiba/ouenndann/ouenndann.html", "/honntai/images/kyaragazou/sabaibagazou/ouenndann.jpeg", "s"],
       [11, 17, "彫刻家", "/honntai/hanta/tyoukokusi/tyoukokusi.html", "/honntai/images/kyaragazou/hanntagazou/tyoukokusi.jpeg", "h"],
       [11, 22, "幸運児", "/honntai/sabaiba/kouunzi/kouunzi.html", "/honntai/images/kyaragazou/sabaibagazou/kouunzi.jpeg", "s"],
       [11, 25, "破輪", "/honntai/hanta/harinn/harinn.html", "/honntai/images/kyaragazou/hanntagazou/harinn.jpeg", "h"],
@@ -153,7 +155,7 @@
       { t: "キャラの日 二次開放（幻灯師・時空の影）", type: "ibento", s: "2026-10-23", e: "2026-10-25", link: "/honntai/ibento/ibento.html" },
       // 10/23 情報発表番組『分岐点』バージョンで発表された日程（開始日だけわかるものは s=e で「開始」表記）
       { t: "手記の加筆 新シーズン『燐光症』開始（新マップ・新職業「庇護者」）", type: "ibento", s: "2026-11-05", e: "2026-11-05", link: "/honntai/shukikahitsu/shukikahitsu.html" },
-      { t: "チャリティー「平凡な1日」開始（気象学者の衣装が無料）", type: "ibento", s: "2026-11-12", e: "2026-11-12", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "チャリティー「平凡な1日」（気象学者の衣装が無料）", type: "ibento", s: "2026-11-12", e: "2026-12-02", link: "/honntai/idv-program-slider/2026bunkiten.html" },
       { t: "シーズン45開幕＆感謝祭（真髄1×10配布）", type: "ibento", s: "2026-11-19", e: "2026-11-19", link: "/honntai/idv-program-slider/2026bunkiten.html" },
       { t: "感謝祭 衣装復刻・タスク報酬開始", type: "ibento", s: "2026-11-26", e: "2026-11-26", link: "/honntai/idv-program-slider/2026bunkiten.html" },
       { t: "アイドルグループ「PerVade」衣装登場（庭師）", type: "ibento", s: "2026-11-26", e: "2026-11-26", link: "/honntai/idv-program-slider/2026bunkiten.html" },
@@ -168,10 +170,15 @@
       { t: "ローソンコラボ開始", type: "korabo", s: "2026-10-27", e: "2026-10-27", link: "/honntai/idv-program-slider/2026bunkiten.html" },
       { t: "アニメイトカフェコラボ開始（池袋・天王寺・名古屋）", type: "korabo", s: "2026-12-12", e: "2026-12-12", link: "/honntai/idv-program-slider/2026bunkiten.html" },
       { t: "ウェンディーズコラボ開始", type: "korabo", s: "2026-12-17", e: "2026-12-17", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      // 2026/11/12 アップデート告知より
+      { t: "シーズンラストスパート（推理点数20%アップ・ダイス15以上）", type: "ibento", s: "2026-11-12", e: "2026-11-19", link: "/honntai/ibento/ibento.html" },
+      { t: "フィルムの宝探し 確率10倍", type: "ibento", s: "2026-11-12", e: "2026-11-25", link: "/honntai/ibento/ibento.html" },
+      { t: "キャラの日 二次開放（教授・魔トカゲ・応援団）", type: "ibento", s: "2026-11-14", e: "2026-11-15", link: "/honntai/ibento/ibento.html" },
+      { t: "キャラの日 二次開放（彫刻家）", type: "ibento", s: "2026-11-20", e: "2026-11-22", link: "/honntai/ibento/ibento.html" },
       // 2026/11/05 アップデート告知より
       { t: "eスポーツシリーズ「騎士」-SRE.RICHARD 販売", type: "ibento", s: "2026-11-05", e: "2026-12-02", link: "/honntai/ibento/ibento.html" },
       { t: "空軍-アマゾナイト（UR衣装）再登場", type: "ibento", s: "2026-11-05", e: "2026-12-02", link: "/honntai/ibento/ibento.html" },
-      { t: "閃光シリーズ 写真家-瞬影 登場", type: "ibento", s: "2026-11-12", e: "2026-11-12", link: "/honntai/idv-program-slider/2026bunkiten.html" },
+      { t: "閃光シリーズ 写真家-瞬影 販売", type: "ibento", s: "2026-11-12", e: "2026-12-09", link: "/honntai/ibento/ibento.html" },
       // 2026/10/29 アップデート告知より
       { t: "リトルナイトメアコラボ復刻（シックスとモノの荘園探索）", type: "korabo", s: "2026-10-29", e: "2026-11-29", link: "/honntai/korabo/korabo.html" },
       { t: "手記の加筆「月宴の巡り」", type: "ibento", s: "2026-10-29", e: "2026-11-18", link: "/honntai/shukikahitsu/shukikahitsu.html" },
@@ -202,6 +209,8 @@
           "2026-11-01": [["12:00", "QTD vs AWG"], ["14:00", "ZETA vs DFM"], ["16:00", "RC vs AXIZ"], ["18:00", "FL vs SZ"]],
           "2026-11-07": [["12:00", "DFM vs AWG"], ["14:00", "RC vs ZETA"], ["16:00", "QTD vs FL"], ["18:00", "SZ vs AXIZ"]],
           "2026-11-08": [["12:00", "RC vs QTD"], ["14:00", "FL vs ZETA"], ["16:00", "SZ vs DFM"], ["18:00", "AXIZ vs AWG"]],
+          "2026-11-14": [["12:00", "AXIZ vs DFM"], ["14:00", "ZETA vs QTD"], ["16:00", "FL vs RC"], ["18:00", "AWG vs SZ"]],
+          "2026-11-15": [["12:00", "RC vs FL"], ["14:00", "QTD vs ZETA"], ["16:00", "SZ vs AWG"], ["18:00", "DFM vs AXIZ"]],
         },
       },
       { t: "Fan Meeting＆2026秋季IJL決勝戦「荘園クリスマスマーケット」", s: "2026-12-26", e: "2026-12-28", place: "神戸国際展示場 1・2号館", link: "/honntai/idv-program-slider/2026bunkiten.html" },
