@@ -1,6 +1,6 @@
 // 第五録 - サイドバーウィジェット
 // このファイルを編集するだけで全ページに反映されます
-// 最終更新：2026-10-30（最近の更新を10月分に差し替え）
+// 最終更新：2026-11-16（人気記事ランキングをGA4の過去28日間の数字に差し替え）
 
 (function () {
   // ========================================
@@ -9,37 +9,38 @@
 
   const widgetData = {
     // 人気記事ランキング
-    // ※ views はアナリティクスの数字に随時差し替えてください
+    // ※ views はアナリティクス(GA4)「ページとスクリーン」の表示回数。期間は下の popularNote に書く
+    popularNote: "過去28日間の表示回数（11/15時点）",
     popularArticles: [
+      {
+        title: "「手記の加筆」攻略ガイド",
+        url: "/honntai/shukikahitsu/shukikahitsu.html",
+        views: 19960,
+        category: "モード攻略",
+      },
+      {
+        title: "サバイバー・ハンター一覧",
+        url: "/honntai/情報/情報.html",
+        views: 5020,
+        category: "キャラ情報",
+      },
+      {
+        title: "ハンター内在人格解説",
+        url: "/honntai/hantazinnkaku/hantazinnkaku.html",
+        views: 2158,
+        category: "人格",
+      },
+      {
+        title: "サバイバー内在人格解説",
+        url: "/honntai/sabazinnkaku/sabazinnkaku.html",
+        views: 1754,
+        category: "人格",
+      },
       {
         title: "IdentityV 用語一覧",
         url: "/honntai/yougo/yougo.html",
-        views: 3054,
+        views: 1747,
         category: "初心者向け",
-      },
-      {
-        title: "サバイバー tier表 2026",
-        url: "/honntai/sabaran/sabaran.html",
-        views: 1826,
-        category: "ランキング",
-      },
-      {
-        title: "コラボ情報",
-        url: "/honntai/korabo/korabo.html",
-        views: 990,
-        category: "コラボ",
-      },
-      {
-        title: "最新アップデート情報",
-        url: "/honntai/saisinn/saisinn.html",
-        views: 856,
-        category: "更新情報",
-      },
-      {
-        title: "ビリヤードプレイヤー攻略",
-        url: "/honntai/hanta/biriyadopureiya/biriyadopureiya.html",
-        views: 56,
-        category: "ハンター",
       },
     ],
 
@@ -509,6 +510,7 @@
     return `
       <div class="daigoroku-widget">
         <h3>人気記事ランキング</h3>
+        ${widgetData.popularNote ? `<p style="margin: -4px 0 8px; font-size: 12px; color: #888">${widgetData.popularNote}</p>` : ""}
         ${items}
       </div>
     `;
