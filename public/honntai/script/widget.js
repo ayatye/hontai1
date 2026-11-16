@@ -46,6 +46,12 @@
     // 最近の更新（新しい順）
     recentUpdates: [
       {
+        title: "調整まとめ：11/12のキャラ・天賦バランス調整を追加",
+        url: "/honntai/tyousei/tyousei.html",
+        date: "2026-11-16",
+        tag: "調整",
+      },
+      {
         title: "最新アップデート情報（11/12）",
         url: "/honntai/saisinn/saisinn.html",
         date: "2026-11-13",

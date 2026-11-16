@@ -42,6 +42,7 @@ const HIDARI_MENU = [
 
 // ===== 最近の更新(新しい順。5件くらいがちょうどいい) =====
 const KOUSIN = [
+  { date: "2026-11-16", title: "調整まとめ：11/12のバランス調整", link: "/honntai/tyousei/tyousei.html" },
   { date: "2026-11-13", title: "最新情報：11/12アップデート", link: "/honntai/saisinn/saisinn.html" },
   { date: "2026-11-12", title: "第五カレンダー：11/12アプデ・IJL Week4", link: "/honntai/karenda/karenda.html" },
   { date: "2026-11-12", title: "手記の加筆：燐光症のバランス調整", link: "/honntai/shukikahitsu/shukikahitsu.html" },
