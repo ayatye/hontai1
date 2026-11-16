@@ -46,6 +46,24 @@
     // 最近の更新（新しい順）
     recentUpdates: [
       {
+        title: "最新アップデート情報（11/12）",
+        url: "/honntai/saisinn/saisinn.html",
+        date: "2026-11-13",
+        tag: "更新情報",
+      },
+      {
+        title: "第五カレンダー：11/12アップデートとIJL Week4の対戦カードを追加",
+        url: "/honntai/karenda/karenda.html",
+        date: "2026-11-12",
+        tag: "カレンダー",
+      },
+      {
+        title: "手記の加筆：燐光症のバランス調整（11/12）を追加",
+        url: "/honntai/shukikahitsu/shukikahitsu.html",
+        date: "2026-11-12",
+        tag: "モード攻略",
+      },
+      {
         title: "最新アップデート情報（11/5）",
         url: "/honntai/saisinn/saisinn.html",
         date: "2026-11-09",
