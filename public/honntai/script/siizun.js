@@ -70,55 +70,41 @@
     const left = end - now;
     const pct = Math.max(0, Math.min(100, ((now - start) / total) * 100));
     const spurtAt = end - LAST_SPURT_DAYS * DAY;
-    const spurtPct = ((spurtAt - start) / total) * 100;
-    const totalDays = Math.round(total / DAY);
     const r = remainText(left);
 
     let state = "normal";
     if (left <= 0) state = "over";
     else if (now >= spurtAt) state = "spurt";
 
-    let msg;
-    if (state === "over") {
-      msg = s.yosou
-        ? "予想していた終了日を過ぎました。公式の発表を確認中です（検証中）"
-        : "S" + s.no + " は終了しました。";
-    } else if (state === "spurt") {
-      msg = "ラストスパート期間！推理の径・ランク戦のやり残しに注意";
-    } else {
-      msg = "推理の径と段位は、終了までに進めておこう";
+    // 1週間ごとの目盛り
+    let ticks = "";
+    for (let t = start + 7 * DAY; t < end; t += 7 * DAY) {
+      ticks += '<i style="left:' + (((t - start) / total) * 100).toFixed(2) + '%"></i>';
     }
 
+    const tip =
+      fmtDate(toJst(start)) + " 開幕 〜 " + fmtDate(toJst(end)) +
+      (s.yosou ? " 終了予想（終了日は公式未発表）" : " 終了");
+
+    const remain =
+      state === "over"
+        ? (s.yosou ? "確認中" : "終了")
+        : "残り<b>" + r.big + "</b>" + r.unit + (r.sub ? '<span class="siizun__sub">' + r.sub + "</span>" : "");
+
     el.className = "siizun siizun--" + state;
+    el.title = tip;
     el.innerHTML =
-      '<div class="siizun__head">' +
+      '<div class="siizun__top">' +
       '<span class="siizun__badge">S' + s.no + "</span>" +
       '<h2 class="siizun__title">シーズン残りメーター</h2>' +
-      (s.yosou ? '<span class="siizun__yosou" title="終了日は公式未発表">終了日は予想</span>' : "") +
+      '<span class="siizun__remain">' + remain +
+      (s.yosou && state !== "over" ? '<span class="siizun__yosou">予想</span>' : "") +
+      "</span>" +
       "</div>" +
-      '<div class="siizun__body">' +
-      '<div class="siizun__remain" aria-live="polite">' +
-      '<span class="siizun__label">終了まで' + (s.yosou ? "（予想）" : "") + "</span>" +
-      '<span class="siizun__num">' + r.big + '<small>' + r.unit + "</small></span>" +
-      (r.sub ? '<span class="siizun__sub">' + r.sub + "</span>" : "") +
-      "</div>" +
-      '<div class="siizun__meter-wrap">' +
-      '<div class="siizun__meter" role="progressbar" aria-label="S' + s.no + 'の経過" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.round(pct) + '">' +
+      '<div class="siizun__meter" role="progressbar" aria-label="S' + s.no + 'の経過（' + tip + '）" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.round(pct) + '">' +
       '<div class="siizun__fill" style="width:' + pct.toFixed(2) + '%"></div>' +
-      '<div class="siizun__spurt" style="left:' + spurtPct.toFixed(2) + '%" title="ラストスパート（目安）"></div>' +
-      "</div>" +
-      '<div class="siizun__dates">' +
-      "<span>" + fmtDate(toJst(start)) + " 開幕</span>" +
-      '<span class="siizun__pct">' + Math.floor(pct) + "% 経過</span>" +
-      "<span>" + fmtDate(toJst(end)) + (s.yosou ? " 終了予想" : " 終了") + "</span>" +
-      "</div>" +
-      "</div>" +
-      "</div>" +
-      '<p class="siizun__msg">' + msg + "</p>" +
-      (s.yosou
-        ? '<p class="siizun__note">※終了日は公式未発表です。直近のシーズンの多くが約' + totalDays + "日間だったことからの予想で、発表があり次第更新します。</p>"
-        : "") +
-      (s.link ? '<a class="siizun__link" href="' + s.link + '">開催中のイベントを見る →</a>' : "");
+      ticks +
+      "</div>";
   }
 
   function init() {
