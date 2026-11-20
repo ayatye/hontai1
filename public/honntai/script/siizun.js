@@ -30,6 +30,11 @@
     },
   ];
 
+  // 走るキャラのアイコン（サイト内の画像を丸く切り抜いて使う）。
+  // 別キャラにしたい時はここを差し替える。空文字にするとシルエットに戻る
+  const RUNNER_IMG = "/honntai/images/kyaragazou/sabaibagazou/niwasi.jpeg";
+  const RUNNER_NAME = "庭師";
+
   // ラストスパートは例年「終了の1週間前」から
   const LAST_SPURT_DAYS = 7;
 
@@ -115,7 +120,12 @@
       "</div>" +
       '<div class="siizun__course" role="progressbar" aria-label="S' + s.no + 'の経過（' + tip + '）" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.round(pct) + '" style="--p:' + (pct / 100).toFixed(4) + '">' +
       '<div class="siizun__track"><div class="siizun__fill"></div></div>' +
-      '<div class="siizun__runner">' + RUNNER + "</div>" +
+      '<div class="siizun__runner' + (RUNNER_IMG ? " siizun__runner--img" : "") + '">' +
+      (RUNNER_IMG
+        ? '<span class="siizun__speedline" aria-hidden="true"><i></i><i></i><i></i></span>' +
+          '<img src="' + RUNNER_IMG + '" alt="' + RUNNER_NAME + '" width="34" height="34" decoding="async">'
+        : RUNNER) +
+      "</div>" +
       '<div class="siizun__gate">' + GATE +
       (state === "spurt" ? '<span class="siizun__tuuden">通電</span>' : "") +
       "</div>" +

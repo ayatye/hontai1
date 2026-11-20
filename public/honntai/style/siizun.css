@@ -93,7 +93,7 @@
   position: absolute;
   bottom: 9px;
   /* 先頭（右端）が経過位置に来るように。左端ではみ出さないよう最小値あり */
-  left: max(0px, calc((100% - var(--gate) - 4px) * var(--p) - var(--run) + 8px));
+  left: max(16px, calc((100% - var(--gate) - 4px) * var(--p) - var(--run) + 8px));
   width: var(--run);
   height: var(--run);
 }
@@ -134,6 +134,46 @@
 .siizun__gate-bolt { fill: transparent; }
 .siizun__gate-ground { stroke: #c7cbf5; }
 
+/* ---- キャラアイコン版のランナー ---- */
+.siizun__runner--img img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4338ca;
+  background: #1e1b4b;
+  box-sizing: border-box;
+  animation: siizun-hop 0.6s ease-in-out infinite;
+}
+@keyframes siizun-hop {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-5px) rotate(4deg); }
+}
+.siizun__speedline {
+  position: absolute;
+  right: 36px;
+  bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.siizun__speedline i {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: #818cf8;
+}
+.siizun__speedline i:nth-child(1) { width: 10px; }
+.siizun__speedline i:nth-child(2) { width: 14px; }
+.siizun__speedline i:nth-child(3) { width: 8px; }
+.siizun--spurt .siizun__runner--img img { border-color: #e11d48; }
+.siizun--spurt .siizun__speedline i { background: #fb7185; }
+.siizun--over .siizun__runner--img img { animation: none; }
+
 /* ---- ラスト1週間：ゲートが赤く通電 ---- */
 .siizun--spurt {
   border-color: #fbb4c0;
@@ -172,6 +212,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .siizun__runner-svg,
+  .siizun__runner--img img,
   .siizun--spurt .siizun__gate-bolt { animation: none; }
 }
 
@@ -185,4 +226,6 @@
   .siizun__remain b { margin-left: 0; }
   .siizun__course { --gate: 34px; --run: 32px; height: 50px; }
   .siizun__gate { height: 32px; }
+  .siizun__runner--img img { width: 30px; height: 30px; }
+  .siizun__speedline { right: 31px; }
 }
