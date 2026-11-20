@@ -69,9 +69,9 @@
 /* ---- コース（走路・サバイバー・ゲート） ---- */
 .siizun__course {
   --gate: 40px;
-  --run: 38px;
+  --run: 46px;
   position: relative;
-  height: 56px;
+  height: 62px;
   margin-top: 2px;
 }
 .siizun__track {
@@ -93,7 +93,7 @@
   position: absolute;
   bottom: 9px;
   /* 先頭（右端）が経過位置に来るように。左端ではみ出さないよう最小値あり */
-  left: max(4px, calc((100% - var(--gate) - 4px) * var(--p) - var(--run) + 8px));
+  left: max(2px, calc((100% - var(--gate) - 4px) * var(--p) - var(--run) * 0.8));
   width: var(--run);
   height: var(--run);
 }
@@ -103,14 +103,40 @@
   overflow: visible;
   animation: siizun-run 0.5s ease-in-out infinite;
 }
-.siizun__head { fill: #1e1b4b; }
-.siizun__body path {
+/* 荘園の訪問者（オリジナル） */
+.siizun__hood, .siizun__cape { fill: #312e81; }
+.siizun__cape-back { fill: #4f46e5; }
+.siizun__face { fill: #fdecd8; }
+.siizun__eye { fill: #1e1b4b; }
+.siizun__clasp { fill: #fbbf24; }
+.siizun__legs path, .siizun__arm, .siizun__handle {
   fill: none;
   stroke: #1e1b4b;
-  stroke-width: 2.7;
+  stroke-width: 2.6;
   stroke-linecap: round;
-  stroke-linejoin: round;
 }
+.siizun__handle { stroke-width: 1.2; }
+.siizun__lamp { fill: #f59e0b; stroke: #92400e; stroke-width: .8; }
+.siizun__flame { fill: #fff7d6; }
+.siizun__glow { fill: #fbbf24; opacity: .28; }
+.siizun__lantern {
+  transform-origin: 26.5px 21.5px;
+  animation: siizun-swing 0.5s ease-in-out infinite alternate;
+}
+@keyframes siizun-swing {
+  from { transform: rotate(-7deg); }
+  to { transform: rotate(7deg); }
+}
+.siizun__cape-back {
+  transform-origin: 15.5px 18.5px;
+  animation: siizun-flutter 0.5s ease-in-out infinite alternate;
+}
+@keyframes siizun-flutter {
+  from { transform: rotate(4deg); }
+  to { transform: rotate(-6deg); }
+}
+.siizun--over .siizun__lantern,
+.siizun--over .siizun__cape-back { animation: none; }
 .siizun__pose2 { opacity: 0; }
 .siizun__pose1 { animation: siizun-pose1 0.5s steps(1) infinite; }
 .siizun__pose2 { animation: siizun-pose2 0.5s steps(1) infinite; }
@@ -220,6 +246,8 @@
 @media (prefers-reduced-motion: reduce) {
   .siizun__runner-svg,
   .siizun__runner--img img,
+  .siizun__lantern,
+  .siizun__cape-back,
   .siizun__pose1,
   .siizun__pose2,
   .siizun--spurt .siizun__gate-bolt { animation: none; }
@@ -233,7 +261,7 @@
   .siizun__yosou { margin-left: 4px; }
   .siizun__nokori, .siizun__sub { display: none; }
   .siizun__remain b { margin-left: 0; }
-  .siizun__course { --gate: 34px; --run: 32px; height: 50px; }
+  .siizun__course { --gate: 34px; --run: 40px; height: 56px; }
   .siizun__gate { height: 32px; }
   .siizun__runner--img img { width: 30px; height: 30px; }
   .siizun__speedline { right: 31px; }

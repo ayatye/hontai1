@@ -66,15 +66,30 @@
     return { big: String(m), unit: "分", sub: "" };
   }
 
-  // 走るサバイバー（シルエット）
+  // 走る子：第五録オリジナル「荘園の訪問者」（フードのマント＋ランタン）
   const RUNNER =
-    '<svg class="siizun__runner-svg" viewBox="0 0 24 24" aria-hidden="true">' +
-    '<g class="siizun__speed"><path d="M.5 10h4M0 13.5h3.5M1 17h3"/></g>' +
-    '<circle cx="15.2" cy="3.8" r="2.6" class="siizun__head"/>' +
-    // ポーズ1（大きく踏み出す）
-    '<g class="siizun__body siizun__pose1"><path d="M13.6 7.6l-3 6"/><path d="M12.9 9l-3.6-1.2-2.3 2.6"/><path d="M12.9 9l3.2 2.2 2.6-1.6"/><path d="M10.6 13.6l3.5 2.6-1 4.8"/><path d="M10.6 13.6l-2 3.6-4 1.4"/></g>' +
-    // ポーズ2（足を入れ替える途中）
-    '<g class="siizun__body siizun__pose2"><path d="M13.6 7.6l-3 6"/><path d="M12.9 9l-2.2 2.8-2.8.6"/><path d="M12.9 9l3.4.6 1.8-2.2"/><path d="M10.6 13.6l2.2 3.4 3.4 1.2"/><path d="M10.6 13.6l-.6 4-2.4 3"/></g>' +
+    '<svg class="siizun__runner-svg siizun__houmon" viewBox="0 0 40 40" aria-hidden="true">' +
+    '<g class="siizun__speed"><path d="M0 18h5M-1 23h4.5M.5 28h4"/></g>' +
+    // 足（2ポーズを交互に）
+    '<g class="siizun__legs siizun__pose1"><path d="M17.5 30.5l-3.5 5"/><path d="M24.5 30.5l3.5 4.5"/></g>' +
+    '<g class="siizun__legs siizun__pose2"><path d="M19 30.5l1.2 5.3"/><path d="M23 30.5l-1.6 5.2"/></g>' +
+    // うしろになびくマント
+    '<path class="siizun__cape-back" d="M15.5 18.5C11 21 8 25 6.5 30.5l7-.5c.6-3.5 1.6-6.5 3-9z"/>' +
+    // からだ（マント）
+    '<path class="siizun__cape" d="M15.5 17.5c-.4 5.5-1.6 9.5-3.5 13.5h18c-1.6-4-2.2-8-1.8-13.5z"/>' +
+    // フードと顔
+    '<circle class="siizun__hood" cx="22" cy="12" r="9"/>' +
+    '<ellipse class="siizun__face" cx="24.3" cy="13.4" rx="5.4" ry="4.9"/>' +
+    '<circle class="siizun__eye" cx="24.6" cy="13" r="1"/><circle class="siizun__eye" cx="27.8" cy="13" r="1"/>' +
+    '<path class="siizun__clasp" d="M22.6 19.4l1.4-1.4 1.4 1.4-1.4 1.4z"/>' +
+    // ランタン（腕ごと揺れる）
+    '<g class="siizun__lantern">' +
+    '<path class="siizun__arm" d="M26.5 21.5l5 2.5"/>' +
+    '<circle class="siizun__glow" cx="33" cy="29" r="6"/>' +
+    '<path class="siizun__handle" d="M31.5 24v2.2"/>' +
+    '<rect class="siizun__lamp" x="29.6" y="26" width="3.8" height="5.4" rx="1.1"/>' +
+    '<rect class="siizun__flame" x="30.9" y="27.4" width="1.2" height="2.6" rx=".6"/>' +
+    "</g>" +
     "</svg>";
 
   // 脱出ゲート
