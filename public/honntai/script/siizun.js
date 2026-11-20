@@ -30,9 +30,9 @@
     },
   ];
 
-  // 走るキャラのアイコン（サイト内の画像を丸く切り抜いて使う）。
-  // 別キャラにしたい時はここを差し替える。空文字にするとシルエットに戻る
-  const RUNNER_IMG = "/honntai/images/kyaragazou/sabaibagazou/niwasi.jpeg";
+  // 走る人。空文字ならシルエット（足が交互に動く）。
+  // キャラのアイコン画像のパスを入れると、丸く切り抜いたアイコンが走る
+  const RUNNER_IMG = "";
   const RUNNER_NAME = "庭師";
 
   // ラストスパートは例年「終了の1週間前」から
@@ -69,9 +69,12 @@
   // 走るサバイバー（シルエット）
   const RUNNER =
     '<svg class="siizun__runner-svg" viewBox="0 0 24 24" aria-hidden="true">' +
-    '<g class="siizun__speed"><path d="M1 10h4M0 13.5h3.5M1.5 17h3"/></g>' +
+    '<g class="siizun__speed"><path d="M.5 10h4M0 13.5h3.5M1 17h3"/></g>' +
     '<circle cx="15.2" cy="3.8" r="2.6" class="siizun__head"/>' +
-    '<g class="siizun__body"><path d="M13.6 7.6l-3 6"/><path d="M12.9 9l-3.6-1.2-2.3 2.6"/><path d="M12.9 9l3.2 2.2 2.6-1.6"/><path d="M10.6 13.6l3.5 2.6-1 4.8"/><path d="M10.6 13.6l-2 3.6-4 1.4"/></g>' +
+    // ポーズ1（大きく踏み出す）
+    '<g class="siizun__body siizun__pose1"><path d="M13.6 7.6l-3 6"/><path d="M12.9 9l-3.6-1.2-2.3 2.6"/><path d="M12.9 9l3.2 2.2 2.6-1.6"/><path d="M10.6 13.6l3.5 2.6-1 4.8"/><path d="M10.6 13.6l-2 3.6-4 1.4"/></g>' +
+    // ポーズ2（足を入れ替える途中）
+    '<g class="siizun__body siizun__pose2"><path d="M13.6 7.6l-3 6"/><path d="M12.9 9l-2.2 2.8-2.8.6"/><path d="M12.9 9l3.4.6 1.8-2.2"/><path d="M10.6 13.6l2.2 3.4 3.4 1.2"/><path d="M10.6 13.6l-.6 4-2.4 3"/></g>' +
     "</svg>";
 
   // 脱出ゲート

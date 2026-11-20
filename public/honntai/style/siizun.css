@@ -93,7 +93,7 @@
   position: absolute;
   bottom: 9px;
   /* 先頭（右端）が経過位置に来るように。左端ではみ出さないよう最小値あり */
-  left: max(16px, calc((100% - var(--gate) - 4px) * var(--p) - var(--run) + 8px));
+  left: max(4px, calc((100% - var(--gate) - 4px) * var(--p) - var(--run) + 8px));
   width: var(--run);
   height: var(--run);
 }
@@ -101,7 +101,7 @@
   width: 100%;
   height: 100%;
   overflow: visible;
-  animation: siizun-run 0.6s ease-in-out infinite;
+  animation: siizun-run 0.5s ease-in-out infinite;
 }
 .siizun__head { fill: #1e1b4b; }
 .siizun__body path {
@@ -111,6 +111,13 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+.siizun__pose2 { opacity: 0; }
+.siizun__pose1 { animation: siizun-pose1 0.5s steps(1) infinite; }
+.siizun__pose2 { animation: siizun-pose2 0.5s steps(1) infinite; }
+@keyframes siizun-pose1 { 0% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes siizun-pose2 { 0% { opacity: 0; } 50% { opacity: 1; } }
+.siizun--over .siizun__pose1,
+.siizun--over .siizun__pose2 { animation: none; }
 .siizun__speed path {
   fill: none;
   stroke: #818cf8;
@@ -213,6 +220,8 @@
 @media (prefers-reduced-motion: reduce) {
   .siizun__runner-svg,
   .siizun__runner--img img,
+  .siizun__pose1,
+  .siizun__pose2,
   .siizun--spurt .siizun__gate-bolt { animation: none; }
 }
 
