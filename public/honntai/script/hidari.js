@@ -42,12 +42,11 @@ const HIDARI_MENU = [
 
 // ===== 最近の更新(新しい順。5件くらいがちょうどいい) =====
 const KOUSIN = [
-  { date: "2026-11-16", title: "調整まとめ：11/12のバランス調整", link: "/honntai/tyousei/tyousei.html" },
-  { date: "2026-11-13", title: "最新情報：11/12アップデート", link: "/honntai/saisinn/saisinn.html" },
-  { date: "2026-11-12", title: "第五カレンダー：11/12アプデ・IJL Week4", link: "/honntai/karenda/karenda.html" },
-  { date: "2026-11-12", title: "手記の加筆：燐光症のバランス調整", link: "/honntai/shukikahitsu/shukikahitsu.html" },
-  { date: "2026-11-06", title: "手記の加筆：新シーズン『燐光症』を追加", link: "/honntai/shukikahitsu/shukikahitsu.html" },
-  { date: "2026-11-05", title: "ペン先の空想：11月アプデ", link: "/honntai/pennsaki/pennsaki.html" },
+  { date: "2026-11-20", title: "最新情報：11/19アップデート", link: "/honntai/saisinn/saisinn.html" },
+  { date: "2026-11-20", title: "手記の加筆：燐光症11/20調整・予兆の箱", link: "/honntai/shukikahitsu/shukikahitsu.html" },
+  { date: "2026-11-20", title: "コピーキャット：霊体状態の新機能", link: "/honntai/kopiki/kopiki.html" },
+  { date: "2026-11-20", title: "第五カレンダー：11/19アプデ・IJL Week5", link: "/honntai/karenda/karenda.html" },
+  { date: "2026-11-16", title: "キャラ攻略：53キャラを最新調整に更新", link: "/honntai/情報/情報.html" },
 ];
 
 (function () {

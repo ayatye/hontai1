@@ -47,6 +47,36 @@
     // 最近の更新（新しい順）
     recentUpdates: [
       {
+        title: "最新アップデート情報（11/19）",
+        url: "/honntai/saisinn/saisinn.html",
+        date: "2026-11-20",
+        tag: "更新情報",
+      },
+      {
+        title: "手記の加筆：燐光症の11/20調整と新詞章「予兆の箱」を追加",
+        url: "/honntai/shukikahitsu/shukikahitsu.html",
+        date: "2026-11-20",
+        tag: "モード攻略",
+      },
+      {
+        title: "コピーキャット：霊体状態の新機能・集計画面の改善を追加",
+        url: "/honntai/kopiki/kopiki.html",
+        date: "2026-11-20",
+        tag: "モード攻略",
+      },
+      {
+        title: "第五カレンダー：11/19アップデートとIJL Week5の対戦カードを追加",
+        url: "/honntai/karenda/karenda.html",
+        date: "2026-11-20",
+        tag: "カレンダー",
+      },
+      {
+        title: "キャラ攻略：全キャラページを最新の調整内容に更新（53キャラ）",
+        url: "/honntai/情報/情報.html",
+        date: "2026-11-16",
+        tag: "キャラ情報",
+      },
+      {
         title: "調整まとめ：11/12のキャラ・天賦バランス調整を追加",
         url: "/honntai/tyousei/tyousei.html",
         date: "2026-11-16",
