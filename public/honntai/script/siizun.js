@@ -89,7 +89,7 @@
     const remain =
       state === "over"
         ? (s.yosou ? "確認中" : "終了")
-        : "残り<b>" + r.big + "</b>" + r.unit + (r.sub ? '<span class="siizun__sub">' + r.sub + "</span>" : "");
+        : "<span class=\"siizun__nokori\">残り</span><b>" + r.big + "</b>" + r.unit + (r.sub ? '<span class="siizun__sub">' + r.sub + "</span>" : "");
 
     el.className = "siizun siizun--" + state;
     el.title = tip;

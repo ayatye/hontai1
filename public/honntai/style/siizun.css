@@ -4,11 +4,11 @@
   max-width: 1000px;
   margin: 20px 10px 8px;
   padding: 12px 16px 14px;
-  background: #fff;
-  border: 1px solid #f3e3b8;
-  border-left: 5px solid #f59e0b;
+  background: linear-gradient(100deg, #fff4d6 0%, #fffaf0 45%, #ffffff 100%);
+  border: 1px solid #f5cf73;
+  border-left: 6px solid #f59e0b;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(180, 120, 20, 0.08);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.14);
   box-sizing: border-box;
 }
 .siizun__top {
@@ -29,7 +29,7 @@
 }
 .siizun__title {
   margin: 0;
-  font-size: 1em;
+  font-size: 1.08em;
   font-weight: bold;
   color: #2a1a45;
   white-space: nowrap;
@@ -49,7 +49,7 @@
   white-space: nowrap;
 }
 .siizun__remain b {
-  font-size: 1.6em;
+  font-size: 1.9em;
   line-height: 1;
   margin: 0 1px 0 4px;
   color: #d97706;
@@ -71,16 +71,35 @@
 }
 .siizun__meter {
   position: relative;
-  height: 10px;
-  background: #fdf1d3;
+  height: 12px;
+  background: #fbe7b5;
+  box-shadow: inset 0 1px 2px rgba(146, 64, 14, 0.15);
   border-radius: 999px;
   overflow: hidden;
 }
 .siizun__fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #fcd34d, #f59e0b);
+  background: linear-gradient(90deg, #fcd34d, #f59e0b 70%, #ea580c);
   transition: width 0.6s ease;
+  position: relative;
+  overflow: hidden;
+}
+/* ゆっくり流れる光（目を引く程度に控えめ） */
+.siizun__fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  transform: translateX(-100%);
+  animation: siizun-sheen 3.5s ease-in-out infinite;
+}
+@keyframes siizun-sheen {
+  0%, 30% { transform: translateX(-100%); }
+  70%, 100% { transform: translateX(100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .siizun__fill::after { animation: none; display: none; }
 }
 /* 1週間ごとの目盛り */
 .siizun__meter i {
@@ -92,8 +111,13 @@
 }
 
 /* ラストスパート（終了1週間前〜）は赤系に */
-.siizun--spurt { border-color: #fbd0d7; border-left-color: #e11d48; }
-.siizun--spurt .siizun__meter { background: #ffe4e8; }
+.siizun--spurt {
+  border-color: #fbb4c0;
+  border-left-color: #e11d48;
+  background: linear-gradient(100deg, #ffe4e8 0%, #fff5f6 45%, #ffffff 100%);
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.14);
+}
+.siizun--spurt .siizun__meter { background: #fdd5dc; }
 .siizun--spurt .siizun__fill { background: linear-gradient(90deg, #fb7185, #e11d48); }
 .siizun--spurt .siizun__remain,
 .siizun--spurt .siizun__remain b,
@@ -106,5 +130,8 @@
   .siizun__title { font-size: 0.9em; }
   .siizun__remain { font-size: 0.78em; }
   .siizun__yosou { margin-left: 4px; }
+  .siizun__nokori { display: none; }
+  .siizun__remain b { margin-left: 0; }
+  .siizun { margin-bottom: 18px; }
   .siizun__sub { display: none; }
 }
