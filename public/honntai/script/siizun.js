@@ -1,5 +1,5 @@
 /* =========================================================
-   siizun.js — シーズン残りメーター
+   siizun.js — シーズン残りメーター（サバイバーが脱出ゲートへ走るデザイン）
    置き方：<div data-siizun></div>  （CSS は honntai/style/siizun.css）
    更新するのは下の SIIZUN_DATA だけ。
    ・時刻は日本時間（+09:00）で書く。公式告知の UTC+8 は +1時間する
@@ -61,6 +61,23 @@
     return { big: String(m), unit: "分", sub: "" };
   }
 
+  // 走るサバイバー（シルエット）
+  const RUNNER =
+    '<svg class="siizun__runner-svg" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<g class="siizun__speed"><path d="M1 10h4M0 13.5h3.5M1.5 17h3"/></g>' +
+    '<circle cx="15.2" cy="3.8" r="2.6" class="siizun__head"/>' +
+    '<g class="siizun__body"><path d="M13.6 7.6l-3 6"/><path d="M12.9 9l-3.6-1.2-2.3 2.6"/><path d="M12.9 9l3.2 2.2 2.6-1.6"/><path d="M10.6 13.6l3.5 2.6-1 4.8"/><path d="M10.6 13.6l-2 3.6-4 1.4"/></g>' +
+    "</svg>";
+
+  // 脱出ゲート
+  const GATE =
+    '<svg class="siizun__gate-svg" viewBox="0 0 32 32" aria-hidden="true">' +
+    '<path class="siizun__gate-frame" d="M5 30V8a3 3 0 0 1 3-3h16a3 3 0 0 1 3 3v22" fill="none" stroke-width="2.6" stroke-linecap="round"/>' +
+    '<path class="siizun__gate-in" d="M9.5 30V10h13v20z"/>' +
+    '<path class="siizun__gate-bolt" d="M17.4 12.5l-4 6.2h2.8l-1.3 5.2 4.5-6.6h-2.9z"/>' +
+    '<path d="M2 30.5h28" stroke-width="2" stroke-linecap="round" class="siizun__gate-ground"/>' +
+    "</svg>";
+
   function render(el) {
     const now = Date.now();
     const s = pickSeason(now);
@@ -76,12 +93,6 @@
     if (left <= 0) state = "over";
     else if (now >= spurtAt) state = "spurt";
 
-    // 1週間ごとの目盛り
-    let ticks = "";
-    for (let t = start + 7 * DAY; t < end; t += 7 * DAY) {
-      ticks += '<i style="left:' + (((t - start) / total) * 100).toFixed(2) + '%"></i>';
-    }
-
     const tip =
       fmtDate(toJst(start)) + " 開幕 〜 " + fmtDate(toJst(end)) +
       (s.yosou ? " 終了予想（終了日は公式未発表）" : " 終了");
@@ -89,7 +100,8 @@
     const remain =
       state === "over"
         ? (s.yosou ? "確認中" : "終了")
-        : "<span class=\"siizun__nokori\">残り</span><b>" + r.big + "</b>" + r.unit + (r.sub ? '<span class="siizun__sub">' + r.sub + "</span>" : "");
+        : '<span class="siizun__nokori">残り</span><b>' + r.big + "</b>" + r.unit +
+          (r.sub ? '<span class="siizun__sub">' + r.sub + "</span>" : "");
 
     el.className = "siizun siizun--" + state;
     el.title = tip;
@@ -101,9 +113,12 @@
       (s.yosou && state !== "over" ? '<span class="siizun__yosou">予想</span>' : "") +
       "</span>" +
       "</div>" +
-      '<div class="siizun__meter" role="progressbar" aria-label="S' + s.no + 'の経過（' + tip + '）" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.round(pct) + '">' +
-      '<div class="siizun__fill" style="width:' + pct.toFixed(2) + '%"></div>' +
-      ticks +
+      '<div class="siizun__course" role="progressbar" aria-label="S' + s.no + 'の経過（' + tip + '）" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.round(pct) + '" style="--p:' + (pct / 100).toFixed(4) + '">' +
+      '<div class="siizun__track"><div class="siizun__fill"></div></div>' +
+      '<div class="siizun__runner">' + RUNNER + "</div>" +
+      '<div class="siizun__gate">' + GATE +
+      (state === "spurt" ? '<span class="siizun__tuuden">通電</span>' : "") +
+      "</div>" +
       "</div>";
   }
 
