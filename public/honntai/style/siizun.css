@@ -1,166 +1,268 @@
-/* ===== シーズン残りメーター（siizun.js が中身を作る） ===== */
+/* ===== シーズン残りメーター（siizun.js が中身を作る） =====
+   サバイバーが脱出ゲートへ走るデザイン。ラスト1週間はゲートが赤く「通電」
+   --p（0〜1）= シーズンの経過割合。JS が .siizun__course に入れる */
 .siizun {
   max-width: 1000px;
-  margin: 24px 10px 8px;
-  padding: 18px 20px 14px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 60%);
-  border: 2px solid #7c3aed;
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.15);
+  margin: 20px 10px 8px;
+  padding: 12px 16px 10px;
+  background: linear-gradient(100deg, #eef0ff 0%, #f8f8ff 50%, #ffffff 100%);
+  border: 1px solid #c7cbf5;
+  border-left: 6px solid #4338ca;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(67, 56, 202, 0.12);
   box-sizing: border-box;
 }
-.siizun__head {
+.siizun__top {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
+  gap: 8px;
 }
 .siizun__badge {
-  background: #7c3aed;
-  color: #fff;
-  font-size: 0.8em;
+  flex: none;
+  background: #1e1b4b;
+  color: #fbbf24;
+  font-size: 0.72em;
   font-weight: bold;
   letter-spacing: 0.05em;
-  padding: 3px 10px;
-  border-radius: 999px;
+  padding: 2px 8px;
+  border-radius: 6px;
 }
 .siizun__title {
   margin: 0;
-  font-size: 1.35em;
-  color: #3b0764;
-}
-.siizun__yosou {
-  font-size: 0.75em;
+  font-size: 1.08em;
   font-weight: bold;
-  color: #92400e;
-  background: #fef3c7;
-  border: 1px solid #fcd34d;
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-.siizun__body {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  background: #fff;
-  border: 1px solid #ede9fe;
-  border-radius: 12px;
-  padding: 14px 16px;
+  color: #1e1b4b;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .siizun__remain {
+  margin-left: auto;
+  flex: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 96px;
-  line-height: 1.1;
-}
-.siizun__label {
-  font-size: 0.8em;
-  color: #666;
+  align-items: baseline;
+  gap: 2px;
+  font-size: 0.85em;
   font-weight: bold;
+  color: #3730a3;
+  white-space: nowrap;
 }
-.siizun__num {
-  font-size: 2.6em;
-  font-weight: 800;
-  color: #6d28d9;
+.siizun__remain b {
+  font-size: 1.9em;
+  line-height: 1;
+  margin: 0 1px 0 4px;
+  color: #4338ca;
   font-variant-numeric: tabular-nums;
 }
-.siizun__num small {
-  font-size: 0.4em;
-  margin-left: 2px;
-  color: #6d28d9;
+.siizun__sub { margin-left: 4px; font-size: 0.9em; }
+.siizun__yosou {
+  margin-left: 6px;
+  align-self: center;
+  font-size: 0.75em;
+  color: #3730a3;
+  border: 1px dashed #6366f1;
+  padding: 0 5px;
+  border-radius: 4px;
 }
-.siizun__sub {
-  font-size: 0.85em;
-  color: #6d28d9;
-  font-weight: bold;
-}
-.siizun__meter-wrap {
-  flex: 1;
-  min-width: 0;
-}
-.siizun__meter {
+
+/* ---- コース（走路・サバイバー・ゲート） ---- */
+.siizun__course {
+  --gate: 40px;
+  --run: 46px;
   position: relative;
-  height: 18px;
-  background: #ede9fe;
+  height: 62px;
+  margin-top: 2px;
+}
+.siizun__track {
+  position: absolute;
+  left: 0;
+  right: calc(var(--gate) - 4px);
+  bottom: 6px;
+  height: 6px;
   border-radius: 999px;
-  overflow: hidden;
+  background: repeating-linear-gradient(90deg, #d9dcf7 0 10px, transparent 10px 16px);
 }
 .siizun__fill {
   height: 100%;
+  width: calc(var(--p) * 100%);
   border-radius: 999px;
-  background: linear-gradient(90deg, #a78bfa, #7c3aed);
-  transition: width 0.6s ease;
+  background: linear-gradient(90deg, #a5b4fc, #4338ca);
 }
-/* ラストスパート開始の目安ライン */
-.siizun__spurt {
+.siizun__runner {
   position: absolute;
-  top: 0;
+  bottom: 9px;
+  /* 先頭（右端）が経過位置に来るように。左端ではみ出さないよう最小値あり */
+  left: max(2px, calc((100% - var(--gate) - 4px) * var(--p) - var(--run) * 0.8));
+  width: var(--run);
+  height: var(--run);
+}
+.siizun__runner-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: siizun-run 0.5s ease-in-out infinite;
+}
+/* 荘園の訪問者（オリジナル） */
+.siizun__hood, .siizun__cape { fill: #312e81; }
+.siizun__cape-back { fill: #4f46e5; }
+.siizun__face { fill: #fdecd8; }
+.siizun__eye { fill: #1e1b4b; }
+.siizun__clasp { fill: #fbbf24; }
+.siizun__legs path, .siizun__arm, .siizun__handle {
+  fill: none;
+  stroke: #1e1b4b;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+.siizun__handle { stroke-width: 1.2; }
+.siizun__lamp { fill: #f59e0b; stroke: #92400e; stroke-width: .8; }
+.siizun__flame { fill: #fff7d6; }
+.siizun__glow { fill: #fbbf24; opacity: .28; }
+.siizun__lantern {
+  transform-origin: 26.5px 21.5px;
+  animation: siizun-swing 0.5s ease-in-out infinite alternate;
+}
+@keyframes siizun-swing {
+  from { transform: rotate(-7deg); }
+  to { transform: rotate(7deg); }
+}
+.siizun__cape-back {
+  transform-origin: 15.5px 18.5px;
+  animation: siizun-flutter 0.5s ease-in-out infinite alternate;
+}
+@keyframes siizun-flutter {
+  from { transform: rotate(4deg); }
+  to { transform: rotate(-6deg); }
+}
+.siizun--over .siizun__lantern,
+.siizun--over .siizun__cape-back { animation: none; }
+.siizun__pose2 { opacity: 0; }
+.siizun__pose1 { animation: siizun-pose1 0.5s steps(1) infinite; }
+.siizun__pose2 { animation: siizun-pose2 0.5s steps(1) infinite; }
+@keyframes siizun-pose1 { 0% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes siizun-pose2 { 0% { opacity: 0; } 50% { opacity: 1; } }
+.siizun--over .siizun__pose1,
+.siizun--over .siizun__pose2 { animation: none; }
+.siizun__speed path {
+  fill: none;
+  stroke: #818cf8;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+@keyframes siizun-run {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.siizun__gate {
+  position: absolute;
+  right: 0;
   bottom: 0;
-  width: 2px;
-  background: #e11d48;
-  opacity: 0.7;
+  width: var(--gate);
+  height: 38px;
 }
-.siizun__dates {
+.siizun__gate-svg { width: 100%; height: 100%; display: block; }
+.siizun__gate-frame { stroke: #4338ca; }
+.siizun__gate-in { fill: #e0e3fb; }
+.siizun__gate-bolt { fill: transparent; }
+.siizun__gate-ground { stroke: #c7cbf5; }
+
+/* ---- キャラアイコン版のランナー ---- */
+.siizun__runner--img img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4338ca;
+  background: #1e1b4b;
+  box-sizing: border-box;
+  animation: siizun-hop 0.6s ease-in-out infinite;
+}
+@keyframes siizun-hop {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-5px) rotate(4deg); }
+}
+.siizun__speedline {
+  position: absolute;
+  right: 36px;
+  bottom: 8px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.siizun__speedline i {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: #818cf8;
+}
+.siizun__speedline i:nth-child(1) { width: 10px; }
+.siizun__speedline i:nth-child(2) { width: 14px; }
+.siizun__speedline i:nth-child(3) { width: 8px; }
+.siizun--spurt .siizun__runner--img img { border-color: #e11d48; }
+.siizun--spurt .siizun__speedline i { background: #fb7185; }
+.siizun--over .siizun__runner--img img { animation: none; }
+
+/* ---- ラスト1週間：ゲートが赤く通電 ---- */
+.siizun--spurt {
+  border-color: #fbb4c0;
+  border-left-color: #e11d48;
+  background: linear-gradient(100deg, #ffe8ec 0%, #fff6f7 50%, #ffffff 100%);
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.14);
+}
+.siizun--spurt .siizun__remain,
+.siizun--spurt .siizun__remain b { color: #be123c; }
+.siizun--spurt .siizun__speed path { stroke: #fb7185; }
+.siizun--spurt .siizun__fill { background: linear-gradient(90deg, #fda4af, #e11d48); }
+.siizun--spurt .siizun__gate-frame { stroke: #e11d48; }
+.siizun--spurt .siizun__gate-in { fill: #ffe4e6; }
+.siizun--spurt .siizun__gate-bolt { fill: #e11d48; animation: siizun-tuuden 1.2s ease-in-out infinite; }
+.siizun__tuuden {
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68em;
+  font-weight: bold;
+  color: #fff;
+  background: #e11d48;
+  padding: 0 5px;
+  border-radius: 4px;
   white-space: nowrap;
-  justify-content: space-between;
-  gap: 6px;
-  margin-top: 6px;
-  font-size: 0.8em;
-  color: #555;
 }
-.siizun__pct {
-  font-weight: bold;
-  color: #6d28d9;
-}
-.siizun__msg {
-  margin: 10px 0 0;
-  font-size: 0.95em;
-  font-weight: bold;
-  color: #3b0764;
-}
-.siizun__note {
-  margin: 6px 0 0;
-  font-size: 0.78em;
-  color: #777;
-}
-.siizun__link {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 0.9em;
-  font-weight: bold;
-  color: #7c3aed;
-  text-decoration: none;
-}
-.siizun__link:hover {
-  text-decoration: underline;
+@keyframes siizun-tuuden {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
-/* ラストスパート中：赤寄りに */
-.siizun--spurt {
-  border-color: #e11d48;
-  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.15);
-}
-.siizun--spurt .siizun__fill {
-  background: linear-gradient(90deg, #fb7185, #e11d48);
-}
-.siizun--spurt .siizun__num,
-.siizun--spurt .siizun__num small,
-.siizun--spurt .siizun__sub,
-.siizun--spurt .siizun__msg {
-  color: #be123c;
-}
-.siizun--over .siizun__fill {
-  background: #9ca3af;
+/* ---- 終了後（公式発表待ち） ---- */
+.siizun--over .siizun__runner-svg { animation: none; }
+.siizun--over .siizun__fill { background: #9ca3af; }
+
+@media (prefers-reduced-motion: reduce) {
+  .siizun__runner-svg,
+  .siizun__runner--img img,
+  .siizun__lantern,
+  .siizun__cape-back,
+  .siizun__pose1,
+  .siizun__pose2,
+  .siizun--spurt .siizun__gate-bolt { animation: none; }
 }
 
 @media (max-width: 767px) {
-  .siizun { margin: 18px 8px 6px; padding: 14px 12px 12px; }
-  .siizun__title { font-size: 1.15em; }
-  .siizun__body { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .siizun__remain { flex-direction: row; align-items: baseline; justify-content: center; gap: 8px; }
-  .siizun__num { font-size: 2.1em; }
-  .siizun__dates { font-size: 0.72em; }
+  .siizun { margin: 16px 8px 18px; padding: 10px 12px 8px; }
+  .siizun__top { gap: 6px; }
+  .siizun__title { font-size: 0.9em; }
+  .siizun__remain { font-size: 0.78em; }
+  .siizun__yosou { margin-left: 4px; }
+  .siizun__nokori, .siizun__sub { display: none; }
+  .siizun__remain b { margin-left: 0; }
+  .siizun__course { --gate: 34px; --run: 40px; height: 56px; }
+  .siizun__gate { height: 32px; }
+  .siizun__runner--img img { width: 30px; height: 30px; }
+  .siizun__speedline { right: 31px; }
 }
