@@ -103,6 +103,7 @@ HTML は 3 種類の深さに分かれ、共有 CSS/JS への相対パスが**�
 | `program-slider.js` | 情報発表番組スライダー(`programs` 配列、新しい順) | `#idv-program-slider` |
 | `ngcomento.js` | コメントの NG ワード判定(`bannedWords`)と投稿前チェック `window.ngcomentoCheck` | 投稿処理自体は `comentoscript/minna.js` |
 | `script.js` | トップ用の特集タイル生成(`topics` `events` `tisikis` `masters`) | `isMobile` で画像を出し分け |
+| `siizun.js` | シーズン残りメーター(CSS は `style/siizun.css`)。データは冒頭の `SIIZUN_DATA` だけ。時刻はJST、終了日未発表の間は `yosou: true` | `[data-siizun]`(トップ)。読み込みは `siizun.js?v=日付` |
 | `karenda.js` | 第五カレンダー(誕生日・イベント・コラボ・大会)。データは冒頭の `KARENDA_DATA` だけ | `[data-karenda="page"]`(karenda/karenda.html)/ `[data-karenda="mini"]`(トップ)。`firebase.json` で `no-cache`。読み込みは `karenda.js?v=日付` |
 
 コメント欄は全ページ共通で `comentoscript/minna.js` 1本(2026-10 に統合)。どのページでもサイト全体の新しいコメントを50件表示し、各コメントに「📍 ○○より」と書かれたページへのリンクを付ける。投稿時に `pagePath`(URLパス)と `pageTitle`(`<title>` の「 - 」より前)を保存する。旧コメント(`pageId` だけのもの)の表示名は `minna.js` の `OLD_PAGES`。自動削除はしない。投稿前チェック(NGワード・連投制限)は `script/ngcomento.js` の `window.ngcomentoCheck`。新規ページは深さに合わせて `…/comentoscript/minna.js` を読み込むだけでよい(Firebase の `apiKey` 等は Web 用で公開前提。保護は Firestore ルール側)。
