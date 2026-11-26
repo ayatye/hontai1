@@ -747,3 +747,21 @@ a {
   .level-compare { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .rank-row { font-size: 0.85em; padding: 7px 10px; gap: 8px; }
 }
+
+/* ===== 2026-11-26 アプデ：使える場所 ===== */
+.feature-path {
+  margin: 10px 0 0;
+  padding: 6px 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.85em;
+  color: #555;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .feature-card .feature-path { grid-column: 2; }
+}
+@media (max-width: 768px) {
+  .update-table td:first-child { min-width: 6em; }
+  .tips-box li strong { font-size: 1em; }
+}
